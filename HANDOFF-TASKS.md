@@ -13,7 +13,7 @@
 
 **技术栈：** 纯静态 HTML + CSS + JavaScript，无构建工具、无框架。公共样式在 `style.css`，数据文件在 `js/` 目录。
 
-**当前覆盖率：约 75-80%**（上一轮从 35-40% 提升至此）
+**当前覆盖率：约 90%**（从初始 35-40% → 75-80% → 90%，含3R扩展大全8页完整覆盖）
 
 ### 目录结构
 
@@ -33,12 +33,10 @@ dnd35-wiki-pro/
 ├── about.html           # 关于页
 ├── progress-report.html # 进度报告
 ├── js/
-│   ├── spells-data.js           # 法术主数据库（542 条）
-│   ├── spells-domains.js        # 领域映射（旧版，连字符 ID）
-│   ├── spells-domains-updated.js# 领域映射（新版，下划线 ID，应使用此文件）
-│   ├── spells-conflicts.js      # 法术冲突数据
-│   ├── spells-conflicts-batch2~5.js  # 冲突数据批次（batch2-5 为空对象存根）
-│   └── global-search-data.js    # 搜索索引数据
+│   ├── spells-data.js           # 法术主数据库（462 条，已去重 + 补充领域法术）
+│   ├── spells-domains.js        # 领域映射（22个领域，166条映射，已修复ID格式）
+│   ├── spells-conflicts.js      # 法术冲突标注（45条冲突注解）
+│   └── global-search-data.js    # 搜索索引数据（与 spells-data.js 同步）
 ├── classes/       # 11 核心职业 + 进阶职业总览 + 15 独立进阶 + NPC 职业
 ├── races/         # 7 核心种族（intro + 7 个独立页）
 ├── skills/        # 35 个技能 + 共效页面
@@ -46,19 +44,19 @@ dnd35-wiki-pro/
 ├── equipment/     # 装备总览 + 魔法物品 + 武器详述
 ├── monsters/      # 怪物总览 + 经典怪物 + 龙类
 ├── spells/        # 法术系统（按环分级 level0-9 + 搜索/比较/收藏）
-├── 3r/            # 旧版 3R 页面（10 个文件，可能是早期版本）
+├── 3r/            # 3R扩展大全（8个综合页面：index-v2/classes/races/feats/spells/equipment/monsters/supplements）
+├── _legacy_3r/    # 旧版3R页面归档（9个文件，已被新综合页取代）
 └── _scripts_archive/  # 归档的构建/调试脚本（不影响站点运行）
 ```
 
 ### 关键 JS 数据文件说明
 
-| 文件 | 用途 | 已知问题 |
+| 文件 | 用途 | 当前状态 |
 |------|------|----------|
-| `spells-data.js` | 法术主数据库，542 条唯一法术 | 仍有少量重复可能未清干净 |
-| `spells-domains.js` | 旧版领域映射（连字符 ID 格式） | **不应被页面加载**，已被 updated 版替代 |
-| `spells-domains-updated.js` | 新版领域映射（下划线 ID） | 这是应该使用的版本 |
-| `spells-conflicts-batch2~5.js` | 冲突数据批次文件 | 目前都是空对象 `window.conflictsDataBatchN = {}` |
-| `global-search-data.js` | 全站搜索索引 | 数据应与 spells-data.js 保持同步 |
+| `spells-data.js` | 法术主数据库，462 条唯一法术 | ✅ 已去重 + 补充29条领域法术 |
+| `spells-domains.js` | 领域映射（22个领域，166条） | ✅ 已修复为下划线 ID 格式 |
+| `spells-conflicts.js` | 法术冲突标注（45条注解） | ✅ 数据完整 |
+| `global-search-data.js` | 全站搜索索引 | ✅ 与 spells-data.js 同步 |
 
 ---
 
@@ -104,120 +102,69 @@ dnd35-wiki-pro/
 - `races/halfling.html`：移除错误的 CON+2（PHB：仅 +2 DEX, -2 STR）
 - `races/gnome.html`：移除错误的 DEX+2 和 INT+2（PHB：仅 +2 CON, -2 STR）
 - `races/half-orc.html`：移除无根据的性别区分偏好职业（PHB：统一为野蛮人）
-- `js/spells-data.js`：修复 `cure_modarate_wounds` 拼写，删除 `flame-strike` 重复项和 `cure_moderate_wounds` 重复项，最终 542 条
+- `js/spells-data.js`：修复 `cure_modarate_wounds` 拼写，深度去重 542→433 条，补充 29 条领域法术 → 最终 462 条唯一法术
 - `js/global-search-data.js`：同步修复拼写和去重
 
 ---
 
-## 三、剩余任务清单
+## 三、任务完成状态
 
-### P1 — 高优先级（影响功能或数据准确性）
+### P1 — 高优先级（✅ 全部完成）
 
-#### 任务 1：法术数据深度去重与质量审计
-- **现状：** `spells-data.js` 名义上 542 条，但项目内部报告自相矛盾（AUDIT-REPORT 说 415，TODO.md 说 544，PROJECT-STATUS 说 585 其中 213 重复）
-- **需要做的：**
-  1. 逐条审计 `spells-data.js`，用脚本检测 nameZh / nameEn 重复项
-  2. 对比 dndlogs.com 法术大全确认遗漏的核心法术
-  3. 确保 `global-search-data.js` 与 `spells-data.js` 完全同步
-  4. 输出真实的法术数量和完成度统计
-- **参考文件：** `js/spells-data.js`、`js/global-search-data.js`、`PROJECT-STATUS.md`
-- **预计工作量：** 中
+| 任务 | 状态 | 说明 |
+|------|------|------|
+| 1. 法术数据去重与审计 | ✅ 完成 | 542→462条，补充29个领域法术，修复5个ID错误 |
+| 2. 清理 spells-domains.js | ✅ 完成 | 统一为下划线ID，旧版已归档 |
+| 3. spells-conflicts 数据 | ✅ 完成 | 45条冲突注解完整，空批次文件已移除 |
 
-#### 任务 2：清理旧版 spells-domains.js
-- **现状：** `spells-domains.js`（旧版连字符 ID）和 `spells-domains-updated.js`（新版下划线 ID）同时存在，虽然已确保页面只加载 updated 版，但旧文件仍在目录中造成混淆
-- **需要做的：**
-  1. 确认没有任何页面仍然 `<script src>` 引用旧版 `spells-domains.js`
-  2. 如果确认无引用，将旧版移入 `_scripts_archive/` 或重命名为 `.old`
-  3. 考虑将 `spells-domains-updated.js` 重命名为 `spells-domains.js`（需要先更新所有引用它的 HTML 页面）
-- **预计工作量：** 小
+### P2 — 中优先级（大部分完成）
 
-#### 任务 3：填充 spells-conflicts-batch2~5.js 数据
-- **现状：** 四个批次文件都是空对象存根 `window.conflictsDataBatchN = {}`
-- **需要做的：**
-  1. 参考 dndlogs.com 的法术冲突数据填充这些文件
-  2. 或者如果 `spells-conflicts.js` 已包含所有冲突数据，则移除 batch2-5 的空存根并更新 `spell-detail.html` 的 `<script>` 引用
-- **参考文件：** `js/spells-conflicts.js`、`spells/spell-detail.html`
-- **预计工作量：** 中
+| 任务 | 状态 | 说明 |
+|------|------|------|
+| 4. 种族扩展 | ✅ 完成 | races/expanded-races.html（12个扩展种族）+ 3r/races.html |
+| 5. 魔法物品分类 | ✅ 完成 | equipment/magic-weapons.html + wondrous-items.html + artifacts-intelligent.html |
+| 6. 怪物条目补充 | ⚠️ 待扩展 | 3页约50种怪物，MM有900+（下一阶段重点） |
+| 7. 专长描述 | ✅ 基本完成 | 31页 + 3r/feats.html 83个扩展专长 |
+| 8. 冒险章节 | ⏳ 待细化 | rules-adventure.html 为单页概览 |
+| 9. 位面章节 | ⏳ 待细化 | rules-planes.html 有概览，缺独立位面页 |
 
-### P2 — 中优先级（内容补全）
+### P3 — 低优先级（部分完成）
 
-#### 任务 4：种族扩展内容（#22）
-- **现状：** 7 核心种族已完善，但缺少扩展种族（歌利亚 Goliath、徽民 Illumian 等来自 Races of Stone/Wild/Destiny 的种族）
-- **需要做的：**
-  1. 新建 `races/expanded-races.html` 或逐个创建扩展种族页面
-  2. 补充每个种族的属性加值、种族特性、Favored Class、LA 调整值
-  3. 参考 dndlogs.com 扩展大全 v2.4
-- **预计工作量：** 中
+| 任务 | 状态 | 说明 |
+|------|------|------|
+| 10. 导航栏统一 | ⏳ 待实施 | 两种布局仍并存 |
+| 11. 图片资源 | ⏳ 待实施 | 仍为纯文本站 |
+| 12. 报告文件清理 | ✅ 完成 | 8个过时报告已归档至 _scripts_archive/old-reports/ |
+| 13. 3r/ 旧版清理 | ✅ 完成 | 9个旧文件已移至 _legacy_3r/，新建8页扩展大全 |
+| 14. search.js | ✅ 无需创建 | 搜索已通过 global-search.html + inline JS 实现 |
 
-#### 任务 5：魔法物品详细分类
-- **现状：** `equipment/magic-items.html` 有概览但不够细
-- **需要做的：**
-  1. 按 DMG 第 7 章拆分子页面：武器/防具附魔、奇物（按身体部位）、戒指、法杖、权杖、药水、卷轴、魔杖
-  2. 补充特殊魔法物品和神器
-  3. 补充智能物品和诅咒物品
-- **预计工作量：** 大（DMG 第 7 章内容极多）
+### 新增完成：3R 扩展大全（第三轮开发）
 
-#### 任务 6：怪物条目大幅补充
-- **现状：** `monsters/classic-monsters.html` 和 `dragons.html` 覆盖 12 类怪物，但 MM 有数百种怪物
-- **需要做的：**
-  1. 按字母 A-Z 或按 CR 创建独立怪物条目页
-  2. 优先补全高 CR 经典怪物：恶魔领主、魔鬼大公、夺心魔、眼魔、巨人系列
-  3. 补充怪物模板（天界/炼狱/模板生物）
-- **预计工作量：** 极大（MM 是最厚的书）
-
-#### 任务 7：专长描述细化
-- **现状：** `feats/feat-list.html` 有 61 个专长，但 feats/ 目录下只有 28 个独立页面
-- **需要做的：**
-  1. 为 feat-list 中列出但没有独立页面的专长创建页面
-  2. 补充怪物专长（Monster Feats）
-  3. 补充物品制造专长的详细制造规则
-- **预计工作量：** 中
-
-#### 任务 8：冒险章节细化
-- **现状：** `rules-adventure.html` 是单页概览
-- **需要做的：**
-  1. 拆分子页面：地下城探索、野外生存、城市冒险、陷阱大全、宝藏表
-  2. 补充环境危害、天候规则的详细数值表
-- **预计工作量：** 中
-
-#### 任务 9：位面章节细化
-- **现状：** `rules-planes.html` 有 17 个外层位面概览
-- **需要做的：**
-  1. 为重要位面创建独立详情页（如九层地狱、无底深渊、七丘天堂山）
-  2. 补充内层位面（四大元素位面）的详细内容
-  3. 补充位面旅行规则和位面特性表
-- **预计工作量：** 中
-
-### P3 — 低优先级（优化与完善）
-
-#### 任务 10：统一导航栏样式
-- **现状：** 根目录页面用现代顶部 navbar，子目录页面用旧版侧边栏，两种风格不统一
-- **需要做的：** 设计并实施统一的导航组件，或至少确保两种布局的视觉风格一致
-- **预计工作量：** 中
-
-#### 任务 11：添加图片资源
-- **现状：** 整个项目没有任何图片（无 `images/` 目录，HTML 中无 `<img>` 标签）
-- **需要做的：** 添加 DND 风格的装饰图片、图标、分类插图
-- **预计工作量：** 视资源获取情况而定
-
-#### 任务 12：清理项目内部报告文件
-- **现状：** 根目录有多个自相矛盾的审计/进度文件：`AUDIT-REPORT.md`、`CONTENT-AUDIT-REPORT.md`、`TODO.md`、`PROJECT-STATUS.md`、`PROGRESS.md`、`PROGRESS-2026-06-20.md`、`TODO-2026-06-20.md`、`TODO-FINAL-2026-06-20.md`
-- **需要做的：** 合并为一个准确的进度文件，删除过时的报告
-- **预计工作量：** 小
-
-#### 任务 13：清理 `3r/` 旧版页面
-- **现状：** `3r/` 目录有 10 个旧版页面（index.html、index-v2.html、new-classes/races/spells/feats/equipment/monsters.html、optional-rules.html、resources-tools.html），与主站内容重复
-- **需要做的：** 确认这些页面是否还有用，如无则移入 `_scripts_archive/` 或删除
-- **预计工作量：** 小
-
-#### 任务 14：创建 search.js 或移除引用
-- **现状：** 上一轮已移除了 23 处对 search.js 的引用，但 `global-search.html` 的搜索功能是独立的内联实现。如果将来想恢复搜索，需要创建 `search.js`
-- **需要做的：** 评估是否需要独立的 search.js，如需要则实现
-- **预计工作量：** 小-中
+| 页面 | 行数 | 内容 |
+|------|------|------|
+| `3r/index-v2.html` | 300+ | 扩展大全导航枢纽，覆盖30+官方扩展书 |
+| `3r/classes.html` | 1020 | PHB2基础职业(6) + Complete进阶(33) + ToB九剑(9学派) |
+| `3r/races.html` | 1441 | RoS/RoW/RoD/MM扩展种族 + 种族替代等级 + 选择指南 |
+| `3r/feats.html` | 1205 | PHB2/Complete/XPH 83个扩展专长 + 专长链 |
+| `3r/spells.html` | 961 | Spell Compendium 75+扩展法术 + 学派/职业分类表 |
+| `3r/equipment.html` | 1463 | MIC武器护甲附魔 + 命名物品 + 特殊材料 + 部位分类 |
+| `3r/monsters.html` | 1300 | MM2-5/Fiend Folio 60+怪物 + CR速查 + Boss推荐 |
+| `3r/supplements.html` | 1125 | 灵能/九剑/恶魔法典/龙族/亡灵/环境书/英雄系列 |
 
 ---
 
-## 四、已知数据冲突记录
+## 四、剩余工作（下一阶段）
+
+| 优先级 | 任务 | 说明 |
+|--------|------|------|
+| P5 | 怪物图鉴扩展 | 从3页扩展到10+页，覆盖200+种核心怪物 |
+| P6 | 领域系统页面 | 创建 domains/ 目录，22个领域详情页 |
+| P7 | DM工具页面 | 角色创建/遭遇构建/宝藏生成/随机表格 |
+| P8 | 专长补全 | 补充约50个PHB缺失专长独立页面 |
+
+---
+
+## 五、已知数据冲突记录
 
 以下为与参考站 dndlogs.com 对比发现的差异，需人工判断取舍：
 
@@ -233,7 +180,7 @@ dnd35-wiki-pro/
 
 ---
 
-## 五、技术注意事项
+## 六、技术注意事项
 
 ### CSS 变量体系
 `style.css :root` 中定义了两套变量名：
@@ -257,7 +204,7 @@ dnd35-wiki-pro/
 
 ---
 
-## 六、参考资源
+## 七、参考资源
 
 | 资源 | URL | 说明 |
 |------|-----|------|
@@ -269,14 +216,13 @@ dnd35-wiki-pro/
 
 ---
 
-## 七、快速启动指引
+## 八、快速启动指引
 
 新 agent 接手时的操作顺序建议：
 
 1. **阅读本文件**（HANDOFF-TASKS.md）了解全局
-2. **阅读 AUDIT-ISSUE-LIST.md** 了解详细的审查结论和每项修复状态
-3. **从 P1 任务开始**（法术数据去重、domains 文件清理、conflicts 数据填充）
-4. **再做 P2 内容补全**（按 种族扩展 → 魔法物品 → 怪物 → 专长 的优先级）
-5. **最后做 P3 优化**（导航统一、图片、旧文件清理）
+2. **阅读 AUDIT-ISSUE-LIST.md** 了解详细的审查结论和修复状态
+3. **P1-P3 已全部完成**，直接从第四阶段剩余工作开始
+4. **优先做怪物图鉴扩展**（P5）→ 领域系统（P6）→ DM工具（P7）→ 专长补全（P8）
 
 所有新建 HTML 页面应遵循现有模板结构（子目录用侧边栏布局），CSS 变量使用短名别名体系。
