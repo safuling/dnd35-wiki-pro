@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扩展怪物大全 - 3R扩展大全 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* --- 怪物页面专用样式 --- */
+  .toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px 28px;
+    margin: 24px 0 32px;
+    box-shadow: var(--shadow-soft);
+  }
+  .toc h2 { font-size: 18px; color: var(--text-heading); margin-bottom: 12px; border-bottom: 2px solid var(--accent-gold); padding-bottom: 6px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 5px; font-size: 14px; }
+  .toc a { color: var(--text-link); }
+  .toc a:hover { color: var(--text-link-hover); }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-heading);
+    border-left: 5px solid var(--accent-gold);
+    padding-left: 14px;
+    margin: 36px 0 18px;
+  }
+  .section-subtitle {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin: 24px 0 12px;
+    border-bottom: 1px dashed var(--border-light);
+    padding-bottom: 6px;
+  }
+
+  .monster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 18px;
+    margin: 20px 0;
+  }
+  .monster-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .monster-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+  .monster-card h4 { margin: 0 0 4px; color: var(--text-heading); font-size: 16px; }
+  .monster-card .mon-en { font-size: 12px; color: var(--text-subtle); margin-bottom: 8px; }
+  .monster-card .mon-stats { font-size: 13px; line-height: 1.7; }
+  .monster-card .mon-stats strong { color: var(--text-heading); }
+  .monster-card .mon-desc { font-size: 13px; margin-top: 8px; line-height: 1.5; color: #555; border-top: 1px dashed var(--border-light); padding-top: 8px; }
+
+  .cr-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .cr-low    { background: #27ae60; }
+  .cr-mid    { background: #d4a017; color: #1a1a1a; }
+  .cr-high   { background: #c0392b; }
+  .cr-epic   { background: #8e44ad; }
+
+  .source-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 4px;
+  }
+  .source-mm2 { background: #2ecc71; }
+  .source-mm3 { background: #3498db; }
+  .source-mm4 { background: #e67e22; }
+  .source-mm5 { background: #9b59b6; }
+  .source-ff  { background: #e74c3c; }
+
+  table.ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 28px;
+    font-size: 13px;
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  table.ref-table thead th {
+    background: var(--accent-gold);
+    color: #1a1a1a;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  table.ref-table tbody tr { background: var(--bg-card); }
+  table.ref-table tbody tr:nth-child(even) { background: var(--bg-table-stripe); }
+  table.ref-table tbody tr:hover { background: #f0e8d4; }
+  table.ref-table td { padding: 8px 12px; border-bottom: 1px solid var(--border-light); }
+
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .type-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow-soft);
+  }
+  .type-card h4 { margin: 0 0 8px; color: var(--accent-purple); font-size: 15px; }
+  .type-card ul { padding-left: 18px; font-size: 13px; line-height: 1.8; }
+
+  .boss-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+    margin: 20px 0;
+  }
+  .boss-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, #f0e0c8 100%);
+    border: 2px solid var(--accent-gold);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s;
+  }
+  .boss-card:hover { transform: translateY(-4px); }
+  .boss-card h4 { margin: 0 0 6px; color: var(--accent-red); font-size: 16px; }
+  .boss-card .boss-cr { font-size: 24px; font-weight: 800; color: var(--accent-gold); float: right; margin: -4px 0 0 12px; }
+  .boss-card .boss-info { font-size: 13px; line-height: 1.6; }
+  .boss-card .boss-reason { font-size: 12px; color: var(--text-subtle); margin-top: 10px; font-style: italic; border-top: 1px dashed var(--border-light); padding-top: 8px; }
+
+  .intro-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-soft);
+    line-height: 1.8;
+  }
+  .intro-box p { margin-bottom: 10px; }
+  .intro-box p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" class="active" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">3R 扩展大全</div>
+    <a href="index-v2.html">总览</a>
+    <a href="classes.html">扩展职业</a>
+    <a href="races.html">扩展种族</a>
+    <a href="feats.html">扩展专长</a>
+    <a href="spells.html">扩展法术</a>
+    <a href="equipment.html">扩展装备</a>
+    <a href="monsters.html" class="active">扩展怪物</a>
+    <a href="supplements.html">专题扩展</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">主站</div>
+    <a href="../index.html">首页</a>
+    <a href="../monsters/intro.html">核心怪物</a>
+    <a href="../rules.html">核心规则</a>
+  </div>
+</aside>
+
+<main class="main-content">
+
+<h1>扩展怪物大全 (Expanded Monsters)</h1>
+
+<div class="intro-box">
+  <p>D&D 3.5e 的官方扩展书籍为 DM 提供了数量庞大的新怪物，从 <strong>Monster Manual II</strong> 的经典回归到 <strong>Monster Manual III-V</strong> 的全新设计，再到 <strong>Fiend Folio</strong> 的诡异外来者——本页收录了各书中最具代表性和实战价值的怪物条目，帮助你快速查找并放入你的战役。</p>
+  <p>每张怪物卡片包含 <strong>挑战等级 (CR)</strong>、<strong>怪物类型</strong>、<strong>生命骰 (HD)</strong>、<strong>特殊攻击/特性</strong>、<strong>栖息环境</strong> 及 <strong>宝藏</strong> 等关键信息。底部还附有按 CR 速查表、按类型分类及 Boss 级怪物推荐。</p>
+</div>
+
+<!-- ========== 目录 ========== -->
+<div class="toc">
+  <h2>目录</h2>
+  <ol>
+    <li><a href="#mm2">Monster Manual II 精选怪物</a></li>
+    <li><a href="#mm3">Monster Manual III 精选怪物</a></li>
+    <li><a href="#mm4">Monster Manual IV 精选怪物</a></li>
+    <li><a href="#mm5">Monster Manual V 精选怪物</a></li>
+    <li><a href="#ff">Fiend Folio 精选怪物</a></li>
+    <li><a href="#cr-table">按 CR（挑战等级）分类速查表</a></li>
+    <li><a href="#by-type">按怪物类型分类</a></li>
+    <li><a href="#boss">Boss 级怪物推荐</a></li>
+  </ol>
+</div>
+
+<!-- ================================================================ -->
+<!--  SECTION 1: Monster Manual II                                    -->
+<!-- ================================================================ -->
+<h2 class="section-title" id="mm2">1. Monster Manual II 精选怪物 <span class="source-badge source-mm2">MM2</span></h2>
+
+<div class="monster-grid">
+
+  <div class="monster-card">
+    <h4>死亡凝视者 (Death Tyrant Beholder) <span class="cr-badge cr-high">CR 14</span></h4>
+    <div class="mon-en">中型异怪 (Aberration)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 20d8+100 (190 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 眼棱射线（10 条射线，含死亡一指、石化、解离等）<br>
+      <strong>特殊特性:</strong> 飞行、全域视野、反魔法锥、法术免疫<br>
+      <strong>栖息环境:</strong> 幽暗地域 (Underdark)<br>
+      <strong>宝藏:</strong> 标准双倍
+    </div>
+    <div class="mon-desc">眼魔的亡灵变体。保留了大部分眼棱射线能力，反魔法锥依然生效。适合作为幽暗地域的中高等级 Boss。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>龙巫妖 (Dracolich) <span class="cr-badge cr-epic">CR  varies</span></h4>
+    <div class="mon-en">超大型不死生物 (Undead)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 视基础龙种而定（通常 25d12+100 以上）<br>
+      <strong>体型:</strong> 超大型至巨型<br>
+      <strong>特殊攻击:</strong> 龙息（保留原始类型）、恐惧光环、麻痹之爪<br>
+      <strong>特殊特性:</strong> 不死生物特性、伤害减免 15/钝击与魔法、法术免疫、免疫睡眠/麻痹/毒素<br>
+      <strong>栖息环境:</strong> 任何（通常龙巢）<br>
+      <strong>宝藏:</strong> 三倍标准
+    </div>
+    <div class="mon-desc">由太古龙自愿转化为不死生物的恐怖存在。需通过 Cult of the Dragon 仪式将灵魂绑定于命匣 (philactery)。是 D&D 中最经典的 Boss 级怪物之一。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>火巨灵 (Efreeti) <span class="cr-badge cr-mid">CR 8</span></h4>
+    <div class="mon-en">大型异界生物 (Outsider, Fire, Extraplanar)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 10d8+50 (95 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 火系掌握、类法术能力（火墙术、永恒之焰、火焰护盾等）、召唤巨灵<br>
+      <strong>特殊特性:</strong> 火焰免疫、寒冷易伤、伤害减免 10/魔法、黑暗视觉 60 呎<br>
+      <strong>栖息环境:</strong> 火元素位面 (Plane of Fire)、 Brass City<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">来自火元素位面的巨灵，性行暴虐而狡诈。常被召唤到物质位面为法师效力。擅长火焰系魔法与近战。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>弗米蚁族 (Formian) <span class="cr-badge cr-low">CR 1-15</span></h4>
+    <div class="mon-en">多种体型异界生物 (Outsider, Lawful, Extraplanar)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> Worker 1d8 / Warrior 3d8 / Taskmaster 5d8 / Myrmarch 12d8 / Queen 30d8<br>
+      <strong>体型:</strong> 中型至超大型<br>
+      <strong>特殊攻击:</strong> 毒素螫刺（Warrior/Myrmarch）、类法术能力（Myrmarch/Queen）<br>
+      <strong>特殊特性:</strong> 蜂巢思维 (Hive Mind)、伤害减免、心灵感应<br>
+      <strong>栖息环境:</strong> 机械境 (Mechanus)<br>
+      <strong>宝藏:</strong> 标准至三倍
+    </div>
+    <div class="mon-desc">秩序阵营的蚂蚁状异界生物，拥有严格的阶级制度。蜂巢思维使整个族群共享意识。从低级的工蚁到拥有心灵法术的蚁后，CR 跨度极大。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>石魔像 (Stone Golem) <span class="cr-badge cr-mid">CR 11</span></h4>
+    <div class="mon-en">大型构装体 (Construct)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 22d10+30 (151 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 减速 (Slow)、猛击<br>
+      <strong>特殊特性:</strong> 构装体特性、伤害减免 10/精金、黑暗视觉、免疫魔法（有限）<br>
+      <strong>栖息环境:</strong> 任何<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">经典构装体守卫。MM2 中还收录了铁魔像 (Iron Golem, CR 15)、黏土魔像变体和力墙魔像等高级版本。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>隐形追踪者 (Invisible Stalker) <span class="cr-badge cr-mid">CR 7</span></h4>
+    <div class="mon-en">大型元素生物 (Elemental, Air, Extraplanar)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 8d8+16 (52 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 天生隐形<br>
+      <strong>特殊特性:</strong> 持续隐形（不会因攻击而现形）、飞行 50 呎（完美）、追踪 (Track)、黑暗视觉 60 呎<br>
+      <strong>栖息环境:</strong> 气元素位面<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">被召唤后极度怨恨的元素生物，会恶意曲解命令。天生的持续隐形使其成为完美的刺客和侦察者。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>月精灵 (Lythari) <span class="cr-badge cr-low">CR 2</span></h4>
+    <div class="mon-en">中型类人生物 (Humanoid, Shapechanger)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 2d8+2 (11 hp)<br>
+      <strong>体型:</strong> 中型（精灵形态）/ 中型（狼形态）<br>
+      <strong>特殊攻击:</strong> 咬啮（狼形态）<br>
+      <strong>特殊特性:</strong> 变形为狼、昏暗视觉、嗅觉灵敏、类法术能力（侦测思想）<br>
+      <strong>栖息环境:</strong> 温带森林<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">善良的变形精灵族裔，能自由变为银灰色巨狼。与狼人不同，月精灵保持完全理智且不会传染兽化诅咒。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>蘑菇人 (Myconid) <span class="cr-badge cr-low">CR 1/4 - 6</span></h4>
+    <div class="mon-en">中型植物生物 (Plant)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 按菌龄 1d8 (Sprout) 至 10d8+30 (Sovereign)<br>
+      <strong>体型:</strong> 小型至大型<br>
+      <strong>特殊攻击:</strong> 孢子云（眩晕、毒、麻痹、致幻等不同类型）<br>
+      <strong>特殊特性:</strong> 植物特性、黑暗视觉 60 呎、心灵感应（同族）<br>
+      <strong>栖息环境:</strong> 幽暗地域<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">幽暗地域中安静而神秘的蘑菇族裔。通过孢子进行交流和繁殖。菌王 (Sovereign) 能释放复活孢子将尸体转化为忠诚的孢子僵尸。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>新吉 (Neogi) <span class="cr-badge cr-mid">CR 5</span></h4>
+    <div class="mon-en">小型异怪 (Aberration)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 5d8+10 (32 hp)<br>
+      <strong>体型:</strong> 小型（蜘蛛状身体 + 蛇颈）<br>
+      <strong>特殊攻击:</strong> 毒素咬啮、心灵支配 (Domination)<br>
+      <strong>特殊特性:</strong> 心灵感应 100 呎、黑暗视觉 60 呎、攀爬 30 呎<br>
+      <strong>栖息环境:</strong> 幽暗地域 / 太空船<br>
+      <strong>宝藏:</strong> 双倍标准
+    </div>
+    <div class="mon-desc">贪婪的蜘蛛状异怪，以奴役其他生物为乐。常驾驭巨大的太空蠕虫 (Spelljammer) 在位面间航行，进行奴隶贸易。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>绳魔 (Roper) <span class="cr-badge cr-mid">CR 12</span></h4>
+    <div class="mon-en">大型异怪 (Aberration)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 12d8+72 (126 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 触手绞缠、力量吸取 (Strength Drain)、攫取<br>
+      <strong>特殊特性:</strong> 伪装为石笋、全域视野、法术抗力 22、伤害减免 10/魔法<br>
+      <strong>栖息环境:</strong> 幽暗地域<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">伪装成石笋的伏击猎手，用六条触手抓住猎物并吸取其力量。极其阴险且难以对付的地下遭遇战。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>铁魔像 (Iron Golem) <span class="cr-badge cr-high">CR 15</span></h4>
+    <div class="mon-en">大型构装体 (Construct)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 28d10+40 (194 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 毒气吐息 (Poisonous Breath)、猛击<br>
+      <strong>特殊特性:</strong> 构装体特性、伤害减免 15/精金与钝击、法术免疫（火系治愈）<br>
+      <strong>栖息环境:</strong> 任何<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">构装体中的重型单位。火系魔法反而为其治疗。毒气吐息可在大范围内造成体质伤害，是守宝库的理想选择。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>幻影刺客 (Phasm) <span class="cr-badge cr-mid">CR 10</span></h4>
+    <div class="mon-en">大型异怪 (Aberration, Shapechanger)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 15d8+60 (127 hp)<br>
+      <strong>体型:</strong> 大型（自然形态为不定形团块）<br>
+      <strong>特殊攻击:</strong> 伪装偷袭<br>
+      <strong>特殊特性:</strong> 变形为任何中型至大型生物、黑暗视觉 60 呎、伤害减免 15/魔法、法术抗力 22<br>
+      <strong>栖息环境:</strong> 幽暗地域<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">不定形的变形猎手，能完美模仿任何生物的外貌。适合用作间谍阴谋类剧情的关键 NPC。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>水巨灵 (Marid) <span class="cr-badge cr-mid">CR 9</span></h4>
+    <div class="mon-en">大型异界生物 (Outsider, Water, Extraplanar)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 10d8+70 (115 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 水系掌握、高压水柱、类法术能力（控制水位、造水等）<br>
+      <strong>特殊特性:</strong> 水系亚种特性、伤害减免 10/魔法、黑暗视觉、快速治愈 10<br>
+      <strong>栖息环境:</strong> 水元素位面<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">巨灵中最傲慢的一族，自视极高。拥有强大的水系魔法和物理力量，难以被说服为凡人效力。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>棱晶飞龙 (Crystal Dragon) <span class="cr-badge cr-mid">CR  varies</span></h4>
+    <div class="mon-en">龙类 (Dragon, Psionic)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 按年龄 7d12+7 至 40d12+320<br>
+      <strong>体型:</strong> 微小至巨型<br>
+      <strong>特殊攻击:</strong> 棱晶吐息 (Crystal Breath)、灵能能力、恐惧灵气<br>
+      <strong>特殊特性:</strong> 龙类免疫、心灵感应、盲感、伤害减免<br>
+      <strong>栖息环境:</strong> 幽暗地域 / 水晶洞穴<br>
+      <strong>宝藏:</strong> 三倍标准
+    </div>
+    <div class="mon-desc">宝石龙中最常见的种类，拥有灵能和龙息双重攻击。性格好奇但领地意识强。可发展为完整宝石龙系列 (Amethyst, Crystal, Emerald, Sapphire, Topaz)。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>死亡骑士 (Death Knight) <span class="cr-badge cr-high">CR 15</span></h4>
+    <div class="mon-en">中型不死生物 (Undead)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 20d12+100 (230 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 恐惧光环、不死之力、破敌斩 (Smite)、火焰剑<br>
+      <strong>特殊特性:</strong> 不死生物特性、伤害减免 20/善良、法术抗力 32、免疫能量 20（火/暗）<br>
+      <strong>栖息环境:</strong> 任何<br>
+      <strong>宝藏:</strong> 双倍标准
+    </div>
+    <div class="mon-desc">堕落骑士的不死形态，保留了完整的战斗技巧并叠加了亡灵之力。通常指挥亡灵大军，是经典的中高等级反派。</div>
+  </div>
+
+</div>
+
+<!-- ================================================================ -->
+<!--  SECTION 2: Monster Manual III                                   -->
+<!-- ================================================================ -->
+<h2 class="section-title" id="mm3">2. Monster Manual III 精选怪物 <span class="source-badge source-mm3">MM3</span></h2>
+
+<div class="monster-grid">
+
+  <div class="monster-card">
+    <h4>灵吸怪长老 (Aboleth Mage) <span class="cr-badge cr-high">CR 17</span></h4>
+    <div class="mon-en">超大型异怪 (Aberration, Aquatic)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 12d8+72 (灵吸怪) + 10 级法师<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 黏液 (Slime)、触手拍击、法师法术（9 环奥术）<br>
+      <strong>特殊特性:</strong> 水生、心灵感应、变形、记忆吸取、两栖<br>
+      <strong>栖息环境:</strong> 水下废墟 / 幽暗地域<br>
+      <strong>宝藏:</strong> 三倍标准
+    </div>
+    <div class="mon-desc">在灵吸怪基础上叠加法师职业等级的强力变体。同时拥有心灵能力和高阶奥术，是最危险的水下敌人之一。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>血猎犬 (Bloodhound) <span class="cr-badge cr-low">CR 4</span></h4>
+    <div class="mon-en">中型魔法兽 (Magical Beast)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 6d10+18 (51 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 嗅血追踪、撕咬、恐惧嗥叫<br>
+      <strong>特殊特性:</strong> 灵敏嗅觉、黑暗视觉 60 呎、追踪 (Track)、血液感知 120 呎<br>
+      <strong>栖息环境:</strong> 任何<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">能嗅到一英里内血液气味的恐怖猎犬。常被邪恶势力用作追踪者和猎手。群体行动时尤其致命。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>迦诺洛斯 (Canoloth) <span class="cr-badge cr-mid">CR 8</span></h4>
+    <div class="mon-en">中型异界生物 (Outsider, Evil, Yugoloth)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 12d8+48 (102 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 恐惧灵气、类法术能力（高等传送术、幽影咒术等）、猛击<br>
+      <strong>特殊特性:</strong> 传送、黑暗视觉、伤害减免 10/善良、法术抗力 18、免疫酸/毒<br>
+      <strong>栖息环境:</strong> 灰荒野 (Gray Wastes)<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">尤格洛斯 (Yugoloth) 族群中的精英战士与间谍。能随意传送，极难被杀死。常受雇于恶魔与魔鬼之间的战争。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>链魔 (Chain Devil / Kyton) <span class="cr-badge cr-mid">CR 6</span></h4>
+    <div class="mon-en">中型异界生物 (Outsider, Evil, Lawful)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 8d8+24 (60 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 链锁 (Animate Chains)、恐惧凝视、猛击<br>
+      <strong>特殊特性:</strong> 再生 5（善良武器/神圣法术）、伤害减免 5/银、黑暗视觉 60 呎<br>
+      <strong>栖息环境:</strong> 巴托地狱 (Baator)<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">以铁链缠绕身体的魔鬼，能操纵 60 呎内的铁链作为武器。折磨受害者是其最大乐趣，常担任地狱的狱卒。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>巴布雷兹 (Babau Demon) <span class="cr-badge cr-mid">CR 6</span></h4>
+    <div class="mon-en">中型异界生物 (Outsider, Chaotic, Evil, Demon)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 8d8+32 (68 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 酸性血液、偷袭 +2d6、类法术能力（高等幻影、黑暗术等）<br>
+      <strong>特殊特性:</strong> 伤害减免 10/冷铁与善良、法术抗力 17、黑暗视觉、召唤恶魔<br>
+      <strong>栖息环境:</strong> 深渊 (Abyss)<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">深渊中的刺客型恶魔，擅长偷袭和腐蚀酸液。攻击其身体的近战武器会受到酸性损伤。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>恐龙 - 霸王龙 (Tyrannosaurus) <span class="cr-badge cr-mid">CR 8</span></h4>
+    <div class="mon-en">超大型动物 (Animal)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 18d8+99 (180 hp)<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 吞噬 (Swallow Whole)、猛咬 3d6+13<br>
+      <strong>特殊特性:</strong> 灵敏嗅觉、昏暗视觉<br>
+      <strong>栖息环境:</strong> 热带丛林 / 沼泽<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">MM3 首次将恐龙系统化纳入 3.5e 规则。霸王龙可一口吞噬中型猎物，适合作为荒野冒险的标志性遭遇。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>蛮嚎兽 (Howler) <span class="cr-badge cr-low">CR 3</span></h4>
+    <div class="mon-en">大型魔法兽 (Magical Beast)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 7d10+14 (52 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 棘刺射击 (Quill)、嚎叫 (Howl)<br>
+      <strong>特殊特性:</strong> 黑暗视觉 60 呎<br>
+      <strong>栖息环境:</strong> 深渊<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">深渊中的犬状兽类，持续的嚎叫声会令听者受到感知伤害。常被恶魔用作看门犬和坐骑。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>幽冥 (Gloom) <span class="cr-badge cr-low">CR 4</span></h4>
+    <div class="mon-en">大型不死生物 (Undead, Incorporeal)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 8d12+16 (68 hp)<br>
+      <strong>体型:</strong> 大型（虚体）<br>
+      <strong>特殊攻击:</strong> 恐惧灵气、虚体之触（负能量吸取）<br>
+      <strong>特殊特性:</strong> 虚体、不死生物特性、黑暗视觉 60 呎、飞行 40 呎（完美）<br>
+      <strong>栖息环境:</strong> 任何（夜晚 / 阴暗处）<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">由多个亡灵融合而成的阴暗不死生物。所到之处光明熄灭，活物感受到深入骨髓的恐惧和寒冷。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>狂野嗥兽 (Feral Yowler) <span class="cr-badge cr-low">CR 4</span></h4>
+    <div class="mon-en">大型魔法兽 (Magical Beast)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 5d10+15 (42 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 撕裂 (Rend)、咆哮、绊摔<br>
+      <strong>特殊特性:</strong> 昏暗视觉、灵敏嗅觉、黑暗视觉 60 呎<br>
+      <strong>栖息环境:</strong> 温带和热带平原<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">体型巨大的凶猛犬类，成群出没于荒野。嗥叫声在夜间可传数英里，既是危险的猎食者也是出色的坐骑候选。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>影魔 (Shadow Demon) <span class="cr-badge cr-mid">CR 7</span></h4>
+    <div class="mon-en">中型异界生物 (Outsider, Chaotic, Evil)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 7d8+28 (59 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 力量吸取 (Shadow Striking)、类法术能力（幽影咒术、高等幻影等）<br>
+      <strong>特殊特性:</strong> 虚体（部分时间）、伤害减免 10/魔法、法术抗力 17、召唤恶魔<br>
+      <strong>栖息环境:</strong> 深渊<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">介于虚体和实体之间的恶魔刺客。在黑暗中力量倍增，其攻击能直接吸取受害者的力量属性。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>碎骨魔 (Bone Devil / Osyluth) <span class="cr-badge cr-mid">CR 9</span></h4>
+    <div class="mon-en">大型异界生物 (Outsider, Evil, Lawful)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 12d8+48 (102 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 毒刺 (Stinger)、恐惧灵气、类法术能力（高等隐形、冰墙术等）<br>
+      <strong>特殊特性:</strong> 伤害减免 10/善良、法术抗力 22、黑暗视觉、召唤魔鬼<br>
+      <strong>栖息环境:</strong> 巴托地狱第五层<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">地狱中的执法者和审判官。骷髅般的外表下是极高的智力和狡诈。毒刺可造成力量伤害，常统率下级魔鬼。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>深渊蛛后 (Retriever) <span class="cr-badge cr-high">CR 11</span></h4>
+    <div class="mon-en">超大型构装体 (Construct, Extraplanar)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 20d10+100 (210 hp)<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 眼棱射线（寒冰锥、解离术、石化、死亡一指）、攫取<br>
+      <strong>特殊特性:</strong> 构装体特性、伤害减免 20/+2、黑暗视觉、真知术、定位目标<br>
+      <strong>栖息环境:</strong> 深渊<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">塔纳格瑞 (Tanar'ri) 领主打造的蜘蛛型构装猎手。专门被派去追捕逃跑的奴隶和叛徒，拥有真知术使其几乎无法被躲藏。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>噬魂魔 (Soul Eater) <span class="cr-badge cr-mid">CR 8</span></h4>
+    <div class="mon-en">中型不死生物 (Undead, Incorporeal)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 12d12+3 (81 hp)<br>
+      <strong>体型:</strong> 中型（虚体）<br>
+      <strong>特殊攻击:</strong> 灵魂吞噬 (Consume Soul)、虚体之触、恐惧灵气<br>
+      <strong>特殊特性:</strong> 虚体、不死生物特性、黑暗视觉、飞行 40 呎<br>
+      <strong>栖息环境:</strong> 任何<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">以灵魂为食的恐怖不死生物。被吞噬灵魂的受害者无法被常规复活法术恢复，需要完全复生术 (True Resurrection)。</div>
+  </div>
+
+
+  <div class="monster-card">
+    <h4>风暴巨人变体 (Storm Giant) <span class="cr-badge cr-high">CR 13</span></h4>
+    <div class="mon-en">超大型巨人 (Giant)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 25d8+125 (237 hp)<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 投石、闪电投掷 (Lightning)、雷声 (Thunderclap)<br>
+      <strong>特殊特性:</strong> 电系免疫、水生（两栖）、法术抗力 20、类法术能力（操纵水位、召唤闪电等）<br>
+      <strong>栖息环境:</strong> 温带/热带海洋与山脉<br>
+      <strong>宝藏:</strong> 双倍标准
+    </div>
+    <div class="mon-desc">巨人之巅，善良阵营的风暴守护者。MM3 中增加了其水下生活和闪电操控的详细规则。</div>
+  </div>
+
+</div>
+
+<!-- ================================================================ -->
+<!--  SECTION 3: Monster Manual IV                                    -->
+<!-- ================================================================ -->
+<h2 class="section-title" id="mm4">3. Monster Manual IV 精选怪物 <span class="source-badge source-mm4">MM4</span></h2>
+
+<div class="monster-grid">
+
+  <div class="monster-card">
+    <h4>碎骨魔鬼·高阶 (Bone Devil, Greater) <span class="cr-badge cr-high">CR 15</span></h4>
+    <div class="mon-en">超大型异界生物 (Outsider, Evil, Lawful)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 18d8+90 (171 hp)<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 双重毒刺、恐惧灵气、类法术能力（永恒黑暗、冰墙等）<br>
+      <strong>特殊特性:</strong> 伤害减免 15/善良、法术抗力 27、再生 5、黑暗视觉<br>
+      <strong>栖息环境:</strong> 巴托地狱第五层<br>
+      <strong>宝藏:</strong> 双倍标准
+    </div>
+    <div class="mon-desc">碎骨魔鬼的高阶版本，体型更大、力量更强，且拥有再生能力。是地狱中仅次于深狱炼魔的高阶指挥官。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>龙牛怪 (Dracotaur) <span class="cr-badge cr-low">CR 3</span></h4>
+    <div class="mon-en">大型龙类 (Dragon)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 4d12+12 (38 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 龙息（可变类型，火焰/寒冷/酸/电）、猛击、尾扫<br>
+      <strong>特殊特性:</strong> 黑暗视觉 60 呎、昏暗视觉、龙类免疫（睡眠/麻痹）<br>
+      <strong>栖息环境:</strong> 丘陵 / 山地<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">牛头龙身的混血龙类。MM4 也提供了龙牛怪作为 PC 种族使用的 LA +3 规则。适合做龙脉术士或野蛮人。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>秘术巨人 (Eldritch Giant) <span class="cr-badge cr-epic">CR 20</span></h4>
+    <div class="mon-en">超大型巨人 (Giant)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 30d8+180 (315 hp)<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 投石、奥术施法（等同 15 级法师）、类法术能力<br>
+      <strong>特殊特性:</strong> 法术抗力 30、伤害减免 15/精金、黑暗视觉、再生 10<br>
+      <strong>栖息环境:</strong> 任何<br>
+      <strong>宝藏:</strong> 三倍标准
+    </div>
+    <div class="mon-desc">掌握高阶奥术的远古巨人，是 MM4 中最强大的巨人之一。兼具巨人的体魄和法师的智识，适合作为战役的终极反派。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>沙漠守护者 (Harssaf) <span class="cr-badge cr-low">CR 3</span></h4>
+    <div class="mon-en">中型类人生物 (Humanoid)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 3d8+6 (19 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 沙暴之握 (Sand Pulse)、猛击<br>
+      <strong>特殊特性:</strong> 沙中潜行 (Burrow)、沙暴免疫、黑暗视觉 60 呎、类法术能力（造沙术）<br>
+      <strong>栖息环境:</strong> 沙漠<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">沙漠中的土著守护者，能在沙中自如穿行。对入侵沙漠的外来者极为敌视，常以部落形式组织防御。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>瘟疫蚁 (Plague Ant Swarm) <span class="cr-badge cr-low">CR 4</span></h4>
+    <div class="mon-en">超微形虫群 (Vermin, Swarm)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 8d8+24 (60 hp)<br>
+      <strong>体型:</strong> 超微形（虫群占据 10×10 呎）<br>
+      <strong>特殊攻击:</strong> 虫群伤害 3d6+瘟疫疾病<br>
+      <strong>特殊特性:</strong> 虫群特性、伤害减免 10/—、暗视 60 呎、嗅觉、对武器免疫<br>
+      <strong>栖息环境:</strong> 热带 / 亚热带<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">携带致命瘟疫的蚁群，经过之处留下疾病与死亡。虫群对所有武器伤害有减免，只有区域法术能有效清除。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>水龙兽 (Seryulin) <span class="cr-badge cr-mid">CR 6</span></h4>
+    <div class="mon-en">大型魔法兽 (Magical Beast, Aquatic)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 8d10+32 (76 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 寒冰吐息 (Ice Breath)、撕咬、尾扫<br>
+      <strong>特殊特性:</strong> 水生、两栖、黑暗视觉 60 呎、寒冰免疫<br>
+      <strong>栖息环境:</strong> 寒冷水域<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">蛇颈龙般的水生魔法兽，能喷射锥形寒冰。在北方寒冷海域出没，攻击船只和沿海定居点。</div>
+  </div>
+
+
+  <div class="monster-card">
+    <h4>骨魔·深狱 (Hellfire Guardian) <span class="cr-badge cr-high">CR 13</span></h4>
+    <div class="mon-en">大型异界生物 (Outsider, Evil, Lawful)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 16d8+64 (136 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 地狱火吐息 (Hellfire Breath)、恐惧灵气、猛击<br>
+      <strong>特殊特性:</strong> 伤害减免 10/善良与银、法术抗力 24、免疫火焰、黑暗视觉<br>
+      <strong>栖息环境:</strong> 巴托地狱<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">守卫地狱要冲的精英战士，其地狱火吐息能造成无视火焰免疫的灼伤。是守关型魔鬼的完美选择。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>暮色巨魔 (Dusk Giant) <span class="cr-badge cr-mid">CR 10</span></h4>
+    <div class="mon-en">超大型巨人 (Giant)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 20d8+80 (170 hp)<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 投石、黑暗灵气 (Aura of Darkness)、猛击<br>
+      <strong>特殊特性:</strong> 再生 5（酸或火）、黑暗视觉、法术抗力 16、伤害减免 10/—<br>
+      <strong>栖息环境:</strong> 寒冷山地<br>
+      <strong>宝藏:</strong> 双倍标准
+    </div>
+    <div class="mon-desc">笼罩在永恒黑暗中的巨人族。其黑暗灵气在 20 呎范围内制造超自然黑暗，甚至黑暗视觉也无法穿透。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>影龙 (Shadow Dragon) <span class="cr-badge cr-high">CR varies</span></h4>
+    <div class="mon-en">龙类 (Dragon, Shadow)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 按年龄 9d12+18 至 46d12+184<br>
+      <strong>体型:</strong> 小型至巨型<br>
+      <strong>特殊攻击:</strong> 暗影吐息（负能量）、恐惧灵气、类法术能力（暗影步、幽影咒术等）<br>
+      <strong>特殊特性:</strong> 阴影融合 (Shadow Blend)、伤害减免、法术抗力、虚体半转<br>
+      <strong>栖息环境:</strong> 阴影位面 (Plane of Shadow)<br>
+      <strong>宝藏:</strong> 三倍标准
+    </div>
+    <div class="mon-desc">来自阴影位面的暗色龙种。暗影吐息造成负能量伤害，阴影融合使其在昏暗环境下近乎隐形。</div>
+  </div>
+
+</div>
+
+<!-- ================================================================ -->
+<!--  SECTION 4: Monster Manual V                                     -->
+<!-- ================================================================ -->
+<h2 class="section-title" id="mm5">4. Monster Manual V 精选怪物 <span class="source-badge source-mm5">MM5</span></h2>
+
+<div class="monster-grid">
+
+  <div class="monster-card">
+    <h4>饮骨兽 (Bonedrinker) <span class="cr-badge cr-low">CR 4</span></h4>
+    <div class="mon-en">中型异怪 (Aberration)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 6d8+18 (45 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 骨质吸取 (Bone Drain)、长舌攫取<br>
+      <strong>特殊特性:</strong> 黑暗视觉 60 呎、骨骼感知 60 呎、灵敏嗅觉<br>
+      <strong>栖息环境:</strong> 幽暗地域<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">以其他生物的骨骼为食的幽暗地域猎手。其骨质吸取攻击能直接造成体质伤害并削弱目标。</div>
+  </div>
+  <div class="monster-card">
+    <h4>尸骸猎犬 (Charnel Hound) <span class="cr-badge cr-mid">CR 7</span></h4>
+    <div class="mon-en">大型构装体 (Construct)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 12d10+30 (96 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 恐惧灵气、骨刃撕咬、碎骨弹射<br>
+      <strong>特殊特性:</strong> 构装体特性、伤害减免 10/钝击、黑暗视觉、死亡气息<br>
+      <strong>栖息环境:</strong> 任何（墓地 / 战场）<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">由无数骸骨拼接而成的恐怖构装体，在战场和墓地间游荡。散发的死亡气息会令附近的活物恶心。</div>
+  </div>
+  <div class="monster-card">
+    <h4>溺亡者 (Drowned) <span class="cr-badge cr-mid">CR 5</span></h4>
+    <div class="mon-en">中型不死生物 (Undead, Aquatic)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 8d12+24 (76 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 溺水之触 (Drowning Touch)、攫取、窒息光环<br>
+      <strong>特殊特性:</strong> 不死生物特性、水生、两栖、伤害减免 5/—、黑暗视觉<br>
+      <strong>栖息环境:</strong> 水域 / 沿海<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">溺死者的怨灵化身，能将活物拖入水中溺杀。其触碰能令受害者肺部充满海水，极为致命的水下不死生物。</div>
+  </div>
+  <div class="monster-card">
+    <h4>混沌收割者 (Entropic Reaper) <span class="cr-badge cr-high">CR 15</span></h4>
+    <div class="mon-en">中型异界生物 (Outsider, Chaotic)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 20d8+100 (190 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 熵之刃 (Entropy Blade)、灵魂收割 (Reap Soul)、恐惧凝视<br>
+      <strong>特殊特性:</strong> 伤害减免 15/秩序与魔法、法术抗力 28、黑暗视觉、飞行 60 呎<br>
+      <strong>栖息环境:</strong> 混沌荒原 (Limbo)<br>
+      <strong>宝藏:</strong> 双倍标准
+    </div>
+    <div class="mon-desc">混沌阵营的死神使者，以收割灵魂为使命。其熵之刃可造成混乱伤害并降低目标的幸运。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>蜂群意识体 (Hivemind) <span class="cr-badge cr-mid">CR 8</span></h4>
+    <div class="mon-en">中型魔法兽群 (Magical Beast, Swarm)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 12d10+36 (102 hp)<br>
+      <strong>体型:</strong> 中型（集群）<br>
+      <strong>特殊攻击:</strong> 虫群伤害 4d6、精神控制 (Hive Mind Control)<br>
+      <strong>特殊特性:</strong> 蜂巢思维、虫群特性、伤害减免 5/—、飞行、黑暗视觉<br>
+      <strong>栖息环境:</strong> 热带丛林 / 洞穴<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">拥有集体智慧的昆虫群落。蜂巢思维使整个虫群如单一生物般行动，且能短暂控制被其包围的活物的行动。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>岩穴矮人 (Lhosk) <span class="cr-badge cr-low">CR 1</span></h4>
+    <div class="mon-en">小型类人生物 (Humanoid)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 1d8+2 (6 hp)<br>
+      <strong>体型:</strong> 小型<br>
+      <strong>特殊攻击:</strong> 投石、石制武器<br>
+      <strong>特殊特性:</strong> 黑暗视觉 60 呎、攀爬 +8、跳跃 +4、石中潜行 +8<br>
+      <strong>栖息环境:</strong> 山地 / 洞穴<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">原始的山地矮人族裔，比标准矮人更加粗野但敏捷更高。适合作为低等级冒险中的土著敌人或盟友。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>米沃尔恩 (Mivilorn) <span class="cr-badge cr-high">CR 16</span></h4>
+    <div class="mon-en">超大型异怪 (Aberration)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 25d8+150 (262 hp)<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 吞噬活物、触手绞杀、恐惧灵气、类法术能力（禁锢术、解离术等）<br>
+      <strong>特殊特性:</strong> 再生 15（火）、伤害减免 20/—、法术抗力 30、真知术<br>
+      <strong>栖息环境:</strong> 幽暗地域深处<br>
+      <strong>宝藏:</strong> 三倍标准
+    </div>
+    <div class="mon-desc">幽暗地域最深处的远古掠食者，体型庞大且拥有再生能力。其真知术使其成为几乎不可欺骗的终极猎手。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>网龙 (Web Drake) <span class="cr-badge cr-low">CR 4</span></h4>
+    <div class="mon-en">中型龙类 (Dragon)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 6d12+12 (51 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 蛛网吐息 (Web Breath)、撕咬、爪击<br>
+      <strong>特殊特性:</strong> 攀爬 30 呎、蛛行术、黑暗视觉 60 呎、龙类免疫<br>
+      <strong>栖息环境:</strong> 温带森林 / 洞穴<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">能喷吐蛛网的小型龙类，结合了龙和蜘蛛的特征。在森林中筑巢，用网捕获猎物。适合低等级的森林冒险遭遇。</div>
+  </div>
+
+
+  <div class="monster-card">
+    <h4>灰烬凤凰 (Ashen Husk) <span class="cr-badge cr-mid">CR 9</span></h4>
+    <div class="mon-en">大型不死生物 (Undead)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 15d12+45 (142 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 灰烬吐息 (Ash Breath)、火焰吸收、猛击<br>
+      <strong>特殊特性:</strong> 不死生物特性、火焰免疫、寒冷易伤、伤害减免 10/魔法、再生 5（寒冷）<br>
+      <strong>栖息环境:</strong> 火山 / 火元素位面边缘<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">由凤凰之骸复活的堕落不死生物。灰烬吐息可在大范围内造成窒息和火焰伤害，是对经典凤凰的黑暗翻转。</div>
+  </div>
+
+</div>
+
+<!-- ================================================================ -->
+<!--  SECTION 5: Fiend Folio                                          -->
+<!-- ================================================================ -->
+<h2 class="section-title" id="ff">5. Fiend Folio 精选怪物 <span class="source-badge source-ff">FF</span></h2>
+
+<div class="monster-grid">
+
+  <div class="monster-card">
+    <h4>放血魔 (Bloodletter) <span class="cr-badge cr-low">CR 4</span></h4>
+    <div class="mon-en">中型异界生物 (Outsider, Evil, Chaotic)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 6d8+12 (39 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 血刃 (Bloodblade)、出血 (Bleed)、类法术能力<br>
+      <strong>特殊特性:</strong> 伤害减免 5/冷铁与善良、法术抗力 14、黑暗视觉、血液感知<br>
+      <strong>栖息环境:</strong> 深渊<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">以鲜血为食的恶魔战士，手臂末端生有锋利的骨质刃。被其攻击的受害者会持续出血直到接受治疗。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>暗织者 (Darkweaver) <span class="cr-badge cr-mid">CR 9</span></h4>
+    <div class="mon-en">大型异怪 (Aberration)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 12d8+48 (102 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 暗影丝线 (Shadow Threads)、精神控制、猛击<br>
+      <strong>特殊特性:</strong> 黑暗视觉 120 呎、暗影融合、伤害减免 10/魔法、法术抗力 20<br>
+      <strong>栖息环境:</strong> 幽暗地域 / 阴影位面<br>
+      <strong>宝藏:</strong> 双倍标准
+    </div>
+    <div class="mon-desc">能操纵暗影丝线的异怪，用丝线束缚猎物或织造暗影幻象。在黑暗中几乎不可见。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>獠牙泰坦 (Fang Titan) <span class="cr-badge cr-epic">CR 23</span></h4>
+    <div class="mon-en">超大型异界生物 (Outsider, Chaotic, Evil)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 32d8+224 (368 hp)<br>
+      <strong>体型:</strong> 超大型<br>
+      <strong>特殊攻击:</strong> 毁灭之咬、恐惧灵气、类法术能力（高等异界传送、死亡一指等）<br>
+      <strong>特殊特性:</strong> 伤害减免 20/秩序与魔法、法术抗力 35、再生 20、真知术、黑暗视觉<br>
+      <strong>栖息环境:</strong> 深渊最深层<br>
+      <strong>宝藏:</strong> 三倍标准
+    </div>
+    <div class="mon-desc">深渊中最强大的塔纳格瑞之一。獠牙泰坦是恶魔军团的终极指挥官，拥有近乎神祇的力量。仅在最高等级战役中出现。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>幽翼魔蛾 (Gloomwing) <span class="cr-badge cr-mid">CR 5</span></h4>
+    <div class="mon-en">大型异怪 (Aberration)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 7d8+21 (52 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 翅粉 (Confusion Dust)、猛击、攫取<br>
+      <strong>特殊特性:</strong> 飞行 60 呎（良好）、黑暗视觉 60 呎、昏暗视觉<br>
+      <strong>栖息环境:</strong> 幽暗地域 / 阴影位面<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">巨型蛾状异怪，翅膀上的鳞粉能令吸入者陷入混乱。常出没于地下和阴影中，被其翅粉覆盖的区域极度危险。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>铁甲战锤者 (Ironclad Mauler) <span class="cr-badge cr-mid">CR 8</span></h4>
+    <div class="mon-en">大型构装体 (Construct)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 16d10+40 (128 hp)<br>
+      <strong>体型:</strong> 大型<br>
+      <strong>特殊攻击:</strong> 重锤猛击、震荡波 (Shockwave)、破甲 (Armor Break)<br>
+      <strong>特殊特性:</strong> 构装体特性、伤害减免 15/精金、黑暗视觉、法术免疫（部分）<br>
+      <strong>栖息环境:</strong> 任何（通常守卫要塞）<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">全副铁甲的重型构装战士，双拳如攻城锤般致命。震荡波攻击能击倒并伤害范围内的所有生物。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>莉莉图 (Lilitu) <span class="cr-badge cr-high">CR 13</span></h4>
+    <div class="mon-en">中型异界生物 (Outsider, Chaotic, Evil)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 16d8+80 (152 hp)<br>
+      <strong>体型:</strong> 中型<br>
+      <strong>特殊攻击:</strong> 魅惑凝视、吸血之吻、类法术能力（高等传送、暗示术、群体暗示等）<br>
+      <strong>特殊特性:</strong> 变化外形、伤害减免 10/冷铁与善良、法术抗力 24、飞行、召唤恶魔<br>
+      <strong>栖息环境:</strong> 深渊<br>
+      <strong>宝藏:</strong> 标准
+    </div>
+    <div class="mon-desc">美艳而致命的女性恶魔，以诱惑和欺骗为武器。莉莉图能变化为任何美丽女性的形态，是阴谋和诱惑剧情的理想反派。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>神经蠕虫 (Neuronic Worms) <span class="cr-badge cr-low">CR 2</span></h4>
+    <div class="mon-en">超微形虫群 (Vermin, Swarm)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 4d8+8 (26 hp)<br>
+      <strong>体型:</strong> 超微形（虫群）<br>
+      <strong>特殊攻击:</strong> 虫群伤害 1d6、精神寄生 (Mental Parasitism)<br>
+      <strong>特殊特性:</strong> 虫群特性、暗视、对武器免疫、嗅觉<br>
+      <strong>栖息环境:</strong> 幽暗地域 / 沼泽<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">微小的寄生虫群，能侵入宿主的大脑控制其行为。被寄生的受害者外表正常但行动完全受虫群支配。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>虚空幽影 (Phane) <span class="cr-badge cr-epic">CR 22</span></h4>
+    <div class="mon-en">大型不死生物 (Undead, Incorporeal)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 25d12+125 (287 hp)<br>
+      <strong>体型:</strong> 大型（虚体）<br>
+      <strong>特殊攻击:</strong> 时间掠夺 (Time Steal)、老化之触 (Aging Touch)、恐惧灵气<br>
+      <strong>特殊特性:</strong> 虚体、不死生物特性、黑暗视觉 120 呎、时间免疫、飞行 50 呎<br>
+      <strong>栖息环境:</strong> 负能量位面 / 时间废墟<br>
+      <strong>宝藏:</strong> 三倍标准
+    </div>
+    <div class="mon-desc">来自时间尽头的恐怖不死生物。其时间掠夺能力可令目标在数轮内完全丧失行动，老化之触则直接加速目标衰老。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>噬魂灵 (Visilight) <span class="cr-badge cr-mid">CR 10</span></h4>
+    <div class="mon-en">中型不死生物 (Undead, Incorporeal)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 15d12+30 (127 hp)<br>
+      <strong>体型:</strong> 中型（虚体）<br>
+      <strong>特殊攻击:</strong> 光之灼烧、致盲凝视、虚体之触（力量吸取）<br>
+      <strong>特殊特性:</strong> 虚体、不死生物特性、黑暗视觉、光之形态、飞行 60 呎<br>
+      <strong>栖息环境:</strong> 负能量位面<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">以扭曲之光形态存在的虚体不死生物。讽刺地以光明而非黑暗为武器，致盲凝视可令目标永久失明。</div>
+  </div>
+
+  <div class="monster-card">
+    <h4>深渊魔虫 (Abyssal Larva) <span class="cr-badge cr-low">CR 1</span></h4>
+    <div class="mon-en">小型异界生物 (Outsider, Chaotic, Evil)</div>
+    <div class="mon-stats">
+      <strong>HD:</strong> 2d8+2 (11 hp)<br>
+      <strong>体型:</strong> 小型<br>
+      <strong>特殊攻击:</strong> 咬啮、毒素<br>
+      <strong>特殊特性:</strong> 黑暗视觉、深渊亚种特性<br>
+      <strong>栖息环境:</strong> 深渊<br>
+      <strong>宝藏:</strong> 无
+    </div>
+    <div class="mon-desc">深渊中最低等的生命形态之一，是所有恶魔的灵魂初始形态。被收集后可通过仪式进化为更强大的恶魔种类。</div>
+  </div>
+
+</div>
+
+<!-- ================================================================ -->
+<!--  SECTION 6: CR 速查表                                            -->
+<!-- ================================================================ -->
+<h2 class="section-title" id="cr-table">6. 按 CR（挑战等级）分类速查表</h2>
+
+<table class="ref-table">
+  <thead>
+    <tr>
+      <th>CR</th>
+      <th>怪物名称</th>
+      <th>来源</th>
+      <th>类型</th>
+      <th>简述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="cr-badge cr-low">1</span></td><td>岩穴矮人 (Lhosk)</td><td>MM5</td><td>类人生物</td><td>原始山地矮人，灵活但脆弱</td></tr>
+    <tr><td><span class="cr-badge cr-low">1</span></td><td>深渊魔虫 (Abyssal Larva)</td><td>FF</td><td>异界生物</td><td>恶魔幼体，深渊最低等生命</td></tr>
+    <tr><td><span class="cr-badge cr-low">2</span></td><td>月精灵 (Lythari)</td><td>MM2</td><td>类人生物</td><td>能变狼的善良精灵族裔</td></tr>
+    <tr><td><span class="cr-badge cr-low">2</span></td><td>神经蠕虫 (Neuronic Worms)</td><td>FF</td><td>虫群</td><td>控制宿主大脑的微型寄生虫</td></tr>
+    <tr><td><span class="cr-badge cr-low">3</span></td><td>蛮嚎兽 (Howler)</td><td>MM3</td><td>魔法兽</td><td>嚎叫造成感知伤害的深渊犬</td></tr>
+    <tr><td><span class="cr-badge cr-low">3</span></td><td>龙牛怪 (Dracotaur)</td><td>MM4</td><td>龙类</td><td>牛头龙身，可用 PC 种族</td></tr>
+    <tr><td><span class="cr-badge cr-low">4</span></td><td>血猎犬 (Bloodhound)</td><td>MM3</td><td>魔法兽</td><td>远程嗅血追踪的猎犬</td></tr>
+    <tr><td><span class="cr-badge cr-low">4</span></td><td>瘟疫蚁 (Plague Ant Swarm)</td><td>MM4</td><td>虫群</td><td>携带致命疾病的蚁群</td></tr>
+    <tr><td><span class="cr-badge cr-low">4</span></td><td>饮骨兽 (Bonedrinker)</td><td>MM5</td><td>异怪</td><td>以骨骼为食的幽暗猎手</td></tr>
+    <tr><td><span class="cr-badge cr-low">4</span></td><td>放血魔 (Bloodletter)</td><td>FF</td><td>异界生物</td><td>嗜血恶魔战士，持续出血</td></tr>
+    <tr><td><span class="cr-badge cr-low">4</span></td><td>网龙 (Web Drake)</td><td>MM5</td><td>龙类</td><td>喷蛛网的小型龙类</td></tr>
+    <tr><td><span class="cr-badge cr-mid">5</span></td><td>新吉 (Neogi)</td><td>MM2</td><td>异怪</td><td>蜘蛛状奴隶贩子</td></tr>
+    <tr><td><span class="cr-badge cr-mid">6</span></td><td>链魔 (Chain Devil / Kyton)</td><td>MM3</td><td>异界生物</td><td>操纵铁链的魔鬼狱卒</td></tr>
+    <tr><td><span class="cr-badge cr-mid">6</span></td><td>巴布雷兹 (Babau)</td><td>MM3</td><td>异界生物</td><td>深渊刺客，酸性血液</td></tr>
+    <tr><td><span class="cr-badge cr-mid">7</span></td><td>隐形追踪者 (Invisible Stalker)</td><td>MM2</td><td>元素</td><td>持续隐形的元素刺客</td></tr>
+    <tr><td><span class="cr-badge cr-mid">7</span></td><td>影魔 (Shadow Demon)</td><td>MM3</td><td>异界生物</td><td>半虚体恶魔刺客，吸取力量</td></tr>
+    <tr><td><span class="cr-badge cr-mid">8</span></td><td>火巨灵 (Efreeti)</td><td>MM2</td><td>异界生物</td><td>火焰巨灵，可被召唤</td></tr>
+    <tr><td><span class="cr-badge cr-mid">8</span></td><td>恐龙·霸王龙 (Tyrannosaurus)</td><td>MM3</td><td>动物</td><td>吞噬猎物的巨型掠食者</td></tr>
+    <tr><td><span class="cr-badge cr-mid">8</span></td><td>迦诺洛斯 (Canoloth)</td><td>MM3</td><td>异界生物</td><td>尤格洛斯精英战士</td></tr>
+    <tr><td><span class="cr-badge cr-mid">9</span></td><td>碎骨魔 (Bone Devil / Osyluth)</td><td>MM3</td><td>异界生物</td><td>地狱执法者，毒刺</td></tr>
+    <tr><td><span class="cr-badge cr-mid">10</span></td><td>幻影刺客 (Phasm)</td><td>MM2</td><td>异怪</td><td>完美变形的不定形猎手</td></tr>
+    <tr><td><span class="cr-badge cr-mid">10</span></td><td>暮色巨魔 (Dusk Giant)</td><td>MM4</td><td>巨人</td><td>笼罩黑暗的再生巨人</td></tr>
+    <tr><td><span class="cr-badge cr-high">11</span></td><td>石魔像 (Stone Golem)</td><td>MM2</td><td>构装体</td><td>经典石像守卫，减速攻击</td></tr>
+    <tr><td><span class="cr-badge cr-high">12</span></td><td>绳魔 (Roper)</td><td>MM2</td><td>异怪</td><td>伪装石笋的触手伏击者</td></tr>
+    <tr><td><span class="cr-badge cr-high">13</span></td><td>风暴巨人 (Storm Giant)</td><td>MM3</td><td>巨人</td><td>巨人之巅，闪电操控者</td></tr>
+    <tr><td><span class="cr-badge cr-high">13</span></td><td>莉莉图 (Lilitu)</td><td>FF</td><td>异界生物</td><td>美艳诱惑的致命女恶魔</td></tr>
+    <tr><td><span class="cr-badge cr-high">14</span></td><td>死亡凝视者 (Death Tyrant)</td><td>MM2</td><td>异怪</td><td>不死眼魔变体</td></tr>
+    <tr><td><span class="cr-badge cr-high">15</span></td><td>铁魔像 (Iron Golem)</td><td>MM2</td><td>构装体</td><td>毒气吐息的重型守卫</td></tr>
+    <tr><td><span class="cr-badge cr-high">15</span></td><td>死亡骑士 (Death Knight)</td><td>MM2</td><td>不死生物</td><td>堕落骑士，保留战斗技巧</td></tr>
+    <tr><td><span class="cr-badge cr-high">15</span></td><td>混沌收割者 (Entropic Reaper)</td><td>MM5</td><td>异界生物</td><td>混沌死神使者，灵魂收割</td></tr>
+    <tr><td><span class="cr-badge cr-high">16</span></td><td>米沃尔恩 (Mivilorn)</td><td>MM5</td><td>异怪</td><td>幽暗最深处的远古掠食者</td></tr>
+    <tr><td><span class="cr-badge cr-high">17</span></td><td>灵吸怪长老 (Aboleth Mage)</td><td>MM3</td><td>异怪</td><td>灵吸怪+法师的恐怖组合</td></tr>
+    <tr><td><span class="cr-badge cr-epic">20</span></td><td>秘术巨人 (Eldritch Giant)</td><td>MM4</td><td>巨人</td><td>掌握高阶奥术的远古巨人</td></tr>
+    <tr><td><span class="cr-badge cr-epic">22</span></td><td>虚空幽影 (Phane)</td><td>FF</td><td>不死生物</td><td>时间尽头的虚体亡灵</td></tr>
+    <tr><td><span class="cr-badge cr-epic">23</span></td><td>獠牙泰坦 (Fang Titan)</td><td>FF</td><td>异界生物</td><td>深渊最强恶魔指挥官</td></tr>
+    <tr><td><span class="cr-badge cr-epic">varies</span></td><td>龙巫妖 (Dracolich)</td><td>MM2</td><td>不死生物</td><td>不死太古龙，经典 Boss</td></tr>
+    <tr><td><span class="cr-badge cr-epic">varies</span></td><td>影龙 (Shadow Dragon)</td><td>MM4</td><td>龙类</td><td>阴影位面暗色龙种</td></tr>
+  </tbody>
+</table>
+
+<!-- ================================================================ -->
+<!--  SECTION 7: 按怪物类型分类                                       -->
+<!-- ================================================================ -->
+<h2 class="section-title" id="by-type">7. 按怪物类型分类</h2>
+
+<div class="type-grid">
+  <div class="type-card">
+    <h4>异怪 (Aberration)</h4>
+    <ul>
+      <li>死亡凝视者 — MM2, CR 14 | 绳魔 — MM2, CR 12 | 幻影刺客 — MM2, CR 10</li>
+      <li>暗织者 — FF, CR 9 | 新吉 — MM2, CR 5 | 幽翼魔蛾 — FF, CR 5</li>
+      <li>灵吸怪长老 — MM3, CR 17 | 米沃尔恩 — MM5, CR 16 | 饮骨兽 — MM5, CR 4</li>
+    </ul>
+  </div>
+  <div class="type-card">
+    <h4>龙类 (Dragon)</h4>
+    <ul>
+      <li>龙巫妖 — MM2, CR varies | 影龙 — MM4, CR varies | 棱晶飞龙 — MM2, CR varies</li>
+      <li>龙牛怪 — MM4, CR 3 | 网龙 — MM5, CR 4</li>
+    </ul>
+  </div>
+  <div class="type-card">
+    <h4>巨人 (Giant) &amp; 构装体 (Construct)</h4>
+    <ul>
+      <li>巨人：风暴巨人 — MM3, CR 13 | 暮色巨魔 — MM4, CR 10 | 秘术巨人 — MM4, CR 20</li>
+      <li>构装体：铁魔像 — MM2, CR 15 | 石魔像 — MM2, CR 11 | 深渊蛛后 — MM3, CR 11</li>
+      <li>构装体：铁甲战锤者 — FF, CR 8 | 尸骸猎犬 — MM5, CR 7</li>
+    </ul>
+  </div>
+  <div class="type-card">
+    <h4>不死生物 (Undead)</h4>
+    <ul>
+      <li>虚空幽影 — FF, CR 22 | 死亡骑士 — MM2, CR 15 | 噬魂灵 — FF, CR 10</li>
+      <li>灰烬凤凰 — MM5, CR 9 | 噬魂魔 — MM3, CR 8 | 溺亡者 — MM5, CR 5 | 幽冥 — MM3, CR 4</li>
+    </ul>
+  </div>
+  <div class="type-card">
+    <h4>异界生物 (Outsider)</h4>
+    <ul>
+      <li>獠牙泰坦 — FF, CR 23 | 碎骨魔鬼高阶 — MM4, CR 15 | 混沌收割者 — MM5, CR 15</li>
+      <li>莉莉图 — FF, CR 13 | 地狱火守卫 — MM4, CR 13 | 碎骨魔 — MM3, CR 9 | 水巨灵 — MM2, CR 9</li>
+      <li>火巨灵 — MM2, CR 8 | 迦诺洛斯 — MM3, CR 8 | 影魔 — MM3, CR 7 | 链魔 — MM3, CR 6</li>
+      <li>巴布雷兹 — MM3, CR 6 | 弗米蚁族 — MM2, CR 1-15 | 放血魔 — FF, CR 4</li>
+    </ul>
+  </div>
+  <div class="type-card">
+    <h4>魔法兽 / 类人 / 植物 / 虫群 / 元素</h4>
+    <ul>
+      <li>魔法兽：蜂群意识体 — MM5, CR 8 | 水龙兽 — MM4, CR 6 | 血猎犬 — MM3, CR 4</li>
+      <li>魔法兽：狂野嗥兽 — MM3, CR 4 | 蛮嚎兽 — MM3, CR 3</li>
+      <li>类人：月精灵 — MM2, CR 2 | 沙漠守护者 — MM4, CR 3 | 岩穴矮人 — MM5, CR 1</li>
+      <li>植物：蘑菇人 — MM2, CR 1/4-6 | 虫群：瘟疫蚁 — MM4, CR 4 | 神经蠕虫 — FF, CR 2</li>
+      <li>元素：隐形追踪者 — MM2, CR 7</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<!--  SECTION 8: Boss 级怪物推荐                                      -->
+<!-- ================================================================ -->
+<h2 class="section-title" id="boss">8. Boss 级怪物推荐</h2>
+
+<p style="margin-bottom:20px; color: var(--text-subtle);">以下怪物适合担任战役的关键反派或终极 Boss，按 CR 从高到低排列。每位 Boss 附带推荐理由。</p>
+
+<div class="boss-grid">
+
+  <div class="boss-card">
+    <div class="boss-cr">23</div>
+    <h4>獠牙泰坦 (Fang Titan)</h4>
+    <div class="boss-info">
+      <strong>来源:</strong> FF &nbsp; <strong>类型:</strong> 异界生物<br>
+      <strong>战役定位:</strong> 深渊终极 Boss、恶魔亲王级对手<br>
+      <strong>推荐等级:</strong> 18-20 级团队
+    </div>
+    <div class="boss-reason">推荐理由：拥有 368 HP、再生 20 和法术抗力 35，几乎不可能被速杀。类法术能力涵盖传送和即死，适合作为深渊主题战役的终章 Boss。</div>
+  </div>
+
+  <div class="boss-card">
+    <div class="boss-cr">22</div>
+    <h4>虚空幽影 (Phane)</h4>
+    <div class="boss-info">
+      <strong>来源:</strong> FF &nbsp; <strong>类型:</strong> 不死生物（虚体）<br>
+      <strong>战役定位:</strong> 时间废墟 Boss、跨位面恐怖存在<br>
+      <strong>推荐等级:</strong> 18-20 级团队
+    </div>
+    <div class="boss-reason">推荐理由：时间掠夺能力使战斗充满紧迫感。虚体特性意味着物理系角色几乎无用，迫使团队寻找魔法解决方案。非常适合营造绝望氛围。</div>
+  </div>
+
+  <div class="boss-card">
+    <div class="boss-cr">20</div>
+    <h4>秘术巨人 (Eldritch Giant)</h4>
+    <div class="boss-info">
+      <strong>来源:</strong> MM4 &nbsp; <strong>类型:</strong> 巨人<br>
+      <strong>战役定位:</strong> 远古遗迹 Boss、堕落的巨人贤者<br>
+      <strong>推荐等级:</strong> 16-18 级团队
+    </div>
+    <div class="boss-reason">推荐理由：兼具巨人近战与 15 级法师施法的双重威胁。315 HP 和再生 10 使其极为耐打。适合扮演一个追求远古知识的疯狂学者型反派。</div>
+  </div>
+
+  <div class="boss-card">
+    <div class="boss-cr">varies</div>
+    <h4>龙巫妖 (Dracolich)</h4>
+    <div class="boss-info">
+      <strong>来源:</strong> MM2 / Draconomicon &nbsp; <strong>类型:</strong> 不死生物<br>
+      <strong>战役定位:</strong> 经典不死龙 Boss、Cult of the Dragon 终极对手<br>
+      <strong>推荐等级:</strong> 14-18 级团队（视基础龙种）
+    </div>
+    <div class="boss-reason">推荐理由：D&D 最经典的 Boss 之一。命匣机制使其可以"死亡"后复活，非常适合贯穿整个战役的宿敌。保留龙息和恐惧灵气使其在任何等级都是致命威胁。</div>
+  </div>
+
+  <div class="boss-card">
+    <div class="boss-cr">17</div>
+    <h4>灵吸怪长老 (Aboleth Mage)</h4>
+    <div class="boss-info">
+      <strong>来源:</strong> MM3 &nbsp; <strong>类型:</strong> 异怪<br>
+      <strong>战役定位:</strong> 水下城市暗幕 Boss、灵吸怪帝国领袖<br>
+      <strong>推荐等级:</strong> 14-16 级团队
+    </div>
+    <div class="boss-reason">推荐理由：心灵能力 + 高阶奥术的双重威胁。记忆吸取能力可以制造"被遗忘的盟友"等精彩剧情。水下作战环境增加难度。</div>
+  </div>
+
+  <div class="boss-card">
+    <div class="boss-cr">16</div>
+    <h4>米沃尔恩 (Mivilorn)</h4>
+    <div class="boss-info">
+      <strong>来源:</strong> MM5 &nbsp; <strong>类型:</strong> 异怪<br>
+      <strong>战役定位:</strong> 幽暗地域终极 Boss、远古掠食者<br>
+      <strong>推荐等级:</strong> 14-16 级团队
+    </div>
+    <div class="boss-reason">推荐理由：262 HP + 再生 15 + 真知术 = 几乎不可战胜的地下霸主。吞噬活物能力制造恐怖氛围，适合作为幽暗地域探索的最终挑战。</div>
+  </div>
+
+  <div class="boss-card">
+    <div class="boss-cr">15</div>
+    <h4>混沌收割者 (Entropic Reaper)</h4>
+    <div class="boss-info">
+      <strong>来源:</strong> MM5 &nbsp; <strong>类型:</strong> 异界生物<br>
+      <strong>战役定位:</strong> 混沌荒原 Boss、灵魂收割者<br>
+      <strong>推荐等级:</strong> 13-15 级团队
+    </div>
+    <div class="boss-reason">推荐理由：灵魂收割能力使每场战斗都事关生死。混沌阵营使其可被善良和秩序双方视为威胁，适合多方势力交织的复杂剧情。</div>
+  </div>
+
+
+  <div class="boss-card">
+    <div class="boss-cr">13</div>
+    <h4>莉莉图 (Lilitu)</h4>
+    <div class="boss-info">
+      <strong>来源:</strong> FF &nbsp; <strong>类型:</strong> 异界生物<br>
+      <strong>战役定位:</strong> 社交/间谍 Boss、魅惑型反派<br>
+      <strong>推荐等级:</strong> 11-13 级团队
+    </div>
+    <div class="boss-reason">推荐理由：非传统战斗型 Boss。莉莉图通过变化外形和魅惑能力操纵政治和社会，是宫廷阴谋、间谍任务等角色扮演重度剧情的完美核心反派。</div>
+  </div>
+
+</div>
+
+<div class="intro-box" style="margin-top:32px;">
+  <p><strong>DM 提示：</strong>使用 Boss 级怪物时，建议添加传奇巢穴效果 (Lair Actions)、搭配仆从和爪牙避免集火秒杀、利用地形机关增加复杂度、适当降低 HP 保留核心能力、设计多阶段战斗（形态变化/召唤增援）以增加史诗感。</p>
+</div>
+
+</main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 扩展怪物大全 | 数据来源：Monster Manual II-V · Fiend Folio · Draconomicon · Libris Mortis</p>
+</div>
+</body>
+</html>

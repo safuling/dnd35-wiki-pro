@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扩展装备与魔法物品 | D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .page-header {
+      text-align: center;
+      padding: 20px 0 28px;
+      border-bottom: 2px solid var(--accent-gold);
+      margin-bottom: 28px;
+    }
+    .page-header h1 {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      color: var(--text-heading);
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 10px;
+    }
+    .page-header .subtitle {
+      font-size: 15px;
+      color: var(--text-subtle);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .version-badge {
+      display: inline-block;
+      background: var(--accent-gold);
+      color: #fff;
+      padding: 3px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .source-tag {
+      display: inline-block;
+      background: var(--bg-code);
+      border: 1px solid var(--border-light);
+      border-radius: 3px;
+      padding: 1px 8px;
+      font-size: 12px;
+      color: var(--text-subtle);
+      margin-right: 4px;
+    }
+    /* 稀有度徽章 */
+    .rarity { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .rarity-common { background: #a0a0a0; color: #fff; }
+    .rarity-uncommon { background: #27ae60; color: #fff; }
+    .rarity-rare { background: #2980b9; color: #fff; }
+    .rarity-legendary { background: #d4a017; color: #fff; }
+    .rarity-artifact { background: #8e44ad; color: #fff; }
+    /* 物品卡片网格 */
+    .item-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .item-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+    .item-card h4 { margin: 0 0 6px 0; font-size: 15px; color: var(--text-heading); }
+    .item-card .item-price { font-size: 13px; color: var(--accent-gold); font-weight: 700; margin-bottom: 6px; }
+    .item-card .item-desc { font-size: 13px; color: #555; line-height: 1.6; }
+    .item-card .item-slot { font-size: 11px; color: var(--text-subtle); margin-top: 8px; border-top: 1px solid var(--border-light); padding-top: 6px; }
+    /* 部位分区标题 */
+    .slot-header {
+      background: linear-gradient(90deg, var(--accent-gold) 0%, transparent 100%);
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      font-weight: 700;
+      font-size: 15px;
+      margin-top: 24px;
+    }
+    /* 材料条目 */
+    .material-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-left: 4px solid var(--accent-blue);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+    .material-block h4 { margin: 0 0 6px 0; color: var(--accent-blue); }
+    .material-block p { font-size: 13px; color: #555; margin-bottom: 4px; }
+    /* 指南区块 */
+    .guide-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin: 16px 0;
+    }
+    .guide-box h3 { margin-top: 0; color: var(--text-heading); }
+    /* 价格范围色条 */
+    .price-low { color: #27ae60; font-weight: 600; }
+    .price-mid { color: #2980b9; font-weight: 600; }
+    .price-high { color: #8e44ad; font-weight: 600; }
+    .price-epic { color: #d4a017; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" class="active" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">3R 扩展大全</div>
+      <a href="index-v2.html">总览</a>
+      <a href="classes.html">扩展职业</a>
+      <a href="races.html">扩展种族</a>
+      <a href="feats.html">扩展专长</a>
+      <a href="spells.html">扩展法术</a>
+      <a href="equipment.html" class="active">扩展装备</a>
+      <a href="monsters.html">扩展怪物</a>
+      <a href="supplements.html">专题扩展</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">主站</div>
+      <a href="../index.html">首页</a>
+      <a href="../equipment/intro.html">核心装备</a>
+      <a href="../rules.html">核心规则</a>
+    </div>
+  </aside>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+
+    <!-- 页面头部 -->
+    <div class="page-header">
+      <span class="version-badge">扩展装备</span>
+      <h1>扩展装备与魔法物品</h1>
+      <p class="subtitle">
+        覆盖 <strong>Magic Item Compendium (MIC)</strong>、<strong>Arms &amp; Equipment Guide</strong>、
+        <strong>Dragon Magic</strong>、<strong>Dungeon Master's Guide II</strong> 等官方扩展书中的
+        新增武器附魔、护甲附魔、经典魔法物品、特殊材料与龙族装备。
+      </p>
+    </div>
+
+    <!-- 目录 -->
+    <div class="toc">
+      <div class="toc-title">目录</div>
+      <ol>
+        <li><a href="#weapon-enchant">MIC 新增武器附魔</a></li>
+        <li><a href="#armor-enchant">MIC 新增护甲附魔</a></li>
+        <li><a href="#named-items">MIC 经典魔法武器与护甲</a></li>
+        <li><a href="#mundane">Arms &amp; Equipment Guide 非魔法装备</a></li>
+        <li><a href="#by-slot">MIC 按部位分类的魔法物品</a></li>
+        <li><a href="#dragon">Dragon Magic 龙族装备</a></li>
+        <li><a href="#materials">DMG2 特殊材料</a></li>
+        <li><a href="#guide">装备选择指南</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         1. MIC 新增武器附魔
+         ============================================================ -->
+    <h2 id="weapon-enchant">一、MIC 新增武器附魔</h2>
+    <p><span class="source-tag">MIC</span> Magic Item Compendium 引入大量新的武器特殊能力（Weapon Special Abilities），
+    以下列出最常用的 15 种附魔属性，按等效增强加值排列。</p>
+
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>附魔名称</th>
+          <th>等效加值</th>
+          <th>价格</th>
+          <th>稀有度</th>
+          <th>效果描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>适性</strong> (Aptitude)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>持有者可以将任何需要特定武器类型才能使用的专长视为拥有该武器的相应专长。例如持有时可把"武器专攻（长剑）"应用于该武器。</td>
+        </tr>
+        <tr>
+          <td><strong>碰撞</strong> (Collision)</td>
+          <td>+2</td>
+          <td>+2 加值</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>命中时额外造成 +5 点伤害。此伤害不受伤害减免影响，属于力量型额外伤害。</td>
+        </tr>
+        <tr>
+          <td><strong>恐惧</strong> (Fearsome)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>命中时目标需通过 DC 15 意志豁免，否则陷入战栗（Shaken）状态 1 轮。对已有战栗状态的目标则使其恐惧（Frightened）1 轮。</td>
+        </tr>
+        <tr>
+          <td><strong>穿刺</strong> (Impaling)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>仅对穿刺武器有效。重击时伤害骰数加倍（例如 d8 变为 2d8），与正常重击倍率叠加。对具有伤害减免的生物特别有效。</td>
+        </tr>
+        <tr>
+          <td><strong>棱光爆发</strong> (Prismatic Burst)</td>
+          <td>+2</td>
+          <td>+2 加值</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>重击时触发棱光效果：目标受到 1d6 力场伤害、目盲 1d4 轮，并需通过 DC 20 强韧豁免否则被推后 10 尺。多种效果随机触发。</td>
+        </tr>
+        <tr>
+          <td><strong>涌动</strong> (Surge)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>每日 3 次，持有者可在攻击检定中额外加 +1d6 点伤害。此为自由动作激活，持续单次攻击。</td>
+        </tr>
+        <tr>
+          <td><strong>预警</strong> (Warning)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>持有者在突袭轮中获得先攻权 +5 加值，且在 AC 上获得 +2 洞察加值（仅针对突袭攻击）。</td>
+        </tr>
+        <tr>
+          <td><strong>血光</strong> (Bloodstone)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>命中活物时造成 1 点体质伤害。若目标已因该武器受到体质伤害，额外造成 1d4 点出血伤害（每轮 1 点，持续 3 轮）。</td>
+        </tr>
+        <tr>
+          <td><strong>力场</strong> (Force)</td>
+          <td>+2</td>
+          <td>+2 加值</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>武器造成的伤害变为力场伤害，可击中虚体生物并对其造成全额伤害。穿透所有伤害减免。</td>
+        </tr>
+        <tr>
+          <td><strong>灵巧</strong> (Nimble)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>轻型武器可用敏捷调整值替代力量调整值来计算近战伤害。对远程武器无效。</td>
+        </tr>
+        <tr>
+          <td><strong>电震</strong> (Shock Trooper)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>命中时对目标造成 1d6 电击伤害，同时对目标周围 5 尺内所有生物造成 1d4 电击伤害（目标豁免 DC 14 减半）。</td>
+        </tr>
+        <tr>
+          <td><strong>分裂</strong> (Splitting)</td>
+          <td>+3</td>
+          <td>+3 加值</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>仅对弹药有效。发射后弹药在飞行中分裂为两支，各对目标进行一次攻击检定，均命中则造成双倍伤害。</td>
+        </tr>
+        <tr>
+          <td><strong>神圣</strong> (Holy)</td>
+          <td>+2</td>
+          <td>+2 加值</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>对邪恶阵营生物额外造成 2d6 伤害。邪恶生物持有时会受到 1 点负向等级（Temporary Negative Level）。</td>
+        </tr>
+        <tr>
+          <td><strong>锐锋</strong> (Keen)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>武器的重击范围加倍（例如 19-20 变为 17-20）。不与其他扩大重击范围的效果叠加。</td>
+        </tr>
+        <tr>
+          <td><strong>回力</strong> (Returning)</td>
+          <td>+1</td>
+          <td>+1 加值</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>投掷武器在投掷后于持有者下一轮开始时自动返回手中。返回时可对沿途生物进行一次攻击（+0 加值）。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote>
+      <strong>附魔叠加规则：</strong>武器上所有附魔的等效加值之和决定总价格。一把 +1 Aptitude Collision 长剑的等效加值为 +1+1+2 = +4，
+      总价格为 32,315 gp（基础精制品 + 30 gp + 16,000 gp 附魔费用）。
+    </blockquote>
+
+    <!-- ============================================================
+         2. MIC 新增护甲附魔
+         ============================================================ -->
+    <h2 id="armor-enchant">二、MIC 新增护甲附魔</h2>
+    <p><span class="source-tag">MIC</span> 以下为 Magic Item Compendium 中新增的护甲与盾牌特殊能力。</p>
+
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>附魔名称</th>
+          <th>等效加值</th>
+          <th>适用</th>
+          <th>稀有度</th>
+          <th>效果描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>活化</strong> (Animated)</td>
+          <td>+2</td>
+          <td>盾牌</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>持有者可用一个移动动作使盾牌悬浮在身旁，自动提供盾牌 AC 加值，释放双手。持续 4 轮。</td>
+        </tr>
+        <tr>
+          <td><strong>分裂盾</strong> (Arrowsplit)</td>
+          <td>+2</td>
+          <td>盾牌</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>射向持有者的箭矢类弹药有 50% 概率被盾牌劈裂，伤害减半（向下取整）。</td>
+        </tr>
+        <tr>
+          <td><strong>能量抗性</strong> (Energy Resistance)</td>
+          <td>+1/+2/+3</td>
+          <td>护甲/盾牌</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>选择一种能量类型（酸/冷/电/火/音）。+1：抵抗 10 点；+2：抵抗 20 点；+3：抵抗 30 点。多种能量可分别附加。</td>
+        </tr>
+        <tr>
+          <td><strong>幽灵守卫</strong> (Ghost Ward)</td>
+          <td>+1</td>
+          <td>护甲/盾牌</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>AC 加值对虚体生物的攻击同样有效（虚体生物的攻击通常无视护甲 AC）。</td>
+        </tr>
+        <tr>
+          <td><strong>强化</strong> (Reinforcing)</td>
+          <td>+1</td>
+          <td>护甲</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>护甲的 AC 加值额外 +1。例如 +1 Reinforcing 链甲实际提供 +6 AC（+5 基础 +1 强化）。</td>
+        </tr>
+        <tr>
+          <td><strong>灵魂之火</strong> (Soulfire)</td>
+          <td>+4</td>
+          <td>护甲</td>
+          <td><span class="rarity rarity-legendary">传说</span></td>
+          <td>免疫所有死亡效果（Death Effect）、能量吸取（Energy Drain）和负能量伤害。提供 +4 抗力加值对抗所有负能量效果。</td>
+        </tr>
+        <tr>
+          <td><strong>轻盈</strong> (Light Fortification)</td>
+          <td>+1</td>
+          <td>护甲</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>25% 概率将重击或偷袭转化为普通攻击。与中等/高等强化效果不叠加，取最高。</td>
+        </tr>
+        <tr>
+          <td><strong>中等强化</strong> (Moderate Fortification)</td>
+          <td>+3</td>
+          <td>护甲</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>50% 概率将重击或偷袭转化为普通攻击。</td>
+        </tr>
+        <tr>
+          <td><strong>高等强化</strong> (Heavy Fortification)</td>
+          <td>+5</td>
+          <td>护甲</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>100% 概率将重击或偷袭转化为普通攻击。使穿戴者免疫偷袭和重击额外伤害。</td>
+        </tr>
+        <tr>
+          <td><strong>野性</strong> (Wild)</td>
+          <td>+2</td>
+          <td>护甲</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>穿戴者在变形（Wild Shape 或 Polymorph）时，护甲 AC 加值继续生效（正常变形时护甲加值失效）。</td>
+        </tr>
+        <tr>
+          <td><strong>暗影</strong> (Shadow)</td>
+          <td>+1</td>
+          <td>护甲</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>穿戴者的躲藏（Hide）检定获得 +5 能力加值。护甲外观变为深黑色，在暗处几乎不可见。</td>
+        </tr>
+        <tr>
+          <td><strong>坚韧</strong> (Determination)</td>
+          <td>+2</td>
+          <td>护甲/盾牌</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>每日 1 次，当穿戴者生命值降至 0 或以下时，可立即回复至满 HP 的 50%。此为即时反应，不需要动作。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ============================================================
+         3. MIC 经典魔法武器与护甲
+         ============================================================ -->
+    <h2 id="named-items">三、MIC 经典魔法武器与护甲</h2>
+    <p><span class="source-tag">MIC</span> 以下为 Magic Item Compendium 中的具名魔法物品（Named Items），
+    每件拥有独特的附魔组合与背景故事。</p>
+
+    <div class="item-card-grid">
+
+      <div class="item-card">
+        <h4>暗黑弓手之弓 (Bow of the Black Archer)</h4>
+        <div class="item-price">价格：73,000 gp</div>
+        <div class="item-desc">
+          +2 复合长弓，附带 <em>分裂</em> 与 <em>距离</em> 附魔。射程增量翻倍。
+          每日 3 次可发射一支暗影箭，造成额外 2d6 负能量伤害。
+        </div>
+        <div class="item-slot">CL 12 · 远程武器 · <span class="rarity rarity-rare">稀有</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>不灭之盾 (Shield of the Undefeated)</h4>
+        <div class="item-price">价格：54,000 gp</div>
+        <div class="item-desc">
+          +3 活化重钢盾，附带 <em>坚韧</em> 与 <em>高等强化</em>。
+          盾牌上铭刻着不屈战士的纹章，持有者对恐惧效果免疫。
+        </div>
+        <div class="item-slot">CL 15 · 盾牌 · <span class="rarity rarity-legendary">传说</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>太阳剑·改 (Sun Blade, Greater)</h4>
+        <div class="item-price">价格：88,000 gp</div>
+        <div class="item-desc">
+          +3 长剑，附带 <em>神圣</em> 与 <em>力场</em> 附魔。
+          激活后剑身散发明亮光芒（半径 40 尺），对不死生物造成双倍伤害。每日 1 次可释放 <em>阳炎爆</em>。
+        </div>
+        <div class="item-slot">CL 16 · 近战武器 · <span class="rarity rarity-legendary">传说</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>影舞者匕首 (Dagger of the Shadow Dancer)</h4>
+        <div class="item-price">价格：22,400 gp</div>
+        <div class="item-desc">
+          +2 匕首，附带 <em>灵巧</em> 与 <em>回力</em> 附魔。
+          偷袭伤害额外 +1d6。持有者在昏暗或黑暗环境下获得隐蔽（Concealment）。</div>
+        <div class="item-slot">CL 9 · 近战武器 · <span class="rarity rarity-uncommon">非凡</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>龙牙甲 (Dragontooth Armor)</h4>
+        <div class="item-price">价格：66,000 gp</div>
+        <div class="item-desc">
+          +3 龙皮鳞甲，附带 <em>能量抗性（火）20</em> 与 <em>野性</em>。
+          每日 1 次可释放一次龙息（30 尺锥形，6d6 火焰伤害，DC 16 反射减半）。
+        </div>
+        <div class="item-slot">CL 13 · 护甲 · <span class="rarity rarity-rare">稀有</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>风暴战锤 (Stormburst Warhammer)</h4>
+        <div class="item-price">价格：45,600 gp</div>
+        <div class="item-desc">
+          +2 战锤，附带 <em>电震</em> 与 <em>回力</em> 附魔。
+          重击时召唤闪电链效果（1d6/级，最多 10d6，DC 16 反射减半），影响目标周围 20 尺内最多 3 个次要目标。
+        </div>
+        <div class="item-slot">CL 10 · 近战/投掷武器 · <span class="rarity rarity-rare">稀有</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>守夜人之铠 (Nightwatcher's Plate)</h4>
+        <div class="item-price">价格：49,000 gp</div>
+        <div class="item-desc">
+          +2 全身甲，附带 <em>幽灵守卫</em> 与 <em>暗影</em>。
+          穿戴者获得暗视 60 尺，在夜间或昏暗环境中 AC 额外 +2 洞察加值。
+        </div>
+        <div class="item-slot">CL 11 · 护甲 · <span class="rarity rarity-uncommon">非凡</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>碎裂巨剑 (Sundering Greatsword)</h4>
+        <div class="item-price">价格：38,000 gp</div>
+        <div class="item-desc">
+          +2 巨剑，附带 <em>碰撞</em> 附魔。
+          对物体和构装体造成三倍伤害（替代正常两倍）。对拥有硬度（Hardness）的目标无视其硬度值。
+        </div>
+        <div class="item-slot">CL 9 · 近战武器 · <span class="rarity rarity-uncommon">非凡</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>冰霜之牙 (Frost Fang)</h4>
+        <div class="item-price">价格：42,200 gp</div>
+        <div class="item-desc">
+          +2 短剑，附带 <em>霜冻</em> 与 <em>穿刺</em> 附魔。
+          命中时目标需通过 DC 15 强韧豁免否则被减速（Slow）1 轮。重击时目标被冻结（Stunned）1d4 轮。
+        </div>
+        <div class="item-slot">CL 10 · 近战武器 · <span class="rarity rarity-rare">稀有</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>圣盾·庇护 (Aegis of Sanctuary)</h4>
+        <div class="item-price">价格：56,000 gp</div>
+        <div class="item-desc">
+          +3 大盾，附带 <em>能量抗性（全类型）10</em>。
+          每日 1 次，可为持有者和 10 尺内所有盟友提供 <em>防护善恶</em> 效果，持续 10 分钟。
+        </div>
+        <div class="item-slot">CL 14 · 盾牌 · <span class="rarity rarity-legendary">传说</span></div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================
+         4. Arms & Equipment Guide 非魔法装备
+         ============================================================ -->
+    <h2 id="mundane">四、Arms &amp; Equipment Guide 非魔法装备</h2>
+    <p><span class="source-tag">AEG</span> Arms &amp; Equipment Guide 提供大量非魔法装备选项，
+    包括异种武器、特殊护甲、炼金物品、毒药和专业工具。</p>
+
+    <h3>异种武器 (Exotic Weapons)</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>武器名称</th>
+          <th>类型</th>
+          <th>伤害 (M)</th>
+          <th>重击</th>
+          <th>重量</th>
+          <th>价格</th>
+          <th>特性</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>矮人战斧</strong> (Dwarven Waraxe)</td>
+          <td>单手异种</td>
+          <td>1d10 挥砍</td>
+          <td>20/x3</td>
+          <td>8 磅</td>
+          <td>30 gp</td>
+          <td>矮人可视为军用武器</td>
+        </tr>
+        <tr>
+          <td><strong>双头剑</strong> (Two-Bladed Sword)</td>
+          <td>双手异种</td>
+          <td>1d8/1d8 挥砍</td>
+          <td>19-20/x2</td>
+          <td>10 磅</td>
+          <td>100 gp</td>
+          <td>双武器战斗专用</td>
+        </tr>
+        <tr>
+          <td><strong>刺链</strong> (Spiked Chain)</td>
+          <td>双手异种</td>
+          <td>2d4 穿刺</td>
+          <td>20/x2</td>
+          <td>10 磅</td>
+          <td>25 gp</td>
+          <td>触及武器，可用于卸武和绊摔</td>
+        </tr>
+        <tr>
+          <td><strong>精灵曲刃</strong> (Elven Thinblade)</td>
+          <td>单手异种</td>
+          <td>1d10 穿刺</td>
+          <td>18-20/x2</td>
+          <td>3 磅</td>
+          <td>80 gp</td>
+          <td>精灵可视为军用武器；可使用武器娴熟</td>
+        </tr>
+        <tr>
+          <td><strong>兽人双刃斧</strong> (Orc Double Axe)</td>
+          <td>双手异种</td>
+          <td>1d8/1d8 挥砍</td>
+          <td>20/x3</td>
+          <td>15 磅</td>
+          <td>60 gp</td>
+          <td>双武器战斗专用</td>
+        </tr>
+        <tr>
+          <td><strong>侏儒钩锤</strong> (Gnome Hooked Hammer)</td>
+          <td>双手异种</td>
+          <td>1d8/1d6 钝刺</td>
+          <td>20/x3, x4</td>
+          <td>6 磅</td>
+          <td>20 gp</td>
+          <td>侏儒视为军用；可卸武和绊摔</td>
+        </tr>
+        <tr>
+          <td><strong>鞭刀</strong> (Whip Dagger)</td>
+          <td>单手异种</td>
+          <td>1d4 挥砍</td>
+          <td>20/x2</td>
+          <td>3 磅</td>
+          <td>10 gp</td>
+          <td>15 尺触及，不触发借机攻击</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>特殊护甲与盾牌</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>护甲/盾牌</th>
+          <th>AC</th>
+          <th>最大敏捷</th>
+          <th>防具减值</th>
+          <th>奥术失败率</th>
+          <th>速度 (30/20)</th>
+          <th>重量</th>
+          <th>价格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>链甲衫</strong> (Chain Shirt)</td>
+          <td>+4</td>
+          <td>+4</td>
+          <td>-2</td>
+          <td>20%</td>
+          <td>30/20</td>
+          <td>25 磅</td>
+          <td>100 gp</td>
+        </tr>
+        <tr>
+          <td><strong>塔盾</strong> (Tower Shield)</td>
+          <td>+4 盾</td>
+          <td>+2</td>
+          <td>-10</td>
+          <td>50%</td>
+          <td>--</td>
+          <td>45 磅</td>
+          <td>30 gp</td>
+        </tr>
+        <tr>
+          <td><strong>鳞甲</strong> (Scale Mail)</td>
+          <td>+5</td>
+          <td>+3</td>
+          <td>-4</td>
+          <td>25%</td>
+          <td>20/15</td>
+          <td>30 磅</td>
+          <td>50 gp</td>
+        </tr>
+        <tr>
+          <td><strong>全身板甲</strong> (Full Plate)</td>
+          <td>+8</td>
+          <td>+1</td>
+          <td>-6</td>
+          <td>35%</td>
+          <td>20/15</td>
+          <td>50 磅</td>
+          <td>1,500 gp</td>
+        </tr>
+        <tr>
+          <td><strong>明光铠</strong> (Splint Mail)</td>
+          <td>+7</td>
+          <td>+0</td>
+          <td>-7</td>
+          <td>40%</td>
+          <td>20/15</td>
+          <td>45 磅</td>
+          <td>200 gp</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>炼金物品与特殊装备</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>物品名称</th>
+          <th>价格</th>
+          <th>重量</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>炼金火</strong> (Alchemist's Fire)</td>
+          <td>20 gp</td>
+          <td>1 磅</td>
+          <td>投掷武器，命中后目标受到 1d6 火焰伤害并着火（每轮 1d6，持续 2 轮）</td>
+        </tr>
+        <tr>
+          <td><strong>烟雾棒</strong> (Smokestick)</td>
+          <td>20 gp</td>
+          <td>0.5 磅</td>
+          <td>激活后在 10 尺半径内产生全隐蔽烟雾，持续 1 分钟</td>
+        </tr>
+        <tr>
+          <td><strong>雷石</strong> (Thunderstone)</td>
+          <td>30 gp</td>
+          <td>1 磅</td>
+          <td>投掷后 10 尺半径内所有生物需通过 DC 15 强韧豁免否则耳聋 1 小时</td>
+        </tr>
+        <tr>
+          <td><strong>绊足包</strong> (Tanglefoot Bag)</td>
+          <td>50 gp</td>
+          <td>4 磅</td>
+          <td>命中目标被纠缠（Entangled），DC 15 反射豁免否则被粘在地面</td>
+        </tr>
+        <tr>
+          <td><strong>圣水</strong> (Holy Water)</td>
+          <td>25 gp</td>
+          <td>1 磅</td>
+          <td>对不死生物和邪恶异界生物造成 2d4 伤害（投掷瓶）</td>
+        </tr>
+        <tr>
+          <td><strong>抗毒剂</strong> (Antitoxin)</td>
+          <td>50 gp</td>
+          <td>--</td>
+          <td>服用后 1 小时内所有毒素豁免获得 +5 炼金加值</td>
+        </tr>
+        <tr>
+          <td><strong>永恒火炬</strong> (Everburning Torch)</td>
+          <td>110 gp</td>
+          <td>1 磅</td>
+          <td>施展 <em>不灭明焰</em> 的火炬，永久发光（半径 20 尺明亮照明）</td>
+        </tr>
+        <tr>
+          <td><strong>开锁工具</strong> (Thieves' Tools, MW)</td>
+          <td>100 gp</td>
+          <td>2 磅</td>
+          <td>精制品开锁工具，开锁检定 +2 环境加值</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ============================================================
+         5. MIC 按部位分类的魔法物品
+         ============================================================ -->
+    <h2 id="by-slot">五、MIC 按部位分类的魔法物品</h2>
+    <p><span class="source-tag">MIC</span> Magic Item Compendium 采用按装备部位分类的系统。
+    角色可在每个部位穿戴一件魔法物品（戒指可戴两枚），以下为各部位精选物品。</p>
+
+    <!-- 头部 Head -->
+    <div class="slot-header">头部 (Head)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>思维头带</strong> (Headband of Intellect)</td>
+          <td>4,000/16,000/36,000 gp</td>
+          <td>3/6/10</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>智力 +2/+4/+6 增强加值</td>
+        </tr>
+        <tr>
+          <td><strong>魅力头环</strong> (Headband of Charisma)</td>
+          <td>4,000/16,000/36,000 gp</td>
+          <td>3/6/10</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>魅力 +2/+4/+6 增强加值</td>
+        </tr>
+        <tr>
+          <td><strong>感知之冕</strong> (Crown of Wisdom)</td>
+          <td>4,000/16,000/36,000 gp</td>
+          <td>3/6/10</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>感知 +2/+4/+6 增强加值</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 眼部 Eyes -->
+    <div class="slot-header">眼部 (Eyes)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>鹰眼镜片</strong> (Goggles of the Hawk)</td>
+          <td>3,600 gp</td>
+          <td>5</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>侦察（Spot）检定 +5 能力加值</td>
+        </tr>
+        <tr>
+          <td><strong>夜视镜</strong> (Goggles of Night)</td>
+          <td>12,000 gp</td>
+          <td>7</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>获得暗视 60 尺。若已有暗视，则范围 +30 尺</td>
+        </tr>
+        <tr>
+          <td><strong>真知之镜</strong> (Goggles of True Seeing)</td>
+          <td>75,000 gp</td>
+          <td>13</td>
+          <td><span class="rarity rarity-legendary">传说</span></td>
+          <td>每日最多 10 分钟 <em>真知术</em>（True Seeing），可分多次使用</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 肩部 Shoulders -->
+    <div class="slot-header">肩部 (Shoulders)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>抗力斗篷</strong> (Cloak of Resistance)</td>
+          <td>1,000/4,000/9,000/16,000/25,000 gp</td>
+          <td>3/5/7/9/11</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>所有豁免 +1/+2/+3/+4/+5 抗力加值</td>
+        </tr>
+        <tr>
+          <td><strong>翼之披风</strong> (Winged Cloak)</td>
+          <td>26,000 gp</td>
+          <td>10</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>每日最多 3 次 <em>飞行术</em>（Fly），每次持续 5 分钟</td>
+        </tr>
+        <tr>
+          <td><strong>英雄披肩</strong> (Mantle of the Hero)</td>
+          <td>54,000 gp</td>
+          <td>14</td>
+          <td><span class="rarity rarity-legendary">传说</span></td>
+          <td>+2 幸运加值于所有豁免；每日 1 次 <em>行动点数</em>（Action Point）效果</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 颈部 Neck -->
+    <div class="slot-header">颈部 (Neck)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>天护符</strong> (Amulet of Natural Armor)</td>
+          <td>2,000/8,000/18,000/32,000/50,000 gp</td>
+          <td>3/5/7/9/11</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>天生防御 +1/+2/+3/+4/+5 增强加值</td>
+        </tr>
+        <tr>
+          <td><strong>健康符</strong> (Amulet of Health)</td>
+          <td>4,000/16,000/36,000 gp</td>
+          <td>3/6/10</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>体质 +2/+4/+6 增强加值</td>
+        </tr>
+        <tr>
+          <td><strong>法术护符</strong> (Periapt of Proof against Poison)</td>
+          <td>27,000 gp</td>
+          <td>9</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>对所有毒素免疫</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 躯干 Body -->
+    <div class="slot-header">躯干 (Body / Armor)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>秘银链甲衫</strong> (Mithral Chain Shirt)</td>
+          <td>1,100 gp</td>
+          <td>--</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>+4 AC，最大敏捷 +6，防具减值 -0，速度不减，25% 奥术失败</td>
+        </tr>
+        <tr>
+          <td><strong>幽影皮甲</strong> (Shadowfell Leather)</td>
+          <td>16,000 gp</td>
+          <td>8</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>+2 皮甲，穿戴者躲藏 +10，在黑暗中 AC 获得 +2 偏转加值</td>
+        </tr>
+        <tr>
+          <td><strong>大法师长袍</strong> (Robe of the Archmagi)</td>
+          <td>75,000 gp</td>
+          <td>14</td>
+          <td><span class="rarity rarity-legendary">传说</span></td>
+          <td>+5 AC，法术抗性 18，免疫魔法飞弹，+2 奥术施法者等级</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 手臂 Arms -->
+    <div class="slot-header">手臂 (Arms)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>力量护腕</strong> (Bracers of Strength)</td>
+          <td>4,000/16,000/36,000 gp</td>
+          <td>3/6/10</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>力量 +2/+4/+6 增强加值</td>
+        </tr>
+        <tr>
+          <td><strong>灵巧护腕</strong> (Bracers of Dexterity)</td>
+          <td>4,000/16,000/36,000 gp</td>
+          <td>3/6/10</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>敏捷 +2/+4/+6 增强加值</td>
+        </tr>
+        <tr>
+          <td><strong>弓手护腕</strong> (Bracers of Archery, Greater)</td>
+          <td>17,000 gp</td>
+          <td>8</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>弓类武器攻击与伤害 +2 能力加值；精通所有弓类武器</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 手部 Hands -->
+    <div class="slot-header">手部 (Hands)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>敏捷手套</strong> (Gloves of Dexterity)</td>
+          <td>4,000/16,000/36,000 gp</td>
+          <td>3/6/10</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>敏捷 +2/+4/+6 增强加值（与护腕取最高，不叠加）</td>
+        </tr>
+        <tr>
+          <td><strong>巨人之力手套</strong> (Gauntlets of Ogre Power)</td>
+          <td>4,000 gp</td>
+          <td>6</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>力量设定为 19（不与增强加值叠加）</td>
+        </tr>
+        <tr>
+          <td><strong>法师之手</strong> (Gloves of the Arcanist)</td>
+          <td>22,000 gp</td>
+          <td>10</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>施法者等级 +1，穿透法术抗性检定 +5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 戒指 Ring -->
+    <div class="slot-header">戒指 (Ring) -- 可佩戴两枚</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>防护戒指</strong> (Ring of Protection)</td>
+          <td>2,000/8,000/18,000/32,000/50,000 gp</td>
+          <td>3/5/7/9/11</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>AC +1/+2/+3/+4/+5 偏转加值</td>
+        </tr>
+        <tr>
+          <td><strong>再生戒指</strong> (Ring of Regeneration)</td>
+          <td>90,000 gp</td>
+          <td>15</td>
+          <td><span class="rarity rarity-legendary">传说</span></td>
+          <td>每小时回复 1 点 HP，断肢可再生</td>
+        </tr>
+        <tr>
+          <td><strong>闪现戒指</strong> (Ring of Blinking)</td>
+          <td>27,000 gp</td>
+          <td>7</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>每日最多 10 轮 <em>闪现术</em>（Blink），可分多次使用</td>
+        </tr>
+        <tr>
+          <td><strong>反制法术戒指</strong> (Ring of Counterspells)</td>
+          <td>4,000 gp</td>
+          <td>7</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>可存储一个 1-3 级法术，当目标施放该法术时自动反制</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 脚部 Feet -->
+    <div class="slot-header">脚部 (Feet)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>飞行靴</strong> (Boots of Flying)</td>
+          <td>16,000 gp</td>
+          <td>8</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>每日最多 10 分钟飞行（速度 60 尺，机动性良好），可分多次使用</td>
+        </tr>
+        <tr>
+          <td><strong>疾行靴</strong> (Boots of Speed)</td>
+          <td>12,000 gp</td>
+          <td>10</td>
+          <td><span class="rarity rarity-uncommon">非凡</span></td>
+          <td>每日最多 10 轮 <em>加速术</em>（Haste）效果，可分多次使用</td>
+        </tr>
+        <tr>
+          <td><strong>无声靴</strong> (Boots of Elvenkind)</td>
+          <td>2,500 gp</td>
+          <td>5</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>潜行（Move Silently）检定 +5 能力加值</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 腰部 Waist -->
+    <div class="slot-header">腰部 (Waist)</div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>物品名称</th><th>价格</th><th>CL</th><th>稀有度</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>巨人力量腰带</strong> (Belt of Giant Strength)</td>
+          <td>4,000/16,000/36,000 gp</td>
+          <td>3/6/10</td>
+          <td><span class="rarity rarity-common">普通</span></td>
+          <td>力量 +2/+4/+6 增强加值（与护腕取最高，不叠加）</td>
+        </tr>
+        <tr>
+          <td><strong>战斗腰带</strong> (Belt of Battle)</td>
+          <td>24,000 gp</td>
+          <td>10</td>
+          <td><span class="rarity rarity-rare">稀有</span></td>
+          <td>每日 3 次，即时动作获得一个额外移动动作</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ============================================================
+         6. Dragon Magic 龙族装备
+         ============================================================ -->
+    <h2 id="dragon">六、Dragon Magic 龙族装备</h2>
+    <p><span class="source-tag">Dragon Magic</span>
+    Dragon Magic 引入一系列与龙族相关的特殊装备，利用龙鳞、龙息和龙血等材料制作。</p>
+
+    <div class="item-card-grid">
+
+      <div class="item-card">
+        <h4>龙鳞甲 (Dragon Scale Armor)</h4>
+        <div class="item-price">价格：根据龙种而异（基础 2,500+ gp）</div>
+        <div class="item-desc">
+          用真龙鳞片制成的鳞甲。提供与标准鳞甲相同的 AC，但重量减半。附带对应龙种的 5 点能量抗性。
+          例如红龙鳞甲提供火焰抗性 5，蓝龙鳞甲提供电击抗性 5。
+        </div>
+        <div class="item-slot">CL 9 · 护甲 · <span class="rarity rarity-uncommon">非凡</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>龙息护符 (Dragon Breath Amulet)</h4>
+        <div class="item-price">价格：18,000 gp</div>
+        <div class="item-desc">
+          佩戴者每日 3 次可使用一次龙息攻击：30 尺锥形，6d6 能量伤害（类型取决于护符中镶嵌的龙牙种类），
+          DC 16 反射豁免减半。每次使用后需休息 1 小时才能再次使用。
+        </div>
+        <div class="item-slot">CL 11 · 颈部 · <span class="rarity rarity-rare">稀有</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>龙翼斗篷 (Dragonwing Cloak)</h4>
+        <div class="item-price">价格：30,000 gp</div>
+        <div class="item-desc">
+          以龙翼膜皮制作的斗篷。穿戴者获得飞行速度 40 尺（机动性普通），每日最多使用 1 小时（可分多次）。
+          同时提供 +2 增强加值于所有豁免对抗龙的恐惧光环。
+        </div>
+        <div class="item-slot">CL 12 · 肩部 · <span class="rarity rarity-rare">稀有</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>龙血药剂 (Draconic Elixir)</h4>
+        <div class="item-price">价格：4,500 gp / 瓶</div>
+        <div class="item-desc">
+          饮用后 24 小时内获得对应龙种的龙脉特性：天生防御 +2、暗视 60 尺、
+          对对应能量类型的抗力 +10。副作用：饮用后 24 小时结束时受到 1d6 体质伤害。
+        </div>
+        <div class="item-slot">CL 15 · 消耗品 · <span class="rarity rarity-uncommon">非凡</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>龙之咆哮 (Dragonroar Horn)</h4>
+        <div class="item-price">价格：15,000 gp</div>
+        <div class="item-desc">
+          每日 2 次，使用者可吹响龙角号角，发出类似龙吼的声响。30 尺锥形范围内所有 HD 低于 8 的生物需通过
+          DC 18 意志豁免否则战栗 1d4+1 轮（战栗状态）。HD 低于 4 的生物则恐惧（Frightened）1 轮。
+        </div>
+        <div class="item-slot">CL 10 · 奇物 · <span class="rarity rarity-uncommon">非凡</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>龙心指环 (Ring of the Dragon Heart)</h4>
+        <div class="item-price">价格：52,000 gp</div>
+        <div class="item-desc">
+          以龙心结晶制成的戒指。佩戴者获得龙类亚种特征：对睡眠和麻痹免疫，天生武器视为魔法武器。
+          每日 1 次可施展 <em>龙之力量</em>（Dragon's Might）：力量、体质、魅力各 +4，持续 10 分钟。
+        </div>
+        <div class="item-slot">CL 14 · 戒指 · <span class="rarity rarity-legendary">传说</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>龙牙剑 (Dragonfang Weapon)</h4>
+        <div class="item-price">价格：基础价格 +12,000 gp</div>
+        <div class="item-desc">
+          以真龙牙齿锻造的近战武器。视为精制品武器，额外附带 +1 增强加值和对应龙种的能量附魔。
+          重击时对目标施加 <em>龙威</em>（DC 18 意志豁免否则战栗 1 分钟）。
+        </div>
+        <div class="item-slot">CL 10 · 武器 · <span class="rarity rarity-rare">稀有</span></div>
+      </div>
+
+      <div class="item-card">
+        <h4>龙皮披风 (Dragonhide Mantle)</h4>
+        <div class="item-price">价格：10,000 gp</div>
+        <div class="item-desc">
+          以经过魔法处理的龙皮制成的轻型披风（功能等同 +1 皮甲），AC +2。
+          对火系和电系伤害各提供 5 点抗力。穿戴者在唬吓（Intimidate）检定中获得 +4 环境加值。
+        </div>
+        <div class="item-slot">CL 7 · 护甲 · <span class="rarity rarity-uncommon">非凡</span></div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================
+         7. DMG2 特殊材料
+         ============================================================ -->
+    <h2 id="materials">七、DMG2 特殊材料</h2>
+    <p><span class="source-tag">DMG2</span> <span class="source-tag">DMG</span>
+    特殊材料可以替代普通材料制作武器和护甲，赋予装备独特属性。以下为主要特殊材料及其价格调整。</p>
+
+    <div class="material-block">
+      <h4>精金 (Adamantine)</h4>
+      <p><strong>来源：</strong>DMG p.283 · <strong>硬度 20，HP 40/英寸</strong></p>
+      <p><strong>武器：</strong>精金武器攻击时视为精金材质（可穿透精金/DR），且在击破物体时视为魔法武器。精金武器自动获得精制品（+1 攻击加值）。
+        价格调整：轻型 +3,000 gp，单手 +3,000 gp，双手 +9,000 gp，弹药 +60 gp/支。</p>
+      <p><strong>护甲：</strong>精金护甲获得伤害减免（DR）。轻型甲 DR 1/-，中型甲 DR 2/-，重型甲 DR 3/-。
+        价格调整：轻型甲 +5,000 gp，中型甲 +10,000 gp，重型甲 +15,000 gp。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>秘银 (Mithral)</h4>
+      <p><strong>来源：</strong>DMG p.284 · <strong>硬度 15，HP 30/英寸</strong></p>
+      <p><strong>武器：</strong>秘银武器重量减半，且精制品攻击加值提升至 +1。价格调整：+2,000 gp（武器）。</p>
+      <p><strong>护甲：</strong>秘银护甲重量减半，最大敏捷加值 +2，防具检定减值 -3（最低 -0），奥术失败率 -10%，速度类别提升一级（重型视为中型）。
+        价格调整：轻型甲 +1,000 gp，中型甲 +4,000 gp，重型甲 +9,000 gp。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>暗木 (Darkwood)</h4>
+      <p><strong>来源：</strong>DMG p.283 · <strong>硬度 5，HP 10/英寸</strong></p>
+      <p><strong>效果：</strong>暗木制品重量减半。木质武器（如木棒、长弓、短弓）可用暗木制作，防具检定减值不变。
+        暗木盾牌重量减半，防具检定减值降低 2 点。价格调整：每磅原价 +10 gp。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>寒铁 (Cold Iron)</h4>
+      <p><strong>来源：</strong>DMG p.284 · <strong>硬度 10，HP 30/英寸</strong></p>
+      <p><strong>效果：</strong>寒铁武器可穿透寒铁/DR（常见于恶魔和精类）。寒铁武器附魔时需额外支付 2,000 gp 费用。
+        价格调整：无额外基础价格（与钢铁相同），但附魔加值 +2,000 gp。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>炼银 (Alchemical Silver)</h4>
+      <p><strong>来源：</strong>DMG p.284 · <strong>硬度 8，HP 10/英寸</strong></p>
+      <p><strong>效果：</strong>炼银武器可穿透银/DR（常见于兽化人和某些不死生物）。炼银武器的伤害骰降低一级（例如 d8 变为 d6）。
+        无法对双手武器附加。价格调整：轻型 +20 gp，单手 +90 gp。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>龙皮 (Dragonhide)</h4>
+      <p><strong>来源：</strong>DMG p.283 · <strong>硬度 10，HP 40/英寸</strong></p>
+      <p><strong>效果：</strong>龙皮可替代金属制作护甲（鳞甲、链甲、半身甲），使德鲁伊可穿。龙皮护甲提供对应龙种 5 点能量抗性。
+        价格调整：基础护甲价格 x2 + 对应龙种附魔费用。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>硬石 (Obdurium)</h4>
+      <p><strong>来源：</strong>Arms &amp; Equipment Guide · <strong>硬度 30，HP 60/英寸</strong></p>
+      <p><strong>效果：</strong>极为坚硬的特殊金属，比精金更加耐用。硬石武器可穿透硬石/DR 和精金/DR。
+        硬石护甲提供比精金更高的 DR（轻型 2/-，中型 3/-，重型 4/-）。
+        价格调整：武器为精金的 2 倍，护甲为精金的 2.5 倍。极其稀有，通常需要特殊任务获取。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>星铁 (Glassteel)</h4>
+      <p><strong>来源：</strong>Magic of Faerun / DMG2 · <strong>硬度 17，HP 40/英寸</strong></p>
+      <p><strong>效果：</strong>透明如玻璃但坚硬如钢。星铁武器和护甲重量为钢铁的一半（同秘银），但不会降低伤害骰。
+        星甲外观透明，穿戴者的躲藏检定获得 +4 环境加值。价格调整：武器 +5,000 gp，护甲按秘银 x2 计算。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>影钢 (Shadowsteel)</h4>
+      <p><strong>来源：</strong>Races of Stone · <strong>硬度 15，HP 30/英寸</strong></p>
+      <p><strong>效果：</strong>暗影位面中锻造的特殊合金，呈深灰近黑色。影钢武器命中时对目标施加 <em>暗蚀</em> 效果：
+        目标 1d4 轮内所有攻击检定 -1（可叠加，最多 -5）。影钢护甲使穿戴者的躲藏检定获得 +2 环境加值。
+        价格调整：武器 +4,000 gp，护甲 +6,000 gp。</p>
+    </div>
+
+    <div class="material-block">
+      <h4>日耀金 (Sunsilver)</h4>
+      <p><strong>来源：</strong>Dragon Magic · <strong>硬度 12，HP 30/英寸</strong></p>
+      <p><strong>效果：</strong>被阳光祝福的特殊银色金属。日耀金武器对不死生物造成额外 1d6 正伤害，且视为银质武器。
+        日耀金护甲在日光下闪耀，使穿戴者对不死生物的恐惧和魅惑效果免疫。
+        价格调整：武器 +3,000 gp，护甲 +4,000 gp。</p>
+    </div>
+
+    <!-- ============================================================
+         8. 装备选择指南
+         ============================================================ -->
+    <h2 id="guide">八、装备选择指南</h2>
+    <p>以下表格帮助玩家根据角色等级、职业和预算选择合适的装备。</p>
+
+    <div class="guide-box">
+      <h3>按价格区间推荐装备</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>价格区间</th>
+            <th>推荐武器附魔</th>
+            <th>推荐护甲/盾牌</th>
+            <th>推荐奇物</th>
+            <th>适用等级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="price-low">低于 5,000 gp</td>
+            <td>+1 武器、锐锋、预警、灵巧</td>
+            <td>+1 护甲、轻盈强化、暗影</td>
+            <td>属性护符 +2、抗力斗篷 +1</td>
+            <td>1-5 级</td>
+          </tr>
+          <tr>
+            <td class="price-mid">5,000 - 20,000 gp</td>
+            <td>+2 武器、恐惧、适性、电震</td>
+            <td>+2 护甲、活化盾、能量抗性 10</td>
+            <td>属性装备 +4、疾行靴、抗力斗篷 +2</td>
+            <td>6-10 级</td>
+          </tr>
+          <tr>
+            <td class="price-high">20,000 - 50,000 gp</td>
+            <td>+3 武器、碰撞、棱光爆发、力场</td>
+            <td>+3 护甲、中等强化、幽灵守卫、野性</td>
+            <td>属性装备 +6、飞行靴、抗力斗篷 +4</td>
+            <td>11-15 级</td>
+          </tr>
+          <tr>
+            <td class="price-epic">50,000 gp 以上</td>
+            <td>+4/5 武器、分裂、多重附魔组合</td>
+            <td>+4/5 护甲、灵魂之火、高等强化</td>
+            <td>大法师长袍、真知之镜、再生戒指</td>
+            <td>16-20 级</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="guide-box">
+      <h3>按职业推荐装备组合</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>职业</th>
+            <th>核心武器</th>
+            <th>核心护甲</th>
+            <th>必备奇物</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>战士 / 野蛮人</strong></td>
+            <td>碰撞 + 锐锋武器、分裂弹药（弓手）</td>
+            <td>秘银全身甲 + 高等强化、活化塔盾</td>
+            <td>力量护腕、巨人力量腰带、抗力斗篷</td>
+            <td>武器 > 护甲 > 奇物</td>
+          </tr>
+          <tr>
+            <td><strong>圣武士</strong></td>
+            <td>神圣 + 锐锋武器、日耀金武器</td>
+            <td>全身甲 + 灵魂之火、不灭之盾</td>
+            <td>魅力头环、健康符、抗力斗篷</td>
+            <td>武器 > 护甲 > 奇物</td>
+          </tr>
+          <tr>
+            <td><strong>游荡者</strong></td>
+            <td>灵巧匕首、暗影武器、穿刺武器</td>
+            <td>秘银链甲衫 + 暗影、幽影皮甲</td>
+            <td>敏捷手套、疾行靴、无声靴</td>
+            <td>奇物 > 武器 > 护甲</td>
+          </tr>
+          <tr>
+            <td><strong>法师 / 术士</strong></td>
+            <td>力场魔杖、预警法杖</td>
+            <td>大法师长袍、法师护甲术</td>
+            <td>思维头带、法师之手手套、闪现戒指</td>
+            <td>奇物 > 护甲 > 武器</td>
+          </tr>
+          <tr>
+            <td><strong>牧师 / 德鲁伊</strong></td>
+            <td>神圣武器、暗木武器（德鲁伊）</td>
+            <td>龙皮护甲（德鲁伊）、强化全身甲</td>
+            <td>感知之冕、健康符、抗力斗篷</td>
+            <td>护甲 > 奇物 > 武器</td>
+          </tr>
+          <tr>
+            <td><strong>吟游诗人</strong></td>
+            <td>适性武器（适配多种武器专长）</td>
+            <td>秘银链甲衫、暗影护甲</td>
+            <td>魅力头环、疾行靴、反制法术戒指</td>
+            <td>奇物 > 武器 > 护甲</td>
+          </tr>
+          <tr>
+            <td><strong>巡林客</strong></td>
+            <td>分裂 + 距离长弓、双持适性武器</td>
+            <td>秘银链甲衫 + 野性</td>
+            <td>弓手护腕、敏捷手套、抗力斗篷</td>
+            <td>武器 > 奇物 > 护甲</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="guide-box">
+      <h3>经典等级装备升级路线</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>等级</th>
+            <th>预计财富</th>
+            <th>武器</th>
+            <th>护甲/盾牌</th>
+            <th>奇物</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 级</td>
+            <td>--</td>
+            <td>精制品武器</td>
+            <td>标准护甲</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td>3 级</td>
+            <td>2,700 gp</td>
+            <td>+1 武器</td>
+            <td>+1 护甲</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td>5 级</td>
+            <td>9,000 gp</td>
+            <td>+1 附魔武器</td>
+            <td>+2 护甲</td>
+            <td>属性装备 +2</td>
+          </tr>
+          <tr>
+            <td>8 级</td>
+            <td>27,000 gp</td>
+            <td>+2 附魔武器</td>
+            <td>+3 护甲</td>
+            <td>属性装备 +4, 抗力斗篷 +2</td>
+          </tr>
+          <tr>
+            <td>10 级</td>
+            <td>49,000 gp</td>
+            <td>+3 附魔武器</td>
+            <td>+3 附魔护甲</td>
+            <td>属性装备 +4, 抗力斗篷 +3</td>
+          </tr>
+          <tr>
+            <td>13 级</td>
+            <td>110,000 gp</td>
+            <td>+4 附魔武器</td>
+            <td>+4 附魔护甲</td>
+            <td>属性装备 +6, 抗力斗篷 +4</td>
+          </tr>
+          <tr>
+            <td>15 级</td>
+            <td>200,000 gp</td>
+            <td>+5 附魔武器</td>
+            <td>+5 附魔护甲</td>
+            <td>属性装备 +6, 抗力斗篷 +5, 传奇奇物</td>
+          </tr>
+          <tr>
+            <td>18 级</td>
+            <td>440,000 gp</td>
+            <td>+5 多重附魔武器</td>
+            <td>+5 多重附魔护甲</td>
+            <td>全套 +6 属性装备, 传奇奇物 x2-3</td>
+          </tr>
+          <tr>
+            <td>20 级</td>
+            <td>760,000 gp</td>
+            <td>神器级武器</td>
+            <td>神器级护甲</td>
+            <td>传说装备全满</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 13px; color: var(--text-subtle); margin-top: 10px;">
+        注：预计财富基于 DMG 表 5-1（角色等级对应财富）。实际游戏中 DM 可能调整，以上仅供参考。
+      </p>
+    </div>
+
+    <blockquote>
+      <strong>装备购买优先级提示：</strong>在 D&D 3.5e 中，最重要的装备投资顺序为：
+      <strong>抗力斗篷（提升所有豁免）> 属性增强装备（提升核心属性）> 武器/护甲增强加值 > 特殊附魔</strong>。
+      抗力斗篷是性价比最高的装备，应在第一时间升级。
+    </blockquote>
+
+    <p style="font-size:13px;color:var(--text-subtle);margin-top:40px;text-align:center;">
+      数据来源：Magic Item Compendium · Arms and Equipment Guide · Dragon Magic · Dungeon Master's Guide II ·
+      D&D 3.5e 官方规则书 (Wizards of the Coast) | 所有扩展内容需 DM 许可方可使用
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 扩展装备与魔法物品 | 数据来源：Magic Item Compendium · Arms and Equipment Guide · Dragon Magic · DMG2</p>
+</div>
+
+</body>
+</html>

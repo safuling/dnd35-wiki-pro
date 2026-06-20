@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扩展法术大全 - 3R拓展 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .main-content { flex: 1; min-width: 0; padding: 2rem 2.5rem; }
+    .main-content h1 { font-size: 2rem; color: var(--text-heading); border-bottom: 3px solid var(--accent-gold); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    .main-content h2 { font-size: 1.5rem; color: var(--text-heading); margin-top: 2.5rem; margin-bottom: 1rem; padding-left: 0.75rem; border-left: 4px solid var(--accent-gold); }
+    .main-content h3 { font-size: 1.2rem; color: var(--accent-purple, #8b5cf6); margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .toc { background: var(--bg-card); border: 1px solid var(--border-main); border-radius: var(--radius); box-shadow: var(--shadow-soft); padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+    .toc-title { font-size: 1.1rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.75rem; }
+    .toc ol { margin: 0; padding-left: 1.5rem; }
+    .toc li { margin-bottom: 0.3rem; }
+    .toc a { color: var(--accent-blue, #3b82f6); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .spell-table-wrap { overflow-x: auto; margin-bottom: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-card); }
+    table.spell-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    table.spell-table thead th { background: var(--accent-gold); color: #1a1a2e; font-weight: 700; padding: 0.6rem 0.75rem; text-align: left; position: sticky; top: 0; z-index: 2; white-space: nowrap; }
+    table.spell-table tbody tr:nth-child(even) { background: var(--bg-table-stripe); }
+    table.spell-table tbody tr:hover { background: rgba(212,160,23,0.08); }
+    table.spell-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+    table.spell-table td:first-child { font-weight: 600; }
+    .lvl-badge { display: inline-block; min-width: 1.6em; text-align: center; padding: 0.1em 0.45em; border-radius: 4px; font-size: 0.82rem; font-weight: 700; color: #fff; line-height: 1.4; }
+    .lvl-0 { background: #6b7280; } .lvl-1 { background: #3b82f6; } .lvl-2 { background: #10b981; }
+    .lvl-3 { background: #f59e0b; } .lvl-4 { background: #ef4444; } .lvl-5 { background: #8b5cf6; }
+    .lvl-6 { background: #ec4899; } .lvl-7 { background: #6366f1; } .lvl-8 { background: #14b8a6; } .lvl-9 { background: #dc2626; }
+    .school-tag { display: inline-block; padding: 0.1em 0.5em; border-radius: 3px; font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
+    .school-abj { background: #dbeafe; color: #1e40af; } .school-conj { background: #fef3c7; color: #92400e; }
+    .school-div { background: #e0e7ff; color: #3730a3; } .school-ench { background: #fce7f3; color: #9d174d; }
+    .school-evoc { background: #fee2e2; color: #991b1b; } .school-illu { background: #ede9fe; color: #5b21b6; }
+    .school-necro { background: #d1fae5; color: #065f46; } .school-trans { background: #cffafe; color: #155e75; }
+    .note-box { background: var(--bg-card); border-left: 4px solid var(--accent-purple, #8b5cf6); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; box-shadow: var(--shadow-soft); }
+    .note-box strong { color: var(--accent-purple, #8b5cf6); }
+    .source-tag { display: inline-block; font-size: 0.75rem; padding: 0.1em 0.5em; border-radius: 3px; background: var(--border-light, #e5e7eb); color: var(--text-subtle, #6b7280); margin-left: 0.3rem; }
+    .section-intro { color: var(--text-subtle, #6b7280); margin-bottom: 1rem; font-size: 0.95rem; }
+    @media (max-width: 900px) { .main-content { padding: 1rem; } table.spell-table { font-size: 0.8rem; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" class="active" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">3R 扩展大全</div>
+      <a href="index-v2.html">总览</a>
+      <a href="classes.html">扩展职业</a>
+      <a href="races.html">扩展种族</a>
+      <a href="feats.html">扩展专长</a>
+      <a href="spells.html" class="active">扩展法术</a>
+      <a href="equipment.html">扩展装备</a>
+      <a href="monsters.html">扩展怪物</a>
+      <a href="supplements.html">专题扩展</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">主站</div>
+      <a href="../index.html">首页</a>
+      <a href="../spells/intro.html">核心法术</a>
+      <a href="../rules.html">核心规则</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>扩展法术大全（Expanded Spells）</h1>
+    <p class="section-intro">本页面收录来自 D&D 3.5e 官方扩展书籍的法术与灵能，包括 <strong>Spell Compendium（SC）</strong>、<strong>Player's Handbook II（PHB2）</strong>、<strong>Complete Arcane（CArc）</strong>、<strong>Complete Divine（CDiv）</strong>、<strong>Expanded Psionics Handbook（XPH）</strong> 等来源。所有法术数据以原始出版物为准，勘误已整合。</p>
+
+    <div class="toc">
+      <div class="toc-title">📜 目录</div>
+      <ol>
+        <li><a href="#sc">Spell Compendium 精选法术（约30个）</a></li>
+        <li><a href="#phb2">PHB2 新增法术（约15个）</a></li>
+        <li><a href="#carc">Complete Arcane 法术（约10个）</a></li>
+        <li><a href="#cdiv">Complete Divine 法术（约10个）</a></li>
+        <li><a href="#xph">Expanded Psionics 灵能（约10个）</a></li>
+        <li><a href="#by-school">按学派分类法术速查表</a></li>
+        <li><a href="#by-class">按职业/环级分类速查表</a></li>
+        <li><a href="#compare">扩展法术与核心法术对照</a></li>
+      </ol>
+    </div>
+
+    <!-- ===== SECTION 1: Spell Compendium ===== -->
+    <h2 id="sc">1. Spell Compendium 精选法术</h2>
+    <p class="section-intro"><em>Spell Compendium</em>（法术全书）是 3.5 版最权威的法术汇编，收录了自 <em>Tome and Blood</em> 以来几乎所有官方扩展法术，并经过勘误修订。以下按环级精选最具代表性的法术。</p>
+
+    <h3>0 级戏法 / 祷念（Cantrips / Orisons）</h3>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr>
+            <th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>誊写术<br><small>Amanuensis</small></td>
+            <td><span class="lvl-badge lvl-0">0</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 分钟</td><td>近距</td><td>立即</td><td>无</td><td>否</td>
+            <td>将一页文书完美复制到新载体上，不损坏原件</td>
+          </tr>
+          <tr>
+            <td>良性换位<br><small>Benign Transposition</small></td>
+            <td><span class="lvl-badge lvl-0">0</span></td>
+            <td><span class="school-tag school-conj">咒法（传送）</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>立即</td><td>意志，无效（无害）</td><td>否</td>
+            <td>两个自愿生物瞬间交换位置</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>1 级法术</h3>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr>
+            <th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>加速移动<br><small>Accelerated Movement</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>吟游诗人 / 术士/法师</td>
+            <td>1 迅捷动作</td><td>个人</td><td>1 轮</td><td>无</td><td>否</td>
+            <td>在困难地形中也可以正常速度移动，不引发借机攻击</td>
+          </tr>
+          <tr>
+            <td>兽爪术<br><small>Beast Claw</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>德鲁伊 / 巡林客</td>
+            <td>1 标准动作</td><td>个人</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>双手变为天然爪击武器，造成 1d6 + 力量修正 挥砍伤害</td>
+          </tr>
+          <tr>
+            <td>血刃术<br><small>Blade of Blood</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-necro">死灵</span></td>
+            <td>反圣武士 / 术士/法师</td>
+            <td>1 迅捷动作</td><td>个人</td><td>1 轮</td><td>无</td><td>否</td>
+            <td>近战武器额外造成 1d6 伤害；对流血目标额外 +2d6</td>
+          </tr>
+          <tr>
+            <td>即时搜索<br><small>Instant Search</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-div">预言</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>立即</td><td>无</td><td>否</td>
+            <td>对目标进行一次搜索检定，获得 +10 加值</td>
+          </tr>
+          <tr>
+            <td>神经刺激<br><small>Nerveskitter</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 迅捷动作</td><td>个人</td><td>1 轮</td><td>无</td><td>否</td>
+            <td>先攻检定 +5 加值；可在投先攻前以即时动作施放</td>
+          </tr>
+          <tr>
+            <td>酸球术<br><small>Orb of Acid</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-conj">咒法（创造）[酸]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>立即</td><td>无</td><td>否</td>
+            <td>远程接触攻击，造成 1d8 酸伤害；无需豁免、不受 SR 影响</td>
+          </tr>
+          <tr>
+            <td>冷球术<br><small>Orb of Cold</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-conj">咒法（创造）[冷]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>立即</td><td>无</td><td>否</td>
+            <td>远程接触攻击，造成 1d8 寒冷伤害</td>
+          </tr>
+          <tr>
+            <td>电球术<br><small>Orb of Electricity</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-conj">咒法（创造）[电]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>立即</td><td>无</td><td>否</td>
+            <td>远程接触攻击，造成 1d8 电击伤害</td>
+          </tr>
+          <tr>
+            <td>火球术（SC版）<br><small>Orb of Fire</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-conj">咒法（创造）[火]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>立即</td><td>无</td><td>否</td>
+            <td>远程接触攻击，造成 1d8 火焰伤害</td>
+          </tr>
+          <tr>
+            <td>音波球术<br><small>Orb of Sound</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-conj">咒法（创造）[音波]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>立即</td><td>无</td><td>否</td>
+            <td>远程接触攻击，造成 1d8 音波伤害</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2 级法术</h3>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr>
+            <th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>暗火术<br><small>Darkfire</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-evoc">塑能</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>无</td><td>否</td>
+            <td>手中出现暗色火焰，可用于近战接触攻击 1d6 火 + 1d6 暗蚀伤害</td>
+          </tr>
+          <tr>
+            <td>扰乱攻击者<br><small>Distract Assailant</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-ench">惑控 [影响心灵]</span></td>
+            <td>吟游诗人 / 术士/法师</td>
+            <td>1 迅捷动作</td><td>近距</td><td>1 轮</td><td>意志，无效</td><td>是</td>
+            <td>目标恍惚（dazed）1 轮；可用于打断敌人攻击</td>
+          </tr>
+          <tr>
+            <td>熵盾术<br><small>Entropic Shielding</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>远程攻击有 20% 失手率；类似朦胧术但仅对远程有效</td>
+          </tr>
+          <tr>
+            <td>火焰陷阱（SC版）<br><small>Fire Trap (SC)</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-abj">防护 [火]</span></td>
+            <td>德鲁伊 / 术士/法师</td>
+            <td>10 分钟</td><td>接触</td><td>永久直到触发</td><td>反射，减半</td><td>是</td>
+            <td>触发式爆炸陷阱，1d4 + 每施法者等级 +1 火焰伤害（最高 +20）</td>
+          </tr>
+          <tr>
+            <td>闪烁鳞片<br><small>Scintillating Scales</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>护甲加值变为天生防御加值（提高许多法术对AC的穿透）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3 级法术</h3>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr>
+            <th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>深度黑暗视觉<br><small>Deeper Darkvision</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师 / 巡林客</td>
+            <td>1 标准动作</td><td>接触</td><td>1 小时/等级</td><td>意志，无效（无害）</td><td>是（无害）</td>
+            <td>赋予 120 尺黑暗视觉（超越标准 60 尺版本）</td>
+          </tr>
+          <tr>
+            <td>驱散迷雾<br><small>Dispel Fog</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>中距</td><td>立即</td><td>无</td><td>否</td>
+            <td>驱散区域内所有雾系法术效果（云雾术、死云术等）</td>
+          </tr>
+          <tr>
+            <td>飞行术（SC版）<br><small>Fly (SC)</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>接触</td><td>1 分钟/等级</td><td>意志，无效（无害）</td><td>是（无害）</td>
+            <td>赋予飞行速度 60 尺（良好机动性）；SC版持续时间改为分钟/等级</td>
+          </tr>
+          <tr>
+            <td>必然败亡<br><small>Inevitable Defeat</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-necro">死灵</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>1 轮/等级</td><td>强韧，无效</td><td>是</td>
+            <td>目标每轮受到 3d6 非致命伤害并疲乏；持续性消耗战利器</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4-6 级法术</h3>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr>
+            <th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>迅捷术<br><small>Celerity</small></td>
+            <td><span class="lvl-badge lvl-4">4</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 即时动作</td><td>个人</td><td>立即</td><td>无</td><td>否</td>
+            <td>立即获得一个额外标准动作；施法后恍惚 1 轮。<strong>⚠ 被广泛认为过于强力</strong></td>
+          </tr>
+          <tr>
+            <td>火焰鞭<br><small>Flame Whips</small></td>
+            <td><span class="lvl-badge lvl-4">4</span></td>
+            <td><span class="school-tag school-evoc">塑能 [火]</span></td>
+            <td>德鲁伊 / 术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>无</td><td>否</td>
+            <td>双臂变为火焰鞭，每次攻击造成 4d6 火焰伤害，触及 15 尺</td>
+          </tr>
+          <tr>
+            <td>影界相位<br><small>Shadow Phase</small></td>
+            <td><span class="lvl-badge lvl-4">4</span></td>
+            <td><span class="school-tag school-illu">幻术（幽影）</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>无</td><td>否</td>
+            <td>进入半实体化状态，20% 失手率，可穿越固体但每轮需豁免</td>
+          </tr>
+          <tr>
+            <td>龙力术<br><small>Draconic Might</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>无</td><td>否</td>
+            <td>力量 +8 增强加值，天生防御 +4，获得恐惧灵光</td>
+          </tr>
+          <tr>
+            <td>高等影界相位<br><small>Shadow Phase, Greater</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-illu">幻术（幽影）</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>升级版影界相位，50% 失手率，可自由穿越固体</td>
+          </tr>
+          <tr>
+            <td>驱魔法墙<br><small>Wall of Dispel Magic</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>中距</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>创造一面力场墙壁，穿越者受到定向驱散魔法效果</td>
+          </tr>
+          <tr>
+            <td>红宝石之眼<br><small>Ruby Eye of Power</small></td>
+            <td><span class="lvl-badge lvl-6">6</span></td>
+            <td><span class="school-tag school-div">预言</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>获得全域视野，免疫凝视攻击，+4 侦察</td>
+          </tr>
+          <tr>
+            <td>龟甲击<br><small>Tortoise Strike</small></td>
+            <td><span class="lvl-badge lvl-6">6</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 迅捷动作</td><td>个人</td><td>1 轮</td><td>无</td><td>否</td>
+            <td>下一次攻击自动命中且视为重击确认；消耗极大但爆发极强</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>7-9 级法术</h3>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr>
+            <th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>奥术涌动<br><small>Arcane Spellsurge</small></td>
+            <td><span class="lvl-badge lvl-7">7</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师（龙脉术士）</td>
+            <td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>无</td><td>否</td>
+            <td>所有法术施法时间降低一级（标准→迅捷等）；龙脉术士招牌能力</td>
+          </tr>
+          <tr>
+            <td>棱彩洪流<br><small>Prismatic Deluge</small></td>
+            <td><span class="lvl-badge lvl-7">7</span></td>
+            <td><span class="school-tag school-evoc">塑能</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>60 尺</td><td>立即</td><td>见下</td><td>是</td>
+            <td>60 尺锥形，造成随机棱彩效果，类似棱彩喷射但范围更大</td>
+          </tr>
+          <tr>
+            <td>高等奥术融合<br><small>Greater Arcane Fusion</small></td>
+            <td><span class="lvl-badge lvl-8">8</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>立即</td><td>无</td><td>否</td>
+            <td>在一次施法中同时施展两个 7 级或以下法术；极其灵活</td>
+          </tr>
+          <tr>
+            <td>召唤死亡 slaad<br><small>Summon Death Slaad</small></td>
+            <td><span class="lvl-badge lvl-8">8</span></td>
+            <td><span class="school-tag school-conj">咒法（召唤）[混沌]</span></td>
+            <td>术士/法师</td>
+            <td>1 轮</td><td>近距</td><td>1 轮/等级</td><td>无</td><td>否</td>
+            <td>召唤一只死亡 slaad（CR 10），自带高等传送术和恐惧灵光</td>
+          </tr>
+          <tr>
+            <td>星衣术<br><small>Starmantle</small></td>
+            <td><span class="lvl-badge lvl-9">9</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>反射，减半（特殊）</td><td>否</td>
+            <td>非魔法武器完全无法伤害你；魔法武器仅造成一半伤害</td>
+          </tr>
+          <tr>
+            <td>混沌之口<br><small>Maw of Chaos</small></td>
+            <td><span class="lvl-badge lvl-9">9</span></td>
+            <td><span class="school-tag school-conj">咒法（创造）[混沌]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>中距</td><td>1 轮/等级</td><td>无</td><td>是</td>
+            <td>创造 20 尺半径混沌领域，内部生物每轮 4d6 伤害且困惑</td>
+          </tr>
+          <tr>
+            <td>时间停止（变体）<br><small>Time Stop (variants)</small></td>
+            <td><span class="lvl-badge lvl-9">9</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>见下</td><td>无</td><td>否</td>
+            <td>SC 提供了多种时间停止变体，包括延迟版本和连锁版本</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== SECTION 2: PHB2 ===== -->
+    <h2 id="phb2">2. PHB2 新增法术</h2>
+    <p class="section-intro"><em>Player's Handbook II</em> 为核心施法职业增添了一批实用法术，特别强化了吟游诗人、低等级法师和辅助类能力。</p>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr><th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>抱负术<br><small>Aspirant</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-ench">惑控 [影响心灵]</span></td>
+            <td>吟游诗人</td>
+            <td>1 标准动作</td><td>近距</td><td>1 小时/等级</td><td>意志，无效</td><td>是</td>
+            <td>目标被激励，下一次技能检定获得 +5 加值</td>
+          </tr>
+          <tr>
+            <td>血风术<br><small>Blood Wind</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-evoc">塑能</span></td>
+            <td>术士/法师 / 德鲁伊</td>
+            <td>1 标准动作</td><td>中距</td><td>立即</td><td>反射，减半</td><td>是</td>
+            <td>创造血红风刃，区域内生物 1d4/等级 挥砍伤害（最高 5d4）</td>
+          </tr>
+          <tr>
+            <td>洞察佯攻<br><small>Insightful Feint</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-div">预言</span></td>
+            <td>吟游诗人 / 术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 轮</td><td>无</td><td>否</td>
+            <td>下一次佯攻自动成功，且目标失去敏捷加值 1 轮</td>
+          </tr>
+          <tr>
+            <td>英雄气概<br><small>Heroics</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-ench">惑控 [影响心灵]</span></td>
+            <td>吟游诗人</td>
+            <td>1 标准动作</td><td>近距</td><td>10 分钟/等级</td><td>意志，无效（无害）</td><td>是（无害）</td>
+            <td>目标获得一个临时专长（从战士奖励专长列表中选择）</td>
+          </tr>
+          <tr>
+            <td>召唤乐器 II<br><small>Summon Instrument II</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-conj">咒法（召唤）</span></td>
+            <td>吟游诗人</td>
+            <td>1 轮</td><td>0 尺</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>召唤一把精制品乐器，可用于表演检定 +2 加值</td>
+          </tr>
+          <tr>
+            <td>铁木术<br><small>Ironwood</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>德鲁伊</td>
+            <td>1 分钟/磅</td><td>0 尺</td><td>1 天/等级</td><td>无</td><td>否</td>
+            <td>将木材变为铁木（硬度 10，HP 15/寸），可制造德鲁伊可用的装备</td>
+          </tr>
+          <tr>
+            <td>战术传讯<br><small>Tactical Telepathy</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-div">预言 [影响心灵]</span></td>
+            <td>吟游诗人 / 术士/法师</td>
+            <td>1 标准动作</td><td>中距</td><td>1 分钟/等级</td><td>意志，无效（无害）</td><td>是（无害）</td>
+            <td>多个目标之间建立心灵链接，无声交流战术信息，AC +1 洞察加值</td>
+          </tr>
+          <tr>
+            <td>高等魔嘴<br><small>Magic Mouth, Greater</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-illu">幻术（魅影）</span></td>
+            <td>吟游诗人 / 术士/法师</td>
+            <td>10 分钟</td><td>近距</td><td>永久直到触发</td><td>无</td><td>否</td>
+            <td>升级版魔嘴，可录制最多 50 个词的信息，触发条件更灵活</td>
+          </tr>
+          <tr>
+            <td>防护元素（共用）<br><small>Resist Energy, Communal</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>牧师 / 德鲁伊 / 术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>10 分钟/等级</td><td>无</td><td>是（无害）</td>
+            <td>多人共享能量抗力 20（分配在多个目标之间）</td>
+          </tr>
+          <tr>
+            <td>魔力共鸣<br><small>Arcane Concordance</small></td>
+            <td><span class="lvl-badge lvl-4">4</span></td>
+            <td><span class="school-tag school-div">预言</span></td>
+            <td>吟游诗人 / 术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>施法者等级检定 +4 加值，用于穿透法术抗力和解除魔法</td>
+          </tr>
+          <tr>
+            <td>灵魂护卫<br><small>Soulwarden</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>牧师 / 圣武士</td>
+            <td>1 标准动作</td><td>近距</td><td>1 轮/等级</td><td>无</td><td>否</td>
+            <td>保护目标灵魂免受灵魂吸取、负等级和死亡效果</td>
+          </tr>
+          <tr>
+            <td>群体牛之力量<br><small>Bull's Strength, Mass</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>牧师 / 术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>1 分钟/等级</td><td>无</td><td>是（无害）</td>
+            <td>多个目标各获得力量 +4 增强加值（每 3 级多一个目标）</td>
+          </tr>
+          <tr>
+            <td>群体猫之优雅<br><small>Cat's Grace, Mass</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>吟游诗人 / 术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>1 分钟/等级</td><td>无</td><td>是（无害）</td>
+            <td>多个目标各获得敏捷 +4 增强加值</td>
+          </tr>
+          <tr>
+            <td>群体狐之狡诈<br><small>Fox's Cunning, Mass</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>1 分钟/等级</td><td>无</td><td>是（无害）</td>
+            <td>多个目标各获得魅力 +4 增强加值</td>
+          </tr>
+          <tr>
+            <td>高等法师彻夜<br><small>Mage's Lucubration, Greater</small></td>
+            <td><span class="lvl-badge lvl-6">6</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>法师</td>
+            <td>1 标准动作</td><td>个人</td><td>立即</td><td>无</td><td>否</td>
+            <td>恢复所有 5 级或以下已消耗的法术位</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== SECTION 3: Complete Arcane ===== -->
+    <h2 id="carc">3. Complete Arcane 法术</h2>
+    <p class="section-intro"><em>Complete Arcane</em> 专注于奥术施法者（法师、术士、邪术师、战法师等），提供了许多强化奥术特化的法术。</p>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr><th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>奥术之矛<br><small>Arcane Bolt</small></td>
+            <td><span class="lvl-badge lvl-1">1</span></td>
+            <td><span class="school-tag school-evoc">塑能 [力场]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>中距</td><td>立即</td><td>无</td><td>否</td>
+            <td>力场远程接触攻击，造成 1d4+1 伤害；不受法术抗力影响</td>
+          </tr>
+          <tr>
+            <td>奥术锁链<br><small>Arcane Chain</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-conj">咒法 [力场]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>1 轮/等级</td><td>反射，无效</td><td>是</td>
+            <td>力场锁链束缚目标，类似人类定身术但为力场效果</td>
+          </tr>
+          <tr>
+            <td>法术穿透增幅<br><small>Spell Penetration Boost</small></td>
+            <td><span class="lvl-badge lvl-2">2</span></td>
+            <td><span class="school-tag school-trans">变化</span></td>
+            <td>术士/法师</td>
+            <td>1 迅捷动作</td><td>个人</td><td>1 轮</td><td>无</td><td>否</td>
+            <td>下一次穿透法术抗力检定获得 +4 加值</td>
+          </tr>
+          <tr>
+            <td>元素护甲<br><small>Elemental Aegis</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 小时/等级</td><td>无</td><td>否</td>
+            <td>选择一种元素类型，获得该类型 20 点能量抗力</td>
+          </tr>
+          <tr>
+            <td>奥术镜像<br><small>Arcane Mirror</small></td>
+            <td><span class="lvl-badge lvl-3">3</span></td>
+            <td><span class="school-tag school-illu">幻术（虚假）</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>1 轮/等级</td><td>无</td><td>否</td>
+            <td>创造多个施法者的镜像，分散敌人注意力，提供隐蔽</td>
+          </tr>
+          <tr>
+            <td>魔法飞弹风暴<br><small>Magic Missile Storm</small></td>
+            <td><span class="lvl-badge lvl-4">4</span></td>
+            <td><span class="school-tag school-evoc">塑能 [力场]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>中距</td><td>立即</td><td>无</td><td>否</td>
+            <td>发射大量魔法飞弹（施法者等级每级 1 枚），每枚 1d4+1 伤害</td>
+          </tr>
+          <tr>
+            <td>法术虹吸<br><small>Spell Siphon</small></td>
+            <td><span class="lvl-badge lvl-4">4</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>术士/法师</td>
+            <td>1 即时动作</td><td>近距</td><td>立即</td><td>无</td><td>是</td>
+            <td>尝试窃取目标已准备的法术或法术位；对抗性施法者等级检定</td>
+          </tr>
+          <tr>
+            <td>法力护盾<br><small>Mana Vortex</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-abj">防护</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>中距</td><td>1 轮/等级</td><td>意志，无效</td><td>是</td>
+            <td>区域内施法者需通过专注检定才能施法，DC = 法术环级 + 15</td>
+          </tr>
+          <tr>
+            <td>力场之笼<br><small>Forcecage (Lesser)</small></td>
+            <td><span class="lvl-badge lvl-5">5</span></td>
+            <td><span class="school-tag school-evoc">塑能 [力场]</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>近距</td><td>1 轮/等级</td><td>反射，无效</td><td>是</td>
+            <td>低配版力笼术，10 尺立方体，持续时间较短</td>
+          </tr>
+          <tr>
+            <td>高等奥术视界<br><small>Arcane Sight, Improved</small></td>
+            <td><span class="lvl-badge lvl-6">6</span></td>
+            <td><span class="school-tag school-div">预言</span></td>
+            <td>术士/法师</td>
+            <td>1 标准动作</td><td>个人</td><td>1 分钟/等级</td><td>无</td><td>否</td>
+            <td>自动识别视野内所有魔法灵光，并可知晓法术学派和强度</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== SECTION 4: Complete Divine ===== -->
+    <h2 id="cdiv">4. Complete Divine 法术</h2>
+    <p class="section-intro"><em>Complete Divine</em> 扩展了神术施法者（牧师、德鲁伊、圣武士等）的法术列表，并增加了许多领域专属法术。</p>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr><th>法术名称</th><th>环级</th><th>学派</th><th>可用职业</th><th>施法时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>法术抗力</th><th>简述</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>神圣之刃 <small>Divine Blade</small></td><td><span class="lvl-badge lvl-2">2</span></td><td><span class="school-tag school-trans">变化</span></td><td>牧师 / 圣武士</td><td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>无</td><td>否</td><td>武器获得 +1 增强加值并附加 1d6 神圣伤害（对邪恶生物）</td></tr>
+          <tr><td>不死克星 <small>Undead Bane</small></td><td><span class="lvl-badge lvl-2">2</span></td><td><span class="school-tag school-necro">死灵 [善良]</span></td><td>牧师 / 圣武士</td><td>1 标准动作</td><td>近距</td><td>1 轮/等级</td><td>无</td><td>是</td><td>武器对不死生物获得 +2 增强加值和 2d6 额外伤害</td></tr>
+          <tr><td>信仰之盾（群体）<small>Shield of Faith, Mass</small></td><td><span class="lvl-badge lvl-3">3</span></td><td><span class="school-tag school-abj">防护</span></td><td>牧师</td><td>1 标准动作</td><td>近距</td><td>1 分钟/等级</td><td>无</td><td>是（无害）</td><td>多个目标各获得 +2 偏斜加值（每 6 级 +1，最高 +5）</td></tr>
+          <tr><td>自然之握 <small>Nature's Grasp</small></td><td><span class="lvl-badge lvl-3">3</span></td><td><span class="school-tag school-conj">咒法（创造）</span></td><td>德鲁伊 / 巡林客</td><td>1 标准动作</td><td>中距</td><td>1 轮/等级</td><td>反射，无效</td><td>是</td><td>地面伸出根须缠绕目标，类似纠缠术但针对单体，更难挣脱</td></tr>
+          <tr><td>生命之泉 <small>Healing Spirit</small></td><td><span class="lvl-badge lvl-4">4</span></td><td><span class="school-tag school-conj">咒法（医疗）</span></td><td>牧师 / 德鲁伊</td><td>1 标准动作</td><td>近距</td><td>1 轮/等级</td><td>无</td><td>否</td><td>召唤治疗精魂，每轮自动治疗 30 尺内一个目标 2d8+CL HP</td></tr>
+          <tr><td>神圣庇护 <small>Sacred Haven</small></td><td><span class="lvl-badge lvl-4">4</span></td><td><span class="school-tag school-abj">防护 [善良]</span></td><td>牧师</td><td>1 标准动作</td><td>20 尺半径</td><td>1 分钟/等级</td><td>无</td><td>否</td><td>区域内盟友 AC +2 神圣加值，邪恶生物无法进入（需意志豁免）</td></tr>
+          <tr><td>神罚 <small>Divine Retribution</small></td><td><span class="lvl-badge lvl-5">5</span></td><td><span class="school-tag school-evoc">塑能 [善良]</span></td><td>牧师 / 圣武士</td><td>1 标准动作</td><td>中距</td><td>立即</td><td>意志，减半</td><td>是</td><td>对邪恶生物造成 1d8/等级 伤害（最高 15d8）；善良生物不受影响</td></tr>
+          <tr><td>领域之赐 <small>Domain Bestowal</small></td><td><span class="lvl-badge lvl-6">6</span></td><td><span class="school-tag school-trans">变化</span></td><td>牧师</td><td>10 分钟</td><td>接触</td><td>24 小时</td><td>意志，无效（无害）</td><td>是（无害）</td><td>赋予目标一个你拥有的领域的一个领域能力（每日一次）</td></tr>
+          <tr><td>神圣风暴 <small>Storm of Divine Favor</small></td><td><span class="lvl-badge lvl-7">7</span></td><td><span class="school-tag school-evoc">塑能</span></td><td>牧师</td><td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>无</td><td>否</td><td>攻击加值和伤害各获得 +3 幸运加值，每轮一次额外攻击</td></tr>
+          <tr><td>神圣传送 <small>Divine Translocation</small></td><td><span class="lvl-badge lvl-8">8</span></td><td><span class="school-tag school-conj">咒法（传送）</span></td><td>牧师</td><td>1 标准动作</td><td>远距</td><td>立即</td><td>无</td><td>否</td><td>无距离限制且无误差的传送术，可携带多个盟友</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== SECTION 5: Expanded Psionics ===== -->
+    <h2 id="xph">5. Expanded Psionics 灵能</h2>
+    <p class="section-intro"><em>Expanded Psionics Handbook (XPH)</em> 是 3.5e 灵能系统的核心规则书。灵能（Psionic Powers）使用灵能点（Power Points）代替法术位，通过增幅（Augment）提升效果。以下精选关键灵能。</p>
+    <div class="spell-table-wrap">
+      <table class="spell-table">
+        <thead>
+          <tr><th>灵能名称</th><th>等级</th><th>学科</th><th>可用职业</th><th>显能时间</th><th>射程</th><th>持续时间</th><th>豁免</th><th>异能抗力</th><th>简述</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>能量射线 <small>Energy Ray</small></td><td><span class="lvl-badge lvl-1">1</span></td><td><span class="school-tag school-evoc">心灵转化</span></td><td>心灵术士 / 狂念者</td><td>1 标准动作</td><td>近距</td><td>立即</td><td>无</td><td>是</td><td>远程接触攻击，1d6 元素伤害（冷/电/火/音）；增幅 1PP +1d6</td></tr>
+          <tr><td>心灵护甲 <small>Inertial Armor</small></td><td><span class="lvl-badge lvl-1">1</span></td><td><span class="school-tag school-abj">心灵防护</span></td><td>心灵术士 / 心灵行者</td><td>1 标准动作</td><td>个人</td><td>1 小时/等级</td><td>无</td><td>否</td><td>AC +4 力场加值；类似法师护甲</td></tr>
+          <tr><td>星界构装体 <small>Astral Construct</small></td><td><span class="lvl-badge lvl-2">2</span></td><td><span class="school-tag school-conj">心灵创造</span></td><td>心灵术士</td><td>1 整轮动作</td><td>近距</td><td>1 轮/等级</td><td>无</td><td>否</td><td>召唤星界构装体战斗；增幅时构装体等级提升（菜单选择能力）</td></tr>
+          <tr><td>能量球 <small>Energy Ball</small></td><td><span class="lvl-badge lvl-3">3</span></td><td><span class="school-tag school-evoc">心灵转化</span></td><td>心灵术士 / 狂念者</td><td>1 标准动作</td><td>中距</td><td>立即</td><td>反射，减半</td><td>是</td><td>选择一种能量类型，20 尺半径爆发造成 5d6 伤害；增幅 1PP +1d6</td></tr>
+          <tr><td>时间跳跃 <small>Time Hop</small></td><td><span class="lvl-badge lvl-3">3</span></td><td><span class="school-tag school-trans">心灵传送</span></td><td>心灵术士 / 心灵行者</td><td>1 标准动作</td><td>近距</td><td>1 轮/等级</td><td>意志，无效</td><td>是</td><td>目标从时间流中消失，每等级 1 轮后回到原位；攻防一体</td></tr>
+          <tr><td>分裂意识 <small>Schism</small></td><td><span class="lvl-badge lvl-4">4</span></td><td><span class="school-tag school-div">心灵预言</span></td><td>心灵术士</td><td>1 标准动作</td><td>个人</td><td>1 轮/等级</td><td>无</td><td>否</td><td>意识分裂为二，每轮可额外执行一个纯心灵显能动作；灵能核心法术</td></tr>
+          <tr><td>思维侦测 <small>Mind Probe</small></td><td><span class="lvl-badge lvl-4">4</span></td><td><span class="school-tag school-div">心灵预言 [影响心灵]</span></td><td>心灵术士 / 心灵行者</td><td>1 分钟</td><td>接触</td><td>1 分钟/等级</td><td>意志，无效</td><td>是</td><td>深入读取目标表层思维，每轮可获知一个答案</td></tr>
+          <tr><td>灵能复活 <small>Psionic Revivify</small></td><td><span class="lvl-badge lvl-5">5</span></td><td><span class="school-tag school-conj">心灵创造</span></td><td>心灵术士</td><td>1 标准动作</td><td>接触</td><td>立即</td><td>无</td><td>否</td><td>复活 1 轮内死亡的生物（消耗 200 XP + 5 PP）；类似复活术但更快捷</td></tr>
+          <tr><td>心灵空白 <small>Mind Blank, Psionic</small></td><td><span class="lvl-badge lvl-8">8</span></td><td><span class="school-tag school-div">心灵预言</span></td><td>心灵术士</td><td>1 标准动作</td><td>接触</td><td>24 小时</td><td>意志，无效（无害）</td><td>是（无害）</td><td>免疫所有预言系效果、远程感知和影响心灵的攻击</td></tr>
+          <tr><td>现实修订 <small>Reality Revision</small></td><td><span class="lvl-badge lvl-9">9</span></td><td><span class="school-tag school-conj">心灵创造</span></td><td>心灵术士</td><td>1 标准动作</td><td>见下</td><td>见下</td><td>见下</td><td>见下</td><td>灵能版的祈愿术（Wish），使用 PP 增幅获得不同等级的效果</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== SECTION 6: 按学派分类 ===== -->
+    <h2 id="by-school">6. 按学派分类法术速查表</h2>
+    <p class="section-intro">以下表格将本页所有扩展法术按八大学派分组，方便快速查找。</p>
+
+    <h3>防护系（Abjuration）</h3>
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>法术</th><th>环级</th><th>来源</th><th>关键效果</th></tr></thead>
+      <tbody>
+        <tr><td>熵盾术 Entropic Shielding</td><td><span class="lvl-badge lvl-2">2</span></td><td>SC</td><td>远程 20% 失手率</td></tr>
+        <tr><td>火焰陷阱 Fire Trap (SC)</td><td><span class="lvl-badge lvl-2">2</span></td><td>SC</td><td>触发式爆炸陷阱</td></tr>
+        <tr><td>驱散迷雾 Dispel Fog</td><td><span class="lvl-badge lvl-3">3</span></td><td>SC</td><td>驱散所有雾系效果</td></tr>
+        <tr><td>驱魔法墙 Wall of Dispel Magic</td><td><span class="lvl-badge lvl-5">5</span></td><td>SC</td><td>穿越者受驱散魔法</td></tr>
+        <tr><td>星衣术 Starmantle</td><td><span class="lvl-badge lvl-9">9</span></td><td>SC</td><td>非魔法武器无法伤害</td></tr>
+        <tr><td>灵魂护卫 Soulwarden</td><td><span class="lvl-badge lvl-5">5</span></td><td>PHB2</td><td>免疫灵魂吸取和负等级</td></tr>
+        <tr><td>防护元素（共用）Resist Energy, Comm.</td><td><span class="lvl-badge lvl-3">3</span></td><td>PHB2</td><td>多人共享能量抗力</td></tr>
+        <tr><td>信仰之盾（群体）Shield of Faith, Mass</td><td><span class="lvl-badge lvl-3">3</span></td><td>CDiv</td><td>多人偏斜加值</td></tr>
+        <tr><td>神圣庇护 Sacred Haven</td><td><span class="lvl-badge lvl-4">4</span></td><td>CDiv</td><td>区域 AC +2 神圣加值</td></tr>
+        <tr><td>元素护甲 Elemental Aegis</td><td><span class="lvl-badge lvl-3">3</span></td><td>CArc</td><td>20 点元素抗力</td></tr>
+        <tr><td>法力护盾 Mana Vortex</td><td><span class="lvl-badge lvl-5">5</span></td><td>CArc</td><td>区域内施法需高 DC 专注</td></tr>
+        <tr><td>法术虹吸 Spell Siphon</td><td><span class="lvl-badge lvl-4">4</span></td><td>CArc</td><td>窃取目标法术位</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>咒法系（Conjuration）</h3>
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>法术</th><th>环级</th><th>来源</th><th>关键效果</th></tr></thead>
+      <tbody>
+        <tr><td>良性换位 Benign Transposition</td><td><span class="lvl-badge lvl-0">0</span></td><td>SC</td><td>两人交换位置</td></tr>
+        <tr><td>Orb 系列（酸/冷/电/火/音）</td><td><span class="lvl-badge lvl-1">1</span></td><td>SC</td><td>远程接触 1d8 元素伤害</td></tr>
+        <tr><td>召唤死亡 slaad</td><td><span class="lvl-badge lvl-8">8</span></td><td>SC</td><td>召唤 CR10 死亡 slaad</td></tr>
+        <tr><td>混沌之口 Maw of Chaos</td><td><span class="lvl-badge lvl-9">9</span></td><td>SC</td><td>20 尺半径持续伤害 + 困惑</td></tr>
+        <tr><td>召唤乐器 II</td><td><span class="lvl-badge lvl-2">2</span></td><td>PHB2</td><td>召唤精制品乐器</td></tr>
+        <tr><td>自然之握 Nature's Grasp</td><td><span class="lvl-badge lvl-3">3</span></td><td>CDiv</td><td>单体纠缠</td></tr>
+        <tr><td>生命之泉 Healing Spirit</td><td><span class="lvl-badge lvl-4">4</span></td><td>CDiv</td><td>自动治疗精魂</td></tr>
+        <tr><td>神圣传送 Divine Translocation</td><td><span class="lvl-badge lvl-8">8</span></td><td>CDiv</td><td>无误差无限制传送</td></tr>
+        <tr><td>奥术锁链 Arcane Chain</td><td><span class="lvl-badge lvl-2">2</span></td><td>CArc</td><td>力场束缚单体</td></tr>
+        <tr><td>星界构装体 Astral Construct</td><td><span class="lvl-badge lvl-2">2</span></td><td>XPH</td><td>召唤灵能构装体</td></tr>
+        <tr><td>灵能复活 Psionic Revivify</td><td><span class="lvl-badge lvl-5">5</span></td><td>XPH</td><td>1 轮内复活死者</td></tr>
+        <tr><td>现实修订 Reality Revision</td><td><span class="lvl-badge lvl-9">9</span></td><td>XPH</td><td>灵能版祈愿术</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>预言系（Divination） / 惑控系（Enchantment） / 死灵系（Necromancy）</h3>
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>法术</th><th>环级</th><th>学派</th><th>来源</th><th>关键效果</th></tr></thead>
+      <tbody>
+        <tr><td>即时搜索 Instant Search</td><td><span class="lvl-badge lvl-1">1</span></td><td>预言</td><td>SC</td><td>搜索检定 +10</td></tr>
+        <tr><td>红宝石之眼 Ruby Eye of Power</td><td><span class="lvl-badge lvl-6">6</span></td><td>预言</td><td>SC</td><td>全域视野，免疫凝视</td></tr>
+        <tr><td>洞察佯攻 Insightful Feint</td><td><span class="lvl-badge lvl-2">2</span></td><td>预言</td><td>PHB2</td><td>佯攻自动成功</td></tr>
+        <tr><td>战术传讯 Tactical Telepathy</td><td><span class="lvl-badge lvl-3">3</span></td><td>预言</td><td>PHB2</td><td>心灵链接 + AC 加值</td></tr>
+        <tr><td>魔力共鸣 Arcane Concordance</td><td><span class="lvl-badge lvl-4">4</span></td><td>预言</td><td>PHB2</td><td>施法者等级检定 +4</td></tr>
+        <tr><td>高等奥术视界 Arcane Sight, Imp.</td><td><span class="lvl-badge lvl-6">6</span></td><td>预言</td><td>CArc</td><td>自动识别魔法灵光</td></tr>
+        <tr><td>分裂意识 Schism</td><td><span class="lvl-badge lvl-4">4</span></td><td>预言</td><td>XPH</td><td>每轮额外心灵动作</td></tr>
+        <tr><td>扰乱攻击者 Distract Assailant</td><td><span class="lvl-badge lvl-2">2</span></td><td>惑控</td><td>SC</td><td>目标恍惚 1 轮</td></tr>
+        <tr><td>抱负术 Aspirant</td><td><span class="lvl-badge lvl-1">1</span></td><td>惑控</td><td>PHB2</td><td>技能检定 +5</td></tr>
+        <tr><td>英雄气概 Heroics</td><td><span class="lvl-badge lvl-2">2</span></td><td>惑控</td><td>PHB2</td><td>获得临时战士专长</td></tr>
+        <tr><td>血刃术 Blade of Blood</td><td><span class="lvl-badge lvl-1">1</span></td><td>死灵</td><td>SC</td><td>武器 +1d6 / 流血 +2d6</td></tr>
+        <tr><td>必然败亡 Inevitable Defeat</td><td><span class="lvl-badge lvl-3">3</span></td><td>死灵</td><td>SC</td><td>每轮 3d6 非致命 + 疲乏</td></tr>
+        <tr><td>不死克星 Undead Bane</td><td><span class="lvl-badge lvl-2">2</span></td><td>死灵</td><td>CDiv</td><td>对不死 +2 增强 + 2d6</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>塑能系（Evocation）</h3>
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>法术</th><th>环级</th><th>来源</th><th>关键效果</th></tr></thead>
+      <tbody>
+        <tr><td>暗火术 Darkfire</td><td><span class="lvl-badge lvl-2">2</span></td><td>SC</td><td>近战 1d6 火 + 1d6 暗蚀</td></tr>
+        <tr><td>火焰鞭 Flame Whips</td><td><span class="lvl-badge lvl-4">4</span></td><td>SC</td><td>4d6 火焰触及攻击</td></tr>
+        <tr><td>棱彩洪流 Prismatic Deluge</td><td><span class="lvl-badge lvl-7">7</span></td><td>SC</td><td>大范围棱彩效果</td></tr>
+        <tr><td>血风术 Blood Wind</td><td><span class="lvl-badge lvl-1">1</span></td><td>PHB2</td><td>区域 1d4/等级 挥砍</td></tr>
+        <tr><td>神罚 Divine Retribution</td><td><span class="lvl-badge lvl-5">5</span></td><td>CDiv</td><td>对邪恶 1d8/等级</td></tr>
+        <tr><td>神圣风暴 Storm of Divine Favor</td><td><span class="lvl-badge lvl-7">7</span></td><td>CDiv</td><td>攻击加值 + 额外攻击</td></tr>
+        <tr><td>奥术之矛 Arcane Bolt</td><td><span class="lvl-badge lvl-1">1</span></td><td>CArc</td><td>力场远程接触 1d4+1</td></tr>
+        <tr><td>魔法飞弹风暴 Magic Missile Storm</td><td><span class="lvl-badge lvl-4">4</span></td><td>CArc</td><td>大量力场飞弹</td></tr>
+        <tr><td>能量球 Energy Ball</td><td><span class="lvl-badge lvl-3">3</span></td><td>XPH</td><td>20 尺半径 5d6 元素</td></tr>
+        <tr><td>能量射线 Energy Ray</td><td><span class="lvl-badge lvl-1">1</span></td><td>XPH</td><td>远程接触 1d6 元素</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>幻术系（Illusion） / 变化系（Transmutation）</h3>
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>法术</th><th>环级</th><th>学派</th><th>来源</th><th>关键效果</th></tr></thead>
+      <tbody>
+        <tr><td>影界相位 Shadow Phase</td><td><span class="lvl-badge lvl-4">4</span></td><td>幻术</td><td>SC</td><td>20% 失手 + 穿越固体</td></tr>
+        <tr><td>高等影界相位 Shadow Phase, Greater</td><td><span class="lvl-badge lvl-5">5</span></td><td>幻术</td><td>SC</td><td>50% 失手 + 自由穿越</td></tr>
+        <tr><td>高等魔嘴 Magic Mouth, Greater</td><td><span class="lvl-badge lvl-3">3</span></td><td>幻术</td><td>PHB2</td><td>50 词触发信息</td></tr>
+        <tr><td>奥术镜像 Arcane Mirror</td><td><span class="lvl-badge lvl-3">3</span></td><td>幻术</td><td>CArc</td><td>分散注意力 + 隐蔽</td></tr>
+        <tr><td>誊写术 Amanuensis</td><td><span class="lvl-badge lvl-0">0</span></td><td>变化</td><td>SC</td><td>完美复制文书</td></tr>
+        <tr><td>加速移动 Accelerated Movement</td><td><span class="lvl-badge lvl-1">1</span></td><td>变化</td><td>SC</td><td>忽略困难地形</td></tr>
+        <tr><td>兽爪术 Beast Claw</td><td><span class="lvl-badge lvl-1">1</span></td><td>变化</td><td>SC</td><td>天然爪击 1d6</td></tr>
+        <tr><td>神经刺激 Nerveskitter</td><td><span class="lvl-badge lvl-1">1</span></td><td>变化</td><td>SC</td><td>先攻 +5</td></tr>
+        <tr><td>闪烁鳞片 Scintillating Scales</td><td><span class="lvl-badge lvl-2">2</span></td><td>变化</td><td>SC</td><td>护甲变为天生防御</td></tr>
+        <tr><td>深度黑暗视觉 Deeper Darkvision</td><td><span class="lvl-badge lvl-3">3</span></td><td>变化</td><td>SC</td><td>120 尺黑暗视觉</td></tr>
+        <tr><td>飞行术（SC版）Fly (SC)</td><td><span class="lvl-badge lvl-3">3</span></td><td>变化</td><td>SC</td><td>飞行 60 尺（良好）</td></tr>
+        <tr><td>迅捷术 Celerity</td><td><span class="lvl-badge lvl-4">4</span></td><td>变化</td><td>SC</td><td>额外标准动作</td></tr>
+        <tr><td>龙力术 Draconic Might</td><td><span class="lvl-badge lvl-5">5</span></td><td>变化</td><td>SC</td><td>力量 +8，恐惧灵光</td></tr>
+        <tr><td>龟甲击 Tortoise Strike</td><td><span class="lvl-badge lvl-6">6</span></td><td>变化</td><td>SC</td><td>下次自动命中 + 重击</td></tr>
+        <tr><td>奥术涌动 Arcane Spellsurge</td><td><span class="lvl-badge lvl-7">7</span></td><td>变化</td><td>SC</td><td>施法时间降一级</td></tr>
+        <tr><td>高等奥术融合 Greater Arcane Fusion</td><td><span class="lvl-badge lvl-8">8</span></td><td>变化</td><td>SC</td><td>同时施展两个法术</td></tr>
+        <tr><td>高等法师彻夜 Mage's Lucubration, Gt.</td><td><span class="lvl-badge lvl-6">6</span></td><td>变化</td><td>PHB2</td><td>恢复 5 级以下法术位</td></tr>
+        <tr><td>群体属性增益（牛力/猫敏/狐狡等）</td><td><span class="lvl-badge lvl-5">5</span></td><td>变化</td><td>PHB2</td><td>多人 +4 属性</td></tr>
+        <tr><td>铁木术 Ironwood</td><td><span class="lvl-badge lvl-3">3</span></td><td>变化</td><td>PHB2</td><td>木材变铁木</td></tr>
+        <tr><td>神圣之刃 Divine Blade</td><td><span class="lvl-badge lvl-2">2</span></td><td>变化</td><td>CDiv</td><td>武器 +1 增强 + 1d6 神圣</td></tr>
+        <tr><td>领域之赐 Domain Bestowal</td><td><span class="lvl-badge lvl-6">6</span></td><td>变化</td><td>CDiv</td><td>赋予领域能力</td></tr>
+        <tr><td>法术穿透增幅 Spell Pen. Boost</td><td><span class="lvl-badge lvl-2">2</span></td><td>变化</td><td>CArc</td><td>穿透 SR +4</td></tr>
+        <tr><td>力场之笼 Forcecage (Lesser)</td><td><span class="lvl-badge lvl-5">5</span></td><td>塑能</td><td>CArc</td><td>10 尺力场囚笼</td></tr>
+        <tr><td>时间跳跃 Time Hop</td><td><span class="lvl-badge lvl-3">3</span></td><td>传送</td><td>XPH</td><td>目标暂时消失</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- ===== SECTION 7: 按职业/环级 ===== -->
+    <h2 id="by-class">7. 按职业/环级分类速查表</h2>
+    <p class="section-intro">以下表格展示各职业在各环级可用的扩展法术。仅列出本页收录的法术。</p>
+
+    <h3>术士/法师（Sorcerer / Wizard）</h3>
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>环级</th><th>可用法术</th></tr></thead>
+      <tbody>
+        <tr><td><span class="lvl-badge lvl-0">0</span></td><td>誊写术、良性换位</td></tr>
+        <tr><td><span class="lvl-badge lvl-1">1</span></td><td>加速移动、血刃术、即时搜索、神经刺激、Orb 系列（5种）、奥术之矛、血风术</td></tr>
+        <tr><td><span class="lvl-badge lvl-2">2</span></td><td>暗火术、扰乱攻击者、熵盾术、火焰陷阱、闪烁鳞片、洞察佯攻、奥术锁链、法术穿透增幅</td></tr>
+        <tr><td><span class="lvl-badge lvl-3">3</span></td><td>深度黑暗视觉、驱散迷雾、飞行术(SC)、必然败亡、元素护甲、奥术镜像、高等魔嘴、防护元素(共用)</td></tr>
+        <tr><td><span class="lvl-badge lvl-4">4</span></td><td>迅捷术、火焰鞭、影界相位、魔法飞弹风暴、法术虹吸、魔力共鸣</td></tr>
+        <tr><td><span class="lvl-badge lvl-5">5</span></td><td>龙力术、高等影界相位、驱魔法墙、法力护盾、力场之笼、灵魂护卫、群体属性增益</td></tr>
+        <tr><td><span class="lvl-badge lvl-6">6</span></td><td>红宝石之眼、龟甲击、高等法师彻夜、高等奥术视界</td></tr>
+        <tr><td><span class="lvl-badge lvl-7">7</span></td><td>奥术涌动、棱彩洪流</td></tr>
+        <tr><td><span class="lvl-badge lvl-8">8</span></td><td>高等奥术融合、召唤死亡 slaad</td></tr>
+        <tr><td><span class="lvl-badge lvl-9">9</span></td><td>星衣术、混沌之口、时间停止变体</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>牧师（Cleric）/ 德鲁伊（Druid）/ 吟游诗人（Bard）</h3>
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>职业</th><th>环级</th><th>可用法术</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="7">牧师</td><td><span class="lvl-badge lvl-2">2</span></td><td>神圣之刃、不死克星</td></tr>
+        <tr><td><span class="lvl-badge lvl-3">3</span></td><td>信仰之盾(群体)、防护元素(共用)</td></tr>
+        <tr><td><span class="lvl-badge lvl-4">4</span></td><td>生命之泉、神圣庇护</td></tr>
+        <tr><td><span class="lvl-badge lvl-5">5</span></td><td>神罚、灵魂护卫、群体牛之力量</td></tr>
+        <tr><td><span class="lvl-badge lvl-6">6</span></td><td>领域之赐</td></tr>
+        <tr><td><span class="lvl-badge lvl-7">7</span></td><td>神圣风暴</td></tr>
+        <tr><td><span class="lvl-badge lvl-8">8</span></td><td>神圣传送</td></tr>
+        <tr><td rowspan="5">德鲁伊</td><td><span class="lvl-badge lvl-1">1</span></td><td>兽爪术、血风术</td></tr>
+        <tr><td><span class="lvl-badge lvl-2">2</span></td><td>火焰陷阱(SC)</td></tr>
+        <tr><td><span class="lvl-badge lvl-3">3</span></td><td>铁木术、自然之握、防护元素(共用)</td></tr>
+        <tr><td><span class="lvl-badge lvl-4">4</span></td><td>火焰鞭、生命之泉</td></tr>
+        <tr><td><span class="lvl-badge lvl-6">6</span></td><td>深度黑暗视觉</td></tr>
+        <tr><td rowspan="5">吟游诗人</td><td><span class="lvl-badge lvl-1">1</span></td><td>加速移动、抱负术</td></tr>
+        <tr><td><span class="lvl-badge lvl-2">2</span></td><td>扰乱攻击者、洞察佯攻、英雄气概、召唤乐器 II</td></tr>
+        <tr><td><span class="lvl-badge lvl-3">3</span></td><td>战术传讯、高等魔嘴、防护元素(共用)</td></tr>
+        <tr><td><span class="lvl-badge lvl-4">4</span></td><td>魔力共鸣</td></tr>
+        <tr><td><span class="lvl-badge lvl-5">5</span></td><td>群体猫之优雅</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>心灵术士（Psion）</h3>
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>等级</th><th>可用灵能</th></tr></thead>
+      <tbody>
+        <tr><td><span class="lvl-badge lvl-1">1</span></td><td>能量射线、心灵护甲</td></tr>
+        <tr><td><span class="lvl-badge lvl-2">2</span></td><td>星界构装体</td></tr>
+        <tr><td><span class="lvl-badge lvl-3">3</span></td><td>能量球、时间跳跃</td></tr>
+        <tr><td><span class="lvl-badge lvl-4">4</span></td><td>分裂意识、思维侦测</td></tr>
+        <tr><td><span class="lvl-badge lvl-5">5</span></td><td>灵能复活</td></tr>
+        <tr><td><span class="lvl-badge lvl-8">8</span></td><td>心灵空白</td></tr>
+        <tr><td><span class="lvl-badge lvl-9">9</span></td><td>现实修订</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- ===== SECTION 8: 对照 ===== -->
+    <h2 id="compare">8. 扩展法术与核心法术对照</h2>
+    <p class="section-intro">以下列出了扩展书籍中对核心法术（PHB）的修改版本或补充说明，使用时需注意区分。</p>
+
+    <div class="note-box">
+      <strong>⚠ 重要提示：</strong>当扩展书籍提供同名法术的修改版本时，以 Spell Compendium 中的版本为最终版本（SC 是官方勘误汇编）。若 SC 未收录，则以最新出版的扩展书籍为准。
+    </div>
+
+    <div class="spell-table-wrap"><table class="spell-table">
+      <thead><tr><th>核心法术</th><th>扩展版本</th><th>差异说明</th><th>来源</th></tr></thead>
+      <tbody>
+        <tr><td>飞行术 Fly</td><td>飞行术（SC版）</td><td>持续时间从 10 分钟/等级 改为 <strong>1 分钟/等级</strong>；平衡性调整</td><td>SC</td></tr>
+        <tr><td>火焰陷阱 Fire Trap</td><td>火焰陷阱（SC版）</td><td>增加德鲁伊可用；伤害改为 1d4 + 每等级 +1（最高 +20）；明确触发条件</td><td>SC</td></tr>
+        <tr><td>信仰之盾 Shield of Faith</td><td>信仰之盾（群体版）</td><td>3 级法术，可影响多个目标；偏斜加值随等级提升</td><td>CDiv</td></tr>
+        <tr><td>法师彻夜 Mage's Lucubration</td><td>高等法师彻夜</td><td>6 级版本，恢复所有 5 级或以下法术位（原版仅恢复一个 5 级法术）</td><td>PHB2</td></tr>
+        <tr><td>抵抗能量 Resist Energy</td><td>抵抗能量（共用版）</td><td>3 级法术，多人共享 20 点抗力（分配制）</td><td>PHB2</td></tr>
+        <tr><td>魔嘴 Magic Mouth</td><td>高等魔嘴</td><td>3 级版本，50 词上限（原版 25 词），触发条件更灵活</td><td>PHB2</td></tr>
+        <tr><td>力笼术 Forcecage</td><td>力场之笼（低配版）</td><td>5 级版本，10 尺立方体，持续 1 轮/等级（原版 7 级、20 尺、永久）</td><td>CArc</td></tr>
+        <tr><td>奥术视觉 Arcane Sight</td><td>高等奥术视觉</td><td>6 级版本，自动识别（原版需专注）</td><td>CArc</td></tr>
+        <tr><td>祈愿术 Wish</td><td>现实修订 Reality Revision</td><td>灵能 9 级等效，使用 PP 增幅替代 XP 消耗；效果分级更细致</td><td>XPH</td></tr>
+        <tr><td>心灵屏障 Mind Blank</td><td>心灵空白（灵能版）</td><td>8 级灵能，持续 24 小时（原版 24 小时但需消耗 XP）</td><td>XPH</td></tr>
+        <tr><td>牛之力量 / 猫之优雅 等</td><td>群体版本（Mass 系列）</td><td>5 级法术，可同时影响多人，每 3 级多一个目标</td><td>PHB2</td></tr>
+        <tr><td>时间停止 Time Stop</td><td>SC 变体</td><td>提供延迟版和连锁版变体；核心版本不变但增加战术选择</td><td>SC</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="note-box">
+      <strong>📖 使用建议：</strong>
+      <ul style="margin:0.5rem 0 0 1rem; padding:0;">
+        <li>在组织化游戏（如 Living Greyhawk）中，SC 勘误后的版本是官方标准。</li>
+        <li>迅捷动作（Swift Action）施法法术在 SC 中大量出现，注意每轮仅能使用一个迅捷动作。</li>
+        <li>即时动作（Immediate Action）法术可在他人回合使用，但会消耗你下一轮的迅捷动作。</li>
+        <li>灵能（Psionic Powers）使用灵能点系统，与法术位系统不互通，但灵能-魔法透明度规则适用。</li>
+        <li><em>Celerity</em>（迅捷术）在多数严肃团中被禁用或限制，使用前务必与 DM 确认。</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 扩展法术大全 | 数据来源：Spell Compendium · PHB2 · Complete 系列 · Expanded Psionics Handbook</p>
+</div>
+
+</body>
+</html>

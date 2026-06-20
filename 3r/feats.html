@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扩展专长大全 - 3R扩展大全 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .feat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+  }
+  .feat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .feat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+  }
+  .feat-card h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    color: var(--text-heading);
+  }
+  .feat-card .feat-en {
+    font-size: 12px;
+    color: var(--text-subtle);
+    margin-bottom: 8px;
+  }
+  .feat-card .feat-type {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .feat-card .feat-type strong {
+    color: var(--text-heading);
+  }
+  .feat-card .feat-benefit {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 8px 0;
+  }
+  .feat-card .feat-normal {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin-top: 6px;
+    border-top: 1px dashed var(--border-light);
+    padding-top: 6px;
+  }
+  .source-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+  .source-phb2 { background: #2ecc71; color: #fff; }
+  .source-cw { background: #c0392b; color: #fff; }
+  .source-ca { background: #8e44ad; color: #fff; }
+  .source-cd { background: #d4a017; color: #fff; }
+  .source-cadv { background: #16a085; color: #fff; }
+  .source-cm { background: #2980b9; color: #fff; }
+  .source-xph { background: #e67e22; color: #fff; }
+  .source-ros { background: #795548; color: #fff; }
+  .source-row { background: #4caf50; color: #fff; }
+  .source-rod { background: #607d8b; color: #fff; }
+  .feat-type-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    background: var(--border-light);
+    color: #555;
+    margin-right: 4px;
+  }
+  .source-group-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-heading);
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 6px;
+    margin: 40px 0 16px;
+  }
+  .chain-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+  }
+  .chain-table th,
+  .chain-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 13px;
+    vertical-align: top;
+  }
+  .chain-table th {
+    background: var(--bg-table-head);
+    font-weight: 700;
+    color: var(--text-heading);
+  }
+  .chain-table tr:nth-child(even) td {
+    background: var(--bg-table-stripe);
+  }
+  .chain-table tr:hover td {
+    background: rgba(212, 160, 23, 0.08);
+  }
+  .rule-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-left: 4px solid var(--accent-gold);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-soft);
+  }
+  .rule-box h3 {
+    color: var(--text-heading);
+    margin: 0 0 10px;
+    font-size: 15px;
+  }
+  .rule-box p,
+  .rule-box li {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .guide-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow-soft);
+  }
+  .guide-card h4 {
+    margin: 0 0 8px;
+    color: var(--text-heading);
+    font-size: 15px;
+  }
+  .guide-card ul {
+    font-size: 13px;
+    padding-left: 18px;
+  }
+  .guide-card ul li {
+    margin-bottom: 5px;
+    line-height: 1.6;
+  }
+  .toc { margin: 24px 0; }
+  .toc ol { padding-left: 24px; }
+  .toc li { margin-bottom: 4px; font-size: 14px; }
+  .toc a { color: var(--text-link); }
+  .intro-note {
+    background: linear-gradient(135deg, #faf6ee 0%, #e8d5b8 100%);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .arrow { color: var(--accent-gold); font-weight: 700; margin: 0 2px; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" class="active" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">3R 扩展大全</div>
+      <a href="index-v2.html">总览</a>
+      <a href="classes.html">扩展职业</a>
+      <a href="races.html">扩展种族</a>
+      <a href="feats.html" class="active">扩展专长</a>
+      <a href="spells.html">扩展法术</a>
+      <a href="equipment.html">扩展装备</a>
+      <a href="monsters.html">扩展怪物</a>
+      <a href="supplements.html">专题扩展</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">主站</div>
+      <a href="../index.html">首页</a>
+      <a href="../classes/intro.html">核心职业</a>
+      <a href="../rules.html">核心规则</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>🎯 扩展专长大全 Expanded Feats</h1>
+
+    <div class="intro-note">
+      <p>本页收录 D&D 3.5e 官方扩展规则书中的<strong>新增专长</strong>，涵盖 <strong>PHB2</strong>、<strong>Complete 系列</strong>、<strong>Expanded Psionics Handbook</strong> 及 <strong>Races 系列</strong> 等官方资料。
+      每个专长标注中文名、英文名、来源书、前置条件与效果说明。使用专长前请确认 DM 许可及相关前置要求。
+      专长类型说明：<span class="feat-type-badge">普通</span>普通专长
+      <span class="feat-type-badge">战斗</span>战斗专长
+      <span class="feat-type-badge">超魔</span>超魔专长
+      <span class="feat-type-badge">灵能</span>灵能专长
+      <span class="feat-type-badge">储备</span>储备专长
+      <span class="feat-type-badge">种族</span>种族专长。</p>
+    </div>
+
+    <!-- 目录 -->
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#phb2">PHB2 新增专长（15个）</a></li>
+        <li><a href="#cw">Complete Warrior 完美战士专长（12个）</a></li>
+        <li><a href="#ca">Complete Arcane 完美奥术专长（10个）</a></li>
+        <li><a href="#cd">Complete Divine 完美神力专长（10个）</a></li>
+        <li><a href="#cadv">Complete Adventurer 完美冒险者专长（8个）</a></li>
+        <li><a href="#cm">Complete Mage 完美法师专长（8个）</a></li>
+        <li><a href="#xph">Expanded Psionics Handbook 灵能专长（10个）</a></li>
+        <li><a href="#races">Races 系列种族专长（10个）</a></li>
+        <li><a href="#chains">专长链参考表（Feat Chains）</a></li>
+        <li><a href="#guide">专长选择指南</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         一、PHB2 新增专长
+         ============================================================ -->
+    <h2 id="phb2" class="source-group-title">📕 一、PHB2 新增专长</h2>
+    <p>以下专长来自 <strong>Player's Handbook II</strong>，是对核心专长列表的重要补充。
+    这些专长侧重增强角色的多面性与技能灵活性，适合各类构建。</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <h3>多才多艺 Able Learner</h3>
+        <div class="feat-en">Able Learner <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>人类或半精灵</div>
+        <div class="feat-benefit">所有技能均视为你的本职技能（class skills），无论你的实际职业为何。在跨职技能上的最大级数限制仍适用，但你可在升级时自由分配技能点而无须担心"跨职惩罚"。此专长极大增强了多职业角色的技能灵活性。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>特技精通 Acrobatic Skill</h3>
+        <div class="feat-en">Acrobatic Skill <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong> tumble 5级</div>
+        <div class="feat-benefit">你在 tumble（翻滚）、balance（平衡）和 jump（跳跃）检定上获得 +2 加值。此外，当你成功通过 DC 15 的 tumble 检定时，你可以以半速移动而不引发借机攻击（正常情况下需要 DC 25）。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>护甲皮肤 Armor Skin</h3>
+        <div class="feat-en">Armor Skin <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>con 13</div>
+        <div class="feat-benefit">你的皮肤变得坚韧如皮革，赋予你 +1 天生护甲加值（natural armor bonus）至 AC。此加值在第 8 级和第 16 级时各再增加 1（最高 +3）。此效果与天生护甲加值叠加，但不与护甲或盾牌加值叠加。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>奥术学院 Arcane Schooling</h3>
+        <div class="feat-en">Arcane Schooling <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>int 13，奥术施法者等级 1</div>
+        <div class="feat-benefit">选择一个你尚未禁止的奥术学派。你在该学派的法术豁免 DC 上获得 +1 加值，且在使用知识（奥术）检定来辨识该学派的法术时获得 +4 加值。此专长可多次选取，每次选择不同的学派。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>奥术打击 Arcane Strike</h3>
+        <div class="feat-en">Arcane Strike <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>奥术施法者等级 4</div>
+        <div class="feat-benefit">以一个自由动作，你可以牺牲一个已准备的奥术法术或法术位来强化你的近战攻击。每牺牲一个法术环级，该次攻击额外造成 1d4 点力场伤害并在攻击检定上获得 +1 加值。效果持续 1 轮。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>善意换位 Benign Transposition</h3>
+        <div class="feat-en">Benign Transposition <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>奥术施法者等级 5</div>
+        <div class="feat-benefit">每天一次，以一个即时动作（immediate action），你可以与 30 尺内一个自愿的盟友交换位置，效果如同 <em>transposition</em>（换位移，PHB2 法术）。你和目标交换所占据的空间，且不会引发借机攻击。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>盲战 Blind-Fight</h3>
+        <div class="feat-en">Blind-Fight <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>wis 13，base attack bonus +3</div>
+        <div class="feat-benefit">你对隐蔽（concealment）造成的失手率降低至 10%（正常为 20%），对全隐蔽（total concealment）的失手率降低至 30%（正常为 50%）。此外，你在对抗隐形敌人时不会失去 AC 上的敏捷加值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>蛮力冲锋 Brutal Throw</h3>
+        <div class="feat-en">Brutal Throw <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>str 13，Power Attack</div>
+        <div class="feat-benefit">当你使用投掷武器进行近战范围（5尺内）攻击时，你可以将力量调整值加到伤害上（若武器原本已加入力量调整，则额外再加一次）。此效果仅适用于投掷武器的近战攻击，不适用于远程攻击。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>公民身份 Citizen</h3>
+        <div class="feat-en">Citizen <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>必须来自某一特定文明国度</div>
+        <div class="feat-benefit">你在 diplomacy（外交）和 gather information（搜集信息）检定上获得 +2 加值，且在与你的公民身份相关的社交互动中，NPC 对你的初始态度提升一级（如从冷淡变为友善）。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>致命精准 Deadly Precision</h3>
+        <div class="feat-en">Deadly Precision <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>dex 15，base attack bonus +5</div>
+        <div class="feat-benefit">当你使用近战武器造成偷袭（sneak attack）伤害时，你可以重掷所有偷袭伤害骰中的 1，取较高的结果。此效果每轮可使用一次，且必须在掷骰后、DM 宣布结果前声明使用。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>闪避身法 Defensive Strike</h3>
+        <div class="feat-en">Defensive Strike <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>dex 13，Combat Expertise</div>
+        <div class="feat-benefit">当你使用 Combat Expertise（战斗专精）降低攻击以获取 AC 加值时，你的借机攻击攻击检定不受该减值影响。这使你在防御姿态下依然能精准地反击进入威胁范围的敌人。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>双重武器精通 Double Weapon Finesse</h3>
+        <div class="feat-en">Double Weapon Finesse <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>dex 17，Weapon Finesse，TWF</div>
+        <div class="feat-benefit">当你使用双头武器（double weapon）进行双武器战斗时，你可以在两端均使用 Weapon Finesse（武器娴熟），即使该武器的某一端并非轻型武器。这使敏捷型战士能有效使用双头武器。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精通先攻 Improved Initiative</h3>
+        <div class="feat-en">Improved Initiative (PHB2 version) <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>dex 13</div>
+        <div class="feat-benefit">PHB2 版本在原有 +4 先攻加值的基础上，额外赋予你"延迟行动"（delay）后仍保留原始先攻位的能力。当你选择延迟并在同一轮稍后行动时，你在下一轮的先攻仍按照原始（未延迟的）先攻值计算。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>钢铁意志 Iron Will</h3>
+        <div class="feat-en">Iron Will (PHB2 update) <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>wis 13</div>
+        <div class="feat-benefit">PHB2 更新版本：你在意志豁免上获得 +2 加值（与 PHB 版本相同）。此外，每天一次，你可以在意志豁免失败时重掷，但必须接受第二次结果。此额外能力使 PHB2 版本优于 PHB 原版。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>法师之韧 Mage Slayer</h3>
+        <div class="feat-en">Mage Slayer <span class="source-badge source-phb2">PHB2</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>base attack bonus +4，Spellcraft 5 级</div>
+        <div class="feat-benefit">5 尺内的敌人在施放防御性施法（casting defensively）时，其专注检定 DC 由 15 + 法术环级提升至 20 + 法术环级。此外，你对法术和类法术能力的法术抗力（若有）获得 +4 加值。注意：选取此专长后你的奥术施法者等级降低 4（最低 0）。</div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- ============================================================
+         二、Complete Warrior 专长
+         ============================================================ -->
+    <h2 id="cw" class="source-group-title">⚔️ 二、Complete Warrior 完美战士专长</h2>
+    <p>以下专长来自 <strong>Complete Warrior</strong>，专注于战斗技巧与武技强化。
+    这些专长适合战士、圣武士、游侠及其他战斗型角色，许多需要特定的战斗前置条件。</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <h3>熊牙摔 Bear Fang</h3>
+        <div class="feat-en">Bear Fang <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>str 15，Power Attack，Improved Grapple</div>
+        <div class="feat-benefit">当你以近战武器命中敌人且造成至少 6 点伤害（不含 str 调整）时，你可以以一个自由动作对该敌人发动一次擒抱检定。若擒抱成功，你与该敌人进入擒抱状态，且你可以立即选择压制（pin）对手。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>狂战士 Berserker</h3>
+        <div class="feat-en">Berserker <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>str 15，con 15，base attack bonus +5</div>
+        <div class="feat-benefit">每天一次，你可以进入持续 5 + con 调整值轮的狂暴状态。狂暴期间你获得 +4 力量增强加值、+4 体质增强加值，但 AC 受到 -2 减值。狂暴结束后你疲劳（fatigued）。此效果与野蛮人狂暴不叠加。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>刀锋冥想 Blade Meditation</h3>
+        <div class="feat-en">Blade Meditation <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>wis 13，base attack bonus +4，选择一种军用武器</div>
+        <div class="feat-benefit">选择一种军用近战武器。你在使用该武器时，伤害骰获得 +1 加值，且该武器的重击威胁范围（threat range）增加 1（例如 20 变为 19-20，19-20 变为 18-20）。此效果可与 Improved Critical 叠加。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>蛮横打击 Brutal Strike</h3>
+        <div class="feat-en">Brutal Strike <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>str 17，Power Attack，base attack bonus +8</div>
+        <div class="feat-benefit">当你命中一个体型不高于大型（Large）的生物并造成近战伤害时，你可以额外造成 2d6 点非致命伤害并尝试将目标击退 5 尺。目标必须通过力量检定（DC = 10 + 你的 str 调整 + 你的 BAB/2）才能抵抗推移。此效果每轮可使用一次。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>战斗反射 Combat Reflexes (CW 扩展)</h3>
+        <div class="feat-en">Combat Reflexes (CW update) <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>dex 13</div>
+        <div class="feat-benefit">CW 版本扩展了 PHB 的 Combat Reflexes：除原有能力外，你在借机攻击命中时获得 +1 伤害加值。当你拥有至少 5 级 tumble 技能时，你的借机攻击额外获得 +1 攻击加值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>挑战怒吼 Challenging Shout</h3>
+        <div class="feat-en">Challenging Shout <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>cha 13，intimidate 5 级</div>
+        <div class="feat-benefit">以一个标准动作，你可以发出一声战吼，影响 30 尺内所有能听到你的敌人。受影响的生物必须通过意志豁免（DC = 10 + 1/2 HD + cha 调整），失败则被迫攻击你（而非你的盟友），持续 1 轮。每天可使用次数等于 3 + cha 调整。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>猛力冲锋 Dash</h3>
+        <div class="feat-en">Dash <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>dex 13</div>
+        <div class="feat-benefit">你的基本陆地速度增加 5 尺。此加值在第 5 级时提升至 +10 尺，第 10 级 +15 尺，第 15 级 +20 尺。此加值为增强加值（enhancement bonus），与大多数速度提升效果叠加。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>防御式翻滚 Defensive Roll</h3>
+        <div class="feat-en">Defensive Roll <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>dex 15，tumble 5 级，base attack bonus +3</div>
+        <div class="feat-benefit">每天一次，当一个近战攻击将你 HP 降至 0 或以下时，你可以尝试翻滚卸力。进行一次 tumble 检定（DC = 所受伤害），若成功则你只受到一半伤害。你必须在伤害结算前声明使用此能力。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精通盾牌猛击 Improved Shield Bash</h3>
+        <div class="feat-en">Improved Shield Bash <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>Shield Proficiency，Shield Specialization</div>
+        <div class="feat-benefit">当你使用盾牌猛击（shield bash）时，你仍保留盾牌对 AC 的加值（正常情况下盾牌猛击会失去盾牌 AC 直至下回合）。此外，你的盾牌猛击伤害骰提升一个等级（如 d4 变为 d6）。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>骑战冲锋 Mounted Combat Mastery</h3>
+        <div class="feat-en">Mounted Combat Mastery <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>ride 8 级，Mounted Combat，Spirited Charge</div>
+        <div class="feat-benefit">骑乘冲锋时你的伤害倍率从 ×2 提升至 ×3（使用长枪时从 ×3 提升至 ×4）。此外，你的坐骑在冲锋时获得等同于你 str 调整值的 AC 闪避加值。你与坐骑被视为一个整体来计算冲锋路径。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精准射击 Precise Shot (CW 扩展)</h3>
+        <div class="feat-en">Precise Shot (CW update) <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>dex 15，Point Blank Shot，Precise Shot (PHB)</div>
+        <div class="feat-benefit">CW 扩展版：除 PHB 原有功能外（射击被近战纠缠的敌人时不受 -4 减值），当你使用远程武器射击时，你可以忽略由盟友提供的掩护（cover）所造成的 AC 加值。你不因 1 级掩护而受到 -4 攻击减值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>武器专精 Weapon Supremacy</h3>
+        <div class="feat-en">Weapon Supremacy <span class="source-badge source-cw">CW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>base attack bonus +18，Weapon Focus、Weapon Specialization 及对应武器的 Greater Weapon Focus</div>
+        <div class="feat-benefit">选择你已拥有 Greater Weapon Focus 的武器。使用该武器时你获得：攻击检定 +1 加值（与已有加值叠加）、伤害 +2 加值。此外，你使用该武器时可在攻击检定中取 10（即使在战斗或受到威胁时）。</div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- ============================================================
+         三、Complete Arcane 专长
+         ============================================================ -->
+    <h2 id="ca" class="source-group-title">🔮 三、Complete Arcane 完美奥术专长</h2>
+    <p>以下专长来自 <strong>Complete Arcane</strong>，专注于奥术施法者强化与超魔能力。
+    许多专长涉及 metamagic（超魔）、item creation（物品制造）或施法能力优化。</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <h3>敏捷施法 Alacritous Casting</h3>
+        <div class="feat-en">Alacritous Casting <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>奥术施法者等级 5，Quickened Spell</div>
+        <div class="feat-benefit">每天一次，你可以以一个即时动作（immediate action）施放一个准备时间不超过 1 轮的奥术法术，而不消耗更高环级的法术位（即不支付超魔代价）。此法术的施法时间被缩短为即时动作。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>奥术论题 Arcane Thesis</h3>
+        <div class="feat-en">Arcane Thesis <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>Spellcraft 9 级，奥术施法者等级 3</div>
+        <div class="feat-benefit">选择一个奥术法术作为你的"论题法术"。当你用超魔专长修正该法术时，超魔所额外消耗的法术环级降低 1（最低为 +0）。例如，用 Empower Spell（+2 环）修正论题法术时只需 +1 环。此专长可多次选取，每次选不同法术。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>天生异能 Borne</h3>
+        <div class="feat-en">Borne <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>cha 13，天生具有某种类法术能力</div>
+        <div class="feat-benefit">你获得一种与你的类法术能力（spell-like ability）同系的额外类法术能力。具体而言，你获得一个与已有类法术能力相同学派、环级不超过 3 环的类法术能力，每天可使用 1 次。施法者等级等于你的 HD，DC 基于 cha。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>三雷之子 Born of Three Thunders</h3>
+        <div class="feat-en">Born of Three Thunders <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>con 13，能施放至少两种不同能量类型的法术</div>
+        <div class="feat-benefit">当你施放同时造成电击（electricity）、音波（sonic）和另一种能量伤害的法术时，该法术的所有伤害类型各获得 +1d6 伤害。此外，你对电击和音波各获得 5 点能量抗性。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精通反制法术 Improved Counterspell</h3>
+        <div class="feat-en">Improved Counterspell <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>Spellcraft 9 级，能够施放 4 环奥术</div>
+        <div class="feat-benefit">当你使用反制法术（counterspell）时，你可以使用任意相同学派且环级不低于对方法术的奥术来反制，而非必须使用完全相同的法术。这极大提升了反制法术的灵活性。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精通法杖精通 Improved Staff</h3>
+        <div class="feat-en">Improved Staff <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">物品制造</span><strong>前置：</strong>Craft Staff，施法者等级 12</div>
+        <div class="feat-benefit">当你使用法杖施放法术时，你用自己的施法者等级和属性调整值替代法杖预设值（若你的值更高）。此外，你在制造法杖时可以将自己的施法者等级 +2 作为法杖的施法者等级（无需额外花费）。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>法术穿透强化 Spell Penetration (CA 扩展)</h3>
+        <div class="feat-en">Spell Penetration (CA update) <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>Spell Penetration (PHB)</div>
+        <div class="feat-benefit">CA 扩展版本：你对抗法术抗力的施法者等级检定加值从 +2 提升至 +3（与 PHB 版本的 +2 不叠加，而是替代之）。若你同时拥有 Greater Spell Penetration，总加值为 +5。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>变形大师 Master of Many Forms</h3>
+        <div class="feat-en">Prerequisite feat for Master of Many Forms PrC <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>能施放 alter self 或 polymorph</div>
+        <div class="feat-benefit">你的变形（polymorph）类效果持续时间增加 50%。当你使用变形效果时，你可以保留一种自身的特异能力（extraordinary ability），而非按正常规则全部失去。此专长是进入 Master of Many Forms 进阶职业的关键前置。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>能量替代 Energy Substitution</h3>
+        <div class="feat-en">Energy Substitution <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">超魔</span><strong>前置：</strong>任一能量类型的法术</div>
+        <div class="feat-benefit">当你施放具有酸、冷、电或火能量描述的法术时，你可以将法术的能量类型替换为另一种（酸↔冷↔电↔火）。替换后的法术使用新的能量类型描述符。此超魔专长不消耗更高的法术位。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精通法术仿制 Easy Metamagic</h3>
+        <div class="feat-en">Easy Metamagic <span class="source-badge source-ca">CA</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>任一超魔专长，施法者等级 5</div>
+        <div class="feat-benefit">选择一个你已拥有的超魔专长。当你应用该超魔专长时，额外消耗的法术环级降低 1（最低 +0）。例如，若选择 Extend Spell（正常 +1），则使用时无需额外环级。此专长可多次选取，每次针对不同超魔专长。</div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- ============================================================
+         四、Complete Divine 专长
+         ============================================================ -->
+    <h2 id="cd" class="source-group-title">✨ 四、Complete Divine 完美神力专长</h2>
+    <p>以下专长来自 <strong>Complete Divine</strong>，面向神术施法者（牧师、德鲁伊、圣武士等）。
+    重点包括神力超魔（Divine Metamagic）、治疗强化及神力战斗能力。</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <h3>神力超魔 Divine Metamagic</h3>
+        <div class="feat-en">Divine Metamagic <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">神力</span><strong>前置：</strong>能够驱散/斥喝不死生物（turn/rebuke undead）</div>
+        <div class="feat-benefit">选择一个超魔专长。当你应用该超魔专长到神术上时，你可以用驱散尝试（turn attempts）代替消耗更高环法术位。每点超魔环级消耗一次驱散尝试。此专长可多次选取，每次针对不同超魔专长。<em>注：这是 CD 中最强大的专长之一，常用于 Persistent Spell 构建。</em></div>
+      </div>
+
+      <div class="feat-card">
+        <h3>神圣治疗 Sacred Healing</h3>
+        <div class="feat-en">Sacred Healing <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">神力</span><strong>前置：</strong>能够施放 cure 系列法术，能够驱散不死生物</div>
+        <div class="feat-benefit">以一个标准动作，你消耗一次驱散尝试，赋予 30 尺爆发范围内的所有盟友"快速愈合 3"（fast healing 3），持续轮数等于你的魅力调整值（最少 1 轮）。此效果对不死生物无效。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>自发治愈 Spontaneous Healer</h3>
+        <div class="feat-en">Spontaneous Healer <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>能够施放 2 环神术</div>
+        <div class="feat-benefit">你可以将任何已准备的神术法术位自发转换为同环级或更低环级的治疗法术（cure 系列），如同牧师的自发施法能力。若你已有牧师的自发治愈能力，则你的每日治疗法术位数量翻倍。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>神圣之怒 Divine Rage</h3>
+        <div class="feat-en">Divine Rage <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">神力</span><strong>前置：</strong>str 13，con 13，能够驱散不死生物，base attack bonus +4</div>
+        <div class="feat-benefit">每天一次，你可以消耗一次驱散尝试进入神圣狂暴状态，持续 5 + con 调整值轮。你获得 +4 str 加值、+4 con 加值，但 AC -2。此外，你的武器攻击额外造成 1d6 神圣（holy）伤害。狂暴结束后疲劳。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精通驱散 Extra Turning</h3>
+        <div class="feat-en">Extra Turning <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>能够驱散或斥喝不死生物</div>
+        <div class="feat-benefit">你每天的驱散（或斥喝）尝试次数增加 4 次。此专长可多次选取，效果叠加。对于依赖驱散尝试次数来发动神力专长的构建（如 Divine Metamagic），此专长极为重要。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>领域专长 Domain Feat</h3>
+        <div class="feat-en">Domain Feat (系列) <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">神力</span><strong>前置：</strong>拥有对应的牧师领域</div>
+        <div class="feat-benefit">CD 引入了一系列与牧师领域对应的领域专长。例如：动物领域赋予额外天生武器攻击、战争领域赋予武器攻击+1/+1 加值、旅行领域赋予额外速度。每个领域专长消耗一次驱散尝试来激活，持续 1 分钟。详细列表见 CD 第 38 页。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>神圣护甲 Divine Armor</h3>
+        <div class="feat-en">Divine Armor <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">神力</span><strong>前置：</strong>能够驱散不死生物，能够施放 3 环神术</div>
+        <div class="feat-benefit">以一个标准动作，消耗一次驱散尝试，你的护甲获得 +3 增强加值（enhancement bonus）到 AC，持续 1 分钟。此加值与护甲本身的增强加值叠加，但不会使总增强加值超过 +8。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>神圣复仇 Divine Vengeance</h3>
+        <div class="feat-en">Divine Vengeance <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">神力</span><strong>前置：</strong>能够驱散不死生物，base attack bonus +3</div>
+        <div class="feat-benefit">以一个自由动作，消耗一次驱散尝试，你对不死生物的近战攻击额外造成 2d6 点神圣伤害，持续至你的下一回合开始。此效果可与神圣武器（smite evil）叠加。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>强化治疗 Empower Healing</h3>
+        <div class="feat-en">Empower Healing <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">超魔</span><strong>前置：</strong>能够施放 cure 系列法术</div>
+        <div class="feat-benefit">当你施放带有治疗（healing）描述符的法术时，该法术的治疗量最大化（等同于 Maximize Spell 效果），但仅消耗 Empower Spell 的额外法术位（+2 环而非 +3 环）。这是对治疗法术的高效超魔选择。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>虔信之触 Touch of Faith</h3>
+        <div class="feat-en">Touch of Faith <span class="source-badge source-cd">CD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">神力</span><strong>前置：</strong>能够施放 1 环神术，wis 13</div>
+        <div class="feat-benefit">每天一次，以一个标准动作，你可以触碰一个盟友，赋予其等同于你施法者等级的临时生命值。这些临时生命值持续 1 小时或在受到伤害时被消耗（取先发生者）。你的施法者等级每达到 5 级，额外使用次数 +1。</div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- ============================================================
+         五、Complete Adventurer 专长
+         ============================================================ -->
+    <h2 id="cadv" class="source-group-title">🗡️ 五、Complete Adventurer 完美冒险者专长</h2>
+    <p>以下专长来自 <strong>Complete Adventurer</strong>，面向技能型角色、盗贼和冒险者。
+    强调技能强化、偷袭增强与探索能力。</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <h3>特技攀爬 Acrobat</h3>
+        <div class="feat-en">Acrobat <span class="source-badge source-cadv">CAdv</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>dex 15，tumble 8 级，balance 5 级</div>
+        <div class="feat-benefit">你在 balance（平衡）、climb（攀爬）和 tumble（翻滚）检定上获得 +2 能力加值。此外，你可以在攀爬时保留 AC 上的敏捷加值（正常情况下攀爬时失去 dex 加值）。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>偷袭精准 Craven</h3>
+        <div class="feat-en">Craven <span class="source-badge source-cadv">CAdv</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>不能免疫恐惧（not immune to fear），具有偷袭（sneak attack）能力</div>
+        <div class="feat-benefit">你的偷袭伤害额外增加，增加量等于你的角色等级（character level）。但你受到恐惧效果时，豁免 DC 增加 2（即你更容易被恐惧影响）。<em>注：这是偷袭型构建的核心专长之一，高等级时伤害加成极为可观。</em></div>
+      </div>
+
+      <div class="feat-card">
+        <h3>暗影打击 Darkstalker</h3>
+        <div class="feat-en">Darkstalker <span class="source-badge source-cadv">CAdv</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>hide 8 级，move silently 8 级</div>
+        <div class="feat-benefit">你对抗具有灵敏嗅觉（scent）、颤动感知（tremorsense）或盲感（blindsense）的生物时，隐匿（hide）和潜行（move silently）检定不受其特殊感知能力的影响。这些生物必须依靠普通视觉和听觉来侦测你。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精通偷袭 Improved Sneak Attack</h3>
+        <div class="feat-en">Improved Sneak Attack <span class="source-badge source-cadv">CAdv</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>sneak attack +3d6</div>
+        <div class="feat-benefit">你的偷袭伤害骰增加 1d6。此专长可多次选取，每次增加 1d6 偷袭伤害。这是提升偷袭角色伤害输出的最直接手段。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>陷阱感知 Trap Sense (CAdv 扩展)</h3>
+        <div class="feat-en">Trapfinding Mastery <span class="source-badge source-cadv">CAdv</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>trapfinding 职业特性，search 8 级</div>
+        <div class="feat-benefit">你在 search（搜索）和 disable device（解除装置）检定上获得 +3 加值。此外，你在对抗陷阱的反射豁免上获得 +2 加值，且在陷阱触发的攻击上获得 +2 AC 闪避加值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>潜行大师 Hidden Talent</h3>
+        <div class="feat-en">Hidden Talent <span class="source-badge source-cadv">CAdv</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>必须为 1 级时选取</div>
+        <div class="feat-benefit">你获得一个 1 环心灵异能（psionic power），每天可使用 1 次，施法者等级等于你的 HD，DC 基于最高的心理属性。可选异能包括 <em>concealing amorpha</em>（隐蔽形态）或 <em>empathic feedback</em>（共感反馈）等。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>速射 Rapid Shot (CAdv 扩展)</h3>
+        <div class="feat-en">Rapid Shot (CAdv update) <span class="source-badge source-cadv">CAdv</span></div>
+        <div class="feat-type"><span class="feat-type-badge">战斗</span><strong>前置：</strong>dex 15，Rapid Shot (PHB)</div>
+        <div class="feat-benefit">CAdv 扩展版本：当你在整轮攻击中使用 Rapid Shot 获得额外远程攻击时，所有远程攻击的减值从 -2 降至 -1（PHB 原版为 -2）。这显著提升了远程全力攻击的命中率。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>技能专精 Skill Mastery</h3>
+        <div class="feat-en">Skill Mastery <span class="source-badge source-cadv">CAdv</span></div>
+        <div class="feat-type"><span class="feat-type-badge">普通</span><strong>前置：</strong>int 13，所选技能至少 8 级</div>
+        <div class="feat-benefit">选择最多 3 个你拥有至少 8 级的技能。在这些技能的检定中，你可以取 10（take 10），即使在受到压力或威胁的情况下。此专长对 rogue 和 bard 类角色极有价值，确保关键技能检定的稳定性。</div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- ============================================================
+         六、Complete Mage 专长
+         ============================================================ -->
+    <h2 id="cm" class="source-group-title">📘 六、Complete Mage 完美法师专长</h2>
+    <p>以下专长来自 <strong>Complete Mage</strong>，引入了<strong>储备专长（Reserve Feats）</strong>概念——
+    只要施法者保持特定法术位未消耗，就持续获得一项超自然或特异能力。</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <h3>酸液飞溅 Acidic Splatter</h3>
+        <div class="feat-en">Acidic Splatter (Reserve) <span class="source-badge source-cm">CM</span></div>
+        <div class="feat-type"><span class="feat-type-badge">储备</span><strong>前置：</strong>能施放 3 环带有酸（acid）描述符的法术</div>
+        <div class="feat-benefit"><strong>持续效果：</strong>只要你保留一个 3 环或更高的酸系法术位未使用，你可以以一个标准动作向 30 尺内一个目标发射酸液飞弹，造成 1d6 + 1/每法术环级的酸伤害（远程接触攻击）。<strong>加值：</strong>你对抗酸系法术的豁免获得 +1 加值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>暴风之眼 Eye of the Hurricane</h3>
+        <div class="feat-en">Eye of the Hurricane (Reserve) <span class="source-badge source-cm">CM</span></div>
+        <div class="feat-type"><span class="feat-type-badge">储备</span><strong>前置：</strong>能施放 3 环带有电（electricity）描述符的法术</div>
+        <div class="feat-benefit"><strong>持续效果：</strong>只要你保留一个 3 环或更高的电系法术位未使用，以你为中心 10 尺半径内的生物在对你进行近战攻击时受到 1d6 电伤害。此伤害在你的回合开始时生效。<strong>加值：</strong>你对抗电系伤害获得 5 点抗性。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>火焰之手 Fiery Burst</h3>
+        <div class="feat-en">Fiery Burst (Reserve) <span class="source-badge source-cm">CM</span></div>
+        <div class="feat-type"><span class="feat-type-badge">储备</span><strong>前置：</strong>能施放 2 环带有火（fire）描述符的法术</div>
+        <div class="feat-benefit"><strong>持续效果：</strong>只要你保留一个 2 环或更高的火系法术位未使用，你可以以一个标准动作释放一团火焰爆发，影响 10 尺半径，造成 1d6/每未消耗的最高火系法术环级的火伤害（反射 DC = 10 + 1/2 施法者等级 + 施法属性调整值减半）。每天无限次使用。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>冰冻领域 Frozen Wilds</h3>
+        <div class="feat-en">Frozen Wilds (Reserve) <span class="source-badge source-cm">CM</span></div>
+        <div class="feat-type"><span class="feat-type-badge">储备</span><strong>前置：</strong>能施放 2 环带有冷（cold）描述符的法术</div>
+        <div class="feat-benefit"><strong>持续效果：</strong>只要你保留一个 2 环或更高的冷系法术位未使用，你可以在 30 尺内制造一片 10 尺见方的冰面（标准动作），在其上行走的生物必须通过平衡检定（DC 10 + 法术环级）否则摔倒。<strong>加值：</strong>你获得 5 点寒冷抗性。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>心灵壁垒 Mental Resistance</h3>
+        <div class="feat-en">Mental Resistance (Reserve) <span class="source-badge source-cm">CM</span></div>
+        <div class="feat-type"><span class="feat-type-badge">储备</span><strong>前置：</strong>能施放 3 环附魔学派（enchantment）法术</div>
+        <div class="feat-benefit"><strong>持续效果：</strong>只要你保留一个 3 环或更高的附魔系法术位未使用，你对抗附魔效果的意志豁免获得 +2 加值。此外，你的 HD 等于或低于施法者等级的魅惑（charm）和胁迫（compulsion）效果对你无效。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>召唤治疗 Healing Spirit</h3>
+        <div class="feat-en">Healing Spirit (Reserve) <span class="source-badge source-cm">CM</span></div>
+        <div class="feat-type"><span class="feat-type-badge">储备</span><strong>前置：</strong>能施放 2 环带有治疗（healing）描述符的法术</div>
+        <div class="feat-benefit"><strong>持续效果：</strong>只要你保留一个 2 环或更高的治疗法术位未使用，你可以以一个标准动作触碰一个生物，治疗 1d8 + 1/每治疗法术环级的伤害。每天使用次数等于 3 + 你的施法属性调整值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>战法师之击 Warmage's Strike</h3>
+        <div class="feat-en">Warmage's Strike (Reserve) <span class="source-badge source-cm">CM</span></div>
+        <div class="feat-type"><span class="feat-type-badge">储备</span><strong>前置：</strong>能施放 2 环塑能学派（evocation）法术</div>
+        <div class="feat-benefit"><strong>持续效果：</strong>只要你保留一个 2 环或更高的塑能系法术位未使用，你的近战攻击额外造成 1d6 力场伤害（force damage）。此伤害在命中时自动附加，无需额外动作。<strong>加值：</strong>你的塑能法术伤害 +1。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>法师之甲 Mage Armor (Reserve)</h3>
+        <div class="feat-en">Minor Shapeshifting (Reserve) <span class="source-badge source-cm">CM</span></div>
+        <div class="feat-type"><span class="feat-type-badge">储备</span><strong>前置：</strong>能施放 4 环变化学派（transmutation）法术</div>
+        <div class="feat-benefit"><strong>持续效果：</strong>只要你保留一个 4 环或更高的变化系法术位未使用，你可以以一个标准动作变形为一个特定动物（由DM根据战役设定），持续轮数等于你的施法者等级。变形期间你获得该动物的物理属性但保留心智属性。</div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- ============================================================
+         七、Expanded Psionics Handbook 灵能专长
+         ============================================================ -->
+    <h2 id="xph" class="source-group-title">🧠 七、Expanded Psionics Handbook 灵能专长</h2>
+    <p>以下专长来自 <strong>Expanded Psionics Handbook (XPH)</strong>，面向灵能角色（psion、psychic warrior、wilder 等）。
+    包括灵能战斗、超灵能（metapsionic）及灵能防御类专长。</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <h3>深度专注 Deep Focus</h3>
+        <div class="feat-en">Deep Focus <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">灵能</span><strong>前置：</strong>concentration 9 级，能够显现 3 级灵能异能</div>
+        <div class="feat-benefit">你可以将你的灵能聚焦（psionic focus）用于提升任何需要专注检定的灵能异能的 DC，使其获得 +1 加值（而非通常的仅用于特定异能）。此外，你在专注检定上获得 +2 加值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>惰性屏障 Inertial Barrier</h3>
+        <div class="feat-en">Inertial Barrier <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">灵能</span><strong>前置：</strong>能够显现 <em>inertial armor</em> 异能</div>
+        <div class="feat-benefit">当你维持灵能聚焦状态时，你获得 5/- 的伤害减免（damage reduction）。此伤害减免在你消耗或失去灵能聚焦时消失。此效果与 inertial armor 异能的 AC 加值叠加，但代价为灵能聚焦被消耗。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>超灵能·强化 Empower Power</h3>
+        <div class="feat-en">Empower Power (Metapsionic) <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">超灵能</span><strong>前置：</strong>能够显现灵能异能</div>
+        <div class="feat-benefit">你可以强化（empower）一个灵能异能，使其所有数值效果（包括伤害和治疗）增加 50%。使用此异能需额外消耗 2 点灵能点（power points）。此效果与异能增幅（augmentation）叠加。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>超灵能·延展 Extend Power</h3>
+        <div class="feat-en">Extend Power (Metapsionic) <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">超灵能</span><strong>前置：</strong>能够显现灵能异能</div>
+        <div class="feat-benefit">你可以延展（extend）一个灵能异能的持续时间，使其翻倍（瞬间和集中持续时间的异能不受影响）。使用此异能需额外消耗 2 点灵能点。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>超灵能·最大化 Maximize Power</h3>
+        <div class="feat-en">Maximize Power (Metapsionic) <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">超灵能</span><strong>前置：</strong>Empower Power</div>
+        <div class="feat-benefit">你可以最大化（maximize）一个灵能异能的所有数值效果，使其取最大值（无需掷骰）。使用此异能需额外消耗 4 点灵能点。此效果可与 Empower Power 同时使用（共消耗 6 点额外灵能点）。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>超灵能·广域 Widen Power</h3>
+        <div class="feat-en">Widen Power (Metapsionic) <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">超灵能</span><strong>前置：</strong>能够显现灵能异能</div>
+        <div class="feat-benefit">你可以扩大（widen）一个灵能异能的影响范围（area），使其所有维度（半径、长度等）翻倍。使用此异能需额外消耗 4 点灵能点。仅对具有爆发（burst）、扩散（emanation）或扩展（spread）区域的异能有效。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>灵能闪避 Psionic Dodge</h3>
+        <div class="feat-en">Psionic Dodge <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">灵能</span><strong>前置：</strong>dex 15，能够显现 <em>vigor</em> 异能</div>
+        <div class="feat-benefit">当你维持灵能聚焦状态时，你可以以一个即时动作（immediate action）消耗你的灵能聚焦，使下一次针对你的攻击（在本轮和下轮开始前）自动失手（miss）。你必须在攻击掷骰前声明使用。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>灵能武器精通 Psionic Weapon Focus</h3>
+        <div class="feat-en">Psionic Weapon <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">灵能</span><strong>前置：</strong>str 13，能够显现 <em>metaphysical weapon</em> 异能</div>
+        <div class="feat-benefit">以一个自由动作，你可以消耗灵能聚焦，使你手持的一件武器在一次攻击中获得增强加值，加值等于你的灵能显现者等级 / 3（取整，最高 +5）。此加值同时作用于攻击和伤害检定。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>强化灵能护甲 Up the Walls</h3>
+        <div class="feat-en">Up the Walls <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">灵能</span><strong>前置：</strong>能够显现 <em>wall walker</em> 异能</div>
+        <div class="feat-benefit">你可以在墙壁和天花板上行走和战斗，如同处于 <em>wall walker</em> 异能影响下。当你消耗灵能聚焦时，你获得在垂直和倒挂表面上移动的能力，持续轮数等于你的 con 调整值（最少 1 轮）。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>灵能身躯 Psionic Body</h3>
+        <div class="feat-en">Psionic Body <span class="source-badge source-xph">XPH</span></div>
+        <div class="feat-type"><span class="feat-type-badge">灵能</span><strong>前置：</strong>具有灵能种族或灵能职业</div>
+        <div class="feat-benefit">你的 HD 类型提升一级（d4→d6, d6→d8, d8→d10, d10→d12），影响所有灵能职业的 HD。此外，你获得等同于你的灵能显现者等级的额外灵能点（一次性，不会随等级继续增长）。你的体型不受影响。</div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- ============================================================
+         八、Races 系列种族专长
+         ============================================================ -->
+    <h2 id="races" class="source-group-title">🏔️ 八、Races 系列种族专长</h2>
+    <p>以下专长来自 <strong>Races of Stone</strong>、<strong>Races of the Wild</strong> 和 <strong>Races of Destiny</strong>。
+    种族专长通常要求特定种族作为前置，为角色提供种族特色的强化能力。</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <h3>石之坚韧 Stoneback</h3>
+        <div class="feat-en">Stoneback <span class="source-badge source-ros">RoS</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>矮人（dwarf）</div>
+        <div class="feat-benefit">你的体质获得 +2 增强加值。此外，你在对抗毒素的强韧豁免上获得 +2 种族加值（与矮人天生的毒素抗性叠加）。当你站在石质或泥土表面上时，你无法被绊摔（trip）或推撞（bull rush）。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>大地之锤 Earth Hammer</h3>
+        <div class="feat-en">Earth Hammer <span class="source-badge source-ros">RoS</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>矮人，str 15，base attack bonus +6</div>
+        <div class="feat-benefit">当你使用钝击（bludgeoning）近战武器命中站在地面上的敌人时，你可以以一次自由动作尝试绊摔（trip）该敌人。此次绊摔不引发借机攻击，且你在力量检定上获得 +4 加值。你无需放下手中的武器。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>石之感知 Stonesense</h3>
+        <div class="feat-en">Stonesense <span class="source-badge source-ros">RoS</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>矮人或侏儒</div>
+        <div class="feat-benefit">你获得 30 尺颤动感知（tremorsense），但仅在与石质或泥土接触时有效。你能感知通过石质/泥土表面传导的振动来定位生物。此能力无法探测飞行或非接触表面的生物。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>林叶之影 Leafwalker</h3>
+        <div class="feat-en">Leafwalker <span class="source-badge source-row">RoW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>精灵（elf）</div>
+        <div class="feat-benefit">你在森林地形中的 hide（隐匿）和 move silently（潜行）检定获得 +4 种族加值。此外，你可以在自然植被（如灌木、藤蔓）中移动而不留下痕迹，如同处于 <em>pass without trace</em> 法术影响下。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>精灵优雅 Elfin Grace</h3>
+        <div class="feat-en">Elfin Grace <span class="source-badge source-row">RoW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>精灵，dex 13</div>
+        <div class="feat-benefit">你的敏捷获得 +2 增强加值（此加值与精灵种族本身的 +2 dex 不冲突，因为是增强加值而非种族加值）。此外，你在对抗所有需要敏捷豁免的效果时获得 +1 加值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>荒野猎手 Wild Hunter</h3>
+        <div class="feat-en">Wild Hunter <span class="source-badge source-row">RoW</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>精灵或半精灵，survival 5 级</div>
+        <div class="feat-benefit">你在追踪（tracking）时的 survival 检定获得 +4 种族加值。此外，当你在荒野（wilderness）环境中对被你追踪的猎物发动攻击时，你的攻击和伤害检定获得 +1 加值。此效果对动物和魔法兽（magical beast）额外 +1。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>人类适应性 Human Adaptability</h3>
+        <div class="feat-en">Human Adaptability <span class="source-badge source-rod">RoD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>人类</div>
+        <div class="feat-benefit">选择一个豁免类型（强韧、反射或意志）。你在该豁免上获得 +1 种族加值。此专长可多次选取，每次选择不同的豁免类型。这体现了人类在适应力上的优势。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>命运之触 Destiny's Chosen</h3>
+        <div class="feat-en">Destiny's Chosen <span class="source-badge source-rod">RoD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>人类或半精灵，cha 13</div>
+        <div class="feat-benefit">每天一次，你可以在一次攻击检定、技能检定或豁免检定中掷两次骰子并取较高的结果。你必须在掷骰前声明使用此能力。此能力代表人类被命运眷顾的特质。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>矮人之怒 Dwarven Wrath</h3>
+        <div class="feat-en">Dwarven Wrath <span class="source-badge source-ros">RoS</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>矮人，base attack bonus +4</div>
+        <div class="feat-benefit">每天一次，当你被一个比你体型大的生物命中时，你可以以一个自由动作进入持续 1 分钟的暴怒状态。暴怒期间你对比你大的生物的攻击和伤害检定获得 +2 种族加值，且你获得 +4 对抗恐惧效果的豁免加值。</div>
+      </div>
+
+      <div class="feat-card">
+        <h3>半身人幸运 Halfling's Luck</h3>
+        <div class="feat-en">Halfling's Luck (expanded) <span class="source-badge source-rod">RoD</span></div>
+        <div class="feat-type"><span class="feat-type-badge">种族</span><strong>前置：</strong>半身人（halfling）</div>
+        <div class="feat-benefit">你的幸运加值（+1 种族加值，已在种族特性中）扩展到攻击检定。此外，每天一次，你可以在豁免失败时重掷（必须接受第二次结果）。你的幸运加值现在同时适用于豁免和攻击检定。</div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- ============================================================
+         九、专长链参考表
+         ============================================================ -->
+    <h2 id="chains" class="source-group-title">🔗 九、专长链参考表（Feat Chains）</h2>
+    <p>以下表格整理了常见的专长前置链，帮助玩家规划角色的专长发展路线。
+    <span class="arrow">→</span> 表示"需要作为前置"。</p>
+
+    <table class="chain-table">
+      <thead>
+        <tr>
+          <th style="width:22%;">专长链名称</th>
+          <th style="width:38%;">专长链路径</th>
+          <th style="width:20%;">最终效果</th>
+          <th style="width:20%;">适用构建</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>武器专精链</strong></td>
+          <td>Weapon Focus → Weapon Specialization → Greater Weapon Focus → Greater Weapon Specialization → Weapon Supremacy</td>
+          <td>攻击+4、伤害+6、可取 10</td>
+          <td>战士、战斗型角色</td>
+        </tr>
+        <tr>
+          <td><strong>双武器战斗链</strong></td>
+          <td>Two-Weapon Fighting → Improved TWF → Greater TWF → Double Weapon Finesse (PHB2)</td>
+          <td>双手各获得额外攻击次数</td>
+          <td>敏捷型近战</td>
+        </tr>
+        <tr>
+          <td><strong>骑战链</strong></td>
+          <td>Ride-By Attack → Spirited Charge → Mounted Combat Mastery (CW)</td>
+          <td>骑乘冲锋伤害 ×4</td>
+          <td>圣武士、骑战战士</td>
+        </tr>
+        <tr>
+          <td><strong>远程精准链</strong></td>
+          <td>Point Blank Shot → Precise Shot → Improved Precise Shot → Far Shot</td>
+          <td>无视掩护和距离惩罚</td>
+          <td>游侠、弓箭手</td>
+        </tr>
+        <tr>
+          <td><strong>破甲链</strong></td>
+          <td>Power Attack → Cleave → Great Cleave → Brutal Strike (CW)</td>
+          <td>近战伤害爆发与推移控制</td>
+          <td>力量型近战</td>
+        </tr>
+        <tr>
+          <td><strong>超魔优化链</strong></td>
+          <td>任一超魔专长 → Easy Metamagic (CA) → Arcane Thesis (CA) → Practical Metamagic</td>
+          <td>超魔消耗降至 +0 环</td>
+          <td>法师、术士</td>
+        </tr>
+        <tr>
+          <td><strong>神力持久链</strong></td>
+          <td>Extra Turning → Divine Metamagic (CD) → Persistent Spell</td>
+          <td>24 小时持续性法术（如 divine favor）</td>
+          <td>牧师（强力构建）</td>
+        </tr>
+        <tr>
+          <td><strong>偷袭增强链</strong></td>
+          <td>Craven (CAdv) → Improved Sneak Attack (CAdv) → Darkstalker (CAdv)</td>
+          <td>偷袭伤害 +角色等级 +1d6、无视特殊感知</td>
+          <td>盗贼、刺客</td>
+        </tr>
+        <tr>
+          <td><strong>储备法术链</strong></td>
+          <td>Fiery Burst (CM) → 其他储备专长 → 保留高阶法术位</td>
+          <td>无限次使用类法术能力</td>
+          <td>法师、术士</td>
+        </tr>
+        <tr>
+          <td><strong>灵能超灵能链</strong></td>
+          <td>Deep Focus (XPH) → Empower Power → Maximize Power</td>
+          <td>灵能异能数值效果最大化</td>
+          <td>灵能师（psion）</td>
+        </tr>
+        <tr>
+          <td><strong>防御战斗链</strong></td>
+          <td>Combat Expertise → Improved Disarm/Trip → Defensive Strike (PHB2)</td>
+          <td>防御状态下精准反击</td>
+          <td>战术型战士</td>
+        </tr>
+        <tr>
+          <td><strong>矮人种族链</strong></td>
+          <td>Stoneback (RoS) → Stonesense (RoS) → Dwarven Wrath (RoS) → Earth Hammer (RoS)</td>
+          <td>全面强化矮人种族特性</td>
+          <td>矮人近战角色</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="rule-box">
+      <h3>💡 专长链使用提示</h3>
+      <ul>
+        <li>规划专长链时，请考虑角色的<strong>最终目标等级</strong>。许多强力专长链需要 BAB +18 或施法者等级 12+。</li>
+        <li>战士（fighter）在 1、2、4、6、8... 级获得额外的战斗专长，最适合走武器专精链。</li>
+        <li><strong>Divine Metamagic + Persistent Spell</strong> 是 3.5e 中最强大的组合之一，许多 DM 会限制此构建，请事先沟通。</li>
+        <li>人类角色因额外专长和 Human Adaptability 而在专长链规划上最为灵活。</li>
+        <li>储备专长不需要消耗专长位即可使用，是法师/术士的高性价比选择。</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================
+         十、专长选择指南
+         ============================================================ -->
+    <h2 id="guide" class="source-group-title">📖 十、专长选择指南</h2>
+    <p>不同构建类型的角色应优先考虑不同类型的专长。以下按常见角色类型给出推荐。</p>
+
+    <div class="guide-grid">
+
+      <div class="guide-card">
+        <h4>⚔️ 近战战士（Melee Fighter）</h4>
+        <ul>
+          <li><strong>核心：</strong>Power Attack, Cleave, Weapon Focus</li>
+          <li><strong>CW 推荐：</strong>Blade Meditation, Brutal Strike, Weapon Supremacy</li>
+          <li><strong>PHB2 推荐：</strong>Mage Slayer, Defensive Strike</li>
+          <li><strong>种族：</strong>Stoneback (矮人), Earth Hammer (矮人)</li>
+          <li><strong>提示：</strong>战士拥有最多专长位，适合走完整的武器专精链</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h4>🏹 远程射手（Archer / Ranger）</h4>
+        <ul>
+          <li><strong>核心：</strong>Point Blank Shot, Precise Shot, Rapid Shot</li>
+          <li><strong>CW 推荐：</strong>Precise Shot (CW 扩展版), Mounted Combat Mastery</li>
+          <li><strong>CAdv 推荐：</strong>Rapid Shot (CAdv 扩展), Darkstalker</li>
+          <li><strong>种族：</strong>Wild Hunter (精灵), Elfin Grace (精灵)</li>
+          <li><strong>提示：</strong>CAdv 版本的 Rapid Shot 将减值降至 -1，强烈推荐</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h4>🔮 奥术施法者（Arcane Caster）</h4>
+        <ul>
+          <li><strong>CA 推荐：</strong>Arcane Thesis, Easy Metamagic, Energy Substitution</li>
+          <li><strong>CM 推荐：</strong>Fiery Burst, Acidic Splatter（储备专长节省资源）</li>
+          <li><strong>PHB2 推荐：</strong>Arcane Schooling, Arcane Strike, Benign Transposition</li>
+          <li><strong>提示：</strong>Arcane Thesis + Easy Metamagic 可将超魔消耗降至 +0</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h4>✨ 神术施法者（Divine Caster）</h4>
+        <ul>
+          <li><strong>CD 推荐：</strong>Divine Metamagic, Extra Turning, Sacred Healing</li>
+          <li><strong>CD 进阶：</strong>Divine Metamagic + Persistent Spell = 24小时增益</li>
+          <li><strong>PHB2 推荐：</strong>Armor Skin (提升无甲AC)</li>
+          <li><strong>提示：</strong>Extra Turning 是 Divine Metamagic 构建的必备前置</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h4>🗡️ 偷袭型角色（Sneak Attacker）</h4>
+        <ul>
+          <li><strong>CAdv 推荐：</strong>Craven（伤害+角色等级）, Darkstalker, Improved Sneak Attack</li>
+          <li><strong>PHB2 推荐：</strong>Deadly Precision, Able Learner</li>
+          <li><strong>CAdv 推荐：</strong>Skill Mastery, Trapfinding Mastery</li>
+          <li><strong>种族：</strong>Halfling's Luck (半身人), Human Adaptability (人类)</li>
+          <li><strong>提示：</strong>Craven 在高等级时收益极高，但注意你变得更容易被恐惧</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h4>🧠 灵能角色（Psionic Character）</h4>
+        <ul>
+          <li><strong>XPH 推荐：</strong>Deep Focus, Empower Power, Psionic Body</li>
+          <li><strong>XPH 防御：</strong>Inertial Barrier, Psionic Dodge</li>
+          <li><strong>XPH 进阶：</strong>Maximize Power（与 Empower 叠加）</li>
+          <li><strong>提示：</strong>Deep Focus 让灵能聚焦的用途更广泛，是灵能角色的基础专长</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h4>🛡️ 坦克/防御型（Tank / Defender）</h4>
+        <ul>
+          <li><strong>核心：</strong>Combat Expertise, Improved Trip/Disarm</li>
+          <li><strong>PHB2 推荐：</strong>Defensive Strike, Armor Skin, Blind-Fight</li>
+          <li><strong>CW 推荐：</strong>Improved Shield Bash, Defensive Roll</li>
+          <li><strong>CD 推荐：</strong>Divine Armor, Sacred Healing</li>
+          <li><strong>提示：</strong>Defensive Strike 让你防御时仍能精准反击</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h4>🎭 多面手/辅助型（Support / Utility）</h4>
+        <ul>
+          <li><strong>PHB2 推荐：</strong>Able Learner（全技能本职）, Citizen, Benign Transposition</li>
+          <li><strong>CM 推荐：</strong>Healing Spirit, Mental Resistance（储备专长）</li>
+          <li><strong>CAdv 推荐：</strong>Skill Mastery, Hidden Talent</li>
+          <li><strong>提示：</strong>Able Learner + Skill Mastery 使吟游诗人成为最强技能型角色</li>
+        </ul>
+      </div>
+
+    </div><!-- /guide-grid -->
+
+    <div class="rule-box">
+      <h3>⚠️ 重要规则提醒</h3>
+      <ul>
+        <li><strong>专长获取节奏：</strong>所有角色在 1、3、6、9、12、15、18 级获得通用专长。战士额外在 1、2、4、6、8... 级获得战斗专长。人类在 1 级额外获得 1 个通用专长。</li>
+        <li><strong>重训规则（PHB2）：</strong>PHB2 允许角色在升级时用一个新专长替换一个已有专长（每 4 级可替换一次），为玩家调整构建提供了灵活性。</li>
+        <li><strong>前置条件丧失：</strong>如果你因某种原因失去了专长的前置条件（如属性降低），你将无法使用该专长，但不会失去该专长本身。一旦恢复前置条件，专长即可恢复使用。</li>
+        <li><strong>书源限制：</strong>并非所有 DM 都允许使用所有扩展书的专长。建议在创建角色前与 DM 确认允许使用的书源列表。</li>
+      </ul>
+    </div>
+
+    <div class="rule-box">
+      <h3>📊 专长数量统计</h3>
+      <table class="chain-table" style="margin-top:12px;">
+        <thead>
+          <tr>
+            <th>来源书</th>
+            <th>本页收录数</th>
+            <th>专长类型侧重</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Player's Handbook II (PHB2)</td>
+            <td>15</td>
+            <td>通用、战斗、多职业支持</td>
+          </tr>
+          <tr>
+            <td>Complete Warrior (CW)</td>
+            <td>12</td>
+            <td>近战战斗、武技专精</td>
+          </tr>
+          <tr>
+            <td>Complete Arcane (CA)</td>
+            <td>10</td>
+            <td>奥术施法、超魔优化</td>
+          </tr>
+          <tr>
+            <td>Complete Divine (CD)</td>
+            <td>10</td>
+            <td>神术、驱散、治疗</td>
+          </tr>
+          <tr>
+            <td>Complete Adventurer (CAdv)</td>
+            <td>8</td>
+            <td>技能、偷袭、探索</td>
+          </tr>
+          <tr>
+            <td>Complete Mage (CM)</td>
+            <td>8</td>
+            <td>储备专长、元素魔法</td>
+          </tr>
+          <tr>
+            <td>Expanded Psionics Handbook (XPH)</td>
+            <td>10</td>
+            <td>灵能战斗、超灵能</td>
+          </tr>
+          <tr>
+            <td>Races 系列 (RoS/RoW/RoD)</td>
+            <td>10</td>
+            <td>种族强化、种族特色</td>
+          </tr>
+          <tr>
+            <td><strong>总计</strong></td>
+            <td><strong>83</strong></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 扩展专长大全 | 数据来源：PHB2 · Complete 系列 · Expanded Psionics Handbook · Races 系列</p>
+</div>
+
+</body>
+</html>
