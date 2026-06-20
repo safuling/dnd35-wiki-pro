@@ -44,53 +44,19 @@
 <script src="../js/spells-data.js"></script>
 <script src="../js/spells-domains.js"></script>
 <script src="../js/spells-conflicts.js"></script>
-<script src="../js/spells-conflicts-batch2.js"></script>
-<script src="../js/spells-conflicts-batch3.js"></script>
-<script src="../js/spells-conflicts-batch4.js"></script>
-<script src="../js/spells-conflicts-batch5.js"></script>
 <script>
 // 获取URL参数中的法术ID
 const urlParams = new URLSearchParams(window.location.search);
 const spellId = urlParams.get('id');
 
 // 查找法术数据
-const spell = window.spellsData ? window.spellsData.find(s => s.id === spellId) : null;
+const spell = (typeof SPELLS !== 'undefined' ? SPELLS : (window.spellsData || [])).find(s => s.id === spellId);
 
-// 合并规则冲突标注（从 spells-conflicts.js、batch2、batch3 加载）
+// 合并规则冲突标注
 if (spell) {
   if (!spell.conflicts) spell.conflicts = [];
-  
-  // 从第一批加载
   if (typeof conflictsData !== 'undefined' && conflictsData[spellId]) {
     for (const c of conflictsData[spellId]) {
-      spell.conflicts.push(c);
-    }
-  }
-  
-  // 从第二批加载
-  if (typeof window.conflictsDataBatch2 !== 'undefined' && window.conflictsDataBatch2[spellId]) {
-    for (const c of window.conflictsDataBatch2[spellId]) {
-      spell.conflicts.push(c);
-    }
-  }
-  
-  // 从第三批加载
-  if (typeof window.conflictsDataBatch3 !== 'undefined' && window.conflictsDataBatch3[spellId]) {
-    for (const c of window.conflictsDataBatch3[spellId]) {
-      spell.conflicts.push(c);
-    }
-  }
-  
-  // 从第四批加载
-  if (typeof window.conflictsDataBatch4 !== 'undefined' && window.conflictsDataBatch4[spellId]) {
-    for (const c of window.conflictsDataBatch4[spellId]) {
-      spell.conflicts.push(c);
-    }
-  }
-  
-  // 从第五批加载
-  if (typeof window.conflictsDataBatch5 !== 'undefined' && window.conflictsDataBatch5[spellId]) {
-    for (const c of window.conflictsDataBatch5[spellId]) {
       spell.conflicts.push(c);
     }
   }
