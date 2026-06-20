@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>异界生物 Outsiders - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.cr-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:13px; font-weight:600; color:#fff; }
+.cr-low { background:#27ae60; }
+.cr-mid { background:#d4a017; }
+.cr-high { background:#c0392b; }
+.cr-boss { background:#8e44ad; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:40px; }
+.monster-entry { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:16px 0; }
+.monster-entry h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.monster-entry table { width:100%; border-collapse:collapse; margin:8px 0; }
+.monster-entry th, .monster-entry td { padding:6px 10px; border-bottom:1px solid var(--border-light,#e8dcc8); text-align:left; font-size:14px; }
+.monster-entry th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.tactic { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:8px 12px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物图鉴</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+      <a href="humanoids.html">类人怪物</a>
+      <a href="undead.html">不死生物</a>
+      <a href="magical-beasts.html">魔法兽</a>
+      <a href="aberrations-fey.html">异怪与精类</a>
+      <a href="outsiders.html" class="active">异界生物</a>
+      <a href="giants-constructs.html">巨人与构装体</a>
+      <a href="plants-oozes.html">植物与泥怪</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>异界生物 Outsiders</h1>
+
+    <p>本页收录 D&D 3.5e 中的异界生物 (Outsider)，包括天界的天使、深渊的恶魔、九层地狱的魔鬼、元素位面的元素生物。异界生物同时具有本地与异界亚种——这意味着它们既受到针对特定阵营的法术影响（如<em>驱逐术</em>），也拥有一些独特的抗性和弱点。异界生物通常拥有暗黑视觉和完整的 20 点强韧豁免加值（基于 HD）。</p>
+
+    <div class="toc">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#sec1">一、元素生物 (Elementals)</a></li>
+        <li><a href="#sec2">二、天界生物 (Celestials)</a></li>
+        <li><a href="#sec3">三、恶魔 — 塔纳厘 (Demons / Tanar'ri)</a></li>
+        <li><a href="#sec4">四、魔鬼 — 巴特兹 (Devils / Baatezu)</a></li>
+        <li><a href="#sec5">五、尤格罗斯 (Yugoloths)</a></li>
+        <li><a href="#sec6">六、其他异界生物</a></li>
+        <li><a href="#sec7">七、CR 速查表</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 1: 元素生物 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec1">一、元素生物 (Elementals)</h2>
+
+    <p>元素生物是来自四大元素位面（气、土、火、水）的纯粹元素力量化身。它们可以通过<em>召唤怪物</em>系列法术或<em>元素召唤</em>法术被召唤至物质位面。每种元素都有独特的特殊能力：气元素可以化为旋风，土元素在地面上有加成，火元素可以点燃目标，水元素可以灭火和翻转船只。</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>元素等级</th>
+          <th>CR</th>
+          <th>体型</th>
+          <th>HD</th>
+          <th>AC</th>
+          <th>挥击</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>小型元素</td><td><span class="cr-badge cr-low">1</span></td><td>小型</td><td>2d8 (9 HP)</td><td>15</td><td>+4 (1d4)</td></tr>
+        <tr><td>中型元素</td><td><span class="cr-badge cr-low">3</span></td><td>中型</td><td>4d8+8 (26 HP)</td><td>15</td><td>+8 (1d8+3)</td></tr>
+        <tr><td>大型元素</td><td><span class="cr-badge cr-mid">5</span></td><td>大型</td><td>8d8+16 (52 HP)</td><td>15</td><td>+12 (2d8+5)</td></tr>
+        <tr><td>巨型元素</td><td><span class="cr-badge cr-mid">7</span></td><td>超大型</td><td>12d8+24 (78 HP)</td><td>15</td><td>+16 (2d10+7)</td></tr>
+        <tr><td>高等元素</td><td><span class="cr-badge cr-high">9</span></td><td>超大型</td><td>18d8+36 (117 HP)</td><td>可变</td><td>可变</td></tr>
+        <tr><td>远古元素</td><td><span class="cr-badge cr-high">11</span></td><td>超大型</td><td>24d8+48 (156 HP)</td><td>可变</td><td>可变</td></tr>
+      </tbody>
+    </table>
+
+    <div class="monster-entry">
+      <h3>小型元素 Small Elemental <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>最弱小的元素形态，通常作为仆从或信使被召唤。虽然体型较小，但其独特的元素能力在特定情境下仍有价值。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><th>体型</th><td>小型 (Small)</td></tr>
+        <tr><th>类型</th><td>元素生物 (Elemental)</td></tr>
+        <tr><th>HD</th><td>2d8 (9 HP)</td></tr>
+        <tr><th>AC</th><td>15 (+1 体型, +2 敏捷, +2 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +4 近战 (1d4)</td></tr>
+        <tr><th>特殊能力</th><td>因元素类型而异（气=旋风、土=大地精通、火=燃烧、水=浸灭）；暗黑视觉 60 尺；元素特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>小型元素单独战斗力有限，但其元素能力可用来执行特殊任务——气元素可搬运小物件、火元素可点燃易燃物、水元素可扑灭小型火灾。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>中型元素 Medium Elemental <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>标准体型元素，是<em>召唤怪物 III</em>的常见选择。其元素特殊能力已经可以对中型生物产生实际效果。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>元素生物 (Elemental)</td></tr>
+        <tr><th>HD</th><td>4d8+8 (26 HP)</td></tr>
+        <tr><th>AC</th><td>15 (+2 敏捷, +3 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +8 近战 (1d8+3)</td></tr>
+        <tr><th>特殊能力</th><td>气元素：旋风（每 10 分钟 1 次，持续 6 轮，可卷入中型以下生物）；土元素：大地精通（接触地面时攻防各 +1）；火元素：燃烧（触碰 DC 14 反射失败则着火 1d4 轮）；水元素：浸灭（对火系生物额外伤害，可灭火）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>中型元素作为召唤物性价比不错。气元素的旋风能力可以卷走小型敌人、清除远程攻击威胁；火元素的燃烧效果叠加在普通攻击之上，持续伤害可观。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>大型元素 Large Elemental <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>威力显著增强的元素形态，已经可以对中型生物构成严重威胁。<em>召唤怪物 V</em>可召唤此等级元素。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>元素生物 (Elemental)</td></tr>
+        <tr><th>HD</th><td>8d8+16 (52 HP)</td></tr>
+        <tr><th>AC</th><td>15 (-1 体型, +2 敏捷, +4 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +12 近战 (2d8+5)</td></tr>
+        <tr><th>特殊能力</th><td>同中型元素但 DC 更高；气元素旋风可卷入大型以下生物；土元素攻防加 +2；火元素燃烧 DC 17</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>大型元素已经是可靠的战斗盟友。土元素在地面上非常坚韧，适合充当前排坦克；气元素旋风可以扰乱敌方阵型。根据对手的弱点选择元素类型——对付火系敌人用水元素，对付密集阵型用气元素。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>巨型元素 Huge Elemental <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>体型庞大、力量惊人的元素生物。巨型元素已经可以与大多数中高等级冒险者正面抗衡。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><th>体型</th><td>超大型 (Huge)</td></tr>
+        <tr><th>类型</th><td>元素生物 (Elemental)</td></tr>
+        <tr><th>HD</th><td>12d8+24 (78 HP)</td></tr>
+        <tr><th>AC</th><td>15 (-2 体型, +2 敏捷, +5 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +16 近战 (2d10+7)</td></tr>
+        <tr><th>特殊能力</th><td>同前但效果更强；气元素旋风可卷入超大型以下生物；土元素攻防加 +4；火元素燃烧 DC 20</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>巨型元素的攻击力和 HP 都相当可观。面对巨型气元素时，体型小于超大型的角色都可能被旋风卷入——被卷入的生物每轮受到 1d8 伤害且无法行动。土元素的大地精通在地面上提供 +4 攻防加成，尽量将其引离地面。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>高等元素 Greater Elemental <span class="cr-badge cr-high">CR 9</span></h3>
+      <p>通过<em>召唤怪物 IX</em>或<em>高等元素召唤</em>才能唤来的强大元素。高等元素是元素层级中的精英战士。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">9</span></td></tr>
+        <tr><th>体型</th><td>超大型 (Huge)</td></tr>
+        <tr><th>类型</th><td>元素生物 (Elemental)</td></tr>
+        <tr><th>HD</th><td>18d8+36 (117 HP)</td></tr>
+        <tr><th>AC</th><td>可变（通常 18-20）</td></tr>
+        <tr><th>攻击</th><td>挥击 +20 近战（伤害因类型而异）</td></tr>
+        <tr><th>特殊能力</th><td>所有元素能力增强版；更高的 DC 和持续时间；暗黑视觉 120 尺；元素特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>高等元素是 9 级召唤法术的核心选择。作为盟友时，它们是极其强大的战斗力量；作为敌人时，需要针对性策略——水元素和冰系法术对抗火元素，火系法术和飞行对抗土元素等。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>远古元素 Elder Elemental <span class="cr-badge cr-high">CR 11</span></h3>
+      <p>元素位面中最古老、最强大的元素化身。远古元素拥有近乎半神般的力量，是元素召唤法术所能唤来的最强形态。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">11</span></td></tr>
+        <tr><th>体型</th><td>超大型 (Huge)</td></tr>
+        <tr><th>类型</th><td>元素生物 (Elemental)</td></tr>
+        <tr><th>HD</th><td>24d8+48 (156 HP)</td></tr>
+        <tr><th>AC</th><td>可变（通常 20-22）</td></tr>
+        <tr><th>攻击</th><td>挥击 +25 近战（伤害因类型而异）</td></tr>
+        <tr><th>特殊能力</th><td>所有元素能力的最强版本；极高 DC；暗黑视觉 120 尺；元素特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>远古元素是元素力量的巅峰。作为敌人时，需要 12 级以上的团队才能有效应对。每种远古元素都有毁灭性的特殊能力——远古火元素的燃烧可以瞬间吞噬整个区域，远古气元素的旋风可以卷走大多数角色。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 2: 天界生物 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec2">二、天界生物 (Celestials / Good Outsiders)</h2>
+
+    <div class="monster-entry">
+      <h3>提灯神使 Lantern Archon <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>天界最低阶的神使，外形是一个漂浮的发光球体。提灯神使虽然战斗力有限，但其光芒攻击和辅助光环使它们成为优秀的侦察兵和辅助单位。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><th>体型</th><td>小型 (Small)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Archon, Good, Lawful)</td></tr>
+        <tr><th>HD</th><td>1d8 (4 HP)</td></tr>
+        <tr><th>AC</th><td>14 (+1 体型, +3 天生)</td></tr>
+        <tr><th>攻击</th><td>光线 +2 远程 (1d6，视为魔法武器)</td></tr>
+        <tr><th>特殊能力</th><td>威胁灵光（DR 10/邪恶，魔法圈对抗邪恶）；随意传送（同<em>高等传送术</em>）；随意<em>不灭明焰</em>；<em>侦测邪恶</em>；<em>传讯术</em></td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>提灯神使的威胁灵光提供 DR 10/邪恶和<em>魔法圈对抗邪恶</em>效果，能有效保护附近的善良生物。它们可以随意传送，因此极难被围困。作为敌人时，提灯神使通常不会单独出现。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>犬神使 Hound Archon <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>天界的忠诚卫士，外形为拥有犬头的类人生物。犬神使是天界军队的主力步兵，兼具战斗力和辅助能力。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Archon, Good, Lawful)</td></tr>
+        <tr><th>HD</th><td>4d8+4 (22 HP)</td></tr>
+        <tr><th>AC</th><td>17 (+4 天生, +3 盾牌)</td></tr>
+        <tr><th>攻击</th><td>挥击 +6 (1d8+1)；啮咬 +6 (1d6)</td></tr>
+        <tr><th>特殊能力</th><td>威胁灵光（DR 10/邪恶，魔法圈对抗邪恶）；变形（可变为任意犬类）；DR 10/邪恶；随意<em>侦测邪恶</em>；<em>传讯术</em>；<em>传送术</em></td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>犬神使可以变形为各种犬类进行侦察。其 DR 10/邪恶 使它们对邪恶生物的攻击非常耐打。如果队伍中有邪恶阵营角色，犬神使的<em>侦测邪恶</em>会立即发现——它们通常会先尝试沟通而非直接攻击。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>号角神使 Trumpet Archon <span class="cr-badge cr-boss">CR 14</span></h3>
+      <p>天界军队的统帅级存在，手持巨大的银号角和 +4 巨剑。号角神使的号角声可以麻痹所有听到的人，是天界战场上最可怕的声音。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">14</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Archon, Good, Lawful)</td></tr>
+        <tr><th>HD</th><td>14d8+42 (105 HP)</td></tr>
+        <tr><th>AC</th><td>25 (+5 天生, +5 全身甲, +5 盾牌)</td></tr>
+        <tr><th>攻击</th><td>+4 巨剑 +20 近战 (3d6+10/19-20)；号角</td></tr>
+        <tr><th>特殊能力</th><td>号角（300 尺锥形，每日 1 次，强韧 DC 22 失败则麻痹 1d4 轮；邪恶生物 DC-4）；威胁灵光；DR 10/邪恶；随意传送；多种类法术能力（含<em>群体治疗重伤</em>等）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>号角神使的号角是决定性武器——300 尺锥形范围、DC 22 的强韧豁免，失败则麻痹 1d4 轮。邪恶角色的 DC 降低 4，几乎必被麻痹。号角使用后 24 小时内无法再次使用，因此如果能撑过第一轮，战斗压力会大幅降低。号角神使的 +4 巨剑配合高攻击加值同样致命。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>星界神使 Astral Deva <span class="cr-badge cr-high">CR 12</span></h3>
+      <p>天界的中层战士，拥有美丽的人形外貌和强大的战斗能力。星界神使的震慑打击可以瞬间瘫痪目标，是善良阵营军队中的精锐力量。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">12</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Angel, Good)</td></tr>
+        <tr><th>HD</th><td>12d8+48 (102 HP)</td></tr>
+        <tr><th>AC</th><td>25 (+6 天生, +3 链甲, +6 敏捷)</td></tr>
+        <tr><th>攻击</th><td>+3 巨剑 +21 近战 (3d6+21/19-20)</td></tr>
+        <tr><th>特殊能力</th><td>震慑打击（命中时目标强韧 DC 22 失败则震慑 1 轮）；DR 10/邪恶；随意传送；<em>驱散邪恶</em>（+14 近战触碰）；<em>防护法术</em>；多种类法术能力</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>星界神使的震慑打击是最需要警惕的能力——每次命中都有机会震慑目标 1 轮，如果连续命中，角色可能长时间无法行动。高强韧豁免是必备的。星界神使的巨剑伤害极高（+21 伤害加值），高 AC 和伤害减免也使其难以被快速击杀。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>行星神使 Planetar <span class="cr-badge cr-boss">CR 16</span></h3>
+      <p>天界的高级将领，拥有远超星界神使的力量与智慧。行星神使的类法术能力几乎等同于一位 17 级牧师的完整法术列表。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">16</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Angel, Good)</td></tr>
+        <tr><th>HD</th><td>15d8+105 (172 HP)</td></tr>
+        <tr><th>AC</th><td>31 (+7 天生, +5 全身甲, +4 盾牌, +5 敏捷)</td></tr>
+        <tr><th>攻击</th><td>+3 巨剑 +28 近战 (4d6+28/19-20)</td></tr>
+        <tr><th>特殊能力</th><td>DR 10/邪恶和寒铁；随意传送；类法术能力（等同 17 级牧师）；<em>驱散邪恶</em>；<em>群体治疗重伤</em>；<em>真实目光</em>；<em>复活术</em>（每日 1 次）；多种防御光环</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>行星神使的战斗力极为恐怖——+28 攻击加值、4d6+28 的伤害、AC 31，加上 172 HP 和 DR 10/邪恶和寒铁，使其成为一个极其难缠的对手。其类法术能力中<em>复活术</em>可以让死亡的盟友复活，大幅延长战斗时间。寒铁武器可以绕过其 DR。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>太阳神使 Solar <span class="cr-badge cr-boss">CR 23</span></h3>
+      <p>天界最强大的存在，仅次于诸神本身。太阳神使拥有足以与上古龙匹敌的力量，其弓箭可以射出致命一击的箭矢，类法术能力甚至包含类似<em>祈愿术</em>的效果。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">23</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Angel, Good)</td></tr>
+        <tr><th>HD</th><td>18d8+144 (225 HP)</td></tr>
+        <tr><th>AC</th><td>37 (+9 天生, +6 全身甲, +5 盾牌, +7 敏捷)</td></tr>
+        <tr><th>攻击</th><td>+5 巨剑 +35 近战 (4d6+32/19-20)；+5 复合长弓 (2d6+12/x3，可射出致命箭)</td></tr>
+        <tr><th>特殊能力</th><td>DR 15/邪恶和传奇；随意传送；类法术能力（含<em>祈愿术</em>级别效果）；<em>群体治疗重伤</em>；<em>真实目光</em>；<em>复活术</em>（每日 3 次）；<em>神圣之词</em>；<em>地震术</em>；多种防御光环</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>太阳神使是 D&amp;D 3.5e 中最强大的善良生物之一。AC 37、+35 攻击加值、225 HP、DR 15/邪恶和传奇——几乎所有常规攻击都会被大幅减免。其致命箭矢（强韧 DC 30 失败即死）可以在远程秒杀目标。只有 20 级以上的团队、充分准备和针对性策略才有可能战胜太阳神使。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 3: 恶魔 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec3">三、恶魔 — 塔纳厘 (Demons / Tanar'ri)</h2>
+
+    <p>塔纳厘恶魔来自无底深渊，代表着纯粹的混乱与邪恶。它们的力量等级从低贱的怯魔到恐怖的巴洛炎魔跨度极大。所有塔纳厘恶魔都拥有召唤同类的能力，理论上可以无限增殖——但在实际中，召唤出的恶魔通常会拒绝服从召唤者。</p>
+
+    <div class="monster-entry">
+      <h3>怯魔 Dretch <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>无底深渊中最低等的塔纳厘恶魔，胆小懦弱但数量众多。怯魔是恶魔社会的底层，常被更强大的恶魔当作炮灰驱使。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><th>体型</th><td>小型 (Small)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Chaotic, Evil, Tanar'ri)</td></tr>
+        <tr><th>HD</th><td>2d8+4 (13 HP)</td></tr>
+        <tr><th>AC</th><td>15 (+1 体型, +2 敏捷, +2 天生)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +2 (1d4) + 啮咬 +2 (1d3)</td></tr>
+        <tr><th>特殊能力</th><td>恶臭（10 尺内强韧 DC 12 失败则恶心）；类法术能力（<em>惊恐术</em>、<em>臭云术</em>）；召唤塔纳厘（35% 概率召唤 1d4 只怯魔）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>怯魔单独出现时威胁不大，但它们的召唤能力可能导致数量快速增长——35% 概率每轮召唤 1d4 只新怯魔。必须在它们大量增殖前快速解决。恶臭光环让近战攻击变得不愉快，但 DC 12 的强韧豁免很容易通过。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>巴布魔 Babau <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>深渊中的刺客型恶魔，身形瘦长、皮肤漆黑，分泌腐蚀性酸液。巴布魔擅长偷袭和暗杀，是塔纳厘社会中的间谍与杀手。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Tanar'ri)</td></tr>
+        <tr><th>HD</th><td>6d8+18 (45 HP)</td></tr>
+        <tr><th>AC</th><td>18 (+4 敏捷, +4 天生)</td></tr>
+        <tr><th>攻击</th><td>长枪 +8 近战 (2d6+4/x3)</td></tr>
+        <tr><th>特殊能力</th><td>酸性分泌（近战攻击附带 1d8 酸蚀伤害）；腐蚀凝视（DC 15 反射失败则 1d8 酸蚀伤害/轮，持续 6 轮）；类法术能力（<em>黑暗术</em>、<em>解除魔法</em>等）；DR 10/寒铁或善良；召唤塔纳厘</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>巴布魔的酸性分泌使其近战攻击附带持续腐蚀伤害——被击中的角色不仅受到武器伤害，还受到 1d8 酸蚀伤害。腐蚀凝视可以远程施加持续伤害。寒铁武器或善良阵营武器可以绕过其 DR。避免被其偷袭，巴布魔擅长利用黑暗和隐身。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>弗洛克魔 Vrock <span class="cr-badge cr-mid">CR 6</span></h3>
+      <p>拥有秃鹫头颅的人形恶魔，是塔纳厘中的空战单位。弗洛克魔可以释放有毒孢子、发出震慑性尖啸，还能通过"毁灭之舞"发动毁灭性的范围攻击。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">6</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Tanar'ri)</td></tr>
+        <tr><th>HD</th><td>8d8+24 (60 HP)</td></tr>
+        <tr><th>AC</th><td>18 (-1 体型, +3 敏捷, +6 天生)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +10 (1d6+3) + 啮咬 +5 (1d8+1) + 2 利爪 +5 (1d6+1)</td></tr>
+        <tr><th>特殊能力</th><td>孢子（每 3 轮 1 次，5 尺半径，强韧 DC 17 失败则中毒 3 轮）；震慑尖啸（每日 1 次，30 尺内意志 DC 17 失败则震慑 1 轮）；毁灭之舞（5 轮后释放 10d6 电击伤害，30 尺范围，反射 DC 17 减半）；DR 10/善良；召唤塔纳厘</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>弗洛克魔的毁灭之舞是其最具威胁的能力——连续 5 轮舞蹈后释放 30 尺范围 10d6 电击伤害。必须在 5 轮内打断它的舞蹈（造成伤害、推离或控制），否则后果不堪设想。孢子每 3 轮释放一次，中毒效果会削弱攻击和伤害。弗洛克魔可以飞行，近战角色需要飞行能力或远程攻击。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>赫兹鲁魔 Hezrou <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>外形类似巨型青蛙的塔纳厘恶魔，散发着令人窒息的恶臭。赫兹鲁魔是深渊军队的中坚力量，其恶臭光环可以在战斗中严重削弱敌人。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Tanar'ri)</td></tr>
+        <tr><th>HD</th><td>10d8+30 (75 HP)</td></tr>
+        <tr><th>AC</th><td>20 (-1 体型, +3 敏捷, +8 天生)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +12 (1d8+4) + 啮咬 +7 (2d6+2)</td></tr>
+        <tr><th>特殊能力</th><td>恶臭（10 尺内强韧 DC 19 失败则恶心）；召唤塔纳厘（50% 概率召唤 2d10 怯魔或 1 只赫兹鲁魔）；DR 10/善良</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>赫兹鲁魔的恶臭光环 DC 19 相当有威胁——失败意味着所有攻击、豁免和检定 -2。它的召唤能力尤其麻烦：50% 概率召唤另一只赫兹鲁魔，这意味着恶魔数量可能翻倍。保持距离、远程攻击、快速集火是应对赫兹鲁魔的最佳策略。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>格拉布莱兹魔 Glabrezu <span class="cr-badge cr-high">CR 10</span></h3>
+      <p>拥有四臂的巨大恶魔，擅长操纵和诱惑。格拉布莱兹魔更倾向于通过诡计而非蛮力达成目的——它们可以赋予许愿者所求，但代价总是惨重的。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">10</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Tanar'ri)</td></tr>
+        <tr><th>HD</th><td>12d8+48 (102 HP)</td></tr>
+        <tr><th>AC</th><td>22 (-1 体型, +3 敏捷, +10 天生)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +16 (2d6+5) + 2 钳击 +11 (1d4+2)</td></tr>
+        <tr><th>特殊能力</th><td>真实目光（持续）；<em>力量言词·震慑</em>（每日 1 次）；<em>愿望术</em>（每月 1 次，只能为凡人许愿，代价高昂）；DR 10/善良；召唤塔纳厘（50% 概率召唤 1d6 怯魔/巴布魔/弗洛克魔或 1 只格拉布莱兹魔）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>格拉布莱兹魔是操纵大师——它的<em>愿望术</em>可以免费实现凡人的愿望，但总是以最扭曲的方式实现。在战斗中，<em>力量言词·震慑</em>可以瞬间震慑一名角色。真实目光使其无法被幻术欺骗。四臂攻击使近战伤害输出很高，但它的真正威胁在于战斗之外的欺骗。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>纳尔菲斯魔 Nalfeshnee <span class="cr-badge cr-boss">CR 14</span></h3>
+      <p>外形丑陋、拥有猪头和河马身躯的巨大恶魔，是深渊中权力和地位的象征。纳尔菲斯魔可以释放不洁之光，让目标陷入极度的恐惧和绝望之中。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">14</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Tanar'ri)</td></tr>
+        <tr><th>HD</th><td>15d8+60 (127 HP)</td></tr>
+        <tr><th>AC</th><td>25 (-1 体型, +4 敏捷, +12 天生)</td></tr>
+        <tr><th>攻击</th><td>啮咬 +18 (2d8+7) + 2 爪抓 +13 (1d8+3)</td></tr>
+        <tr><th>特殊能力</th><td>不洁灵光（每日 1 次，60 尺内随机 1-4 个目标，意志 DC 22 失败则陷入 1d4 轮的恐惧+困惑+恶心）；召唤塔纳厘（50% 概率召唤 1d6 巴布魔/弗洛克魔/赫兹鲁魔或 1 只纳尔菲斯魔）；DR 10/善良；随意传送</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>纳尔菲斯魔的不洁灵光是极其危险的范围控制能力——DC 22 的意志豁免失败意味着同时受到恐惧、困惑和恶心三种状态影响，基本等于被废。该能力每日只能使用 1 次，但它可以在第一轮就使用。团队应分散站位以减少被影响的人数，并准备<em>移除恐惧</em>和<em>移除诅咒</em>等恢复法术。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>六臂蛇魔 Marilith <span class="cr-badge cr-boss">CR 17</span></h3>
+      <p>拥有女性上半身和蛇尾的六臂恶魔将军，是塔纳厘军队中最可怕的战场指挥官。六臂蛇魔可以同时挥舞六把长剑发动毁灭性的多重攻击，其蛇尾还能擒抱并碾压敌人。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">17</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Tanar'ri)</td></tr>
+        <tr><th>HD</th><td>18d8+72 (153 HP)</td></tr>
+        <tr><th>AC</th><td>25 (-1 体型, +7 敏捷, +9 天生)</td></tr>
+        <tr><th>攻击</th><td>6 把长剑 +22/+17/+12 (2d6+3/18-20)；蛇尾 +15 (4d6+3 + 精通擒抱)</td></tr>
+        <tr><th>特殊能力</th><td>精通擒抱 + 挤压（4d6+9）；DR 10/寒铁和善良；召唤塔纳厘（50% 概率召唤 1d6 弗洛克魔/赫兹鲁魔或 1 只六臂蛇魔/纳尔菲斯魔）；随意传送；<em>力墙</em>（每日 3 次）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>六臂蛇魔的六把长剑每轮可以发动多达 18 次攻击（含全力攻击），伤害输出极其恐怖。蛇尾的精通擒抱 + 挤压可以锁定一名角色并持续造成 4d6+9 的碾压伤害。应对策略：使用<em>自由术</em>免疫擒抱、使用<em>护盾术</em>和<em>镜影术</em>降低命中率、集中火力在她使用召唤能力前消灭。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>巴洛炎魔 Balor <span class="cr-badge cr-boss">CR 20</span></h3>
+      <p>无底深渊中最强大的塔纳厘恶魔，全身燃烧着不灭的魔焰。巴洛炎魔手持斩首巨剑和鞭子，是深渊军团的最高统帅。其死亡时的爆炸可以摧毁周围的一切。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">20</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Tanar'ri)</td></tr>
+        <tr><th>HD</th><td>21d8+84 (178 HP)</td></tr>
+        <tr><th>AC</th><td>29 (-1 体型, +7 敏捷, +13 天生)</td></tr>
+        <tr><th>攻击</th><td>+1 斩首巨剑 +26 近战 (3d6+11/19-20/x2 斩首)；+1 鞭子 +22 (1d4+5 + 精通擒抱 20 尺)；2 翼击 +21 (1d6+3)</td></tr>
+        <tr><th>特殊能力</th><td>斩首武器（强韧 DC 23 失败即被斩首）；焰体（近战攻击者受 1d6 火焰伤害；擒抱巴洛炎魔的生物受 4d6 火焰伤害/轮）；死亡爆裂（HP 归零时 100 尺半径 50d6 火焰伤害，反射 DC 30 减半）；召唤塔纳厘（100% 概率召唤任意塔纳厘组合，CR 总和 ≤ 14）；DR 15/寒铁和善良；随意传送</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>巴洛炎魔是 D&amp;D 3.5e 中最具标志性的终极恶魔。斩首巨剑可以在一击之内杀死目标（DC 23 强韧豁免失败即死）。焰体使近战攻击者自伤，擒抱巴洛炎魔更是每轮 4d6 火焰伤害。最致命的是死亡爆裂——50d6 火焰伤害在 100 尺范围内，<em>火焰抗性</em>和<em>火焰免疫</em>是战前必备。100% 成功率的召唤能力意味着巴洛炎魔永远不会孤军作战。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 4: 魔鬼 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec4">四、魔鬼 — 巴特兹 (Devils / Baatezu)</h2>
+
+    <p>巴特兹魔鬼来自九层地狱，代表着秩序化的邪恶。与混乱的恶魔不同，魔鬼拥有严密的等级制度和军事组织。它们善于订立契约、操纵法律，是比恶魔更"文明"但也更阴险的存在。所有魔鬼都拥有<em>传送术</em>（随意使用）和<em>召唤巴特兹</em>能力。</p>
+
+    <div class="monster-entry">
+      <h3>小鬼 Imp <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>九层地狱中最底层的魔鬼，体型虽小但狡猾至极。小鬼常被派往物质位面充当术士的魔宠或邪恶势力的间谍，拥有变形和再生能力。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><th>体型</th><td>超小型 (Tiny)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Baatezu, Evil, Lawful)</td></tr>
+        <tr><th>HD</th><td>3d8+3 (16 HP)</td></tr>
+        <tr><th>AC</th><td>21 (+2 体型, +5 敏捷, +4 天生)</td></tr>
+        <tr><th>攻击</th><td>蛰刺 +5 (1d4-2 + 毒素 DC 13 强韧，初始/后续 1d6 敏捷伤害)</td></tr>
+        <tr><th>特殊能力</th><td>变形（可变为任意小型或更小的动物形态）；再生 5（善良武器和银武器造成正常伤害）；类法术能力（<em>隐身术</em>随意、<em>暗示术</em>、<em>侦测善良</em>、<em>侦测魔法</em>随意）；DR 5/善良和银；暗黑视觉 60 尺</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>小鬼的再生能力使其极难被杀死——每轮恢复 5 HP，只有善良武器或银武器才能造成正常伤害。AC 21 加上超小体型使其难以命中。毒素造成敏捷伤害，对于敏捷依赖的角色（游荡者、游侠）影响最大。<em>隐身术</em>让小鬼可以随时逃脱。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>巴霸魔 Bearded Devil <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>九层地狱的步兵，以浓密的胡须和凶猛的战意闻名。巴霸魔的胡须可以缠绕敌人并吸其体质，其造成的伤口无法正常愈合。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Baatezu)</td></tr>
+        <tr><th>HD</th><td>5d8+10 (32 HP)</td></tr>
+        <tr><th>AC</th><td>18 (+4 天生, +2 盔甲, +2 敏捷)</td></tr>
+        <tr><th>攻击</th><td>战戟 +8 (2d8+6/x3)</td></tr>
+        <tr><th>特殊能力</th><td>胡须擒抱（擒抱成功时 1d6 体质伤害，强韧 DC 16 无效）；地狱伤口（受伤者无法自然愈合，<em>治疗</em>法术需要先通过 DC 16 施法者检定）；DR 5/银或善良；召唤巴特兹（35% 概率召唤 1d4 小鬼）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>巴霸魔的地狱伤口非常阴险——受其伤害的角色无法通过自然方式恢复 HP，且<em>治疗</em>法术需要先通过施法者等级检定（DC 16）才能生效。在低等级冒险中，这可能导致队伍无法有效恢复。胡须的体质伤害在持续战斗中会越来越危险。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>锁链魔 Chain Devil <span class="cr-badge cr-mid">CR 6</span></h3>
+      <p>九层地狱的狱卒和拷问者，使用附有魔法的锁链作为武器。锁链魔的凝视可以让目标产生恐惧和不安，其锁链可以锁住并压制敌人。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">6</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Baatezu)</td></tr>
+        <tr><th>HD</th><td>7d8+14 (45 HP)</td></tr>
+        <tr><th>AC</th><td>19 (+5 天生, +2 链甲, +2 敏捷)</td></tr>
+        <tr><th>攻击</th><td>2 条锁链 +10 (2d6+3 + 精通擒抱 + 锁链锁定)</td></tr>
+        <tr><th>特殊能力</th><td>锁链锁定（被擒抱的目标 AC-4 且无法使用盔甲加值）；不安凝视（30 尺内意志 DC 14 失败则战栗 1d6 轮）；DR 5/银或善良；召唤巴特兹（35% 概率召唤 1 只锁链魔）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>锁链魔的锁链锁定能力极其烦人——被擒抱的目标不仅无法移动，其 AC 还会降低 4 点且失去盔甲加值。两条锁链可以同时锁定两个目标。不安凝视 DC 14 相对较低，但战栗状态会影响所有攻击和豁免。建议准备<em>自由术</em>应对擒抱。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>角魔 Horned Devil <span class="cr-badge cr-high">CR 11</span></h3>
+      <p>拥有巨大犄角的飞行魔鬼，是九层地狱军队的精锐空战力量。角魔可以同时使用战戟、尾巴和利爪发动多重攻击，并拥有恐惧灵光。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">11</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Baatezu)</td></tr>
+        <tr><th>HD</th><td>14d8+42 (105 HP)</td></tr>
+        <tr><th>AC</th><td>24 (-1 体型, +4 敏捷, +11 天生)</td></tr>
+        <tr><th>攻击</th><td>+1 战戟 +18 (3d6+8/x3)；蛇尾 +13 (1d6+2 + 地狱伤口)；2 爪抓 +13 (1d6+2)</td></tr>
+        <tr><th>特殊能力</th><td>地狱伤口（DC 18 强韧，同巴霸魔）；恐惧灵光（5 尺内意志 DC 18 失败则恐慌 1d4 轮）；飞行 50 尺（良好）；DR 10/善良；召唤巴特兹（50% 概率召唤 1d4 巴霸魔或 1 只角魔）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>角魔的飞行能力使其成为一个灵活的空战单位。多重攻击（战戟 + 蛇尾 + 2 爪抓）每轮伤害输出很高。蛇尾的地狱伤口和恐惧灵光使其在混战中特别危险——靠近它的角色可能会被恐慌。角魔的 DR 10/善良 意味着需要善良阵营武器才能造成全额伤害。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>冰魔 Ice Devil <span class="cr-badge cr-high">CR 13</span></h3>
+      <p>九层地狱中卡尼亚层的主宰，拥有寒冰之躯和冰冷的智慧。冰魔可以随意施放冰风暴和冰墙术，其再生能力使其极难被彻底消灭。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">13</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Baatezu)</td></tr>
+        <tr><th>HD</th><td>15d8+60 (127 HP)</td></tr>
+        <tr><th>AC</th><td>25 (-1 体型, +4 敏捷, +12 天生)</td></tr>
+        <tr><th>攻击</th><td>啮咬 +17 (2d6+3) + 4 爪抓 +12 (1d4+1) + 蛇尾 +12 (2d6+1)</td></tr>
+        <tr><th>特殊能力</th><td>随意<em>冰风暴</em>（30 尺圆柱，3d6 寒冷 + 2d6 钝击）；随意<em>冰墙术</em>；恐惧灵光（10 尺内意志 DC 20 失败则恐慌 1d4 轮）；再生 5（善良武器造成正常伤害）；DR 10/善良；召唤巴特兹</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>冰魔的随意<em>冰风暴</em>是其标志性能力——每轮都可以释放 30 尺范围的 5d6 混合伤害。准备<em>抵抗能量（寒冷）</em>是必须的。随意<em>冰墙术</em>可以分割战场、阻挡视线和退路。再生 5 加上 127 HP 意味着需要持续的高伤害输出才能将其击倒。善良武器是造成有效伤害的关键。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>深狱炼魔 Pit Fiend <span class="cr-badge cr-boss">CR 18</span></h3>
+      <p>九层地狱的至高统治者，仅次于阿斯摩蒂斯本人。深狱炼魔拥有毁灭性的力量、恐怖的恐惧灵光和几乎不可战胜的再生能力。它们是地狱军队的最高指挥官。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">18</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Baatezu)</td></tr>
+        <tr><th>HD</th><td>18d8+72 (153 HP)</td></tr>
+        <tr><th>AC</th><td>29 (-1 体型, +7 敏捷, +13 天生)</td></tr>
+        <tr><th>攻击</th><td>啮咬 +21 (4d6+5) + 2 爪抓 +16 (1d8+2) + 2 翼击 +16 (1d6+2) + 蛇尾 +16 (2d6+2 + 精通擒抱)</td></tr>
+        <tr><th>特殊能力</th><td>恐惧灵光（30 尺内意志 DC 22 失败则恐慌 1d4 轮）；挤压（2d6+7）；精通擒抱；焰体（近战攻击者 1d6 火焰伤害）；随意<em>火球术</em>；随意<em>火墙术</em>；召唤巴特兹（100% 概率召唤任意巴特兹组合，CR 总和 ≤ 14）；再生 15（善良武器和神圣伤害造成正常伤害）；DR 15/善良；随意传送</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>深狱炼魔是九层地狱中最强大的常规魔鬼。其 30 尺恐惧灵光 DC 22 可以在战斗开始时就废掉低意志角色。六次攻击每轮伤害极高，加上焰体和挤压可以造成额外持续伤害。再生 15 使其几乎不可能在正面战斗中被消耗至死——必须使用善良武器或神圣伤害才能造成有效伤害。100% 成功率的召唤能力意味着每轮都可以召唤增援。这是需要 18 级以上团队、充分准备和针对性策略才能面对的终极魔鬼。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 5: 尤格罗斯 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec5">五、尤格罗斯 (Yugoloths / Neutral Evil)</h2>
+
+    <p>尤格罗斯是中立邪恶的异界雇佣兵，不属于天界也不属于深渊或地狱。它们是最纯粹的逐利者，会为出价最高的雇主效力。尤格罗斯在灰荒废墟 (Wastes of Hades) 中拥有自己的据点，但经常在各位面间穿梭寻找战争和利益。</p>
+
+    <div class="monster-entry">
+      <h3>梅佐罗斯 Mezzoloth <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>尤格罗斯中的步兵阶级，外形类似昆虫人。梅佐罗斯可以释放黑暗云雾遮蔽视野，是尤格罗斯军队的主力战士。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Evil, Yugoloth)</td></tr>
+        <tr><th>HD</th><td>8d8+16 (52 HP)</td></tr>
+        <tr><th>AC</th><td>19 (+4 天生, +3 盔甲, +2 敏捷)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +10 (1d6+2) + 啮咬 +5 (1d4+1)</td></tr>
+        <tr><th>特殊能力</th><td>黑暗云雾（每日 3 次，20 尺半径<em>深暗术</em>效果）；类法术能力（<em>黑暗术</em>随意、<em>解除魔法</em>、<em>云雾术</em>等）；DR 10/善良；心灵感应 100 尺</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>梅佐罗斯的黑暗云雾可以创造完全的视野遮蔽——在黑暗中，没有暗黑视觉的角色将陷入完全盲目。梅佐罗斯自身拥有暗黑视觉，在黑暗中反而占有优势。准备<em>昼明术</em>或<em>真实目光</em>来对抗黑暗效果。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>尼卡罗斯 Nycaloth <span class="cr-badge cr-high">CR 9</span></h3>
+      <p>拥有蝙蝠翅膀和利爪的尤格罗斯军官。尼卡罗斯的攻击可以造成持续流血的伤口，并能召唤其他尤格罗斯增援。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">9</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Evil, Yugoloth)</td></tr>
+        <tr><th>HD</th><td>12d8+36 (90 HP)</td></tr>
+        <tr><th>AC</th><td>23 (-1 体型, +6 敏捷, +8 天生)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +14 (1d8+3) + 啮咬 +9 (2d6+1)</td></tr>
+        <tr><th>特殊能力</th><td>流血伤口（被爪抓命中的目标每轮额外 1d4 流血伤害，直到<em>医疗检定</em> DC 15 或魔法治愈）；召唤尤格罗斯（60% 概率召唤 1d6 梅佐罗斯或 1 只尼卡罗斯）；飞行 90 尺（良好）；DR 10/善良；随意传送；心灵感应 100 尺</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>尼卡罗斯的流血伤口是持续性威胁——每次爪抓命中都附加 1d4 流血伤害，多次命中会叠加。被击中的角色需要尽快进行 DC 15 的医疗检定或使用魔法治愈。飞行能力和高机动性使尼卡罗斯可以随意选择攻击目标。召唤增援的成功率高达 60%，必须快速集火消灭。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>奥尔特罗斯 Ultroloth <span class="cr-badge cr-boss">CR 18</span></h3>
+      <p>尤格罗斯的最高统帅，据说整个尤格罗斯种族都听从奥尔特罗斯的指挥。其凝视可以让目标陷入麻痹，类法术能力涵盖了攻击、防御和传送的方方面面。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">18</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Evil, Yugoloth)</td></tr>
+        <tr><th>HD</th><td>18d8+54 (135 HP)</td></tr>
+        <tr><th>AC</th><td>28 (+7 敏捷, +7 天生, +3 盔甲, +1 盾牌)</td></tr>
+        <tr><th>攻击</th><td>+3 长剑 +21/+16/+11 (1d8+5/19-20)</td></tr>
+        <tr><th>特殊能力</th><td>凝视攻击（60 尺，意志 DC 18 失败则被定身，类似<em>人类定身术</em>）；类法术能力（<em>火球术</em>随意、<em>闪电束</em>随意、<em>力墙</em>、<em>高等传送术</em>随意等）；DR 15/善良和寒铁；飞行 90 尺（完美）；心灵感应 100 尺；召唤尤格罗斯</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>奥尔特罗斯是尤格罗斯种族的最高领袖。凝视攻击可以在 60 尺距离上定身目标——60 尺意味着远程角色也不安全。其随意施放的<em>火球术</em>和<em>闪电束</em>提供了持续的范围伤害能力。飞行完美意味着它可以自由进出战场。寒铁和善良武器才能绕过其 DR 15。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 6: 其他异界生物 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec6">六、其他异界生物</h2>
+
+    <div class="monster-entry">
+      <h3>罗刹 Rakshasa <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>源自东方神话的邪恶异界生物，以动物头颅和人类身体的畸形组合闻名（头在下、手反向）。罗刹是天生的变形者和操纵者，喜欢在物质位面伪装成贵族过着奢华的生活。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Native, Evil)</td></tr>
+        <tr><th>HD</th><td>7d8+14 (45 HP)</td></tr>
+        <tr><th>AC</th><td>21 (+4 敏捷, +5 天生, +2 盾牌)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +8 (1d4+2) + 啮咬 +3 (1d6+1)</td></tr>
+        <tr><th>特殊能力</th><td>变形（可变为任意类人形态）；DR 15/善良和穿刺；法术抗力 25；类法术能力（<em>高等幻术</em>随意、<em>暗示术</em>、<em>隐形术</em>等）；心灵感应 100 尺</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>罗刹的 DR 15/善良和穿刺意味着只有善良阵营的穿刺武器才能造成全额伤害——普通武器对其伤害极低。法术抗力 25 使大多数法术难以生效（施法者需要进行 SR 检定）。罗拉克很少正面战斗，更倾向于使用变形和幻术在幕后操纵。发现罗刹往往比击败它更加困难。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>暗夜巫婆 Night Hag <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>邪恶的异界生物，擅长在夜间侵入凡人的梦境将其化为噩梦。暗夜巫婆通过噩梦折磨受害者，最终在目标最虚弱时将其杀害并带走灵魂。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Evil, Native)</td></tr>
+        <tr><th>HD</th><td>8d8+8 (44 HP)</td></tr>
+        <tr><th>AC</th><td>20 (+3 敏捷, +5 天生, +2 盾牌)</td></tr>
+        <tr><th>攻击</th><td>爪抓 +3 (1d4 + 毒素 DC 19 强韧，初始/后续 1d6 体质)</td></tr>
+        <tr><th>特殊能力</th><td>噩梦缠身（可以在睡着的受害者身上骑乘，每夜吸取 1 点体质，持续直到受害者死亡或暗夜巫婆被驱赶）；变形（可变为任意类人形态）；法术抗力 18；DR 10/寒铁和魔法；<em>隐形术</em>随意；<em>梦境传送</em>随意；<em>位面转移</em>（可携带 1 名乘客前往/离开以太位面）</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>暗夜巫婆的最大威胁在于战斗之外——噩梦缠身可以在数夜之内杀死目标。受害者每夜失去 1 点体质，且无法通过正常睡眠恢复。在受害者周围放置<em>防护邪恶</em>结界或使用<em>魔魂壶</em>类法术可以阻止暗夜巫婆入侵。正面战斗中，寒铁武器和魔法武器是必需的。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>锡尔族 Xill <span class="cr-badge cr-mid">CR 6</span></h3>
+      <p>来自以太位面的四臂昆虫形生物，是位面间最出色的猎手和战士。锡尔族拥有四臂多武器战斗能力和位面穿梭能力，还能在敌人体内植入幼虫。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">6</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>异界生物 (Outsider: Evil, Extraplanar)</td></tr>
+        <tr><th>HD</th><td>7d8+7 (38 HP)</td></tr>
+        <tr><th>AC</th><td>20 (+4 敏捷, +4 天生, +2 盾牌)</td></tr>
+        <tr><th>攻击</th><td>4 把短剑 +10/+10/+5/+5 (1d6+1/19-20)；复合长弓 +10 (1d8/x3)</td></tr>
+        <tr><th>特殊能力</th><td>多武器战斗（4 臂，无多武器战斗减值）；植入（擒抱成功时可将卵植入目标体内，幼虫在 24 小时后孵化并从内部杀死宿主）；<em>位面转移</em>（随意，进入/离开以太位面）；DR 10/魔法；法术抗力 16</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>锡尔族的四臂多武器攻击使其近战伤害输出远超同级怪物。最恐怖的能力是植入——被擒抱的角色体内可能被植入幼虫，24 小时后幼虫孵化将立即杀死宿主。需要<em>移除疾病</em>或类似效果在孵化前清除幼虫。锡尔族可以随意穿梭位面来逃脱，追击时需要准备<em>次元锚</em>。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 7: CR 速查表 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec7">七、CR 速查表</h2>
+
+    <p>本页所有异界生物按 CR 从低到高排列，便于 DM 根据队伍等级快速选取合适的遭遇。</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>CR</th>
+          <th>怪物名称</th>
+          <th>体型</th>
+          <th>阵营/亚种</th>
+          <th>关键能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td>小型元素 Small Elemental</td>
+          <td>小型</td>
+          <td>元素</td>
+          <td>旋风/大地精通/燃烧/浸灭</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>提灯神使 Lantern Archon</td>
+          <td>小型</td>
+          <td>守序善良 神使</td>
+          <td>光线；威胁灵光；随意传送</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>怯魔 Dretch</td>
+          <td>小型</td>
+          <td>混乱邪恶 塔纳厘</td>
+          <td>恶臭；召唤怯魔；惊恐术</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>小鬼 Imp</td>
+          <td>超小型</td>
+          <td>守序邪恶 巴特兹</td>
+          <td>毒素；变形；再生 5；隐身</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>中型元素 Medium Elemental</td>
+          <td>中型</td>
+          <td>元素</td>
+          <td>各元素特殊能力增强</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>犬神使 Hound Archon</td>
+          <td>中型</td>
+          <td>守序善良 神使</td>
+          <td>威胁灵光；变形；DR 10/邪恶</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>巴霸魔 Bearded Devil</td>
+          <td>中型</td>
+          <td>守序邪恶 巴特兹</td>
+          <td>胡须擒抱；地狱伤口</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>大型元素 Large Elemental</td>
+          <td>大型</td>
+          <td>元素</td>
+          <td>元素能力强化版</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>巴布魔 Babau</td>
+          <td>中型</td>
+          <td>混乱邪恶 塔纳厘</td>
+          <td>酸性分泌；腐蚀凝视；DR 10</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>梅佐罗斯 Mezzoloth</td>
+          <td>中型</td>
+          <td>中立邪恶 尤格罗斯</td>
+          <td>黑暗云雾；类法术能力</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>暗夜巫婆 Night Hag</td>
+          <td>中型</td>
+          <td>中立邪恶</td>
+          <td>噩梦缠身；变形；毒素</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>弗洛克魔 Vrock</td>
+          <td>大型</td>
+          <td>混乱邪恶 塔纳厘</td>
+          <td>孢子；震慑尖啸；毁灭之舞</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>锁链魔 Chain Devil</td>
+          <td>中型</td>
+          <td>守序邪恶 巴特兹</td>
+          <td>锁链锁定；不安凝视</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>锡尔族 Xill</td>
+          <td>中型</td>
+          <td>中立邪恶</td>
+          <td>四臂多武器；植入幼虫；位面转移</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>巨型元素 Huge Elemental</td>
+          <td>超大型</td>
+          <td>元素</td>
+          <td>元素能力大幅强化</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>赫兹鲁魔 Hezrou</td>
+          <td>大型</td>
+          <td>混乱邪恶 塔纳厘</td>
+          <td>恶臭 DC 19；召唤赫兹鲁</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>罗刹 Rakshasa</td>
+          <td>中型</td>
+          <td>中立邪恶</td>
+          <td>变形；DR 15/善良和穿刺；SR 25</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">9</span></td>
+          <td>高等元素 Greater Elemental</td>
+          <td>超大型</td>
+          <td>元素</td>
+          <td>元素能力精英版</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">9</span></td>
+          <td>尼卡罗斯 Nycaloth</td>
+          <td>大型</td>
+          <td>中立邪恶 尤格罗斯</td>
+          <td>流血伤口；飞行；召唤尤格罗斯</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">10</span></td>
+          <td>格拉布莱兹魔 Glabrezu</td>
+          <td>大型</td>
+          <td>混乱邪恶 塔纳厘</td>
+          <td>真实目光；力量言词·震慑；愿望术</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">11</span></td>
+          <td>远古元素 Elder Elemental</td>
+          <td>超大型</td>
+          <td>元素</td>
+          <td>元素能力终极版</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">11</span></td>
+          <td>角魔 Horned Devil</td>
+          <td>大型</td>
+          <td>守序邪恶 巴特兹</td>
+          <td>地狱伤口；恐惧灵光；飞行</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">12</span></td>
+          <td>星界神使 Astral Deva</td>
+          <td>中型</td>
+          <td>中立善良 天使</td>
+          <td>震慑打击；驱散邪恶；DR 10/邪恶</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">13</span></td>
+          <td>冰魔 Ice Devil</td>
+          <td>大型</td>
+          <td>守序邪恶 巴特兹</td>
+          <td>随意冰风暴/冰墙；再生 5；恐惧灵光</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">14</span></td>
+          <td>号角神使 Trumpet Archon</td>
+          <td>中型</td>
+          <td>守序善良 神使</td>
+          <td>号角麻痹；威胁灵光；DR 10/邪恶</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">14</span></td>
+          <td>纳尔菲斯魔 Nalfeshnee</td>
+          <td>大型</td>
+          <td>混乱邪恶 塔纳厘</td>
+          <td>不洁灵光（恐惧+困惑+恶心）</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">16</span></td>
+          <td>行星神使 Planetar</td>
+          <td>大型</td>
+          <td>中立善良 天使</td>
+          <td>17 级牧师法术；复活术；DR 10</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">17</span></td>
+          <td>六臂蛇魔 Marilith</td>
+          <td>大型</td>
+          <td>混乱邪恶 塔纳厘</td>
+          <td>六剑多攻击；挤压；力墙</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">18</span></td>
+          <td>深狱炼魔 Pit Fiend</td>
+          <td>大型</td>
+          <td>守序邪恶 巴特兹</td>
+          <td>恐惧灵光 DC 22；再生 15；100% 召唤</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">18</span></td>
+          <td>奥尔特罗斯 Ultroloth</td>
+          <td>中型</td>
+          <td>中立邪恶 尤格罗斯</td>
+          <td>凝视定身；随意火球/闪电；DR 15</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">20</span></td>
+          <td>巴洛炎魔 Balor</td>
+          <td>大型</td>
+          <td>混乱邪恶 塔纳厘</td>
+          <td>斩首巨剑；焰体；死亡爆裂 50d6；100% 召唤</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">23</span></td>
+          <td>太阳神使 Solar</td>
+          <td>大型</td>
+          <td>中立善良 天使</td>
+          <td>致命箭 DC 30；祈愿术级 SLA；DR 15/邪恶和传奇</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

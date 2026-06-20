@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不死生物 Undead - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.cr-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:13px; font-weight:600; color:#fff; }
+.cr-low { background:#27ae60; }
+.cr-mid { background:#d4a017; }
+.cr-high { background:#c0392b; }
+.cr-boss { background:#8e44ad; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:40px; }
+.monster-entry { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:16px 0; }
+.monster-entry h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.monster-entry table { width:100%; border-collapse:collapse; margin:8px 0; }
+.monster-entry th, .monster-entry td { padding:6px 10px; border-bottom:1px solid var(--border-light,#e8dcc8); text-align:left; font-size:14px; }
+.monster-entry th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.tactic { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:8px 12px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物图鉴</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+      <a href="humanoids.html">类人怪物</a>
+      <a href="undead.html" class="active">不死生物</a>
+      <a href="magical-beasts.html">魔法兽</a>
+      <a href="aberrations-fey.html">异怪与精类</a>
+      <a href="outsiders.html">异界生物</a>
+      <a href="giants-constructs.html">巨人与构装体</a>
+      <a href="plants-oozes.html">植物与泥怪</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>不死生物 Undead</h1>
+
+    <p>本页收录 D&D 3.5e 中的不死生物 (Undead)，从无脑的骷髅僵尸到拥有恐怖力量的巫妖与吸血鬼。不死生物免疫心智影响法术、毒素、睡眠、麻痹、震慑和疾病。它们没有体质属性，生命值由 HD 骰决定；多数无法被杀死（HP 降为 0 后在 1d4 天内恢复），除非摧毁其创造源头（如巫妖的命匣）或使用特殊手段。</p>
+
+    <div class="toc">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#sec1">一、低级不死 (Low-Level Undead)</a></li>
+        <li><a href="#sec2">二、幽灵类 (Incorporeal Undead)</a></li>
+        <li><a href="#sec3">三、木乃伊与吸血鬼 (Mummies &amp; Vampires)</a></li>
+        <li><a href="#sec4">四、巫妖与亡灵法师 (Liches)</a></li>
+        <li><a href="#sec5">五、其他不死生物 (Other Undead)</a></li>
+        <li><a href="#sec6">六、不死生物模板对照表</a></li>
+        <li><a href="#sec7">七、CR 速查表</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 1: 低级不死 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec1">一、低级不死 (Low-Level Undead) — CR 1/4 ~ 3</h2>
+
+    <div class="monster-entry">
+      <h3>骷髅 Skeleton <span class="cr-badge cr-low">CR 1/3</span></h3>
+      <p>被亡灵法术驱使的骸骨，是最常见的不死仆从。骷髅保留了生前的大致形态，但只剩骨架，缺乏智能，仅能执行简单的命令。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">1/3</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>1d12 (6 HP)</td></tr>
+        <tr><th>AC</th><td>15 (+2 敏捷, +3 天生)</td></tr>
+        <tr><th>攻击</th><td>弯刀 +2 近战 (1d6+1) 或 爪抓 +2 (1d4+1)</td></tr>
+        <tr><th>特殊能力</th><td>DR 5/钝击；寒冷免疫；挥砍/穿刺半伤；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>骷髅对挥砍和穿刺武器有半伤减免，因此请使用钝击武器（如钉头锤、战锤）对付它们。弓箭和匕首效率极低。骷髅智力低下，可以利用地形障碍轻松风筝。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>僵尸 Zombie <span class="cr-badge cr-low">CR 1/2</span></h3>
+      <p>被复活的腐烂尸体，行动迟缓但异常坚韧。僵尸只能进行部分动作，无法进行借机攻击，但其顽强特性使其在被击倒前能承受大量伤害。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">1/2</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>2d12+3 (16 HP)</td></tr>
+        <tr><th>AC</th><td>11 (+1 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +3 近战 (1d6+4)</td></tr>
+        <tr><th>特殊能力</th><td>DR 5/挥砍；部分动作（仅一个标准动作或移动动作）；行动迟缓；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>僵尸 AC 极低但 HP 相对较高，高伤害输出的重型武器（巨剑、巨斧等挥砍武器可绕过 DR）效果最佳。由于其只能做部分动作，可以安全地在其攻击范围边缘进退。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>食尸鬼 Ghoul <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>因食人欲望而被诅咒转化的不死生物，外形枯瘦、爪牙锋利。其最危险的能力是接触即可造成麻痹，能在瞬间让冒险者沦为待宰的羔羊。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>2d12 (13 HP)</td></tr>
+        <tr><th>AC</th><td>14 (+2 敏捷, +2 天生)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +0 近战 (1d3) + 啮咬 +0 (1d4)</td></tr>
+        <tr><th>特殊能力</th><td>麻痹（食尸鬼之触，强韧 DC 12，持续 1d6+2 轮；精灵免疫）；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>食尸鬼的麻痹能力极其危险——队伍中的精灵角色天然免疫此效果，应主动担任前排。非精灵角色务必保持距离或使用远程攻击。麻痹 DC 仅为 12，提升强韧豁免或使用<em>防护邪恶</em>可有效应对。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>吸髓尸鬼 Ghast <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>食尸鬼的强化版本，散发着令人作呕的恶臭。与食尸鬼不同，吸髓尸鬼的麻痹能力可以影响精灵，其恶臭光环也会让靠近的敌人恶心反胃。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>4d12 (26 HP)</td></tr>
+        <tr><th>AC</th><td>17 (+3 敏捷, +4 天生)</td></tr>
+        <tr><th>攻击</th><td>2 爪抓 +3 近战 (1d4+1) + 啮咬 +3 (1d6+1)</td></tr>
+        <tr><th>特殊能力</th><td>麻痹（强韧 DC 14，精灵也会受影响）；恶臭光环（强韧 DC 13，恶心 2d6 轮）；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>吸髓尸鬼的双重特殊能力（麻痹 + 恶臭）使其成为低等级冒险的致命威胁。恶臭光环在 10 尺内生效，尽量使用远程武器或长武器保持距离。麻痹现在可以影响精灵，因此队伍中没有安全的肉盾角色，务必提高强韧豁免。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 2: 幽灵类 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec2">二、幽灵类 (Incorporeal Undead) — CR 3 ~ 10</h2>
+
+    <div class="monster-entry">
+      <h3>阴影 Shadow <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>栖息在黑暗中的虚无生物，以活物的力量为食。阴影的触碰会吸取力量属性，被杀死的生物会转化为新的阴影——这使得它们在面对大量低 HD 敌人时异常危险。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)，虚体</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead, Incorporeal)</td></tr>
+        <tr><th>HD</th><td>3d12 (19 HP)</td></tr>
+        <tr><th>AC</th><td>13 (+2 敏捷, +1 偏斜)</td></tr>
+        <tr><th>攻击</th><td>虚体触碰 +1 (1d6 力量吸取，强韧 DC 14 无效)</td></tr>
+        <tr><th>特殊能力</th><td>制造衍体（被力量降至 0 的生物变成新阴影）；驱散抗性 +2；虚体特性；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>虚体生物只有 50% 概率被实体攻击命中（虚体失手率），但魔法武器和法术可以正常命中。请准备<em>魔法武器</em>或<em>灵能武器</em>等法术。力量吸取非常危险——如果力量降至 0，角色立即死亡并转化为阴影，可能引发连锁灾难。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>尸妖 Wight <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>被邪恶力量扭曲的死亡战士，保留了一定程度的智能与战斗技巧。尸妖的触碰可以吸取生命等级，这对高等级角色来说比单纯的 HP 伤害更为致命。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>4d12+12 (38 HP)</td></tr>
+        <tr><th>AC</th><td>15 (+2 敏捷, +3 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +3 近战 (1d4+1 + 能量吸取 1 等级，强韧 DC 14)</td></tr>
+        <tr><th>特殊能力</th><td>能量吸取（1 个负向等级）；制造衍体（被杀的生物 1d4 轮后变成尸妖）；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>能量吸取是尸妖最大的威胁——每个负向等级会降低角色的攻击加值、豁免和职业特性。被尸妖杀死的生物会复生为新的尸妖，因此必须在它们增殖之前彻底消灭。牧师的神圣伤害和驱散能力在此战中至关重要。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>缚灵 Wraith <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>比阴影更强大的虚体不死生物，以活物的体质为食。缚灵无法忍受阳光，在日间战斗力大幅削弱。其触碰造成的体质吸取可以直接降低角色的生命值和坚韧度。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)，虚体</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead, Incorporeal)</td></tr>
+        <tr><th>HD</th><td>5d12+5 (37 HP)</td></tr>
+        <tr><th>AC</th><td>18 (+4 敏捷, +4 偏斜)</td></tr>
+        <tr><th>攻击</th><td>虚体触碰 +3 (1d6 体质吸取，强韧 DC 15 无效)</td></tr>
+        <tr><th>特殊能力</th><td>制造衍体；驱散抗性 +2；阳光无力（日光下无法攻击，仅能半速移动）；虚体特性；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>缚灵畏惧阳光——如果可能，将战斗拖到白天或准备<em>昼明术</em>。体质吸取会降低 HP 上限和强韧豁免，形成恶性循环。虚体生物需要魔法武器或法术才能可靠命中，<em>解除不死</em>等法术对缚灵有额外效果。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>幽灵 Spectre <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>缚灵的进阶形态，更加凶猛且攻击加值更高。幽灵出没之处往往伴随着恐怖与死亡，它们能迅速将活物转化为自己的同类。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)，虚体</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead, Incorporeal)</td></tr>
+        <tr><th>HD</th><td>7d12+7 (52 HP)</td></tr>
+        <tr><th>AC</th><td>20 (+5 敏捷, +5 偏斜)</td></tr>
+        <tr><th>攻击</th><td>虚体触碰 +7 (1d8 体质吸取，强韧 DC 15 无效)</td></tr>
+        <tr><th>特殊能力</th><td>制造衍体（体质降至 0 的生物在 1d4 轮后变成幽灵）；驱散抗性 +2；阳光无力；虚体特性；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>幽灵的 1d8 体质吸取比缚灵更猛，且攻击加值更高。它们的 AC 20 对物理攻击来说相当棘手（加上虚体 50% 失手率），建议使用<em>魔法飞弹</em>等必中法术或<em>驱逐术</em>。团队中体质较低的角色应优先获得<em>抵抗能量</em>等防护法术。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>女妖 Banshee <span class="cr-badge cr-high">CR 9</span></h3>
+      <p>因极端怨恨而死的女性灵魂，其哀号是死亡的代名词。女妖的恸哭可以瞬间杀死范围内的所有活物，是低等级队伍最应避开的遭遇之一。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">9</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)，虚体</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead, Incorporeal)</td></tr>
+        <tr><th>HD</th><td>9d12 (58 HP)</td></tr>
+        <tr><th>AC</th><td>19 (+5 敏捷, +4 偏斜)</td></tr>
+        <tr><th>攻击</th><td>虚体触碰 +6 (1d8 + 恐惧 DC 18)</td></tr>
+        <tr><th>特殊能力</th><td>女妖之恸（每日 1 次，30 尺内所有活物强韧 DC 18 失败即死）；恐怖外貌（DC 18 意志豁免或恐惧）；虚体特性；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>女妖之恸是一个范围即死效果——DC 18 的强韧豁免失败意味着立即死亡。队伍应在她使用恸哭前速战速决，或使用<em>死亡守护</em>等法术提供即死免疫。30 尺外的角色不受影响，远程角色可拉开距离。高回合优先输出，不要拖延战斗。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 3: 木乃伊与吸血鬼 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec3">三、木乃伊与吸血鬼 (Mummies &amp; Vampires)</h2>
+
+    <div class="monster-entry">
+      <h3>木乃伊 Mummy <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>被古老诅咒束缚在陵墓中的不死守卫，其攻击携带的木乃伊腐烂病会持续削弱受害者。木乃伊对火焰极度脆弱，但其他形式的伤害几乎无法阻止它们。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>6d12+6 (45 HP)</td></tr>
+        <tr><th>AC</th><td>20 (+2 敏捷, +8 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +9 近战 (1d8+6 + 木乃伊腐烂病)</td></tr>
+        <tr><th>特殊能力</th><td>绝望光环（30 尺内意志 DC 15 失败则麻痹 1d4 轮）；DR 5/—；火焰脆弱（受到双倍火焰伤害）；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>木乃伊的火焰脆弱是其致命弱点——一个<em>火球术</em>可以造成双倍伤害，效果极其显著。绝望光环会造成短时间的麻痹，队伍中的高意志角色应优先行动。木乃伊腐烂病是超自然疾病，需要<em>移除疾病</em>或<em>医疗术</em>才能治愈，普通<em>治疗轻伤</em>无效。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>吸血鬼 Vampire <span class="cr-badge cr-boss">CR +2 模板</span></h3>
+      <p>最具魅力的不死生物之一，兼具超人的力量、速度与智慧。吸血鬼拥有支配凝视、吸血、雾化、蛛行等多种能力，同时也有诸多弱点——阳光、流水、木桩穿心和圣徽。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">+2 模板</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)（与基底生物相同）</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>随基底生物变化（不死生物 HD）</td></tr>
+        <tr><th>AC</th><td>+6 天生护甲加值</td></tr>
+        <tr><th>攻击</th><td>挥击 + 能量吸取（2 个负向等级，强韧 DC 18）</td></tr>
+        <tr><th>特殊能力</th><td>支配凝视（DC 18 意志，类似<em>支配人类</em>）；吸血；雾化形态；蛛行术；暗夜之子（每日 1 次召唤蝙蝠/狼群）；快速愈合 5；DR 10/魔法和银；驱散抗性 +4；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>吸血鬼是最难彻底杀死的不死生物之一——HP 降至 0 时会雾化逃回棺材，在 1 小时后恢复。要彻底消灭吸血鬼，必须找到其棺材并在其雾化状态时暴露于阳光下、用木桩穿心或在流水中浸泡。战斗中注意防范支配凝视——低意志角色可能被控制反戈。大蒜和圣徽可以让吸血鬼退避，善加利用。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>吸血鬼衍体 Vampire Spawn <span class="cr-badge cr-mid">CR 4</span></h3>
+      <p>被吸血鬼杀死并转化的仆从，保留了部分生前的能力但受吸血鬼主人控制。吸血鬼衍体虽然比真正的吸血鬼弱小，但其支配能力和吸血攻击依然不容小觑。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">4</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>4d12+12 (38 HP)</td></tr>
+        <tr><th>AC</th><td>16 (+3 敏捷, +3 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +6 近战 (1d4+3 + 能量吸取 1 等级)</td></tr>
+        <tr><th>特殊能力</th><td>支配（DC 14 意志，类似<em>支配人类</em>）；吸血；蛛行术；DR 10/银；快速愈合 2；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>吸血鬼衍体通常成群出现，每个都能支配一名角色。优先集火消灭衍体，然后对付其吸血鬼主人。支配 DC 仅为 14，提升意志豁免或使用<em>防护邪恶</em>可以有效预防。银武器可以绕过其 DR。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 4: 巫妖与亡灵法师 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec4">四、巫妖与亡灵法师 (Liches)</h2>
+
+    <div class="monster-entry">
+      <h3>巫妖 Lich <span class="cr-badge cr-boss">CR +4 模板</span></h3>
+      <p>通过禁忌仪式将自身转化为不死生物的法师，是 D&amp;D 中最具标志性的终极反派之一。巫妖保留了生前的全部施法能力，并获得了麻痹触碰、恐惧光环等额外能力。只要命匣不被摧毁，巫妖就永远无法被真正杀死。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">+4 模板</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)（与基底生物相同）</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>随基底生物变化（不死生物 HD）</td></tr>
+        <tr><th>AC</th><td>+6 天生护甲加值</td></tr>
+        <tr><th>攻击</th><td>麻痹触碰（1d8+5 负能量伤害，强韧 DC 20 失败则永久麻痹）</td></tr>
+        <tr><th>特殊能力</th><td>恐惧光环（半径 60 尺，HD &lt; 5 的生物意志 DC 因魅力而异，失败则恐惧）；驱散抗性 +4；DR 15/钝击和魔法；命匣（灵魂容器，不被摧毁则巫妖会在 1d10 天后重生）；完整施法能力；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>巫妖战的核心策略不在战斗本身，而在于找到并摧毁其命匣。命匣通常被藏在极其隐秘或危险的位置。正面战斗中，巫妖的施法能力才是最大威胁——请准备<em>反魔场</em>、<em>沉默术</em>或<em>解除魔法</em>。DR 15/钝击和魔法意味着需要 +1 以上的钝击武器才能造成有效伤害。驱散不死生物对巫妖有 +4 抗性，高等级牧师仍可尝试。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>半巫妖 Demilich <span class="cr-badge cr-boss">CR 可变</span></h3>
+      <p>巫妖的终极进化形态——当巫妖放弃了肉体后，仅存的头骨成为了一具拥有毁天灭地力量的恐怖存在。半巫妖拥有 8 枚宝石化的命匣，每一枚都蕴藏着被囚禁的灵魂。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">可变 (通常 20+)</span></td></tr>
+        <tr><th>体型</th><td>超小型 (Tiny)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>可变（通常 30+ HD）</td></tr>
+        <tr><th>AC</th><td>可变（通常 30+）</td></tr>
+        <tr><th>攻击</th><td>灵魂囚禁（触碰 DC 可变，类似<em>锢魂术</em>）</td></tr>
+        <tr><th>特殊能力</th><td>哀嚎（DC 可变，范围内即死效果）；8 枚宝石命匣；多种类法术能力（包括<em>祈愿术</em>级别效果）；飞行；虚体/非物质化；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>半巫妖是 D&amp;D 3.5e 中最强大的不死生物之一，通常只有高等级（18+）团队才有能力面对。哀嚎是范围即死效果，必须准备<em>死亡守护</em>。8 枚宝石命匣必须全部摧毁才能彻底消灭半巫妖——它们可能被分散在不同位面。这是需要充分准备的终极 BOSS 战。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 5: 其他不死生物 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec5">五、其他不死生物 (Other Undead)</h2>
+
+    <div class="monster-entry">
+      <h3>暗夜阴影 Nightshade <span class="cr-badge cr-boss">CR 15+</span></h3>
+      <p>来自负能量位面的巨大不死生物，是不死生物中仅次于半巫妖的存在。暗夜阴影有多种形态（夜行者、夜行蠕虫、夜行渡鸦等），每一种都拥有毁灭性的力量。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-boss">15+ (因种类而异)</span></td></tr>
+        <tr><th>体型</th><td>超大型 (Huge) 或 巨型 (Gargantuan)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>可变（通常 20+ HD）</td></tr>
+        <tr><th>AC</th><td>可变（通常 25+）</td></tr>
+        <tr><th>攻击</th><td>因种类而异</td></tr>
+        <tr><th>特殊能力</th><td>亵渎光环；能量吸取；多种类法术能力；驱散抗性；不死生物特性；各形态独特能力</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>暗夜阴影是高等级遭遇的终极不死怪物。亵渎光环会持续削弱附近善良生物的能力，建议准备<em>圣洁灵光</em>来对抗。不同形态的暗夜阴影有不同的战斗风格——夜行者适合近战，夜行蠕虫是范围威胁，夜行渡鸦偏向施法。根据形态调整战术。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>博达克 Bodak <span class="cr-badge cr-mid">CR 8</span></h3>
+      <p>被深渊中纯粹邪恶所扭曲的人类灵魂，博达克的凝视可以瞬间杀死目标。它们极度畏惧阳光，在日光下会迅速衰亡。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">8</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>9d12 (58 HP)</td></tr>
+        <tr><th>AC</th><td>20 (+3 敏捷, +7 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +10 近战 (1d8+3)</td></tr>
+        <tr><th>特殊能力</th><td>死亡凝视（30 尺内，强韧 DC 15 失败即死）；非自然灵光（动物在 30 尺内恐慌）；阳光脆弱（日光下每轮受 1d10 伤害）；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>死亡凝视是博达克最致命的能力——DC 15 的强韧豁免失败意味着立即死亡。避免与博达克进行目光接触（使用<em>盲斗</em>或闭眼可以免疫凝视攻击，但有失手率）。博达克畏惧阳光，<em>昼明术</em>可以对其造成持续伤害。在黑暗地牢中遭遇博达克尤其危险。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>魔骸 Mohrg <span class="cr-badge cr-mid">CR 8</span></h3>
+      <p>逃脱死亡惩罚的邪恶灵魂所化成的不死生物，外形是一具拖着长长内脏的骷髅。魔骸的舌头可以麻痹敌人，被其杀死的生物会复活为僵尸。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-mid">8</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>14d12 (91 HP)</td></tr>
+        <tr><th>AC</th><td>18 (+3 敏捷, +5 天生)</td></tr>
+        <tr><th>攻击</th><td>挥击 +13 近战 (2d6+4) 或 麻痹舌鞭 +13 (1d8+4 + 麻痹)</td></tr>
+        <tr><th>特殊能力</th><td>麻痹舌鞭（DC 17 强韧失败则麻痹 1d4 分钟）；制造衍体（被杀的生物 1d4 轮后变成僵尸）；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>魔骸的舌鞭攻击具有 15 尺触及范围且附带麻痹效果，DC 17 的强韧豁免相当有威胁。被其杀死的生物会快速转化为僵尸，因此速战速决非常重要。高 HD 的角色被麻痹后持续时间更长（DC 更高），但持续时间固定为 1d4 分钟。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>吞噬者 Devourer <span class="cr-badge cr-high">CR 11</span></h3>
+      <p>巨大的幽灵般的不死生物，以活物的灵魂为食。吞噬者能将灵魂囚禁在体内，利用被囚灵魂的力量施展类法术能力——灵魂越强大，可用的法术越强。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-high">11</span></td></tr>
+        <tr><th>体型</th><td>大型 (Large)</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead)</td></tr>
+        <tr><th>HD</th><td>可变（通常 15+ HD）</td></tr>
+        <tr><th>AC</th><td>可变（通常 25+）</td></tr>
+        <tr><th>攻击</th><td>触碰 + 能量吸取（2 个负向等级）</td></tr>
+        <tr><th>特殊能力</th><td>灵魂囚禁（被杀的生物灵魂被困在吞噬者体内）；能量吸取；基于被困灵魂的类法术能力；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>吞噬者最恐怖的不仅是其战斗力，更是灵魂囚禁能力——被囚禁的灵魂无法被普通复活法术召回，除非先消灭吞噬者释放灵魂。如果重要 NPC 被吞噬者所杀，必须尽快消灭它。被困灵魂的 HD 决定了吞噬者能使用的类法术能力等级。
+      </div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>怨灵 Allip <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>因疯狂而自杀的可怜灵魂所化的虚体不死生物，其无休止的低语可以让听到的人陷入疯狂。怨灵本身并不想伤害他人，但其存在本身就是一种诅咒。</p>
+      <table>
+        <tr><th>CR</th><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><th>体型</th><td>中型 (Medium)，虚体</td></tr>
+        <tr><th>类型</th><td>不死生物 (Undead, Incorporeal)</td></tr>
+        <tr><th>HD</th><td>4d12 (26 HP)</td></tr>
+        <tr><th>AC</th><td>15 (+3 敏捷, +2 偏斜)</td></tr>
+        <tr><th>攻击</th><td>虚体触碰 +2 (1d4 感知吸取，强韧 DC 13 无效)</td></tr>
+        <tr><th>特殊能力</th><td>呓语（60 尺内所有活物意志 DC 13 失败则陷入疯狂/困惑）；疯狂灵光；虚体特性；不死生物特性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战斗提示：</strong>怨灵的呓语是一个持续的范围效果——60 尺内的所有活物都需要进行意志豁免，失败者会陷入类似<em>困惑术</em>的疯狂状态。高意志角色应该冲上去速战速决，同时低意志角色应远离 60 尺范围。感知吸取会降低感知属性，对感知依赖的职业（牧师、德鲁伊）影响尤其严重。
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section 6: 不死生物模板对照表 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec6">六、不死生物模板对照表</h2>
+
+    <p>以下表格对比了四种主要不死生物模板的关键属性，帮助 DM 快速判断给 NPC 添加不死模板后的效果。</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>属性</th>
+          <th>骷髅模板</th>
+          <th>僵尸模板</th>
+          <th>吸血鬼模板</th>
+          <th>巫妖模板</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CR 修正</strong></td>
+          <td>视基底生物 (通常降低)</td>
+          <td>视基底生物 (通常降低)</td>
+          <td>+2</td>
+          <td>+4</td>
+        </tr>
+        <tr>
+          <td><strong>类型变更</strong></td>
+          <td>不死生物</td>
+          <td>不死生物</td>
+          <td>不死生物</td>
+          <td>不死生物</td>
+        </tr>
+        <tr>
+          <td><strong>HD 变化</strong></td>
+          <td>HD 骰改为 d12；获得额外 HD</td>
+          <td>HD 骰改为 d12；获得额外 HD</td>
+          <td>所有 HD 改为 d12；+6 HP/HD</td>
+          <td>所有 HD 改为 d12；+6 HP/HD</td>
+        </tr>
+        <tr>
+          <td><strong>AC 修正</strong></td>
+          <td>+2 天生（或基底，取高）</td>
+          <td>+1 天生（或基底，取高）</td>
+          <td>+6 天生</td>
+          <td>+6 天生</td>
+        </tr>
+        <tr>
+          <td><strong>攻击方式</strong></td>
+          <td>保留天生武器或武器</td>
+          <td>1 种天生武器或武器</td>
+          <td>挥击 + 能量吸取</td>
+          <td>麻痹触碰</td>
+        </tr>
+        <tr>
+          <td><strong>特殊能力</strong></td>
+          <td>DR 5/钝击；寒冷免疫；挥砍/穿刺半伤</td>
+          <td>DR 5/挥砍；部分动作；顽强</td>
+          <td>支配凝视；吸血；雾化；蛛行；暗夜之子；快速愈合 5；DR 10/魔法和银</td>
+          <td>恐惧光环；麻痹触碰；驱散抗性 +4；DR 15/钝击和魔法；命匣</td>
+        </tr>
+        <tr>
+          <td><strong>弱点</strong></td>
+          <td>无特殊弱点</td>
+          <td>无特殊弱点（但行动迟缓）</td>
+          <td>阳光；流水；木桩穿心；圣徽；大蒜</td>
+          <td>命匣被摧毁则永久死亡</td>
+        </tr>
+        <tr>
+          <td><strong>属性修正</strong></td>
+          <td>无体质，无智力（或保留最低 1）</td>
+          <td>无体质；智力变为 —</td>
+          <td>力量 +6, 敏捷 +4, 智力 +2, 感知 +2, 魅力 +4；无体质</td>
+          <td>智力 +2, 感知 +2, 魅力 +2；无体质</td>
+        </tr>
+        <tr>
+          <td><strong>技能保留</strong></td>
+          <td>不保留</td>
+          <td>不保留</td>
+          <td>全部保留</td>
+          <td>全部保留</td>
+        </tr>
+        <tr>
+          <td><strong>施法能力</strong></td>
+          <td>失去</td>
+          <td>失去</td>
+          <td>保留</td>
+          <td>完全保留</td>
+        </tr>
+        <tr>
+          <td><strong>复活方式</strong></td>
+          <td>被摧毁后不会自行复活</td>
+          <td>被摧毁后不会自行复活</td>
+          <td>HP 归零后雾化逃回棺材，1 小时后恢复</td>
+          <td>被杀后 1d10 天在命匣旁重生</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ============================================================ -->
+    <!-- Section 7: CR 速查表 -->
+    <!-- ============================================================ -->
+    <h2 class="section-title" id="sec7">七、CR 速查表</h2>
+
+    <p>本页所有不死生物按 CR 从低到高排列，便于 DM 根据队伍等级快速选取合适的遭遇。</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>CR</th>
+          <th>怪物名称</th>
+          <th>体型</th>
+          <th>关键能力</th>
+          <th>等级</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cr-badge cr-low">1/3</span></td>
+          <td>骷髅 Skeleton</td>
+          <td>中型</td>
+          <td>DR 5/钝击；寒冷免疫；挥砍/穿刺半伤</td>
+          <td><span class="cr-badge cr-low">低级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1/2</span></td>
+          <td>僵尸 Zombie</td>
+          <td>中型</td>
+          <td>DR 5/挥砍；部分动作</td>
+          <td><span class="cr-badge cr-low">低级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td>食尸鬼 Ghoul</td>
+          <td>中型</td>
+          <td>麻痹（精灵免疫）</td>
+          <td><span class="cr-badge cr-low">低级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>吸髓尸鬼 Ghast</td>
+          <td>中型</td>
+          <td>麻痹（含精灵）；恶臭光环</td>
+          <td><span class="cr-badge cr-low">低级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>阴影 Shadow</td>
+          <td>中型 虚体</td>
+          <td>力量吸取；制造衍体</td>
+          <td><span class="cr-badge cr-low">低级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>尸妖 Wight</td>
+          <td>中型</td>
+          <td>能量吸取 1 等级；制造衍体</td>
+          <td><span class="cr-badge cr-low">低级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>怨灵 Allip</td>
+          <td>中型 虚体</td>
+          <td>感知吸取；呓语疯狂</td>
+          <td><span class="cr-badge cr-low">低级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4</span></td>
+          <td>吸血鬼衍体 Vampire Spawn</td>
+          <td>中型</td>
+          <td>支配；吸血；能量吸取</td>
+          <td><span class="cr-badge cr-mid">中级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>缚灵 Wraith</td>
+          <td>中型 虚体</td>
+          <td>体质吸取；制造衍体；阳光无力</td>
+          <td><span class="cr-badge cr-mid">中级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>木乃伊 Mummy</td>
+          <td>中型</td>
+          <td>绝望光环；木乃伊腐烂病；火焰脆弱</td>
+          <td><span class="cr-badge cr-mid">中级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>幽灵 Spectre</td>
+          <td>中型 虚体</td>
+          <td>1d8 体质吸取；制造衍体</td>
+          <td><span class="cr-badge cr-mid">中级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">8</span></td>
+          <td>博达克 Bodak</td>
+          <td>中型</td>
+          <td>死亡凝视（即死）；阳光脆弱</td>
+          <td><span class="cr-badge cr-mid">中级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">8</span></td>
+          <td>魔骸 Mohrg</td>
+          <td>中型</td>
+          <td>麻痹舌鞭；制造衍体</td>
+          <td><span class="cr-badge cr-mid">中级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">9</span></td>
+          <td>女妖 Banshee</td>
+          <td>中型 虚体</td>
+          <td>女妖之恸（范围即死）；恐怖外貌</td>
+          <td><span class="cr-badge cr-high">高级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">11</span></td>
+          <td>吞噬者 Devourer</td>
+          <td>大型</td>
+          <td>灵魂囚禁；能量吸取；类法术能力</td>
+          <td><span class="cr-badge cr-high">高级</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">15+</span></td>
+          <td>暗夜阴影 Nightshade</td>
+          <td>超大型/巨型</td>
+          <td>亵渎光环；能量吸取；多种类法术能力</td>
+          <td><span class="cr-badge cr-boss">BOSS</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">+2</span></td>
+          <td>吸血鬼 Vampire (模板)</td>
+          <td>视基底</td>
+          <td>支配；吸血；雾化；快速愈合 5</td>
+          <td><span class="cr-badge cr-boss">BOSS</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">+4</span></td>
+          <td>巫妖 Lich (模板)</td>
+          <td>视基底</td>
+          <td>麻痹触碰；恐惧光环；命匣；完整施法</td>
+          <td><span class="cr-badge cr-boss">BOSS</span></td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">20+</span></td>
+          <td>半巫妖 Demilich</td>
+          <td>超小型</td>
+          <td>灵魂囚禁；哀嚎即死；8 枚命匣</td>
+          <td><span class="cr-badge cr-boss">BOSS</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>异怪与精类 Aberrations &amp; Fey - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.cr-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:13px; font-weight:600; color:#fff; }
+.cr-low { background:#27ae60; }
+.cr-mid { background:#d4a017; }
+.cr-high { background:#c0392b; }
+.cr-boss { background:#8e44ad; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:40px; }
+.monster-entry { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:16px 0; }
+.monster-entry h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.monster-entry table { width:100%; border-collapse:collapse; margin:8px 0; }
+.monster-entry th, .monster-entry td { padding:6px 10px; border-bottom:1px solid var(--border-light,#e8dcc8); text-align:left; font-size:14px; }
+.monster-entry th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.tactic { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:8px 12px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.part-divider { background:var(--bg-card,#faf6ee); border:2px solid var(--accent-gold,#d4a017); border-radius:6px; padding:16px; margin:32px 0 16px 0; text-align:center; }
+.part-divider h2 { margin:0; color:var(--accent-gold,#d4a017); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物图鉴</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+      <a href="humanoids.html">类人怪物</a>
+      <a href="undead.html">不死生物</a>
+      <a href="magical-beasts.html">魔法兽</a>
+      <a href="aberrations-fey.html" class="active">异怪与精类</a>
+      <a href="outsiders.html">异界生物</a>
+      <a href="giants-constructs.html">巨人与构装体</a>
+      <a href="plants-oozes.html">植物与泥怪</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>异怪与精类 <small>Aberrations &amp; Fey</small></h1>
+
+    <p>本页收录 D&D 3.5e 中的<strong>异怪 (Aberration)</strong> 和<strong>精类 (Fey)</strong>。异怪拥有怪诞形体和超自然能力，通常来自异次元或被遗忘的远古时代；精类则来自妖精荒野或自然之境，与自然界的魔力紧密相连。这两类怪物代表了D&D世界中最诡异和最迷人的存在。</p>
+
+    <div class="toc">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#classic-aberrations">经典异怪</a></li>
+        <li><a href="#dungeon-aberrations">地城异怪</a></li>
+        <li><a href="#horror-aberrations">恐怖异怪</a></li>
+        <li><a href="#nature-fey">自然精类</a></li>
+        <li><a href="#dark-fey">黑暗精类</a></li>
+        <li><a href="#cr-table">CR速查表</a></li>
+      </ul>
+    </div>
+
+    <!-- ==================== PART A ==================== -->
+    <div class="part-divider">
+      <h2>Part A: 异怪 (Aberrations)</h2>
+      <p>怪诞、不可名状的超自然生物</p>
+    </div>
+
+    <!-- ==================== SECTION 1 ==================== -->
+    <h2 class="section-title" id="classic-aberrations">经典异怪 (Classic Aberrations)</h2>
+
+    <div class="monster-entry">
+      <h3>底栖魔鱼 Aboleth <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>古老的智慧鱼类生物，拥有灵能能力和操控他人的力量。底栖魔鱼自恐龙时代前就存在于深水洞穴中，梦想重建其失落的水下帝国。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>10d8+30 (75 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+5, 敏捷+1, 体型-1, 天生+3)</td></tr>
+        <tr><td>攻击</td><td>4 触手 +10 (1d6+5 加黏液)</td></tr>
+        <tr><td>特殊能力</td><td>奴役 (Enslave) 3/日；灵能类法术能力；游泳 60尺</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>底栖魔鱼会先用<em>奴役</em>控制最强战士，再让被奴役者攻击队友。黏液接触可将皮肤变成黏膜（需在水下呼吸）。在水外战斗对其不利，应避免被拖入水中。准备<em>防护灵能</em>可削弱其法术能力。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>眼魔 Beholder <span class="cr-badge cr-high">CR 13</span></h3>
+      <p>D&D最具标志性的怪物之一——一个巨大的浮动眼球，周围环绕10根眼柄，每根射出不同的毁灭射线。中央巨眼释放反魔法锥。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-high">13</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>13d8+52 (110 HP)</td></tr>
+        <tr><td>AC</td><td>20 (天生+6, 敏捷+2, 天生+2)</td></tr>
+        <tr><td>攻击</td><td>10种眼柄射线 (DC 20)</td></tr>
+        <tr><td>特殊能力</td><td>中央眼：反魔法锥 (Antimagic Cone)；10根眼柄各一种射线；飞行 20尺</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>眼魔的战斗策略围绕其反魔法锥展开——它会用锥体覆盖施法者使其无法施法，同时用眼柄射线攻击其他目标。关键对策：绕到其背后（锥体有方向），使用物理攻击，<em>隐形术</em>在锥体内仍有效。团队协作和分散站位至关重要。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>夺心魔 Mind Flayer <span class="cr-badge cr-mid">CR 8</span></h3>
+      <p>又称灵吸怪，拥有章鱼头部和人形身体的恐怖智慧生物。以吸食其他生物的脑髓为生，建立地下城市奴役其他种族。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">8</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>8d8+24 (60 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+3, 敏捷+3, 天生+2)</td></tr>
+        <tr><td>攻击</td><td>4 触手 +6 (1d4+1 加精通攫取)</td></tr>
+        <tr><td>特殊能力</td><td>吸食脑髓 (Extract Brain)；心灵爆破 (Mind Blast)：60尺锥形 DC 17 震慑 3d6轮；灵能能力；法术抗力 SR 25</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>夺心魔最危险的能力是心灵爆破——60尺锥形范围震慑，一旦失败将被触手攫取并吸食脑髓。对策：保持距离（超出60尺锥体范围），使用<em>防护心灵</em>，高意志豁免角色顶前排。法术抗力SR 25意味着低等级法术可能失败，优先用物理攻击。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>智力吞噬者 Intellect Devourer <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>没有身体、只有一个跳动大脑的恐怖异怪，能够窃取目标的智力和身体。夺心魔的忠实仆从，也可独立存在。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><td>体型</td><td>小型 (Small)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>4d8+12 (30 HP)</td></tr>
+        <tr><td>AC</td><td>20 (天生+5, 敏捷+3, 体型+1, 天生+1)</td></tr>
+        <tr><td>攻击</td><td>4 爪抓 +5 (1d3+1)</td></tr>
+        <tr><td>特殊能力</td><td>窃取身体 (Body Thief)；Id渗透 (Id Insinuation)；PR能力；精通隐形；法术抗力 SR 17</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>智力吞噬者会先使用<em>Id渗透</em>攻击范围内所有生物，降低其智力，然后趁目标虚弱时窃取身体。被窃取的身体需要<em>驱魔</em>或<em>祈愿术</em>才能恢复。<em>防护邪恶</em>可阻止其附身。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>斗篷怪 Cloaker <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>外形如一件黑色斗篷的奇异生物，倒挂在洞穴顶部伏击猎物。会用尾巴缠住目标头部使其窒息。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>小型 (Small)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>3d8+3 (16 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+3, 敏捷+4, 天生+1)</td></tr>
+        <tr><td>攻击</td><td>吸取攻击 (Drain)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗术 (Darkness)；舌头 30尺；飞行 40尺 (普通)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>斗篷怪会先施放<em>黑暗术</em>遮蔽视觉，然后从暗处飞来缠住目标。其翅膀可发出令人困惑的嗡鸣声。使用光源和<em>昼明术</em>可削弱其优势。被缠住时尝试擒拿检定挣脱。</div>
+    </div>
+
+    <!-- ==================== SECTION 2 ==================== -->
+    <h2 class="section-title" id="dungeon-aberrations">地城异怪 (Dungeon Aberrations)</h2>
+
+    <div class="monster-entry">
+      <h3>拟态怪 Mimic <span class="cr-badge cr-mid">CR 4</span></h3>
+      <p>可以变化为任何物体外形的黏性怪物，最常伪装为宝箱。当冒险者伸手开箱时，宝箱突然长出牙齿和触手。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">4</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>7d8+21 (52 HP)</td></tr>
+        <tr><td>AC</td><td>15 (天生+4, 敏捷+1)</td></tr>
+        <tr><td>攻击</td><td>重击 +8 (1d8+4 加黏着)</td></tr>
+        <tr><td>特殊能力</td><td>黏着 (Adhesive)：接触拟态怪的生物和物品会被粘住；变形 (Change Shape)：可模仿任何物体；碾压 (Crush)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>拟态怪是地下城冒险的经典陷阱。被粘住的武器可用<em>万能溶剂</em>解救，或等待1d4轮后自动脱落。用远程攻击可避免被粘住。<em>侦测魔法</em>或仔细观察可提前发现拟态怪。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>腐食怪 Otyugh <span class="cr-badge cr-mid">CR 4</span></h3>
+      <p>生活在垃圾堆和污水坑中的大型异怪，以腐烂物质为食。触手携带致命疾病，是地城中令人作呕但危险的存在。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">4</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>6d8+24 (51 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+6, 敏捷+1, 体型-1, 天生+2)</td></tr>
+        <tr><td>攻击</td><td>2 触手 +6 (1d6+3 加疾病 DC 14) + 啮咬</td></tr>
+        <tr><td>特殊能力</td><td>精通攫取 (Improved Grab)；绞缠 (Constrict)；疾病 (秽热/致盲症) DC 14</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>腐食怪会从垃圾堆中突然伸出触手抓住路过的冒险者。疾病是最大威胁——<em>移除疾病</em>应及时施放。腐食怪其实可以交流（心灵感应），有时可通过对话避免战斗。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>锈蚀怪 Rust Monster <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>冒险者装备的噩梦——这种昆虫状生物的触角碰触就能让金属生锈粉碎。对所有依赖金属装备的战士来说是终极克星。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>5d8+5 (27 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+5, 敏捷+3)</td></tr>
+        <tr><td>攻击</td><td>触角碰触 (锈蚀金属) + 啮咬 +3 (1d3)</td></tr>
+        <tr><td>特殊能力</td><td>锈蚀金属：接触即锈蚀（金属护甲/武器每次-4）；嗅觉追踪金属</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>锈蚀怪会主动冲向金属装备最多的目标。对策：使用木棍、石制武器或魔法武器（魔法金属有豁免加值）。<em>魔法武器</em>和<em>魔化护甲</em>可提供额外豁免加值。远程攻击和法术是最安全的选择。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>胶质方块 Gelatinous Cube <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>10尺见方的透明凝胶体，在地城走廊中缓慢移动，吞食一切有机物。因几乎完全透明，冒险者往往不知不觉就被吞噬。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>泥怪 (Ooze)</td></tr>
+        <tr><td>HD</td><td>4d8+32 (50 HP)</td></tr>
+        <tr><td>AC</td><td>3 (10尺方块, 敏捷-5, 体型-2)</td></tr>
+        <tr><td>攻击</td><td>吞噬 (Engulf) DC 13</td></tr>
+        <tr><td>特殊能力</td><td>麻痹 DC 20；酸液 1d6；透明（侦察 DC 26 发现）；免疫寒冷/火焰</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>胶质方块完全填满走廊，难以绕过。被吞噬者在酸液中每轮受伤且可能麻痹。对策：用长杆推开它（力量检定），或从侧面攻击。<em>电击</em>和<em>音波</em>伤害效果最佳。注意其内部可能有之前吞噬的宝物。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>暗幕兽 Darkmantle <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>倒挂在洞穴顶部的小型飞行生物，外形如同一块钟乳石。会突然飞下包裹住目标头部并施放黑暗术。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>小型 (Small)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>1d8+3 (7 HP)</td></tr>
+        <tr><td>AC</td><td>16 (天生+3, 敏捷+2, 天生+1)</td></tr>
+        <tr><td>攻击</td><td>重击 +3 (1d4)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗术 (Darkness) 1/日；飞行 30尺；附着于天花板</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>暗幕兽单体威胁不大，但通常成群出现。它会施放<em>黑暗术</em>遮蔽视野后扑向目标头部。拥有暗视的角色不受影响。用光源或<em>昼明术</em>可抵消其黑暗效果。</div>
+    </div>
+
+    <!-- ==================== SECTION 3 ==================== -->
+    <h2 class="section-title" id="horror-aberrations">恐怖异怪 (Horror Aberrations)</h2>
+
+    <div class="monster-entry">
+      <h3>眼魔变体 Beholder Variants <span class="cr-badge cr-mid">CR 4-6+</span></h3>
+      <p>眼魔家族有多个变体：高特 (Gauth) 是小型弱化版本，观者 (Spectator) 是四眼的守卫变体，死亡暴君 (Death Tyrant) 是不死版本。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td>高特 Gauth <span class="cr-badge cr-mid">6</span> / 观者 Spectator <span class="cr-badge cr-mid">4</span> / 死亡暴君 Death Tyrant <span class="cr-badge cr-high">变化</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>随变体变化</td></tr>
+        <tr><td>AC</td><td>随变体变化</td></tr>
+        <tr><td>攻击</td><td>较少的眼柄射线</td></tr>
+        <tr><td>特殊能力</td><td>高特：吸取魔法物品充能；观者：守护宝物指令；死亡暴君：不死特性</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>变体眼魔的眼柄较少但依然危险。高特会优先吸取魔法物品能量。观者被设定守护特定宝物，可通过说出正确的口令让其放行。死亡暴君结合了不死和眼魔能力，极其危险。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>新生蠕虫 Neothelid <span class="cr-badge cr-high">CR 14</span></h3>
+      <p>夺心魔蝌蚪在失去主脑后失控成长而成的巨型蠕虫。拥有夺心魔的灵能能力但体型巨大得多，是幽暗地域的顶级掠食者。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-high">14</span></td></tr>
+        <tr><td>体型</td><td>巨像级 (Colossal)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>25d8+225 (337 HP)</td></tr>
+        <tr><td>AC</td><td>20 (天生+12, 敏捷-2, 体型-8, 天生+8)</td></tr>
+        <tr><td>攻击</td><td>吞噬活物 (Swallow Whole)</td></tr>
+        <tr><td>特殊能力</td><td>酸息喷射；灵能冲击波；震颤感知</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>新生蠕虫极其巨大且HP惊人。它的灵能冲击波可大范围震慑，酸息可腐蚀装备。对策：保持远距离（超出震颤感知范围），使用飞行避开地面震动。<em>心灵屏障</em>可抵御其灵能攻击。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>蟹魔 Chuul <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>半蟹半昆虫的水陆两栖异怪，是底栖魔鱼的忠实仆从。拥有坚硬的甲壳和麻痹触手，常在水下洞穴中守卫宝藏。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>11d8+33 (82 HP)</td></tr>
+        <tr><td>AC</td><td>22 (天生+8, 敏捷+2, 体型-1, 天生+3)</td></tr>
+        <tr><td>攻击</td><td>2 钳爪 +9 (2d6+4)</td></tr>
+        <tr><td>特殊能力</td><td>精通攫取；绞缠 (Constrict)；麻痹触手 (Paralytic Tentacles)；免疫毒素</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>蟹魔会用钳爪攫取目标后绞缠，同时用麻痹触手攻击。被麻痹的猎物会被拖入水中淹死。在水面上战斗有利得多，<em>自由行动术</em>可防止被攫取和绞缠。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>腐尸甲虫 Carrion Crawler <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>多足蜈蚣状异怪，拥有8根触手可分泌麻痹黏液。在地城中以腐肉为食，但也会攻击活物。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>HD</td><td>3d8+3 (16 HP)</td></tr>
+        <tr><td>AC</td><td>17 (天生+5, 敏捷+2)</td></tr>
+        <tr><td>攻击</td><td>8 触手 +3 (麻痹 DC 13, 2d6轮) + 啮咬</td></tr>
+        <tr><td>特殊能力</td><td>麻痹 (Paralysis) DC 13, 2d6轮；攀爬 15尺</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>腐尸甲虫的8根触手每根都可能造成麻痹，多根命中时非常危险。但它AC不高且HP较少，应快速集火击杀。<em>移除麻痹</em>可解救被麻痹的队友。</div>
+    </div>
+
+    <!-- ==================== PART B ==================== -->
+    <div class="part-divider">
+      <h2>Part B: 精类 (Fey)</h2>
+      <p>自然魔力孕育的神秘生灵</p>
+    </div>
+
+    <!-- ==================== SECTION 4 ==================== -->
+    <h2 class="section-title" id="nature-fey">自然精类 (Nature Fey)</h2>
+
+    <div class="monster-entry">
+      <h3>树精 Dryad <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>与一棵橡树绑定的美丽女性精灵。她无法离开自己的树太远，会用魅惑能力引诱入侵者远离她的家园。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>精类 (Fey)</td></tr>
+        <tr><td>HD</td><td>4d6+8 (22 HP)</td></tr>
+        <tr><td>AC</td><td>17 (天生+3, 敏捷+4)</td></tr>
+        <tr><td>攻击</td><td>匕首 +4 (1d4)</td></tr>
+        <tr><td>特殊能力</td><td>纠缠术 (Entangle)；魅惑人类 (Charm Person)；树木穿行 (Tree Stride)；依赖树木 (Tree Dependent)；弱点：寒铁；DR 15/寒铁</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>树精通常不想战斗，会用<em>魅惑人类</em>让入侵者离开。如果她的树被毁，树精也会死亡。使用寒铁武器可绕过其DR。与树精交涉时表达对森林的尊重通常更有效。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>水泽仙女 Nymph <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>拥有超凡美貌的精类生物，其美貌足以令人目眩失明。她的存在本身就带有超凡优雅气质，增强所有属性。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>精类 (Fey)</td></tr>
+        <tr><td>HD</td><td>6d6+12 (33 HP)</td></tr>
+        <tr><td>AC</td><td>17 (天生+3, 敏捷+4)</td></tr>
+        <tr><td>攻击</td><td>匕首 +6 (1d4)</td></tr>
+        <tr><td>特殊能力</td><td>震慑一瞥 DC 17 (Stunning Glance)；致盲之美 DC 17 (Blinding Beauty)；超凡优雅 +7 (Unearthly Grace)；DR 10/寒铁</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>水泽仙女的<em>致盲之美</em>和<em>震慑一瞥</em>使其非常危险。直视她会导致失明或震慑。闭眼战斗可获得+5豁免加值但失去DEX加值。超凡优雅使她所有豁免、AC和能力值都获得+7加值。避免直视她，用间接方式攻击。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>萨特 Satyr <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>半人半羊的享乐主义精类，热爱音乐、美酒和恶作剧。手持魔笛可施展魅惑、催眠和恐惧效果。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>精类 (Fey)</td></tr>
+        <tr><td>HD</td><td>4d6+8 (22 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+3, 敏捷+3, 天生+2)</td></tr>
+        <tr><td>攻击</td><td>匕首/短弓 + 魔笛 (魅惑/催眠/恐惧)</td></tr>
+        <tr><td>特殊能力</td><td>魔笛演奏：魅惑人类、催眠术、恐惧术；DR 5/寒铁</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>萨特的魔笛是其最大武器——演奏时可对范围内生物施加心灵效果。堵住耳朵（需要标准动作）可免疫其笛声。<em>防护心灵</em>也有效。萨特通常不想杀人，更倾向于让入侵者迷失或沉睡。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>皮克精 Pixie <span class="cr-badge cr-mid">CR 4</span></h3>
+      <p>仅有1尺高的微小精类，拥有永久隐形能力。携带特殊箭矢——睡眠箭和失忆箭。是最令人头疼的微型精类之一。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">4</span>（含特殊箭矢）</td></tr>
+        <tr><td>体型</td><td>超微型 (Tiny)</td></tr>
+        <tr><td>类型</td><td>精类 (Fey)</td></tr>
+        <tr><td>HD</td><td>1d6 (3 HP)</td></tr>
+        <tr><td>AC</td><td>17 (天生+2, 敏捷+5, 体型+2, 天生-2)</td></tr>
+        <tr><td>攻击</td><td>箭矢 (睡眠箭 DC 15 / 失忆箭 DC 15)</td></tr>
+        <tr><td>特殊能力</td><td>高等隐形随意施展 (Greater Invisibility)；DR 10/寒铁；法术抗力 SR 15+HD；飞行 60尺 (良好)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>皮克精永久隐形且拥有高等隐形（攻击后仍隐形），使其极难被发现和命中。<em>闪光尘</em>、<em>妖火</em>或<em>真知术</em>可破除隐形。睡眠箭和失忆箭非常烦人，被击中的队友会沉睡或失去记忆。高意志豁免角色应优先对抗。</div>
+    </div>
+
+    <!-- ==================== SECTION 5 ==================== -->
+    <h2 class="section-title" id="dark-fey">黑暗精类 (Dark Fey)</h2>
+
+    <div class="monster-entry">
+      <h3>红帽精 Redcap <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>邪恶的小型精类，头戴被鲜血染红的帽子。性格残忍，喜欢用巨大的镰刀屠杀旅人，并用鲜血重新染红帽子。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>小型 (Small)</td></tr>
+        <tr><td>类型</td><td>精类 (Fey)</td></tr>
+        <tr><td>HD</td><td>2d6+2 (9 HP)</td></tr>
+        <tr><td>AC</td><td>17 (天生+3, 敏捷+2, 体型+1, 天生+1)</td></tr>
+        <tr><td>攻击</td><td>中型镰刀 +4 (2d6-3)</td></tr>
+        <tr><td>特殊能力</td><td>小型靴子：速度 60尺；DR 5/银</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>红帽精虽然体型小但速度极快（60尺），使用的镰刀伤害可观。银制武器可绕过其DR。它们通常在废弃建筑或荒野中伏击旅人。群体出现时优先击杀领头的红帽精。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>斯普里根 Spriggan <span class="cr-badge cr-low">CR 变化</span></h3>
+      <p>精类的堕落变体，可以从矮小形态膨胀为巨型。在大型形态下力量惊人，但智慧有限。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">变化</span>（取决于形态和装备）</td></tr>
+        <tr><td>体型</td><td>中型 (Medium) / 大型 (Large)</td></tr>
+        <tr><td>类型</td><td>精类 (Fey)</td></tr>
+        <tr><td>HD</td><td>变化</td></tr>
+        <tr><td>AC</td><td>变化</td></tr>
+        <tr><td>攻击</td><td>武器攻击（随形态变化）</td></tr>
+        <tr><td>特殊能力</td><td>变大 (Change Size)：可膨胀至大型；DR 5/寒铁</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>斯普里根在小型形态时看似无害，但突然变大后力量和伤害大幅提升。准备好应对其形态变化，大型形态下AC会降低但攻击范围和伤害增加。寒铁武器可绕过其DR。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>疾速精 Quickling <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>被黑暗妖精魔法加速的精类变体，移动速度极快且每轮可执行两次动作。几乎无法被肉眼捕捉。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>超微型 (Tiny)</td></tr>
+        <tr><td>类型</td><td>精类 (Fey)</td></tr>
+        <tr><td>HD</td><td>1d6+2 (5 HP)</td></tr>
+        <tr><td>AC</td><td>23 (加速+闪避, 模糊效果)</td></tr>
+        <tr><td>攻击</td><td>匕首（超高速攻击）</td></tr>
+        <tr><td>特殊能力</td><td>速度 120尺；迅捷 (Quickness)：每轮可执行2个动作；DR 5/寒铁</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>疾速精的速度使其几乎无法被命中——AC 23加上模糊效果。但其HP极低（仅5点），一旦命中即可击杀。使用<em>缓慢术</em>可取消其迅捷能力，<em>油脂术</em>可限制移动。区域攻击法术不受其高AC影响。</div>
+    </div>
+
+    <!-- ==================== SECTION 6 ==================== -->
+    <h2 class="section-title" id="cr-table">CR速查表</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>CR</th>
+          <th>怪物名称</th>
+          <th>类型</th>
+          <th>特色能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td>暗幕兽 Darkmantle</td>
+          <td>异怪</td>
+          <td>黑暗术，飞行附着</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td>红帽精 Redcap</td>
+          <td>精类</td>
+          <td>高速60尺，镰刀攻击</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>斗篷怪 Cloaker</td>
+          <td>异怪</td>
+          <td>黑暗术，飞行吸取</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>腐尸甲虫 Carrion Crawler</td>
+          <td>异怪</td>
+          <td>8触手麻痹</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>萨特 Satyr</td>
+          <td>精类</td>
+          <td>魔笛魅惑/催眠/恐惧</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>疾速精 Quickling</td>
+          <td>精类</td>
+          <td>速度120尺，双动作/轮</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>树精 Dryad</td>
+          <td>精类</td>
+          <td>魅惑，纠缠，树木穿行</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>锈蚀怪 Rust Monster</td>
+          <td>异怪</td>
+          <td>锈蚀金属</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>胶质方块 Gelatinous Cube</td>
+          <td>泥怪</td>
+          <td>吞噬，麻痹，透明</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4</span></td>
+          <td>拟态怪 Mimic</td>
+          <td>异怪</td>
+          <td>变形，黏着</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4</span></td>
+          <td>腐食怪 Otyugh</td>
+          <td>异怪</td>
+          <td>疾病触手，攫取绞缠</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4</span></td>
+          <td>皮克精 Pixie</td>
+          <td>精类</td>
+          <td>永久隐形，睡眠/失忆箭</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4</span></td>
+          <td>观者 Spectator</td>
+          <td>异怪</td>
+          <td>4眼射线，守护指令</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>智力吞噬者 Intellect Devourer</td>
+          <td>异怪</td>
+          <td>窃取身体，Id渗透</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>高特 Gauth</td>
+          <td>异怪</td>
+          <td>吸取魔法物品，眼柄射线</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>底栖魔鱼 Aboleth</td>
+          <td>异怪</td>
+          <td>奴役，灵能，黏液</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>水泽仙女 Nymph</td>
+          <td>精类</td>
+          <td>致盲之美，震慑一瞥，超凡优雅</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>蟹魔 Chuul</td>
+          <td>异怪</td>
+          <td>麻痹触手，攫取绞缠</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">8</span></td>
+          <td>夺心魔 Mind Flayer</td>
+          <td>异怪</td>
+          <td>心灵爆破，吸食脑髓，SR 25</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">13</span></td>
+          <td>眼魔 Beholder</td>
+          <td>异怪</td>
+          <td>10种射线，反魔法锥</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">14</span></td>
+          <td>新生蠕虫 Neothelid</td>
+          <td>异怪</td>
+          <td>灵能冲击波，酸息，吞噬</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:40px; text-align:center; color:#888;">← 上一页：<a href="magical-beasts.html">魔法兽</a> | 返回 <a href="intro.html">怪物总览</a> | 下一页：<a href="outsiders.html">异界生物</a> →</p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>
