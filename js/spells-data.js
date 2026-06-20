@@ -468,6 +468,22 @@ const SPELLS = [
     "source": "3R"
   },
   {
+    "id": "calm_animals",
+    "nameEn": "Calm Animals",
+    "nameZh": "安抚动物",
+    "level": 1,
+    "school": "惑控系",
+    "components": "V,S",
+    "castingTime": "1标准动作",
+    "range": "近距 (25尺+5尺/2环)",
+    "target": "2d4+每等级1个动物(HD总和)",
+    "duration": "1分钟/等级",
+    "savingThrow": "意志过则无效",
+    "spellResist": "是",
+    "desc": "使动物平静下来，不再具有攻击性。受影响的动物不会攻击任何生物，但如果被攻击则此法术结束。你可以影响HD总和等于2d4+你的施法者等级的动物。",
+    "source": "PHB"
+  },
+  {
     "id": "cause_fear",
     "nameEn": "Cause Fear",
     "nameZh": "造成恐惧",
@@ -629,6 +645,22 @@ const SPELLS = [
     "spellResist": "否",
     "desc": "感知60尺内的亡灵生物。首轮感知是否存在，次轮感知数量，第三轮感知类型（僵尸/骷髅/吸血鬼等）。",
     "source": "3R"
+  },
+  {
+    "id": "disguise_self",
+    "nameEn": "Disguise Self",
+    "nameZh": "伪装术",
+    "level": 1,
+    "school": "幻术系",
+    "components": "V,S",
+    "castingTime": "1标准动作",
+    "range": "个人",
+    "target": "你",
+    "duration": "10分钟/等级(D)",
+    "savingThrow": "意志过则不信(若互动)",
+    "spellResist": "否",
+    "desc": "改变你的外表，包括服装、武器和装备。你可以让自己看起来身高变化不超过1尺，体型改变不超过原来的一半。此法术不能改变你的声音或气味。该幻术是视觉性质的，不能经得起触碰检验。",
+    "source": "PHB"
   },
   {
     "id": "divine_favor",
@@ -875,6 +907,22 @@ const SPELLS = [
     "source": "PHB"
   },
   {
+    "id": "magic_stone",
+    "nameEn": "Magic Stone",
+    "nameZh": "魔石术",
+    "level": 1,
+    "school": "变化系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "最多3颗接触的小石头",
+    "duration": "30分钟或直至耗尽",
+    "savingThrow": "无",
+    "spellResist": "否",
+    "desc": "你使最多3颗小石头获得魔法。这些石头可以作为投石索弹药使用，获得+1增强加值攻击和伤害（1d6+1伤害），也可以用手投掷（远程接触攻击，射程20尺，1d6+1伤害）。",
+    "source": "PHB"
+  },
+  {
     "id": "mount_spell",
     "nameEn": "Mount",
     "nameZh": "召唤坐骑",
@@ -907,6 +955,38 @@ const SPELLS = [
     "source": "3R"
   },
   {
+    "id": "obscuring_mist",
+    "nameEn": "Obscuring Mist",
+    "nameZh": "云雾术",
+    "level": 1,
+    "school": "咒法系",
+    "components": "V,S",
+    "castingTime": "1标准动作",
+    "range": "中距 (100尺+10尺/环)",
+    "target": "20尺半径扩散，20尺高",
+    "duration": "1分钟/等级",
+    "savingThrow": "无",
+    "spellResist": "否",
+    "desc": "你创造一团乳白色的迷雾笼罩区域。雾中所有生物获得半隐蔽（20%失手率）。超出5尺距离的生物获得全隐蔽（50%失手率且无法精确定位）。强风（11mph以上）在4轮内驱散雾气，烈风（21mph以上）在1轮内驱散。",
+    "source": "PHB"
+  },
+  {
+    "id": "produce_flame",
+    "nameEn": "Produce Flame",
+    "nameZh": "燃火术",
+    "level": 1,
+    "school": "塑能系",
+    "components": "V,S",
+    "castingTime": "1标准动作",
+    "range": "个人",
+    "target": "你",
+    "duration": "1分钟/等级或直至耗尽",
+    "savingThrow": "无",
+    "spellResist": "否",
+    "desc": "你手掌上产生一团火焰，照亮周围。你可以将火焰投掷出去进行远程接触攻击（射程120尺），命中造成1d6+每施法者等级1点火焰伤害（最多+5）。每次投掷消耗一团火焰，直到所有火焰耗尽法术结束。",
+    "source": "PHB"
+  },
+  {
     "id": "protection_from_alignment",
     "nameEn": "Protection from Alignment",
     "nameZh": "防护自阵营",
@@ -923,6 +1003,22 @@ const SPELLS = [
     "source": "3R"
   },
   {
+    "id": "protection_from_chaos",
+    "nameEn": "Protection from Chaos",
+    "nameZh": "防护混乱",
+    "level": 1,
+    "school": "防护系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "触碰的生物",
+    "duration": "1分钟/等级(D)",
+    "savingThrow": "意志过则无害",
+    "spellResist": "是（无害）",
+    "desc": "受术者获得：对混乱生物+2偏斜AC加值和+2抗力豁免加值；免疫混乱生物的精神控制；阻止混乱阵营的召唤生物靠近（需通过法术抗力检定）。",
+    "source": "PHB"
+  },
+  {
     "id": "protection_from_evil",
     "nameEn": "Protection from Evil",
     "nameZh": "防护自邪恶",
@@ -936,6 +1032,22 @@ const SPELLS = [
     "savingThrow": "意志过则无害",
     "spellResist": "是（无害）",
     "desc": "受术者获得：+2偏斜AC对抗指定阵营生物；无法被该阵营生物自然恐吓；该阵营生物无法用触碰攻击命中你（需通过施法者等级检定）；受术者对精神影响的豁免+2对抗该阵营生物。有五个版本：防护自（混乱/邪恶/善良/守序/反制）。",
+    "source": "PHB"
+  },
+  {
+    "id": "protection_from_law",
+    "nameEn": "Protection from Law",
+    "nameZh": "防护守序",
+    "level": 1,
+    "school": "防护系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "触碰的生物",
+    "duration": "1分钟/等级(D)",
+    "savingThrow": "意志过则无害",
+    "spellResist": "是（无害）",
+    "desc": "受术者获得：对守序生物+2偏斜AC加值和+2抗力豁免加值；免疫守序生物的精神控制；阻止守序阵营的召唤生物靠近（需通过法术抗力检定）。",
     "source": "PHB"
   },
   {
@@ -1428,6 +1540,22 @@ const SPELLS = [
     "source": "PHB"
   },
   {
+    "id": "desecrate",
+    "nameEn": "Desecrate",
+    "nameZh": "亵渎术",
+    "level": 2,
+    "school": "死灵系",
+    "components": "V,S,M,DF",
+    "castingTime": "1标准动作",
+    "range": "近距 (25尺+5尺/2环)",
+    "target": "20尺半径扩散",
+    "duration": "2小时/等级",
+    "savingThrow": "无",
+    "spellResist": "是",
+    "desc": "此法术使一个区域充满邪恶力量。该区域内的不死生物在攻击、伤害和豁免上获得+1亵渎加值，每次HD检定也获得+1加值。该区域内创造的亡灵HP获得+1/HD的亵渎加值。区域内若有祭坛或神殿，效果翻倍（+2）。善良神殿被压制。",
+    "source": "PHB"
+  },
+  {
     "id": "detect_thoughts",
     "nameEn": "Detect Thoughts",
     "nameZh": "侦测思想",
@@ -1687,6 +1815,22 @@ const SPELLS = [
     "spellResist": "是（无害）",
     "desc": "受术者在持续时间内可以在同一次移动动作中进行一次冲锋并施展一次猛力攻击，且不会受到攻击加值减值。",
     "source": "3R"
+  },
+  {
+    "id": "locate_object",
+    "nameEn": "Locate Object",
+    "nameZh": "定位物品",
+    "level": 2,
+    "school": "预言系",
+    "components": "V,S,F/DF",
+    "castingTime": "1标准动作",
+    "range": "长距 (400尺+40尺/环)",
+    "target": "见描述",
+    "duration": "1分钟/等级",
+    "savingThrow": "无",
+    "spellResist": "否",
+    "desc": "你感知指定物品的方向。你可以搜寻一个特定物品（必须曾经亲眼见过）或一类物品（如钥匙、金币等）。此法术被铅板或某些魔法效果所阻挡。你每轮可转向一个新的方向。",
+    "source": "PHB"
   },
   {
     "id": "logic_lapse",
@@ -1997,6 +2141,22 @@ const SPELLS = [
     "source": "3R"
   },
   {
+    "id": "unholy_blade",
+    "nameEn": "Unholy Blight",
+    "nameZh": "邪暗之刃",
+    "level": 2,
+    "school": "死灵系",
+    "components": "V,S",
+    "castingTime": "1标准动作",
+    "range": "近距 (25尺+5尺/2环)",
+    "target": "见描述",
+    "duration": "立即",
+    "savingThrow": "无",
+    "spellResist": "是",
+    "desc": "你创造一把邪恶的黑色利刃，对目标造成1d8点伤害（每2个施法者等级+1，最多+5）。此武器视为魔法武器和邪恶武器，对善良生物造成额外1d6点伤害。",
+    "source": "PHB"
+  },
+  {
     "id": "web",
     "nameEn": "Web",
     "nameZh": "蛛网术",
@@ -2242,6 +2402,22 @@ const SPELLS = [
     "source": "PHB"
   },
   {
+    "id": "dominate_animal",
+    "nameEn": "Dominate Animal",
+    "nameZh": "控制动物",
+    "level": 3,
+    "school": "惑控系",
+    "components": "V,S",
+    "castingTime": "1轮",
+    "range": "近距 (25尺+5尺/2环)",
+    "target": "一个动物",
+    "duration": "1轮/等级",
+    "savingThrow": "意志过则无效",
+    "spellResist": "是",
+    "desc": "你可以控制一个动物的行动，通过精神链接与它建立心灵感应。你不需要控制它的感官，但可以通过它的眼睛看。动物会执行你命令的任何动作，即使超出它的正常能力（但不会自杀）。",
+    "source": "PHB"
+  },
+  {
     "id": "esp",
     "nameEn": "ESP",
     "nameZh": "心灵感应",
@@ -2470,6 +2646,70 @@ const SPELLS = [
     "desc": "创造一个对抗混乱生物的防护法阵。混乱生物无法进入法阵，法阵内的生物获得+2抗混乱豁免加值。",
     "material": "价值至少100金币的银质法器",
     "source": "3R"
+  },
+  {
+    "id": "magic_circle_against_chaos",
+    "nameEn": "Magic Circle against Chaos",
+    "nameZh": "反混乱法阵",
+    "level": 3,
+    "school": "防护系",
+    "components": "V,S,M,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "10尺半径内的一个生物/10尺半径 emanation",
+    "duration": "10分钟/等级",
+    "savingThrow": "见描述",
+    "spellResist": "见描述",
+    "desc": "此法术的功能如同防护混乱，但范围更大且持续时间更长。区域内所有生物获得防护混乱的好处。此外，此法术阻止混乱阵营的召唤生物进入区域（需通过法术抗力检定），并且可以用来困住一个非邪恶生物（反方向施法）。",
+    "source": "PHB"
+  },
+  {
+    "id": "magic_circle_against_evil",
+    "nameEn": "Magic Circle against Evil",
+    "nameZh": "反邪恶法阵",
+    "level": 3,
+    "school": "防护系",
+    "components": "V,S,M,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "10尺半径内的一个生物/10尺半径 emanation",
+    "duration": "10分钟/等级",
+    "savingThrow": "见描述",
+    "spellResist": "见描述",
+    "desc": "此法术的功能如同防护自邪恶，但范围更大且持续时间更长。区域内所有生物获得防护自邪恶的好处。此外，此法术阻止邪恶阵营的召唤生物进入区域（需通过法术抗力检定），并且可以用来困住一个非邪恶生物（反方向施法）。",
+    "source": "PHB"
+  },
+  {
+    "id": "magic_circle_against_good",
+    "nameEn": "Magic Circle against Good",
+    "nameZh": "反善良法阵",
+    "level": 3,
+    "school": "防护系",
+    "components": "V,S,M,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "10尺半径内的一个生物/10尺半径 emanation",
+    "duration": "10分钟/等级",
+    "savingThrow": "见描述",
+    "spellResist": "见描述",
+    "desc": "此法术的功能如同防护自善良，但范围更大且持续时间更长。区域内所有生物获得防护自善良的好处。此外，此法术阻止善良阵营的召唤生物进入区域（需通过法术抗力检定），并且可以用来困住一个非善良生物（反方向施法）。",
+    "source": "PHB"
+  },
+  {
+    "id": "magic_circle_against_law",
+    "nameEn": "Magic Circle against Law",
+    "nameZh": "反守序法阵",
+    "level": 3,
+    "school": "防护系",
+    "components": "V,S,M,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "10尺半径内的一个生物/10尺半径 emanation",
+    "duration": "10分钟/等级",
+    "savingThrow": "见描述",
+    "spellResist": "见描述",
+    "desc": "此法术的功能如同防护守序，但范围更大且持续时间更长。区域内所有生物获得防护守序的好处。此外，此法术阻止守序阵营的召唤生物进入区域（需通过法术抗力检定），并且可以用来困住一个非守序生物（反方向施法）。",
+    "source": "PHB"
   },
   {
     "id": "magic_vestment",
@@ -3481,6 +3721,22 @@ const SPELLS = [
     "source": "PHB"
   },
   {
+    "id": "soften_earth_and_stone",
+    "nameEn": "Soften Earth and Stone",
+    "nameZh": "软化泥石",
+    "level": 4,
+    "school": "变化系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "近距 (25尺+5尺/2环)",
+    "target": "10尺见方/等级",
+    "duration": "立即",
+    "savingThrow": "无",
+    "spellResist": "否",
+    "desc": "此法术将天然泥土和石头软化为可塑的黏土状物质。泥土变为泥沼（需要力量检定或逃脱术检定才能移动），石头变为柔软的黏土。魔法的、附魔的或加工过的石头不受影响。",
+    "source": "PHB"
+  },
+  {
     "id": "spell_immunity",
     "nameEn": "Spell Immunity",
     "nameZh": "法术免疫",
@@ -3494,6 +3750,22 @@ const SPELLS = [
     "savingThrow": "意志过（无害）",
     "spellResist": "是（无害）",
     "desc": "受术者对特定法术免疫。你可以指定每4等级一个法术（最大5个），受术者对这些法术完全免疫。",
+    "source": "PHB"
+  },
+  {
+    "id": "spike_stones",
+    "nameEn": "Spike Stones",
+    "nameZh": "刺石术",
+    "level": 4,
+    "school": "变化系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "中距 (100尺+10尺/环)",
+    "target": "每等级一个20尺见方区域",
+    "duration": "1小时/等级(D)",
+    "savingThrow": "反射过则减半",
+    "spellResist": "是",
+    "desc": "岩石地面、泥土、石地板等变形为尖锐的刺状突起。进入区域的生物受到1d8点穿刺伤害，并且速度减半。成功的反射豁免可以避免伤害，但速度减半效果持续到离开区域。",
     "source": "PHB"
   },
   {
@@ -3527,6 +3799,22 @@ const SPELLS = [
     "savingThrow": "无",
     "spellResist": "否",
     "desc": "你召唤一个CR4或更低的生物为你作战。常见选择：1个石巨人、1个大型土元素、1个大型水元素、1个仲裁者、1个死灵虫等。召唤物出现后会攻击你的敌人。如果你在法术持续期间失去意识或死亡，召唤物消失。",
+    "source": "PHB"
+  },
+  {
+    "id": "summon_natures_ally_iv",
+    "nameEn": "Summon Nature's Ally IV",
+    "nameZh": "召唤自然盟友四",
+    "level": 4,
+    "school": "咒法系",
+    "components": "V, S, DF",
+    "castingTime": "1轮",
+    "range": "近距 (25尺+5尺/2环)",
+    "target": "见描述",
+    "duration": "1轮/等级(D)",
+    "savingThrow": "无",
+    "spellResist": "否",
+    "desc": "此法术召唤一个自然生物来为你作战。你可以从召唤自然盟友IV列表中选择一个生物。生物出现在你指定的位置并立即行动。你可以召唤：1个中型元素、1d3个小型元素、1个大型动物、1d3个中型动物等。",
     "source": "PHB"
   },
   {
@@ -3772,6 +4060,54 @@ const SPELLS = [
     "source": "3R"
   },
   {
+    "id": "dispel_chaos",
+    "nameEn": "Dispel Chaos",
+    "nameZh": "解除混乱",
+    "level": 5,
+    "school": "防护系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "你或一个触碰的生物",
+    "duration": "1轮/等级或直至耗尽",
+    "savingThrow": "见描述",
+    "spellResist": "见描述",
+    "desc": "此法术产生蓝色光芒。它有两种功能：防御性——你获得对混乱法术和混乱生物的+4偏斜AC加值；进攻性——触碰一个被混乱法术影响的生物自动解除该效果，或触碰一个混乱阵营的召唤生物将其驱逐（需通过法术抗力）。",
+    "source": "PHB"
+  },
+  {
+    "id": "dispel_evil",
+    "nameEn": "Dispel Evil",
+    "nameZh": "解除邪恶",
+    "level": 5,
+    "school": "防护系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "你或一个触碰的生物",
+    "duration": "1轮/等级或直至耗尽",
+    "savingThrow": "见描述",
+    "spellResist": "见描述",
+    "desc": "此法术产生白色光芒。它有两种功能：防御性——你获得对邪恶法术和邪恶生物的+4偏斜AC加值；进攻性——触碰一个被邪恶法术影响的生物自动解除该效果，或触碰一个邪恶阵营的召唤生物将其驱逐（需通过法术抗力）。",
+    "source": "PHB"
+  },
+  {
+    "id": "dispel_good",
+    "nameEn": "Dispel Good",
+    "nameZh": "解除善良",
+    "level": 5,
+    "school": "防护系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "触碰",
+    "target": "你或一个触碰的生物",
+    "duration": "1轮/等级或直至耗尽",
+    "savingThrow": "见描述",
+    "spellResist": "见描述",
+    "desc": "此法术产生黑色光芒。它有两种功能：防御性——你获得对善良法术和善良生物的+4偏斜AC加值；进攻性——触碰一个被善良法术影响的生物自动解除该效果，或触碰一个善良阵营的召唤生物将其驱逐（需通过法术抗力）。",
+    "source": "PHB"
+  },
+  {
     "id": "dispel_law",
     "nameEn": "Dispel Law",
     "nameZh": "解除守序",
@@ -3979,6 +4315,22 @@ const SPELLS = [
     "savingThrow": "意志过则无害",
     "spellResist": "是（无害）",
     "desc": "受术者获得飞行速度80尺（不良机动性）。比飞行术更快，适合长距离旅行。",
+    "source": "PHB"
+  },
+  {
+    "id": "permanency",
+    "nameEn": "Permanency",
+    "nameZh": "魔法恒定术",
+    "level": 5,
+    "school": "通用系",
+    "components": "V,S,XP",
+    "castingTime": "2轮",
+    "range": "见描述",
+    "target": "见描述",
+    "duration": "永久(见描述)",
+    "savingThrow": "无",
+    "spellResist": "否",
+    "desc": "此法术使某些其他法术的效果变为永久。根据法术的不同，需要消耗不同数量的经验值（500-2500XP）。可恒定的法术包括：奥术视觉、侦测魔法、阅读魔法、舌头、隐身（仅对物品）、法师之手等。被解除魔法击中时有5%概率被解除。",
     "source": "PHB"
   },
   {
@@ -4344,6 +4696,22 @@ const SPELLS = [
     "source": "PHB"
   },
   {
+    "id": "antilife_shell",
+    "nameEn": "Antilife Shell",
+    "nameZh": "反生命护罩",
+    "level": 6,
+    "school": "防护系",
+    "components": "V,S,DF",
+    "castingTime": "1轮",
+    "range": "10尺",
+    "target": "以你为中心的10尺半径 emanation",
+    "duration": "10分钟/等级(D)",
+    "savingThrow": "无",
+    "spellResist": "是",
+    "desc": "你周围产生一个可移动的半球形力场，阻止所有活物进入。活物无法穿过此屏障，但法术、远程攻击和非活物（如不死生物和构装体）可以穿过。如果你强制将屏障推向生物则法术结束。",
+    "source": "PHB"
+  },
+  {
     "id": "antimagic_field",
     "nameEn": "Antimagic Field",
     "nameZh": "反魔法场",
@@ -4391,6 +4759,22 @@ const SPELLS = [
     "spellResist": "否",
     "desc": "你可以将自己变成任何体型动物的形状，包括魔法兽。你可以获得该生物的所有能力。",
     "source": "3R"
+  },
+  {
+    "id": "blade_barrier",
+    "nameEn": "Blade Barrier",
+    "nameZh": "剑刃障壁",
+    "level": 6,
+    "school": "塑能系",
+    "components": "V,S",
+    "castingTime": "1标准动作",
+    "range": "中距 (100尺+10尺/环)",
+    "target": "每等级20尺长或环形半径20尺，高20尺",
+    "duration": "1分钟/等级(D)",
+    "savingThrow": "反射过则减半",
+    "spellResist": "是",
+    "desc": "你创造一道由旋转飞刃组成的不可穿越的屏障。通过此屏障的生物受到1d6点伤害/等级（最多15d6）。成功的反射豁免减半伤害。屏障提供3/4掩蔽。",
+    "source": "PHB"
   },
   {
     "id": "bolt_of_glory",
@@ -5597,6 +5981,22 @@ const SPELLS = [
     "source": "PHB"
   },
   {
+    "id": "project_image",
+    "nameEn": "Project Image",
+    "nameZh": "投影术",
+    "level": 7,
+    "school": "幻术系",
+    "components": "V,S,M",
+    "castingTime": "1标准动作",
+    "range": "中距 (100尺+10尺/环)",
+    "target": "一个幻象复制体",
+    "duration": "1轮/等级(D)",
+    "savingThrow": "意志过则不信(若互动)",
+    "spellResist": "否",
+    "desc": "你创造一个自己的半真实幻影。此幻影看起来完全像你，可以说话和做手势。你可以通过幻影的感官看和听。你可以从幻影的位置施放射程为触碰或更远的法术。幻影与本体之间不能超过中距范围。",
+    "source": "PHB"
+  },
+  {
     "id": "regenerate",
     "nameEn": "Regenerate",
     "nameZh": "再生术",
@@ -5795,6 +6195,22 @@ const SPELLS = [
     "source": "3R"
   },
   {
+    "id": "sunray",
+    "nameEn": "Sunray",
+    "nameZh": "阳炎射线",
+    "level": 7,
+    "school": "塑能系",
+    "components": "V,S",
+    "castingTime": "1标准动作",
+    "range": "60尺",
+    "target": "射线",
+    "duration": "立即",
+    "savingThrow": "反射过则减半",
+    "spellResist": "是",
+    "desc": "你发射一道强烈的阳光射线。射线对目标造成1d6点伤害/等级（最多25d6）。对不死生物造成双倍伤害。此外，所有在射线30尺内的生物如同受到目盲术效果（反射豁免避免），持续1d3轮。",
+    "source": "PHB"
+  },
+  {
     "id": "teleport",
     "nameEn": "Teleport",
     "nameZh": "传送术",
@@ -5808,6 +6224,22 @@ const SPELLS = [
     "savingThrow": "无",
     "spellResist": "否",
     "desc": "你瞬间传送到一个目的地。你需要有对目的地的「熟悉」程度：1=偶然见过（65%成功）；2=见过两次或以上（85%成功）；3=非常熟悉（95%成功）；4=研究过（99%成功）；5=视野内（100%成功）；6=与框架锁定（100%成功）。失败可能导致错误传送（d100：01-50=轻微偏差1d10×1d10尺；51-95=严重偏差1d10×1d10×10尺；96-100=意外异界传送）。",
+    "source": "PHB"
+  },
+  {
+    "id": "unholy_word",
+    "nameEn": "Unholy Word",
+    "nameZh": "邪言术",
+    "level": 7,
+    "school": "塑能系",
+    "components": "V",
+    "castingTime": "1标准动作",
+    "range": "40尺扩散",
+    "target": "区域内的非邪恶生物",
+    "duration": "见描述",
+    "savingThrow": "无或意志过则无效",
+    "spellResist": "是",
+    "desc": "你说出一个邪恶词语。区域内的非邪恶生物受到影响：HD≤施法者等级的生物被杀死；HD≤施法者等级+10的生物被震慑1d10轮；HD更高的生物被减速1d10轮（意志豁免避免非死亡效果）。善良阵营的召唤生物被驱逐。",
     "source": "PHB"
   },
   {
@@ -5825,6 +6257,22 @@ const SPELLS = [
     "spellResist": "是",
     "desc": "你说出一个混乱真言。守序生物受到以下效果（基于HD）：HD9或更少→立即死亡；HD10-18→目盲、耳聋、目盲1d4轮；HD19+→目盲1轮。守序生物可以通过强韧检定来减半效果。",
     "source": "3R"
+  },
+  {
+    "id": "animal_shapes",
+    "nameEn": "Animal Shapes",
+    "nameZh": "动物变化",
+    "level": 8,
+    "school": "变化系",
+    "components": "V,S,DF",
+    "castingTime": "1标准动作",
+    "range": "近距 (25尺+5尺/2环)",
+    "target": "每等级1个自愿生物，相互之间30尺内",
+    "duration": "1小时/等级(D)",
+    "savingThrow": "无",
+    "spellResist": "是（无害）",
+    "desc": "此法术让多个自愿生物变形为同一种动物。与变形术不同，受术者保留自己的HD、HP和阵营，但获得新形态的力量、敏捷、体质、天生护甲和特殊攻击。可选的动物包括：猿、熊、野猪、猎豹、鳄鱼、狗、鹰、狮、蜥蜴、豹、鼠、猫头鹰、蛇、狼等。",
+    "source": "PHB"
   },
   {
     "id": "antipathy",
@@ -5857,6 +6305,22 @@ const SPELLS = [
     "spellResist": "是",
     "desc": "你发射多道混乱能量的射线，每道对一个目标造成1d8点伤害/等级（最大15d8）。你可以指定最多一个目标/等级。",
     "source": "3R"
+  },
+  {
+    "id": "cloak_of_chaos",
+    "nameEn": "Cloak of Chaos",
+    "nameZh": "混乱护罩",
+    "level": 8,
+    "school": "防护系",
+    "components": "V,S,F",
+    "castingTime": "1标准动作",
+    "range": "20尺",
+    "target": "以你为中心的20尺半径内每等级1个生物",
+    "duration": "1轮/等级(D)",
+    "savingThrow": "见描述",
+    "spellResist": "是（无害）",
+    "desc": "此法术产生随机颜色的光芒保护受术者。效果包括：对守序法术+4偏斜AC加值和+4抗力豁免加值；对守序生物的AC+4偏斜加值；法术免疫25%。此外，攻击受术者的守序生物需通过意志豁免否则被困惑1轮。",
+    "source": "PHB"
   },
   {
     "id": "clone",

@@ -17,7 +17,6 @@ const SPELL_DOMAINS = {
   "air_walk": ["气"],
   "control_winds": ["气"],
   "chain_lightning": ["气"],
-  "elemental_body_air": ["气"],
   "whirlwind": ["气"],
   "elemental_swarm": ["气", "土", "火"],
 
@@ -30,15 +29,14 @@ const SPELL_DOMAINS = {
   "antilife_shell": ["动物"],
   "creeping_doom": ["动物"],
   "animal_shapes": ["动物"],
-  "summon_natures_ally_ix": ["动物"],
+  "summon_natures_ally_9": ["动物"],
 
   // ===== 混乱领域 (Chaos) =====
-  "protect_from_law": ["混乱"],
+  "protection_from_law": ["混乱"],
   "dispel_law": ["混乱"],
   "magic_circle_against_law": ["混乱"],
   "chaos_hammer": ["混乱"],
   "word_of_chaos": ["混乱"],
-  "power_word_chaos": ["混乱"],
   "cloak_of_chaos": ["混乱"],
   "summon_monster_9_chaos": ["混乱"],
 
@@ -128,7 +126,6 @@ const SPELL_DOMAINS = {
   "protection_from_chaos": ["守序"],
   "calm_emotions": ["守序"],
   "magic_circle_against_chaos": ["守序"],
-  "order_whip": ["守序"],
   "dispel_chaos": ["守序"],
   "hold_monster": ["守序"],
   "dictum": ["守序"],
@@ -154,11 +151,10 @@ const SPELL_DOMAINS = {
   "spell_resistance": ["魔法", "防护"],
   "antimagic_field": ["魔法", "防护"],
   "permanency": ["魔法"],
-  "mage_s_layer": ["魔法"],
 
   // ===== 植物领域 (Plant) =====
   "entangle": ["植物"],
-  "_tree_empathy_2": ["植物"],
+  "speak_with_plants": ["植物"],
   "plant_growth": ["植物"],
   "command_plants": ["植物"],
   "wall_of_thorns": ["植物"],
@@ -176,7 +172,7 @@ const SPELL_DOMAINS = {
 
   // ===== 力量领域 (Strength) =====
   "enlarge_person": ["力量"],
-  "bulls_strength": ["力量"],
+  "bull_s_strength": ["力量"],
   "magic_vestment": ["力量"],
   "divine_power": ["力量", "战争"],
   "righteous_might": ["力量"],
@@ -199,7 +195,6 @@ const SPELL_DOMAINS = {
   "fly": ["旅行"],
   "dimension_door": ["旅行"],
   "overland_flight": ["旅行"],
-  "teleport_object": ["旅行"],
   "phase_door": ["旅行"],
   "astral_projection": ["旅行"],
 
@@ -219,14 +214,11 @@ const SPELL_DOMAINS = {
   "flame_strike": ["战争"],
 
   // ===== 水领域 (Water) =====
-  "watery_bubble": ["水"],
   "water_breathing": ["水"],
   "control_water": ["水"],
   "ice_storm": ["水"],
-  "acid_fog": ["水"],
-  "vortex": ["水"],
+  "acid_fog_6": ["水"],
   "horrid_wilting": ["水"],
-  "energy_flood_cold": ["水"],
 };
 
 // 领域名称中英文映射

@@ -4337,6 +4337,296 @@ var GLOBAL_SEARCH_DATA = {
     "school": "通用系",
     "source": "3R",
     "url": "spells/level9.html"
+  },
+  {
+    "id": "calm_animals",
+    "nameZh": "安抚动物",
+    "nameEn": "Calm Animals",
+    "type": "spell",
+    "level": 1,
+    "school": "惑控系",
+    "source": "PHB",
+    "url": "spells/level1.html"
+  },
+  {
+    "id": "disguise_self",
+    "nameZh": "伪装术",
+    "nameEn": "Disguise Self",
+    "type": "spell",
+    "level": 1,
+    "school": "幻术系",
+    "source": "PHB",
+    "url": "spells/level1.html"
+  },
+  {
+    "id": "magic_stone",
+    "nameZh": "魔石术",
+    "nameEn": "Magic Stone",
+    "type": "spell",
+    "level": 1,
+    "school": "变化系",
+    "source": "PHB",
+    "url": "spells/level1.html"
+  },
+  {
+    "id": "obscuring_mist",
+    "nameZh": "云雾术",
+    "nameEn": "Obscuring Mist",
+    "type": "spell",
+    "level": 1,
+    "school": "咒法系",
+    "source": "PHB",
+    "url": "spells/level1.html"
+  },
+  {
+    "id": "produce_flame",
+    "nameZh": "燃火术",
+    "nameEn": "Produce Flame",
+    "type": "spell",
+    "level": 1,
+    "school": "塑能系",
+    "source": "PHB",
+    "url": "spells/level1.html"
+  },
+  {
+    "id": "protection_from_chaos",
+    "nameZh": "防护混乱",
+    "nameEn": "Protection from Chaos",
+    "type": "spell",
+    "level": 1,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level1.html"
+  },
+  {
+    "id": "protection_from_law",
+    "nameZh": "防护守序",
+    "nameEn": "Protection from Law",
+    "type": "spell",
+    "level": 1,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level1.html"
+  },
+  {
+    "id": "desecrate",
+    "nameZh": "亵渎术",
+    "nameEn": "Desecrate",
+    "type": "spell",
+    "level": 2,
+    "school": "死灵系",
+    "source": "PHB",
+    "url": "spells/level2.html"
+  },
+  {
+    "id": "locate_object",
+    "nameZh": "定位物品",
+    "nameEn": "Locate Object",
+    "type": "spell",
+    "level": 2,
+    "school": "预言系",
+    "source": "PHB",
+    "url": "spells/level2.html"
+  },
+  {
+    "id": "unholy_blade",
+    "nameZh": "邪暗之刃",
+    "nameEn": "Unholy Blight",
+    "type": "spell",
+    "level": 2,
+    "school": "死灵系",
+    "source": "PHB",
+    "url": "spells/level2.html"
+  },
+  {
+    "id": "dominate_animal",
+    "nameZh": "控制动物",
+    "nameEn": "Dominate Animal",
+    "type": "spell",
+    "level": 3,
+    "school": "惑控系",
+    "source": "PHB",
+    "url": "spells/level3.html"
+  },
+  {
+    "id": "magic_circle_against_chaos",
+    "nameZh": "反混乱法阵",
+    "nameEn": "Magic Circle against Chaos",
+    "type": "spell",
+    "level": 3,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level3.html"
+  },
+  {
+    "id": "magic_circle_against_evil",
+    "nameZh": "反邪恶法阵",
+    "nameEn": "Magic Circle against Evil",
+    "type": "spell",
+    "level": 3,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level3.html"
+  },
+  {
+    "id": "magic_circle_against_good",
+    "nameZh": "反善良法阵",
+    "nameEn": "Magic Circle against Good",
+    "type": "spell",
+    "level": 3,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level3.html"
+  },
+  {
+    "id": "magic_circle_against_law",
+    "nameZh": "反守序法阵",
+    "nameEn": "Magic Circle against Law",
+    "type": "spell",
+    "level": 3,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level3.html"
+  },
+  {
+    "id": "soften_earth_and_stone",
+    "nameZh": "软化泥石",
+    "nameEn": "Soften Earth and Stone",
+    "type": "spell",
+    "level": 4,
+    "school": "变化系",
+    "source": "PHB",
+    "url": "spells/level4.html"
+  },
+  {
+    "id": "spike_stones",
+    "nameZh": "刺石术",
+    "nameEn": "Spike Stones",
+    "type": "spell",
+    "level": 4,
+    "school": "变化系",
+    "source": "PHB",
+    "url": "spells/level4.html"
+  },
+  {
+    "id": "summon_natures_ally_iv",
+    "nameZh": "召唤自然盟友四",
+    "nameEn": "Summon Nature's Ally IV",
+    "type": "spell",
+    "level": 4,
+    "school": "咒法系",
+    "source": "PHB",
+    "url": "spells/level4.html"
+  },
+  {
+    "id": "dispel_chaos",
+    "nameZh": "解除混乱",
+    "nameEn": "Dispel Chaos",
+    "type": "spell",
+    "level": 5,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level5.html"
+  },
+  {
+    "id": "dispel_evil",
+    "nameZh": "解除邪恶",
+    "nameEn": "Dispel Evil",
+    "type": "spell",
+    "level": 5,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level5.html"
+  },
+  {
+    "id": "dispel_good",
+    "nameZh": "解除善良",
+    "nameEn": "Dispel Good",
+    "type": "spell",
+    "level": 5,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level5.html"
+  },
+  {
+    "id": "permanency",
+    "nameZh": "魔法恒定术",
+    "nameEn": "Permanency",
+    "type": "spell",
+    "level": 5,
+    "school": "通用系",
+    "source": "PHB",
+    "url": "spells/level5.html"
+  },
+  {
+    "id": "antilife_shell",
+    "nameZh": "反生命护罩",
+    "nameEn": "Antilife Shell",
+    "type": "spell",
+    "level": 6,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level6.html"
+  },
+  {
+    "id": "blade_barrier",
+    "nameZh": "剑刃障壁",
+    "nameEn": "Blade Barrier",
+    "type": "spell",
+    "level": 6,
+    "school": "塑能系",
+    "source": "PHB",
+    "url": "spells/level6.html"
+  },
+  {
+    "id": "project_image",
+    "nameZh": "投影术",
+    "nameEn": "Project Image",
+    "type": "spell",
+    "level": 7,
+    "school": "幻术系",
+    "source": "PHB",
+    "url": "spells/level7.html"
+  },
+  {
+    "id": "sunray",
+    "nameZh": "阳炎射线",
+    "nameEn": "Sunray",
+    "type": "spell",
+    "level": 7,
+    "school": "塑能系",
+    "source": "PHB",
+    "url": "spells/level7.html"
+  },
+  {
+    "id": "unholy_word",
+    "nameZh": "邪言术",
+    "nameEn": "Unholy Word",
+    "type": "spell",
+    "level": 7,
+    "school": "塑能系",
+    "source": "PHB",
+    "url": "spells/level7.html"
+  },
+  {
+    "id": "animal_shapes",
+    "nameZh": "动物变化",
+    "nameEn": "Animal Shapes",
+    "type": "spell",
+    "level": 8,
+    "school": "变化系",
+    "source": "PHB",
+    "url": "spells/level8.html"
+  },
+  {
+    "id": "cloak_of_chaos",
+    "nameZh": "混乱护罩",
+    "nameEn": "Cloak of Chaos",
+    "type": "spell",
+    "level": 8,
+    "school": "防护系",
+    "source": "PHB",
+    "url": "spells/level8.html"
   }
   ],
 
