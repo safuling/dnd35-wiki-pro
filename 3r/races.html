@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扩展种族大全 — 3R扩展大全 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .race-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .race-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .race-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+  .race-card h3 { margin-top: 0; }
+  .race-card .race-meta { font-size: 13px; color: #777; margin: 8px 0; }
+  .race-card .race-traits { font-size: 13px; margin-top: 10px; }
+  .race-card .race-traits li { margin-bottom: 4px; }
+  .source-group-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-heading);
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 6px;
+    margin: 32px 0 16px;
+  }
+  .la-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 6px;
+  }
+  .la-0 { background: var(--accent-green); color: #fff; }
+  .la-1 { background: var(--accent-gold); color: #fff; }
+  .la-2 { background: var(--accent-red); color: #fff; }
+  .la-3 { background: var(--accent-purple); color: #fff; }
+  .la-4 { background: #8b0000; color: #fff; }
+  .stat-positive { color: var(--accent-green); font-weight: 600; }
+  .stat-negative { color: var(--accent-red); font-weight: 600; }
+  .sigil-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .sigil-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 14px;
+    font-size: 13px;
+  }
+  .sigil-item strong { color: var(--accent-gold); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">3R 扩展大全</div>
+      <a href="index-v2.html">总览</a>
+      <a href="classes.html">扩展职业</a>
+      <a href="races.html" class="active">扩展种族</a>
+      <a href="feats.html">扩展专长</a>
+      <a href="spells.html">扩展法术</a>
+      <a href="equipment.html">扩展装备</a>
+      <a href="monsters.html">扩展怪物</a>
+      <a href="supplements.html">专题扩展</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">主站</div>
+      <a href="../index.html">首页</a>
+      <a href="../races/intro.html">核心种族</a>
+      <a href="../races/expanded-races.html">扩展种族</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>📖 3R 扩展种族大全</h1>
+    <p class="toc-desc">本页面是主站 <a href="../races/expanded-races.html">扩展种族</a> 页面的深度补充。
+    主站已覆盖 12 个基础扩展种族（阿斯玛、提夫林、歌利亚、徽民、翼人、铸甲体、变形者、变形人、卡拉什塔、灰矮人、深侏儒、半龙），
+    本页面则聚焦于这些种族的<strong>亚种变体、种族替代等级、种族专长</strong>等扩展内容，
+    并新增来自 <strong>Races of Stone / Wild / Destiny / Dragon</strong>、<strong>Monster Manual</strong> 及 <strong>Fiend Folio</strong> 的全新种族。
+    所有数据基于官方 3.5e 扩展规则书。</p>
+
+    <!-- 目录 -->
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#ros">Races of Stone（石之种族）</a></li>
+        <li><a href="#row">Races of the Wild（荒野种族）</a></li>
+        <li><a href="#rod">Races of Destiny（命运种族）</a></li>
+        <li><a href="#rodr">Races of the Dragon（龙之种族）</a></li>
+        <li><a href="#mm">Monster Manual 扩展种族</a></li>
+        <li><a href="#substitution">种族特性替代规则</a></li>
+        <li><a href="#comparison">种族对比总表</a></li>
+        <li><a href="#guide">种族选择指南</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         一、Races of Stone (石之种族)
+         ============================================================ -->
+    <h2 id="ros">⛏️ 一、Races of Stone（石之种族）</h2>
+    <p>《Races of Stone》深入挖掘了与大地、山岩相关的种族文化，重点扩展了矮人亚种体系，
+    并引入了歌利亚的种族替代等级和全新的半巨人种族。</p>
+
+    <h3 class="source-group-title">矮人亚种与扩展</h3>
+
+    <div class="race-grid">
+
+      <!-- 盾矮人 -->
+      <div class="race-card" id="shield-dwarf">
+        <h3>盾矮人 Shield Dwarf <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 体质+2/魅力-2 · 偏好职业：战士 · Races of Stone</div>
+        <p>最常见的矮人亚种，居住在山岳和丘陵地带。盾矮人以<strong>坚韧不拔</strong>和
+        <strong>精湛工艺</strong>闻名，是矮人文化的典型代表。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 体质</span> / <span class="stat-negative">-2 魅力</span></li>
+            <li><strong>黑暗视觉</strong> 60 英尺</li>
+            <li><strong>石之认知（Stonecunning）</strong>：对石质结构（异常石墙、石制陷阱等）的搜索检定 +2 种族加值</li>
+            <li><strong>贪婪（Greed）</strong>：对宝石和贵金属制品的估价检定 +2 种族加值</li>
+            <li><strong>矮人武器熟悉</strong>：自动熟悉矮人战斧和矮人重锤</li>
+            <li><strong>稳定性</strong>：对抗冲撞和绊摔时 +4 稳定加值</li>
+            <li><strong>抗毒</strong>：对抗毒素的强韧豁免 +2 种族加值</li>
+            <li><strong>抗法术</strong>：对抗法术和类法术能力的豁免 +2 种族加值</li>
+            <li>偏好职业：战士</li>
+            <li>自动语言：矮人语、通用语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 金矮人 -->
+      <div class="race-card" id="gold-dwarf">
+        <h3>金矮人 Gold Dwarf <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 体质+2/敏捷-2 · 偏好职业：战士 · Races of Stone</div>
+        <p>居住在<strong>深层地脉矿洞</strong>中的矮人亚种。金矮人比盾矮人更加固执，
+        但在地下拥有更远的感知范围，是天生的矿脉探索者。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 体质</span> / <span class="stat-negative">-2 敏捷</span></li>
+            <li><strong>黑暗视觉</strong> 60 英尺</li>
+            <li><strong>地下远视（Deepvision）</strong>：在地下环境中侦察检定 +2 种族加值</li>
+            <li><strong>矮人武器熟悉</strong>：自动熟悉矮人战斧和矮人重锤</li>
+            <li><strong>稳定性</strong>：对抗冲撞和绊摔时 +4 稳定加值</li>
+            <li><strong>抗毒</strong>：对抗毒素的强韧豁免 +2 种族加值</li>
+            <li><strong>抗法术</strong>：对抗法术和类法术能力的豁免 +2 种族加值</li>
+            <li><strong>石之认知</strong>：对石质结构的搜索检定 +2 种族加值</li>
+            <li>偏好职业：战士</li>
+            <li>自动语言：矮人语、地底通用语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 灰矮人扩展 -->
+      <div class="race-card" id="duergar-ext">
+        <h3>灰矮人 Duergar（扩展） <span class="la-badge la-1">LA +1</span></h3>
+        <div class="race-meta">中型 · 体质+2/智力+2/魅力-4 · 偏好职业：战士 · MM p.91 / RoS 补充</div>
+        <p>主站已收录基础特性。此处补充 <strong>Races of Stone</strong> 中的种族替代等级内容。</p>
+        <div class="race-traits">
+          <strong>种族替代等级（灰矮人牧师）：</strong>
+          <ul>
+            <li><strong>第1级</strong>：获得"暗域之视"——黑暗视觉范围扩展至 120 英尺，且在魔法黑暗中可正常视物</li>
+            <li><strong>第3级</strong>：获得"心灵壁障"——对抗探知和心灵效果的豁免额外 +2</li>
+            <li><strong>第5级</strong>：获得"灰暗祝福"——每天 1 次，可对自己施放增大术（Enlarge Person），施法者等级等于牧师等级</li>
+          </ul>
+          <strong>种族替代等级（灰矮人战士）：</strong>
+          <ul>
+            <li><strong>第2级</strong>：获得"幽暗伏击"——在黑暗或微光环境中先攻检定 +2</li>
+            <li><strong>第4级</strong>：获得"灰铁之躯"——获得伤害减免 2/—</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="source-group-title">歌利亚 Goliath 扩展</h3>
+
+    <div class="Rule-box">
+      <h3>歌利亚种族替代等级（野蛮人）</h3>
+      <p>歌利亚野蛮人可以选择以下种族替代等级来替换标准野蛮人职业特性：</p>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>等级</th><th>替代能力</th><th>替换内容</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1级</td>
+            <td><strong>石之投掷（Stone Thrower）</strong></td>
+            <td>快速移动</td>
+            <td>投掷岩石和投掷武器的射程增量 +10 英尺，投掷攻击伤害 +2</td>
+          </tr>
+          <tr>
+            <td>3级</td>
+            <td><strong>山民韧性（Mountain Resilience）</strong></td>
+            <td>陷阱感知</td>
+            <td>对抗毒素、疾病和极端温度的强韧豁免 +2；对海拔效果的豁免 +4</td>
+          </tr>
+          <tr>
+            <td>5级</td>
+            <td><strong>巨石猛击（Boulder Strike）</strong></td>
+            <td>不确定性闪避</td>
+            <td>每天 1 次，近战攻击时可额外投掷力量检定加到伤害上（如同强力攻击但不减攻击加值）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Rule-box">
+      <h3>歌利亚种族专长</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>专长名称</th><th>先决条件</th><th>效果</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mountain Rage</strong><br>山岳狂怒</td>
+            <td>歌利亚，狂暴能力</td>
+            <td>狂暴时体型增大一级（中型→大型），触及范围增加 5 英尺，力量加值额外 +2</td>
+          </tr>
+          <tr>
+            <td><strong>Goliath Jumper</strong><br>歌利亚跳跃者</td>
+            <td>歌利亚，跳跃 5 级</td>
+            <td>跳跃检定距离翻倍；跳跃攻击时可对落地邻接所有敌人造成额外 1d6 钝击伤害</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="source-group-title">半巨人 Half-Giant</h3>
+
+    <div class="race-grid">
+      <div class="race-card" id="half-giant">
+        <h3>半巨人 Half-Giant <span class="la-badge la-1">LA +1</span></h3>
+        <div class="race-meta">大型（使用中型规则）· 力量+2/体质+2/智力-2/魅力-2 · 偏好职业：心灵武士 · Races of Stone / XPH</div>
+        <p>巨人与人类的混血后代，身材高大强壮但智力有限。半巨人拥有<strong>天生的灵能天赋</strong>，
+        是少数将蛮力与灵能结合的可玩种族。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 力量, +2 体质</span> / <span class="stat-negative">-2 智力, -2 魅力</span></li>
+            <li><strong>体型</strong>：大型（但在职业等级、HD等方面按中型生物规则计算）</li>
+            <li><strong>大型优势</strong>：AC 和攻击检定 -1 体型惩罚，躲藏 -4 惩罚，但武器伤害使用大型骰子</li>
+            <li><strong>灵能天赋（Psionic Aptitude）</strong>：每天 1 点灵能点（Power Points），即使不选灵能职业也可用于激活灵能能力</li>
+            <li><strong>黑暗视觉</strong> 60 英尺</li>
+            <li><strong>天生武器</strong>：徒手打击造成 1d4 伤害</li>
+            <li><strong>强力体格（Powerful Build）</strong>：在武器尺寸、擒握、冲撞等方面视为大型生物（叠加大型体型则视为超大型）</li>
+            <li><strong>火焰抗性</strong>：5 点</li>
+            <li>偏好职业：心灵武士（Psychic Warrior）</li>
+            <li>自动语言：通用语、巨人语</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="Rule-box">
+      <h3>石之种族对比</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>种族/亚种</th><th>LA</th><th>核心优势</th><th>核心劣势</th><th>最佳定位</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>盾矮人</td><td>+0</td>
+            <td>体质+2，抗毒/抗法术，石之认知</td>
+            <td>魅力-2</td>
+            <td>前排战士/牧师</td>
+          </tr>
+          <tr>
+            <td>金矮人</td><td>+0</td>
+            <td>体质+2，地下远视，抗毒/抗法术</td>
+            <td>敏捷-2</td>
+            <td>重甲战士/地下探索者</td>
+          </tr>
+          <tr>
+            <td>灰矮人（扩展）</td><td>+1</td>
+            <td>免疫毒素/幻术/麻痹，类法术能力</td>
+            <td>魅力-4，光敏感</td>
+            <td>地下战士/游荡者</td>
+          </tr>
+          <tr>
+            <td>半巨人</td><td>+1</td>
+            <td>大型体型，灵能天赋，火焰抗性</td>
+            <td>智力-2 魅力-2，体型惩罚</td>
+            <td>心灵武士/野蛮人</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         二、Races of the Wild (荒野种族)
+         ============================================================ -->
+    <h2 id="row">🌿 二、Races of the Wild（荒野种族）</h2>
+    <p>《Races of the Wild》聚焦与自然和荒野相关的种族，大幅扩展了精灵亚种体系，
+    并补充了翼人的种族等级规则和半身人的丛林变体。</p>
+
+    <h3 class="source-group-title">精灵亚种与扩展</h3>
+
+    <div class="race-grid">
+
+      <!-- 日精灵 -->
+      <div class="race-card" id="sun-elf">
+        <h3>日精灵 Sun Elf <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 智力+2/体质-2 · 偏好职业：法师 · Races of the Wild</div>
+        <p>也称<strong>金精灵（Gold Elf）</strong>，是精灵族中最骄傲的一支。日精灵居住在阳光充沛的高塔和城市中，
+        追求奥术魔法的极致，是<strong>天生的法师</strong>。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 智力</span> / <span class="stat-negative">-2 体质</span></li>
+            <li><strong>低光视觉</strong></li>
+            <li><strong>光之适应（Light Adaptation）</strong>：免疫因强光导致的目眩效果</li>
+            <li><strong>精灵免疫</strong>：免疫魔法睡眠效果，对抗附魔效果豁免 +2</li>
+            <li><strong>武器熟悉</strong>：自动熟悉长剑、细剑、长弓、短弓</li>
+            <li><strong>搜索加值</strong>：对密门搜索检定 +2 种族加值</li>
+            <li><strong>聆听/侦察</strong>检定 +2 种族加值</li>
+            <li>偏好职业：法师</li>
+            <li>自动语言：精灵语、通用语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 月精灵 -->
+      <div class="race-card" id="moon-elf">
+        <h3>月精灵 Moon Elf <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 敏捷+2/体质-2 · 偏好职业：战士 · Races of the Wild</div>
+        <p>也称<strong>银精灵（Silver Elf）</strong>，是最常见也最活泼的精灵亚种。月精灵好奇心旺盛，
+        喜欢旅行和冒险，是精灵族中与人类关系最密切的一支。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 敏捷</span> / <span class="stat-negative">-2 体质</span></li>
+            <li><strong>低光视觉</strong></li>
+            <li><strong>精灵免疫</strong>：免疫魔法睡眠效果，对抗附魔效果豁免 +2</li>
+            <li><strong>武器熟悉</strong>：自动熟悉长剑、细剑、长弓、短弓</li>
+            <li><strong>搜索加值</strong>：对密门搜索检定 +2 种族加值</li>
+            <li><strong>聆听/侦察</strong>检定 +2 种族加值</li>
+            <li><strong>多才多艺</strong>：月精灵的多职业惩罚规则不适用（可自由兼职）</li>
+            <li>偏好职业：战士（但可自由兼职任何职业）</li>
+            <li>自动语言：精灵语、通用语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 野精灵 -->
+      <div class="race-card" id="wild-elf">
+        <h3>野精灵 Wild Elf <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 敏捷+2/智力-2 · 偏好职业：野蛮人 · Races of the Wild</div>
+        <p>居住在<strong>原始丛林和荒野</strong>中的精灵亚种。野精灵放弃了精灵的高等文明，
+        回归自然的生活方式，身体更加灵活但缺乏学术教育。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 敏捷</span> / <span class="stat-negative">-2 智力</span></li>
+            <li><strong>低光视觉</strong></li>
+            <li><strong>原始生活（Primitive）</strong>：自动语言仅有精灵语，初始不会通用语（需花费技能点学习）</li>
+            <li><strong>精灵免疫</strong>：免疫魔法睡眠效果，对抗附魔效果豁免 +2</li>
+            <li><strong>武器熟悉</strong>：自动熟悉长弓、短弓、长矛、短矛</li>
+            <li><strong>野性隐匿</strong>：在自然环境中躲藏检定 +4 种族加值</li>
+            <li><strong>聆听/侦察</strong>检定 +2 种族加值</li>
+            <li>偏好职业：野蛮人</li>
+            <li>自动语言：精灵语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 水生精灵 -->
+      <div class="race-card" id="aquatic-elf">
+        <h3>水生精灵 Aquatic Elf <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 力量+2/敏捷+2/智力-2/魅力-2 · 偏好职业：战士 · Races of the Wild</div>
+        <p>也称<strong>海精灵（Sea Elf）</strong>，居住在海洋中的精灵亚种。水生精灵适应水下生活，
+        拥有鳃和蹼，但离开水面后会感到不适。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 力量, +2 敏捷</span> / <span class="stat-negative">-2 智力, -2 魅力</span></li>
+            <li><strong>低光视觉</strong></li>
+            <li><strong>水生（Aquatic）</strong>：拥有鳃，可在水中无限呼吸；游泳速度 40 英尺</li>
+            <li><strong>精灵免疫</strong>：免疫魔法睡眠效果，对抗附魔效果豁免 +2</li>
+            <li><strong>武器熟悉</strong>：自动熟悉三叉戟、矛、渔网</li>
+            <li><strong>光敏感</strong>：在明亮阳光下目眩（-1 攻击/-1 侦察）</li>
+            <li><strong>脱水</strong>：离开水体超过 1 天需每日进行体质检定（DC 15），失败则受 1 点体质伤害</li>
+            <li>偏好职业：战士</li>
+            <li>自动语言：精灵语、水族语</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="source-group-title">翼人 Raptoran 扩展</h3>
+
+    <div class="Rule-box">
+      <h3>翼人种族等级（Raptoran Racial Levels）</h3>
+      <p>翼人角色可以花费种族等级来强化飞行和战斗能力。种族等级与职业等级叠加计算角色总等级。</p>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>种族等级</th><th>攻击加值</th><th>强韧/反射/意志</th><th>特殊能力</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1级</td><td>+0</td><td>+0/+2/+0</td>
+            <td><strong>翼击飞行进阶</strong>：飞行速度提升至 50 英尺（良好机动性），获得翼击天生武器（1d6 伤害）</td>
+          </tr>
+          <tr>
+            <td>2级</td><td>+1</td><td>+0/+3/+0</td>
+            <td><strong>俯冲攻击（Dive Attack）</strong>：从高处俯冲近战攻击时伤害翻倍（类似冲锋+俯冲）</td>
+          </tr>
+          <tr>
+            <td>3级</td><td>+2</td><td>+1/+3/+1</td>
+            <td><strong>翼膜护甲</strong>：AC +1 天生护甲加值；飞行时获得"飞越攻击"（Flyby Attack）作为奖励专长</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:#777;margin-top:10px;">属性提升：每个种族等级获得 +2 敏捷。</p>
+    </div>
+
+    <h3 class="source-group-title">半身人扩展</h3>
+
+    <div class="race-grid">
+      <div class="race-card" id="jungle-halfling">
+        <h3>丛林半身人 Jungle Halfling <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">小型 · 敏捷+2/力量-2 · 偏好职业：游荡者 · Races of the Wild</div>
+        <p>居住在热带丛林中的半身人变体。丛林半身人比标准半身人更加灵活矫健，
+        适应了密林中的攀爬和跳跃生活，替代标准半身人的部分特性。</p>
+        <div class="race-traits">
+          <strong>种族特性（替代标准半身人）：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 敏捷</span> / <span class="stat-negative">-2 力量</span>（与标准半身人相同）</li>
+            <li><strong>小型体型</strong>：AC +1，攻击 +1，躲藏 +4，举重/负重为标准体型的 3/4</li>
+            <li><strong>丛林居民（Jungle Dweller）</strong>：攀爬检定 +4 种族加值（替代标准半身人的"投掷武器 +1"）</li>
+            <li><strong>树冠行者</strong>：在树木/植被地形中平衡和杂技检定 +2 种族加值</li>
+            <li><strong>豁免加值</strong>：所有豁免 +1 士气加值（保留标准半身人特性）</li>
+            <li><strong>聆听/侦察</strong>检定 +2 种族加值（保留）</li>
+            <li>偏好职业：游荡者</li>
+            <li>自动语言：半身人语、通用语</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="Rule-box">
+      <h3>荒野种族对比</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>种族/亚种</th><th>LA</th><th>核心优势</th><th>核心劣势</th><th>最佳定位</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>日精灵</td><td>+0</td>
+            <td>智力+2，光之适应</td>
+            <td>体质-2</td>
+            <td>奥术施法者（法师）</td>
+          </tr>
+          <tr>
+            <td>月精灵</td><td>+0</td>
+            <td>敏捷+2，自由兼职</td>
+            <td>体质-2</td>
+            <td>多面手（战士/法师/游侠）</td>
+          </tr>
+          <tr>
+            <td>野精灵</td><td>+0</td>
+            <td>敏捷+2，丛林隐匿+4</td>
+            <td>智力-2，不会通用语</td>
+            <td>野蛮人/游侠</td>
+          </tr>
+          <tr>
+            <td>水生精灵</td><td>+0</td>
+            <td>力量+2 敏捷+2，游泳40尺</td>
+            <td>智力-2 魅力-2，光敏感，脱水</td>
+            <td>水中战士/游侠</td>
+          </tr>
+          <tr>
+            <td>丛林半身人</td><td>+0</td>
+            <td>小型+敏捷+2，攀爬+4</td>
+            <td>力量-2</td>
+            <td>游荡者/游侠</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         三、Races of Destiny (命运种族)
+         ============================================================ -->
+    <h2 id="rod">✨ 三、Races of Destiny（命运种族）</h2>
+    <p>《Races of Destiny》深入探索了徽民的符文印记体系，并引入了人类亚种变体——灵魂之民。</p>
+
+    <h3 class="source-group-title">徽民 Illumian 扩展：六大印记详述</h3>
+    <p>每个徽民出生时皮肤上浮现一个发光的符文印记（Sigil），选择后不可更改。
+    印记提供被动增益，并在达到特定等级后解锁强化效果。以下为六大印记的完整描述：</p>
+
+    <div class="sigil-list">
+      <div class="sigil-item">
+        <strong>Aesh（力量印记）</strong><br>
+        <em>被动效果</em>：近战攻击和伤害检定 +2 加值（每天可用轮数 = 角色等级）<br>
+        <em>进阶效果（9级）</em>：加值提升至 +4，并可在全回合攻击时对所有攻击生效
+      </div>
+      <div class="sigil-item">
+        <strong>Krau（魔法印记）</strong><br>
+        <em>被动效果</em>：所有法术和类法术能力的施法者等级 +1<br>
+        <em>进阶效果（9级）</em>：施法者等级 +2，且每天 1 次可令一个法术自动超魔升阶（无需额外法术位）
+      </div>
+      <div class="sigil-item">
+        <strong>Naen（心智印记）</strong><br>
+        <em>被动效果</em>：所有基于智力的技能检定 +2 种族加值<br>
+        <em>进阶效果（9级）</em>：加值提升至 +4，且每天 1 次可重投一次基于智力的技能检定
+      </div>
+      <div class="sigil-item">
+        <strong>Naul（灵巧印记）</strong><br>
+        <em>被动效果</em>：所有基于敏捷的技能检定 +2 种族加值<br>
+        <em>进阶效果（9级）</em>：加值提升至 +4，且每天 1 次可重投一次基于敏捷的技能检定
+      </div>
+      <div class="sigil-item">
+        <strong>Uur（感官印记）</strong><br>
+        <em>被动效果</em>：所有感知检定和基于感知的技能检定 +2 种族加值<br>
+        <em>进阶效果（9级）</em>：加值提升至 +4，且获得盲感（Blindsense）30 英尺
+      </div>
+      <div class="sigil-item">
+        <strong>Vaul（命运印记）</strong><br>
+        <em>被动效果</em>：所有豁免检定 +1 命运加值<br>
+        <em>进阶效果（9级）</em>：豁免加值提升至 +2，且每天 1 次可自动通过一次豁免检定
+      </div>
+    </div>
+
+    <div class="Rule-box">
+      <h3>徽民种族替代等级（法师）</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>等级</th><th>替代能力</th><th>替换内容</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1级</td>
+            <td><strong>符文共鸣（Sigil Resonance）</strong></td>
+            <td>魔宠</td>
+            <td>印记效果增强 50%（如 Aesh 加值变为 +3），但不获得魔宠</td>
+          </tr>
+          <tr>
+            <td>5级</td>
+            <td><strong>双印觉醒（Dual Sigil）</strong></td>
+            <td>第5级奖励专长</td>
+            <td>选择第二个印记，同时拥有两个印记效果（但进阶效果需分别达到 9 级解锁）</td>
+          </tr>
+          <tr>
+            <td>10级</td>
+            <td><strong>印记精通（Sigil Mastery）</strong></td>
+            <td>第10级奖励专长</td>
+            <td>所有印记的进阶效果立即解锁（无需等到 9 级）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="source-group-title">人类扩展</h3>
+
+    <div class="race-grid">
+      <div class="race-card" id="azurin">
+        <h3>灵魂之民 Azurin <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · +1 任意属性 · 偏好职业：任意 · Races of Destiny</div>
+        <p>人类亚种，拥有<strong>灵魂能量（Soul Incarnum）</strong>的血脉。灵魂之民外表与人类几乎无异，
+        但体内流淌着来自灵魂之海的精华，赋予他们独特的灵魂融合能力。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+1 任意一种属性</span>（创建角色时选择）</li>
+            <li><strong>灵魂融合（Soulmeld Affinity）</strong>：被视为拥有"灵魂融合"专长作为前置条件（但本身不获得该专长）</li>
+            <li><strong>灵魂感知</strong>：可感知 30 英尺内的灵魂融合效果（如同"侦测魔法"但针对灵魂融合）</li>
+            <li><strong>额外专长</strong>：1 级获得一个额外奖励专长（与人类相同）</li>
+            <li><strong>额外技能点</strong>：每级额外 4 技能点（与人类相同）</li>
+            <li><strong>人类亚种</strong>：被视为人类和灵魂之民（双种族类型），受对人类生效的法术和能力影响</li>
+            <li>偏好职业：任意（多职业不承受经验值惩罚）</li>
+            <li>自动语言：通用语</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         四、Races of the Dragon (龙之种族)
+         ============================================================ -->
+    <h2 id="rodr">🐲 四、Races of the Dragon（龙之种族）</h2>
+    <p>《Races of the Dragon》引入了龙脉种族的概念，包括巴哈姆特的龙人信徒、拥有龙血亚种的精灵变体、
+    天生施法者 Spellscale，以及科博尔德（狗头人）的扩展内容。</p>
+
+    <div class="race-grid">
+
+      <!-- 龙人 Dragonborn -->
+      <div class="race-card" id="dragonborn">
+        <h3>龙人 Dragonborn of Bahamut <span class="la-badge la-0">LA +0*</span></h3>
+        <div class="race-meta">中型 · 保留原种族属性 · 偏好职业：任意 · Races of the Dragon</div>
+        <p>通过<strong>巴哈姆特的重生仪式</strong>而获得龙类特性的变体种族。龙人并非独立种族，
+        而是任何种族的角色在 1 级时选择"龙化"后的结果。角色保留原种族的 HD 和 LA，
+        但获得龙类亚种和独特能力。</p>
+        <div class="race-traits">
+          <strong>龙化特性：</strong>
+          <ul>
+            <li><strong>属性</strong>：保留原种族的属性调整值</li>
+            <li><strong>龙类亚种（Dragonblood Subtype）</strong>：获得龙血亚种，受对龙类生效的法术和能力影响</li>
+            <li><strong>龙类特性选择</strong>（1级时选择以下之一）：
+              <ul style="font-size:12px;margin-top:4px;">
+                <li><strong>吐息武器（Breath Weapon）</strong>：15 英尺锥形，伤害 1d6/2级（上限 10d6），每天使用次数 = 1 + 体质调整，反射减半</li>
+                <li><strong>龙类感官（Dragon Senses）</strong>：黑暗视觉 60 英尺 + 低光视觉，侦察和搜索检定 +2</li>
+                <li><strong>龙翼（Dragon Wings）</strong>：6 级起获得飞行速度 30 英尺（一般机动性），需穿戴轻型或无甲</li>
+              </ul>
+            </li>
+            <li><strong>龙化外貌</strong>：皮肤出现鳞片、眼睛变为竖瞳，外貌带有明显的龙类特征</li>
+            <li><strong>LA 说明</strong>：龙化本身不增加 LA，但原种族的 LA 保留</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 龙血精灵 -->
+      <div class="race-card" id="dragonblood-elf">
+        <h3>龙血精灵 Half-Elf (Dragonblood) <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 无属性调整 · 偏好职业：任意 · Races of the Dragon</div>
+        <p>半精灵的龙血变体。这些半精灵追溯血脉至远古时期精灵与龙类的联姻，
+        体内沉睡的龙血觉醒后赋予他们<strong>龙血亚种</strong>。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性</strong>：标准半精灵属性（无属性调整）</li>
+            <li><strong>龙血亚种（Dragonblood Subtype）</strong>：获得龙血亚种</li>
+            <li><strong>低光视觉</strong></li>
+            <li><strong>精灵免疫</strong>：免疫魔法睡眠效果，对抗附魔效果豁免 +2</li>
+            <li><strong>龙血亲和</strong>：对龙类的交涉检定 +2 种族加值</li>
+            <li><strong>多才多艺</strong>：多职业惩罚规则不适用</li>
+            <li>偏好职业：任意</li>
+            <li>自动语言：精灵语、通用语、龙语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spellscale -->
+      <div class="race-card" id="spellscale">
+        <h3>天生施法者 Spellscale <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 魅力+2/力量-2 · 偏好职业：术士 · Races of the Dragon</div>
+        <p>龙血精灵的特殊变体，天生拥有强大的奥术亲和力。Spellscale 身上隐约可见龙鳞纹路，
+        是天生的施法者，尤其适合术士职业。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 魅力</span> / <span class="stat-negative">-2 力量</span></li>
+            <li><strong>低光视觉</strong></li>
+            <li><strong>龙血亚种（Dragonblood Subtype）</strong></li>
+            <li><strong>天生施法（Innate Spellcasting）</strong>：获得 0 级法术"酸液飞溅"和"光亮术"作为类法术能力，每天各 3 次，施法者等级 = 角色等级</li>
+            <li><strong>奥术亲和</strong>：施法者等级检定 +2 种族加值</li>
+            <li><strong>龙血共鸣</strong>：每天 1 次，可将一个已准备的法术位临时替换为同等级或更低等级的已知法术</li>
+            <li>偏好职业：术士</li>
+            <li>自动语言：通用语、龙语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 科博尔德扩展 -->
+      <div class="race-card" id="kobold-ext">
+        <h3>狗头人 Kobold（扩展） <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">小型 · 敏捷+2/力量-4 · 偏好职业：术士 · MM / Races of the Dragon</div>
+        <p>经典的弱小怪物种族，在《Races of the Dragon》中获得了<strong>龙血亚种</strong>确认和
+        种族替代等级扩展。科博尔德自认为是龙族的远亲，崇拜龙类。</p>
+        <div class="race-traits">
+          <strong>基础种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 敏捷</span> / <span class="stat-negative">-4 力量, -2 体质</span></li>
+            <li><strong>小型体型</strong>：AC +1，攻击 +1，躲藏 +4</li>
+            <li><strong>黑暗视觉</strong> 60 英尺</li>
+            <li><strong>天生护甲</strong>：+1 天生护甲加值</li>
+            <li><strong>龙血亚种</strong>：获得龙血亚种（RoTD 补充）</li>
+            <li><strong>光敏感</strong>：在明亮阳光下目眩</li>
+          </ul>
+          <strong>种族替代等级（术士）：</strong>
+          <ul>
+            <li><strong>第1级</strong>：获得"龙之传承"——选择一个龙类血统作为术士血统来源，获得对应龙类的能量抗力 5 点</li>
+            <li><strong>第3级</strong>：获得"龙鳞护甲"——天生护甲提升至 +2</li>
+            <li><strong>第5级</strong>：获得"龙息觉醒"——每天 1 次，使用龙类血统对应的吐息武器（15 英尺锥形，1d6/2级，反射减半）</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="Rule-box">
+      <h3>龙脉种族对比</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>种族</th><th>LA</th><th>核心优势</th><th>核心劣势</th><th>最佳定位</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>龙人 (Dragonborn)</td><td>+0*</td>
+            <td>吐息/感官/翼三选一，龙类亚种</td>
+            <td>需放弃原种族部分特性</td>
+            <td>任何职业（保留原种族优势）</td>
+          </tr>
+          <tr>
+            <td>龙血精灵</td><td>+0</td>
+            <td>龙血亚种，龙类交涉+2，自由兼职</td>
+            <td>无属性加值</td>
+            <td>多面手/龙脉主题角色</td>
+          </tr>
+          <tr>
+            <td>Spellscale</td><td>+0</td>
+            <td>魅力+2，天生施法，奥术亲和</td>
+            <td>力量-2</td>
+            <td>术士/吟游诗人</td>
+          </tr>
+          <tr>
+            <td>狗头人（扩展）</td><td>+0</td>
+            <td>小型+敏捷+2，龙血亚种，术士替代等级</td>
+            <td>力量-4 体质-2</td>
+            <td>术士（龙脉主题）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:#777;margin-top:10px;">* 龙人本身不增加 LA，但保留原种族的 LA。例如：人类龙人 LA+0，灰矮人龙人 LA+1。</p>
+    </div>
+
+    <!-- ============================================================
+         五、Monster Manual 扩展种族
+         ============================================================ -->
+    <h2 id="mm">📗 五、Monster Manual 扩展种族</h2>
+    <p>以下种族来自《Monster Manual》和《Fiend Folio》中原本作为怪物登场的种族，
+    但在规则上明确允许作为玩家种族使用。这些种族通常 LA 较高，适合高等级战团。</p>
+
+    <h3 class="source-group-title">经典 MM 种族（详细版）</h3>
+
+    <div class="race-grid">
+
+      <!-- 牛头人 -->
+      <div class="race-card" id="minotaur">
+        <h3>牛头人 Minotaur <span class="la-badge la-2">LA +2</span></h3>
+        <div class="race-meta">大型 · 力量+8/体质+4/智力-2/感知-2/魅力-2 · 偏好职业：野蛮人 · MM p.188</div>
+        <p>牛头人身的巨型类人生物，以<strong>蛮力、冲撞和迷宫般的巢穴</strong>闻名。
+        牛头人是高 LA 种族中最强大的近战选择之一。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+8 力量, +4 体质</span> / <span class="stat-negative">-2 智力, -2 感知, -2 魅力</span></li>
+            <li><strong>大型体型</strong>：AC -1，攻击 -1，躲藏 -4，但使用大型武器骰子，举重/负重为标准体型的 2 倍</li>
+            <li><strong>黑暗视觉</strong> 60 英尺</li>
+            <li><strong>天生武器</strong>：角击（1d8 伤害）</li>
+            <li><strong>冲撞（Charge）</strong>：冲锋时角击伤害翻倍（2d8 + 力量调整 x1.5）</li>
+            <li><strong>灵敏嗅觉（Scent）</strong>：可凭嗅觉定位 30 英尺内的生物</li>
+            <li><strong>天生护甲</strong>：+2 天生护甲加值</li>
+            <li><strong>猛力冲锋（Powerful Charge）</strong>：冲锋时可尝试冲撞对手（不引发借机攻击）</li>
+            <li><strong>种族 HD</strong>：拥有 4 个种族 HD（d8），基础攻击 +4，强韧 +4/反射 +1/意志 +1</li>
+            <li>偏好职业：野蛮人</li>
+            <li>自动语言：通用语、巨人语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 人马 -->
+      <div class="race-card" id="centaur">
+        <h3>人马 Centaur <span class="la-badge la-2">LA +2</span></h3>
+        <div class="race-meta">大型 · 力量+8/敏捷+4/体质+2/智力-2/感知+2 · 偏好职业：游侠 · MM p.37</div>
+        <p>上半身为人类、下半身为骏马的种族。人马以<strong>极高的移动速度</strong>和骑战能力闻名，
+        是天生的草原战士和斥候。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+8 力量, +4 敏捷, +2 体质, +2 感知</span> / <span class="stat-negative">-2 智力</span></li>
+            <li><strong>大型体型</strong>：AC -1，攻击 -1，但武器伤害使用大型骰子</li>
+            <li><strong>移动速度</strong>：60 英尺（正常速度的 2 倍）</li>
+            <li><strong>黑暗视觉</strong> 60 英尺</li>
+            <li><strong>天生武器</strong>：蹄击（2d6 伤害），可双手持武器时额外蹄击</li>
+            <li><strong>种族 HD</strong>：拥有 4 个种族 HD（d8），基础攻击 +4，强韧 +4/反射 +1/意志 +1</li>
+            <li><strong>骑术精通</strong>：骑术检定 +4 种族加值（人马本身就是坐骑）</li>
+            <li>偏好职业：游侠</li>
+            <li>自动语言：通用语、木族语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 树妖 -->
+      <div class="race-card" id="dryad">
+        <h3>树妖 Dryad <span class="la-badge la-4">LA +4</span></h3>
+        <div class="race-meta">中型 · 敏捷+6/感知+2/体质-2 · 偏好职业：德鲁伊 · MM p.70</div>
+        <p>与特定树木绑定的<strong>精类生物</strong>。树妖极其美丽但脆弱，
+        她们的生命与寄宿之树紧密相连，是最高 LA 的可玩种族之一。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+6 敏捷, +2 感知</span> / <span class="stat-negative">-2 体质</span></li>
+            <li><strong>精类特性</strong>：免疫睡眠效果和麻痹；低光视觉</li>
+            <li><strong>树绑定（Tree Bond）</strong>：与一棵特定橡树绑定，离开该树 300 码以上每天承受 1d6 体质伤害（不可恢复直到返回）</li>
+            <li><strong>天生施法</strong>：每天可施放以下法术各 1 次——魅惑人类、纠缠术、树化术（仅自身）、暗示术；施法者等级 = 角色等级</li>
+            <li><strong>树行术（Tree Stride）</strong>：可在树木之间自由传送（如同同名法术），每天可用分钟数 = 角色等级</li>
+            <li><strong>天生护甲</strong>：+2 天生护甲加值</li>
+            <li><strong>伤害减免</strong>：10/寒铁</li>
+            <li><strong>种族 HD</strong>：拥有 6 个种族 HD（d6），基础攻击 +3，强韧 +2/反射 +5/意志 +5</li>
+            <li>偏好职业：德鲁伊</li>
+            <li>自动语言：通用语、精灵语、木族语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 猫人 -->
+      <div class="race-card" id="tabaxi">
+        <h3>猫人 Tabaxi <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">中型 · 敏捷+2/力量+2/感知-2 · 偏好职业：游侠 · MM (扩展)</div>
+        <p>拥有猫科动物特征的人形种族。猫人身手敏捷、感官敏锐，是天生的猎手和追踪者，
+        但社交能力相对欠缺。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 敏捷, +2 力量</span> / <span class="stat-negative">-2 感知</span></li>
+            <li><strong>低光视觉</strong></li>
+            <li><strong>天生武器</strong>：爪击（1d4 伤害）+ 啮咬（1d3 伤害）</li>
+            <li><strong>灵敏嗅觉（Scent）</strong>：可凭嗅觉定位 30 英尺内的生物</li>
+            <li><strong>攀爬速度</strong>：20 英尺</li>
+            <li><strong>猫之灵巧</strong>：平衡和攀爬检定 +4 种族加值</li>
+            <li><strong>猛扑（Pounce）</strong>：冲锋时可进行全回合攻击（而非单次攻击）</li>
+            <li>偏好职业：游侠</li>
+            <li>自动语言：通用语、猫族语</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="source-group-title">Fiend Folio 种族</h3>
+
+    <div class="race-grid">
+
+      <!-- 影灵 -->
+      <div class="race-card" id="shadar-kai">
+        <h3>影灵 Shadar-kai <span class="la-badge la-4">LA +4</span></h3>
+        <div class="race-meta">中型 · 敏捷+4/魅力+2/体质-2 · 偏好职业：游荡者 · Fiend Folio</div>
+        <p>来自<strong>阴影位面</strong>的神秘种族。影灵外表苍白如幽灵，天生与阴影魔法共鸣，
+        是极其强大但 LA 极高的种族选择。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+4 敏捷, +2 魅力</span> / <span class="stat-negative">-2 体质</span></li>
+            <li><strong>黑暗视觉</strong> 60 英尺</li>
+            <li><strong>阴影亲和</strong>：在阴影或黑暗环境中躲藏检定 +4 种族加值</li>
+            <li><strong>阴影传送</strong>：每天 1 次，可传送最多 60 英尺（需在阴影之间移动）</li>
+            <li><strong>类法术能力</strong>：暗影步（Shadow Walk）1次/天、镜像术（Mirror Image）1次/天</li>
+            <li><strong>精类特性</strong>：对睡眠效果免疫</li>
+            <li><strong>伤害减免</strong>：5/银</li>
+            <li>偏好职业：游荡者</li>
+            <li>自动语言：通用语、影族语</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 异种人 Kenku -->
+      <div class="race-card" id="kenku">
+        <h3>异种人 Kenku <span class="la-badge la-0">LA +0</span></h3>
+        <div class="race-meta">小型 · 敏捷+2/力量-2 · 偏好职业：游荡者 · Fiend Folio</div>
+        <p>形似乌鸦的人形种族，以<strong>模仿声音和偷偷摸摸</strong>闻名。Kenku 外表滑稽但极其狡猾，
+        是天生的盗贼和间谍。</p>
+        <div class="race-traits">
+          <strong>种族特性：</strong>
+          <ul>
+            <li><strong>属性调整</strong>：<span class="stat-positive">+2 敏捷</span> / <span class="stat-negative">-2 力量</span></li>
+            <li><strong>小型体型</strong>：AC +1，攻击 +1，躲藏 +4，举重/负重为标准体型的 3/4</li>
+            <li><strong>低光视觉</strong></li>
+            <li><strong>模仿（Mimicry）</strong>：可以完美模仿任何听到过的声音和语言；易容检定 +4 种族加值（仅限声音模仿相关场景）</li>
+            <li><strong>偷偷摸摸（Sneaky）</strong>：躲藏和潜行检定 +2 种族加值</li>
+            <li><strong>天生武器</strong>：爪击（1d3 伤害）</li>
+            <li><strong>窃贼之手</strong>：手上功夫和开锁检定 +2 种族加值</li>
+            <li>偏好职业：游荡者</li>
+            <li>自动语言：通用语</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="Rule-box">
+      <h3>MM 扩展种族使用注意事项</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>种族</th><th>LA</th><th>ECL 示例 (1级)</th><th>使用建议</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>牛头人</td><td>+2</td><td>6 级（4种族HD+LA2）</td>
+            <td>力量+8 极其强大；适合近战野蛮人/战士，但 ECL 较高建议 8 级以上战团</td>
+          </tr>
+          <tr>
+            <td>人马</td><td>+2</td><td>6 级（4种族HD+LA2）</td>
+            <td>60 尺速度+骑战能力出色；适合游侠/战士，注意大型体型的空间限制</td>
+          </tr>
+          <tr>
+            <td>树妖</td><td>+4</td><td>10 级（6种族HD+LA4）</td>
+            <td>仅推荐高等级战团（建议 12 级以上）；树绑定严重限制冒险范围</td>
+          </tr>
+          <tr>
+            <td>猫人</td><td>+0</td><td>1 级</td>
+            <td>无 LA 惩罚，属性优秀；猛扑+全回合冲锋极具战术价值</td>
+          </tr>
+          <tr>
+            <td>影灵</td><td>+4</td><td>5 级（LA4+1级职业）</td>
+            <td>仅推荐高等级战团；阴影能力强大但 ECL 过高</td>
+          </tr>
+          <tr>
+            <td>异种人</td><td>+0</td><td>1 级</td>
+            <td>小型+敏捷+2+模仿能力；非常适合游荡者/间谍角色</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         六、种族特性替代规则
+         ============================================================ -->
+    <h2 id="substitution">🔄 六、种族特性替代规则（Racial Substitution Levels）</h2>
+    <p>种族替代等级允许特定种族的角色在某些职业等级中获得<strong>种族特色的替代能力</strong>，
+    替换标准职业特性。这是一种可选规则——玩家可以选择接受替代等级或使用标准职业特性。
+    以下表格汇总了所有常见的种族替代等级。</p>
+
+    <div class="Rule-box">
+      <h3>种族替代等级总表</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>种族</th>
+            <th>来源</th>
+            <th>可替代职业</th>
+            <th>替代等级</th>
+            <th>获得能力</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 矮人 -->
+          <tr>
+            <td><strong>矮人</strong>（盾/金）</td>
+            <td>Races of Stone</td>
+            <td>牧师</td>
+            <td>1, 4, 8</td>
+            <td>石之守护（AC +1 对大型生物）、锻造祝福（制造魔法武器/护甲加值）、大地之力（每日 1 次石肤术）</td>
+          </tr>
+          <tr>
+            <td><strong>矮人</strong>（盾/金）</td>
+            <td>Races of Stone</td>
+            <td>战士</td>
+            <td>2, 4, 8</td>
+            <td>矮人防御术（对抗大型生物 AC +2）、石锤精通（矮人武器伤害 +2）、坚不可摧（DR 2/—）</td>
+          </tr>
+          <tr>
+            <td><strong>灰矮人</strong></td>
+            <td>Races of Stone</td>
+            <td>牧师</td>
+            <td>1, 3, 5</td>
+            <td>暗域之视、心灵壁障（探知/心灵豁免+2）、灰暗祝福（增大术）</td>
+          </tr>
+          <tr>
+            <td><strong>灰矮人</strong></td>
+            <td>Races of Stone</td>
+            <td>战士</td>
+            <td>2, 4</td>
+            <td>幽暗伏击（暗中先攻+2）、灰铁之躯（DR 2/—）</td>
+          </tr>
+          <!-- 精灵 -->
+          <tr>
+            <td><strong>精灵</strong>（日/月/野）</td>
+            <td>Races of the Wild</td>
+            <td>法师</td>
+            <td>1, 5, 10</td>
+            <td>自然亲和（自然类法术）、精灵魔法精通（超魔专长减免）、高等精灵魔法（法术穿透+2）</td>
+          </tr>
+          <tr>
+            <td><strong>精灵</strong>（日/月/野）</td>
+            <td>Races of the Wild</td>
+            <td>游侠</td>
+            <td>1, 5, 10</td>
+            <td>荒野直觉（先攻+2，野外侦察+4）、精灵射术（远程伤害+1d6）、高等猎手（第二宿敌加值+2）</td>
+          </tr>
+          <!-- 半身人 -->
+          <tr>
+            <td><strong>半身人</strong></td>
+            <td>Races of the Wild</td>
+            <td>游荡者</td>
+            <td>1, 3, 8</td>
+            <td>半身人诡计（唬骗+4，偷袭+1d6 对措手不及目标）、幸运一击（重投一次攻击）、高等偷袭（偷袭骰 d8）</td>
+          </tr>
+          <!-- 侏儒 -->
+          <tr>
+            <td><strong>侏儒</strong></td>
+            <td>Races of Stone</td>
+            <td>吟游诗人</td>
+            <td>2, 5, 8</td>
+            <td>侏儒戏法（幻术 DC+2）、魔力吟唱（每日 1 次法术瞬发）、灵感涌动（激励加值额外+1）</td>
+          </tr>
+          <!-- 半精灵 -->
+          <tr>
+            <td><strong>半精灵</strong></td>
+            <td>Races of the Wild</td>
+            <td>吟游诗人</td>
+            <td>2, 5, 10</td>
+            <td>混血魅力（交涉+4）、双重传承（获得精灵或人类的一个种族特性）、万艺精通（所有技能视为职业技能）</td>
+          </tr>
+          <!-- 半兽人 -->
+          <tr>
+            <td><strong>半兽人</strong></td>
+            <td>Races of the Wild</td>
+            <td>野蛮人</td>
+            <td>1, 4, 8</td>
+            <td>兽血沸腾（狂暴时力量额外+2）、猛力冲锋（冲锋全回合攻击）、高等狂暴（狂暴轮数翻倍）</td>
+          </tr>
+          <!-- 人类 -->
+          <tr>
+            <td><strong>人类</strong></td>
+            <td>Races of Destiny</td>
+            <td>各职业</td>
+            <td>因职业而异</td>
+            <td>人类各职业变体通常提供额外专长或技能灵活性，具体见 Races of Destiny 各职业章节</td>
+          </tr>
+          <!-- 歌利亚 -->
+          <tr>
+            <td><strong>歌利亚</strong></td>
+            <td>Races of Stone</td>
+            <td>野蛮人</td>
+            <td>1, 3, 5</td>
+            <td>石之投掷（射程+10，投掷伤害+2）、山民韧性（抗毒/抗病/抗极端温度+2）、巨石猛击（额外力量伤害）</td>
+          </tr>
+          <!-- 矮人防御者 -->
+          <tr>
+            <td><strong>矮人</strong>（防御者进阶）</td>
+            <td>Races of Stone</td>
+            <td>矮人防御者（Prestige Class）</td>
+            <td>1, 3, 5, 7</td>
+            <td>石盾格挡（对远程 AC +4）、大地之护（DR 5/—，每天 1 分钟）、铁壁防御（对冲锋攻击者可借机攻击）、山岳不动（无法被移动/冲撞/绊摔）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Rule-box">
+      <h3>种族替代等级使用规则</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>规则要点</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>选择时机</strong></td>
+            <td>必须在获得该职业等级时选择是否使用替代等级。一旦选择不可回溯更改。</td>
+          </tr>
+          <tr>
+            <td><strong>替换内容</strong></td>
+            <td>替代等级会替换该等级的标准职业特性（如战士的奖励专长、野蛮人的快速移动等），获得表中描述的种族特色能力。</td>
+          </tr>
+          <tr>
+            <td><strong>前置条件</strong></td>
+            <td>角色必须属于对应种族，且拥有对应职业等级。某些替代等级要求特定阵营或属性。</td>
+          </tr>
+          <tr>
+            <td><strong>多职业</strong></td>
+            <td>不同职业的替代等级互不干扰。一个角色可以同时拥有战士替代等级和牧师替代等级。</td>
+          </tr>
+          <tr>
+            <td><strong>进阶职业</strong></td>
+            <td>部分进阶职业（如矮人防御者）也有种族替代等级，但通常仅限特定种族。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         七、种族对比总表
+         ============================================================ -->
+    <h2 id="comparison">📊 七、种族对比总表</h2>
+    <p>完整表格汇总本页面所有新增种族的数据，方便快速比较。</p>
+
+    <div class="Rule-box">
+      <h3>全种族数据总表</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>种族名</th>
+            <th>来源书</th>
+            <th>属性调整</th>
+            <th>LA</th>
+            <th>体型</th>
+            <th>种族特性数</th>
+            <th>偏好职业</th>
+            <th>独有能力亮点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>盾矮人</strong></td>
+            <td>Races of Stone</td>
+            <td><span class="stat-positive">+2 CON</span> / <span class="stat-negative">-2 CHA</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>8</td>
+            <td>战士</td>
+            <td>石之认知，贪婪，抗毒/抗法术</td>
+          </tr>
+          <tr>
+            <td><strong>金矮人</strong></td>
+            <td>Races of Stone</td>
+            <td><span class="stat-positive">+2 CON</span> / <span class="stat-negative">-2 DEX</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>8</td>
+            <td>战士</td>
+            <td>地下远视，抗毒/抗法术</td>
+          </tr>
+          <tr>
+            <td><strong>半巨人</strong></td>
+            <td>Races of Stone</td>
+            <td><span class="stat-positive">+2 STR, +2 CON</span> / <span class="stat-negative">-2 INT, -2 CHA</span></td>
+            <td><span class="la-badge la-1">+1</span></td>
+            <td>大型*</td><td>8</td>
+            <td>心灵武士</td>
+            <td>灵能天赋，强力体格，火焰抗性</td>
+          </tr>
+          <tr>
+            <td><strong>日精灵</strong></td>
+            <td>Races of the Wild</td>
+            <td><span class="stat-positive">+2 INT</span> / <span class="stat-negative">-2 CON</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>7</td>
+            <td>法师</td>
+            <td>光之适应</td>
+          </tr>
+          <tr>
+            <td><strong>月精灵</strong></td>
+            <td>Races of the Wild</td>
+            <td><span class="stat-positive">+2 DEX</span> / <span class="stat-negative">-2 CON</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>7</td>
+            <td>战士</td>
+            <td>自由兼职无惩罚</td>
+          </tr>
+          <tr>
+            <td><strong>野精灵</strong></td>
+            <td>Races of the Wild</td>
+            <td><span class="stat-positive">+2 DEX</span> / <span class="stat-negative">-2 INT</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>7</td>
+            <td>野蛮人</td>
+            <td>野性隐匿+4（自然环境）</td>
+          </tr>
+          <tr>
+            <td><strong>水生精灵</strong></td>
+            <td>Races of the Wild</td>
+            <td><span class="stat-positive">+2 STR, +2 DEX</span> / <span class="stat-negative">-2 INT, -2 CHA</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>7</td>
+            <td>战士</td>
+            <td>水生，游泳40尺</td>
+          </tr>
+          <tr>
+            <td><strong>丛林半身人</strong></td>
+            <td>Races of the Wild</td>
+            <td><span class="stat-positive">+2 DEX</span> / <span class="stat-negative">-2 STR</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>小型</td><td>6</td>
+            <td>游荡者</td>
+            <td>攀爬+4，丛林地形加成</td>
+          </tr>
+          <tr>
+            <td><strong>灵魂之民</strong></td>
+            <td>Races of Destiny</td>
+            <td><span class="stat-positive">+1 任意</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>6</td>
+            <td>任意</td>
+            <td>灵魂融合亲和，+1任意属性</td>
+          </tr>
+          <tr>
+            <td><strong>龙人</strong></td>
+            <td>Races of the Dragon</td>
+            <td>保留原种族</td>
+            <td><span class="la-badge la-0">+0*</span></td>
+            <td>中型</td><td>3+原种族</td>
+            <td>任意</td>
+            <td>吐息/感官/翼三选一，龙类亚种</td>
+          </tr>
+          <tr>
+            <td><strong>龙血精灵</strong></td>
+            <td>Races of the Dragon</td>
+            <td>无调整</td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>6</td>
+            <td>任意</td>
+            <td>龙血亚种，龙类交涉+2</td>
+          </tr>
+          <tr>
+            <td><strong>Spellscale</strong></td>
+            <td>Races of the Dragon</td>
+            <td><span class="stat-positive">+2 CHA</span> / <span class="stat-negative">-2 STR</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>6</td>
+            <td>术士</td>
+            <td>天生施法，奥术亲和+2</td>
+          </tr>
+          <tr>
+            <td><strong>狗头人（扩展）</strong></td>
+            <td>Races of the Dragon</td>
+            <td><span class="stat-positive">+2 DEX</span> / <span class="stat-negative">-4 STR, -2 CON</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>小型</td><td>6</td>
+            <td>术士</td>
+            <td>龙血亚种，术士替代等级</td>
+          </tr>
+          <tr>
+            <td><strong>牛头人</strong></td>
+            <td>Monster Manual</td>
+            <td><span class="stat-positive">+8 STR, +4 CON</span> / <span class="stat-negative">-2 INT, -2 WIS, -2 CHA</span></td>
+            <td><span class="la-badge la-2">+2</span></td>
+            <td>大型</td><td>9</td>
+            <td>野蛮人</td>
+            <td>冲撞角击x2，灵敏嗅觉，4种族HD</td>
+          </tr>
+          <tr>
+            <td><strong>人马</strong></td>
+            <td>Monster Manual</td>
+            <td><span class="stat-positive">+8 STR, +4 DEX, +2 CON, +2 WIS</span> / <span class="stat-negative">-2 INT</span></td>
+            <td><span class="la-badge la-2">+2</span></td>
+            <td>大型</td><td>7</td>
+            <td>游侠</td>
+            <td>60尺速度，蹄击，4种族HD</td>
+          </tr>
+          <tr>
+            <td><strong>树妖</strong></td>
+            <td>Monster Manual</td>
+            <td><span class="stat-positive">+6 DEX, +2 WIS</span> / <span class="stat-negative">-2 CON</span></td>
+            <td><span class="la-badge la-4">+4</span></td>
+            <td>中型</td><td>8</td>
+            <td>德鲁伊</td>
+            <td>树绑定，天生施法，DR 10/寒铁</td>
+          </tr>
+          <tr>
+            <td><strong>猫人</strong></td>
+            <td>MM（扩展）</td>
+            <td><span class="stat-positive">+2 DEX, +2 STR</span> / <span class="stat-negative">-2 WIS</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>中型</td><td>7</td>
+            <td>游侠</td>
+            <td>爪击/啮咬，灵敏嗅觉，猛扑</td>
+          </tr>
+          <tr>
+            <td><strong>影灵</strong></td>
+            <td>Fiend Folio</td>
+            <td><span class="stat-positive">+4 DEX, +2 CHA</span> / <span class="stat-negative">-2 CON</span></td>
+            <td><span class="la-badge la-4">+4</span></td>
+            <td>中型</td><td>7</td>
+            <td>游荡者</td>
+            <td>阴影传送，类法术能力，DR 5/银</td>
+          </tr>
+          <tr>
+            <td><strong>异种人</strong></td>
+            <td>Fiend Folio</td>
+            <td><span class="stat-positive">+2 DEX</span> / <span class="stat-negative">-2 STR</span></td>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>小型</td><td>7</td>
+            <td>游荡者</td>
+            <td>模仿声音，偷偷摸摸+2，窃贼之手</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:#777;margin-top:10px;">* 半巨人为大型体型但使用中型规则计算 HD 和 LA。<br>
+      * 龙人本身不增加 LA，保留原种族 LA。</p>
+    </div>
+
+    <!-- ============================================================
+         八、种族选择指南
+         ============================================================ -->
+    <h2 id="guide">🧭 八、种族选择指南</h2>
+    <p>按职业类型推荐本页面中的种族，帮助你快速找到最适合的角色构建方案。</p>
+
+    <div class="Rule-box">
+      <h3>按职业类型推荐种族</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>职业类型</th><th>首选种族</th><th>次选种族</th><th>原因</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>战士类</strong><br>（战士/野蛮人/圣武士）</td>
+            <td>盾矮人、半巨人、歌利亚</td>
+            <td>龙人、牛头人、人马</td>
+            <td>盾矮人：体质+2 无反面调整；半巨人：大型+力量+2；歌利亚：力量+4 强力体格。龙人/牛头人适合高 LA 战团。</td>
+          </tr>
+          <tr>
+            <td><strong>施法类</strong><br>（法师/术士/吟游诗人）</td>
+            <td>日精灵、Spellscale、徽民</td>
+            <td>灵魂之民、龙血精灵、月精灵</td>
+            <td>日精灵：智力+2 奥术核心；Spellscale：魅力+2 天生施法。灵魂之民：+1 任意属性灵活。</td>
+          </tr>
+          <tr>
+            <td><strong>技能类</strong><br>（游荡者/刺客/间谍）</td>
+            <td>丛林半身人、异种人、影灵</td>
+            <td>猫人、灰矮人（扩展）</td>
+            <td>丛林半身人：小型+敏捷+2+攀爬；异种人：模仿+窃贼之手；影灵：阴影传送（高LA）。</td>
+          </tr>
+          <tr>
+            <td><strong>牧师/德鲁伊</strong></td>
+            <td>盾矮人、灵魂之民、日精灵</td>
+            <td>野精灵、树妖</td>
+            <td>盾矮人：体质+2 抗法术；灵魂之民：+1 感知灵活；日精灵：智力+2 辅助知识。树妖适合高等级德鲁伊。</td>
+          </tr>
+          <tr>
+            <td><strong>游侠/斥候</strong></td>
+            <td>猫人、人马、野精灵</td>
+            <td>翼人（种族等级）、丛林半身人</td>
+            <td>猫人：猛扑+嗅觉+攀爬；人马：60 尺速度；野精灵：丛林隐匿+4。</td>
+          </tr>
+          <tr>
+            <td><strong>心灵术士/灵能</strong></td>
+            <td>半巨人、灵魂之民</td>
+            <td>灰矮人（扩展）、龙人</td>
+            <td>半巨人：灵能天赋+大型体型；灵魂之民：+1 任意属性。灰矮人：智力+2 + 类心灵能力。</td>
+          </tr>
+          <tr>
+            <td><strong>龙脉主题角色</strong></td>
+            <td>龙人、Spellscale</td>
+            <td>龙血精灵、狗头人（扩展）</td>
+            <td>龙人：吐息/感官/翼三选一最灵活；Spellscale：魅力+2 天生施法+龙血亚种。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Rule-box">
+      <h3>按 LA 分级推荐</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>LA</th><th>推荐种族</th><th>适用等级建议</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="la-badge la-0">+0</span></td>
+            <td>盾矮人、金矮人、日精灵、月精灵、野精灵、水生精灵、丛林半身人、灵魂之民、龙人、龙血精灵、Spellscale、狗头人、猫人、异种人</td>
+            <td>1 级即可开始，无等级惩罚</td>
+          </tr>
+          <tr>
+            <td><span class="la-badge la-1">+1</span></td>
+            <td>半巨人、灰矮人（扩展）</td>
+            <td>建议 3 级以上战团使用</td>
+          </tr>
+          <tr>
+            <td><span class="la-badge la-2">+2</span></td>
+            <td>牛头人、人马</td>
+            <td>建议 6 级以上战团使用（含种族 HD）</td>
+          </tr>
+          <tr>
+            <td><span class="la-badge la-4">+4</span></td>
+            <td>树妖、影灵</td>
+            <td>仅建议 12 级以上战团使用</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Rule-box">
+      <h3>强度评级总览（非官方，仅供参考）</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>评级</th><th>种族</th><th>评价</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>S 级</strong>（顶级）</td>
+            <td>灵魂之民、龙人、猫人</td>
+            <td>LA +0 且能力极其优秀。灵魂之民 +1 任意属性无出其右；龙人三选一灵活性强；猫人猛扑+全回合冲锋战术价值极高。</td>
+          </tr>
+          <tr>
+            <td><strong>A 级</strong>（优秀）</td>
+            <td>盾矮人、日精灵、Spellscale、异种人</td>
+            <td>LA +0 且属性/能力与特定职业完美契合。</td>
+          </tr>
+          <tr>
+            <td><strong>B 级</strong>（良好）</td>
+            <td>半巨人、月精灵、野精灵、丛林半身人、龙血精灵</td>
+            <td>各有特色，适合特定构建但不如 S/A 级通用。</td>
+          </tr>
+          <tr>
+            <td><strong>C 级</strong>（一般）</td>
+            <td>金矮人、水生精灵、狗头人</td>
+            <td>能力中规中矩或有明显短板（水生精灵脱水/狗头人属性惩罚）。</td>
+          </tr>
+          <tr>
+            <td><strong>D 级</strong>（高风险）</td>
+            <td>牛头人、人马、树妖、影灵</td>
+            <td>LA 过高导致角色等级严重落后，仅适合高等级战团或特殊主题。</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:#777;margin-top:10px;">强度评级因战团配置、DM 规则和角色构建而异，以上仅为一般性参考。</p>
+    </div>
+
+    <p style="font-size:13px;color:#999;margin-top:40px;text-align:center;">
+      数据来源：D&D 3.5e Races of Stone · Races of the Wild · Races of Destiny · Races of the Dragon<br>
+      Monster Manual · Fiend Folio · Expanded Psionics Handbook<br>
+      所有扩展种族需 DM 许可方可使用 · 等级调整值(LA)直接影响角色有效等级
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 3R 扩展种族大全 | 数据来源：Races of 系列 · MM · Fiend Folio · RoTD</p>
+</div>
+</body>
+</html>
