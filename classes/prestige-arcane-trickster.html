@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>诡术师 Arcane Trickster - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html" class="active">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>诡术师 <span class="en-name">Arcane Trickster</span></h1>
+    <p class="source">来源：《地下城主指南》(DMG) 第184页</p>
+
+    <div class="infobox">
+      <h3>职业信息</h3>
+      <table>
+        <tr><th>生命骰 (HD)</th><td>d4</td></tr>
+        <tr><th>阵营限制</th><td>任意非守序</td></tr>
+        <tr><th>关键属性</th><td>智力 (INT) 或 魅力 (CHA)、敏捷 (DEX)</td></tr>
+        <tr><th>施法进阶</th><td>每级+1级现有奥术施法等级</td></tr>
+        <tr><th>来源</th><td>DMG p.184</td></tr>
+      </table>
+
+      <h3>入门条件</h3>
+      <table>
+        <tr><th>阵营</th><td>任意非守序 (any non-lawful)</td></tr>
+        <tr><th>技能</th><td>解除装置 (Disable Device) 7级、脱逃术 (Escape Artist) 7级</td></tr>
+        <tr><th>偷袭</th><td>偷袭 (Sneak Attack) +2d6</td></tr>
+        <tr><th>施法能力</th><td>能够施展3级奥术法术</td></tr>
+      </table>
+
+      <h3>本职技能</h3>
+      <p>估价 (Appraise)、平衡 (Balance)、唬骗 (Bluff)、攀爬 (Climb)、专注 (Concentration)、解除装置 (Disable Device)、易容 (Disguise)、脱逃术 (Escape Artist)、搜集信息 (Gather Information)、躲藏 (Hide)、跳跃 (Jump)、知识(地下城) (Knowledge: dungeoneering)、知识(地方) (Knowledge: local)、聆听 (Listen)、潜行 (Move Silently)、开锁 (Open Lock)、搜索 (Search)、察言观色 (Sense Motive)、手上功夫 (Sleight of Hand)、辨识法术 (Spellcraft)、侦察 (Spot)、翻滚 (Tumble)、绳技 (Use Rope)</p>
+      <p>技能点：4 + 智力调整值</p>
+    </div>
+
+    <h2>职业特性表</h2>
+    <table class="class-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>BAB</th>
+          <th>强韧</th>
+          <th>反射</th>
+          <th>意志</th>
+          <th>特殊能力</th>
+          <th>每日法术</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>+0</td><td>+0</td><td>+2</td><td>+0</td>
+          <td>远程戏法 (Ranged Legerdemain)</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>2</td><td>+1</td><td>+0</td><td>+3</td><td>+0</td>
+          <td>偷袭 +1d6 (Sneak Attack +1d6)</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>3</td><td>+1</td><td>+1</td><td>+3</td><td>+1</td>
+          <td>—</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>4</td><td>+2</td><td>+1</td><td>+4</td><td>+1</td>
+          <td>偷袭 +2d6</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>5</td><td>+2</td><td>+1</td><td>+4</td><td>+1</td>
+          <td>临时偷袭 (Impromptu Sneak Attack)</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>6</td><td>+3</td><td>+2</td><td>+5</td><td>+2</td>
+          <td>—</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>7</td><td>+3</td><td>+2</td><td>+5</td><td>+2</td>
+          <td>偷袭 +3d6</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>8</td><td>+4</td><td>+2</td><td>+6</td><td>+2</td>
+          <td>—</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>9</td><td>+4</td><td>+3</td><td>+6</td><td>+3</td>
+          <td>偷袭 +4d6、临时偷袭每天2次</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>10</td><td>+5</td><td>+3</td><td>+7</td><td>+3</td>
+          <td>—</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详述</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>诡术师不获得任何额外的武器或防具熟练。</p>
+
+    <h3>法术 (Spells)</h3>
+    <p>在每个诡术师等级，角色获得新的每日法术数量，如同他同时在之前的奥术施法职业上也提升了一级。也就是说，诡术师的每个等级都会使某一奥术施法职业的施法者等级+1，从而决定每日法术数、已知法术数和施法者等级。角色不能将诡术师等级应用于多种施法职业——他必须在获得第一个诡术师等级时选择将哪个施法职业与诡术师等级叠加。</p>
+
+    <h3>远程戏法 (Ranged Legerdemain)</h3>
+    <p>诡术师可以在30英尺外使用以下技能：解除装置 (Disable Device)、开锁 (Open Lock)、手上功夫 (Sleight of Hand)。使用远程戏法时，技能检定承受-5减值。诡术师必须能看到目标区域。远程使用手上功夫时，诡术师必须使用法师之手 (mage hand) 法术的效果——也就是说，他能操作的物品重量不超过5磅。</p>
+    <p>远程戏法每天可使用次数等于诡术师等级。</p>
+
+    <h3>偷袭 (Sneak Attack)</h3>
+    <p>此能力与盗贼的偷袭能力相同。当目标失去敏捷加值或诡术师进行夹击时，额外伤害增加。偷袭伤害在第2级为+1d6，第4级为+2d6，第7级为+3d6，第9级为+4d6。如果诡术师已经从其他职业获得了偷袭能力，则额外伤害叠加。</p>
+
+    <h3>临时偷袭 (Impromptu Sneak Attack)</h3>
+    <p>从第5级开始，每天一次，诡术师可以声明一次攻击为偷袭，即使目标并未失去敏捷加值或未被夹击。诡术师在掷攻击骰之前声明此能力。如果攻击命中，则造成偷袭额外伤害。此能力在目标本身免疫偷袭的情况下无效（例如对构装体或不死生物）。</p>
+    <p>第9级时，此能力每天可使用两次。</p>
+
+    <h2>构建建议 (Build Tips)</h2>
+
+    <h3>推荐种族</h3>
+    <ul>
+      <li><strong>侏儒 (Gnome)：</strong>体质加值提高 d4 HD 的生存能力，幻术学派的天赋与诡术师的戏法风格完美契合。小体型也提供AC和躲藏加成。</li>
+      <li><strong>精灵 (Elf)：</strong>敏捷加值对偷袭和反射豁免有益，且精灵的搜索和侦查天赋对盗贼型角色很有帮助。</li>
+      <li><strong>人类 (Human)：</strong>额外技能点和专长使前置条件更容易满足，并增强了技能型角色的整体能力。</li>
+    </ul>
+
+    <h3>推荐基础职业</h3>
+    <ul>
+      <li><strong>盗贼 (Rogue) / 法师 (Wizard)：</strong>经典组合。盗贼提供偷袭和盗贼技能，法师提供奥术施法。盗贼5级/法师5级可以在角色10级时满足所有前置条件。</li>
+      <li><strong>吟游诗人 (Bard) / 盗贼 (Rogue)：</strong>吟游诗人自带奥术施法，盗贼提供偷袭。吟游诗人的魅力型施法也增加了角色多样性。</li>
+      <li><strong>术士 (Sorcerer) / 盗贼 (Rogue)：</strong>类似吟游诗人/盗贼的组合，但术士拥有更多每日法术和更高法术等级。</li>
+    </ul>
+
+    <h3>构建思路</h3>
+    <ul>
+      <li>诡术师最大的优势是不损失施法等级——你可以同时获得施法进阶和偷袭提升。</li>
+      <li>远程戏法可以让你在安全距离外解除陷阱和开锁，非常适合在危险环境中行动。</li>
+      <li>临时偷袭弥补了诡术师无法持续获得偷袭条件的缺陷——在关键时刻声明偷袭可以逆转局势。</li>
+      <li>选择幻术和惑控学派的法术可以完美配合诡术师的诡计和偷袭风格。</li>
+    </ul>
+
+    <h2>角色扮演建议 (Role-playing Suggestions)</h2>
+    <ul>
+      <li>诡术师是魔法世界中的骗术大师和冒险家。他们将奥术的力量与盗贼的狡诈完美结合，创造出独特的战斗和冒险风格。</li>
+      <li>扮演诡术师时可以展现幽默、机智和不拘一格的行事风格。他们可能用魔法变戏法来戏弄对手，或用幻术创造出令人惊叹的效果。</li>
+      <li>诡术师通常有强烈的冒险欲望——他们追求刺激、财富和名声。许多诡术师有着传奇般的人生故事。</li>
+      <li>在队伍中，诡术师是多面手——他们可以施展法术、解除陷阱、潜入敌营并在关键时刻发动致命偷袭。这种灵活性使他们成为任何队伍中极有价值的成员。</li>
+      <li>非守序阵营意味着诡术师不受传统规则的束缚——他们可能是不羁的冒险者、自由职业者，或是有着自己道德准则的反英雄。</li>
+    </ul>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

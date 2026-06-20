@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法师 Wizard - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .spell-prog-table { font-size: 13px; }
+  .spell-prog-table th { font-size: 12px; text-align: center; }
+  .spell-prog-table td { text-align: center; }
+  .school-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .school-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px;
+    font-size: 13px;
+  }
+  .school-card h4 { margin: 0 0 6px 0; font-size: 14px; }
+  .school-card .school-desc { color: #666; font-size: 12px; }
+  .wizard-tip {
+    background: #e8f4fd;
+    border-left: 4px solid var(--accent-blue);
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+  .wizard-warn {
+    background: #fde8e8;
+    border-left: 4px solid var(--accent-red);
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">游荡者</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html" class="active">法师 Wizard</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">法师专题</div>
+      <a href="wizard-schools.html">法术学派</a>
+      <a href="wizard-specialist.html">专精法师</a>
+      <a href="wizard-familiars.html">法师仆从</a>
+      <a href="wizard-multiclass.html">多职业建议</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- 信息盒子 -->
+    <div class="infobox">
+      <div class="infobox-title">🔮 法师 Wizard</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <div class="infobox-img" style="padding:20px;font-size:64px;opacity:0.3;">📘🔮📘</div>
+      <table class="infobox-table">
+        <tr><td>HD</td><td>d4</td></tr>
+        <tr><td>阵营</td><td>任意</td></tr>
+        <tr><td>施法属性</td><td>智力（INT）</td></tr>
+        <tr><td>擅长防具</td><td>无（穿甲施法失败）</td></tr>
+        <tr><td>擅长武器</td><td>木棍（不擅长其他）</td></tr>
+        <tr><td>BAB</td><td>差（每3级+1）</td></tr>
+        <tr><td>强韧</td><td>低</td></tr>
+        <tr><td>反射</td><td>低</td></tr>
+        <tr><td>意志</td><td>高</td></tr>
+        <tr><td>技能点</td><td>2 + INT调整值</td></tr>
+        <tr><td>偏爱种族</td><td>精灵（PHB）/ 人类（实际最强）</td></tr>
+        <tr><td>来源</td><td>PHB p.54-59 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>法师（Wizard）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心职业</span>
+      <span class="badge badge-class">PHB p.54</span>
+      <span class="badge badge-spell">奥术施法者</span>
+      <span class="badge badge-note">最受欢迎职业之一</span>
+    </p>
+    <p>法师是<strong>奥术（Arcane magic）</strong>的博学大师，通过<strong>研读魔法书</strong>和<strong>每日准备法术</strong>
+    来施展魔法。与术士（天生施法者）不同，法师需要<strong>智力</strong>作为施法属性，且法术名单更广泛——
+    但每日能施展的法术数量较少。</p>
+    <p>在D&D 3.5e中，法师被认为是<strong>后期最强职业</strong>（High-level powerhouse），
+    6级以后法术的破坏力呈指数级增长。一名17级法师施展的<strong>威力达克尼斯（Power Word Blind）</strong>
+    或<strong>许愿术（Wish）</strong>可以瞬间改变战局。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#role">角色定位</a></li>
+        <li><a href="#mechanics">核心机制</a></li>
+        <li><a href="#spell-progression">法术成长表</a></li>
+        <li><a href="#class-features">职业能力详解</a></li>
+        <li><a href="#schools">法术学派</a></li>
+        <li><a href="#specialist">专精法师</a></li>
+        <li><a href="#familiars">法师仆从</a></li>
+        <li><a href="#feats">推荐专长</a></li>
+        <li><a href="#multiclass">多职业建议</a></li>
+        <li><a href="#equipment">推荐装备</a></li>
+        <li><a href="#spells-known">知晓法术建议</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+      </ol>
+    </div>
+
+    <h2 id="role">🎯 角色定位</h2>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>📘 控场（Control）</h3>
+        <p>法师最强大的定位。<strong>蛛网术（Web）</strong>、<strong>昏暗术（Darkness）</strong>、
+        <strong>力墙术（Wall of Force）</strong>等法术可以完全改变战场。</p>
+      </div>
+      <div class="section-card">
+        <h3>💥 爆发伤害（Blaster）</h3>
+        <p><strong>火球术（Fireball）</strong>、<strong>闪电链（Chain Lightning）</strong>——
+        法师是游戏中爆发AOE伤害最高的职业。</p>
+      </div>
+      <div class="section-card">
+        <h3>🔮 增益与解控（Buffer/Debuffer）</h3>
+        <p><strong>法师护甲（Mage Armor）</strong>、<strong>飞翼术（Fly）</strong>、
+        <strong>迟缓术（Slow）</strong>——辅助全队。</p>
+      </div>
+      <div class="section-card">
+        <h3>📖 万能工具人（Utility）</h3>
+        <p>传讯术、鉴定法术、开锁（法师之手）、飞行——法师能解决几乎所有非战斗问题。</p>
+      </div>
+    </div>
+
+    <h2 id="mechanics">⚙️ 核心机制</h2>
+
+    <div class=" Rule-box">
+      <h3>施法方式：准备法术（Prepared Spells）</h3>
+      <p>法师每天必须<strong>休息8小时</strong>后，通过<strong>魔法书</strong>准备法术。流程如下：</p>
+      <ol>
+        <li>打开魔法书，选择要准备的法术（数量受限于"每日法术位"）</li>
+        <li>进行<strong>8小时休息</strong>（其中4小时必须用于施法准备）</li>
+        <li>准备完成后，法术"填入"法术位，可施展直至用尽</li>
+        <li>施展法术后，该法术位清空，需次日重新准备</li>
+      </ol>
+      <div class="wizard-tip">
+        <strong>💡 与术士的区别：</strong><br>
+        术士（Sorcerer）是"知晓少量法术，无限次施展（受每日法术位限制）"，无需准备。<br>
+        法师是"知晓大量法术，每日选择部分准备"，更灵活但需要计划。
+      </div>
+    </div>
+
+    <div class="Rule-box">
+      <h3>法术辨识（Spellcraft）技能</h3>
+      <p>法师<strong>必须</strong>投入技能点到<strong>法术辨识（Spellcraft）</strong>——这是辨识他人施法、
+      识别魔法物品、以及制作卷轴的必要技能。</p>
+      <p><strong>建议：</strong>法师应将法术辨识视为<strong>关键技能（Cross-class if needed）</strong>，
+      至少保持<strong>技能等级 = 人物等级 + 3</strong>。</p>
+    </div>
+
+    <div class="wizard-warn">
+      <strong>⚠️ 穿甲施法失败（Arcane Spell Failure）</strong><br>
+      法师<strong>不擅长</strong>任何防具。如果法师穿戴防具施展奥术，需要投掷<strong>％施法失败</strong>检定。
+      法师只有<strong>木棍</strong>擅长，不擅长任何金属防具。<br><br>
+      <strong>解决方案：</strong>尽早获得<strong>无甲施法（Armor Proficiency）</strong>专长，
+      或依靠<strong>法师护甲（Mage Armor）</strong>法术获得AC。
+    </div>
+
+    <h2 id="spell-progression">📅 法术成长表（每日法术位）</h2>
+    <p>下表显示法师<strong>每日可准备的法术数量</strong>。实际可用法术还受<strong>INT调整值</strong>影响（每2点INT调整值+1个每环法术位，最高+4）。</p>
+    <table class="wiki-table spell-prog-table">
+      <thead>
+        <tr>
+          <th>等级</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>5</td><td>3</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>2</strong></td><td>6</td><td>4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>3</strong></td><td>6</td><td>5</td><td>3</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>4</strong></td><td>7</td><td>6</td><td>4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>5</strong></td><td>7</td><td>6</td><td>5</td><td>3</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr style="background:#fff3cd"><td><strong>6</strong></td><td>8</td><td>7</td><td>6</td><td>4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>7</strong></td><td>8</td><td>7</td><td>6</td><td>5</td><td>3</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>8</strong></td><td>9</td><td>8</td><td>7</td><td>6</td><td>4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>9</strong></td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>3</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>10</strong></td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>4</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr style="background:#eaf2f8"><td><strong>11</strong></td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>12</strong></td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>4</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>13</strong></td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>3</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>14</strong></td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>4</td><td>—</td><td>—</td></tr>
+        <tr><td><strong>15</strong></td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>3</td><td>—</td></tr>
+        <tr style="background:#eaf2f8"><td><strong>16</strong></td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>4</td><td>—</td></tr>
+        <tr><td><strong>17</strong></td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>3</td></tr>
+        <tr><td><strong>18</strong></td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>4</td></tr>
+        <tr><td><strong>19</strong></td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td></tr>
+        <tr><td><strong>20</strong></td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:#777;">
+      来源：PHB p.57《Table 3-16: Wizard Spells Per Day》<br>
+      ★ 6级是分水岭——法师开始获得3级法术（<strong>火球术</strong>！）<br>
+      ★ 11级获得6级法术（<strong>真知术 True Seeing</strong>、<strong>石肤术 Stoneskin</strong>）<br>
+      ★ 17级获得9级法术（<strong>许愿术 Wish</strong>、<strong>流星暴 Meteor Swarm</strong>）
+    </p>
+
+    <h2 id="class-features">📘 职业能力详解</h2>
+
+    <div class=" Rule-box">
+      <h3>1. 法术（Spells）</h3>
+      <p>法师每日根据上表准备法术。详见<a href="../spells/intro.html">法术系统</a>。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>2.  bonus专长（Bonus Feats）</h3>
+      <p>法师在<strong>1、5、10、15、20级</strong>获得一个<strong>超魔专长（Metamagic Feat）</strong>或<strong>制作专长（Item Creation Feat）</strong>作为奖励专长。</p>
+      <p><strong>超魔专长</strong>允许法师以更高法术位施展法术（如<strong>增远施法（Enlarge Spell）</strong>使法术射程翻倍，
+      <strong>强力施法（Empower Spell）</strong>使法术效果+50%）。</p>
+      <p><strong>制作专长</strong>允许法师制作<strong>法术卷轴（Scroll）</strong>、<strong>魔杖（Wand）</strong>、
+      <strong>法杖（Staff）</strong>、<strong>奇物（Wondrous Item）</strong>等魔法物品。</p>
+      <div class="wizard-tip">
+        <strong>💡 推荐奖励专长优先级：</strong><br>
+        1级：<strong>制作卷轴（Scribe Scroll）</strong>——几乎所有法师必选<br>
+        5级：<strong>增远施法（Enlarge Spell）</strong>或<strong>持久施法（Extend Spell）</strong><br>
+        10级：<strong>制作魔杖（Craft Wand）</strong>或<strong>强力施法（Empower Spell）</strong><br>
+        15级：<strong>极效施法（Maximize Spell）</strong>——爆发伤害最大化<br>
+        20级：<strong>制作奇物（Craft Wondrous Item）</strong>——无尽可能性
+      </div>
+    </div>
+
+    <div class="Rule-box">
+      <h3>3. 法师仆从（Familiar）</h3>
+      <p>法师在<strong>1级</strong>获得一个<strong>魔法仆从</strong>（猫、乌鸦、老鼠、梼杌等）。
+      仆从提供<strong>特殊能力加值</strong>（如+3技能、+2属性等），且在法师死亡后可以更换。</p>
+      <p>详见<a href="wizard-familiars.html">法师仆从专题</a>。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>4. 法术书写（Scribe Scroll）</h3>
+      <p>所有法师<strong>自动获得</strong><a href="../feats/intro.html#scribe-scroll">制作卷轴（Scribe Scroll）</a>专长。
+      这允许法师将法术"写"到卷轴上，供自己或队友使用。</p>
+      <p><strong>制作卷轴成本</strong> = 法术等级 × 施法者等级 × 12.5 GP。</p>
+    </div>
+
+    <h2 id="schools">🏫 法术学派（Wizard Schools）</h2>
+    <p>法师在<strong>1级</strong>选择是否成为<strong>专精法师（Specialist Wizard）</strong>——
+    选择<strong>一个学派</strong>作为专精，代价是<strong>无法施展对立学派的法术</strong>。</p>
+
+    <div class="school-grid">
+      <div class="school-card" style="border-left:4px solid #e74c3c;">
+        <h4>🔴 防护系 Abjuration</h4>
+        <div class="school-desc">保护、解除魔法、法术抗力。<br>代表法术：<em>解除魔法（Dispel Magic）</em>、<em>法术抗力（Spell Resistance）</em></div>
+      </div>
+      <div class="school-card" style="border-left:4px solid #3498db;">
+        <h4>🔵 咒法系 Conjuration</h4>
+        <div class="school-desc">召唤生物、创造物体、传送。<br>代表法术：<em>召唤怪物（Summon Monster）</em>、<em>传送术（Teleport）</em></div>
+      </div>
+      <div class="school-card" style="border-left:4px solid #2ecc71;">
+        <h4>🟢 预言系 Divination</h4>
+        <div class="school-desc">预知未来、探知秘密。<br>代表法术：<em>识破隐形（True Seeing）</em>、<em>预言（Divination）</em></div>
+      </div>
+      <div class="school-card" style="border-left:4px solid #9b59b6;">
+        <h4>🟣 附魔系 Enchantment</h4>
+        <div class="school-desc">影响心智、控制他人。<br>代表法术：<em>魅惑人类（Charm Person）</em>、<em>催眠图纹（Hypnotic Pattern）</em></div>
+      </div>
+      <div class="school-card" style="border-left:4px solid #f39c12;">
+        <h4>🟡 塑能系 Evocation</h4>
+        <div class="school-desc">能量伤害、区域效果。<br>代表法术：<em>火球术（Fireball）</em>、<em>闪电链（Chain Lightning）</em></div>
+      </div>
+      <div class="school-card" style="border-left:4px solid #1abc9c;">
+        <h4>🔵 幻术系 Illusion</h4>
+        <div class="school-desc">制造幻象、隐匿。<br>代表法术：<em>隐形术（Invisibility）</em>、<em>高级隐形（Improved Invisibility）</em></div>
+      </div>
+      <div class="school-card" style="border-left:4px solid #e67e22;">
+        <h4>🟠 死灵系 Necromancy</h4>
+        <div class="school-desc">操控死亡、负能量。<br>代表法术：<em>畏死术（Cause Fear）</em>、<em>操纵死尸（Animate Dead）</em></div>
+      </div>
+      <div class="school-card" style="border-left:4px solid #7f8c8d;">
+        <h4>⚪ 变化系 Transmutation</h4>
+        <div class="school-desc">改变形态、增强能力。<br>代表法术：<em>变化术（Polymorph）</em>、<em>飞行术（Fly）</em></div>
+      </div>
+      <div class="school-card" style="border-left:4px solid #34495e;">
+        <h4>⚫ 通用系 Universal</h4>
+        <div class="school-desc">不属于任何学派的法术。<br>代表法术：<em>魔法飞弹（Magic Missile）</em>、<em>鉴定术（Identify）</em></div>
+      </div>
+    </div>
+
+    <div class="wizard-warn">
+      <strong>⚠️ 专精法师的代价</strong><br>
+      选择专精学派后，法师<strong>无法学习或施展对立学派的法术</strong>。<br>
+      例如：选择<strong>塑能系</strong>专精，则<strong>无法施展幻术系法术</strong>。<br>
+      （对立关系：防护↔︎塑能，咒召↔︎幻术，预言↔︎死灵，附魔↔︎变化，通用无对立）<br><br>
+      <strong>平衡建议：</strong>新手法师<strong>不要选择专精</strong>，以保持法术名单的完整。
+      专精适合已经熟悉法术系统的老手。
+    </div>
+
+    <h2 id="specialist">🏫 专精法师（Specialist Wizard）</h2>
+    <div class=" Rule-box">
+      <h3>成为专精法师的优势</h3>
+      <ul>
+        <li>每日获得<strong>+1个专精学派的法术位</strong>（但不增加知晓法术数量）</li>
+        <li>专精学派的法术<strong>施法失败检定DC +2</strong>（对手试图解除你的法术时更困难）</li>
+        <li>可用<strong>法术识别（Spellcraft）等级</strong>对抗解除魔法</li>
+      </ul>
+      <h3>代价</h3>
+      <ul>
+        <li>无法<strong>知晓、准备、施展</strong>对立学派的任何法术</li>
+        <li>在魔法物品中<strong>使用</strong>对立学派法术仍可以（如卷轴、魔杖）</li>
+      </ul>
+    </div>
+
+    <h2 id="familiars">🐀 法师仆从（Familiar）</h2>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>仆从</th><th>特殊能力</th><th>交付调整值</th><th>技能加值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>蝙蝠 Bat</td><td>昏暗视觉 60英尺</td><td>—</td><td>+3 聆听</td></tr>
+        <tr><td>猫 Cat</td><td>平衡 +3</td><td>—</td><td>+3 平衡</td></tr>
+        <tr><td>乌鸦 Hawk</td><td>昏暗视觉 60英尺</td><td>敏捷+1</td><td>+3 警觉</td></tr>
+        <tr><td>蜥蜴 Lizard</td><td>攀登 +6</td><td>—</td><td>+3 平衡</td></tr>
+        <tr><td>猫鼬 Mongoose</td><td>反射豁免 +2</td><td>—</td><td>+4 反射</td></tr>
+        <tr><td>猴子 Monkey</td><td>攀爬 +4</td><td>—</td><td>+3 攀爬</td></tr>
+        <tr><td>猫头鹰 Owl</td><td>昏暗视觉 60英尺</td><td>—</td><td>+3 潜行</td></tr>
+        <tr><td>老鼠 Rat</td><td>强韧豁免 +2</td><td>—</td><td>+2 强韧</td></tr>
+        <tr><td>渡鸦 Raven</td><td>交谈能力</td><td>—</td><td>+3 聆听</td></tr>
+        <tr><td>蛇 Snake</td><td>嗅觉追踪</td><td>—</td><td>+3 聆听</td></tr>
+        <tr><td>土拨鼠 Woodchuck</td><td>掘穴能力</td><td>—</td><td>+3 聆听</td></tr>
+        <tr style="background:#fff3cd"><td><strong>imps（需邪恶）</strong></td><td>传讯、侦察</td><td>魅力+2</td><td>+2 恶名</td></tr>
+        <tr style="background:#fff3cd"><td><strong>Quasit（需邪恶）</strong></td><td>隐形、毒击</td><td>敏捷+2</td><td>+3 潜行</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:#777;">来源：PHB p.57 · 完整列表含更多异域仆从</p>
+
+    <h2 id="feats">🌟 法师推荐专长</h2>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>制作卷轴 Scribe Scroll</h3>
+        <p><strong>必选。</strong>自动获得，允许制作法术卷轴。卷轴是法师的"弹药库"。</p>
+      </div>
+      <div class="section-card">
+        <h3>增远施法 Enlarge Spell</h3>
+        <p>法术射程翻倍。对<strong>火球术</strong>等AOE法术极其有用，更安全。</p>
+      </div>
+      <div class="section-card">
+        <h3>持久施法 Extend Spell</h3>
+        <p>法术持续时间翻倍（以+1法术位为代价）。对<strong>飞行术</strong>等法术很有用。</p>
+      </div>
+      <div class="section-card">
+        <h3>强力施法 Empower Spell</h3>
+        <p>法术效果变量+50%（如火球术伤害 5d6 → 7d6+？）。+2法术位。</p>
+      </div>
+      <div class="section-card">
+        <h3>法术专注 Spell Focus</h3>
+        <p>所选学派法术的对手豁免DC+1。对控场法师极其重要。</p>
+      </div>
+      <div class="section-card">
+        <h3>制作魔杖 Craft Wand</h3>
+        <p>制作魔杖。魔杖可以"无失败检定"施展法术，是法师的备用力量。</p>
+      </div>
+    </div>
+
+    <h2 id="multiclass">🔄 法师多职业建议</h2>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>法师 1 / 战士 X</h3>
+        <p><strong>经典组合。</strong>1级法师获得<strong>全部法术施展能力</strong>（包括高环法术，只要能准备），
+        战士提供HP和BAB。注意：<strong>法师等级决定法术位</strong>。</p>
+        <p style="color:var(--accent-red);font-size:13px;">⚠️ 需解决穿甲施法失败问题</p>
+      </div>
+      <div class="section-card">
+        <h3>游荡者 3 / 法师 3 → 奥术戏法者</h3>
+        <p><strong>Arcane Trickster进阶前置。</strong>游荡者的技能+法师的法术=最灵活的角色。</p>
+      </div>
+      <div class="section-card">
+        <h3>法师 X / 奥术骑士</h3>
+        <p>施法者+近战者的结合。<strong>需6级法师/4级战士</strong>前置。</p>
+      </div>
+      <div class="section-card">
+        <h3>纯法师（建议）</h3>
+        <p>法师是<strong>最不适合兼职</strong>的职业之一。因为法术位受限于<strong>单一职业等级</strong>，
+        兼职会严重拖慢法术成长。除非有明确进阶目标，否则<strong>建议纯法师</strong>。</p>
+      </div>
+    </div>
+
+    <h2 id="equipment">🎒 法师推荐装备</h2>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>装备</th><th>价格</th><th>效果</th><th>优先级</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>魔法书（空白）</td><td>15 GP</td><td>记录知晓的法术</td><td>⭐⭐⭐⭐⭐ 必需</td></tr>
+        <tr><td>法术材料包</td><td>5 GP</td><td>施法材料（如无代价则不需要）</td><td>⭐⭐⭐⭐ 推荐</td></tr>
+        <tr><td>学者包</td><td>35 GP</td><td>墨水、羽毛笔、羊皮纸</td><td>⭐⭐⭐ 推荐</td></tr>
+        <tr><td>法师护甲（法术）</td><td>法术位</td><td>AC 13+DEX（无 armor）</td><td>⭐⭐⭐⭐⭐ 每战必用</td></tr>
+        <tr><td>隐形斗篷（奇物）</td><td>27000 GP</td><td>+5 隐蔽，每日1次隐形</td><td>⭐⭐⭐ 后期目标</td></tr>
+        <tr><td>飞行戒指</td><td>2000 GP</td><td>每日2次飞行</td><td>⭐⭐⭐⭐ 中期目标</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="spells-known">📖 知晓法术建议（1-5级）</h2>
+    <div class="wizard-tip">
+      <strong>💡 法师的"知晓法术"策略</strong><br>
+      法师可以<strong>改变每日准备的法术</strong>，但<strong>知晓的法术</strong>是固定的（除非找到新法术写入魔法书）。<br>
+      因此，选择"知晓什么法术"是法师长期规划的核心。
+    </div>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>等级</th><th>必选法术（建议）</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>0级</strong></td>
+          <td>魔法飞弹、幻音、开关术、光亮术</td>
+          <td>魔法飞弹是可靠的伤害来源</td>
+        </tr>
+        <tr>
+          <td><strong>1级</strong></td>
+          <td>魔法导弹、昏暗术、法师护甲、隐雾术、睡眠术</td>
+          <td>护甲+控场+伤害，全能组合</td>
+        </tr>
+        <tr>
+          <td><strong>2级</strong></td>
+          <td>蛛网术、隐形术、敲击术、抵抗能量</td>
+          <td>蛛网是最强2级控场法术</td>
+        </tr>
+        <tr>
+          <td><strong>3级</strong></td>
+          <td>火球术、飞行术、解除魔法、闪现术</td>
+          <td>火球是游戏最强AOE之一</td>
+        </tr>
+        <tr>
+          <td><strong>4级</strong></td>
+          <td>石肤术、移位术、寒冰锥、探测思想</td>
+          <td>石肤让法师在近战中存活</td>
+        </tr>
+        <tr>
+          <td><strong>5级</strong></td>
+          <td>支配人类、传送术、拂晓曙光、死云术</td>
+          <td>传送术是终极便利性法术</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>冲突1：法师仆从的属性调整值时机</h3>
+      <p><strong>冲突描述：</strong>法师仆从交付的<strong>属性调整值</strong>（如+2敏捷）是<strong>总是有效</strong>还是<strong>仅在仆从5英尺内有效</strong>？</p>
+      <p><strong>SRD说法：</strong>"A familiar grants <strong>special abilities</strong> and a <strong>+3 bonus</strong>..." （未明确范围）</p>
+      <p><strong>PHB详细说明：</strong>仆从在<strong>5英尺内</strong>时，法师获得特殊能力和属性调整值；超过5英尺则失去。</p>
+      <p><span class="source-tag">SRD · 模糊</span> <span class="source-tag">PHB p.57 · 明确5英尺</span></p>
+      <p><strong>结论：</strong>应以<strong>PHB为准</strong>——仆从必须<strong>邻近（5英尺内）</strong>才提供加值。这是DM常用平衡手段。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>冲突2：专精法师的对立学派数量</h3>
+      <p><strong>冲突描述：</strong>3.0版PHB中，专精法师失去<strong>两个</strong>对立学派；3.5版SRD中，专精法师只失去<strong>一个</strong>对立学派。</p>
+      <p><span class="source-tag">3.0 PHB · 失去两个学派</span> <span class="source-tag">3.5 SRD · 失去一个学派</span></p>
+      <p><strong>结论：</strong>使用3.5版规则时，专精法师<strong>只失去一个对立学派</strong>。这是3.0→3.5的重要变更之一。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-gold);background:#fef9e7;">
+      <h3>冲突3：法师是否能穿着"法师护甲"施展法术？</h3>
+      <p><strong>问题描述：</strong><a href="../spells/mage-armor.html">法师护甲（Mage Armor）</a>创造一个<strong>力场护甲</strong>，不是物理防具。
+      那么穿着法师护甲时，是否会触发<strong>奥术施法失败</strong>？</p>
+      <p><strong>共识：</strong>法师护甲<strong>不会</strong>导致施法失败，因为它不是"防具"。这已在<strong>官方FAQ</strong>中确认。</p>
+      <p><span class="source-tag">SRD · 明示"非物理护甲"</span> <span class="source-tag">Official FAQ · 3.5 p.62</span></p>
+    </div>
+    
+    <div class="conflict-preview" style="border-left-color:#9b59b6;background:#f4ecf7;">
+      <h3>冲突4：法师法术准备时间</h3>
+      <p><strong>冲突描述：</strong>PHB规定法师每日准备法术需要<strong>1小时</strong>。但在紧急情况下（如野外露营），是否可以<strong>快速准备</strong>部分法术？</p>
+      <p><strong>PHB规则：</strong>严格来说，准备法术需要完整的1小时冥想。但DM可以允许<strong>替代准备</strong>（将已准备的法术替换为其他法术），这需要15分钟/法术。</p>
+      <p><strong>扩展规则：</strong>某些DM允许法师在<strong>短休</strong>期间准备部分法术（如Complete Arcane中提到的"快速准备"变体规则）。</p>
+      <p><span class="source-tag">PHB p.55 · 1小时准备</span> <span class="source-tag">Complete Arcane · 变体规则</span></p>
+      <p><strong>建议：</strong>采用PHB标准规则（1小时准备）。如果战役节奏快，DM可允许短休期间替换1-2个法术。</p>
+    </div>
+    
+    <div class="conflict-preview" style="border-left-color:#2ecc71;background:#eafaf1;">
+      <h3>冲突5：智力调整值法术位计算</h3>
+      <p><strong>冲突描述：</strong>法师的<strong>智力调整值</strong>会影响每日法术位数量。但具体计算方式是：</p>
+      <table class="wiki-table" style="margin:12px 0;font-size:13px;">
+        <tr><th>智力</th><th>调整值</th><th>额外法术位</th></tr>
+        <tr><td>12-13</td><td>+1</td><td>每环1个（最高+4）</td></tr>
+        <tr><td>14-15</td><td>+2</td><td>每环2个（最高+4）</td></tr>
+        <tr><td>16-17</td><td>+3</td><td>每环3个（最高+4）</td></tr>
+        <tr><td>18-19</td><td>+4</td><td>每环4个（最高+4）</td></tr>
+      </table>
+      <p><strong>冲突点：</strong>如果法师有<strong>18智力</strong>，他获得+4额外法术位。但这些额外法术位<strong>只能用于已知晓的法术环级</strong>。某些新DM会误以为可以获得任意环级的额外法术位。</p>
+      <p><span class="source-tag">PHB p.57 · 明确限制</span></p>
+      <p><strong>建议：</strong>额外法术位只能用于法师<strong>已能施展的环级</strong>（如5级法师有1-3环法术，额外法术位只能用于1-3环）。</p>
+    </div>
+    
+    <div class="conflict-preview" style="border-left-color:#e74c3c;background:#fdedec;">
+      <h3>冲突6：法师 vs. 术士 —— 哪个更强？</h3>
+      <p><strong>冲突描述：</strong>这是D&D社区最持久的辩论之一。法师<strong>准备法术</strong>（灵活但耗时），术士<strong>自发施法</strong>（快速但法术选择有限）。</p>
+      <p><strong>法师优势：</strong></p>
+      <ul>
+        <li>可以<strong>改变每日法术</strong>（根据当天任务调整）</li>
+        <li>法术位数量<strong>更多</strong>（高等级时差距明显）</li>
+        <li>可以<strong>抄写新法术</strong>（从卷轴、其他法师魔法书）</li>
+      </ul>
+      <p><strong>术士优势：</strong></p>
+      <ul>
+        <li><strong>快速施法</strong>（不需准备，反应更快）</li>
+        <li><strong>魅力施法</strong>（适合交际型角色）</li>
+        <li><strong>血脉能力</strong>（某些血统有额外能力）</li>
+      </ul>
+      <p><strong>结论：</strong>两者各有优势。<strong>法师更适合战术大师</strong>（规划每一步），<strong>术士更适合快节奏游戏</strong>（随时应对突发情况）。DM应平衡两者。</p>
+    </div>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="intro.html">← 返回职业总览</a> | <a href="sorcerer.html">下一页：术士 →</a><br><br>
+      <strong>数据来源：</strong>PHB 3.5e p.54-59 · SRD 3.5 · D&D 3.5e Official FAQ
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 法师职业详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

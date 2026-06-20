@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3R拓展功能大全 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .intro-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 32px; margin: 24px 0; color: #fff; }
+  .intro-section h2 { color: #fff; margin-bottom: 16px; }
+  .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 24px 0; }
+  .category-card { background: var(--bg-card); border: 2px solid var(--border); border-radius: 10px; padding: 24px; transition: .2s; cursor: pointer; }
+  .category-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }
+  .category-icon { font-size: 2.5rem; display: block; margin-bottom: 12px; }
+  .category-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .category-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+  .category-count { font-size: 0.85rem; color: var(--accent); margin-top: 12px; font-weight: 600; }
+  .status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-top: 12px; }
+  .status-completed { background: #2ecc71; color: #fff; }
+  .status-in-progress { background: #f39c12; color: #fff; }
+  .status-planned { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+  .section-title { font-size: 1.4rem; font-weight: 700; margin: 32px 0 16px; color: var(--text); }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+<div class="page-wrapper">
+  <!-- 左侧导航 -->
+  <nav class="sidebar">
+    <div class="nav-header">
+      <span class="nav-logo">⚔️</span>
+      <span class="nav-title">D&D 3.5e</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 首页</a></li>
+      <li><a href="../rules.html">📜 核心规则</a></li>
+      <li><a href="../spells/intro.html">✨ 法术大全</a></li>
+      <li><a href="../classes/intro.html">⚔️ 职业</a></li>
+      <li><a href="../races/intro.html">🧝 种族</a></li>
+      <li><a href="../feats/intro.html">🏆 专长</a></li>
+      <li><a href="../skills/intro.html">📊 技能</a></li>
+      <li><a href="../equipment/intro.html">🎒 装备</a></li>
+      <li><a href="../monsters/intro.html">👹 怪物</a></li>
+      <li><a href="index.html" class="active">📚 3R拓展</a></li>
+      <li><a href="../conflicts.html">⚠️ 规则冲突</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <!-- 面包屑 -->
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a> &gt; <span>3R拓展功能大全</span>
+    </div>
+
+    <!-- 页面标题 -->
+    <div class="page-header">
+      <h1>📚 3R拓展功能大全</h1>
+      <p class="page-subtitle">Dungeons & Dragons 3.5版第三修订（3R）拓展内容与补充规则</p>
+    </div>
+
+    <!-- 简介 -->
+    <div class="intro-section">
+      <h2>📖 关于3R拓展</h2>
+      <p style="line-height: 1.8; opacity: 0.9;">
+        <strong>3R（第三修订版）</strong>是D&D 3.5版的拓展内容集合，包含大量新增种族、职业、专长、法术、装备、怪物以及可选规则。
+        这些内容来自官方拓展资料、业余爱好者创作以及社区共识，旨在丰富游戏体验，提供更多角色创建和冒险设计的选择。
+      </p>
+      <p style="margin-top: 16px; line-height: 1.8; opacity: 0.9;">
+        本模块整理并中文化了3R的核心内容，并标注了内容来源（官方/社区/自制），方便玩家和DM快速查阅。
+      </p>
+    </div>
+
+    <!-- 核心内容分类 -->
+    <h2 class="section-title">📋 核心内容</h2>
+    <div class="category-grid">
+      <a href="new-races.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🧝</span>
+        <div class="category-title">新增种族</div>
+        <div class="category-desc">
+          新增种族，如卓尔精灵、提夫林、换生灵、半巨人等。包含完整的种族特性、属性调整、职业建议等。
+        </div>
+        <div class="category-count">预计 15-20 个种族</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="new-classes.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">⚔️</span>
+        <div class="category-title">新增职业</div>
+        <div class="category-desc">
+          新增基础职业和进阶职业，如刺客、元素使者、Arcane Archer等。包含完整的职业特性和进阶要求。
+        </div>
+        <div class="category-count">预计 10-15 个职业</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="new-feats.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🏆</span>
+        <div class="category-title">新增专长</div>
+        <div class="category-desc">
+          新增专长，包含战斗专长、法术专长、技能专长等。部分专长有特殊前置要求或与其他规则联动。
+        </div>
+        <div class="category-count">预计 30-50 个专长</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="new-spells.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">✨</span>
+        <div class="category-title">新增法术</div>
+        <div class="category-desc">
+          新增法术，包含新学派法术、领域法术、进阶职业法术等。部分法术来自拓展资料或社区创作。
+        </div>
+        <div class="category-count">预计 50-100 个法术</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+    </div>
+
+    <!-- 装备与物品 -->
+    <h2 class="section-title">🎒 装备与物品</h2>
+    <div class="category-grid">
+      <a href="new-weapons.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">⚔️</span>
+        <div class="category-title">新增武器</div>
+        <div class="category-desc">
+          新增武器类型，包含异种武器、精通武器、附魔武器等。包含伤害骰、重击范围、特殊能力等。
+        </div>
+        <div class="category-count">预计 20-30 种武器</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="new-armor.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🛡️</span>
+        <div class="category-title">新增护甲</div>
+        <div class="category-desc">
+          新增护甲类型，包含轻甲、中甲、重甲、盾牌等。包含AC加值、敏捷调整上限、法术失败几率等。
+        </div>
+        <div class="category-count">预计 15-20 种护甲</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="new-items.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">💍</span>
+        <div class="category-title">新增魔法物品</div>
+        <div class="category-desc">
+          新增魔法物品，包含魔法武器、魔法护甲、魔杖、法杖、卷轴、药水等。包含商品价格、特殊能力等。
+        </div>
+        <div class="category-count">预计 50-80 个物品</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="new-artifacts.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🏺</span>
+        <div class="category-title">新增神器与圣物</div>
+        <div class="category-desc">
+          新增神器与圣物，包含传说武器、圣物、神器级物品等。这些物品通常具有强大的能力和使用限制。
+        </div>
+        <div class="category-count">预计 10-15 个神器</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+    </div>
+
+    <!-- 怪物与NPC -->
+    <h2 class="section-title">👹 怪物与NPC</h2>
+    <div class="category-grid">
+      <a href="new-monsters.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">👹</span>
+        <div class="category-title">新增怪物</div>
+        <div class="category-desc">
+          新增怪物，包含异怪、构造体、元素生物、异界生物等。包含完整的属性块、特殊攻击、特殊防御等。
+        </div>
+        <div class="category-count">预计 50-100 个怪物</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="new-npcs.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🧙</span>
+        <div class="category-title">NPC模板</div>
+        <div class="category-desc">
+          NPC模板，包含不同职业等级、不同角色的NPC示例。可用于快速生成冒险中的NPC对手或盟友。
+        </div>
+        <div class="category-count">预计 20-30 个模板</div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+    </div>
+
+    <!-- 可选规则 -->
+    <h2 class="section-title">📜 可选规则</h2>
+    <div class="category-grid">
+      <a href="optional-rules-combat.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">⚔️</span>
+        <div class="category-title">战斗可选规则</div>
+        <div class="category-desc">
+          战斗可选规则，包含格挡、卸武、冲撞、空中战斗、水中战斗、马战等。丰富战斗体验和战术选择。
+        </div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="optional-rules-magic.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">✨</span>
+        <div class="category-title">魔法可选规则</div>
+        <div class="category-desc">
+          魔法可选规则，包含法术失败、魔网、魔法项目创作、智能魔法物品等。扩展魔法系统的深度和复杂度。
+        </div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="optional-rules-campaign.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">📖</span>
+        <div class="category-title">战役可选规则</div>
+        <div class="category-desc">
+          战役可选规则，包含声望系统、天赋系统、san值系统、经验值变体等。为战役提供更多的定制选项。
+        </div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="optional-rules-character.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🧝</span>
+        <div class="category-title">角色创建可选规则</div>
+        <div class="category-desc">
+          角色创建可选规则，包含买点法、随机背景、角色缺陷、角色优点等。让角色创建更具个性化和故事性。
+        </div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+    </div>
+
+    <!-- 资源与工具 -->
+    <h2 class="section-title">🔧 资源与工具</h2>
+    <div class="category-grid">
+      <a href="random-tables.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🎲</span>
+        <div class="category-title">随机表</div>
+        <div class="category-desc">
+          随机表集合，包含随机遭遇、随机宝箱、随机NPC、随机姓名、随机事件等。帮助DM快速生成内容。
+        </div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="calculators.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🧮</span>
+        <div class="category-title">计算器与工具</div>
+        <div class="category-desc">
+          计算器与工具，包含经验值计算器、建造成本计算器、属性购买计算器等。帮助玩家和DM快速计算数据。
+        </div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="reference-sheets.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">📋</span>
+        <div class="category-title">快速参考表</div>
+        <div class="category-desc">
+          快速参考表，包含战斗动作表、法术成分表、豁免检定表、属性检定表等。方便桌面游戏时快速查阅。
+        </div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+
+      <a href="conversion-guides.html" class="category-card" style="text-decoration: none; color: inherit;">
+        <span class="category-icon">🔄</span>
+        <div class="category-title">版本转换指南</div>
+        <div class="category-desc">
+          版本转换指南，包含3.5e到5e的转换、Pathfinder转换、自制规则转换等。帮助在不同版本间迁移角色和战役。
+        </div>
+        <span class="status-badge status-planned">待整理</span>
+      </a>
+    </div>
+
+    <!-- 底部说明 -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-top: 32px; line-height: 1.8;">
+      <h3 style="margin-bottom: 12px;">📝 使用说明</h3>
+      <ul style="padding-left: 20px; color: var(--text-muted);">
+        <li>本模块内容来自D&D 3.5e官方拓展资料、社区创作和业余爱好者整理</li>
+        <li>所有内容均已中文化，并标注了来源和适用规则</li>
+        <li>部分内容可能需要DM允许才能在游戏中使用</li>
+        <li>如有发现错误或遗漏，欢迎反馈</li>
+      </ul>
+      <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.9rem;">
+        💡 <strong>建议</strong>：使用本模块内容前，请与您的DM或玩家群体确认哪些规则适用。部分可选规则可能会显著影响游戏平衡。
+      </p>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

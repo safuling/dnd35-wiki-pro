@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>警觉 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <h3>专长导航</h3>
+  <ul>
+    <li><a href="intro.html">专长总览</a></li>
+    <li class="nav-divider">战斗专长</li>
+    <li><a href="power-attack.html">猛力攻击</a></li>
+    <li><a href="cleave.html">顺劈斩</a></li>
+    <li><a href="weapon-focus.html">武器专攻</a></li>
+    <li><a href="improved-initiative.html" class="active">警觉</a></li>
+    <li><a href="dodge.html">闪避</a></li>
+    <li><a href="combat-expertise.html">战斗技巧</a></li>
+    <li class="nav-divider">施法专长</li>
+    <li><a href="spell-focus.html">法术专攻</a></li>
+    <li><a href="combat-casting.html">战斗施法</a></li>
+    <li class="nav-divider">通用专长</li>
+    <li><a href="toughness.html">强韧</a></li>
+    <li><a href="iron-will.html">钢铁意志</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 警觉</nav>
+<h1>警觉 (Improved Initiative)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">通用专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">无</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">先攻掷骰获得 +4 加值</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择一次</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你反应迅速，能在战斗开始时抢占先机。</p>
+<p>你的 <strong>先攻调整值 (Initiative modifier)</strong> 获得 <span class="rule-keyword">+4 加值</span>。该加值直接加入先攻掷骰（d20 + 敏捷调整值 + 专长加值）。</p>
+
+<h2 id="benefit">益处</h2>
+<ul>
+  <li>在先攻掷骰时，获得 <strong>+4 加值</strong>。</li>
+  <li>先攻掷骰 = d20 + 敏捷调整值 + 警觉加值 (+4)。</li>
+  <li>高先攻意味着你能在敌人之前行动，对 <strong>控制战斗节奏</strong> 至关重要。</li>
+</ul>
+
+<h2 id="tactics">战术价值</h2>
+<div class="tactic-box">
+  <p><strong>为什么先攻很重要？</strong></p>
+  <ul>
+    <li><strong>先手控制</strong>：先行动可以优先施放控制法术（如<em>睡眠</em>、<em>蛛网术</em>）。</li>
+    <li><strong>集火目标</strong>：先手可以快速消灭关键敌人（如敌方施法者）。</li>
+    <li><strong>避免突袭</strong>：先手可以提前规避危险（如远离敌人范围）。</li>
+    <li><strong>保护队友</strong>：先手可以提前施放增益法术或设置防御。</li>
+  </ul>
+</div>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">盗贼 (Rogue)</strong>：高敏捷，先手偷袭控制。</li>
+  <li><strong class="highlight">法师 (Wizard)</strong>：先手施放控制法术，避免被中断。</li>
+  <li><strong class="highlight">吟游诗人 (Bard)</strong>：先手施放群体增益/减益。</li>
+  <li><strong>游侠、武僧</strong>：高敏捷职业，先手近战控制。</li>
+  <li><strong>任何职业</strong>：无先决条件，任何角色都可选择。</li>
+</ul>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>闪电反射 (Lightning Reflexes)</strong>：提高反射豁免，搭配警觉提高生存能力。</li>
+  <li><strong>闪避 (Dodge)</strong>：需要敏捷 13，提高AC，搭配警觉先手躲避。</li>
+  <li><strong>灵活移动 (Mobility)</strong>：需要闪避，先手脱离威胁区域。</li>
+</ul>
+
+<h2 id="feat-comparison">先攻专长对比</h2>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>专长</th>
+      <th>加值</th>
+      <th>先决条件</th>
+      <th>适用性</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>警觉</strong></td>
+      <td class="highlight">+4</td>
+      <td>无</td>
+      <td>任何角色</td>
+    </tr>
+    <tr>
+      <td>精通先攻 (Combat Reflexes)</td>
+      <td>额外机会攻击</td>
+      <td>敏捷 13，猛力攻击</td>
+      <td>近战控制</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例：法师的警觉</strong></p>
+  <p>人类法师 1级，敏捷 14（+2），选择"警觉"专长。</p>
+  <ul>
+    <li>先攻调整值 = 敏捷调整值 (+2) + 警觉 (+4) = <strong>+6</strong></li>
+    <li>先攻掷骰 = d20 + 6</li>
+    <li>平均先攻值约 16.5，大概率先于敌人行动</li>
+    <li>先手施放 <em>睡眠</em> 或 <em>法师护甲</em></li>
+  </ul>
+</div>
+<div class="example-box">
+  <p><strong>示例：盗贼的警觉</strong></p>
+  <p>半身人盗贼 1级，敏捷 18（+4），选择"警觉"专长。</p>
+  <ul>
+    <li>先攻调整值 = +4 + 4 = <strong>+8</strong></li>
+    <li>先攻掷骰 = d20 + 8</li>
+    <li>平均先攻值约 18.5，几乎总是先手</li>
+    <li>先手定位，准备偷袭或陷进</li>
+  </ul>
+</div>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：警觉是否适用于"惊讶"状态？</strong></p>
+  <p>📝 <strong>PHB 页136</strong>：如果角色在"惊讶轮"中，无法行动，先攻顺序不影响。</p>
+  <p>⚠️ <strong>部分误解</strong>：有玩家认为警觉能保证角色在惊讶轮中行动。这是 <span class="rule-error">错误</span> 的。</p>
+  <p>✅ <strong>正确规则</strong>：警觉只影响先攻掷骰，不保证在惊讶轮中行动。惊讶轮的判断基于 <strong>侦察检定</strong>，而非先攻。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页136</strong>：先攻详解。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

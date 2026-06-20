@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>致命一击 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #8B0000, #DC143C); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #8B0000; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #8B0000; border-bottom: 2px solid #8B0000; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">D&D 3.5e Wiki</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="intro.html" class="active">专长</a></li>
+        <li><a href="../spells/intro.html">法术</a></li>
+        <li><a href="../classes/intro.html">职业</a></li>
+        <li><a href="../races/intro.html">种族</a></li>
+        <li><a href="../conflicts.html">规则冲突</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="feat-header">
+      <h1>⚔️ 致命一击</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Improved Critical</p>
+      <span class="feat-type">通用专长</span>
+      <span class="feat-type">【战斗】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">通用专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">专长武器专攻 (Weapon Focus)、战斗技巧 (Combat Expertise)、BAB +4</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">重击威胁范围翻倍</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">可多次选择，每次作用于不同武器</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 95</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">战士、特定构建</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你能够更精准地找到敌人的弱点，使你的攻击更容易造成致命伤害。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>专长武器专攻 (Weapon Focus)</strong> - 必须已选择同一种武器</li>
+        <li><strong>战斗技巧 (Combat Expertise)</strong></li>
+        <li><strong>基本攻击加值 (BAB) +4</strong></li>
+      </ul>
+      <p><strong>说明</strong>：选择一种你已获得武器专攻加值的武器。你必须以同一种武器选择武器专攻和致命一击。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>使用选定武器攻击时，<strong>重击威胁范围翻倍</strong>。</p>
+      <ul>
+        <li>原本重击范围 20 → 威胁范围 19-20</li>
+        <li>原本重击范围 19-20 → 威胁范围 17-20（需要<a href="keen.html">锐锋</a>法术或<a href="keen-edge.html">锐锋</a>属性）</li>
+        <li>原本重击范围 18-20 → 威胁范围 15-20</li>
+      </ul>
+      <p><strong>注意</strong>：重击倍率不增加，只有威胁范围翻倍。</p>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>重击判定流程</h3>
+    <ol>
+      <li><strong>攻击掷骰</strong>：掷 d20 + BAB + 属性调整值 + 其他加值</li>
+      <li><strong>判定命中</strong>：结果 ≥ 目标 AC</li>
+      <li><strong>判定威胁</strong>：如果掷骰结果在重击威胁范围内 → 重击威胁</li>
+      <li><strong>确认重击</strong>：进行一次额外攻击掷骰（只掷 d20 + 加值，不加其他）</li>
+      <li><strong>判定确认</strong>：如果确认掷骰结果 ≥ 目标 AC → 重击成功</li>
+      <li><strong>计算伤害</strong>：基础伤害 × 重击倍率</li>
+    </ol>
+
+    <h3>重击威胁范围示例</h3>
+    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+      <thead>
+        <tr style="background: #8B0000; color: white;">
+          <th style="padding: 10px; text-align: left;">武器</th>
+          <th style="padding: 10px; text-align: center;">原本威胁范围</th>
+          <th style="padding: 10px; text-align: center;">获得致命一击后</th>
+          <th style="padding: 10px; text-align: center;">重击倍率</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #f8f9fa;">
+          <td style="padding: 8px;">长剑 (Longsword)</td>
+          <td style="padding: 8px; text-align: center;">19-20</td>
+          <td style="padding: 8px; text-align: center; color: #28a745; font-weight: bold;">17-20</td>
+          <td style="padding: 8px; text-align: center;">×2</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;">巨剑 (Greatsword)</td>
+          <td style="padding: 8px; text-align: center;">19-20</td>
+          <td style="padding: 8px; text-align: center; color: #28a745; font-weight: bold;">17-20</td>
+          <td style="padding: 8px; text-align: center;">×2</td>
+        </tr>
+        <tr style="background: #f8f9fa;">
+          <td style="padding: 8px;">轻弩 (Light Crossbow)</td>
+          <td style="padding: 8px; text-align: center;">19-20</td>
+          <td style="padding: 8px; text-align: center; color: #28a745; font-weight: bold;">17-20</td>
+          <td style="padding: 8px; text-align: center;">×2</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;">战斧 (Battleaxe)</td>
+          <td style="padding: 8px; text-align: center;">20</td>
+          <td style="padding: 8px; text-align: center; color: #28a745; font-weight: bold;">19-20</td>
+          <td style="padding: 8px; text-align: center;">×3</td>
+        </tr>
+        <tr style="background: #f8f9fa;">
+          <td style="padding: 8px;">重锤 (Heavy Flail)</td>
+          <td style="padding: 8px; text-align: center;">20</td>
+          <td style="padding: 8px; text-align: center; color: #28a745; font-weight: bold;">19-20</td>
+          <td style="padding: 8px; text-align: center;">×2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>特殊情况</h3>
+    <ul>
+      <li><strong>重击范围已经是 18-20 的武器</strong>：获得致命一击后变为 15-20（威胁概率 30%）</li>
+      <li><strong>重击范围已经是 17-20 的武器</strong>：获得致命一击后变为 13-20（威胁概率 40%）</li>
+      <li><strong>无法再翻倍</strong>：如果威胁范围已经达到 13-20，则无法再通过致命一击翻倍（但可以通过<a href="keen.html">锐锋</a>法术或<a href="keen-edge.html">锐锋</a>属性扩展到 11-20）</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：8级人类战士（BAB +8），使用长剑，已选择武器专攻（长剑）和致命一击（长剑）。</p>
+      <p><strong>攻击</strong>：</p>
+      <ol>
+        <li>第一次攻击：掷 d20 → 17 + 8（BAB） + 4（力量调整值） + 3（武器专攻+力量调整值） + 1（其他） = 29 命中AC 22 的敌人</li>
+        <li><strong>重击威胁</strong>：掷骰 17 在威胁范围 17-20 内 → 重击威胁！</li>
+        <li><strong>确认重击</strong>：掷 d20 → 12 + 8（BAB） + 4（力量调整值） + 3（武器专攻+力量调整值） + 1（其他） = 28 ≥ 22 → 重击成功！</li>
+        <li><strong>计算伤害</strong>：基础伤害 1d8 + 4（力量调整值） + 3（武器专攻+力量调整值） + 1（其他） = 1d8 + 8，重击时 ×2 = 2d8 + 16</li>
+      </ol>
+      <p><strong>分析</strong>：致命一击让重击威胁概率从 10%（19-20）提高到 20%（17-20），显著增加了重击频率。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 推荐搭配专长</h4>
+      <ul>
+        <li><strong>武器专攻 (Weapon Focus)</strong> - 先决条件，提高命中</li>
+        <li><strong>猛力攻击 (Power Attack)</strong> - 提高伤害，配合重击</li>
+        <li><strong>顺劈斩 (Cleave)</strong> - 重击后触发顺劈斩</li>
+        <li><strong>致命一击 (Improved Critical)</strong> - 本专长</li>
+        <li><strong>高等武器专攻 (Greater Weapon Focus)</strong> - 进一步提高命中</li>
+        <li><strong>武器专精 (Weapon Specialization)</strong> - 提高伤害</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>⚔️ 推荐构建</h4>
+      <p><strong>1. 重击战士 (Critical Warrior)</strong></p>
+      <ul>
+        <li>专攻：武器专攻 → 战斗技巧 → 致命一击 → 猛力攻击 → 顺劈斩</li>
+        <li>特点：重击频率高，适合使用重击范围大的武器</li>
+        <li>推荐武器：长剑（19-20/×2）、巨剑（19-20/×2）</li>
+      </ul>
+      <p><strong>2. 重武器专家 (Heavy Weapon Specialist)</strong></p>
+      <ul>
+        <li>专攻：武器专攻 → 武器专精 → 致命一击 → 猛力攻击 → 顺劈斩</li>
+        <li>特点：使用重击倍率高的武器（×3、×4）</li>
+        <li>推荐武器：战斧（20/×3）、重锤（20/×2）</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：重击威胁范围的上限</h4>
+      <p><strong>冲突点</strong>：致命一击能否将重击威胁范围翻倍到超过 11-20？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 95</strong>：致命一击将重击威胁范围翻倍（原文："double the threat range"）</li>
+        <li><strong>DMG p. 28</strong>：重击威胁范围最小为 11-20（即威胁概率最大为 50%）</li>
+      </ul>
+      <p><strong>冲突描述</strong>：如果武器原本重击范围是 13-20（威胁概率 40%），获得致命一击后理论上应变为 7-20（威胁概率 70%），但 DMG 规定上限为 11-20（50%）。</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>严格解释</strong>：致命一击可以翻倍，但威胁范围不能超过 11-20（DMG p. 28）</li>
+        <li><strong>宽松解释</strong>：致命一击可以翻倍到 7-20 或更低，DMG 的上限只适用于<a href="keen.html">锐锋</a>法术和<a href="keen-edge.html">锐锋</a>属性</li>
+        <li><strong>折中解释</strong>：致命一击和<a href="keen.html">锐锋</a>法术/属性可以叠加，但总威胁范围不能超过 11-20</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认使用哪种解释。建议在游戏中采用<strong>严格解释</strong>（威胁范围不超过 11-20），以保持平衡。</p>
+    </div>
+
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：致命一击与锐锋法术/属性的叠加</h4>
+      <p><strong>冲突点</strong>：致命一击和<a href="keen.html">锐锋</a>法术/属性能否叠加？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 95</strong>：致命一击将重击威胁范围翻倍</li>
+        <li><strong>PHB p. 246</strong>：<a href="keen.html">锐锋</a>法术将重击威胁范围翻倍</li>
+        <li><strong>DMG p. 28</strong>：重击威胁范围最小为 11-20</li>
+      </ul>
+      <p><strong>冲突描述</strong>：如果武器同时有致命一击和<a href="keen.html">锐锋</a>法术/属性，威胁范围如何计算？</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>叠加解释</strong>：致命一击和<a href="keen.html">锐锋</a>可以叠加，威胁范围翻倍后再翻倍（例如 19-20 → 17-20 → 13-20）</li>
+        <li><strong>不叠加解释</strong>：致命一击和<a href="keen.html">锐锋</a>效果相同，只应用一次</li>
+        <li><strong>DMG解释</strong>：叠加但不超过 11-20 上限</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>DMG解释</strong>（叠加但不超过 11-20）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 95 - 致命一击专长描述</li>
+      <li><strong>地下城主指南 (DMG)</strong> p. 28 - 重击威胁范围上限</li>
+      <li><strong>Complete Warrior</strong> p. 103 - 致命一击的变体规则</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>位面 Planes - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .plane-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-left: 4px solid var(--accent-gold);
+  }
+  .plane-card h3 { margin-top: 0; color: var(--text-heading); }
+  .plane-card h4 { color: var(--accent-gold); margin: 12px 0 6px; }
+
+  .intro-box {
+    background: linear-gradient(135deg, #f8f0e0, #ede2cc);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .wheel-diagram {
+    background: var(--bg-card);
+    border: 2px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 20px 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre;
+    text-align: center;
+    color: var(--text-main);
+  }
+
+  table.plane-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  table.plane-table th {
+    background: var(--bg-table-head);
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid var(--border-main);
+    font-weight: 700;
+  }
+  table.plane-table td {
+    border: 1px solid var(--border-light);
+    padding: 7px 12px;
+  }
+  table.plane-table tr:nth-child(even) { background: var(--bg-table-stripe); }
+
+  .trait-tag {
+    display: inline-block;
+    background: #ede2cc;
+    border: 1px solid var(--border-main);
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin: 2px 4px 2px 0;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .trait-good { background: #d5f5e3; border-color: #82e0aa; }
+  .trait-evil { background: #fadbd8; border-color: #e6b0aa; }
+  .trait-law { background: #d6eaf8; border-color: #85c1e9; }
+  .trait-chaos { background: #f9e79f; border-color: #f4d03f; }
+  .trait-neutral { background: #e8daef; border-color: #c39bd3; }
+  .trait-element { background: #d5f5e3; border-color: #76d7c4; }
+  .trait-energy { background: #fdebd0; border-color: #f0b27a; }
+
+  .section-divider {
+    margin: 40px 0;
+    border: none;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .sub-plane-list {
+    margin: 8px 0 0 20px;
+    line-height: 2;
+  }
+
+  .travel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .travel-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+  }
+  .travel-card h4 { margin: 0 0 6px; color: var(--text-heading); font-size: 15px; }
+  .travel-card p { font-size: 13px; margin: 0; color: var(--text-main); }
+
+  .highlight-box {
+    background: #fef9e7;
+    border: 1px solid #f0d060;
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+
+  .outer-section { margin: 18px 0; }
+  .outer-section h4 {
+    color: var(--text-heading);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  .nav-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .nav-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nav-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+  .nav-card .icon { font-size: 1.6rem; margin-bottom: 6px; display: block; }
+  .nav-card h3 { margin: 0 0 4px; color: var(--text-heading); font-size: 14px; }
+  .nav-card p { font-size: 12px; color: var(--text-subtle); margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心规则</div>
+      <a href="rules.html">规则总览</a>
+      <a href="rules-adventure.html">冒险</a>
+      <a href="rules-planes.html" class="active">位面</a>
+      <a href="rules-companions.html">伙伴</a>
+      <a href="rules-combat.html">战斗</a>
+      <a href="conflicts.html">规则冲突</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">位面导航</div>
+      <a href="#overview">宇宙学概述</a>
+      <a href="#material">物质位面</a>
+      <a href="#transitive">过渡位面</a>
+      <a href="#inner">内层位面</a>
+      <a href="#outer">外层位面</a>
+      <a href="#travel">位面旅行</a>
+      <a href="#traits">位面特性</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>🌌 位面（Planes of Existence）</h1>
+    <p style="color:var(--text-subtle);font-size:14px;">基于《城主手册（DMG）》第5章 及《位面手册（Manual of the Planes）》整理</p>
+
+    <!-- 快速导航 -->
+    <div class="nav-card-grid">
+      <div class="nav-card"><a href="#overview" style="text-decoration:none;color:inherit;">
+        <span class="icon">🌀</span>
+        <h3>宇宙学概述</h3>
+        <p>大轮宇宙学体系</p>
+      </a></div>
+      <div class="nav-card"><a href="#material" style="text-decoration:none;color:inherit;">
+        <span class="icon">🌍</span>
+        <h3>物质位面</h3>
+        <p>冒险者的家乡</p>
+      </a></div>
+      <div class="nav-card"><a href="#transitive" style="text-decoration:none;color:inherit;">
+        <span class="icon">🔀</span>
+        <h3>过渡位面</h3>
+        <p>星界/灵界/幽影界</p>
+      </a></div>
+      <div class="nav-card"><a href="#inner" style="text-decoration:none;color:inherit;">
+        <span class="icon">🔥</span>
+        <h3>内层位面</h3>
+        <p>元素与能量位面</p>
+      </a></div>
+      <div class="nav-card"><a href="#outer" style="text-decoration:none;color:inherit;">
+        <span class="icon">⚖️</span>
+        <h3>外层位面</h3>
+        <p>17个阵营位面</p>
+      </a></div>
+      <div class="nav-card"><a href="#travel" style="text-decoration:none;color:inherit;">
+        <span class="icon">🚪</span>
+        <h3>位面旅行</h3>
+        <p>法术/传送门/印记城</p>
+      </a></div>
+      <div class="nav-card"><a href="#traits" style="text-decoration:none;color:inherit;">
+        <span class="icon">📋</span>
+        <h3>位面特性</h3>
+        <p>物理/元素/魔法特性</p>
+      </a></div>
+    </div>
+
+    <!-- ========== 宇宙学概述 ========== -->
+    <h2 id="overview">🌀 宇宙学概述</h2>
+    <div class="intro-box">
+      <p>D&D 3.5e 采用<strong>大轮宇宙学（Great Wheel Cosmology）</strong>作为其标准位面模型。在这一体系中，所有位面围绕着一个核心结构排列——<strong>物质位面</strong>位于中心，<strong>内层位面</strong>（元素和能量）与<strong>外层位面</strong>（阵营和信仰）分别通过<strong>星界（Astral Plane）</strong>和<strong>灵界（Ethereal Plane）</strong>与物质位面相连。</p>
+      <p style="margin-top:10px;">外层位面形成一个巨大的环状结构，被称为"大轮"。每个外层位面都与特定的阵营相关联，从至善到至恶、从绝对守序到完全混乱，构成了一个完整的阵营光谱。</p>
+    </div>
+
+    <!-- 大轮图示 -->
+    <h3>大轮宇宙学结构图</h3>
+    <div class="wheel-diagram">
+                        ╱ 七丘天堂山 (Celestia) ╲
+                      ╱    [守序善良 LG]          ╲
+       风啸深渊 ─── 双生天堂 (Bytopia) ─── 钟表涅槃 (Mechanus)
+      (Pandemonium)     [LG/NG]              [守序中立 LN]
+      [CN/CE]              │                      │
+         │                 │                      │
+  流放深渊 ─── 祝福之地 (Elysium)    和谐领域 (Outlands)
+   (Carceri)       [中立善良 NG]        [绝对中立 TN]
+   [CE/CN]             │             ★ 印记城 (Sigil) ★
+         │             │                      │
+  无底深渊 ─── 野兽之野 (Beastlands)   九层地狱 (Baator)
+   (Abyss)        [NG/CG]              [守序邪恶 LE]
+   [混乱邪恶 CE]       │                      │
+         │             │                      │
+  永恒荒原 ─── 奥林匹亚 (Arborea)   永恒战场 (Acheron)
+   (Gehenna)       [混乱善良 CG]       [LE/NE]
+   [NE/CE]             │                      │
+         │             │                      │
+  灰色废土 ─── 英灵殿 (Ysgard) ─── 混沌海 (Limbo)
+    (Hades)         [CG/CN]              [混乱中立 CN]
+    [中立邪恶 NE]      ╲                      ╱
+                        ╲    大轮 (Great Wheel)  ╱
+                          ╲                    ╱
+
+       ┌───────────────────────────────────────────────┐
+       │  中心: 物质位面 (Material Plane)               │
+       │  过渡位面: 星界 (Astral) / 灵界 (Ethereal)     │
+       │           / 幽影界 (Shadow)                    │
+       │  内层位面: 六大元素位面 + 正/负能量位面          │
+       └───────────────────────────────────────────────┘</div>
+
+    <div class="highlight-box">
+      <strong>📌 位面层级总结：</strong>D&D 3.5e 宇宙由 <strong>1 个物质位面</strong>、<strong>3 个过渡位面</strong>、<strong>8+ 个内层位面</strong>（含准元素和准能量位面）、以及 <strong>17 个外层位面</strong> 组成，总计超过 30 个主要位面。
+    </div>
+
+    <!-- ========== 物质位面 ========== -->
+    <hr class="section-divider">
+    <h2 id="material">🌍 物质位面（Material Plane）</h2>
+    <div class="plane-card">
+      <h3>物质位面 Material Plane</h3>
+      <p>物质位面是大多数冒险者的家乡，也是标准战役的主要舞台。它是一个由物理法则主导的世界，拥有重力、时间流逝、天气系统和自然生态。</p>
+      <p style="margin-top:10px;">在 D&D 3.5e 的设定中，物质位面可以有多个——每个战役世界（如<strong>灰鹰 Greyhawk</strong>、<strong>被遗忘的国度 Forgotten Realms</strong>、<strong>龙枪 Dragonlance</strong>、<strong>艾伯伦 Eberron</strong>）都可以被视为一个独立的物质位面。</p>
+
+      <h4>位面特性</h4>
+      <table class="plane-table">
+        <thead><tr><th>特性类型</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td>重力</td><td>正常重力 (Normal Gravity)</td></tr>
+          <tr><td>时间</td><td>正常时间 (Normal Time)</td></tr>
+          <tr><td>大小</td><td>无限大 (Infinite)</td></tr>
+          <tr><td>形态</td><td>可变形态 (Alterable Morphic)</td></tr>
+          <tr><td>元素</td><td>无主导元素</td></tr>
+          <tr><td>能量</td><td>无主导能量</td></tr>
+          <tr><td>阵营</td><td>中立 (Neutral) —— 轻微阵营偏向可能因世界而异</td></tr>
+          <tr><td>魔法</td><td>正常魔法 (Normal Magic)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== 过渡位面 ========== -->
+    <hr class="section-divider">
+    <h2 id="transitive">🔀 过渡位面（Transitive Planes）</h2>
+    <div class="intro-box">
+      过渡位面是连接其他位面的中介空间。它们本身通常缺乏丰富的生态系统或文明，但作为位面旅行的通道至关重要。三个过渡位面分别连接着不同的位面群组。
+    </div>
+
+    <!-- 星界 -->
+    <div class="plane-card">
+      <h3>星界（Astral Plane）</h3>
+      <p>星界是一片无边无际的银色虚空，漂浮着微弱的银色雾气和星体碎片。它连接着<strong>物质位面与内层位面</strong>，是跨位面旅行的主要通道。</p>
+      <ul class="sub-plane-list">
+        <li><strong>外观：</strong>无限延伸的银色空间，远处可见彩色的"星体之海"和漂浮的碎岛</li>
+        <li><strong>居民：</strong>星界掠食者 (Astral Dreadnought)、吉扬人 (Githyanki)、各种星界旅行者</li>
+        <li><strong>特色：</strong>旅行者的身体留在原地，以银线 (Silver Cord) 连接星体形态；若银线断裂，旅行者将永远无法回到肉身</li>
+      </ul>
+      <h4>位面特性</h4>
+      <table class="plane-table">
+        <thead><tr><th>特性类型</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td>重力</td><td>无重力 (No Gravity)</td></tr>
+          <tr><td>时间</td><td>正常时间 (Normal Time)</td></tr>
+          <tr><td>大小</td><td>无限大 (Infinite)</td></tr>
+          <tr><td>形态</td><td>可变形态 (Alterable Morphic)</td></tr>
+          <tr><td>元素</td><td>无主导元素</td></tr>
+          <tr><td>能量</td><td>无主导能量</td></tr>
+          <tr><td>阵营</td><td>轻微中立偏向 (Mildly Neutral-Aligned)</td></tr>
+          <tr><td>魔法</td><td>正常魔法 (Normal Magic)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 灵界 -->
+    <div class="plane-card">
+      <h3>灵界（Ethereal Plane）</h3>
+      <p>灵界是与物质位面<strong>完全重叠</strong>的幽灵维度。它分为两个区域：<strong>浅灵界（Border Ethereal）</strong>与物质位面接壤，旅行者可以观察物质位面但无法被物质位面的生物看见；<strong>深灵界（Deep Ethereal）</strong>则连接着各个内层位面。</p>
+      <ul class="sub-plane-list">
+        <li><strong>外观：</strong>朦胧的雾气空间，物质位面的事物呈现为半透明的灰色幻影</li>
+        <li><strong>居民：</strong>幽灵 (Ghosts)、以太生物 (Ethereal creatures)、相位蜘蛛 (Phase Spiders)、夜鬼婆 (Night Hags)</li>
+        <li><strong>特色：</strong>灵界旅行者可以穿过物质位面的固体物体；灵界生物在物质位面呈半隐形状态</li>
+      </ul>
+      <h4>位面特性</h4>
+      <table class="plane-table">
+        <thead><tr><th>特性类型</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td>重力</td><td>无重力 (No Gravity)</td></tr>
+          <tr><td>时间</td><td>正常时间 (Normal Time)</td></tr>
+          <tr><td>大小</td><td>无限大 (Infinite)</td></tr>
+          <tr><td>形态</td><td>可变形态 (Alterable Morphic)</td></tr>
+          <tr><td>元素</td><td>无主导元素</td></tr>
+          <tr><td>能量</td><td>无主导能量</td></tr>
+          <tr><td>阵营</td><td>轻微中立偏向 (Mildly Neutral-Aligned)</td></tr>
+          <tr><td>魔法</td><td>正常魔法 (Normal Magic)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 幽影界 -->
+    <div class="plane-card">
+      <h3>幽影界（Plane of Shadow）</h3>
+      <p>幽影界是物质位面的一个<strong>阴暗镜像</strong>。这里的地形与物质位面大致对应，但一切都笼罩在永恒的灰暗暮色中，光线被削弱，色彩被抽离。它是一个变幻莫测的位面，地形和地标会缓慢地移动和变化。</p>
+      <ul class="sub-plane-list">
+        <li><strong>外观：</strong>黑灰色的扭曲景观，光线昏暗，远处可见不真实的暗影之塔</li>
+        <li><strong>居民：</strong>幽影生物 (Shadows)、暗夜行者 (Nightwalkers)、黑暗精灵流亡者、影龙</li>
+        <li><strong>特色：</strong>可作为连接<strong>所有位面</strong>的快捷通道 —— 通过幽影界旅行可以大幅缩短位面间的距离</li>
+      </ul>
+      <h4>位面特性</h4>
+      <table class="plane-table">
+        <thead><tr><th>特性类型</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td>重力</td><td>正常重力 (Normal Gravity)</td></tr>
+          <tr><td>时间</td><td>流动时间 (Flowing Time) —— 时间可能加速或减速</td></tr>
+          <tr><td>大小</td><td>无限大 (Infinite)</td></tr>
+          <tr><td>形态</td><td>高度可变形态 (Highly Morphic) —— 地形不断变化</td></tr>
+          <tr><td>元素</td><td>无主导元素</td></tr>
+          <tr><td>能量</td><td>无主导能量</td></tr>
+          <tr><td>阵营</td><td>轻微中立偏向 (Mildly Neutral-Aligned)</td></tr>
+          <tr><td>魔法</td><td>增强魔法：幽影系法术增强 | 阻碍魔法：光亮系法术减弱</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== 内层位面 ========== -->
+    <hr class="section-divider">
+    <h2 id="inner">🔥 内层位面（Inner Planes）</h2>
+    <div class="intro-box">
+      内层位面由<strong>六大基础位面</strong>（四大元素位面 + 两大能量位面）和它们之间交叉产生的<strong>准元素位面</strong>与<strong>准能量位面</strong>组成。这些位面通过<strong>灵界</strong>与物质位面相连。
+    </div>
+
+    <!-- 能量位面 -->
+    <div class="plane-card">
+      <h3>能量位面（Energy Planes）</h3>
+
+      <h4>正能量位面（Positive Energy Plane）</h4>
+      <p>纯粹的创生之力。这个位面充满了令人目眩的白色光辉，生命力在此无穷无尽。无防护的旅行者会因正能量过载而受到灼伤，但也会获得快速治愈。</p>
+      <p><span class="trait-tag trait-energy">主要正能量主导</span><span class="trait-tag">强正能量偏向</span></p>
+
+      <h4>负能量位面（Negative Energy Plane）</h4>
+      <p>纯粹的毁灭之暗。与正能量位面相反，这里弥漫着吞噬一切的黑暗与虚无。生命在此会被缓慢抽空，不死生物则获得极大的增强。</p>
+      <p><span class="trait-tag trait-evil">主要负能量主导</span><span class="trait-tag">强负能量偏向</span></p>
+
+      <table class="plane-table">
+        <thead><tr><th>位面</th><th>重力</th><th>元素/能量</th><th>特殊效果</th></tr></thead>
+        <tbody>
+          <tr><td>正能量位面</td><td>主观重力</td><td>主要正能量</td><td>活物每轮受到正能量伤害但获得快速治愈；不死生物受到额外伤害</td></tr>
+          <tr><td>负能量位面</td><td>主观重力</td><td>主要负能量</td><td>活物每轮失去生命值；不死生物获得增强</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 元素位面 -->
+    <div class="plane-card">
+      <h3>元素位面（Elemental Planes）</h3>
+
+      <table class="plane-table">
+        <thead><tr><th>位面</th><th>描述</th><th>重力</th><th>主导元素</th><th>居民</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>气元素位面</strong><br>(Elemental Plane of Air)</td>
+            <td>无尽的开阔天空，漂浮的云岛和气旋宫殿</td>
+            <td>主观重力</td>
+            <td><span class="trait-tag trait-element">气主导</span></td>
+            <td>气元素、巨鹰、风巨灵 (Djinn)、翼龙</td>
+          </tr>
+          <tr>
+            <td><strong>水元素位面</strong><br>(Elemental Plane of Water)</td>
+            <td>无边无际的海洋世界，拥有巨型珊瑚城和深海裂谷</td>
+            <td>主观重力</td>
+            <td><span class="trait-tag trait-element">水主导</span></td>
+            <td>水元素、海精灵 (Triton)、水巨灵 (Marid)、海怪</td>
+          </tr>
+          <tr>
+            <td><strong>土元素位面</strong><br>(Elemental Plane of Earth)</td>
+            <td>无限延伸的坚实岩石与洞穴网络，几乎没有开放空间</td>
+            <td>正常重力</td>
+            <td><span class="trait-tag trait-element">土主导</span></td>
+            <td>土元素、矮人、土巨灵 (Dao)、掘地虫</td>
+          </tr>
+          <tr>
+            <td><strong>火元素位面</strong><br>(Elemental Plane of Fire)</td>
+            <td>永恒的烈焰之海，燃烧的大地和熔岩瀑布</td>
+            <td>正常重力</td>
+            <td><span class="trait-tag trait-element">火主导</span></td>
+            <td>火元素、火蜥蜴 (Salamander)、火巨灵 (Efreeti)、火巨人</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 准元素位面 -->
+    <div class="plane-card">
+      <h3>准元素位面（Para-elemental Planes）</h3>
+      <p>当两个相邻的元素位面交汇时，会产生准元素位面。四大准元素位面分别是：</p>
+
+      <table class="plane-table">
+        <thead><tr><th>准元素位面</th><th>组成</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td><strong>冰准元素位面</strong> (Ice)</td><td>气 + 水</td><td>无尽的冰封荒原，极寒刺骨的风暴和巨型冰川</td></tr>
+          <tr><td><strong>岩浆准元素位面</strong> (Magma)</td><td>火 + 土</td><td>沸腾的熔岩海洋和不断喷发的火山群</td></tr>
+          <tr><td><strong>淤泥准元素位面</strong> (Ooze)</td><td>土 + 水</td><td>黏稠的泥泞沼泽，酸性的淤泥和腐烂的有机质</td></tr>
+          <tr><td><strong>烟雾准元素位面</strong> (Smoke)</td><td>火 + 气</td><td>令人窒息的浓烟和有毒气体弥漫的炽热空间</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 准正能量位面 -->
+    <div class="plane-card">
+      <h3>准正能量位面（Quasi-positive Energy Planes）</h3>
+      <p>当正能量位面与四大元素位面交汇时产生。这些位面兼具元素的特征和正能量的创生之力。</p>
+
+      <table class="plane-table">
+        <thead><tr><th>准正能量位面</th><th>组成</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td><strong>蒸汽</strong> (Steam)</td><td>正能量 + 火</td><td>高温蒸汽弥漫的空间，间歇泉和热泉遍布</td></tr>
+          <tr><td><strong>矿物</strong> (Minerals)</td><td>正能量 + 土</td><td>不断生长的晶体矿脉和宝石洞穴</td></tr>
+          <tr><td><strong>闪电</strong> (Lightning)</td><td>正能量 + 气</td><td>永恒的电暴和雷鸣，闪电元素生物栖息于此</td></tr>
+          <tr><td><strong>辐射</strong> (Radiance)</td><td>正能量 + 水</td><td>充满柔和光辉的彩虹空间</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 准负能量位面 -->
+    <div class="plane-card">
+      <h3>准负能量位面（Quasi-negative Energy Planes）</h3>
+      <p>当负能量位面与四大元素位面交汇时产生。这些位面结合了元素的毁灭特性和负能量的消亡之力。</p>
+
+      <table class="plane-table">
+        <thead><tr><th>准负能量位面</th><th>组成</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td><strong>真空</strong> (Vacuum)</td><td>负能量 + 气</td><td>绝对的虚无空间，没有空气、没有声音、没有任何物质</td></tr>
+          <tr><td><strong>盐</strong> (Salt)</td><td>负能量 + 土</td><td>无尽的盐漠和结晶荒原，吸取一切水分</td></tr>
+          <tr><td><strong>灰烬</strong> (Ash)</td><td>负能量 + 火</td><td>冷却的灰烬和余烬构成的死寂世界</td></tr>
+          <tr><td><strong>尘埃</strong> (Dust)</td><td>负能量 + 水</td><td>干涸的尘埃之海，一切在此腐朽和分解</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== 外层位面 ========== -->
+    <hr class="section-divider">
+    <h2 id="outer">⚖️ 外层位面（Outer Planes）</h2>
+    <div class="intro-box">
+      外层位面是 D&D 宇宙学中最复杂的部分。17个外层位面排列成一个巨大的环——"大轮"——每个位面都与一个或多个阵营相关联。外层位面通过<strong>星界</strong>与物质位面相连，是众神、邪魔和死后灵魂的居所。
+    </div>
+
+    <!-- 上层位面（善良） -->
+    <div class="plane-card">
+      <h3>上层位面（Upper / Good Planes）</h3>
+      <p>善良阵营的位面，是天使、神祇和善良灵魂的居所。</p>
+
+      <table class="plane-table">
+        <thead>
+          <tr><th>位面名称</th><th>英文</th><th>阵营</th><th>描述</th><th>主要居民</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>七丘天堂山</strong></td>
+            <td>Seven Mounting Heavens of Celestia</td>
+            <td><span class="trait-tag trait-law">守序</span><span class="trait-tag trait-good">善良</span></td>
+            <td>七座层层叠高的圣山，每层都比上层更加辉煌。至善与秩序的极致体现。</td>
+            <td>天使 (Archons)、银龙、巴哈姆特</td>
+          </tr>
+          <tr>
+            <td><strong>双生天堂</strong></td>
+            <td>Twin Paradises of Bytopia</td>
+            <td><span class="trait-tag trait-law">守序</span><span class="trait-tag trait-good">善良</span>/<span class="trait-tag trait-good">中立善良</span></td>
+            <td>由两个面对面叠合的世界组成：上层的田园牧歌和下层的工业城镇。勤劳与协作的理想国度。</td>
+            <td>侏儒神祇 Garl Glittergold、工匠灵魂</td>
+          </tr>
+          <tr>
+            <td><strong>祝福之地</strong></td>
+            <td>Blessed Fields of Elysium</td>
+            <td><span class="trait-tag trait-good">中立善良</span></td>
+            <td>沿着大洋河 (River Oceanus) 展开的金色田野和宁静花园。至善的纯粹体现。</td>
+            <td>守护者 (Guardinals)、精灵神祇</td>
+          </tr>
+          <tr>
+            <td><strong>野兽之野</strong></td>
+            <td>Wilderness of the Beastlands</td>
+            <td><span class="trait-tag trait-good">中立善良</span>/<span class="trait-tag trait-chaos">混乱善良</span></td>
+            <td>三层广袤的原始荒野——从茂密森林到开阔草原。自然的完美状态。</td>
+            <td>动物灵魂、德鲁伊神祇、半人马</td>
+          </tr>
+          <tr>
+            <td><strong>奥林匹亚林地</strong></td>
+            <td>Olympian Glades of Arborea</td>
+            <td><span class="trait-tag trait-chaos">混乱</span><span class="trait-tag trait-good">善良</span></td>
+            <td>壮丽的森林、高山和海洋，充满英雄主义和浪漫主义精神。希腊众神的家园。</td>
+            <td>Eladrin（高等精灵天族）、希腊万神殿</td>
+          </tr>
+          <tr>
+            <td><strong>英灵殿</strong></td>
+            <td>Heroic Domains of Ysgard</td>
+            <td><span class="trait-tag trait-chaos">混乱善良</span>/<span class="trait-tag trait-chaos">混乱中立</span></td>
+            <td>漂浮在火焰之上的大地碎片，永恒的战场供英灵在此荣耀地战斗和宴饮。北欧万神殿的居所。</td>
+            <td>英灵战士 (Einherjar)、北欧神祇、巨人</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 混沌海 & 中立 -->
+    <div class="plane-card">
+      <h3>中立与混乱位面</h3>
+
+      <table class="plane-table">
+        <thead>
+          <tr><th>位面名称</th><th>英文</th><th>阵营</th><th>描述</th><th>主要居民</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>混沌海</strong></td>
+            <td>Ever-Changing Chaos of Limbo</td>
+            <td><span class="trait-tag trait-chaos">混乱中立</span></td>
+            <td>一片不断翻涌的混沌之海，元素在无序中不断混合与变化。只有拥有坚定意志的存在才能在此维持形态。</td>
+            <td>史拉蟾 (Slaadi)、吉扬泽人 (Githzerai)</td>
+          </tr>
+          <tr>
+            <td><strong>和谐领域</strong></td>
+            <td>Concordant Domain of the Outlands</td>
+            <td><span class="trait-tag trait-neutral">绝对中立</span></td>
+            <td>大轮的中心，一个无限延伸的平坦旷野。所有阵营力量在此相互抵消。<strong>印记城 (Sigil)</strong>——万门之城——悬浮在此位面上方的一根无限高尖塔之上。</td>
+            <td>瑞尔人 (Rilmani)、印记城居民、各类中立神祇</td>
+          </tr>
+          <tr>
+            <td><strong>钟表涅槃</strong></td>
+            <td>Clockwork Nirvana of Mechanus</td>
+            <td><span class="trait-tag trait-law">守序中立</span></td>
+            <td>由无数互相啮合的巨型齿轮组成的完美机械世界。一切按照精确的规律运转，是秩序的极致体现。</td>
+            <td>模组人 (Modrons)、审判者 (Inevitables)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 下层位面（邪恶） -->
+    <div class="plane-card">
+      <h3>下层位面（Lower / Evil Planes）</h3>
+      <p>邪恶阵营的位面，是魔鬼、恶魔和其他邪恶存在的居所，也是邪恶灵魂的最终归宿。</p>
+
+      <table class="plane-table">
+        <thead>
+          <tr><th>位面名称</th><th>英文</th><th>阵营</th><th>描述</th><th>主要居民</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>九层地狱</strong></td>
+            <td>Nine Hells of Baator</td>
+            <td><span class="trait-tag trait-law">守序</span><span class="trait-tag trait-evil">邪恶</span></td>
+            <td>九层依次深入的地下世界，每层都比上层更加恐怖。暴政与阴谋的殿堂， Blood War（血战）中魔鬼的大本营。</td>
+            <td>魔鬼 (Devils/Baatezu)、阿斯摩蒂斯 (Asmodeus)、九位大公爵</td>
+          </tr>
+          <tr>
+            <td><strong>永恒战场</strong></td>
+            <td>Infernal Battlefield of Acheron</td>
+            <td><span class="trait-tag trait-law">守序邪恶</span>/<span class="trait-tag trait-evil">中立邪恶</span></td>
+            <td>漂浮在虚空中的巨型铁质立方体，其表面永远在进行无意义的战争。军事纪律与无休止冲突的体现。</td>
+            <td>兽人神祇、地精神祇、永恒交战的军团</td>
+          </tr>
+          <tr>
+            <td><strong>灰色废土</strong></td>
+            <td>Gray Waste of Hades</td>
+            <td><span class="trait-tag trait-evil">中立邪恶</span></td>
+            <td>三层令人绝望的灰色荒原。一切色彩、情感和希望都在此被缓慢抽空。最纯粹的邪恶与虚无。</td>
+            <td>夜魔 (Night Hags)、恶魔 (Yugoloths)、绝望的灵魂</td>
+          </tr>
+          <tr>
+            <td><strong>永恒荒原</strong></td>
+            <td>Bleak Eternity of Gehenna</td>
+            <td><span class="trait-tag trait-evil">中立邪恶</span>/<span class="trait-tag trait-chaos">混乱邪恶</span></td>
+            <td>四座无底的巨型火山山峰，不断喷发着火焰和有毒气体。自私与野心的终极体现。</td>
+            <td>夜鬼婆、火焰生物、被流放的邪魔</td>
+          </tr>
+          <tr>
+            <td><strong>无底深渊</strong></td>
+            <td>Infinite Layers of the Abyss</td>
+            <td><span class="trait-tag trait-chaos">混乱</span><span class="trait-tag trait-evil">邪恶</span></td>
+            <td>无限层不断向下延伸的恐怖深渊，每一层都比上层更加扭曲和危险。混沌与毁灭的极致。Blood War（血战）中恶魔的大本营。</td>
+            <td>恶魔 (Demons/Tanar'ri)、恶魔王子们（奥库斯、德莫戈根等）</td>
+          </tr>
+          <tr>
+            <td><strong>流放深渊</strong></td>
+            <td>Prison Planes of Carceri</td>
+            <td><span class="trait-tag trait-chaos">混乱邪恶</span>/<span class="trait-tag trait-chaos">混乱中立</span></td>
+            <td>六层逐渐缩小的球形空间，像俄罗斯套娃一样层层嵌套。一座无法逃脱的宇宙监狱。</td>
+            <td>泰坦囚徒、被流放的背叛者、Hel</td>
+          </tr>
+          <tr>
+            <td><strong>风啸深渊</strong></td>
+            <td>Windswept Depths of Pandemonium</td>
+            <td><span class="trait-tag trait-chaos">混乱中立</span>/<span class="trait-tag trait-chaos">混乱邪恶</span></td>
+            <td>永不停歇的狂风穿过的黑暗洞穴系统，足以令人发疯的永恒噪音。风啸声可以摧毁旅行者的理智。</td>
+            <td>疯狂灵魂、风元素生物、被遗忘的神祇</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 大轮阵营分布图 -->
+    <h3>外层位面阵营分布图</h3>
+    <div class="wheel-diagram">
+    守序善良 (LG)                              守序邪恶 (LE)
+    ┌─────────────┐                            ┌─────────────┐
+    │ 七丘天堂山   │                            │ 九层地狱     │
+    │  Celestia   │                            │   Baator    │
+    └──────┬──────┘                            └──────┬──────┘
+           │ 守序 (Lawful)                            │ 守序 (Lawful)
+    ┌──────┴──────┐                            ┌──────┴──────┐
+    │  双生天堂    │    ┌──────────────────┐    │ 永恒战场     │
+    │  Bytopia    │    │                  │    │  Acheron    │
+    │  [LG/NG]    │    │   大轮排列方向    │    │  [LE/NE]    │
+    └──────┬──────┘    │                  │    └──────┬──────┘
+           │           │  ┌────────────┐  │           │
+    ┌──────┴──────┐    │  │ 和谐领域   │  │    ┌──────┴──────┐
+    │ 祝福之地     │    │  │ Outlands  │  │    │ 灰色废土     │
+    │  Elysium    │ ───│  │   [TN]    │  │─── │   Hades     │
+    │   [NG]      │    │  │ ★印记城★  │  │    │   [NE]      │
+    └──────┬──────┘    │  └────────────┘  │    └──────┬──────┘
+           │           │                  │           │
+    ┌──────┴──────┐    │                  │    ┌──────┴──────┐
+    │ 野兽之野     │    │                  │    │ 永恒荒原     │
+    │ Beastlands  │    └──────────────────┘    │  Gehenna    │
+    │  [NG/CG]    │                            │  [NE/CE]    │
+    └──────┬──────┘                            └──────┬──────┘
+           │                                          │
+    ┌──────┴──────┐                            ┌──────┴──────┐
+    │ 奥林匹亚     │                            │ 无底深渊     │
+    │  Arborea    │                            │   Abyss     │
+    │   [CG]      │                            │   [CE]      │
+    └──────┬──────┘                            └──────┬──────┘
+           │ 混乱 (Chaotic)                          │ 混乱 (Chaotic)
+    ┌──────┴──────┐                            ┌──────┴──────┐
+    │  英灵殿      │    ┌──────────────────┐    │ 流放深渊     │
+    │   Ysgard    │    │                  │    │  Carceri    │
+    │  [CG/CN]    │    │  钟表涅槃        │    │  [CE/CN]    │
+    └──────┬──────┘    │  Mechanus [LN]   │    └──────┬──────┘
+           │           │                  │           │
+    ┌──────┴──────┐    └──────────────────┘    ┌──────┴──────┐
+    │  混沌海      │                            │ 风啸深渊     │
+    │   Limbo     │                            │ Pandemonium │
+    │   [CN]      │                            │  [CN/CE]    │
+    └─────────────┘                            └─────────────┘
+    混乱中立 (CN)                              混乱邪恶 (CE)
+
+    善良 (Good) ──── 中立 (Neutral) ──── 邪恶 (Evil)</div>
+
+    <!-- ========== 位面旅行 ========== -->
+    <hr class="section-divider">
+    <h2 id="travel">🚪 位面旅行方式</h2>
+    <div class="intro-box">
+      位面间旅行的方式多种多样，从法术到天然通道，从古老传送门到神秘的印记城。高等级冒险者通常需要掌握至少一种位面旅行手段。
+    </div>
+
+    <div class="travel-grid">
+      <div class="travel-card">
+        <h4>🔮 异界传送（Plane Shift）</h4>
+        <p><strong>等级：</strong>牧师/术士/法师 5环 | 吟游诗人 6环 | 德鲁伊 7环<br>
+        <strong>效果：</strong>最多8名自愿旅行者被传送至目标位面。需要一根与目标位面材质匹配的金属调谐音叉（价值50金币以上）。到达位置有5d×100英里的随机偏差。<br>
+        <strong>注意：</strong>也可用于攻击——将不情愿的目标强制传送至其他位面（需近战攻击命中）。</p>
+      </div>
+
+      <div class="travel-card">
+        <h4>🔮 星界投射（Astral Projection）</h4>
+        <p><strong>等级：</strong>术士/法师 9环<br>
+        <strong>效果：</strong>施法者（及同伴）的灵魂离开肉体，以星体形态进入星界。银线连接灵魂与身体，若银线断裂则灵魂永远无法回归。在星界可以进入色彩池 (Color Pools) 前往其他位面。<br>
+        <strong>风险：</strong>银线断裂 = 灵魂永远迷失。</p>
+      </div>
+
+      <div class="travel-card">
+        <h4>🔮 灵化（Ethereal Jaunt）</h4>
+        <p><strong>等级：</strong>术士/法师 7环 | 牧师 7环<br>
+        <strong>效果：</strong>施法者变为灵体状态，进入灵界（浅灵界），持续每等级1轮。在灵界可以穿越物质位面的固体物体。灵界中可进一步进入深灵界，通往各个内层位面。<br>
+        <strong>限制：</strong>无法对物质位面的生物造成影响（除力场效果外）。</p>
+      </div>
+
+      <div class="travel-card">
+        <h4>🚪 传送门与位面通道（Portals &amp; Gates）</h4>
+        <p>各位面之间存在天然的<strong>位面通道</strong>（Planar Conduits）和人工建造的<strong>传送门</strong>（Portals）。传送门通常需要特定的钥匙（Portal Key）才能激活——钥匙可以是物品、词语或特定动作。<br>
+        <strong>常见类型：</strong>固定传送门、随机传送门、单向传送门、条件传送门。</p>
+      </div>
+
+      <div class="travel-card">
+        <h4>🏙️ 印记城（Sigil）—— 万门之城</h4>
+        <p>悬浮在和谐领域（Outlands）上空无限高尖塔顶端的环形城市。<strong>印记城是位面旅行的枢纽</strong>——城中的每一扇门、每一个拱门、甚至每一条小巷都可能是一个通往其他位面的传送门。<br>
+        <strong>管理者：</strong>痛苦女士 (Lady of Pain) —— 神秘而不可抗拒的印记城守护者，连众神都不敢违抗她的意志。<br>
+        <strong>特殊规则：</strong>神祇无法进入印记城。</p>
+      </div>
+
+      <div class="travel-card">
+        <h4>🌀 漩涡（Vortices）</h4>
+        <p>某些元素位面与物质位面之间存在天然连接点，称为<strong>漩涡</strong>。例如火山深处可能连接火元素位面，深海裂缝可能通往水元素位面，高空风暴中可能隐藏着通往气元素位面的通道。</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>⚠️ 位面旅行注意事项：</strong>
+      <ul style="margin:8px 0 0 20px;line-height:2;">
+        <li>进入不同位面时，法术效果可能受到<strong>增强、阻碍或完全失效</strong></li>
+        <li>某些位面拥有<strong>极端环境</strong>（如火元素位面的永恒火焰），需要魔法防护</li>
+        <li>外层位面的<strong>阵营偏向</strong>会影响非本阵营生物的豁免和社交检定</li>
+        <li><strong>血战（Blood War）</strong>——魔鬼与恶魔之间持续无数纪元的战争——使得下层位面极度危险</li>
+      </ul>
+    </div>
+
+    <!-- ========== 位面特性 ========== -->
+    <hr class="section-divider">
+    <h2 id="traits">📋 位面特性系统</h2>
+    <div class="intro-box">
+      每个位面都由一组<strong>位面特性（Planar Traits）</strong>来定义。这些特性决定了在该位面内物理法则、魔法效果和战斗规则的运作方式。DMG 第 149-155 页详细描述了所有位面特性。
+    </div>
+
+    <!-- 物理特性 -->
+    <div class="plane-card">
+      <h3>物理特性（Physical Traits）</h3>
+
+      <h4>重力特性（Gravity）</h4>
+      <table class="plane-table">
+        <thead><tr><th>重力类型</th><th>描述</th><th>常见位面</th></tr></thead>
+        <tbody>
+          <tr><td><strong>正常重力</strong></td><td>与物质位面相同的重力效果</td><td>物质位面、大部分外层位面</td></tr>
+          <tr><td><strong>强重力</strong></td><td>重力加倍，力量/敏捷检定-2，远程射程减半</td><td>部分土元素区域</td></tr>
+          <tr><td><strong>轻重力</strong></td><td>重力减半，跳跃距离加倍</td><td>部分气元素区域</td></tr>
+          <tr><td><strong>无重力</strong></td><td>无上下之分，移动靠推动或飞行</td><td>星界、灵界</td></tr>
+          <tr><td><strong>主观重力</strong></td><td>个人可以选择自己的"下方"方向</td><td>正能量/负能量位面、四大元素位面</td></tr>
+          <tr><td><strong>客观重力</strong></td><td>"下方"由位面的物理结构决定（如向着某个中心）</td><td>部分特殊区域</td></tr>
+        </tbody>
+      </table>
+
+      <h4>时间特性（Time）</h4>
+      <table class="plane-table">
+        <thead><tr><th>时间类型</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td><strong>正常时间</strong></td><td>时间流速与物质位面相同</td></tr>
+          <tr><td><strong>无时间</strong></td><td>时间不流逝 —— 不会饥饿、衰老或自然治愈</td></tr>
+          <tr><td><strong>流动时间</strong></td><td>时间可能加速或减速（随机或按区域变化）</td></tr>
+          <tr><td><strong>永恒时间</strong></td><td>时间流逝但不会造成衰老或饥饿效果</td></tr>
+        </tbody>
+      </table>
+
+      <h4>大小与形态（Size &amp; Morphic）</h4>
+      <table class="plane-table">
+        <thead><tr><th>类型</th><th>描述</th></tr></thead>
+        <tbody>
+          <tr><td><strong>无限大</strong></td><td>位面在各个方向无限延伸</td></tr>
+          <tr><td><strong>有限大小</strong></td><td>位面有明确的边界</td></tr>
+          <tr><td><strong>自我封闭</strong></td><td>边界连接回自身（如球面）</td></tr>
+          <tr><td><strong>可变形态</strong></td><td>可以通过物理或魔法手段改变地形</td></tr>
+          <tr><td><strong>高度可变</strong></td><td>地形自行持续变化</td></tr>
+          <tr><td><strong>神圣可变</strong></td><td>只有神祇或同等存在才能改变</td></tr>
+          <tr><td><strong>静态</strong></td><td>位面无法被任何方式改变</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 元素与能量特性 -->
+    <div class="plane-card">
+      <h3>元素与能量特性（Elemental &amp; Energy Traits）</h3>
+      <table class="plane-table">
+        <thead><tr><th>特性类型</th><th>描述</th><th>效果</th></tr></thead>
+        <tbody>
+          <tr><td><strong>气主导</strong></td><td>位面以空气/气体为主要物质</td><td>生物可以自由飞行；土元素生物在此受到伤害</td></tr>
+          <tr><td><strong>土主导</strong></td><td>位面以岩石/泥土为主要物质</td><td>土元素生物获得增强；气元素生物受到削弱</td></tr>
+          <tr><td><strong>火主导</strong></td><td>位面充斥着火焰和热量</td><td>无防护生物每轮受到3d10火焰伤害；火元素生物获得增强</td></tr>
+          <tr><td><strong>水主导</strong></td><td>位面被水体充满</td><td>所有区域视为水下；水元素生物获得增强；火系法术失效</td></tr>
+          <tr><td><strong>正能量主导</strong></td><td>位面充满创生能量</td><td>活物获得快速治愈但可能因过载受伤；不死生物受到伤害</td></tr>
+          <tr><td><strong>负能量主导</strong></td><td>位面充满毁灭能量</td><td>活物每轮失去生命值；不死生物获得增强</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 阵营特性 -->
+    <div class="plane-card">
+      <h3>阵营特性（Alignment Traits）</h3>
+      <p>外层位面拥有强烈的阵营偏向，影响非本阵营生物的行为和能力。</p>
+      <table class="plane-table">
+        <thead><tr><th>偏向类型</th><th>描述</th><th>效果</th></tr></thead>
+        <tbody>
+          <tr><td><strong>轻微偏向</strong> (Mildly Aligned)</td><td>位面有轻微的阵营倾向</td><td>对立阵营生物在基于魅力的检定上受到 -2 惩罚</td></tr>
+          <tr><td><strong>强烈偏向</strong> (Strongly Aligned)</td><td>位面有强烈的阵营倾向</td><td>对立阵营生物在基于魅力的检定上受到 -4 惩罚，并且某些法术效果受到阻碍</td></tr>
+          <tr><td><strong>轻微善良偏向</strong></td><td>善良阵营的轻微倾向</td><td>邪恶生物在社交检定上受罚</td></tr>
+          <tr><td><strong>轻微邪恶偏向</strong></td><td>邪恶阵营的轻微倾向</td><td>善良生物在社交检定上受罚</td></tr>
+          <tr><td><strong>轻微守序偏向</strong></td><td>守序阵营的轻微倾向</td><td>混乱生物在社交检定上受罚</td></tr>
+          <tr><td><strong>轻微混乱偏向</strong></td><td>混乱阵营的轻微倾向</td><td>守序生物在社交检定上受罚</td></tr>
+        </tbody>
+      </table>
+
+      <h4>外层位面阵营特性一览</h4>
+      <table class="plane-table">
+        <thead><tr><th>位面</th><th>善良/邪恶</th><th>守序/混乱</th></tr></thead>
+        <tbody>
+          <tr><td>七丘天堂山 (Celestia)</td><td>强烈善良</td><td>强烈守序</td></tr>
+          <tr><td>双生天堂 (Bytopia)</td><td>强烈善良</td><td>轻微守序</td></tr>
+          <tr><td>祝福之地 (Elysium)</td><td>强烈善良</td><td>中立</td></tr>
+          <tr><td>野兽之野 (Beastlands)</td><td>强烈善良</td><td>轻微混乱</td></tr>
+          <tr><td>奥林匹亚 (Arborea)</td><td>强烈善良</td><td>强烈混乱</td></tr>
+          <tr><td>英灵殿 (Ysgard)</td><td>轻微善良</td><td>强烈混乱</td></tr>
+          <tr><td>混沌海 (Limbo)</td><td>中立</td><td>强烈混乱</td></tr>
+          <tr><td>和谐领域 (Outlands)</td><td>中立</td><td>中立</td></tr>
+          <tr><td>钟表涅槃 (Mechanus)</td><td>中立</td><td>强烈守序</td></tr>
+          <tr><td>九层地狱 (Baator)</td><td>强烈邪恶</td><td>强烈守序</td></tr>
+          <tr><td>永恒战场 (Acheron)</td><td>强烈邪恶</td><td>轻微守序</td></tr>
+          <tr><td>灰色废土 (Hades)</td><td>强烈邪恶</td><td>中立</td></tr>
+          <tr><td>永恒荒原 (Gehenna)</td><td>强烈邪恶</td><td>轻微混乱</td></tr>
+          <tr><td>无底深渊 (Abyss)</td><td>强烈邪恶</td><td>强烈混乱</td></tr>
+          <tr><td>流放深渊 (Carceri)</td><td>轻微邪恶</td><td>强烈混乱</td></tr>
+          <tr><td>风啸深渊 (Pandemonium)</td><td>中立</td><td>强烈混乱</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 魔法特性 -->
+    <div class="plane-card">
+      <h3>魔法特性（Magic Traits）</h3>
+      <p>位面的魔法特性决定了法术和类法术能力在该位面上的运作方式。</p>
+      <table class="plane-table">
+        <thead><tr><th>魔法类型</th><th>描述</th><th>效果</th></tr></thead>
+        <tbody>
+          <tr><td><strong>正常魔法</strong></td><td>法术正常运作</td><td>无修正</td></tr>
+          <tr><td><strong>增强魔法</strong> (Enhanced Magic)</td><td>特定类别法术获得增强</td><td>受增强法术的施法者等级检定+1，豁免DC+1，或获得超魔效果（如自动极效/扩大）</td></tr>
+          <tr><td><strong>阻碍魔法</strong> (Impeded Magic)</td><td>特定类别法术受到阻碍</td><td>施放受阻碍法术需通过施法者等级检定（DC = 20 + 法术等级），失败则法术浪费</td></tr>
+          <tr><td><strong>限制魔法</strong> (Limited Magic)</td><td>只有特定等级以下的法术可以施放</td><td>超过限制等级的法术和类法术能力无法使用</td></tr>
+          <tr><td><strong>狂野魔法</strong> (Wild Magic)</td><td>法术效果随机化</td><td>每次施法需进行d20检定：1=法术反噬施法者，2-3=法术失效，4-16=正常效果，17-18=增强效果，19-20=极效+扩大效果</td></tr>
+          <tr><td><strong>死魔法</strong> (Dead Magic)</td><td>所有魔法失效</td><td>法术无法施放，类法术能力无法使用，魔法物品失效</td></tr>
+        </tbody>
+      </table>
+
+      <h4>常见位面魔法特性示例</h4>
+      <table class="plane-table">
+        <thead><tr><th>位面</th><th>增强</th><th>阻碍</th></tr></thead>
+        <tbody>
+          <tr><td>七丘天堂山</td><td>善良系法术增强</td><td>邪恶系法术阻碍</td></tr>
+          <tr><td>九层地狱</td><td>邪恶系/守序系法术增强</td><td>善良系/混乱系法术阻碍</td></tr>
+          <tr><td>无底深渊</td><td>邪恶系/混乱系法术增强</td><td>善良系/守序系法术阻碍</td></tr>
+          <tr><td>火元素位面</td><td>火系法术增强</td><td>水系法术阻碍（自动失败）</td></tr>
+          <tr><td>水元素位面</td><td>水系法术增强</td><td>火系法术阻碍（自动失败）</td></tr>
+          <tr><td>正能量位面</td><td>治疗法术增强（自动极效）</td><td>造成负能量伤害的法术阻碍</td></tr>
+          <tr><td>负能量位面</td><td>负能量法术增强</td><td>正能量/治疗法术阻碍</td></tr>
+          <tr><td>幽影界</td><td>幽影系法术增强</td><td>光亮系法术阻碍</td></tr>
+          <tr><td>混沌海 (Limbo)</td><td>混乱系法术增强</td><td>守序系法术阻碍</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 位面特性综合速查 -->
+    <div class="plane-card">
+      <h3>位面特性综合速查表</h3>
+      <table class="plane-table" style="font-size:13px;">
+        <thead>
+          <tr>
+            <th>位面</th>
+            <th>重力</th>
+            <th>时间</th>
+            <th>形态</th>
+            <th>元素/能量</th>
+            <th>阵营</th>
+            <th>魔法</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>物质位面</strong></td>
+            <td>正常</td><td>正常</td><td>可变</td><td>无</td><td>中立</td><td>正常</td>
+          </tr>
+          <tr>
+            <td><strong>星界</strong></td>
+            <td>无</td><td>正常</td><td>可变</td><td>无</td><td>轻微中立</td><td>正常</td>
+          </tr>
+          <tr>
+            <td><strong>灵界</strong></td>
+            <td>无</td><td>正常</td><td>可变</td><td>无</td><td>轻微中立</td><td>正常</td>
+          </tr>
+          <tr>
+            <td><strong>幽影界</strong></td>
+            <td>正常</td><td>流动</td><td>高度可变</td><td>无</td><td>轻微中立</td><td>幽影↑/光亮↓</td>
+          </tr>
+          <tr>
+            <td><strong>气元素位面</strong></td>
+            <td>主观</td><td>正常</td><td>可变</td><td>气主导</td><td>中立</td><td>气↑/土↓</td>
+          </tr>
+          <tr>
+            <td><strong>水元素位面</strong></td>
+            <td>主观</td><td>正常</td><td>可变</td><td>水主导</td><td>中立</td><td>水↑/火↓</td>
+          </tr>
+          <tr>
+            <td><strong>土元素位面</strong></td>
+            <td>正常</td><td>正常</td><td>可变</td><td>土主导</td><td>中立</td><td>土↑/气↓</td>
+          </tr>
+          <tr>
+            <td><strong>火元素位面</strong></td>
+            <td>正常</td><td>正常</td><td>可变</td><td>火主导</td><td>中立</td><td>火↑/水↓</td>
+          </tr>
+          <tr>
+            <td><strong>正能量位面</strong></td>
+            <td>主观</td><td>正常</td><td>可变</td><td>主要正能量</td><td>无</td><td>治疗↑/负能量↓</td>
+          </tr>
+          <tr>
+            <td><strong>负能量位面</strong></td>
+            <td>主观</td><td>正常</td><td>可变</td><td>主要负能量</td><td>无</td><td>负能量↑/治疗↓</td>
+          </tr>
+          <tr>
+            <td><strong>七丘天堂山</strong></td>
+            <td>正常</td><td>正常</td><td>神圣可变</td><td>无</td><td>强烈LG</td><td>善良↑/邪恶↓</td>
+          </tr>
+          <tr>
+            <td><strong>九层地狱</strong></td>
+            <td>正常</td><td>正常</td><td>神圣可变</td><td>无</td><td>强烈LE</td><td>邪恶/守序↑</td>
+          </tr>
+          <tr>
+            <td><strong>无底深渊</strong></td>
+            <td>正常</td><td>正常</td><td>神圣可变</td><td>无</td><td>强烈CE</td><td>邪恶/混乱↑</td>
+          </tr>
+          <tr>
+            <td><strong>混沌海</strong></td>
+            <td>主观</td><td>正常</td><td>高度可变</td><td>无</td><td>强烈CN</td><td>混乱↑/守序↓</td>
+          </tr>
+          <tr>
+            <td><strong>钟表涅槃</strong></td>
+            <td>正常</td><td>正常</td><td>神圣可变</td><td>无</td><td>强烈LN</td><td>守序↑/混乱↓</td>
+          </tr>
+          <tr>
+            <td><strong>和谐领域</strong></td>
+            <td>正常</td><td>正常</td><td>可变</td><td>无</td><td>中立</td><td>正常</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:var(--text-subtle);margin-top:8px;">↑ = 增强 (Enhanced) | ↓ = 阻碍 (Impeded) | 本表仅列出代表性位面的常见特性，具体数值请参阅 DMG 和 Manual of the Planes。</p>
+    </div>
+
+    <hr class="section-divider">
+    <p style="font-size:13px;color:#999;text-align:center;">
+      📚 本页面内容基于 <strong>D&D 3.5e DMG（城主手册）</strong> 及 <strong>Manual of the Planes（位面手册）</strong> 整理 |
+      <a href="rules.html">← 返回核心规则</a>
+    </p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

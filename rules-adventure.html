@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冒险 Adventure - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .rule-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-left: 4px solid var(--accent-gold);
+  }
+  .rule-card h3 { margin-top: 0; color: var(--text-heading); }
+  .highlight-box {
+    background: #fef9e7;
+    border: 1px solid #f0d060;
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .info-box {
+    background: #e8f4fd;
+    border: 1px solid #85c1e9;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .danger-box {
+    background: #fde8e8;
+    border: 1px solid #e74c3c;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .formula-box {
+    background: #e8f4fd;
+    border: 1px solid #85c1e9;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    margin: 12px 0;
+  }
+  table.rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  table.rule-table th {
+    background: var(--bg-table-head);
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid var(--border-main);
+    color: var(--text-heading);
+  }
+  table.rule-table td {
+    border: 1px solid var(--border-light);
+    padding: 7px 12px;
+    text-align: center;
+  }
+  table.rule-table tr:nth-child(even) {
+    background: var(--bg-table-stripe);
+  }
+  table.rule-table tr:hover {
+    background: #f0e8d8;
+  }
+  .section-anchor {
+    scroll-margin-top: 70px;
+  }
+  .toc-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .toc-box h3 {
+    margin: 0 0 12px;
+    color: var(--text-heading);
+    font-size: 16px;
+  }
+  .toc-box ol {
+    margin: 0;
+    padding-left: 22px;
+    columns: 2;
+    column-gap: 32px;
+  }
+  .toc-box li {
+    font-size: 14px;
+    margin: 4px 0;
+    break-inside: avoid;
+  }
+  .toc-box a {
+    color: var(--text-link);
+  }
+  .sub-section {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-light);
+  }
+  .sub-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心规则</div>
+      <a href="rules.html">规则总览</a>
+      <a href="rules-adventure.html" class="active">冒险</a>
+      <a href="rules-planes.html">位面</a>
+      <a href="rules-companions.html">伙伴</a>
+      <a href="rules-combat.html">战斗</a>
+      <a href="conflicts.html">规则冲突</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">参考资料</div>
+      <a href="about.html">SRD 参考</a>
+      <a href="conflicts.html">官方勘误</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- ====== 标题 ====== -->
+    <h1>冒险（Adventure）</h1>
+
+    <!-- ====== 概述 ====== -->
+    <div class="rule-card">
+      <h3>概述</h3>
+      <p>本章内容基于 <strong>《地下城主指南》（DMG）第3章</strong>，涵盖了构成 D&amp;D 冒险的核心要素：地下城探索、野外旅行、城市环境、陷阱设计、宝藏分配以及环境危害。无论是 DM 设计冒险还是玩家了解规则，本章都是最重要的参考之一。</p>
+      <p>一次完整的冒险通常包含以下要素：<strong>探索</strong>（地图移动与环境互动）、<strong>遭遇</strong>（战斗或社交挑战）、<strong>奖励</strong>（经验值与宝藏）。DM 需要平衡这些要素，创造引人入胜的冒险体验。</p>
+    </div>
+
+    <!-- 目录 -->
+    <div class="toc-box">
+      <h3>本章目录</h3>
+      <ol>
+        <li><a href="#dungeons">地下城探索</a></li>
+        <li><a href="#wilderness">野外</a></li>
+        <li><a href="#urban">城市</a></li>
+        <li><a href="#traps">陷阱</a></li>
+        <li><a href="#treasure">宝藏</a></li>
+        <li><a href="#hazards">环境危害</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================ -->
+    <!--                   1. 地下城探索                               -->
+    <!-- ============================================================ -->
+    <section id="dungeons" class="section-anchor">
+      <h2>一、地下城探索（Dungeons）</h2>
+      <p>地下城是 D&amp;D 冒险最经典的场景。它不限于真正的"地下"——任何由房间和走廊构成的封闭环境都可以视为地下城，包括废弃城堡、天然洞穴和神殿遗迹。</p>
+
+      <!-- 地下城类型 -->
+      <div class="sub-section">
+        <h3>1.1 地下城类型</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>类型</th>
+              <th>描述</th>
+              <th>常见住民</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>废墟</strong></td>
+              <td>古代文明的遗迹，部分结构已坍塌，充满碎石和残破的墙壁</td>
+              <td>不死生物、野兽、寻宝者</td>
+            </tr>
+            <tr>
+              <td><strong>洞穴</strong></td>
+              <td>天然形成的地下空间，地形不规则，可能有地下河</td>
+              <td>巨人、穴居怪物、元素生物</td>
+            </tr>
+            <tr>
+              <td><strong>矿坑</strong></td>
+              <td>人工开凿的矿井，有支撑木梁和矿车轨道</td>
+              <td>矮人、地精、土元素</td>
+            </tr>
+            <tr>
+              <td><strong>神殿</strong></td>
+              <td>宗教建筑，通常有祭坛、神像和仪式房间</td>
+              <td>牧师、邪教徒、异界生物</td>
+            </tr>
+            <tr>
+              <td><strong>城堡</strong></td>
+              <td>防御工事，有塔楼、城墙和地牢</td>
+              <td>贵族、骑士、守卫</td>
+            </tr>
+            <tr>
+              <td><strong>地窖</strong></td>
+              <td>城市或庄园下方的储藏空间，通常较小但密布</td>
+              <td>盗贼、走私者、巨鼠</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 墙壁类型 -->
+      <div class="sub-section">
+        <h3>1.2 墙壁类型</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>墙壁类型</th>
+              <th>厚度</th>
+              <th>HP</th>
+              <th>硬度</th>
+              <th>破坏DC</th>
+              <th>攀爬DC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>粗糙石墙</td>
+              <td>3 尺</td>
+              <td>540</td>
+              <td>8</td>
+              <td>65</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>未加工石墙</td>
+              <td>5 尺</td>
+              <td>900</td>
+              <td>8</td>
+              <td>65</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>光滑石墙</td>
+              <td>3 尺</td>
+              <td>540</td>
+              <td>8</td>
+              <td>65</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>砖墙</td>
+              <td>1 尺</td>
+              <td>110</td>
+              <td>8</td>
+              <td>35</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>砌石墙</td>
+              <td>1 尺</td>
+              <td>180</td>
+              <td>8</td>
+              <td>35</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>超自然石墙</td>
+              <td>1 尺</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>铁墙</td>
+              <td>3 寸</td>
+              <td>360</td>
+              <td>10</td>
+              <td>28</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>木墙</td>
+              <td>6 寸</td>
+              <td>120</td>
+              <td>5</td>
+              <td>24</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="highlight-box">
+          <strong>超自然墙壁：</strong> 这类墙壁由魔法创造，无法通过物理手段破坏。它们通常出现在强大法师或神祇创造的地下城中。<em>解除魔法</em>或类似效果可能暂时消除其魔力。
+        </div>
+      </div>
+
+      <!-- 地板类型 -->
+      <div class="sub-section">
+        <h3>1.3 地板类型</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>地板类型</th>
+              <th>描述</th>
+              <th>对移动的影响</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>碎石地面</td>
+              <td>布满碎屑和小石块的地面</td>
+              <td>特技动作DC增加2</td>
+            </tr>
+            <tr>
+              <td>光滑石面</td>
+              <td>经过打磨的石质地板</td>
+              <td>无特殊影响</td>
+            </tr>
+            <tr>
+              <td>粗糙石面</td>
+              <td>不平整的天然岩石</td>
+              <td>奔跑或冲锋困难（视为困难地形）</td>
+            </tr>
+            <tr>
+              <td>木质地板</td>
+              <td>木板铺设，可能有腐朽部分</td>
+              <td>腐朽木板可能塌陷（力量DC 12 避免坠落）</td>
+            </tr>
+            <tr>
+              <td>湿滑地面</td>
+              <td>有积水或苔藓覆盖</td>
+              <td>平衡检定DC 10，失败则倒地</td>
+            </tr>
+            <tr>
+              <td>轻微碎石</td>
+              <td>散布小石子的地面</td>
+              <td>潜行检定 -2 减值</td>
+            </tr>
+            <tr>
+              <td>深碎石</td>
+              <td>大量碎石覆盖，行走困难</td>
+              <td>移动速度减半，潜行检定 -5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 门 -->
+      <div class="sub-section">
+        <h3>1.4 门</h3>
+        <p>地下城中的门是探索的重要障碍。每扇门都有其材质、厚度和相应的属性。</p>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>门的类型</th>
+              <th>厚度</th>
+              <th>硬度</th>
+              <th>HP</th>
+              <th>卡住 DC</th>
+              <th>锁 DC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>简易木门</td>
+              <td>1.5 寸</td>
+              <td>5</td>
+              <td>10</td>
+              <td>13</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>普通木门</td>
+              <td>1.5 寸</td>
+              <td>5</td>
+              <td>15</td>
+              <td>16</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>坚固木门</td>
+              <td>2 寸</td>
+              <td>5</td>
+              <td>20</td>
+              <td>23</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>石门</td>
+              <td>4 寸</td>
+              <td>8</td>
+              <td>60</td>
+              <td>28</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>铁门</td>
+              <td>2 寸</td>
+              <td>10</td>
+              <td>60</td>
+              <td>28</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>栅栏/铁栅门</td>
+              <td>1 寸</td>
+              <td>10</td>
+              <td>30</td>
+              <td>25</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>加固木门</td>
+              <td>2 寸</td>
+              <td>5</td>
+              <td>30</td>
+              <td>23</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>暗门与密门：</strong><br>
+          <strong>暗门</strong>（Secret Door）：被伪装成墙壁或其他表面的门。需要搜索检定（DC 20-30）才能发现。精灵可在经过时自动进行搜索检定（被动DC 15）。<br>
+          <strong>密门</strong>（Concealed Door）：被物理遮挡的门（如挂毯后、书柜后）。搜索DC通常为15-20。密门不会被<em>侦测秘密门</em>法术发现，因为它们在技术上不是"门"。
+        </div>
+      </div>
+
+      <!-- 特殊地形 -->
+      <div class="sub-section">
+        <h3>1.5 特殊地形</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>地形</th>
+              <th>描述</th>
+              <th>规则效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>深渊/裂隙</strong></td>
+              <td>深不见底的裂缝或坑洞</td>
+              <td>跳跃检定跳过（DC = 距离相关）；失败则坠落，每10尺1d6伤害</td>
+            </tr>
+            <tr>
+              <td><strong>梯子</strong></td>
+              <td>固定在墙上的攀爬设施</td>
+              <td>攀爬DC 0；梯子上战斗时AC -2，无法使用盾牌</td>
+            </tr>
+            <tr>
+              <td><strong>台阶/楼梯</strong></td>
+              <td>连接不同楼层</td>
+              <td>向上移动消耗双倍移动力；向下冲下楼梯需平衡检定DC 10</td>
+            </tr>
+            <tr>
+              <td><strong>浅水</strong>（水深不超过腰部）</td>
+              <td>地下河流或积水</td>
+              <td>移动速度减半；近战攻击 -2；远程攻击 -4</td>
+            </tr>
+            <tr>
+              <td><strong>深水</strong>（完全淹没）</td>
+              <td>深水区域</td>
+              <td>需游泳检定；移动速度为正常1/4；近战需特殊武器；火焰效果无效</td>
+            </tr>
+            <tr>
+              <td><strong>冰面</strong></td>
+              <td>结冰的地面</td>
+              <td>移动速度为正常1/2；奔跑/冲锋需平衡检定DC 15</td>
+            </tr>
+            <tr>
+              <td><strong>狭窄通道</strong></td>
+              <td>宽度不足以自由通行的走廊</td>
+              <td>挤入需脱逃术检定；AC -4，攻击 -4</td>
+            </tr>
+            <tr>
+              <td><strong>坍塌区域</strong></td>
+              <td>天花板或墙壁部分坍塌</td>
+              <td>困难地形；搜索检定DC 20 发现不稳定区域</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 光照 -->
+      <div class="sub-section">
+        <h3>1.6 光照条件</h3>
+        <p>地下城的光照条件直接影响探索和战斗。大多数地下城没有自然光源，冒险者必须自带照明。</p>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>光照条件</th>
+              <th>可视范围</th>
+              <th>对战斗的影响</th>
+              <th>隐匿修正</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>明亮光照</strong></td>
+              <td>正常视觉范围内清晰可见</td>
+              <td>无减值</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>微光（阴影）</strong></td>
+              <td>轮廓可见但细节模糊</td>
+              <td>隐蔽（20%失手率）</td>
+              <td>潜行 +2</td>
+            </tr>
+            <tr>
+              <td><strong>黑暗</strong></td>
+              <td>普通视觉完全不可见</td>
+              <td>完全隐蔽（50%失手率）；对手视为目盲</td>
+              <td>潜行 +5</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>常见光源：</strong>
+          火把 — 明亮半径20尺，微光半径40尺，持续1小时；
+          提灯（普通）— 明亮半径15尺，微光半径30尺，每品脱油持续6小时；
+          昼明术 — 明亮半径60尺，微光半径120尺；
+          黑暗术 — 创造超自然黑暗，半径20尺。
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--                   2. 野外                                     -->
+    <!-- ============================================================ -->
+    <section id="wilderness" class="section-anchor">
+      <h2>二、野外（Wilderness）</h2>
+      <p>野外冒险涵盖城市与地下城之间的所有户外环境。DM 需要了解不同地形如何影响旅行速度、导航难度和遭遇概率。</p>
+
+      <!-- 地形类型 -->
+      <div class="sub-section">
+        <h3>2.1 地形类型</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>地形</th>
+              <th>描述</th>
+              <th>特征要素</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>沙漠</strong></td>
+              <td>干旱少雨的荒地，可能是沙丘、碎石或盐碱地</td>
+              <td>沙丘、绿洲、岩石露出、干涸河床</td>
+            </tr>
+            <tr>
+              <td><strong>稀疏森林</strong></td>
+              <td>树木间距较大，阳光可以穿透树冠</td>
+              <td>树木（30%）、灌木丛（10%）</td>
+            </tr>
+            <tr>
+              <td><strong>中密森林</strong></td>
+              <td>典型的温带森林，树木密集</td>
+              <td>树木（70%）、灌木丛（20%）、落叶层</td>
+            </tr>
+            <tr>
+              <td><strong>茂密森林</strong></td>
+              <td>热带丛林或古老原始森林</td>
+              <td>树木（90%）、藤蔓、灌木丛（40%）；树冠层遮蔽</td>
+            </tr>
+            <tr>
+              <td><strong>丘陵</strong></td>
+              <td>起伏的低矮山丘地带</td>
+              <td>陡峭斜坡、轻灌木丛、低矮山脊</td>
+            </tr>
+            <tr>
+              <td><strong>沼泽</strong></td>
+              <td>湿涝的低洼地带，混合水域与陆地</td>
+              <td>深水沼泽（30%）、浅水沼泽（20%）、灌木丛（20%）、树篱（10%）</td>
+            </tr>
+            <tr>
+              <td><strong>山地</strong></td>
+              <td>高海拔的崎岖地形</td>
+              <td>陡坡（40%）、悬崖（10%）、轻灌木丛（10%）</td>
+            </tr>
+            <tr>
+              <td><strong>平原</strong></td>
+              <td>开阔平坦的草地或农田</td>
+              <td>高草（40%）、矮草（40%）、轻灌木丛（2%）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 野外移动速度 -->
+      <div class="sub-section">
+        <h3>2.2 野外移动速度</h3>
+        <p>下表展示不同地形对旅行速度的影响。基本速度以每小时30尺陆地速度的角色为基准。</p>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>地形</th>
+              <th>每小时（哩）</th>
+              <th>每日（哩）</th>
+              <th>地形修正</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>沙漠</td>
+              <td>3</td>
+              <td>24</td>
+              <td>×1</td>
+              <td>沙丘地带行走困难，可能迷路</td>
+            </tr>
+            <tr>
+              <td>稀疏森林</td>
+              <td>3</td>
+              <td>24</td>
+              <td>×1</td>
+              <td>相对开阔，通行容易</td>
+            </tr>
+            <tr>
+              <td>中密森林</td>
+              <td>2</td>
+              <td>16</td>
+              <td>×¾</td>
+              <td>树木密集影响通行</td>
+            </tr>
+            <tr>
+              <td>茂密森林</td>
+              <td>2</td>
+              <td>16</td>
+              <td>×½</td>
+              <td>茂密植被严重阻碍通行</td>
+            </tr>
+            <tr>
+              <td>丘陵</td>
+              <td>2</td>
+              <td>16</td>
+              <td>×¾</td>
+              <td>上下坡消耗额外体力</td>
+            </tr>
+            <tr>
+              <td>沼泽</td>
+              <td>2</td>
+              <td>16</td>
+              <td>×½</td>
+              <td>泥水地面严重减缓速度</td>
+            </tr>
+            <tr>
+              <td>山地</td>
+              <td>1</td>
+              <td>8</td>
+              <td>×¾</td>
+              <td>崎岖地形和陡坡</td>
+            </tr>
+            <tr>
+              <td>平原</td>
+              <td>3</td>
+              <td>32</td>
+              <td>×1</td>
+              <td>开阔地带，最易通行</td>
+            </tr>
+            <tr>
+              <td>冻原</td>
+              <td>2</td>
+              <td>16</td>
+              <td>×¾</td>
+              <td>寒冷与积雪影响行动</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="formula-box">
+          <strong>速度换算公式：</strong><br>
+          每小时哩数 = 陆地速度（尺）÷ 10<br>
+          每日哩数 = 每小时哩数 × 8 小时（正常行军）<br>
+          强行军每日哩数 = 每小时哩数 × 10 小时（每小时累积1点非致命伤害）
+        </div>
+      </div>
+
+      <!-- 迷路 -->
+      <div class="sub-section">
+        <h3>2.3 迷路</h3>
+        <p>在野外旅行时，没有地图或向导的队伍可能迷路。DM 每小时秘密进行一次导航检定。</p>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>条件</th>
+              <th>生存检定 DC</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>有地图或可见地标</td>
+              <td>不需要检定</td>
+              <td>不会迷路</td>
+            </tr>
+            <tr>
+              <td>沙漠或平原</td>
+              <td>DC 12</td>
+              <td>开阔地带较易导航</td>
+            </tr>
+            <tr>
+              <td>丘陵或森林</td>
+              <td>DC 15</td>
+              <td>视线受阻</td>
+            </tr>
+            <tr>
+              <td>茂密森林或沼泽</td>
+              <td>DC 18</td>
+              <td>地标稀少，方向难辨</td>
+            </tr>
+            <tr>
+              <td>山地</td>
+              <td>DC 15</td>
+              <td>高处有地标但路径复杂</td>
+            </tr>
+            <tr>
+              <td>夜间或恶劣天气</td>
+              <td>DC +4</td>
+              <td>能见度降低增加迷路风险</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>生存技能加成：</strong> 拥有5级或以上的生存技能可以在野外旅行中避免迷路。在生存检定成功时，角色还可以获得足够的食物和水（养活自身及额外1人）。每超过DC 2点可额外养活1人。
+        </div>
+      </div>
+
+      <!-- 天气 -->
+      <div class="sub-section">
+        <h3>2.4 天气</h3>
+        <p>天气影响野外旅行的难度和危险程度。DM 可以每日随机决定天气，或根据冒险需要设定。</p>
+
+        <h4>风力</h4>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>风力等级</th>
+              <th>风速</th>
+              <th>远程减值</th>
+              <th>体型影响</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>轻风</td>
+              <td>0-10 哩/小时</td>
+              <td>无</td>
+              <td>无</td>
+              <td>无特殊效果</td>
+            </tr>
+            <tr>
+              <td>中风</td>
+              <td>11-20 哩/小时</td>
+              <td>无</td>
+              <td>无</td>
+              <td>船只航行顺畅</td>
+            </tr>
+            <tr>
+              <td>强风</td>
+              <td>21-30 哩/小时</td>
+              <td>-2</td>
+              <td>微小体型被吹飞</td>
+              <td>小型船只无法出航</td>
+            </tr>
+            <tr>
+              <td>烈风</td>
+              <td>31-50 哩/小时</td>
+              <td>-4</td>
+              <td>小型被吹飞，中型被绊住</td>
+              <td>树枝折断，帐篷被掀</td>
+            </tr>
+            <tr>
+              <td>暴风</td>
+              <td>51-74 哩/小时</td>
+              <td>远程不可用</td>
+              <td>中型被吹飞，大型被绊住</td>
+              <td>树木被连根拔起</td>
+            </tr>
+            <tr>
+              <td>飓风</td>
+              <td>75+ 哩/小时</td>
+              <td>远程不可用</td>
+              <td>大型被吹飞，巨型被绊住</td>
+              <td>建筑被摧毁</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>降水与温度</h4>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>类型</th>
+              <th>效果</th>
+              <th>持续时间</th>
+              <th>潜行修正</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>小雨</td>
+              <td>能见度降至3/4；火焰可能熄灭（10%概率）</td>
+              <td>1d4 小时</td>
+              <td>+2</td>
+            </tr>
+            <tr>
+              <td>中雨</td>
+              <td>能见度减半；火焰熄灭概率25%；追踪DC +2</td>
+              <td>1d6 小时</td>
+              <td>+4</td>
+            </tr>
+            <tr>
+              <td>暴雨</td>
+              <td>能见度降至1/4；火焰熄灭概率50%；追踪DC +4</td>
+              <td>1d4 小时</td>
+              <td>+6</td>
+            </tr>
+            <tr>
+              <td>雪</td>
+              <td>同中雨效果；地面积雪减缓移动</td>
+              <td>2d6 小时</td>
+              <td>+4</td>
+            </tr>
+            <tr>
+              <td>暴风雪</td>
+              <td>同暴雨+能见度降至1/8；积雪严重</td>
+              <td>1d4 小时</td>
+              <td>+8</td>
+            </tr>
+            <tr>
+              <td>冰雹</td>
+              <td>同暴雨；远程攻击不可用</td>
+              <td>1d4 小时</td>
+              <td>+6</td>
+            </tr>
+            <tr>
+              <td>浓雾</td>
+              <td>能见度降至5尺；完全隐蔽</td>
+              <td>1d6 小时</td>
+              <td>+8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 遇敌 -->
+      <div class="sub-section">
+        <h3>2.5 野外遇敌</h3>
+        <p>DM 使用随机遭遇表来确定队伍在野外是否遭遇怪物。遭遇概率因地形和区域而异。</p>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>地形</th>
+              <th>遭遇概率</th>
+              <th>检定频率</th>
+              <th>典型EL范围</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>沙漠</td>
+              <td>10%</td>
+              <td>每4小时一次</td>
+              <td>EL = 队伍等级 ±2</td>
+            </tr>
+            <tr>
+              <td>森林（稀疏）</td>
+              <td>12%</td>
+              <td>每2小时一次</td>
+              <td>EL = 队伍等级 ±2</td>
+            </tr>
+            <tr>
+              <td>森林（中密/茂密）</td>
+              <td>15%</td>
+              <td>每2小时一次</td>
+              <td>EL = 队伍等级 ±3</td>
+            </tr>
+            <tr>
+              <td>丘陵</td>
+              <td>12%</td>
+              <td>每3小时一次</td>
+              <td>EL = 队伍等级 ±2</td>
+            </tr>
+            <tr>
+              <td>沼泽</td>
+              <td>15%</td>
+              <td>每2小时一次</td>
+              <td>EL = 队伍等级 ±3</td>
+            </tr>
+            <tr>
+              <td>山地</td>
+              <td>12%</td>
+              <td>每3小时一次</td>
+              <td>EL = 队伍等级 ±2</td>
+            </tr>
+            <tr>
+              <td>平原</td>
+              <td>10%</td>
+              <td>每3小时一次</td>
+              <td>EL = 队伍等级 ±2</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>巢穴遭遇：</strong> 当遭遇概率掷出天然20（或DM指定），冒险者可能发现怪物的巢穴。巢穴遭遇通常为EL = 队伍等级 +2 或更高，但巢穴中通常包含额外宝藏（标准宝藏 ×2-3）。
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--                   3. 城市                                     -->
+    <!-- ============================================================ -->
+    <section id="urban" class="section-anchor">
+      <h2>三、城市（Urban）</h2>
+      <p>城市冒险融合了社交互动、政治阴谋和街道探索。城市环境比地下城更复杂，有大量NPC、法律和隐秘组织。</p>
+
+      <!-- 城市规模 -->
+      <div class="sub-section">
+        <h3>3.1 城市规模</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>城市规模</th>
+              <th>人口范围</th>
+              <th>金币限制</th>
+              <th>最高NPC等级</th>
+              <th>守卫力量</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>小村庄（Thorp）</td>
+              <td>20-80</td>
+              <td>40 gp</td>
+              <td>2级平民</td>
+              <td>无正式守卫</td>
+            </tr>
+            <tr>
+              <td>村落（Hamlet）</td>
+              <td>81-400</td>
+              <td>100 gp</td>
+              <td>3级平民</td>
+              <td>民兵 1d6</td>
+            </tr>
+            <tr>
+              <td>村庄（Village）</td>
+              <td>401-900</td>
+              <td>200 gp</td>
+              <td>4级平民 / 1级战士</td>
+              <td>民兵 2d6</td>
+            </tr>
+            <tr>
+              <td>小镇（Small Town）</td>
+              <td>901-2,000</td>
+              <td>500 gp</td>
+              <td>5级平民 / 3级战士</td>
+              <td>守卫 3d6</td>
+            </tr>
+            <tr>
+              <td>大镇（Large Town）</td>
+              <td>2,001-5,000</td>
+              <td>1,000 gp</td>
+              <td>6级平民 / 4级战士</td>
+              <td>守卫 5d6 + 1名中尉（5级战士）</td>
+            </tr>
+            <tr>
+              <td>小城（Small City）</td>
+              <td>5,001-10,000</td>
+              <td>3,000 gp</td>
+              <td>7级平民 / 5级战士</td>
+              <td>守卫 10d6 + 军官团</td>
+            </tr>
+            <tr>
+              <td>大城（Large City）</td>
+              <td>10,001-25,000</td>
+              <td>6,000 gp</td>
+              <td>8级贵族 / 7级战士</td>
+              <td>守卫 15d6 + 高级军官 + 法师顾问</td>
+            </tr>
+            <tr>
+              <td>都会（Metropolis）</td>
+              <td>25,001+</td>
+              <td>15,000 gp</td>
+              <td>10级贵族 / 9级战士</td>
+              <td>守卫 20d6 + 精锐卫队 + 法师团</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="info-box">
+          <strong>金币限制：</strong> 指城市中能购买到的最贵物品价格。超出此价格的魔法物品或装备在该城市通常无法买到。DM 可根据城市特色适当调整。
+        </div>
+      </div>
+
+      <!-- 城市地形 -->
+      <div class="sub-section">
+        <h3>3.2 城市地形要素</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>地形要素</th>
+              <th>描述</th>
+              <th>对移动和战斗的影响</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>街道</strong></td>
+              <td>主要干道宽20-40尺，小巷宽5-10尺</td>
+              <td>主路正常通行；小巷可能为困难地形</td>
+            </tr>
+            <tr>
+              <td><strong>建筑</strong></td>
+              <td>木质（HP 10/寸，硬度5）或石质（HP 90/尺，硬度8）</td>
+              <td>墙壁提供掩蔽；门窗可被破坏</td>
+            </tr>
+            <tr>
+              <td><strong>屋顶</strong></td>
+              <td>平顶或斜顶，通常高10-20尺</td>
+              <td>攀爬DC 15（有梯子DC 0）；屋顶战斗平衡DC 10</td>
+            </tr>
+            <tr>
+              <td><strong>下水道</strong></td>
+              <td>地下排水系统，深10-25尺</td>
+              <td>类似地下城；有水流和有毒气体风险</td>
+            </tr>
+            <tr>
+              <td><strong>城墙</strong></td>
+              <td>防御工事，高15-30尺，厚5-10尺</td>
+              <td>攀爬DC 20；墙顶提供优越掩蔽</td>
+            </tr>
+            <tr>
+              <td><strong>市场广场</strong></td>
+              <td>开阔公共空间</td>
+              <td>无掩蔽；人群提供隐蔽；可能被踩踏</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 城市守卫和法律 -->
+      <div class="sub-section">
+        <h3>3.3 城市守卫与法律</h3>
+        <p>城市有执法力量维持秩序。冒险者的行为可能引起守卫注意。</p>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>罪行</th>
+              <th>处罚</th>
+              <th>抓捕难度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>斗殴/扰乱治安</td>
+              <td>罚款 1-5 gp 或拘留 1 天</td>
+              <td>巡逻守卫 2d4 人（1-3 级战士）</td>
+            </tr>
+            <tr>
+              <td>盗窃</td>
+              <td>罚款（赃物2倍）或鞭刑</td>
+              <td>守卫 2d6 + 警犬追踪</td>
+            </tr>
+            <tr>
+              <td>入屋行窃</td>
+              <td>罚款（赃物3倍）或监禁 1 月</td>
+              <td>同上 + 法师协助搜索</td>
+            </tr>
+            <tr>
+              <td>袭击/伤害</td>
+              <td>监禁 1-6 月 或流放</td>
+              <td>守卫 3d6 + 精英小队长</td>
+            </tr>
+            <tr>
+              <td>谋杀</td>
+              <td>死刑 或 终身监禁</td>
+              <td>全城搜捕 + 赏金猎人 + 法师</td>
+            </tr>
+            <tr>
+              <td>纵火</td>
+              <td>死刑</td>
+              <td>全城搜捕</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="danger-box">
+          <strong>DM 提示：</strong> 城市守卫通常不会主动搜查冒险者，除非有人报案或犯罪发生在巡逻视线内。使用潜行或伪装可以在城市中活动而不被发现。但一旦通缉，城市中的所有商人、旅馆和公会都可能拒绝为通缉犯提供服务。
+        </div>
+      </div>
+
+      <!-- 城市中的危险 -->
+      <div class="sub-section">
+        <h3>3.4 城市中的危险</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>危险</th>
+              <th>发生概率</th>
+              <th>规则效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>扒窃</td>
+              <td>人群密集区域每10分钟 5%</td>
+              <td>盗贼巧手检定 vs 感知检定；失败则损失1d10 gp</td>
+            </tr>
+            <tr>
+              <td>屋顶坠落</td>
+              <td>平衡检定失败时</td>
+              <td>坠落伤害（每10尺 1d6）+ 街道行人可能被砸伤</td>
+            </tr>
+            <tr>
+              <td>下水道危险</td>
+              <td>持续存在</td>
+              <td>有毒气体（强韧DC 15，否则恶心1d4分钟）；水流冲击</td>
+            </tr>
+            <tr>
+              <td>马车事故</td>
+              <td>繁忙街道 2%/每小时</td>
+              <td>反射DC 15 避免；失败受2d6钝击伤害</td>
+            </tr>
+            <tr>
+              <td>帮派冲突</td>
+              <td>贫民区夜间 10%</td>
+              <td>可能被卷入2d6名帮派成员的械斗</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--                   4. 陷阱                                     -->
+    <!-- ============================================================ -->
+    <section id="traps" class="section-anchor">
+      <h2>四、陷阱（Traps）</h2>
+      <p>陷阱是地下城中最常见的非战斗威胁。DM 可以根据冒险的难度等级设计不同类型的陷阱。</p>
+
+      <!-- 陷阱基本规则 -->
+      <div class="sub-section">
+        <h3>4.1 陷阱基本规则</h3>
+        <div class="rule-card">
+          <h3>陷阱交互流程</h3>
+          <p><strong>发现陷阱：</strong> 使用搜索技能（Search），标准动作。游荡者可以用搜索技能发现魔法陷阱，其他职业不行。DC由陷阱的CR决定。</p>
+          <p><strong>触发陷阱：</strong> 当角色进入触发区域时，陷阱自动启动。触发方式包括：踩踏板、绊线、接近感应（魔法陷阱）、开门等。</p>
+          <p><strong>躲避陷阱：</strong> 通常有反射豁免减半伤害，或攻击掷骰决定是否命中。</p>
+          <p><strong>解除陷阱：</strong> 使用解除装置技能（Disable Device），需要工具。DC由陷阱的CR决定。失败超过5可能导致意外触发。</p>
+        </div>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>陷阱 CR</th>
+              <th>搜索 DC</th>
+              <th>解除装置 DC</th>
+              <th>经验值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>20</td><td>20</td><td>100</td></tr>
+            <tr><td>2</td><td>22</td><td>22</td><td>200</td></tr>
+            <tr><td>3</td><td>23</td><td>23</td><td>300</td></tr>
+            <tr><td>4</td><td>24</td><td>24</td><td>400</td></tr>
+            <tr><td>5</td><td>25</td><td>25</td><td>500</td></tr>
+            <tr><td>6</td><td>26</td><td>26</td><td>600</td></tr>
+            <tr><td>7</td><td>27</td><td>27</td><td>700</td></tr>
+            <tr><td>8</td><td>28</td><td>28</td><td>800</td></tr>
+            <tr><td>9</td><td>29</td><td>29</td><td>900</td></tr>
+            <tr><td>10</td><td>30</td><td>30</td><td>1,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CR等级对应陷阱示例 -->
+      <div class="sub-section">
+        <h3>4.2 陷阱示例</h3>
+
+        <h4>CR 1 陷阱</h4>
+        <div class="rule-card">
+          <h3>弩弓陷阱（Crossbow Trap）</h3>
+          <p><strong>类型：</strong> 机械陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 1 &nbsp;|&nbsp; <strong>触发：</strong> 绊线 &nbsp;|&nbsp; <strong>复位：</strong> 手动</p>
+          <p><strong>攻击：</strong> +10 远程 &nbsp;|&nbsp; <strong>伤害：</strong> 1d8（弩矢） &nbsp;|&nbsp; <strong>目标：</strong> 首先触发绊线的生物</p>
+          <p><strong>搜索 DC：</strong> 20 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 20</p>
+          <p><strong>造价：</strong> 600 gp</p>
+        </div>
+
+        <div class="rule-card">
+          <h3>落坑陷阱（Pit Trap）</h3>
+          <p><strong>类型：</strong> 机械陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 1 &nbsp;|&nbsp; <strong>触发：</strong> 踩踏（10尺×10尺区域）&nbsp;|&nbsp; <strong>复位：</strong> 手动</p>
+          <p><strong>效果：</strong> 反射DC 20 避免坠落；10尺深坑，坠落伤害 1d6</p>
+          <p><strong>搜索 DC：</strong> 20 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 20</p>
+          <p><strong>造价：</strong> 1,000 gp</p>
+        </div>
+
+        <h4>CR 2-3 陷阱</h4>
+        <div class="rule-card">
+          <h3>毒针陷阱（Poison Needle Trap）— CR 2</h3>
+          <p><strong>类型：</strong> 机械陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 2 &nbsp;|&nbsp; <strong>触发：</strong> 开锁/打开容器 &nbsp;|&nbsp; <strong>复位：</strong> 手动</p>
+          <p><strong>攻击：</strong> +17 近战 &nbsp;|&nbsp; <strong>伤害：</strong> 针（1 伤害）+ 绿血油毒素（强韧DC 13，初始1d6体质，后续1d6体质）</p>
+          <p><strong>搜索 DC：</strong> 22 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 22</p>
+          <p><strong>造价：</strong> 2,400 gp（含毒素成本）</p>
+        </div>
+
+        <div class="rule-card">
+          <h3>落石陷阱（Falling Rocks Trap）— CR 3</h3>
+          <p><strong>类型：</strong> 机械陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 3 &nbsp;|&nbsp; <strong>触发：</strong> 绊线或踩踏 &nbsp;|&nbsp; <strong>复位：</strong> 手动</p>
+          <p><strong>效果：</strong> 反射DC 15 减半；2d6 钝击伤害（多个目标，10尺×10尺区域）</p>
+          <p><strong>搜索 DC：</strong> 23 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 23</p>
+          <p><strong>造价：</strong> 2,500 gp</p>
+        </div>
+
+        <h4>CR 4-5 陷阱</h4>
+        <div class="rule-card">
+          <h3>火焰喷射陷阱（Fire Trap）— CR 4</h3>
+          <p><strong>类型：</strong> 魔法陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 4 &nbsp;|&nbsp; <strong>触发：</strong> 接近感应（30尺） &nbsp;|&nbsp; <strong>复位：</strong> 自动（1分钟后重置）</p>
+          <p><strong>效果：</strong> 反射DC 16 减半；4d6 火焰伤害（20尺半径爆发）</p>
+          <p><strong>搜索 DC：</strong> 25（仅游荡者） &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 25</p>
+          <p><strong>造价：</strong> 5,000 gp（施法者等级 7）</p>
+        </div>
+
+        <div class="rule-card">
+          <h3>酸液喷射陷阱（Acid Spray Trap）— CR 5</h3>
+          <p><strong>类型：</strong> 机械陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 5 &nbsp;|&nbsp; <strong>触发：</strong> 踩踏（5尺×5尺区域） &nbsp;|&nbsp; <strong>复位：</strong> 自动</p>
+          <p><strong>效果：</strong> 反射DC 20 减半；6d6 酸液伤害（20尺锥形区域）</p>
+          <p><strong>搜索 DC：</strong> 25 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 25</p>
+          <p><strong>造价：</strong> 7,500 gp</p>
+        </div>
+
+        <h4>CR 6-8 高级魔法陷阱</h4>
+        <div class="rule-card">
+          <h3>闪电链陷阱（Chain Lightning Trap）— CR 7</h3>
+          <p><strong>类型：</strong> 魔法陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 7 &nbsp;|&nbsp; <strong>触发：</strong> 接近感应 &nbsp;|&nbsp; <strong>复位：</strong> 自动</p>
+          <p><strong>效果：</strong> 反射DC 19 减半；11d6 电击伤害（主要目标），5d6（次要目标，最多5个额外目标）</p>
+          <p><strong>搜索 DC：</strong> 27 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 27</p>
+          <p><strong>造价：</strong> 21,000 gp</p>
+        </div>
+
+        <div class="rule-card">
+          <h3>石化术陷阱（Flesh to Stone Trap）— CR 8</h3>
+          <p><strong>类型：</strong> 魔法陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 8 &nbsp;|&nbsp; <strong>触发：</strong> 接近感应（30尺） &nbsp;|&nbsp; <strong>复位：</strong> 自动</p>
+          <p><strong>效果：</strong> 强韧DC 17 无效；目标被石化</p>
+          <p><strong>搜索 DC：</strong> 28 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 28</p>
+          <p><strong>造价：</strong> 28,000 gp</p>
+        </div>
+
+        <h4>CR 9+ 致命陷阱</h4>
+        <div class="rule-card">
+          <h3>死亡术陷阱（Death Spell Trap）— CR 9</h3>
+          <p><strong>类型：</strong> 魔法陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 9 &nbsp;|&nbsp; <strong>触发：</strong> 接近感应 &nbsp;|&nbsp; <strong>复位：</strong> 自动</p>
+          <p><strong>效果：</strong> 强韧DC 19 无效；4d4 个HD的生物被杀死（总HD = 施法者等级×2）</p>
+          <p><strong>搜索 DC：</strong> 29 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 29</p>
+          <p><strong>造价：</strong> 36,000 gp</p>
+        </div>
+
+        <div class="rule-card">
+          <h3>内爆术陷阱（Implosion Trap）— CR 10</h3>
+          <p><strong>类型：</strong> 魔法陷阱 &nbsp;|&nbsp; <strong>CR：</strong> 10 &nbsp;|&nbsp; <strong>触发：</strong> 接近感应 &nbsp;|&nbsp; <strong>复位：</strong> 自动</p>
+          <p><strong>效果：</strong> 强韧DC 23 无效；立即死亡（持续4轮，每轮可尝试豁免）</p>
+          <p><strong>搜索 DC：</strong> 30 &nbsp;|&nbsp; <strong>解除装置 DC：</strong> 30</p>
+          <p><strong>造价：</strong> 50,000 gp</p>
+        </div>
+      </div>
+
+      <!-- 陷阱造价表 -->
+      <div class="sub-section">
+        <h3>4.3 陷阱造价表</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>陷阱 CR</th>
+              <th>机械陷阱基础造价</th>
+              <th>魔法陷阱基础造价</th>
+              <th>附加成本</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>1,000 gp</td>
+              <td>1,500 gp</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2,000 gp</td>
+              <td>3,000 gp</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>3,000 gp</td>
+              <td>4,500 gp</td>
+              <td>毒素另计</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>4,000 gp</td>
+              <td>6,000 gp</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>5,000 gp</td>
+              <td>7,500 gp</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>6,000 gp</td>
+              <td>10,000 gp</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>7,000 gp</td>
+              <td>14,000 gp</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>8,000 gp</td>
+              <td>20,000 gp</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>9,000 gp</td>
+              <td>28,000 gp</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>10,000 gp</td>
+              <td>40,000 gp</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>陷阱造价修正：</strong><br>
+          - 多目标陷阱：基础造价 ×1.5<br>
+          - 自动复位：基础造价 ×2<br>
+          - 锁定/修复复位：基础造价 ×1.5<br>
+          - 附带毒素：加毒素价格<br>
+          - 附带炼金物品：加物品价格<br>
+          - 魔法陷阱施法费用：基础造价 + 施法服务费
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--                   5. 宝藏                                     -->
+    <!-- ============================================================ -->
+    <section id="treasure" class="section-anchor">
+      <h2>五、宝藏（Treasure）</h2>
+      <p>宝藏是冒险的核心奖励之一。DM 应根据遭遇的遭遇等级（EL）合理分配宝藏。</p>
+
+      <!-- 宝藏类型 -->
+      <div class="sub-section">
+        <h3>5.1 宝藏类型</h3>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>宝藏类型</th>
+              <th>描述</th>
+              <th>价值范围</th>
+              <th>重量</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>铜币（cp）</strong></td>
+              <td>最基础的货币</td>
+              <td>1 cp = 1/100 gp</td>
+              <td>50枚/磅</td>
+            </tr>
+            <tr>
+              <td><strong>银币（sp）</strong></td>
+              <td>常见货币</td>
+              <td>1 sp = 1/10 gp</td>
+              <td>50枚/磅</td>
+            </tr>
+            <tr>
+              <td><strong>金币（gp）</strong></td>
+              <td>标准冒险货币</td>
+              <td>1 gp = 标准单位</td>
+              <td>50枚/磅</td>
+            </tr>
+            <tr>
+              <td><strong>铂金币（pp）</strong></td>
+              <td>高价值货币</td>
+              <td>1 pp = 10 gp</td>
+              <td>50枚/磅</td>
+            </tr>
+            <tr>
+              <td><strong>宝石</strong></td>
+              <td>各种品质的宝石，价值差异巨大</td>
+              <td>10 gp - 5,000+ gp</td>
+              <td>通常忽略不计</td>
+            </tr>
+            <tr>
+              <td><strong>艺术品</strong></td>
+              <td>雕像、挂毯、珠宝饰品等</td>
+              <td>50 gp - 10,000+ gp</td>
+              <td>1-10 磅（按尺寸）</td>
+            </tr>
+            <tr>
+              <td><strong>魔法物品</strong></td>
+              <td>武器、防具、药水、卷轴、魔杖等</td>
+              <td>50 gp - 200,000+ gp</td>
+              <td>按物品而定</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 按EL分配的宝藏表 -->
+      <div class="sub-section">
+        <h3>5.2 按遭遇等级（EL）分配的宝藏</h3>
+        <p>下表展示每个遭遇等级应分配的标准宝藏总值。此值包含钱币、物品和魔法物品。</p>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>EL</th>
+              <th>宝藏总值（gp）</th>
+              <th>钱币比例</th>
+              <th>宝石/艺术品</th>
+              <th>魔法物品</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>300</td>
+              <td>14% (42 gp)</td>
+              <td>13% (39 gp)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>600</td>
+              <td>13% (78 gp)</td>
+              <td>12% (72 gp)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>900</td>
+              <td>12% (108 gp)</td>
+              <td>11% (99 gp)</td>
+              <td>1 件次级</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>1,200</td>
+              <td>11% (132 gp)</td>
+              <td>11% (132 gp)</td>
+              <td>1 件次级</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>1,600</td>
+              <td>10% (160 gp)</td>
+              <td>11% (176 gp)</td>
+              <td>1d3 件次级</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>2,000</td>
+              <td>10% (200 gp)</td>
+              <td>11% (220 gp)</td>
+              <td>1d3 件次级 或 1 件中级</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>2,600</td>
+              <td>11% (286 gp)</td>
+              <td>12% (312 gp)</td>
+              <td>1d4 件次级 或 1 件中级</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>3,400</td>
+              <td>11% (374 gp)</td>
+              <td>13% (442 gp)</td>
+              <td>1d4 件次级 或 1d3 件中级</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>4,500</td>
+              <td>11% (495 gp)</td>
+              <td>14% (630 gp)</td>
+              <td>1d4 件中级 或 1 件高级</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>5,800</td>
+              <td>11% (638 gp)</td>
+              <td>15% (870 gp)</td>
+              <td>1d4 件中级 或 1 件高级</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>7,500</td>
+              <td>11% (825 gp)</td>
+              <td>16% (1,200 gp)</td>
+              <td>1d6 件中级 或 1d3 件高级</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>9,800</td>
+              <td>11% (1,078 gp)</td>
+              <td>17% (1,666 gp)</td>
+              <td>1d6 件中级 或 1d4 件高级</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>13,000</td>
+              <td>11% (1,430 gp)</td>
+              <td>18% (2,340 gp)</td>
+              <td>1d6 件高级 或 1 件次级神器</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>17,000</td>
+              <td>11% (1,870 gp)</td>
+              <td>19% (3,230 gp)</td>
+              <td>1d8 件高级</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>22,000</td>
+              <td>11% (2,420 gp)</td>
+              <td>20% (4,400 gp)</td>
+              <td>1d8 件高级 或 1 件中级神器</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>28,000</td>
+              <td>11% (3,080 gp)</td>
+              <td>21% (5,880 gp)</td>
+              <td>1d10 件高级</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>36,000</td>
+              <td>11% (3,960 gp)</td>
+              <td>22% (7,920 gp)</td>
+              <td>1d10 件高级 或 1 件神器</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>47,000</td>
+              <td>11% (5,170 gp)</td>
+              <td>23% (10,810 gp)</td>
+              <td>1d12 件高级 或 1 件神器</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>61,000</td>
+              <td>11% (6,710 gp)</td>
+              <td>24% (14,640 gp)</td>
+              <td>2d6 件高级 或 1d3 件神器</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>80,000</td>
+              <td>11% (8,800 gp)</td>
+              <td>25% (20,000 gp)</td>
+              <td>2d6 件高级 或 1d4 件神器</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 随机宝藏生成规则 -->
+      <div class="sub-section">
+        <h3>5.3 随机宝藏生成</h3>
+        <p>DM 可以通过以下步骤随机生成宝藏：</p>
+        <div class="rule-card">
+          <h3>生成步骤</h3>
+          <ol style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 2;">
+            <li><strong>确定EL：</strong> 根据遭遇的怪物总EL确定宝藏总值</li>
+            <li><strong>掷骰分配：</strong> 按上表比例分配钱币、宝石/艺术品和魔法物品</li>
+            <li><strong>掷骰钱币：</strong> 根据金额掷骰确定具体货币种类和数量</li>
+            <li><strong>掷骰宝石：</strong> d% 确定宝石类型和价值（10gp-5000gp 不等）</li>
+            <li><strong>掷骰艺术品：</strong> d% 确定艺术品类型和价值（50gp-10000gp 不等）</li>
+            <li><strong>掷骰魔法物品：</strong> d% 确定物品等级（次级/中级/高级），再掷骰确定具体物品</li>
+          </ol>
+        </div>
+
+        <h4>魔法物品等级分布</h4>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>掷骰（d%）</th>
+              <th>次级物品</th>
+              <th>中级物品</th>
+              <th>高级物品</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01-04</td>
+              <td>护甲/盾牌</td>
+              <td>护甲/盾牌</td>
+              <td>护甲/盾牌</td>
+            </tr>
+            <tr>
+              <td>05-09</td>
+              <td>武器</td>
+              <td>武器</td>
+              <td>武器</td>
+            </tr>
+            <tr>
+              <td>10-44</td>
+              <td>药水</td>
+              <td>药水</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>45-46</td>
+              <td>—</td>
+              <td>卷轴</td>
+              <td>卷轴</td>
+            </tr>
+            <tr>
+              <td>47-81</td>
+              <td>卷轴</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>82-91</td>
+              <td>魔杖</td>
+              <td>魔杖</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>92-96</td>
+              <td>—</td>
+              <td>权杖</td>
+              <td>权杖</td>
+            </tr>
+            <tr>
+              <td>97-100</td>
+              <td>奇物</td>
+              <td>奇物</td>
+              <td>奇物/神器</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- NPC携带宝藏 -->
+      <div class="sub-section">
+        <h3>5.4 NPC 携带宝藏</h3>
+        <p>NPC 的装备价值由其职业等级决定。下表为各等级的标准装备价值。</p>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>NPC 等级</th>
+              <th>装备总值（gp）</th>
+              <th>典型分配</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>900</td><td>武器、防具、1-2件次级魔法物品</td></tr>
+            <tr><td>2</td><td>1,800</td><td>+1武器或防具，药水、卷轴</td></tr>
+            <tr><td>3</td><td>2,700</td><td>+1武器/防具，次级奇物</td></tr>
+            <tr><td>4</td><td>4,500</td><td>+1武器/防具，中级奇物</td></tr>
+            <tr><td>5</td><td>6,500</td><td>+2武器，+1防具，多件魔法物品</td></tr>
+            <tr><td>6</td><td>9,000</td><td>+2武器/防具，多种魔法物品</td></tr>
+            <tr><td>7</td><td>12,000</td><td>+3武器，+2防具，强力奇物</td></tr>
+            <tr><td>8</td><td>16,000</td><td>+3武器/防具，高级奇物</td></tr>
+            <tr><td>9</td><td>21,000</td><td>+4武器，+3防具，强力物品组合</td></tr>
+            <tr><td>10</td><td>27,000</td><td>+4武器/防具，多件高级物品</td></tr>
+            <tr><td>11</td><td>35,000</td><td>+5武器，+4防具</td></tr>
+            <tr><td>12</td><td>44,000</td><td>+5武器/防具，神器级物品</td></tr>
+            <tr><td>13</td><td>56,000</td><td>高级魔法装备全套</td></tr>
+            <tr><td>14</td><td>72,000</td><td>传奇级装备</td></tr>
+            <tr><td>15</td><td>90,000</td><td>接近神器级装备</td></tr>
+            <tr><td>16</td><td>112,000</td><td>神器级装备</td></tr>
+            <tr><td>17</td><td>140,000</td><td>多件神器</td></tr>
+            <tr><td>18</td><td>175,000</td><td>全套神器</td></tr>
+            <tr><td>19</td><td>220,000</td><td>传说级全套</td></tr>
+            <tr><td>20</td><td>280,000</td><td>最顶级NPC装备</td></tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>注意：</strong> NPC装备价值通常高于同等级PC预期宝藏的一半。这是因为NPC通常被击败后，其装备成为PC的战利品。但DM应考虑到装备磨损、NPC使用消耗品（如药水）以及某些装备可能在战斗中被毁。
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--                   6. 环境危害                                 -->
+    <!-- ============================================================ -->
+    <section id="hazards" class="section-anchor">
+      <h2>六、环境危害（Environmental Hazards）</h2>
+      <p>除了怪物和陷阱，冒险者还要面对各种环境威胁。以下规则涵盖最常见的环境危害。</p>
+
+      <!-- 坠落伤害 -->
+      <div class="sub-section">
+        <h3>6.1 坠落伤害</h3>
+        <div class="rule-card">
+          <h3>基本规则</h3>
+          <p><strong>坠落伤害 = 每10尺 1d6 钝击伤害</strong>，最高 20d6（200尺以上）。</p>
+          <p>角色可以通过特技动作（Tumble）检定减少坠落伤害：DC 15 可将坠落距离视为减少10尺（即将1d6伤害降至0）。DC 30 可将坠落距离视为减少20尺。</p>
+          <p>落入水中可减少伤害：10尺内入水无伤害，20尺内入水受 1d3 非致命伤害（需游泳检定DC 15），更高处入水按正常坠落伤害计算。</p>
+        </div>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>坠落距离</th>
+              <th>伤害</th>
+              <th>特技动作 DC</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>10 尺</td><td>1d6</td><td>15（减半）</td><td>常见矮墙高度</td></tr>
+            <tr><td>20 尺</td><td>2d6</td><td>15（减1d6）</td><td>二层楼高度</td></tr>
+            <tr><td>30 尺</td><td>3d6</td><td>15（减1d6）</td><td>三层楼高度</td></tr>
+            <tr><td>40 尺</td><td>4d6</td><td>15（减1d6）</td><td>—</td></tr>
+            <tr><td>50 尺</td><td>5d6</td><td>15（减1d6）</td><td>—</td></tr>
+            <tr><td>100 尺</td><td>10d6</td><td>15（减1d6）</td><td>—</td></tr>
+            <tr><td>200 尺+</td><td>20d6（最大）</td><td>15（减1d6）</td><td>最高伤害上限</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 温度危害 -->
+      <div class="sub-section">
+        <h3>6.2 温度危害</h3>
+        <p>极端温度会对角色造成非致命伤害。未做好防护的角色每小时需进行强韧豁免。</p>
+
+        <h4>严寒</h4>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>温度范围</th>
+              <th>强韧DC</th>
+              <th>失败效果</th>
+              <th>检定频率</th>
+              <th>防护方式</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>40-0°F（寒冷）</td>
+              <td>DC 15</td>
+              <td>1d6 非致命伤害</td>
+              <td>每小时</td>
+              <td>冬装（+5加值）</td>
+            </tr>
+            <tr>
+              <td>0- -20°F（严寒）</td>
+              <td>DC 15</td>
+              <td>1d6 非致命伤害</td>
+              <td>每10分钟</td>
+              <td>冬装 + 御寒法术</td>
+            </tr>
+            <tr>
+              <td>-20°F 以下（极寒）</td>
+              <td>DC 20</td>
+              <td>2d6 非致命伤害</td>
+              <td>每分钟</td>
+              <td>完整御寒装备 + 魔法</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>酷热</h4>
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>温度范围</th>
+              <th>强韧DC</th>
+              <th>失败效果</th>
+              <th>检定频率</th>
+              <th>防护方式</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>90-110°F（炎热）</td>
+              <td>DC 15</td>
+              <td>1d4 非致命伤害（脱水）</td>
+              <td>每小时</td>
+              <td>充足饮水</td>
+            </tr>
+            <tr>
+              <td>110-140°F（酷热）</td>
+              <td>DC 15</td>
+              <td>1d4 非致命伤害</td>
+              <td>每10分钟</td>
+              <td>充足饮水 + 遮阳</td>
+            </tr>
+            <tr>
+              <td>140°F 以上（极热）</td>
+              <td>DC 20</td>
+              <td>2d6 非致命伤害</td>
+              <td>每分钟</td>
+              <td>耐火魔法</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>非致命伤害恢复：</strong> 非致命伤害以每等级每小时1点的速度自然恢复。休息8小时可恢复全部非致命伤害。因温度导致的非致命伤害只有在温度恢复到正常范围后才会开始恢复。
+        </div>
+      </div>
+
+      <!-- 溺水与窒息 -->
+      <div class="sub-section">
+        <h3>6.3 溺水与窒息</h3>
+        <div class="rule-card">
+          <h3>基本规则</h3>
+          <p>角色可以屏息 <strong>体质调整值 +1</strong> 轮（最少1轮）。屏息结束后，角色必须每轮进行体质检定：</p>
+          <p><strong>第1轮：</strong> DC 10 &nbsp;|&nbsp; <strong>第2轮：</strong> DC 15 &nbsp;|&nbsp; <strong>第3轮：</strong> DC 20 &nbsp;|&nbsp; <strong>第4轮：</strong> DC 25 &nbsp;|&nbsp; ……（每轮DC +5）</p>
+          <p>检定失败时，角色开始溺水/窒息：</p>
+          <ul style="margin: 8px 0 0 20px; font-size: 14px; line-height: 1.8;">
+            <li><strong>第1轮失败：</strong> 生命值降至 0 hp（昏迷）</li>
+            <li><strong>第2轮失败：</strong> 生命值降至 -1 hp（濒死）</li>
+            <li><strong>第3轮失败：</strong> 死亡</li>
+          </ul>
+        </div>
+
+        <div class="danger-box">
+          <strong>烟雾/有毒气体：</strong> 即使角色屏息成功，吸入有毒气体仍需进行豁免检定。烟雾导致窒息时，角色无法屏息（直接进入窒息流程），除非有呼吸防护装备。
+        </div>
+      </div>
+
+      <!-- 饥饿与脱水 -->
+      <div class="sub-section">
+        <h3>6.4 饥饿与脱水</h3>
+        <div class="rule-card">
+          <h3>饥饿</h3>
+          <p>角色可以在不进食的情况下存活 <strong>3 + 体质调整值</strong> 天（最少1天）。之后每天需进行体质检定（DC 10，每天+1）：</p>
+          <p>失败则受到 <strong>1d6 非致命伤害</strong>。受到饥饿非致命伤害的角色会感到虚弱（fatigued）。</p>
+        </div>
+
+        <div class="rule-card">
+          <h3>脱水</h3>
+          <p>角色可以在不饮水的情况下存活 <strong>1 + 体质调整值</strong> 天（最少1天）。之后每小时需进行体质检定（DC 10，每小时+1）：</p>
+          <p>失败则受到 <strong>1d6 非致命伤害</strong>。脱水比饥饿危险得多，在炎热环境下脱水速度加倍。</p>
+        </div>
+
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>条件</th>
+              <th>存活时间</th>
+              <th>检定DC起始</th>
+              <th>失败伤害</th>
+              <th>附加效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>饥饿</td>
+              <td>3 + 体质调整值 天</td>
+              <td>DC 10（每天+1）</td>
+              <td>1d6 非致命</td>
+              <td>虚弱（fatigued）</td>
+            </tr>
+            <tr>
+              <td>脱水</td>
+              <td>1 + 体质调整值 天</td>
+              <td>DC 10（每小时+1）</td>
+              <td>1d6 非致命</td>
+              <td>虚弱（fatigued）</td>
+            </tr>
+            <tr>
+              <td>脱水（炎热环境）</td>
+              <td>同上，但检定频率翻倍</td>
+              <td>DC 10（每30分钟+1）</td>
+              <td>1d6 非致命</td>
+              <td>虚弱 + 力竭（exhausted）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>恢复：</strong> 进食/饮水可以立即停止后续检定，但已受到的非致命伤害仍需自然恢复。正常进食量为每天1磅食物和1加仑水。半量食物/水可延长存活时间但效果减半。
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 返回链接 ====== -->
+    <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--border-main); text-align: center;">
+      <a href="rules.html" style="color: var(--accent-gold); font-weight: 600; font-size: 15px;">← 返回核心规则总览</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="rules-combat.html" style="color: var(--text-link); font-size: 15px;">下一章：战斗 →</a>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

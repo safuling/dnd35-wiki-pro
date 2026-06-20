@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人类 Human - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html" class="active">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">种族</div>
+      <a href="intro.html">总览</a>
+      <a href="human.html" class="active">人类 Human</a>
+      <a href="elf.html">精灵 Elf</a>
+      <a href="dwarf.html">矮人 Dwarf</a>
+      <a href="halfling.html">半身人 Halfling</a>
+      <a href="gnome.html">侏儒 Gnome</a>
+      <a href="half-elf.html">半精灵 Half-elf</a>
+      <a href="half-orc.html">半兽人 Half-orc</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- 信息盒子 -->
+    <div class="infobox">
+      <div class="infobox-title">🧑 人类 Human</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <div class="infobox-img" style="padding:20px;font-size:64px;opacity:0.3;">🧑🤝🧑</div>
+      <table class="infobox-table">
+        <tr><td>体型</td><td>中型</td></tr>
+        <tr><td>属性调整</td><td>无（全+0）</td></tr>
+        <tr><td>速度</td><td>30英尺</td></tr>
+        <tr><td>视力</td><td>正常视觉</td></tr>
+        <tr><td>语言</td><td>通用语 + 自选</td></tr>
+        <tr><td>偏爱职业</td><td>任意（无兼职惩罚）</td></tr>
+        <tr><td>挑战等级</td><td>1（1级角色）</td></tr>
+        <tr><td>来源</td><td>PHB p.12 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>人类（Human）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心种族</span>
+      <span class="badge badge-race">PHB p.12</span>
+      <span class="badge badge-note">最适合新手</span>
+    </p>
+    <p>人类是<a href="../settings/keyword.html">费伦</a>大陆乃至整个D&D多元宇宙中最常见、最多样化的种族。
+    他们没有天生的魔法天赋，没有超常的体能，也没有漫长的寿命——但他们拥有其他种族无法比拟的
+    <strong>适应力</strong>和<strong>野心</strong>。在D&D 3.5e的规则体系中，人类是<strong> Mechanics 最强</strong>的种族之一，
+    尤其适合新手和想要尝试多职业（Multiclass）的玩家。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#traits">种族特性</a></li>
+        <li><a href="#mechanics">机制分析</a></li>
+        <li><a href="#multiclass">多职业建议</a></li>
+        <li><a href="#roleplay">角色扮演建议</a></li>
+        <li><a href="#names">姓名习惯</a></li>
+        <li><a href="#religion">宗教信仰</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+        <li><a href="#source">数据来源</a></li>
+      </ol>
+    </div>
+
+    <h2 id="traits">📊 种族特性</h2>
+    <div class="Rule-box">
+      <h3>基础数值</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>属性</th><th>调整值</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>力量（STR）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>敏捷（DEX）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>体质（CON）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>智力（INT）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>感知（WIS）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>魅力（CHA）</td><td>±0</td><td>无调整</td></tr>
+        </tbody>
+      </table>
+      <p><strong>人类是唯一没有任何属性调整的核心种族。</strong>这看似"平庸"，实则意味着人类可以
+      无惩罚地选择<strong>任何职业</strong>而不浪费属性点。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>独有种族特性</h3>
+      <ol>
+        <li><strong>额外专长（Extra Feat）</strong>：1级时，人类角色获得<strong>一个额外专长</strong>。
+          这意味着人类1级角色就拥有<strong>2个专长</strong>（所有角色1级获得1个专长，人类额外+1）。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;"><strong>机制意义：</strong>专长是D&D 3.5e中角色差异化的核心来源。
+          额外专长让人类在1级就比任何其他种族拥有更多战术选择。</p>
+        </li>
+        <li><strong>额外技能点（Extra Skill Points）</strong>：人类角色每升一级获得<strong>+4个额外技能点</strong>。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;"><strong>计算示例：</strong>假设人类游荡者（职业技能数 = 8 + INT调整值），
+          1级获得（8+INT调整值）×4 + 4额外 = <strong>（8+INT）×4 + 4</strong>技能点。
+          这相当于比其他种族多出一个" trained skill"的价值。</p>
+        </li>
+        <li><strong>偏爱职业：任意</strong>：人类角色的"偏爱职业"视为其<strong>当前职业</strong>。
+          这意味着人类角色<strong>永远不会受到兼职惩罚</strong>（经验值减少20%）。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;"><strong>这是人类最核心的优势。</strong>
+          在D&D 3.5e中，兼职惩罚极其严厉，而人类是唯一可以完全无视这一限制的种族。</p>
+        </li>
+        <li><strong>中型体型</strong>：无AC或攻击调整值，占用5英尺×5英尺战斗格子。</li>
+        <li><strong>基础陆地速度30英尺</strong>：标准速度，无特殊加成或惩罚。</li>
+        <li><strong>自动获得语言</strong>：通用语。高智力角色可获得额外语言（每2点INT调整值+1门语言）。</li>
+      </ol>
+    </div>
+
+    <h2 id="mechanics">⚙️ 机制分析</h2>
+    <div class="Rule-box">
+      <h3>为什么人类是最强种族？</h3>
+      <p>在D&D 3.5e的Min-Max（数值最优化）社区中，人类长期被认为是<strong>Mechanically strongest</strong>的核心种族。原因如下：</p>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>对比项</th><th>人类</th><th>精灵（对比）</th><th>评价</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>属性调整</td><td>全±0</td><td>敏捷+2/体质-2</td><td>人类更灵活</td></tr>
+          <tr><td>1级专长数</td><td><strong>2个</strong></td><td>1个</td><td>人类显著优势</td></tr>
+          <tr><td>每级技能点</td><td>职业基础+<strong>4</strong></td><td>职业基础+0</td><td>人类显著优势</td></tr>
+          <tr><td>兼职惩罚</td><td><strong>无</strong></td><td>有（非法师时）</td><td>人类独有优势</td></tr>
+          <tr><td>特殊能力</td><td>无</td><td>法术抗力等</td><td>精灵有 flavour 优势</td></tr>
+        </tbody>
+      </table>
+      <p><strong>结论：</strong>如果你追求数值强度，人类是最佳选择。如果你追求角色扮演深度或特定战术，
+      其他种族可能更适合。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>人类的"隐藏优势"：专长经济学</h3>
+      <p>在D&D 3.5e中，<strong>专长的机会成本</strong>极高——每个角色每3级才能获得1个新专长（1级、3级、6级、9级……）。
+      人类在1级就获得额外专长，这相当于比其他人<strong>提前3级</strong>获得某个关键专长。</p>
+      <p><strong>人类优先专长推荐：</strong></p>
+      <ul>
+        <li><strong>武器专精（Weapon Focus）</strong> → 开启进阶职业<a href="../classes/fighter.html">武术家（Kensai）</a>的必要条件</li>
+        <li><strong>法术专精（Spell Focus）</strong> → 强化法师/牧师法术</li>
+        <li><strong>铸甲 proficiency</strong> → 获得更好AC</li>
+        <li><strong>擅长异种武器（Exotic Weapon Proficiency）</strong> → 使用强力异种武器</li>
+      </ul>
+    </div>
+
+    <h2 id="multiclass">🔄 多职业建议</h2>
+    <p>人类是D&D 3.5e中<strong>最适合多职业（Multiclass）</strong>的种族，因为完全没有兼职惩罚。</p>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>法师/战士</h3>
+        <p><strong>经典组合。</strong>法师提供远程火力，战士提供近战生存。人类可以让两者无缝衔接。</p>
+        <p style="font-size:13px;color:#666;">关键级序：法师1/战士1 → 法师剩余</p>
+      </div>
+      <div class="section-card">
+        <h3>游荡者/法师</h3>
+        <p><strong>战斗法师（Arcane Trickster）</strong>进阶职业的前置。
+        游荡者的技能+法师的法术=极强的多面手。</p>
+        <p style="font-size:13px;color:#666;">需要：法术辨识1级，解锁等级2</p>
+      </div>
+      <div class="section-card">
+        <h3>牧师/游荡者</h3>
+        <p>牧师的神术+游荡者的技能=优秀的侦察者和支援者。
+        人类无兼职惩罚是此组合可行的前提。</p>
+      </div>
+      <div class="section-card">
+        <h3>战士/圣武士</h3>
+        <p>适合想要"圣武士但更灵活"的玩家。需注意圣武士的<a href="../classes/paladin.html">守护誓言</a>限制。</p>
+      </div>
+    </div>
+
+    <h2 id="roleplay">🎭 角色扮演建议</h2>
+    <div class="Rule-box">
+      <h3>人类多样性</h3>
+      <p>PHB如此描述人类："<em>大多数人类是拓荒者、征服者、贸易商、旅行者、难民或流浪者的后裔。
+      因此，人类在生理、文化、宗教、或政治上，都非常多元。</em>"</p>
+      <p>这意味着人类角色可以来自<strong>任何文化背景</strong>——从文明都市的贵族到边疆蛮荒的野人，
+      从虔诚的朝圣者到无神论的学者。DM应鼓励玩家为人类角色设计丰富的背景故事。</p>
+
+      <h3>常见性格原型</h3>
+      <ul>
+        <li><strong>野心家</strong>：追求权力、财富或名声。适合战士、法师职业。</li>
+        <li><strong>探险家</strong>：对未知世界充满好奇。适合游荡者、游侠职业。</li>
+        <li><strong>守护者</strong>：保护弱者、维护秩序。适合圣武士、牧师职业。</li>
+        <li><strong>学者</strong>：追求知识与真理。适合法师、武僧职业。</li>
+        <li><strong>外交家</strong>：擅长沟通与交涉。适合吟游诗人、牧师职业。</li>
+      </ul>
+    </div>
+
+    <h2 id="names">📛 姓名习惯</h2>
+    <p>人类姓名因文化背景而异。在《被遗忘的国度》设定中，常见的人类姓名包括：</p>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>文化</th><th>男性示例</th><th>女性示例</th><th>姓氏示例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>费伦（通用）</td><td>艾尔温、布雷纳斯</td><td>艾梨丝、凯特瑞尔</td><td>月盾、星落</td></tr>
+        <tr><td>卡尔萨斯</td><td>达曼、寇德温</td><td>伊尔明斯特（注：此为男性名）</td><td>——</td></tr>
+        <tr><td>拉斯曼</td><td>阿斯克、法伦</td><td>布瑞丝、贾思拉</td><td>晨光、暮影</td></tr>
+        <tr><td>古代（现实世界）</td><td>亚瑟、齐格飞</td><td>桂妮维亚、布伦希尔德</td><td>——</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:#777;">注：姓名风格应根据DM的战役设定调整，以上仅为参考。</p>
+
+    <h2 id="religion">⛪ 宗教信仰</h2>
+    <p>人类是<strong>最虔诚</strong>的种族之一，几乎没有全人类无信仰的文明。在费伦设定中，常见的人类信仰包括：</p>
+    <ul>
+      <li><strong>谷神（Chauntea）</strong>：农业与丰收女神，农民最信仰</li>
+      <li><strong>晨神（Lathander）</strong>：黎明与重生之神，常见于善意阵营</li>
+      <li><strong>风暴神（Talos）</strong>：毁灭与风暴之神，常见于邪恶阵营</li>
+      <li><strong>死神（Myrkul）</strong>：死亡之神（已被击杀，现由克物镜取代）</li>
+    </ul>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"额外技能点"的计算冲突</h3>
+      <p><strong>冲突描述：</strong>人类"每级+4技能点"是在<strong>乘以4之前</strong>还是<strong>之后</strong>加？</p>
+      <p><strong>SRD和PHB的明确说法：</strong>"1st-level characters with an Intelligence modifier of +1 or higher
+      get 4 × (class skill points + 4) + Intelligence modifier."（SRD · Races · Human）</p>
+      <p>即：<code>总技能点 = 4 × (职业基础技能点数 + 4 [人类奖励]) + INT调整值</code></p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.13</span></p>
+      <p><strong>注意：</strong>某些第三方资料（如3.0版扩展）可能将人类奖励错误描述为"每级+1"而非"+4在1级时"，
+      请务必以3.5版SRD为准。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>关于"偏爱职业=任意"的潜在冲突</h3>
+      <p>在某些第三方战役设定（如<em>被遗忘的国度</em>3.5版补编）中，人类可能获得<strong>特定偏爱职业</strong>
+      （如卡尔萨斯人偏爱战士），而非"任意"。如果DM使用这些设定，需明确告知玩家。</p>
+      <p><span class="source-tag">来源：Forgotten Realms Campaign Setting 3.5</span></p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.12-13 —— 人类种族特性</li>
+      <li>📘 <strong>SRD 3.5</strong> · Races → Human —— 开放式游戏规则</li>
+      <li>📘 <strong>DMG（城主手册）3.5版</strong> p.169-172 —— 兼职惩罚规则</li>
+      <li>📗 <strong>Forgotten Realms Campaign Setting</strong> —— 费伦设定中的人类文化</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="intro.html">← 返回种族总览</a> | <a href="elf.html">下一页：精灵 →</a>
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 人类种族详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

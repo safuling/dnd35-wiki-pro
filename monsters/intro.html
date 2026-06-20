@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>怪物图鉴 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .monster-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .monster-card h3 { margin:0 0 8px; color:var(--text-heading); font-size:17px; }
+  .monster-stat { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .stat-pill { display:inline-block; background:#f0ebe0; border-radius:20px; padding:3px 12px; font-size:13px; }
+  .stat-pill strong { color:var(--accent-red); }
+  .cr-badge { display:inline-block; padding:3px 10px; border-radius:12px; font-weight:700; font-size:13px; margin-left:8px; }
+  .cr-low { background:#e8f5e9; color:#2e7d32; }
+  .cr-mid { background:#fff3e0; color:#e65100; }
+  .cr-high { background:#fce4ec; color:#c62828; }
+  .cr-boss { background:#ede7f6; color:#4527a0; }
+  table.monster-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:13px; }
+  table.monster-table th { background:var(--bg-table-head); padding:8px 10px; text-align:left; font-size:12px; }
+  table.monster-table td { border:1px solid var(--border-light); padding:7px 10px; }
+  table.monster-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .type-tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:12px; font-weight:600; background:#e3f2fd; color:#1565c0; }
+  .monster-tip { background:#f3e5f5; border-left:3px solid #9c27b0; padding:10px 14px; margin:10px 0; border-radius:0 var(--radius) var(--radius) 0; font-size:13px; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物类型</div>
+      <a href="#types">怪物类型一览</a>
+      <a href="#aberrations">异怪（Aberration）</a>
+      <a href="#animals">动物（Animal）</a>
+      <a href="#constructs">构装体（Construct）</a>
+      <a href="#dragons">龙（Dragon）</a>
+      <a href="#elementals">元素（Elemental）</a>
+      <a href="#humanoids">类人生物</a>
+      <a href="#magical-beasts">神奇野兽</a>
+      <a href="#outsiders">异界生物</a>
+      <a href="#undead">不死生物</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物百科</div>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关工具</div>
+      <a href="#cr-guide">CR挑战等级指南</a>
+      <a href="#dr-guide">伤害减免指南</a>
+      <a href="../spells/search.html">法术搜索</a>
+      <a href="../3r/new-monsters.html">3R新增怪物</a>
+    </div>
+  </aside>
+
+  <article class="main-content">
+    <h1>👹 怪物图鉴</h1>
+    <p style="color:var(--text-subtle);font-size:14px;">D&D 3.5e 核心怪物数据 | 来源：《怪物图鉴（Monster Manual）》3.5版</p>
+
+    <!-- 类型概述 -->
+    <h2 id="types">📋 怪物类型一览</h2>
+    <p>D&D 3.5e 将怪物分为以下基本类型，每种类型有其通用规则：</p>
+    <table class="monster-table">
+      <thead><tr><th>类型</th><th>英文</th><th>特征</th><th>常见免疫</th></tr></thead>
+      <tbody>
+        <tr><td>异怪</td><td>Aberration</td><td>怪异的生物，通常有超自然能力</td><td>无通用免疫</td></tr>
+        <tr><td>动物</td><td>Animal</td><td>普通自然动物，智力1-2</td><td>无</td></tr>
+        <tr><td>构装体</td><td>Construct</td><td>人工制造的生物，无生命</td><td>毒素/疲劳/疾病/心灵效果/死亡效果/能量吸取</td></tr>
+        <tr><td>龙</td><td>Dragon</td><td>真龙，拥有飞行/吐息武器/法术</td><td>睡眠/麻痹（部分）</td></tr>
+        <tr><td>元素</td><td>Elemental</td><td>纯粹由元素组成的生物</td><td>毒素/疾病/晕眩/麻痹/疲劳/精疲力竭</td></tr>
+        <tr><td>仙灵</td><td>Fey</td><td>自然魔法生物，与自然紧密相关</td><td>无通用免疫</td></tr>
+        <tr><td>巨人</td><td>Giant</td><td>类人形大型生物</td><td>无</td></tr>
+        <tr><td>类人生物</td><td>Humanoid</td><td>双足直立生物，含地精/兽人等</td><td>无</td></tr>
+        <tr><td>神奇野兽</td><td>Magical Beast</td><td>动物外形但拥有超自然能力</td><td>无通用免疫</td></tr>
+        <tr><td>怪物人形</td><td>Monstrous Humanoid</td><td>类人但有怪物特征</td><td>无</td></tr>
+        <tr><td>黏液</td><td>Ooze</td><td>变形体，无固定形态</td><td>毒素/心灵效果/眩晕/疾病；视觉类技能无效</td></tr>
+        <tr><td>植物</td><td>Plant</td><td>植物性生物</td><td>毒素/疲劳/疾病/麻痹/晕眩/心灵效果</td></tr>
+        <tr><td>异界生物</td><td>Outsider</td><td>来自其他位面的生物</td><td>无通用，但通常有特殊DR</td></tr>
+        <tr><td>不死生物</td><td>Undead</td><td>死而复生的生物</td><td>毒素/睡眠/麻痹/晕眩/疾病/精疲力竭/能量吸取/致命攻击/非致命伤害</td></tr>
+        <tr><td>变形者</td><td>Shapechanger</td><td>能改变外形的生物（亚型）</td><td>无通用免疫</td></tr>
+      </tbody>
+    </table>
+
+    <!-- CR指南 -->
+    <h2 id="cr-guide">📊 挑战等级（Challenge Rating）指南</h2>
+    <div class="monster-tip">
+      <strong>CR参考原则：</strong>4名等级等于CR值的角色通常会与该生物有一场中等难度的战斗，消耗约25%资源（HP/法术位）。
+    </div>
+    <table class="monster-table">
+      <thead><tr><th>CR值</th><th>适合等级</th><th>难度描述</th><th>典型怪物</th></tr></thead>
+      <tbody>
+        <tr><td>1/4 - 1/2</td><td>1级</td><td>入门遭遇</td><td>骷髅、地精、小型狼</td></tr>
+        <tr><td>1</td><td>1-2级</td><td>基础遭遇</td><td>兽人、骷髅战士、法师仆从</td></tr>
+        <tr><td>2-3</td><td>2-4级</td><td>普通遭遇</td><td>食人魔、黑熊、幽灵狗</td></tr>
+        <tr><td>4-6</td><td>4-7级</td><td>具有挑战性</td><td>石巨怪、年轻白龙、牛头人</td></tr>
+        <tr><td>7-10</td><td>7-12级</td><td>危险遭遇</td><td>成年铜龙、石像鬼、成年黑龙</td></tr>
+        <tr><td>11-15</td><td>11-16级</td><td>史诗级挑战</td><td>古老白龙、恶魔领主、成年红龙</td></tr>
+        <tr><td>16-20+</td><td>16-20级</td><td>神话级威胁</td><td>大天魔、太初恶龙、神化怪物</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 不死生物 -->
+    <h2 id="undead">💀 常见不死生物</h2>
+    <div class="monster-card">
+      <h3>骷髅 <span class="cr-badge cr-low">CR 1/3</span></h3>
+      <div class="monster-stat">
+        <span class="stat-pill"><strong>HD</strong> 1d12</span>
+        <span class="stat-pill"><strong>HP</strong> 6</span>
+        <span class="stat-pill"><strong>AC</strong> 15</span>
+        <span class="stat-pill"><strong>攻击</strong> +0 爪 1d4</span>
+        <span class="stat-pill"><strong>体型</strong> 中型</span>
+      </div>
+      <p style="font-size:13px;margin:8px 0 0;">免疫：穿刺伤害减半 | 驱散不死有效 | 免疫冷/心灵/毒素/疾病等不死通用免疫</p>
+    </div>
+
+    <div class="monster-card">
+      <h3>僵尸 <span class="cr-badge cr-low">CR 1/2</span></h3>
+      <div class="monster-stat">
+        <span class="stat-pill"><strong>HD</strong> 2d12+3</span>
+        <span class="stat-pill"><strong>HP</strong> 16</span>
+        <span class="stat-pill"><strong>AC</strong> 11</span>
+        <span class="stat-pill"><strong>攻击</strong> +2 重拳 1d6+1</span>
+        <span class="stat-pill"><strong>体型</strong> 中型</span>
+      </div>
+      <p style="font-size:13px;margin:8px 0 0;">特性：单一行动，斩击伤害减半 | 注：僵尸只有标准动作（无移动+标准双动作组合）</p>
+    </div>
+
+    <div class="monster-card">
+      <h3>吸血鬼 (Vampire) <span class="cr-badge cr-boss">CR +2（模板）</span></h3>
+      <div class="monster-stat">
+        <span class="stat-pill"><strong>类型</strong> 不死生物（模板）</span>
+        <span class="stat-pill"><strong>DR</strong> 10/银&魔法</span>
+        <span class="stat-pill"><strong>SR</strong> —</span>
+      </div>
+      <p style="font-size:13px;margin:8px 0 0;">能量吸取（接触攻击，失2负能量等级）| 迷惑（凝视）| 再生10 | 弱点：跑步水/圣符/阳光/木桩</p>
+    </div>
+
+    <!-- 龙 -->
+    <h2 id="dragons">🐉 真龙（Dragon）</h2>
+    <table class="monster-table">
+      <thead><tr><th>龙的种类</th><th>颜色</th><th>吐息武器</th><th>天生地形</th><th>成年CR参考</th></tr></thead>
+      <tbody>
+        <tr><td>红龙（邪）</td><td style="color:#c62828;">■ 红</td><td>60ft锥形火焰</td><td>火山、山地</td><td>CR 17-22</td></tr>
+        <tr><td>蓝龙（邪）</td><td style="color:#1565c0;">■ 蓝</td><td>100ft线形闪电</td><td>沙漠、平原</td><td>CR 16-21</td></tr>
+        <tr><td>绿龙（邪）</td><td style="color:#2e7d32;">■ 绿</td><td>50ft锥形毒雾</td><td>森林</td><td>CR 11-18</td></tr>
+        <tr><td>黑龙（邪）</td><td style="color:#37474f;">■ 黑</td><td>60ft线形强酸</td><td>沼泽</td><td>CR 7-16</td></tr>
+        <tr><td>白龙（邪）</td><td style="color:#90a4ae;">■ 白</td><td>40ft锥形寒冰</td><td>冰原</td><td>CR 4-14</td></tr>
+        <tr><td>金龙（善）</td><td style="color:#c8960c;">■ 金</td><td>60ft锥形火焰/恐惧气</td><td>任何温暖地带</td><td>CR 17-25</td></tr>
+        <tr><td>银龙（善）</td><td style="color:#78909c;">■ 银</td><td>50ft锥形寒冰/麻痹气</td><td>山地</td><td>CR 14-22</td></tr>
+        <tr><td>铜龙（善）</td><td style="color:#b87333;">■ 铜</td><td>60ft线形强酸/减速气</td><td>丘陵</td><td>CR 8-18</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 伤害减免指南 -->
+    <h2 id="dr-guide">🛡️ 伤害减免（DR）攻克指南</h2>
+    <table class="monster-table">
+      <thead><tr><th>DR类型</th><th>攻克方式</th><th>常见生物</th></tr></thead>
+      <tbody>
+        <tr><td>DR/冷铁</td><td>使用冷铁武器</td><td>大多数恶魔（Demon）、部分仙灵</td></tr>
+        <tr><td>DR/银</td><td>使用银制武器</td><td>狼人（Were-）、部分魔鬼（Devil）</td></tr>
+        <tr><td>DR/魔法</td><td>使用+1以上魔法武器</td><td>大多数高CR怪物</td></tr>
+        <tr><td>DR/善</td><td>使用善阵营武器</td><td>魔鬼、恶魔、鬼怪</td></tr>
+        <tr><td>DR/混乱</td><td>使用混乱阵营武器</td><td>天使、善意异界生物</td></tr>
+        <tr><td>DR/附魔剑（冷铁&银）</td><td>同时满足两个条件</td><td>高级魔鬼（Pit Fiend等）</td></tr>
+        <tr><td>DR/—</td><td>无法绕过（物理）</td><td>构装体（铁身像等）、部分巨人</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 常见遭遇怪物 -->
+    <h2>👾 常见遭遇怪物速查</h2>
+    <table class="monster-table">
+      <thead><tr><th>怪物</th><th>英文</th><th><span class="type-tag">类型</span></th><th>CR</th><th>HD</th><th>AC</th><th>最强特性</th></tr></thead>
+      <tbody>
+        <tr><td>地精</td><td>Goblin</td><td><span class="type-tag">类人生物</span></td><td class="cr-badge cr-low">1/3</td><td>1d8-1</td><td>15</td><td>数量多，骑战术</td></tr>
+        <tr><td>兽人</td><td>Orc</td><td><span class="type-tag">类人生物</span></td><td class="cr-badge cr-low">1/2</td><td>1d8+1</td><td>13</td><td>力量4，双手武器</td></tr>
+        <tr><td>食人魔</td><td>Ogre</td><td><span class="type-tag">巨人</span></td><td class="cr-badge cr-mid">3</td><td>4d8+11</td><td>16</td><td>大型体型+4力量</td></tr>
+        <tr><td>石巨人</td><td>Stone Giant</td><td><span class="type-tag">巨人</span></td><td class="cr-badge cr-mid">8</td><td>14d8+56</td><td>25</td><td>投石远程+DR10</td></tr>
+        <tr><td>牛头人</td><td>Minotaur</td><td><span class="type-tag">怪物人形</span></td><td class="cr-badge cr-mid">4</td><td>6d8+12</td><td>14</td><td>电荷冲击+2d6，追踪</td></tr>
+        <tr><td>石像鬼</td><td>Gargoyle</td><td><span class="type-tag">构装体</span></td><td class="cr-badge cr-mid">4</td><td>4d10+16</td><td>16</td><td>飞行+DR10/魔法</td></tr>
+        <tr><td>巴西利斯克</td><td>Basilisk</td><td><span class="type-tag">神奇野兽</span></td><td class="cr-badge cr-mid">5</td><td>6d10+18</td><td>16</td><td>石化凝视（DC13）</td></tr>
+        <tr><td>敏锐利爪</td><td>Displacer Beast</td><td><span class="type-tag">神奇野兽</span></td><td class="cr-badge cr-mid">4</td><td>6d10+18</td><td>16</td><td>虚像（攻击miss 50%）</td></tr>
+        <tr><td>北极风怪</td><td>White Dragon（幼）</td><td><span class="type-tag">龙</span></td><td class="cr-badge cr-mid">4</td><td>7d12+14</td><td>17</td><td>锥形寒冰30ft</td></tr>
+        <tr><td>暗影</td><td>Shadow</td><td><span class="type-tag">不死生物</span></td><td class="cr-badge cr-mid">3</td><td>3d12</td><td>13</td><td>力量吸取+融入阴影</td></tr>
+        <tr><td>木乃伊</td><td>Mummy</td><td><span class="type-tag">不死生物</span></td><td class="cr-badge cr-mid">5</td><td>8d12+3</td><td>20</td><td>腐烂打击（绝症）+恐惧凝视</td></tr>
+        <tr><td>水元素（大型）</td><td>Large Water Elemental</td><td><span class="type-tag">元素</span></td><td class="cr-badge cr-mid">5</td><td>8d8+32</td><td>18</td><td>漩涡+抓握</td></tr>
+        <tr><td>恶魔（巴尔洛尔）</td><td>Balor</td><td><span class="type-tag">异界生物</span></td><td class="cr-badge cr-boss">20</td><td>20d8+200</td><td>35</td><td>火焰鞭+SR25+DR15</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:32px;padding:16px;background:#fff3e0;border-left:4px solid #ff9800;border-radius:0 var(--radius) var(--radius) 0;">
+      <strong>📝 城主提示：</strong>
+      <ul style="margin:10px 0 0 20px;line-height:2;font-size:14px;">
+        <li>一场遭遇的XP预算 ≈ <strong>角色人数 × 每等级XP经验值</strong>（见DMG表格）</li>
+        <li>多个低CR怪物可以组合，等效高CR遭遇（EL加算参见DMG）</li>
+        <li>环境/地形加值可以使低CR遭遇等效更高挑战度</li>
+        <li>更多怪物：参见《怪物图鉴》I/II/III | <a href="../3r/new-monsters.html">3R新增怪物 →</a></li>
+      </ul>
+    </div>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;text-align:center;">
+      📚 数据来源：D&D 3.5e Monster Manual（怪物图鉴）3.5版
+    </p>
+  </article>
+</div>
+
+<footer class="site-footer" style="background:var(--bg-navbar);color:#aaa;padding:16px;text-align:center;font-size:13px;">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

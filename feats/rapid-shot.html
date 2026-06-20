@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>快速射击 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <h3>专长导航</h3>
+  <ul>
+    <li><a href="intro.html">专长总览</a></li>
+    <li class="nav-divider">战斗专长</li>
+    <li><a href="power-attack.html">猛力攻击</a></li>
+    <li><a href="cleave.html">顺劈斩</a></li>
+    <li><a href="weapon-focus.html">武器专攻</a></li>
+    <li><a href="point-blank-shot.html">近程射击</a></li>
+    <li><a href="rapid-shot.html" class="active">快速射击</a></li>
+    <li class="nav-divider">施法专长</li>
+    <li><a href="spell-focus.html">法术专攻</a></li>
+    <li><a href="combat-casting.html">战斗施法</a></li>
+    <li><a href="empower-spell.html">法术强效</a></li>
+    <li class="nav-divider">通用专长</li>
+    <li><a href="toughness.html">强韧</a></li>
+    <li><a href="iron-will.html">钢铁意志</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 快速射击</nav>
+<h1>快速射击 (Rapid Shot)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">远程战斗专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">近程射击，敏捷 13+</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">远程全力攻击时，获得一次额外攻击（攻击-2）</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择一次</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你擅长快速发射远程武器。</p>
+<p>当你使用远程武器进行 <strong>全力攻击 (Full Attack)</strong> 动作时，可以获得 <span class="rule-keyword">一次额外攻击</span>，但所有远程攻击的攻击掷骰受到 <span class="rule-keyword">-2 惩罚</span>。</p>
+
+<h2 id="benefit-detail">益处详解</h2>
+<ul>
+  <li><strong>触发条件</strong>：必须声明"全力攻击"动作（不能使用标准动作攻击）。</li>
+  <li><strong>额外攻击</strong>：在你的全力攻击动作中，获得一次额外远程攻击。</li>
+  <li><strong>攻击惩罚</strong>：所有远程攻击（包括额外攻击）的攻击掷骰受到 -2 惩罚。</li>
+  <li><strong>仅限远程</strong>：不适用于近战攻击。</li>
+</ul>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例：游侠的快速射击</strong></p>
+  <p>人类游侠 6级（BAB +6/+1，敏捷 16/+3），选择"快速射击"专长，使用长弓。</p>
+  <ul>
+    <li><strong>全力攻击（无快速射击）</strong>：2次攻击，加值分别为 +9/+4</li>
+    <li><strong>全力攻击（有快速射击）</strong>：3次攻击，加值分别为 +7/+2/-3（所有攻击 -2）</li>
+    <li>虽然单次命中率降低，但 <strong>总命中次数期望提高</strong></li>
+    <li>对低AC敌人，快速射击显著提高伤害输出</li>
+  </ul>
+</div>
+
+<h2 id="value">价值评估</h2>
+<div class="tactic-box">
+  <p><strong>快速射击 vs. 多重射击 (Manyshot)</strong></p>
+  <ul>
+    <li><strong>快速射击</strong>：对 <strong>同一目标</strong> 进行多次攻击。适合高伤害单次攻击。</li>
+    <li><strong>多重射击</strong>：一次攻击 <strong>击中多个目标</strong>。适合面对多个低HP敌人。</li>
+    <li><strong>推荐</strong>：面对单一强敌选快速射击；面对群体选多重射击。</li>
+  </ul>
+</div>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">游侠 (Ranger)</strong>：远程战斗核心，快速射击是必选。</li>
+  <li><strong class="highlight">战士 (Fighter)</strong>：如果选择远程路线，快速射击显著提高输出。</li>
+  <li><strong>任何远程职业</strong>：无职业限制，适合所有远程攻击者。</li>
+</ul>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>近程射击 (Point Blank Shot)</strong>：快速射击的前提，提供 +1 攻击补偿 -2 惩罚。</li>
+  <li><strong>武器专攻 (Weapon Focus)</strong>：提高攻击加值，补偿快速射击的 -2 惩罚。</li>
+  <li><strong>致命一击 (Improved Critical)</strong>：多次攻击提高重击触发概率。</li>
+</ul>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：快速射击是否适用于"法术远程攻击"？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：快速射击适用于"远程武器"攻击。</p>
+  <p>✅ <strong>官方 FAQ 澄清</strong>：</p>
+  <ul>
+    <li>快速射击 <strong>不适用</strong>于法术远程攻击（如 <em>魔法飞弹</em>）。</li>
+    <li>快速射击 <strong>只适用</strong>于远程武器攻击（弓、弩、飞镖等）。</li>
+  </ul>
+  <p>⚠️ <strong>常见误解</strong>：有玩家认为快速射击能提高法术攻击次数。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页143</strong>：全力攻击详解。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

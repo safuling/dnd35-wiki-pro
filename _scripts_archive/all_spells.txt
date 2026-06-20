@@ -1,0 +1,449 @@
+acid_splash | Acid Splash | 酸液飞溅
+arcane_mark | Arcane Mark | 奥术标记
+dancing_lights | Dancing Lights | 舞光术
+daze | Daze | 震慑
+detect_magic | Detect Magic | 侦测魔法
+disrupt_undead | Disrupt Undead | 击退亡灵
+flare | Flare | 闪光尘
+ghost_sound | Ghost Sound | 幽幻之声
+light | Light | 光亮术
+mage_hand | Mage Hand | 法师之手
+mending | Mending | 修理术
+message | Message | 传讯术
+open_close | Open/Close | 开关术
+prestidigitation | Prestidigitation | 戏法
+ray_of_frost | Ray of Frost | 霜射线
+read_magic | Read Magic | 阅读魔法
+resistance | Resistance | 抗力术
+create_water | Create Water | 造水术
+cure_minor_wounds | Cure Minor Wounds | 微伤治疗
+detect_poison | Detect Poison | 侦测毒素
+guidance | Guidance | 指引术
+inflict_minor_wounds | Inflict Minor Wounds | 微伤造成
+purify_food_drink | Purify Food and Drink | 净化饮食
+virtue | Virtue | 美德术
+alarm | Alarm | 警铃术
+burning_hands | Burning Hands | 燃烧之手
+charm_person | Charm Person | 魅惑人类
+color_spray | Color Spray | 彩光喷射
+comprehend_languages | Comprehend Languages | 理解语言
+detect_secret_doors | Detect Secret Doors | 侦测秘门
+identify | Identify | 鉴定术
+magic_missile | Magic Missile | 魔法飞弹
+shield | Shield | 护盾术
+sleep | Sleep | 睡眠术
+bless | Bless | 祝福术
+cure_light_wounds | Cure Light Wounds | 轻伤治疗
+divine_favor | Divine Favor | 神恩术
+endure_elements | Endure Elements | 耐受元素
+protection_from_alignment | Protection from Alignment | 防护自阵营
+shield_of_faith | Shield of Faith | 信仰之盾
+summon_monster_1 | Summon Monster I | 召唤怪物Ⅰ
+acid_arrow | Acid Arrow | 酸液箭
+blur | Blur | 模糊术
+darkness | Darkness | 黑暗术
+flaming_sphere | Flaming Sphere | 烈焰之球
+glitterdust | Glitterdust | 闪光尘
+invisibility | Invisibility | 隐形术
+mirror_image | Mirror Image | 镜影术
+ blindness_deafness | Blindness/Deafness | 目盲/耳聋
+cure_moderate_wounds | Cure Moderate Wounds | 中伤治疗
+bulls_strength | Bull's Strength | 公牛之力
+cats_grace | Cat's Grace | 猫之优雅
+bears_endurance | Bear's Endurance | 熊之坚韧
+eagles_splendor | Eagle's Splendor | 鹰之荣耀
+foxs_cunning | Fox's Cunning | 狐之狡黠
+owls_wisdom | Owl's Wisdom | 猫头鹰之智慧
+resist_energy | Resist Energy | 抵抗能量
+summon_monster_2 | Summon Monster II | 召唤怪物Ⅱ
+web | Web | 蛛网术
+dispel_magic | Dispel Magic | 解除魔法
+fireball | Fireball | 火球术
+fly | Fly | 飞行术
+haste | Haste | 加速术
+heroism | Heroism | 英雄术
+hold_person | Hold Person | 定身人类
+invisibility_sphere | Invisibility Sphere | 隐形之球
+lightning_bolt | Lightning Bolt | 闪电箭
+protection_from_energy | Protection from Energy | 防护自能量
+suggestion | Suggestion | 暗示术
+summon_monster_3 | Summon Monster III | 召唤怪物Ⅲ
+water_breathing | Water Breathing | 水下呼吸
+wind_wall | Wind Wall | 风墙术
+cure_serious_wounds | Cure Serious Wounds | 重伤治疗
+daylight | Daylight | 昼明术
+dispel_magic_divine | Dispel Magic (Divine) | 解除魔法（神术）
+prayer | Prayer | 祈祷术
+searing_light | Searing Light | 灼热之光
+charm_monster | Charm Monster | 魅惑怪物
+dimension_door | Dimension Door | 任意门
+fire_shield | Fire Shield | 火焰护盾
+greater_invisibility | Greater Invisibility | 高等隐形
+ice_storm | Ice Storm | 冰风暴
+polymorph | Polymorph | 变化术
+wall_of_fire | Wall of Fire | 火焰墙
+cure_critical_wounds | Cure Critical Wounds | 重伤治疗
+death_ward | Death Ward | 死亡守护
+divination | Divination | 占卜术
+baleful_polymorph | Baleful Polymorph | 恶毒变化术
+cloudkill | Cloudkill | 死云术
+hold_monster | Hold Monster | 定身怪物
+summon_monster_5 | Summon Monster V | 召唤怪物Ⅴ
+wall_of_stone | Wall of Stone | 石墙术
+raise_dead | Raise Dead | 死者复活
+slay_living | Slay Living | 杀生术
+chain_lightning | Chain Lightning | 连锁闪电
+disintegrate | Disintegrate | 解离术
+true_seeing | True Seeing | 真知术
+summon_monster_6 | Summon Monster VI | 召唤怪物Ⅵ
+heal | Heal | 治疗术
+delayed_blast_fireball | Delayed Blast Fireball | 延爆火球
+instant_summons | Instant Summons | 瞬间召唤
+prismatic_spray | Prismatic Spray | 虹光喷射
+teleport | Teleport | 传送术
+greater_restoration | Greater Restoration | 高等复原
+resurrection | Resurrection | 复活术
+clone | Clone | 克隆术
+horrid_wilting | Horrid Wilting | 恐怖枯萎
+maze | Maze | 迷宫术
+power_word_stun | Power Word Stun |  Elder 言灵·震慑
+summon_monster_8 | Summon Monster VIII | 召唤怪物Ⅷ
+earthquake | Earthquake | 地震术
+fire_storm | Fire Storm | 烈焰风暴
+astral_projection | Astral Projection | 星界投射
+energy_drain | Energy Drain | 能量吸取
+foresight | Foresight | 预知术
+freedom | Freedom | 自由术
+implosion | Implosion | 内爆术
+meteor_swarm | Meteor Swarm | 流星雨
+power_word_kill | Power Word Kill | 言灵·即死
+prismatic_sphere | Prismatic Sphere | 虹光球
+shapechange | Shapechange | 变身术
+time_stop | Time Stop | 时间停止
+wish | Wish | 许愿术
+elemental_swarm | Elemental Swarm | 元素虫群
+gate | Gate | 传送门
+heal_mass | Heal, Mass | 群体治疗术
+miracle | Miracle | 奇迹术
+overwhelming_presence | Overwhelming Presence | 压倒性存在
+shambler | Shambler | 蹒跚怪
+soul_bind | Soul Bind | 灵魂绑定
+storm_of_vengeance | Storm of Vengeance | 复仇风暴
+summon_monster_9 | Summon Monster IX | 召唤怪物Ⅸ
+true_resurrection | True Resurrection | 真复活术
+touch_of_fatigue | Touch of Fatigue | 触碰疲劳
+charm_animal | Charm Animal | 魅惑动物
+detect_undead | Detect Undead | 侦测亡灵
+endure | Endure | 忍受术
+enlarge_person | Enlarge Person | 人体增大
+feather_fall | Feather Fall | 羽落术
+jump | Jump | 跳跃术
+mage_armor | Mage Armor | 法师护甲
+mount_spell | Mount | 坐骑术
+protection_from_evil | Protection from Evil | 防护自邪恶
+ray_of_enfeeblement | Ray of Enfeeblement | 衰弱射线
+shocking_grasp | Shocking Grasp | 电击爪
+silent_image | Silent Image | 无声幻象
+true_strike | True Strike | 必中术
+unseen_servant | Unseen Servant | 无形侍者
+alter_self | Alter Self | 变化自我
+arcane_lock | Arcane Lock | 奥术锁
+darkvision_spell | Darkvision | 黑暗视觉
+false_life | False Life | 虚假生命
+ghoul_touch | Ghoul Touch | 食尸鬼之触
+knock | Knock | 开锁术
+levitate | Levitate | 漂浮术
+minor_image | Minor Image | 小幅幻象
+rope_trick | Rope Trick | 绳索戏法
+see_invisibility | See Invisibility | 识破隐形
+spectral_hand | Spectral Hand | 幽灵之手
+arcane_sight | Arcane Sight | 奥术视觉
+clairaudience_clairvoyance | Clairaudience/Clairvoyance | 远聆/远视
+displacement | Displacement | 移位术
+explosive_run | Explosive Runes | 爆裂符文
+gaseous_form | Gaseous Form | 气化形体
+keen_edge | Keen Edge | 锋锐之锋
+magic_circle_against_alignment | Magic Circle against Alignment | 魔法圆环（阵营防护）
+magic_weapon | Magic Weapon | 魔法武器
+nondetection | Nondetection | 反侦测
+obscure_magic | Obscure Magic | 遮蔽魔法
+phantasmal_terror | Phantasmal Terror | 幻象恐怖
+sacred_nondetection | Nondetection (Divine) | 神圣反侦测
+searing_light | Searing Light | 灼热之光
+seonalight | Seonalight | 间歇光线
+snare | Snare | 陷阱术
+speak_with_plants | Speak with Plants | 植物交谈
+tongues | Tongues | 巧言术
+water_walk | Water Walk | 水上行走
+wind_wall | Wind Wall | 风墙术
+animate_dead | Animate Dead | 操控死尸
+confusion | Confusion | 困惑术
+contagion | Contagion | 传染术
+crushing_despair | Crushing Despair | 粉碎绝望
+divination_arcane | Divination (Arcane) | 占卜术（奥术）
+enervation | Enervation | 负能量射线
+fear | Fear | 恐惧术
+identify_monster | Identify Monster | 辨识怪物
+lesser_planar_binding | Lesser Planar Binding | 次级异界束缚
+iversal_poison | Universal Poison | 全能毒素
+wall_of_fire_4 | Wall of Fire | 火焰墙
+baleful_polymorph_5 | Baleful Polymorph | 恶毒变化术
+break_enchantment | Break Enchantment | 解除奇术
+contact_outer_plane | Contact Outer Plane | 接触外位面
+dispel_law | Dispel Law | 解除守序
+false_vision | False Vision | 错误视觉
+feeblemind | Feeblemind | 削弱心智
+hold_monster_5 | Hold Monster | 定身怪物
+justice_eye | Eye of Justice | 正义之眼
+mind_fog | Mind Fog | 心灵迷雾
+overland_flight | Overland Flight | 越野飞行
+prying_eyes | Prying Eyes | 窥视之眼
+searing_light_5 | Searing Light | 灼热之光
+summon_monster_5_full | Summon Monster V | 召唤怪物Ⅴ
+transmute_mud_rock | Transmute Mud to Rock / Rock to Mud | 泥岩互变
+wall_of_stone_5 | Wall of Stone | 石墙术
+antimagic_field | Antimagic Field | 反魔法场
+contingency | Contingency |  Magic 法术 contingeny
+circle_of_death | Circle of Death | 死亡之环
+create_undead | Create Undead | 创造亡灵
+eyebite | Eyebite | 目咬术
+geas_quest | Geas/Quest | 重责/ quest
+globe_of_invulnerability | Globe of Invulnerability | 无敌法球
+guards_and_wards | Guards and Wards | 守卫与防护
+legend_lore | Legend Lore | 传奇知识
+mislead | Mislead | 误导术
+move_earth | Move Earth | 移土术
+summon_monster_6_full | Summon Monster VI | 召唤怪物Ⅵ
+undetectable_alignment | Undetectable Alignment | 不可侦测阵营
+banishment | Banishment | 放逐术
+control_weather | Control Weather | 控制天气
+creeping_doom | Creeping Doom | 爬行厄运
+destruction | Destruction | 毁灭术
+ethereal_jaunt | Ethereal Jaunt | 以太跳跃
+grater_teleport | Greater Teleport | 高等传送术
+regenerate | Regenerate | 再生术
+repulsion | Repulsion | 排斥术
+sea_pain | Sea Pain | 剧痛之海
+spell_turning | Spell Turning | 法术反转
+summon_monster_7 | Summon Monster VII | 召唤怪物Ⅶ
+word_of_chaos | Word of Chaos | 混乱真言
+mending_0 | Mending | 修理术
+touch_of_fatigue_0 | Touch of Fatigue | 触碰疲劳
+caster_level | Caster Level | 施法者等级
+daylight_3 | Daylight | 昼明术
+deep_slumber | Deep Slumber | 深眠术
+dispel_magic_3 | Dispel Magic | 解除魔法
+displacement | Displacement | 移位术
+explosive_runes | Explosive Runes | 爆裂符文
+fly_3 | Fly | 飞行术
+gaseous_form_3 | Gaseous Form | 气化形体
+haste_3 | Haste | 加速术
+heroism_3 | Heroism | 英雄术
+hold_person_3 | Hold Person | 定身人类
+invisibility_sphere_3 | Invisibility Sphere | 隐形之球
+keen_edge_3 | Keen Edge | 锋锐之锋
+lightning_bolt_3 | Lightning Bolt | 闪电箭
+magic_weapon_3 | Magic Weapon | 魔法武器
+protection_from_energy_3 | Protection from Energy | 防护自能量
+suggestion_3 | Suggestion | 暗示术
+summon_monster_3_full | Summon Monster III | 召唤怪物Ⅲ
+water_breathing_3 | Water Breathing | 水下呼吸
+wind_wall_3 | Wind Wall | 风墙术
+disrupt_undead_0 | Disrupt Undead | 击退亡灵
+animate_dead_4 | Animate Dead | 操控死尸
+confusion_4 | Confusion | 困惑术
+contagion_4 | Contagion | 传染术
+crushing_despair_4 | Crushing Despair | 粉碎绝望
+lesser_planar_binding_4 | Lesser Planar Binding | 次级异界束缚
+awaken | Awaken | 唤醒术
+commune | Commune | 通神术
+commune_with_nature | Commune with Nature | 与自然交谈
+dispel_law | Dispel Law | 解除守序
+dream | Dream | 梦境术
+false_vision_5 | False Vision | 错误视觉
+feeblemind_5 | Feeblemind | 削弱心智
+geas_quest_5 | Geas/Quest | 重责/探索
+heroes_feast | Heroes' Feast | 英雄宴
+mind_fog_5 | Mind Fog | 心灵迷雾
+nightmare | Nightmare | 梦魇术
+prying_eyes_5 | Prying Eyes | 窥视之眼
+ransack | Ransack | 洗劫术
+scrying | Scrying | 远观术
+sending | Sending | 传讯术
+stone_skin | Stone Skin | 石肤术
+summon_monster_5_full | Summon Monster V | 召唤怪物Ⅴ
+transmute_mud_to_rock | Transmute Mud to Rock | 泥岩互变（泥→岩）
+unhallow | Unhallow | 污秽之地
+wall_of_iron | Wall of Iron | 铁墙术
+acid_fog_6 | Acid Fog | 酸雾
+bear_s_endurance_mass | Bear's Endurance, Mass | 群体熊之耐力
+bull_s_strength_mass | Bull's Strength, Mass | 群体公牛之力
+cat_s_grace_mass | Cat's Grace, Mass | 群体猫之优雅
+disintegrate | Disintegrate | 解离术
+eyebite | Eyebite | 邪眼术
+find_the_path | Find the Path | 寻路术
+harm | Harm | 伤害术
+heroes_feast | Heroes' Feast | 英雄宴
+insanity | Insanity | 疯狂术
+legend_lore | Legend Lore | 传奇知识
+mass_cure_moderate_wounds | Mass Cure Moderate Wounds | 群体次级治疗重伤
+mislead | Mislead | 误导术
+permanent_image | Permanent Image | 永久影像
+planar_ally | Planar Ally | 位面盟友
+shadow_walk | Shadow Walk | 阴影行走
+stone_to_flesh | Stone to Flesh | 化石为肉
+suggestion_mass | Suggestion, Mass | 群体暗示术
+summon_monster_6 | Summon Monster VI | 召唤怪物六
+true_seeing | True Seeing | 真知术
+undeath_to_death | Undeath to Death | 不死归亡术
+veil | Veil | 面纱术
+analyze_dweomer | Analyze Dweomer | 分析灵光
+control_weather | Control Weather | 控制天气
+cure_moderate_wounds_mass | Cure Moderate Wounds, Mass | 群体治疗重伤
+dictum | Dictum | 神言术
+dispel_magic_greater | Dispel Magic, Greater | 高等解除魔法
+eye_of_autumn | Eye of Autumn | 秋之眼
+fire_seeds | Fire Seeds | 火种术
+flesh_to_stone | Flesh to Stone | 血肉化石
+geas_quest | Geas/Quest | 使命/任务
+giant_vortex | Giant Vortex | 巨漩涡
+live_oak | Liveoak | 活橡树
+move_earth | Move Earth | 移土术
+owl_s_wisdom_mass | Owl's Wisdom, Mass | 群体猫头鹰之智慧
+programmed_image | Programmed Image | 预设影像
+repel_wood | Repel Wood | 排斥木材
+summon_natures_ally_6 | Summon Nature's Ally VI | 召唤自然盟友六
+tenser_s_transformation | Tenser's Transformation | 坦瑟变身术
+arcane_sight_greater | Arcane Sight, Greater | 高等奥术视觉
+chain_lightning | Chain Lightning | 连锁闪电
+control_undead | Control Undead | 控制不死生物
+cremate | Cremate | 焚化术
+darkwood_batch | Darkwood Batch | 黑木 batch
+deflection | Deflection | 偏转力场
+destruction | Destruction | 毁灭术
+dictum | Dictum | 神言术（守序）
+divination | Divination | 占卜术
+ethereal_jaunt | Ethereal Jaunt | 星界跳跃
+forcecage | Forcecage | 力场牢笼
+finger_of_death | Finger of Death | 死亡一指
+flamestrike | Flame Strike | 烈焰连击
+greater_scrying | Greater Scrying | 高等窥视
+mass_invisibility | Mass Invisibility | 群体隐身术
+phase_door | Phase Door | 相位门
+power_word_blind | Power Word Blind | 力量言语：目盲
+prismatic_spray | Prismatic Spray | 虹光喷射
+reverse_gravity | Reverse Gravity | 反向重力
+sequester | Sequester | 隐匿术
+simulacrum_lesser | Simulacrum, Lesser | 次等拟像
+spell_turning_greater | Spell Turning, Greater | 高等法术反转
+statue | Statue | 雕像术
+antipathy | Antipathy | 厌恶术
+clone | Clone | 克隆术
+demand_death | Demand Death | 要求死亡
+dimensional_lock | Dimensional Lock | 次元锁定
+discern_lies | Discern Lies | 识破谎言
+fear_mass | Fear, Mass | 群体恐惧术
+fire_storm | Fire Storm | 烈焰风暴
+glasseel | Glasseel | 镜钢术
+hammer_of_the_gods | Hammer of the Gods | 神之锤
+horn_of_valhalla | Horn of Valhalla | 瓦尔基里号角
+incendiary_cloud | Incendiary Cloud | 燃烧云
+maze | Maze | 迷宫术
+moment_of_prescience | Moment of Prescience | 预见时刻
+power_word_stun | Power Word Stun | 力量言语：震慑
+prismatic_wall | Prismatic Wall | 虹光墙
+repel_metal | Repel Metal | 排斥金属
+reverse_metamagic | Reverse Metamagic | 反转超魔
+serten_s_spell_resistance | Serten's Spell Resistance | 瑟顿法术抗力
+summon_monster_8 | Summon Monster VIII | 召唤怪物八
+sympathy | Sympathy | 同情术
+astral_projection | Astral Projection | 星界投射
+edge_of_ultimate | Edge of Ultimate | 终极之锋
+energy_drain | Energy Drain | 能量吸取
+foresight | Foresight | 预见术
+freedom | Freedom | 自由术
+implosion | Implosion | 内爆术
+invulnerability | Invulnerability | 无敌术
+miracle | Miracle | 神迹术
+power_word_kill | Power Word Kill | 力量言语：即死
+prismatic_sphere | Prismatic Sphere | 虹光球
+shapechange_greater | Shapechange, Greater | 高等变形术
+soul_bind | Soul Bind | 灵魂绑定
+summon_monster_9 | Summon Monster IX | 召唤怪物九
+teleportation_circle | Teleportation Circle | 传送道标
+time_stop | Time Stop | 时间停止
+wail_of_the_banshee | Wail of the Banshee | 女妖之嚎
+wish | Wish | 祈愿术
+cure_critical_wounds_mass | Mass Cure Critical Wounds | 群体治疗极重创
+earthquake | Earthquake | 地震术
+holy_aura | Holy Aura | 神圣灵光
+planar_ally_elder | Planar Ally, Elder | 高阶位面盟友
+sunburst | Sunburst | 阳光爆发
+unholy_aura | Unholy Aura | 邪恶心光
+whirlwind | Whirlwind | 旋风术
+elemental_swarm | Elemental Swarm | 元素群
+energy_drain | Energy Drain | 能量吸取（9环）
+gate | Gate | 门术
+heal | Heal | 治疗术（完全）
+implosion | Implosion | 内爆术（9环）
+mass_heal | Mass Heal | 群体治疗术（完全）
+overland_flight | Overland Flight | 长途飞行
+power_word_heal | Power Word Heal | 力量言语：治疗
+prismatic_sphere | Prismatic Sphere | 虹光球（ Revised）
+refuge | Refuge | 避难所
+resurrection | Resurrection | 复活术
+shield_of_law | Shield of Law | 守序之盾
+summon_natures_ally_9 | Summon Nature's Ally IX | 召唤自然盟友九
+time_stasis | Time Stasis | 时间凝滞
+weird | Weird | 怪影术
+wish_limited | Limited Wish | 有限祈愿术
+acid_splash | Acid Splash | 酸溅
+detect_magic | Detect Magic | 侦测魔法
+read_magic | Read Magic | 阅读魔法
+cause_fear | Cause Fear | 造成恐惧
+charm_person | Charm Person | 魅惑人类
+chil_ouch | Chil Touch | 冷冻之触
+color_spray | Color Spray | 色彩喷射
+comprehend_languages | Comprehend Languages | 理解语言
+cure_light_wounds | Cure Light Wounds | 治疗轻伤
+sleep_1 | Sleep | 睡眠术
+aid | Aid | 援助术
+align_weapon | Align Weapon | 阵营武器
+bear_s_endurance | Bear's Endurance | 熊之耐力
+bull_s_strength | Bull's Strength | 公牛之力
+cat_s_grace | Cat's Grace | 猫之优雅
+cure_modarate_wounds | Cure Moderate Wounds | 治疗重伤
+darkness | Darkness | 黑暗术
+delay_poison | Delay Poison | 延缓毒素
+eagle_s_splendor | Eagle's Splendor | 雄鹰之辉
+false_life | False Life | 虚假生命
+fox_s_cunning | Fox's Cunning | 狐狸之智
+owl_s_wisdom | Owl's Wisdom | 猫头鹰之智慧
+dispel_magic | Dispel Magic | 解除魔法
+displacement | Displacement | 位移术
+fireball | Fireball | 火球术
+fly | Fly | 飞行术
+haste | Haste | 加速术
+heroism | Heroism | 英雄术
+invisibility | Invisibility | 隐身术
+keen_edge | Keen Edge | 锋锐之锋
+lightning_bolt | Lightning Bolt | 闪电 bolt
+protection_from_energy | Protection from Energy | 防护能量
+rage | Rage | 狂暴术
+suggestion | Suggestion | 暗示术
+summon_monster_3 | Summon Monster III | 召唤怪物三
+wind_wall | Wind Wall | 风墙术
+charm_monster | Charm Monster | 魅惑怪物
+confusion | Confusion | 困惑术
+cure_critical_wounds | Cure Critical Wounds | 治疗极重创
+dimension_door | Dimension Door | 任意门
+enervation | Enervation | 负能量射流
+freedom_of_movement | Freedom of Movement | 行动自由
+giant_strength | Giant Strength | 巨人力量
+ice_storm | Ice Storm | 冰风暴
+invisibility_greater | Greater Invisibility | 高等隐身术
+polymorph | Polymorph | 变形术
+remove_curse | Remove Curse | 移除诅咒
+sending | Sending | 传讯术
+wall_of_fire | Wall of Fire | 火焰墙
+wall_of_ice | Wall of Ice | 冰墙术

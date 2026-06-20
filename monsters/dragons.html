@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>龙类 Dragons - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html" class="active">龙类</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>龙类 <span style="font-size:0.5em;color:#888;">Dragons</span></h1>
+    <p>龙是 D&D 中最具标志性的怪物，也是许多冒险的核心对手。本页面完整收录 D&D 3.5e 中的真龙 (True Dragons)，包括五色龙和金属龙两大类别，以及它们的年龄阶段成长和通用能力。</p>
+
+    <!-- ========== 年龄阶段 ========== -->
+    <h2 id="age-categories">龙类年龄阶段 (Age Categories)</h2>
+    <p>所有真龙共享相同的 12 个年龄阶段。每个阶段对应不同的体型成长、生命骰增加、AC提升、息武器强化、法术解锁和恐惧光环发展。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>阶段</th><th>名称</th><th>年龄段 (年)</th><th>体型增长</th><th>额外HD</th><th>AC调整</th><th>息武器调整</th><th>恐惧DC调整</th><th>法术等级</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>雏龙 (Wyrmling)</td><td>0-5</td><td>中/小型</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>2</td><td>幼龙 (Very Young)</td><td>6-15</td><td>+1级</td><td>+3</td><td>+2</td><td>+2骰</td><td>—</td><td>—</td></tr>
+        <tr><td>3</td><td>少年龙 (Young)</td><td>16-25</td><td>+1级</td><td>+3</td><td>+2</td><td>+2骰</td><td>—</td><td>1级术士</td></tr>
+        <tr><td>4</td><td>青年龙 (Juvenile)</td><td>26-50</td><td>+1级</td><td>+3</td><td>+2</td><td>+2骰</td><td>—</td><td>2级术士</td></tr>
+        <tr><td>5</td><td>成年龙 (Young Adult)</td><td>51-100</td><td>+1级</td><td>+3</td><td>+2</td><td>+2骰</td><td>启用</td><td>3级术士</td></tr>
+        <tr><td>6</td><td>壮年龙 (Adult)</td><td>101-200</td><td>+1级</td><td>+3</td><td>+2</td><td>+2骰</td><td>+1</td><td>4级术士</td></tr>
+        <tr><td>7</td><td>老年龙 (Mature Adult)</td><td>201-400</td><td>+1级</td><td>+3</td><td>+2</td><td>+2骰</td><td>+1</td><td>5级术士</td></tr>
+        <tr><td>8</td><td>极老龙 (Old)</td><td>401-600</td><td>+1级</td><td>+3</td><td>+3</td><td>+2骰</td><td>+1</td><td>6级术士</td></tr>
+        <tr><td>9</td><td>古龙 (Very Old)</td><td>601-800</td><td>+1级</td><td>+3</td><td>+3</td><td>+2骰</td><td>+1</td><td>7级术士</td></tr>
+        <tr><td>10</td><td>上古龙 (Ancient)</td><td>801-1000</td><td>+1级</td><td>+3</td><td>+3</td><td>+2骰</td><td>+1</td><td>8级术士</td></tr>
+        <tr><td>11</td><td>太古龙 (Wyrm)</td><td>1001-1200</td><td>+1级</td><td>+3</td><td>+3</td><td>+2骰</td><td>+1</td><td>9级术士</td></tr>
+        <tr><td>12</td><td>上古太古龙 (Great Wyrm)</td><td>1200+</td><td>+1级</td><td>+3</td><td>+4</td><td>+2骰</td><td>+1</td><td>9级术士+额外</td></tr>
+      </tbody>
+    </table>
+    <p><strong>说明：</strong>"体型增长"从雏龙的基础体型开始，每阶段提升一级（小型→中型→大型→超大型→巨型→超巨型）。"息武器调整"表示在基础伤害上额外增加的骰子数。恐惧光环在成年龙 (第5阶段) 时启用。</p>
+
+    <!-- ========== 通用能力 ========== -->
+    <h2 id="common-abilities">龙的通用能力</h2>
+    <p>所有真龙共享以下能力特征：</p>
+    <table>
+      <thead>
+        <tr><th>能力</th><th>描述</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>恐惧光环 (Frightful Presence)</strong></td>
+          <td>成年龙 (5阶段) 及以上拥有。30尺+30尺/年龄阶段 半径内，HD低于龙的生物需进行意志检定 (DC = 10 + 1/2龙的HD + 魅力调整值)，失败则战栗 (Shaken) 4d6轮。HD低于龙4或以上的生物失败则惊惧 (Frightened)，低于8或以上则恐慌 (Panicked)。</td>
+        </tr>
+        <tr>
+          <td><strong>法术 (Spells)</strong></td>
+          <td>龙以术士等级施法，从少年龙 (3阶段) 开始获得。法术选择从术士/法师列表中选取。龙不需要法术书，而是凭直觉学习法术。每日法术数量和已知法术数量随年龄阶段增加。</td>
+        </tr>
+        <tr>
+          <td><strong>类法术能力 (Spell-Like Abilities)</strong></td>
+          <td>每种龙在特定年龄阶段获得独特的类法术能力，通常为每天1-3次使用，施法者等级等于龙的HD。</td>
+        </tr>
+        <tr>
+          <td><strong>伤害减免 (Damage Reduction)</strong></td>
+          <td>青年龙 (4阶段) 开始获得。随年龄增长而提升：<br>
+          4阶段: 5/魔法 | 6阶段: 10/魔法 | 8阶段: 15/魔法 | 10阶段: 20/魔法</td>
+        </tr>
+        <tr>
+          <td><strong>免疫 (Immunities)</strong></td>
+          <td>所有龙免疫魔法睡眠和麻痹效果。每种龙还拥有与自身息武器元素相关的额外免疫 (见各龙条目)。</td>
+        </tr>
+        <tr>
+          <td><strong>盲感 (Blindsense)</strong></td>
+          <td>60尺范围。龙可以感知不可见的生物位置。</td>
+        </tr>
+        <tr>
+          <td><strong>敏锐视觉 (Keen Senses)</strong></td>
+          <td>昏暗视觉 + 黑暗视觉60尺。龙可看到四倍于人类的远距离。</td>
+        </tr>
+        <tr>
+          <td><strong>飞行</strong></td>
+          <td>大多数龙从幼龙阶段开始获得飞行能力。飞行速度因龙种而异，通常150-250尺，机动性为"普通"。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ========== 五色龙 ========== -->
+    <h2 id="chromatic">五色龙 (Chromatic Dragons)</h2>
+    <p>五色龙是邪恶的龙类，崇拜邪恶龙后提亚玛特 (Tiamat)。它们贪婪、残暴、狡诈，是最危险的龙类敌人。所有五色龙具有龙类特征和"邪恶"亚类。</p>
+
+    <!-- 黑龙 -->
+    <h3 id="black">黑龙 (Black Dragon)</h3>
+    <p>栖息于沼泽和丛林中的残暴掠食者。黑龙是所有五色龙中最阴险的，喜欢在酸液沼泽中设下陷阱和伏击。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>混乱邪恶</td></tr>
+        <tr><td>CR 范围</td><td>CR 4 (雏龙) - CR 24 (太古)</td></tr>
+        <tr><td>息武器</td><td>60尺线状酸液 (每2个年龄阶段 +1d4, 基础2d4)</td></tr>
+        <tr><td>免疫</td><td>酸</td></tr>
+        <tr><td>栖息地</td><td>温带/热带沼泽、丛林</td></tr>
+        <tr><td>飞行速度</td><td>150尺 (普通)</td></tr>
+        <tr><td>游泳</td><td>60尺</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>黑暗术 (每天2次)</td></tr>
+        <tr><td>少年 (3)</td><td>腐水术 (Corrupt Water)</td></tr>
+        <tr><td>青年 (4)</td><td>植物凋零 (Plant Wither)</td></tr>
+        <tr><td>成年 (5)</td><td>虫害术 (Insect Plague, 每天1次)</td></tr>
+        <tr><td>古龙 (9)</td><td>魅惑爬虫 (Charm Reptiles, 每天3次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>黑龙喜欢在水中或酸液沼泽伏击。它们会先用黑暗术遮蔽视野，再以酸息扫射队伍。黑龙的游泳能力使其在水下战斗中占据优势。</p>
+
+    <!-- 蓝龙 -->
+    <h3 id="blue">蓝龙 (Blue Dragon)</h3>
+    <p>沙漠中的霸主，蓝龙是守序邪恶的策略家。它们善于利用沙漠地形，并拥有强大的掘地能力。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>守序邪恶</td></tr>
+        <tr><td>CR 范围</td><td>CR 5 (雏龙) - CR 25 (太古)</td></tr>
+        <tr><td>息武器</td><td>80尺线状闪电 (每2个年龄阶段 +1d8, 基础2d8)</td></tr>
+        <tr><td>免疫</td><td>电</td></tr>
+        <tr><td>栖息地</td><td>温带/热带沙漠</td></tr>
+        <tr><td>飞行速度</td><td>150尺 (普通)</td></tr>
+        <tr><td>掘地</td><td>40尺 (青年龙起)</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>造水/腐水 (Create/Corrupt Water)</td></tr>
+        <tr><td>少年 (3)</td><td>次级幻影 (Minor Image)</td></tr>
+        <tr><td>青年 (4)</td><td>腹语术 (Ventriloquism)</td></tr>
+        <tr><td>成年 (5)</td><td>幻景 (Hallucinatory Terrain, 每天1次)</td></tr>
+        <tr><td>古龙 (9)</td><td>投射幻影 (Project Image, 每天1次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>蓝龙是伏击大师。它们会潜入沙中，用幻景和腹语术引诱猎物进入射程，再从沙中突然冲出释放闪电息。蓝龙的守序天性使它们善于制定周密计划。</p>
+
+    <!-- 绿龙 -->
+    <h3 id="green">绿龙 (Green Dragon)</h3>
+    <p>森林中的阴谋家，绿龙是最擅长外交和诡计的龙类。它们喜欢操纵森林中的生物为其效力。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>守序邪恶</td></tr>
+        <tr><td>CR 范围</td><td>CR 5 (雏龙) - CR 25 (太古)</td></tr>
+        <tr><td>息武器</td><td>40尺锥状毒气 (每2个年龄阶段 +1d6, 基础2d6, 强韧DC减半)</td></tr>
+        <tr><td>免疫</td><td>酸 (注：绿龙不免疫毒素，但有+4种族加值)</td></tr>
+        <tr><td>栖息地</td><td>温带/热带森林</td></tr>
+        <tr><td>飞行速度</td><td>200尺 (普通)</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>暗示术 (Suggestion, 每天2次)</td></tr>
+        <tr><td>少年 (3)</td><td>植物交谈 (Speak with Plants)</td></tr>
+        <tr><td>青年 (4)</td><td>植物生长 (Plant Growth)</td></tr>
+        <tr><td>成年 (5)</td><td>支配植物 (Command Plants, 每天1次)</td></tr>
+        <tr><td>古龙 (9)</td><td>植物门 (Scrying, 每天1次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>绿龙善用毒息和暗示术。它们会先与入侵者交涉，用暗示术分化队伍，若谈判破裂则以毒息覆盖大范围目标。绿龙的飞行速度在五色龙中最快。</p>
+
+    <!-- 红龙 -->
+    <h3 id="red">红龙 (Red Dragon)</h3>
+    <p>五色龙中最强大、最傲慢的掠食者。红龙是终极的龙类威胁，拥有最强的火息和最高的基础属性。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>混乱邪恶</td></tr>
+        <tr><td>CR 范围</td><td>CR 6 (雏龙) - CR 26 (太古)</td></tr>
+        <tr><td>息武器</td><td>40尺锥状火焰 (每2个年龄阶段 +2d10, 基础2d10)</td></tr>
+        <tr><td>免疫</td><td>火</td></tr>
+        <tr><td>弱点</td><td>寒冷 (受到1.5倍寒冷伤害)</td></tr>
+        <tr><td>栖息地</td><td>温带/热带山地</td></tr>
+        <tr><td>飞行速度</td><td>200尺 (笨拙)</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>定位物品 (Locate Object)</td></tr>
+        <tr><td>少年 (3)</td><td>暗示术 (Suggestion)</td></tr>
+        <tr><td>青年 (4)</td><td>烟雾之形 (Pyrotechnics)</td></tr>
+        <tr><td>成年 (5)</td><td>暗示术 (Suggestion, 每天3次)</td></tr>
+        <tr><td>古龙 (9)</td><td>寻路术 (Find the Path, 每天1次)</td></tr>
+        <tr><td>太古 (11)</td><td>燃起 (Incendiary Cloud, 每天1次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>红龙以蛮力碾压。它的火息锥状范围大、伤害高，加上恐惧光环，对冒险者队伍构成毁灭性威胁。红龙飞行机动性为"笨拙"，在地面战斗中反而更灵活。对抗红龙务必准备火焰抗力和寒冷武器——红龙有寒冷弱点。</p>
+
+    <!-- 白龙 -->
+    <h3 id="white">白龙 (White Dragon)</h3>
+    <p>五色龙中最小也最原始的龙类。白龙栖息于极地冰原，是纯粹的掠食者，缺乏其他龙类的狡诈。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>混乱邪恶</td></tr>
+        <tr><td>CR 范围</td><td>CR 3 (雏龙) - CR 23 (太古)</td></tr>
+        <tr><td>息武器</td><td>30尺锥状寒冷 (每2个年龄阶段 +1d6, 基础2d6)</td></tr>
+        <tr><td>免疫</td><td>寒冷</td></tr>
+        <tr><td>弱点</td><td>火 (受到1.5倍火焰伤害)</td></tr>
+        <tr><td>栖息地</td><td>寒冷荒漠、冰原</td></tr>
+        <tr><td>飞行速度</td><td>200尺 (普通)</td></tr>
+        <tr><td>掘地</td><td>30尺</td></tr>
+        <tr><td>游泳</td><td>60尺</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>雾墙术 (Fog Cloud, 每天2次)</td></tr>
+        <tr><td>少年 (3)</td><td>寒冰击 (Gust of Wind, 每天2次)</td></tr>
+        <tr><td>青年 (4)</td><td>冰封术 (Ice Storm, 每天1次)</td></tr>
+        <tr><td>成年 (5)</td><td>操控风相 (Control Winds, 每天3次)</td></tr>
+        <tr><td>古龙 (9)</td><td>冰墙术 (Wall of Ice, 每天1次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>白龙是伏击型掠食者，利用冰雾和暴风雪掩护突袭。它们的智力最低，但本能战斗极为凶猛。白龙的三种移动方式（飞行、掘地、游泳）使其适应多种地形。火焰武器是对抗白龙的最佳选择。</p>
+
+    <!-- 五色龙对比表 -->
+    <h3>五色龙数据对比 (成年龙/第6阶段)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>属性</th><th>黑龙</th><th>蓝龙</th><th>绿龙</th><th>红龙</th><th>白龙</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CR</td><td>11</td><td>12</td><td>12</td><td>13</td><td>10</td></tr>
+        <tr><td>体型</td><td>超大型</td><td>超大型</td><td>超大型</td><td>巨型</td><td>超大型</td></tr>
+        <tr><td>HD</td><td>25d12+150</td><td>27d12+162</td><td>27d12+162</td><td>30d12+210</td><td>22d12+132</td></tr>
+        <tr><td>AC</td><td>28</td><td>29</td><td>29</td><td>31</td><td>27</td></tr>
+        <tr><td>息武器骰数</td><td>8d4酸</td><td>8d8电</td><td>8d6毒</td><td>10d10火</td><td>8d6寒</td></tr>
+        <tr><td>飞行速度</td><td>150尺</td><td>150尺</td><td>200尺</td><td>200尺</td><td>200尺</td></tr>
+        <tr><td>力量</td><td>29</td><td>31</td><td>31</td><td>35</td><td>27</td></tr>
+        <tr><td>体质</td><td>23</td><td>23</td><td>23</td><td>25</td><td>23</td></tr>
+        <tr><td>智力</td><td>16</td><td>18</td><td>18</td><td>18</td><td>10</td></tr>
+        <tr><td>术士等级</td><td>7</td><td>7</td><td>7</td><td>7</td><td>7</td></tr>
+        <tr><td>恐惧光环范围</td><td>180尺</td><td>180尺</td><td>180尺</td><td>210尺</td><td>150尺</td></tr>
+        <tr><td>伤害减免</td><td>10/魔法</td><td>10/魔法</td><td>10/魔法</td><td>10/魔法</td><td>10/魔法</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ========== 金属龙 ========== -->
+    <h2 id="metallic">金属龙 (Metallic Dragons)</h2>
+    <p>金属龙是善良的龙类，崇拜善龙之王巴哈姆特 (Bahamut)。它们通常是冒险者的盟友或守护者，但在激怒时同样致命。所有金属龙具有龙类特征和"善良"亚类。金属龙拥有两种息武器。</p>
+
+    <!-- 黄铜龙 -->
+    <h3 id="brass">黄铜龙 (Brass Dragon)</h3>
+    <p>最健谈的龙类。黄铜龙热爱交谈，会抓住任何愿意聊天的生物聊上数小时。栖息于沙漠地区。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>混乱善良</td></tr>
+        <tr><td>CR 范围</td><td>CR 3 (雏龙) - CR 23 (太古)</td></tr>
+        <tr><td>息武器 (1)</td><td>60尺线状火焰 (每2个年龄阶段 +1d6, 基础2d6)</td></tr>
+        <tr><td>息武器 (2)</td><td>30尺锥状睡眠气体 (每2个年龄阶段 +1d6, 基础2d6, 强韧DC豁免, 睡眠1d6分钟)</td></tr>
+        <tr><td>免疫</td><td>火</td></tr>
+        <tr><td>弱点</td><td>寒冷</td></tr>
+        <tr><td>栖息地</td><td>温带/热带沙漠</td></tr>
+        <tr><td>飞行速度</td><td>200尺 (普通)</td></tr>
+        <tr><td>掘地</td><td>40尺</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>忍受环境 (Endure Elements)</td></tr>
+        <tr><td>少年 (3)</td><td>造风术 (Gust of Wind)</td></tr>
+        <tr><td>青年 (4)</td><td>暗示术 (Suggestion)</td></tr>
+        <tr><td>成年 (5)</td><td>操控风相 (Control Winds, 每天2次)</td></tr>
+        <tr><td>古龙 (9)</td><td>操控天气 (Control Weather, 每天2次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>黄铜龙偏好非暴力解决，用睡眠气体让敌人陷入沉睡而非杀死它们。若被迫战斗，火焰息和掘地能力使其在沙漠战斗中极为灵活。</p>
+
+    <!-- 青铜龙 -->
+    <h3 id="bronze">青铜龙 (Bronze Dragon)</h3>
+    <p>海岸守护者，青铜龙热衷于对抗海盗和海怪。它们对正义有强烈的执念，是可靠的盟友。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>守序善良</td></tr>
+        <tr><td>CR 范围</td><td>CR 4 (雏龙) - CR 24 (太古)</td></tr>
+        <tr><td>息武器 (1)</td><td>80尺线状闪电 (每2个年龄阶段 +1d8, 基础2d8)</td></tr>
+        <tr><td>息武器 (2)</td><td>20尺锥状驱赶气体 (Repulsion Gas, 强韧DC, 效果等同反魔场+强制移动)</td></tr>
+        <tr><td>免疫</td><td>电</td></tr>
+        <tr><td>栖息地</td><td>温带/热带海岸、水域</td></tr>
+        <tr><td>飞行速度</td><td>200尺 (普通)</td></tr>
+        <tr><td>游泳</td><td>60尺</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>造水/腐水 (Create/Corrupt Water)</td></tr>
+        <tr><td>少年 (3)</td><td>造粮术 (Create Food and Water)</td></tr>
+        <tr><td>青年 (4)</td><td>雾墙术 (Fog Cloud)</td></tr>
+        <tr><td>成年 (5)</td><td>操控水位 (Control Water, 每天2次)</td></tr>
+        <tr><td>古龙 (9)</td><td>操控天气 (Control Weather, 每天2次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>青铜龙的水战能力无与伦比。它会用驱赶气体将敌人推离有利位置，再以闪电息扫射。在水中战斗时，游泳速度加上操控水位能力使其成为海战之王。</p>
+
+    <!-- 赤铜龙 -->
+    <h3 id="copper">赤铜龙 (Copper Dragon)</h3>
+    <p>顽皮的恶作剧者，赤铜龙喜欢用笑话和谜题与生物互动。它们栖息于岩石山地，善于在复杂地形中战斗。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>混乱善良</td></tr>
+        <tr><td>CR 范围</td><td>CR 3 (雏龙) - CR 23 (太古)</td></tr>
+        <tr><td>息武器 (1)</td><td>60尺线状酸液 (每2个年龄阶段 +1d4, 基础2d4)</td></tr>
+        <tr><td>息武器 (2)</td><td>30尺锥状减速气体 (Slow Gas, 强韧DC, 效果等同缓慢术, 持续1d6轮)</td></tr>
+        <tr><td>免疫</td><td>酸</td></tr>
+        <tr><td>栖息地</td><td>温带/热带干燥丘陵</td></tr>
+        <tr><td>飞行速度</td><td>200尺 (普通)</td></tr>
+        <tr><td>攀爬</td><td>30尺</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>石塑术 (Stone Shape)</td></tr>
+        <tr><td>少年 (3)</td><td>腹语术 (Ventriloquism)</td></tr>
+        <tr><td>青年 (4)</td><td>暗示术 (Suggestion)</td></tr>
+        <tr><td>成年 (5)</td><td>移地术 (Move Earth, 每天2次)</td></tr>
+        <tr><td>古龙 (9)</td><td>石化术 (Flesh to Stone, 每天1次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>赤铜龙善于利用地形。减速气体让敌人行动迟缓，配合石塑术和移地术改变战场地形，然后以酸息从高处攻击。它们的攀爬能力使岩石地形成为主场。</p>
+
+    <!-- 金龙 -->
+    <h3 id="gold">金龙 (Gold Dragon)</h3>
+    <p>金属龙中最强大、最庄严的存在。金龙致力于消灭邪恶，是正义力量的象征。它们经常化身为人类形态行动。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>守序善良</td></tr>
+        <tr><td>CR 范围</td><td>CR 6 (雏龙) - CR 26 (太古)</td></tr>
+        <tr><td>息武器 (1)</td><td>40尺锥状火焰 (每2个年龄阶段 +2d10, 基础2d10)</td></tr>
+        <tr><td>息武器 (2)</td><td>40尺锥状虚弱气体 (Weakening Gas, 每2个年龄阶段 +1d6, 基础2d6力量伤害, 强韧DC减半)</td></tr>
+        <tr><td>免疫</td><td>火</td></tr>
+        <tr><td>弱点</td><td>寒冷</td></tr>
+        <tr><td>栖息地</td><td>温带地区 (无特定偏好)</td></tr>
+        <tr><td>飞行速度</td><td>250尺 (笨拙)</td></tr>
+        <tr><td>游泳</td><td>60尺</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>祝福术 (Bless)</td></tr>
+        <tr><td>少年 (3)</td><td>侦测宝石 (Detect Gems)</td></tr>
+        <tr><td>青年 (4)</td><td>昼明术 (Daylight)</td></tr>
+        <tr><td>成年 (5)</td><td>幸运术 (Luck Bonus, 每天3次, 祝福盟友)</td></tr>
+        <tr><td>古龙 (9)</td><td>通晓传奇 (Legend Lore, 每天1次)</td></tr>
+        <tr><td>太古 (11)</td><td>许愿术 (Wish, 每天1次，仅用于帮助他人)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>金龙是最全面的龙类战士。虚弱气体可以在大范围削弱敌人的力量属性，火息锥伤害与红龙持平。金龙的"幸运"能力可以为盟友提供加值。太古金龙甚至能使用许愿术（但仅限帮助他人）。金龙通常会尝试外交手段，但在面对纯粹的邪恶时绝不手软。</p>
+
+    <!-- 银龙 -->
+    <h3 id="silver">银龙 (Silver Dragon)</h3>
+    <p>最友善的金属龙之一，银龙热爱人类形态，经常以伪装身份生活在人类社会。它们居住在高山之巅。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阵营</td><td>守序善良</td></tr>
+        <tr><td>CR 范围</td><td>CR 5 (雏龙) - CR 25 (太古)</td></tr>
+        <tr><td>息武器 (1)</td><td>40尺锥状寒冷 (每2个年龄阶段 +1d8, 基础2d8)</td></tr>
+        <tr><td>息武器 (2)</td><td>40尺锥状麻痹气体 (Paralyzing Gas, 强韧DC, 麻痹1d6+年龄阶段 轮)</td></tr>
+        <tr><td>免疫</td><td>寒冷</td></tr>
+        <tr><td>弱点</td><td>火</td></tr>
+        <tr><td>栖息地</td><td>温带/寒带高山</td></tr>
+        <tr><td>飞行速度</td><td>200尺 (普通)</td></tr>
+        <tr><td>云层行走</td><td>可在云和雾上行走 (如同固体地面)</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>年龄阶段</th><th>类法术能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>幼龙 (2)</td><td>羽落术 (Feather Fall)</td></tr>
+        <tr><td>少年 (3)</td><td>造风术 (Gust of Wind)</td></tr>
+        <tr><td>青年 (4)</td><td>云雾术 (Fog Cloud)</td></tr>
+        <tr><td>成年 (5)</td><td>操控风相 (Control Winds, 每天2次)</td></tr>
+        <tr><td>古龙 (9)</td><td>操控天气 (Control Weather, 每天2次)</td></tr>
+        <tr><td>太古 (11)</td><td>反重力 (Reverse Gravity, 每天1次)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术：</strong>银龙的麻痹气体是最危险的控制型息武器——被麻痹的敌人完全无法行动。银龙通常会先用云雾术遮蔽视野，再突然冲出释放麻痹气体，然后用寒冷息逐个击破被定住的敌人。银龙是最可能加入冒险者队伍的龙类。</p>
+
+    <!-- 金属龙对比表 -->
+    <h3>金属龙数据对比 (成年龙/第6阶段)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>属性</th><th>黄铜龙</th><th>青铜龙</th><th>赤铜龙</th><th>金龙</th><th>银龙</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CR</td><td>10</td><td>11</td><td>10</td><td>13</td><td>12</td></tr>
+        <tr><td>体型</td><td>超大型</td><td>超大型</td><td>超大型</td><td>巨型</td><td>超大型</td></tr>
+        <tr><td>HD</td><td>22d12+132</td><td>25d12+150</td><td>22d12+132</td><td>30d12+210</td><td>27d12+162</td></tr>
+        <tr><td>AC</td><td>27</td><td>28</td><td>27</td><td>31</td><td>29</td></tr>
+        <tr><td>息武器1</td><td>8d6火</td><td>8d8电</td><td>8d4酸</td><td>10d10火</td><td>8d8寒</td></tr>
+        <tr><td>息武器2</td><td>8d6睡眠</td><td>驱赶</td><td>8d6减速</td><td>8d6虚弱</td><td>麻痹1d6+6轮</td></tr>
+        <tr><td>飞行速度</td><td>200尺</td><td>200尺</td><td>200尺</td><td>250尺</td><td>200尺</td></tr>
+        <tr><td>力量</td><td>27</td><td>29</td><td>27</td><td>35</td><td>31</td></tr>
+        <tr><td>体质</td><td>23</td><td>23</td><td>23</td><td>25</td><td>23</td></tr>
+        <tr><td>智力</td><td>16</td><td>18</td><td>16</td><td>20</td><td>18</td></tr>
+        <tr><td>术士等级</td><td>7</td><td>7</td><td>7</td><td>7</td><td>7</td></tr>
+        <tr><td>恐惧光环范围</td><td>150尺</td><td>180尺</td><td>150尺</td><td>210尺</td><td>180尺</td></tr>
+        <tr><td>伤害减免</td><td>10/魔法</td><td>10/魔法</td><td>10/魔法</td><td>10/魔法</td><td>10/魔法</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ========== 全部龙CR总览 ========== -->
+    <h2 id="cr-overview">全部真龙挑战等级总览</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>年龄阶段</th><th>白龙</th><th>黑龙</th><th>黄铜龙</th><th>赤铜龙</th><th>青铜龙</th><th>蓝龙</th><th>绿龙</th><th>银龙</th><th>红龙</th><th>金龙</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>雏龙</td><td>3</td><td>4</td><td>3</td><td>3</td><td>4</td><td>5</td><td>5</td><td>5</td><td>6</td><td>6</td></tr>
+        <tr><td>幼龙</td><td>4</td><td>5</td><td>4</td><td>4</td><td>5</td><td>6</td><td>6</td><td>6</td><td>7</td><td>7</td></tr>
+        <tr><td>少年</td><td>5</td><td>6</td><td>5</td><td>5</td><td>6</td><td>7</td><td>7</td><td>7</td><td>8</td><td>8</td></tr>
+        <tr><td>青年</td><td>6</td><td>7</td><td>6</td><td>6</td><td>7</td><td>8</td><td>8</td><td>8</td><td>9</td><td>9</td></tr>
+        <tr><td>成年</td><td>7</td><td>8</td><td>7</td><td>7</td><td>8</td><td>9</td><td>9</td><td>9</td><td>10</td><td>10</td></tr>
+        <tr><td>壮年</td><td>10</td><td>11</td><td>10</td><td>10</td><td>11</td><td>12</td><td>12</td><td>12</td><td>13</td><td>13</td></tr>
+        <tr><td>老年</td><td>11</td><td>12</td><td>11</td><td>11</td><td>12</td><td>13</td><td>13</td><td>13</td><td>14</td><td>14</td></tr>
+        <tr><td>极老</td><td>13</td><td>14</td><td>13</td><td>13</td><td>14</td><td>15</td><td>15</td><td>15</td><td>16</td><td>16</td></tr>
+        <tr><td>古龙</td><td>14</td><td>15</td><td>14</td><td>14</td><td>15</td><td>16</td><td>16</td><td>16</td><td>17</td><td>17</td></tr>
+        <tr><td>上古</td><td>16</td><td>17</td><td>16</td><td>16</td><td>17</td><td>18</td><td>18</td><td>18</td><td>19</td><td>19</td></tr>
+        <tr><td>太古</td><td>17</td><td>18</td><td>17</td><td>17</td><td>18</td><td>19</td><td>19</td><td>19</td><td>20</td><td>20</td></tr>
+        <tr><td>上古太古</td><td>19</td><td>20</td><td>19</td><td>19</td><td>20</td><td>21</td><td>21</td><td>21</td><td>22</td><td>22</td></tr>
+      </tbody>
+    </table>
+    <p><strong>注：</strong>以上CR为参考值，具体数值可能因版本和勘误有微小差异。CR从左到右按基础强度排列：白龙最弱，金龙最强（同年龄段）。</p>
+
+    <!-- ========== 对抗龙的策略 ========== -->
+    <h2 id="tactics">对抗龙的通用策略</h2>
+    <table>
+      <thead>
+        <tr><th>准备事项</th><th>详细说明</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>元素抗性</td>
+          <td>根据龙的息武器类型准备对应抗性：抗火焰/抗寒冷/抗酸/抗电。金龙/红龙用火，银龙/白龙用寒冷，蓝龙用电，黑龙/赤铜龙用酸，绿龙/金龙/银龙注意其第二种息武器。</td>
+        </tr>
+        <tr>
+          <td>恐惧免疫</td>
+          <td>移除恐惧 (Remove Fear)、英雄宴 (Heroes' Feast)、心灵屏障 (Mind Blank) 等可对抗恐惧光环。恐惧光环对低HD角色尤其致命。</td>
+        </tr>
+        <tr>
+          <td>武器选择</td>
+          <td>青年龙以上具有伤害减免/魔法，需使用+1以上附魔武器。龙的AC通常很高（25-35），需要高攻击加值。</td>
+        </tr>
+        <tr>
+          <td>利用弱点</td>
+          <td>红龙/金龙/黄铜龙有寒冷弱点；白龙/银龙有火焰弱点。利用对应元素可造成1.5倍伤害。</td>
+        </tr>
+        <tr>
+          <td>避免飞行战</td>
+          <td>龙的飞行速度远超步行角色。使用锚定术 (Dimensional Anchor)、重力术 (Reverse Gravity) 或击落术将其拉回地面。</td>
+        </tr>
+        <tr>
+          <td>法术准备</td>
+          <td>龙的法术抗力很高（通常等于HD+5至HD+10），选择无SR法术或使用穿透法术抗力的能力。力场效果（如魔法飞弹、比格拜之手）无视SR。</td>
+        </tr>
+        <tr>
+          <td>团队协作</td>
+          <td>至少需要4-6人的高等级队伍对抗成年龙。坦克承受近战伤害，远程输出手集中火力，施法者提供增益和治疗。龙的恐惧光环和息武器可同时影响多人。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ========== 龙神 ========== -->
+    <h2 id="deities">龙神</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>神名</th><th>阵营</th><th>领域</th><th>描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>巴哈姆特 (Bahamut)</strong></td>
+          <td>守序善良</td>
+          <td>善、守序、高贵、风暴</td>
+          <td>铂金龙，金属龙之王。以老者形象行走在凡间，由七条金龙随行。他是正义与荣誉的化身。</td>
+        </tr>
+        <tr>
+          <td><strong>提亚玛特 (Tiamat)</strong></td>
+          <td>守序邪恶</td>
+          <td>邪恶、守序、毁灭、贪婪</td>
+          <td>五色龙后，拥有五个龙头（黑、蓝、绿、红、白），每个头代表一种五色龙。她盘踞在九层地狱的第一层，密谋着征服物质位面。</td>
+        </tr>
+        <tr>
+          <td><strong>伊奥 (Io)</strong></td>
+          <td>绝对中立</td>
+          <td>龙类、知识</td>
+          <td>九面龙神，所有龙的创造者。据说他同时拥有所有阵营的面向，是超越善恶的中立存在。极少有凡人见过他。</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

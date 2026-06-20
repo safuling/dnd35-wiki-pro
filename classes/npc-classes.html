@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPC职业 NPC Classes - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">NPC职业</div>
+      <a href="npc-classes.html" class="active">NPC职业总览</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>NPC职业（NPC Classes）</h1>
+
+    <p>NPC职业是 D&D 3.5e 中专门为非玩家角色（Non-Player Characters）设计的简化职业类别，收录于《地下城主指南》（DMG）第四章。与玩家角色使用的 11 个核心职业相比，NPC职业规则更为简洁，便于地下城主快速创建各类 NPC。NPC职业共 5 种，分别对应奇幻世界中不同社会角色：从普通平民到贵族，从低级施法者到经验丰富的战士。地下城主可以根据需要灵活使用这些职业来构建城镇守卫、店主、贵族、乡村祭司等各类角色。</p>
+
+    <p><strong>重要提示：</strong>NPC职业并非为玩家角色设计，但在某些战役中，DM 可能允许玩家从 NPC 职业起始游戏（尤其是低等级开局的战役）。</p>
+
+    <h2>NPC职业对照表</h2>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>中文名</th>
+          <th>English</th>
+          <th>HD</th>
+          <th>技能点</th>
+          <th>BAB成长</th>
+          <th>豁免优势</th>
+          <th>主要特点</th>
+          <th>来源</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>导师</strong></td>
+          <td>Adept</td>
+          <td>d6</td>
+          <td>2+智力调整值</td>
+          <td>低 (1/2)</td>
+          <td>意志</td>
+          <td>可施放神术（最高6环），有限法术列表</td>
+          <td>DMG p108</td>
+        </tr>
+        <tr>
+          <td><strong>平民</strong></td>
+          <td>Commoner</td>
+          <td>d4</td>
+          <td>2+智力调整值</td>
+          <td>低 (1/2)</td>
+          <td>无</td>
+          <td>无特殊能力，最基础的NPC职业</td>
+          <td>DMG p108</td>
+        </tr>
+        <tr>
+          <td><strong>望族</strong></td>
+          <td>Aristocrat</td>
+          <td>d8</td>
+          <td>4+智力调整值</td>
+          <td>中 (3/4)</td>
+          <td>意志</td>
+          <td>擅长军用武器和所有护甲，社交优势</td>
+          <td>DMG p108</td>
+        </tr>
+        <tr>
+          <td><strong>武者</strong></td>
+          <td>Warrior</td>
+          <td>d8</td>
+          <td>2+智力调整值</td>
+          <td>高 (1/1)</td>
+          <td>强韧</td>
+          <td>擅长所有简单和军用武器、所有护甲和盾牌</td>
+          <td>DMG p109</td>
+        </tr>
+        <tr>
+          <td><strong>专家</strong></td>
+          <td>Expert</td>
+          <td>d6</td>
+          <td>6+智力调整值</td>
+          <td>中 (3/4)</td>
+          <td>反射、意志</td>
+          <td>大量技能点，职业技能列表广泛</td>
+          <td>DMG p109</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>NPC职业详细介绍</h2>
+
+    <h3>导师（Adept）</h3>
+    <p>导师是小型社区或偏远地区的低级施法者，代表了那些未受过正规魔法训练但拥有一定超自然能力的角色。他们拥有一个精简的神术法术列表，可以施放最高6环的法术，涵盖治疗、预言、防护和部分攻击法术。导师通常扮演村庄的草药师、部落的萨满、小镇的占卜者等角色。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>特性</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>生命骰（HD）</td>
+          <td>d6</td>
+        </tr>
+        <tr>
+          <td>技能点</td>
+          <td>(2 + 智力调整值) / 级</td>
+        </tr>
+        <tr>
+          <td>职业技能</td>
+          <td>专注、手艺、交涉、医疗、知识(奥秘)、知识(自然)、知识(宗教)、辨识法术、生存</td>
+        </tr>
+        <tr>
+          <td>武器擅长</td>
+          <td>所有简单武器</td>
+        </tr>
+        <tr>
+          <td>护甲擅长</td>
+          <td>轻甲，不擅长盾牌</td>
+        </tr>
+        <tr>
+          <td>施法</td>
+          <td>自发神术施法者，法术列表有限（约30个法术），最高6环</td>
+        </tr>
+        <tr>
+          <td>魔宠</td>
+          <td>1级时获得一个魔宠（与术士/法师魔宠规则相同）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>平民（Commoner）</h3>
+    <p>平民是最基础的 NPC 职业，代表了奇幻世界中的普通百姓——农夫、商贩、仆役、手工匠人等。他们没有任何特殊职业特性，生命骰最低（d4），技能点也很少。平民是所有 NPC 职业中最弱的，但在构建大量低等级背景角色时非常实用，可以让 DM 快速填充城镇和村庄的居民。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>特性</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>生命骰（HD）</td>
+          <td>d4</td>
+        </tr>
+        <tr>
+          <td>技能点</td>
+          <td>(2 + 智力调整值) / 级，1级时为4倍</td>
+        </tr>
+        <tr>
+          <td>职业技能</td>
+          <td>攀爬、手艺、交涉、驯养动物、跳跃、聆听、专业、骑术、侦察、游泳、绳技</td>
+        </tr>
+        <tr>
+          <td>武器擅长</td>
+          <td>一件简单武器</td>
+        </tr>
+        <tr>
+          <td>护甲擅长</td>
+          <td>无</td>
+        </tr>
+        <tr>
+          <td>特殊能力</td>
+          <td>无</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>望族（Aristocrat）</h3>
+    <p>望族代表了社会上层阶级的成员——贵族、领主、富商、高级官员等。他们拥有较好的生命骰（d8）和较多的技能点（4+智力调整值），并且擅长军用武器和所有护甲，反映了贵族接受过的武术训练。望族非常适合用于构建有战斗能力的贵族 NPC，如领主卫队指挥官、骑士团高层或参战王族。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>特性</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>生命骰（HD）</td>
+          <td>d8</td>
+        </tr>
+        <tr>
+          <td>技能点</td>
+          <td>(4 + 智力调整值) / 级</td>
+        </tr>
+        <tr>
+          <td>职业技能</td>
+          <td>估价、动物共感、唬骗、攀爬、专注、手艺、交涉、易容、脱逃、伪造文书、收集信息、驯养动物、隐藏、威吓、跳跃、知识(所有)、聆听、潜行、表演、骑术、搜索、察言观色、侦察、游泳、绳技</td>
+        </tr>
+        <tr>
+          <td>武器擅长</td>
+          <td>所有简单武器和所有军用武器</td>
+        </tr>
+        <tr>
+          <td>护甲擅长</td>
+          <td>所有护甲和盾牌</td>
+        </tr>
+        <tr>
+          <td>特殊能力</td>
+          <td>无</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>武者（Warrior）</h3>
+    <p>武者是 NPC 版本的战士，代表了职业军人、雇佣兵、城市守卫、部落勇士等以战斗为生的角色。他们拥有高 BAB 成长（1/1，与战士相同）、d8 生命骰，擅长所有简单和军用武器以及所有护甲和盾牌。与玩家使用的战士职业相比，武者没有奖励专长，但足以构建一个有威胁的战斗型 NPC。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>特性</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>生命骰（HD）</td>
+          <td>d8</td>
+        </tr>
+        <tr>
+          <td>技能点</td>
+          <td>(2 + 智力调整值) / 级</td>
+        </tr>
+        <tr>
+          <td>职业技能</td>
+          <td>攀爬、手艺、驯养动物、威吓、跳跃、骑术、游泳</td>
+        </tr>
+        <tr>
+          <td>武器擅长</td>
+          <td>所有简单武器和所有军用武器</td>
+        </tr>
+        <tr>
+          <td>护甲擅长</td>
+          <td>所有护甲和盾牌</td>
+        </tr>
+        <tr>
+          <td>BAB 成长</td>
+          <td>高等 (1/1)，与战士、野蛮人相同</td>
+        </tr>
+        <tr>
+          <td>特殊能力</td>
+          <td>无（无奖励专长）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>专家（Expert）</h3>
+    <p>专家是技能型 NPC 的代表，涵盖了工匠、学者、商人、间谍、盗贼等各类以专业技能见长的角色。他们拥有 NPC 职业中最多的技能点（6+智力调整值，与盗贼相同）和广泛的职业技能列表，中等 BAB 成长使其在必要时也能参与战斗。专家非常适合构建需要特定技能的 NPC，如铁匠、学者、密探或黑市商人。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>特性</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>生命骰（HD）</td>
+          <td>d6</td>
+        </tr>
+        <tr>
+          <td>技能点</td>
+          <td>(6 + 智力调整值) / 级</td>
+        </tr>
+        <tr>
+          <td>职业技能</td>
+          <td>任何技能均可作为专家的职业技能（由 DM 根据角色背景决定）</td>
+        </tr>
+        <tr>
+          <td>武器擅长</td>
+          <td>所有简单武器</td>
+        </tr>
+        <tr>
+          <td>护甲擅长</td>
+          <td>轻甲，不擅长盾牌</td>
+        </tr>
+        <tr>
+          <td>BAB 成长</td>
+          <td>中等 (3/4)，与吟游诗人、盗贼相同</td>
+        </tr>
+        <tr>
+          <td>特殊能力</td>
+          <td>无</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>NPC职业使用指南</h2>
+
+    <p>以下是地下城主在使用 NPC 职业时的一些建议：</p>
+
+    <ul>
+      <li><strong>等级分配：</strong>NPC 的等级通常低于同级别的玩家角色。一个 3 级的武者 NPC 大约相当于 2 级的玩家角色（如战士）的挑战等级（CR）。</li>
+      <li><strong>混合使用：</strong>可以将 NPC 职业与核心职业混合使用。例如，一个 5 级武者/3 级战士的守卫队长比纯武者更具威胁性。</li>
+      <li><strong>装备差异：</strong>NPC 职业角色通常装备不如同等级玩家角色，DM 应根据 NPC 的社会地位和经济条件来分配装备。</li>
+      <li><strong>玩家起始：</strong>在某些特殊战役中（如"从平民到英雄"主题），可以让玩家以 1 级平民或专家开始游戏，随后转为核心职业。</li>
+      <li><strong>CR 计算：</strong>NPC 职业角色的挑战等级通常等于其职业等级减 1（武者除外，武者的 CR 约等于其等级）。详细规则参见 DMG。</li>
+    </ul>
+
+    <h2>NPC职业与核心职业对比</h2>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>NPC职业</th>
+          <th>对应核心职业</th>
+          <th>差异说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>导师 (Adept)</td>
+          <td>牧师 / 德鲁伊</td>
+          <td>法术列表大幅缩减，无领域/自然变身等高级特性，但拥有魔宠</td>
+        </tr>
+        <tr>
+          <td>平民 (Commoner)</td>
+          <td>—（无对应）</td>
+          <td>最弱的职业，没有任何核心职业特性</td>
+        </tr>
+        <tr>
+          <td>望族 (Aristocrat)</td>
+          <td>战士 / 圣武士</td>
+          <td>武器和护甲擅长类似，但无奖励专长、无神圣能力</td>
+        </tr>
+        <tr>
+          <td>武者 (Warrior)</td>
+          <td>战士</td>
+          <td>BAB 相同，但无战士的奖励专长</td>
+        </tr>
+        <tr>
+          <td>专家 (Expert)</td>
+          <td>盗贼 / 吟游诗人</td>
+          <td>技能点与盗贼相同，但无偷袭、诡术等职业特性</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+    <p><em>本页内容基于《地下城主指南》（Dungeon Master's Guide）第四章中 NPC 职业部分，适用于 D&D 3.5e 版本。NPC 职业的完整规则请参阅原始规则书。</em></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

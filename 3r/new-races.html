@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新增种族 — 3R拓展功能大全 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .race-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin: 24px 0; }
+  .race-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; transition: .2s; }
+  .race-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }
+  .race-name { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .race-name-en { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; }
+  .race-info { font-size: 0.9rem; line-height: 1.6; color: var(--text); }
+  .race-trait { margin-top: 12px; padding: 12px; background: var(--bg); border-radius: 6px; font-size: 0.85rem; }
+  .race-trait strong { color: var(--accent); }
+  .source-badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-top: 12px; }
+  .source-official { background: #2ecc71; color: #fff; }
+  .source-community { background: #f39c12; color: #fff; }
+  .source-homebrew { background: #9b59b6; color: #fff; }
+  .filter-bar { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+  .filter-btn { padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); cursor: pointer; transition: .2s; font-size: 0.9rem; }
+  .filter-btn.active { border-color: var(--accent); background: var(--accent); color: #fff; }
+  .filter-btn:hover { border-color: var(--accent); }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+<div class="page-wrapper">
+  <!-- 左侧导航 -->
+  <nav class="sidebar">
+    <div class="nav-header">
+      <span class="nav-logo">⚔️</span>
+      <span class="nav-title">D&D 3.5e</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 首页</a></li>
+      <li><a href="../rules.html">📜 核心规则</a></li>
+      <li><a href="../spells/intro.html">✨ 法术大全</a></li>
+      <li><a href="../classes/intro.html">⚔️ 职业</a></li>
+      <li><a href="../races/intro.html">🧝 种族</a></li>
+      <li><a href="../feats/intro.html">🏆 专长</a></li>
+      <li><a href="../skills/intro.html">📊 技能</a></li>
+      <li><a href="../equipment/intro.html">🎒 装备</a></li>
+      <li><a href="../monsters/intro.html">👹 怪物</a></li>
+      <li><a href="index.html" class="active">📚 3R拓展</a></li>
+      <li><a href="../conflicts.html">⚠️ 规则冲突</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <!-- 面包屑 -->
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a> &gt; <a href="index.html">3R拓展</a> &gt; <span>新增种族</span>
+    </div>
+
+    <!-- 页面标题 -->
+    <div class="page-header">
+      <h1>🧝 新增种族</h1>
+      <p class="page-subtitle">D&D 3.5e 第三修订（3R）拓展种族 · 包含官方与社区内容</p>
+    </div>
+
+    <!-- 说明 -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 24px; line-height: 1.8;">
+      <h3 style="margin-bottom: 12px;">📖 使用说明</h3>
+      <ul style="padding-left: 20px; color: var(--text-muted);">
+        <li>本页面收录D&D 3.5e 3R拓展的新增种族</li>
+        <li>每个种族包含：属性调整、种族特性、体型、移动速度、职业建议等</li>
+        <li>标注了内容来源：<span class="source-badge source-official">官方</span> 官方资料、<span class="source-badge source-community">社区</span> 社区创作、<span class="source-badge source-homebrew">自制</span> 自制内容</li>
+        <li>使用前请与DM确认是否允许</li>
+      </ul>
+    </div>
+
+    <!-- 筛选栏 -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterRaces('all')">全部</button>
+      <button class="filter-btn" onclick="filterRaces('official')">官方</button>
+      <button class="filter-btn" onclick="filterRaces('community')">社区</button>
+      <button class="filter-btn" onclick="filterRaces('humanoid')">类人生物</button>
+      <button class="filter-btn" onclick="filterRaces('fey')">精类</button>
+      <button class="filter-btn" onclick="filterRaces('outsider')">外位面生物</button>
+    </div>
+
+    <!-- 种族列表 -->
+    <div class="race-grid" id="raceGrid">
+      <!-- 卓尔精灵 -->
+      <div class="race-card" data-source="official" data-type="elf">
+        <div class="race-name">卓尔精灵</div>
+        <div class="race-name-en">Drow (Dark Elf)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 敏捷, -2 体质, +2 魅力（女性+2 魅力, +2 智力, -2 体质）</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+          <p><strong>vision：</strong>黑暗vision 120英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • +2 种族加值对抗法术和类法术能力<br>
+          • 法术抗性 11+等级<br>
+          • 擅长日光下的晕眩（承受-1惩罚）<br>
+          • 天生使用：手叉、细剑、双头剑<br>
+          • 天生防具熟练：轻甲、中甲<br>
+          • 获得以下法术（基于魅力）：1级-舞光术, 2级-魔法伎俩, 3级-黑暗术
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>游侠、法师、武僧、盗贼<br>
+          <strong>良好兼职：</strong>奥法射手、微型奥法射手
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 提夫林 -->
+      <div class="race-card" data-source="official" data-type="outsider">
+        <div class="race-name">提夫林</div>
+        <div class="race-name-en">Tiefling</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 敏捷, +2 智力, -2 魅力</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+          <p><strong>vision：</strong>黑暗vision 60英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • +1 天然护甲（皮肤坚硬）<br>
+          • 法术抗力 5<br>
+          • 免疫火焰伤害<br>
+          • 获得以下法术（基于等级）：1级-腹语术, 2级-灼伤之手, 3级-暗示术
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>术士、邪术师、盗贼<br>
+          <strong>良好兼职：</strong>奥法治疗师、奥法盗贼
+        </div>
+        <span class="source-badge source-official">官方 - 玩家手册 v3.5</span>
+      </div>
+
+      <!-- 换生灵 -->
+      <div class="race-card" data-source="official" data-type="monstrous">
+        <div class="race-name">换生灵</div>
+        <div class="race-name-en">Changeling (Eberron)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 魅力, +2 任意两属性, -2 体质</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>变形术（Change Shape）：</strong>每天数分钟，可以变成任何中型类人生物的模样<br>
+          • 模拟声音：可以模拟任何听过的声音<br>
+          • 魅力型角色：在交涉、欺瞒、表演上获得+4种族加值<br>
+          • 无休眠需求：可以在轻睡眠中保持警觉
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>吟游诗人、盗贼、术士<br>
+          <strong>良好兼职：</strong>奥法吟游诗人、深入敌后
+        </div>
+        <span class="source-badge source-official">官方 - 艾伯伦设定集</span>
+      </div>
+
+      <!-- 半巨人 -->
+      <div class="race-card" data-source="official" data-type="giant">
+        <div class="race-name">半巨人</div>
+        <div class="race-name-en">Half-Giant (Dark Sun)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 力量, +2 体质, -2 敏捷, -2 智力</p>
+          <p><strong>体型：</strong>大型（需额外考虑）</</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>力量爆发：</strong>每天数次，获得+8力量调整值持续1轮<br>
+          • <strong>岩石投掷：</strong>远程攻击造成1d6+力量调整值点伤害<br>
+          • 免疫即死效果和对巨人有利的威吓<br>
+          • 获得寒冷抗力5和火焰抗力5
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>野蛮人、战士、圣武士<br>
+          <strong>良好兼职：</strong>怒火狂战士、防御专家
+        </div>
+        <span class="source-badge source-official">官方 - 黯黑曙光设定集</span>
+      </div>
+
+      <!-- 地精 -->
+      <div class="race-card" data-source="community" data-type="goblinoid">
+        <div class="race-name">地精</div>
+        <div class="race-name-en">Goblin</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 敏捷, -2 力量, -2 魅力</p>
+          <p><strong>体型：</strong>小型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>黑暗vision：</strong>60英尺<br>
+          • <strong>敏捷型：</strong>在远程攻击和反射豁免上获得+1种族加值<br>
+          • <strong>群体战术：</strong>当盟友在5英尺内时，近战攻击获得+1加值<br>
+          • <strong>天生武器：</strong>可以使用短剑或短弓（精通）
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>游侠、盗贼、战士<br>
+          <strong>良好兼职：</strong>骑手、侦察兵
+        </div>
+        <span class="source-badge source-community">社区 - Volo指南系列</span>
+      </div>
+
+      <!-- 海精灵 -->
+      <div class="race-card" data-source="official" data-type="elf">
+        <div class="race-name">海精灵</div>
+        <div class="race-name-en">Sea Elf (Aquatic Elf)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 敏捷, -2 体质</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺（陆地）, 40英尺（游泳）</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>两栖：</strong>可以在水下呼吸<br>
+          • <strong>游泳速度：</strong>40英尺<br>
+          • <strong>武术训练：</strong>精通细剑、短剑、长矛、三叉戟<br>
+          • <strong>海洋亲和：</strong>在潜水、游泳、水中战斗检定上获得+2种族加值
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>游侠、德鲁伊、战士<br>
+          <strong>良好兼职：</strong>海徒、海洋德鲁伊
+        </div>
+        <span class="source-badge source-official">官方 - 剑湾传奇设定集</span>
+      </div>
+
+      <!-- 阿斯莫 -->
+      <div class="race-card" data-source="official" data-type="outsider">
+        <div class="race-name">阿斯莫</div>
+        <div class="race-name-en">Aasimar</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 感知, +2 魅力, -2 体质</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+          <p><strong>vision：</strong>黑暗vision 60英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>天界血统：</strong>天界生物的直系后代，天生带有神圣气质<br>
+          • <strong>法术抗力：</strong>6+等级（对抗邪恶法术+2）<br>
+          • <strong>天生武装：</strong>获得天生武器（爪抓1d4）或天生护甲+1<br>
+          • <strong>获得以下法术（基于魅力）：</strong>1级-光亮术, 2级-治疗轻伤, 3级-昼明术
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>圣武士、牧师、游侠<br>
+          <strong>良好兼职：</strong>神圣战士、天堂之血
+        </div>
+        <span class="source-badge source-official">官方 - 位面手册</span>
+      </div>
+
+      <!-- 火杰纳苏 -->
+      <div class="race-card" data-source="official" data-type="outsider">
+        <div class="race-name">火杰纳苏</div>
+        <div class="race-name-en">Fire Genasi</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 力量, +2 体质, -2 魅力</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>元素血统：</strong>火元素后裔，体温高于常人<br>
+          • <strong>火焰抗力：</strong>获得火焰抗力10<br>
+          • <strong>火系法术：</strong>1级获得灼伤之手（基于等级），3级获得燃烧之握<br>
+          • <strong>灼热武器：</strong>每天一次，使武器附带1d6火焰伤害（持续1轮/级）
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>战士、野蛮人、术士<br>
+          <strong>良好兼职：</strong>元素使者、火焰德鲁伊
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 水杰纳苏 -->
+      <div class="race-card" data-source="official" data-type="outsider">
+        <div class="race-name">水杰纳苏</div>
+        <div class="race-name-en">Water Genasi</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 体质, +2 感知, -2 力量</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺（陆地）, 40英尺（游泳）</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>元素血统：</strong>水元素后裔，皮肤微微发蓝<br>
+          • <strong>两栖：</strong>可以在水下呼吸<br>
+          • <strong>冰冷抗力：</strong>获得寒冷抗力5<br>
+          • <strong>水行：</strong>可以在水面上行走（如同行进术），每天数次
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>德鲁伊、游侠、牧师<br>
+          <strong>良好兼职：</strong>元素使者、水行德鲁伊
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 土杰纳苏 -->
+      <div class="race-card" data-source="official" data-type="outsider">
+        <div class="race-name">土杰纳苏</div>
+        <div class="race-name-en">Earth Genasi</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 力量, +2 体质, -2 敏捷</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>元素血统：</strong>土元素后裔，皮肤呈现石质纹理<br>
+          • <strong>天然护甲：</strong>+2天然护甲（岩石皮肤）<br>
+          • <strong>酸系抗力：</strong>获得酸系抗力5<br>
+          • <strong>大地行走：</strong>困难地形（泥沼、碎石）不影响移动速度
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>战士、野蛮人、圣武士<br>
+          <strong>良好兼职：</strong>元素使者、防御专家
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 气杰纳苏 -->
+      <div class="race-card" data-source="official" data-type="outsider">
+        <div class="race-name">气杰纳苏</div>
+        <div class="race-name-en">Air Genasi</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 敏捷, +2 智力, -2 体质</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>元素血统：</strong>气元素后裔，声音带有风声<br>
+          • <strong>电击抗力：</strong>获得电击抗力5<br>
+          • <strong>轻身：</strong>坠落伤害减半<br>
+          • <strong>风力操控：</strong>每天一次，使用御风术（持续1轮/级）
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>法师、武僧、游侠<br>
+          <strong>良好兼职：</strong>元素使者、风行者
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 战锻者 -->
+      <div class="race-card" data-source="official" data-type="construct">
+        <div class="race-name">战锻者</div>
+        <div class="race-name-en">Warforged (Eberron)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 体质, +2 力量, -2 魅力</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>构装体：</strong>免疫毒素、睡眠、麻痹、即死效果<br>
+          • <strong>天然护甲：</strong>+2天然护甲（金属皮肤）<br>
+          • <strong>无需呼吸：</strong>不需要呼吸、食物、水或睡眠<br>
+          • <strong>法术抗力：</strong>获得法术抗力10（对抗法系效果）<br>
+          • <strong>战斗承接：</strong>在承受重击时，可以选择承受-5生命值而非重击效果
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>战士、圣武士、武僧<br>
+          <strong>良好兼职：</strong>魔能战、符文战士
+        </div>
+        <span class="source-badge source-official">官方 - 艾伯伦设定集</span>
+      </div>
+
+      <!-- 卡拉什塔尔 -->
+      <div class="race-card" data-source="official" data-type="psionic">
+        <div class="race-name">卡拉什塔尔</div>
+        <div class="race-name-en">Kalashtar (Eberron)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 感知, +2 魅力, -2 力量</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>灵能共鸣：</strong>与灵体共生，获得灵能天赋<br>
+          • <strong>心灵抗力：</strong>在意志豁免上获得+2种族加值<br>
+          • <strong>心灵沟通：</strong>可以心灵感应（60英尺，仅限kalashtar或灵体）<br>
+          • <strong>获得以下灵能（基于等级）：</strong>1级-轻微医疗, 2级-勇气术, 3级-安抚情绪
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>牧师、武僧、法师<br>
+          <strong>良好兼职：</strong>灵能战士、心灵牧师
+        </div>
+        <span class="source-badge source-official">官方 - 艾伯伦设定集</span>
+      </div>
+
+      <!-- 变体者 -->
+      <div class="race-card" data-source="official" data-type="shapechanger">
+        <div class="race-name">变体者</div>
+        <div class="race-name-en">Shifter (Eberron)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 力量, +2 敏捷, -2 智力, -2 魅力</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺（40英尺若选择疾风变体）</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>兽化（Shifting）：</strong>每天数次，获得兽化形态（持续1轮/级+体质调整值）<br>
+          • <strong>变体类型：</strong>选择一种变体（如疾风、利爪、厚皮、尖牙等）<br>
+          • <strong>兽化特性：</strong>根据变体获得不同加值（如+2力量、爪抓攻击、伤害减免等）<br>
+          • <strong>野性直觉：</strong>在察觉和生存检定上获得+2种族加值
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>野蛮人、游侠、武僧<br>
+          <strong>良好兼职：</strong>兽王、野性战士
+        </div>
+        <span class="source-badge source-official">官方 - 艾伯伦设定集</span>
+      </div>
+
+      <!-- 法术鳞族 -->
+      <div class="race-card" data-source="official" data-type="dragon">
+        <div class="race-name">法术鳞族</div>
+        <div class="race-name-en">Spellscale (Dragon Magic)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 魅力, +2 任意一属性, -2 力量</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+          <p><strong>vision：</strong>黑暗vision 60英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>龙血统：</strong>龙裔种族，天生带有龙族血统<br>
+          • <strong>法术缩放：</strong>可以消耗法术位来强化法术（增加伤害或效果）<br>
+          • <strong>天生法术：</strong>根据龙血类型获得对应法术（如火系-燃烧之手，冰系-冰冻之触）<br>
+          • <strong>龙息武器：</strong>每天数次，可以使用龙息攻击（基于魅力，15尺锥状）
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>术士、法师、吟游诗人<br>
+          <strong>良好兼职：</strong>龙脉术士、龙祭司
+        </div>
+        <span class="source-badge source-official">官方 - 龙之魔法设定集</span>
+      </div>
+    </div>
+
+    <!-- 更多3R种族 -->
+    <div class="race-grid">
+      <!-- 战魔像 -->
+      <div class="race-card" data-source="official" data-type="construct">
+        <div class="race-name">战魔像</div>
+        <div class="race-name-en">Warforged (Eberron)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 体质, -2 感知</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>构装体体质：</strong>不需要呼吸、饮食、睡眠，免疫毒素和疲惫<br>
+          • <strong>天生护甲：</strong>AC获得+2天生护甲加值<br>
+          • <strong>伤害减免：</strong>DR 2/能量（可被魔法武器穿透）<br>
+          • <strong>轻量合金：</strong>重量减轻20%，攀爬和游泳不受惩罚<br>
+          • <strong>情绪模拟：</strong>可以模拟情感，但无生理需求<br>
+          • <strong>天生武器：</strong>拳击造成1d4非致命伤害
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>战士、圣武士、武僧<br>
+          <strong>良好兼职：</strong>战魔像战士、灵能战士
+        </div>
+        <span class="source-badge source-official">官方 - 艾伯伦设定集</span>
+      </div>
+
+      <!-- 元素后裔-气 -->
+      <div class="race-card" data-source="official" data-type="genasi">
+        <div class="race-name">元素后裔-气</div>
+        <div class="race-name-en">Air Genasi (Forgotten Realms)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 敏捷, +2 智力, -2 力量</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>元素血统：</strong>air genasi，带有气元素血统<br>
+          • <strong>轻身：</strong>重量减轻20%，从高处坠落伤害减半<br>
+          • <strong>呼吸：</strong>可以在空气中呼吸，免疫缺氧环境<br>
+          • <strong>天生法术：</strong>1级-羽落术, 3级-御风术, 5级-飞行术<br>
+          • <strong>元素抗性：</strong>电击伤害减半
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>游侠、武僧、法师<br>
+          <strong>良好兼职：</strong>风暴法师、气元素使者
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 元素后裔-火 -->
+      <div class="race-card" data-source="official" data-type="genasi">
+        <div class="race-name">元素后裔-火</div>
+        <div class="race-name-en">Fire Genasi (Forgotten Realms)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 力量, +2 魅力, -2 感知</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>元素血统：</strong>fire genasi，带有火元素血统<br>
+          • <strong>火焰抗性：</strong>火焰伤害减半<br>
+          • <strong>内焰：</strong>身体散发微光，10英尺内提供微光视野<br>
+          • <strong>天生法术：</strong>1级-燃烧之手, 3级-火焰箭, 5级-火球术<br>
+          • <strong>耐热：</strong>免疫高温环境（如火山、火焰）
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>术士、武僧、野蛮人<br>
+          <strong>良好兼职：</strong>火焰法师、烈焰战士
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 元素后裔-土 -->
+      <div class="race-card" data-source="official" data-type="genasi">
+        <div class="race-name">元素后裔-土</div>
+        <div class="race-name-en">Earth Genasi (Forgotten Realms)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 体质, +2 力量, -2 魅力</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>元素血统：</strong>earth genasi，带有土元素血统<br>
+          • <strong>土之亲和：</strong>在土石地形上移动不受阻碍<br>
+          • <strong>天生护甲：</strong>AC获得+1天生护甲加值<br>
+          • <strong>天生法术：</strong>1级-魔法石, 3级-软化土地, 5级-石化术<br>
+          • <strong>元素抗性：</strong>酸液伤害减半<br>
+          • <strong>挖掘：</strong>可以挖掘土石（速度10英尺）
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>战士、圣武士、武僧<br>
+          <strong>良好兼职：</strong>土元素使者、堡垒守卫
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 元素后裔-水 -->
+      <div class="race-card" data-source="official" data-type="genasi">
+        <div class="race-name">元素后裔-水</div>
+        <div class="race-name-en">Water Genasi (Forgotten Realms)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 体质, +2 感知, -2 智力</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺（游泳30英尺）</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>元素血统：</strong>water genasi，带有水元素血统<br>
+          • <strong>两栖：</strong>可以在水下呼吸<br>
+          • <strong>游泳速度：</strong>30英尺<br>
+          • <strong>天生法术：</strong>1级-造水术, 3级-水下呼吸, 5级-操控水位<br>
+          • <strong>元素抗性：</strong>寒冷伤害减半<br>
+          • <strong>水之亲和：</strong>在水中战斗不受惩罚
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>德鲁伊、游侠、武僧<br>
+          <strong>良好兼职：</strong>水元素使者、海徒
+        </div>
+        <span class="source-badge source-official">官方 - 被遗忘的国度设定集</span>
+      </div>
+
+      <!-- 晶片灵 -->
+      <div class="race-card" data-source="official" data-type="psionic">
+        <div class="race-name">晶片灵</div>
+        <div class="race-name-en">Shardmind (Psionics)</div>
+        <div class="race-info">
+          <p><strong>属性调整：</strong>+2 智力, +2 感知, -2 力量</p>
+          <p><strong>体型：</strong>中型</p>
+          <p><strong>速度：</strong>30英尺</p>
+        </div>
+        <div class="race-trait">
+          <strong>种族特性：</strong><br>
+          • <strong>灵能结晶：</strong>身体由灵能水晶构成，AC获得+1天生护甲<br>
+          • <strong>灵光散发：</strong>身体散发微光（10英尺），可以主动发光（60英尺）<br>
+          • <strong>心灵抗力：</strong>在意志豁免上获得+2种族加值<br>
+          • <strong>天生灵能：</strong>获得1个0级灵能（每日数次）<br>
+          • <strong>伤害减免：</strong>DR 2/钝击（针对物理攻击）<br>
+          • <strong>免疫毒素：</strong>构装体特性，免疫毒素和疾病
+        </div>
+        <div class="race-trait" style="margin-top: 8px;">
+          <strong>职业建议：</strong>法师、灵能战士、牧师<br>
+          <strong>良好兼职：</strong>灵能法师、水晶术士
+        </div>
+        <span class="source-badge source-official">官方 - 灵能拓展设定集</span>
+      </div>
+    </div>
+</div>
+
+<script>
+// 筛选种族
+function filterRaces(type) {
+  // 更新按钮状态
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+  
+  // 筛选卡片
+  const cards = document.querySelectorAll('.race-card');
+  cards.forEach(card => {
+    if (type === 'all') {
+      card.style.display = 'block';
+    } else if (type === 'official' || type === 'community' || type === 'homebrew') {
+      if (card.dataset.source === type) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    } else {
+      if (card.dataset.type === type) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>

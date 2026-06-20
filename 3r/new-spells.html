@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3R拓展功能大全 - 新增法术 | D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .header p { font-size: 1.1em; opacity: 0.9; }
+
+    .nav-links { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .nav-links a { padding: 8px 16px; background: white; color: #667eea; text-decoration: none; border-radius: 4px; border: 2px solid #667eea; transition: all 0.3s; font-size: 0.9em; }
+    .nav-links a:hover { background: #667eea; color: white; }
+
+    .intro { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .intro h2 { color: #667eea; margin-bottom: 15px; }
+
+    .spell-section { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .spell-section h2 { color: #764ba2; margin-bottom: 20px; border-bottom: 2px solid #764ba2; padding-bottom: 10px; }
+
+    .spell-block { border: 3px solid #667eea; border-radius: 8px; padding: 20px; margin-bottom: 25px; background: #fefefe; }
+    .spell-block h3 { color: #667eea; font-size: 1.5em; margin-bottom: 5px; }
+    .spell-block .school { color: #666; font-style: italic; margin-bottom: 10px; }
+
+    .spell-info { background: #f9f9f9; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #764ba2; }
+    .spell-info table { width: 100%; border-collapse: collapse; }
+    .spell-info td { padding: 5px 10px; vertical-align: top; }
+    .spell-info td:first-child { font-weight: bold; width: 120px; color: #764ba2; }
+
+    .description { margin: 15px 0; line-height: 1.8; }
+    .mechanics { background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 15px 0; }
+    .mechanics h4 { color: #1976d2; margin-bottom: 10px; }
+    .example { background: #fff3e0; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ff9800; }
+    .example h4 { color: #e65100; margin-bottom: 10px; }
+
+    .source { background: #f3e5f5; padding: 10px; border-radius: 4px; margin-top: 15px; font-size: 0.9em; }
+    .source strong { color: #7b1fa2; }
+
+    .table-container { overflow-x: auto; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+    th { background: #667eea; color: white; font-weight: 600; }
+    tr:hover { background: #f5f5f5; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="container">
+    <div class="header">
+      <h1>✨ 3R拓展功能大全</h1>
+      <p>新增法术 - D&D 3.5e 扩展内容</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">🏠 返回主页</a>
+      <a href="new-races.html">🧝 新增种族</a>
+      <a href="new-classes.html">⚔️ 新增职业</a>
+      <a href="new-feats.html">🌟 新增专长</a>
+      <a href="new-spells.html">✨ 新增法术</a>
+      <a href="new-equipment.html">⚔️ 新增装备</a>
+      <a href="new-monsters.html">👹 新增怪物</a>
+      <a href="optional-rules.html">📜 可选规则</a>
+      <a href="resources-tools.html">🔧 资源与工具</a>
+    </div>
+
+    <div class="intro">
+      <h2>📖 关于新增法术</h2>
+      <p>本页面收录了来自<strong>官方拓展资料</strong>（如《Complete Divine》《Complete Arcane》）和<strong>社区平衡创作</strong>的新增法术。</p>
+      <p>每个法术条目包含：</p>
+      <ul style="margin-left: 20px; margin-top: 10px;">
+        <li><strong>完整法术属性</strong>：成分、施法时间、距离、目标、持续时间、豁免、法术抗力</li>
+        <li><strong>详细机制说明</strong>：如何运作、限制、相互作用</li>
+        <li><strong>使用示例</strong>：实际游戏中的应用</li>
+        <li><strong>来源标注</strong>：官方资料书或社区来源</li>
+      </ul>
+    </div>
+
+    <div class="spell-section">
+      <h2>🛡️ 防护学派（Abjuration）</h2>
+
+      <div class="spell-block">
+        <h3>魔法盔甲（Magic Armor）</h3>
+        <div class="school">防护系</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 1</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小片金属）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>接触</td></tr>
+            <tr><td>目标</td><td>接触的生物或物体</td></tr>
+            <tr><td>持续时间</td><td>1分钟/级（可解消）</td></tr>
+            <tr><td>豁免检定</td><td>意志negates（无害）</td></tr>
+            <tr><td>法术抗力</td><td>可（无害）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术为目标提供+4偏斜加值在护甲等级上。偏斜加值是一种特殊加值，可以与其他护甲加值叠加。</p>
+          <p>如果目标已经有一个来自魔法盔甲或天然护甲的护甲加值，这个法术提供的偏斜加值仍然有效（可以叠加）。</p>
+          <p><strong>材料成分</strong>：一小片任何金属（铁、铜、银、金等均可）。这个金属片在法术持续期间不会消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>偏斜加值</strong>：这是一种特殊类型的AC加值，可以与其他所有类型的AC加值叠加（天生、护甲、盾牌、偏斜、闪避等）。</li>
+            <li><strong>叠加规则</strong>：如果目标已经受到<em>护盾术</em>（+4偏斜），这个法术不会提供额外加值（同名加值不叠加）。</li>
+            <li><strong>物体</strong>：可以对物体施放，保护物体不被攻击（如保护门、宝箱等）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：法师Amir（AC 12，无护甲）知道即将到来的战斗。他对自己施放<em>魔法盔甲</em>。</p>
+          <p><strong>结果</strong>：Amir的AC变为16（12 + 4偏斜）。如果他后来穿上锁子甲（+5护甲加值），他的AC将是21（12 + 5护甲 + 4偏斜）。</p>
+          <p><strong>战术</strong>：这个法术特别适合法师、巫师等无护甲职业。在长时间冒险前施放，可以提供持续的防护。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Divine》p. 160<br>
+          <strong>平衡性</strong>：1级法术提供+4 AC持续10分钟，非常实用。适合低等级队伍。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>法术屏障（Spell Barrier）</h3>
+        <div class="school">防护系</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 3，圣武士2</td></tr>
+            <tr><td>成分</td><td>V, S, DF</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>目标</td><td>一个生物</td></tr>
+            <tr><td>持续时间</td><td>1轮/级</td></tr>
+            <tr><td>豁免检定</td><td>意志negates（无害）</td></tr>
+            <tr><td>法术抗力</td><td>可（无害）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：在目标周围创建一个半透明的魔法屏障。这个屏障提供以下效果：</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>目标获得+2抗力加值在所有豁免检定上</li>
+            <li>目标获得法术抗力10（对抗法术和类法术能力）</li>
+            <li>任何试图对目标施放的法术需要成功DC 15的施法者等级检定才能穿透屏障</li>
+          </ul>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《Complete Arcane》的法术屏障概念）<br>
+          <strong>平衡性</strong>：3级法术，适合中等等级队伍。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>法术抗力屏障（Spell Resistance Barrier）</h3>
+        <div class="school">防护系</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 2</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小块水晶）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>接触</td></tr>
+            <tr><td>目标</td><td>接触的生物</td></tr>
+            <tr><td>持续时间</td><td>1分钟/级（可解消）</td></tr>
+            <tr><td>豁免检定</td><td>意志negates（无害）</td></tr>
+            <tr><td>法术抗力</td><td>可（无害）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术在目标周围创造一个魔法屏障，赋予目标法术抗力等于12+施法者等级。</p>
+          <p>法术抗力可以用来抵抗敌对法术的效果。每当目标成为法术的目标时，施法者需要进行一次施法者等级检定（DC等于目标的法术抗力）来克服这个抗力。</p>
+          <p><strong>材料成分</strong>：一小块水晶（例如石英、紫水晶等）。这个水晶在法术持续期间不会消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>法术抗力</strong>：目标的法术抗力等于12+施法者等级。例如，一个5级法师施放的<em>法术抗力屏障</em>会赋予SR 17。</li>
+            <li><strong>叠加</strong>：如果目标已经有法术抗力，这个法术不会提供额外加值（同名效果不叠加）。</li>
+            <li><strong>可解消</strong>：这个法术可以被<em>解除魔法</em>或类似效果解除。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：3级法师Elara（施法者等级3）知道即将面对一个敌对法师。她对自己施放<em>法术抗力屏障</em>。</p>
+          <p><strong>结果</strong>：Elara获得SR 15。如果敌对法师试图对她施放<em>火球术</em>，他需要成功DC 15的施法者等级检定才能让法术生效。</p>
+          <p><strong>战术</strong>：这个法术特别适合对付其他施法者。在高等级，SR的加值会更高，提供更好的保护。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《Complete Arcane》的法术抗力概念）<br>
+          <strong>平衡性</strong>：2级法术提供SR 12+等级，非常实用。适合低到中等等级。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>解除魔法领域（Lesser Anti-Magic Field）</h3>
+        <div class="school">防护系</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 4</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小块磁石）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>10尺</td></tr>
+            <tr><td>区域</td><td>以你为中心的10尺半径扩散</td></tr>
+            <tr><td>持续时间</td><td>1轮/级</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术创造一个抑制所有魔法效果的领域。在这个领域内的所有法术和魔法效果都会被抑制（等同于<em>解除魔法</em>的效果，但需要一个施法者等级检定来穿透）。</p>
+          <p>这个效果不如完全的<em>解除魔法领域</em>（8级法术）强大，但仍然是很有用的工具。在这个领域内的生物如果施展法术，需要进行施法者等级检定（DC = 12 + 施法者等级）来成功。</p>
+          <p><strong>材料成分</strong>：一小块磁石。这个磁石在法术施展时消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>抑制魔法</strong>：在这个领域内的所有魔法效果都会被抑制。这意味着法术无法生效，魔法物品无法运作（除了 artifact 和 deity-created 物品）。</li>
+            <li><strong>穿透检定</strong>：如果一个法术或魔法效果在这个领域内被施展，需要进行施法者等级检定（DC = 12 + 施法者等级）来成功穿透领域。</li>
+            <li><strong>移动</strong>：这个领域跟随你移动。如果你移动，领域也会移动。</li>
+            <li><strong>叠加法术</strong>：多个<em>解除魔法领域</em>的效果不会叠加。它们会重叠，但只计算一个效果。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：5级法师Castor面对一个正在施展强大法术的敌对巫师。他施展<em>解除魔法领域</em>。</p>
+          <p><strong>结果</strong>：领域抑制了所有魔法效果。敌对巫师如果试图施展法术，需要成功DC 17（12+5）的施法者等级检定。这大大降低了他成功施展法术的几率。</p>
+          <p><strong>战术</strong>：这个法术是施法者对抗其他施法者的强大工具。在团队战斗中，可以保护队友免受魔法攻击。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《PHB》的解除魔法领域概念）<br>
+          <strong>平衡性</strong>：4级法术，弱化版解除魔法领域。适合中等等级。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spell-section">
+      <h2>✨ 咒法学派（Conjuration）</h2>
+
+      <div class="spell-block">
+        <h3>召唤同盟者（Summon Ally）</h3>
+        <div class="school">咒法学派（召唤）</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 2，牧师2，德鲁伊2</td></tr>
+            <tr><td>成分</td><td>V, S, M（价值10 gp的宝石粉尘）</td></tr>
+            <tr><td>施法时间</td><td>1轮</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>效果</td><td>召唤一个1HD的同盟者</td></tr>
+            <tr><td>持续时间</td><td>1轮/级</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术从以太位面召唤一个同盟者为你作战。同盟者的具体类型取决于你的职业：</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>法师/术士</strong>：召唤一个魔宠（1HD，小型动物）</li>
+            <li><strong>牧师</strong>：召唤一个下级外侧生物（1HD，制定领域相关）</li>
+            <li><strong>德鲁伊</strong>：召唤一个动物同盟者（1HD，例如狼、鹰）</li>
+          </ul>
+          <p>同盟者会使用其基本攻击和特殊能力为你作战。它不能被召唤到敌对的生物空间中。</p>
+          <p><strong>材料成分</strong>：价值10 gp的宝石粉尘。这个粉尘在法术施展时消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>同盟者属性</strong>：同盟者有1HD，攻击加值+1，属性调整值基于其种类。</li>
+            <li><strong>控制</strong>：同盟者会执行你的口头命令（移动动作）。如果没有命令，它会防御自己。</li>
+            <li><strong>死亡</strong>：如果同盟者被杀死，法术结束。你无法重新召唤同一个同盟者。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：2级法师Elara遇到两只哥布林。她施展<em>召唤同盟者</em>，召唤一只魔宠鹰。</p>
+          <p><strong>结果</strong>：鹰有1HD（1d8生命值），攻击+1（爪抓1d3+1）。虽然不强，但它可以分散哥布林的注意力，让Elara更容易施放法术。</p>
+          <p><strong>战术</strong>：在低等级，这个法术主要用于分散敌人注意力或占用敌人的攻击。在高等级，持续时间更长，同盟者可以承担更多角色。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Divine》p. 162<br>
+          <strong>平衡性</strong>：2级法术，提供额外的战斗单位。不如<em>召唤怪物II</em>强大，但更专业化和可控。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>制造食物与水（强化版）（Create Food and Water, Greater）</h3>
+        <div class="school">咒法学派（创造）</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>牧师 2，德鲁伊 2</td></tr>
+            <tr><td>成分</td><td>V, S, DF</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>效果</td><td>创造食物和水，供养多名生物</td></tr>
+            <tr><td>持续时间</td><td>立即</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术创造足够的食物和饮用水，供养最多4个中型生物每施法者等级（最低4个生物）。食物是朴素但营养丰富的干粮，水是纯净的饮用水。</p>
+          <p>创造的食物在24小时后变质（如果未被消耗）。水永远不会变质。</p>
+          <p><strong>3R改进</strong>：在《Complete Divine》中，这个法术的强化版可以创造两倍量的食物和水（8个生物每级）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>数量</strong>：基础版本供养4个生物/级。强化版（来自《Complete Divine》）供养8个生物/级。</li>
+            <li><strong>体型调整</strong>：小型生物算作1/2个中型生物。大型生物算作2个中型生物。超大型生物算作4个中型生物。</li>
+            <li><strong>营养</strong>：创造的食物和水提供完整的营养。消费它们可以满足一天的饮食需求。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：3级牧师Tycho（施法者等级3）带领一支探险队进入荒野。他施展<em>制造食物与水（强化版）</em>。</p>
+          <p><strong>结果</strong>：法术创造了足够24个中型生物吃一天的食物和水。这可以让整个探险队（8人）维持3天。</p>
+          <p><strong>战术</strong>：这个法术是长途旅行和围城战的重要工具。在3R中，强化版让它更加有用。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Divine》p. 158<br>
+          <strong>平衡性</strong>：2级神术，供养整个队伍。非常实用。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>召唤元素盟友（Summon Elemental Ally）</h3>
+        <div class="school">咒法学派（召唤）</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 4，德鲁伊 4</td></tr>
+            <tr><td>成分</td><td>V, S, M（与元素相关的材料）</td></tr>
+            <tr><td>施法时间</td><td>1轮</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>效果</td><td>召唤一个4 HD的元素生物</td></tr>
+            <tr><td>持续时间</td><td>1轮/级</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术从元素位面召唤一个元素盟友为你作战。你可以选择召唤哪种元素：土、水、气、火。</p>
+          <p>元素生物有4 HD，攻击加值+4，造成1d6+2伤害（依据元素类型）。它会执行你的口头命令（移动动作）。</p>
+          <p><strong>材料成分</strong>：依据元素类型，需要不同的材料：
+            <ul style="margin-left: 20px; margin-top: 5px;">
+              <li><strong>土元素</strong>：一小块泥土或石头</li>
+              <li><strong>水元素</strong>：一小瓶水</li>
+              <li><strong>气元素</strong>：一根羽毛</li>
+              <li><strong>火元素</strong>：一小块木炭或蜡烛</li>
+            </ul>
+          </p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>元素类型</strong>：你可以自由选择召唤哪种元素。不同元素有不同的能力和弱点。</li>
+            <li><strong>控制</strong>：元素生物会执行你的口头命令。如果没有命令，它会防御自己或攻击最近的敌人。</li>
+            <li><strong>元素特性</strong>：每种元素有不同的特殊能力。例如，火元素有火焰抗力，水元素可以游泳等。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：5级德鲁伊Elara面对一群沼泽怪物。她施展<em>召唤元素盟友</em>，选择召唤火元素。</p>
+          <p><strong>结果</strong>：火元素有4 HD（4d8+8生命值），攻击+4（火焰接触1d6+2火焰伤害）。它对沼泽怪物造成的火焰伤害非常有效。</p>
+          <p><strong>战术</strong>：这个法术让你可以根据战斗情况选择最适合的元素类型。火元素对付植物和冰系敌人，水元素对付火系敌人，等等。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Divine》p. 163<br>
+          <strong>平衡性</strong>：4级法术，召唤强大的元素盟友。比<em>召唤怪物IV</em>更专业化和可控。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spell-section">
+      <h2>🔮 预言论派（Divination）</h2>
+
+      <div class="spell-block">
+        <h3>侦测弱点（Detect Weakness）</h3>
+        <div class="school">预言论派</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 2，游荡者1</td></tr>
+            <tr><td>成分</td><td>V, S</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>个人</td></tr>
+            <tr><td>目标</td><td>自己</td></tr>
+            <tr><td>持续时间</td><td>专注，最长1分钟/级</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术让你能够看穿敌人的防御，发现其弱点。当你对这个法术保持专注时：</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>你对目标进行的攻击检定和伤害检定获得+2洞察加值</li>
+            <li>你获得目标的AC类型知识（例如："这个目标有天然护甲加值"或"这个目标依赖盾牌"）</li>
+            <li>如果你的攻击击穿了目标的AC，你额外造成+1d6伤害</li>
+          </ul>
+          <p><strong>限制</strong>：你一次只能对一个目标保持这个法术的效果。如果你切换目标，需要重新施展法术。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作<br>
+          <strong>平衡性</strong>：2级法术，适合需要提高命中率的角色。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>识破隐形（See Invisibility, Greater）</h3>
+        <div class="school">预言系</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 3</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小块玫瑰石英）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>个人</td></tr>
+            <tr><td>目标</td><td>自己</td></tr>
+            <tr><td>持续时间</td><td>1分钟/级（可解消）</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术让你能够看见隐形生物和物体，如同它们没有隐形一样。你还能够看见以太位面的生物（如幽灵）。</p>
+          <p>这个法术是<em>识破隐形</em>（2级法术）的强化版，持续时间更长（1分钟/级而不是10分钟），并且可以看穿<em>高等隐形</em>。</p>
+          <p><strong>材料成分</strong>：一小块玫瑰石英。这个石英在法术持续期间不会消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>看见隐形</strong>：你可以看见隐形生物和物体，就好像它们没有隐形一样。这意味着你可以对他们进行攻击（没有隐形的AC加值）。</li>
+            <li><strong>高等隐形</strong>：这个法术可以看穿<em>高等隐形</em>（正常<em>识破隐形</em>无法看穿）。</li>
+            <li><strong>以太位面</strong>：你可以看见以太位面上的生物（如幽灵、元素等）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：5级法师Elara面对一个使用了<em>高等隐形</em>的敌对巫师。她施展<em>识破隐形（强化版）</em>。</p>
+          <p><strong>结果</strong>：Elara可以看见敌对巫师。她可以对他进行攻击，而他不再享有隐形的AC加值（+2偏斜，因为看不见攻击者）。</p>
+          <p><strong>战术</strong>：这个法术是对抗隐形敌人的重要工具。在3R中，强化版让它更加有用（可以看穿高等隐形）。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Divination》p. 112（社区改编）<br>
+          <strong>平衡性</strong>：3级法术，看穿隐形和高等隐形。非常实用。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>侦测谎言（群体）（Detect Lies, Mass）</h3>
+        <div class="school">预言系</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 4，牧师 4，吟游诗人3</td></tr>
+            <tr><td>成分</td><td>V, S, DF</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>区域</td><td>30尺扩散</td></tr>
+            <tr><td>持续时间</td><td>1分钟/级</td></tr>
+            <tr><td>豁免检定</td><td>意志negates</td></tr>
+            <tr><td>法术抗力</td><td>可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术让你能够侦测区域内所有生物是否在说谎。每当一个受影响生物说话时，你会得到一个暗示（如同<em>侦测思想</em>的"表面阅读"），告诉你他们是否在说谎。</p>
+          <p>这个法术是<em>侦测谎言</em>（4级法术，影响一个生物）的群体版本。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>侦测谎言</strong>：当你与受影响生物交谈时，你会知道他们是否在说谎。这不是心灵感应——你只是得到一个"感觉"。</li>
+            <li><strong>豁免</strong>：受影响生物可以进行意志豁免来negate这个法术的效果（对他们自己）。成功豁免的生物在24小时内不会被同一个施法者用这个法术影响。</li>
+            <li><strong>法术抗力</strong>：如果生物有法术抗力，你需要成功通过施法者等级检定（DC = 法术抗力加值）才能让法术对他们生效。</li>
+          </ul>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《PHB》的侦测谎言概念）<br>
+          <strong>平衡性</strong>：4级法术，群体侦测谎言。适合社交和 interrogation 场景。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spell-section">
+      <h2>🧠 附魔学派（Enchantment）</h2>
+
+      <div class="spell-block">
+        <h3>友善术（强化版）（Friendship, Greater）</h3>
+        <div class="school">附魔系（心灵影响）</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 1，吟游诗人1</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小件友谊象征物）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>接触</td></tr>
+            <tr><td>目标</td><td>接触的生物</td></tr>
+            <tr><td>持续时间</td><td>1小时/级</td></tr>
+            <tr><td>豁免检定</td><td>意志negates</td></tr>
+            <tr><td>法术抗力</td><td>可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个目标视你为一个亲密朋友。他们会帮助你、支持你，并在可能的情况下为你提供援助。</p>
+          <p>这是一个心灵影响、强制效果。如果目标受到伤害或观察到你伤害它的盟友，法术结束。</p>
+          <p><strong>材料成分</strong>：一小件友谊象征物（例如，一个小饰品、一束花等）。这个物品在法术持续期间不会消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>态度</strong>：目标的起始态度是"友善"。他们会在合理范围内帮助你。</li>
+            <li><strong>打破</strong>：如果目标受到伤害或看到你伤害它的盟友，法术结束。这防止了滥用。</li>
+            <li><strong>心灵影响</strong>：这个法术会被对心灵影响的免疫所免疫（例如，构造体、不死生物等）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：1级法师Amir需要从一个守卫那里获得信息。他对守卫施展<em>友善术（强化版）</em>。</p>
+          <p><strong>结果</strong>：守卫视Amir为朋友。他会回答Amir的问题，甚至可能提供帮助（例如，让Amir通过检查站）。</p>
+          <p><strong>战术</strong>：这个法术是社交场景的重要工具。在3R中，强化版延长了持续时间（1小时/级而不是1小时）。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《PHB》的魅惑人类概念）<br>
+          <strong>平衡性</strong>：1级法术，改善NPC态度。非常实用。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>支配怪物（跨位面）（Dominate Monster, Extraplanar）</h3>
+        <div class="school">附魔系（强迫、心灵影响）</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 5</td></tr>
+            <tr><td>成分</td><td>V, S, M（一个价值50 gp的宝石）</td></tr>
+            <tr><td>施法时间</td><td>1轮</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>目标</td><td>一个异界生物</td></tr>
+            <tr><td>持续时间</td><td>1天/级</td></tr>
+            <tr><td>豁免检定</td><td>意志negates</td></tr>
+            <tr><td>法术抗力</td><td>可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：如<em>支配人类</em>，但可以影响异界生物（如同<em>支配怪物</em>）。你可以控制目标的心灵，让他们按照你的命令行动。</p>
+          <p>这是一个非常强大的法术，允许你控制几乎任何类型的生物（包括异界生物、不死生物、构造体等）。</p>
+          <p><strong>材料成分</strong>：一个价值50 gp的宝石。这个宝石在法术施展时消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>控制</strong>：你可以控制目标的心灵。他们会将你的口头命令（移动动作）视为自己的意愿。</li>
+            <li><strong>心灵感应</strong>：你可以与目标建立心灵感应链接（距离限制为施法距离）。这允许你发出命令，即使目标在战斗中也一样。</li>
+            <li><strong>反抗</strong>：如果目标受到伤害，他们可以进行新的意志豁免来打破控制。DC等于你的施法者等级+你的魅力调整值。</li>
+          </ul>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《PHB》的支配怪物概念）<br>
+          <strong>平衡性</strong>：5级法术，控制异界生物。非常强大。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spell-section">
+      <h2>🔥 塑能学派（Evocation）</h2>
+
+      <div class="spell-block">
+        <h3>奥法飞弹（Arcane Missile）</h3>
+        <div class="school">塑能学派</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 1</td></tr>
+            <tr><td>成分</td><td>V, S</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>中距（100尺+10尺/级）</td></tr>
+            <tr><td>目标</td><td>一个生物或物体</td></tr>
+            <tr><td>持续时间</td><td>立即</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你发射一到五枚魔法飞弹，每枚造成1d4+1点力场伤害。飞弹会自动命中目标，不需要攻击检定。</p>
+          <p><strong>飞弹数量</strong>：1级1枚，3级2枚，5级3枚，7级4枚，9级5枚。</p>
+          <p><strong>3R改进</strong>：在《Complete Arcane》中，奥法飞弹可以升级：每枚飞弹可以造成1d4+1点伤害，或者你可以将多枚飞弹合并成一枚更强大的飞弹（例如，2枚飞弹合并成1枚造成2d4+2点伤害）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>自动命中</strong>：飞弹不需要攻击检定，也无法被躲闪或招架。</li>
+            <li><strong>力场伤害</strong>：这种伤害可以忽略大多数形式的伤害减免（除了针对力场伤害的伤害减免）。</li>
+            <li><strong>合并飞弹</strong>：在3R中，你可以选择将多枚飞弹合并成一枚更强大的飞弹。这让你可以在一次攻击中造成更高伤害，但只有一次伤害骰。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：3级法师Castor（施法者等级5）面对一只石魔像（AC 25，免疫非魔法武器）。他施展<em>奥法飞弹</em>。</p>
+          <p><strong>结果</strong>：Castor发射2枚飞弹，每枚造成1d4+1点力场伤害。即使魔像的AC很高，飞弹也会自动命中并造成伤害。</p>
+          <p><strong>战术</strong>：奥法飞弹是法师对抗高AC敌人的重要工具。在3R中，合并飞弹可以造成更高伤害，适合对付单个强敌。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Arcane》p. 99<br>
+          <strong>平衡性</strong>：1级法术，自动命中。在3R中更灵活。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>闪电链（Lightning Chain）</h3>
+        <div class="school">塑能学派</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 3</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小块琥珀）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>目标</td><td>一个生物</td></tr>
+            <tr><td>持续时间</td><td>立即</td></tr>
+            <tr><td>豁免检定</td><td>反射半伤</td></tr>
+            <tr><td>法术抗力</td><td>可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你释放一道闪电，对目标造成1d6/级（最大10d6）电击伤害。如果目标死亡或闪电穿透了法术抗力，闪电会跳跃到附近另一个敌人（距离30尺内），造成一半伤害。</p>
+          <p><strong>跳跃规则</strong>：闪电最多可以跳跃3次，每次跳跃伤害减半。跳跃是自动的，不需要你选择目标。</p>
+          <p><strong>材料成分</strong>：一小块琥珀。这个琥珀在法术施展时消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>伤害计算</strong>：1d6/级，在9级时达到最大10d6。</li>
+            <li><strong>跳跃伤害</strong>：第一次跳跃造成一半伤害（向下取整），第二次跳跃造成四分之一伤害，以此类推。</li>
+            <li><strong>法术抗力</strong>：如果目标有法术抗力，你需要成功通过施法者等级检定（DC = 法术抗力加值）才能让法术生效。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：5级法师Elara面对3个哥布林（站在一起）。她施展<em>闪电链</em>，目标是最前面的哥布林。</p>
+          <p><strong>结果</strong>：第一个哥布林承受5d6电击伤害。如果它死亡或闪电穿透了法术抗力，闪电会跳跃到第二个哥布林（造成一半伤害），然后到第三个哥布林（造成四分之一伤害）。</p>
+          <p><strong>战术</strong>：闪电链是清理大量弱敌人的有效法术。在3R中，这是对<em>闪电束</em>的改进版本。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Arcane》p. 102<br>
+          <strong>平衡性</strong>：3级法术，对付多个敌人。比<em>闪电束</em>更灵活。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>冰冻射线（Ice Ray）</h3>
+        <div class="school">塑能学派</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 3</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小块冰）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>目标</td><td>一个生物</td></tr>
+            <tr><td>持续时间</td><td>立即</td></tr>
+            <tr><td>豁免检定</td><td>反射半伤</td></tr>
+            <tr><td>法术抗力</td><td>可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你发射一道冰冻射线，对目标造成1d6/级（最大10d6）寒冷伤害。如果目标失败反射豁免，它会被麻痹1轮。</p>
+          <p>这是一个非常有用的控制法术，既可以造成伤害，又可以麻痹敌人。</p>
+          <p><strong>材料成分</strong>：一小块冰。这个冰在法术施展时消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>寒冷伤害</strong>：这种伤害会被寒冷抗力减少，被寒冷弱点增加。</li>
+            <li><strong>麻痹</strong>：如果目标失败反射豁免，它会被麻痹1轮（不能行动）。麻痹的生物失去敏捷调整值（AC变为flat-footed）。</li>
+            <li><strong>多个目标</strong>：这个法术只能影响一个目标。如果你需要影响多个目标，可以使用<em>冰风暴</em>（5级法术）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：5级法师Castor面对一只火焰巨兽（寒冷弱点）。他施展<em>冰冻射线</em>。</p>
+          <p><strong>结果</strong>：巨兽承受5d6寒冷伤害（因为寒冷弱点，伤害加倍）。如果它失败反射豁免，它会被麻痹1轮。</p>
+          <p><strong>战术</strong>：这个法术是对抗火焰生物或需要控制敌人的情况的有用工具。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Frostburn》p. 88（社区改编）<br>
+          <strong>平衡性</strong>：3级法术，造成伤害并可能麻痹。非常实用。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>酸性箭（强化版）（Acid Arrow, Greater）</h3>
+        <div class="school">塑能学派</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 5</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小瓶酸）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>目标</td><td>一个生物或物体</td></tr>
+            <tr><td>持续时间</td><td>1轮/级</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：如<em>酸性箭</em>（2级法术），但伤害更高（2d6每轮）且持续时间更长（1轮/级）。酸性箭会附着在目标上，每轮造成2d6点酸系伤害。</p>
+          <p>这个法术是持续伤害（DoT）的绝佳例子。它可以在战斗的多个轮次中造成伤害。</p>
+          <p><strong>材料成分</strong>：一小瓶酸（价值10 gp）。这个酸在法术施展时消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>持续伤害</strong>：酸性箭每轮造成2d6点伤害。这个伤害在你的回合开始时应用。</li>
+            <li><strong>附着</strong>：酸性箭会附着在目标上。它不能被甩掉或移除（除了用<em>解除魔法</em>）。</li>
+            <li><strong>伤害类型</strong>：酸系伤害会被酸系抗力减少，被酸系弱点增加。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：7级法师Elara面对一只龙（高生命值）。她施展<em>酸性箭（强化版）</em>。</p>
+          <p><strong>结果</strong>：龙每轮承受2d6点酸系伤害，持续7轮。这可以在长时间战斗中造成大量伤害。</p>
+          <p><strong>战术</strong>：这个法术适合对付高生命值的敌人。在3R中，强化版比基础版本更强大。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Arcane》p. 105（社区改编）<br>
+          <strong>平衡性</strong>：5级法术，持续伤害。适合长时间战斗。
+        </div>
+      </div>
+
+      <div class="spell-block">
+        <h3>神圣冲击波（Holy Shockwave）</h3>
+        <div class="school">塑能学派（神圣）</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>牧师 6，圣武士 6</td></tr>
+            <tr><td>成分</td><td>V, S, DF</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>个人</td></tr>
+            <tr><td>区域</td><td>以你为中心60尺扩散</td></tr>
+            <tr><td>持续时间</td><td>立即</td></tr>
+            <tr><td>豁免检定</td><td>强韧半伤</td></tr>
+            <tr><td>法术抗力</td><td>可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你释放一道神圣冲击波，对所有邪恶生物造成10d6点神圣伤害。邪恶生物在通过强韧豁免后可以减半伤害。</p>
+          <p>这个法术是牧师和圣武士对抗大量邪恶生物的重要工具。它会造成大范围的伤害。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>神圣伤害</strong>：这种伤害可以忽略对邪恶生物的伤害减免（如果它们有伤害减免的话）。</li>
+            <li><strong>范围</strong>：冲击波影响以你为中心的60尺扩散内的所有邪恶生物。</li>
+            <li><strong>善良生物</strong>：善良生物不会受这个法术影响。它只伤害邪恶生物。</li>
+          </ul>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Divine》p. 165（社区改编）<br>
+          <strong>平衡性</strong>：6级神术，大范围神圣伤害。非常强大。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spell-section">
+      <h2>🎭 幻术学派（Illusion）</h2>
+
+      <div class="spell-block">
+        <h3>高等无声幻影（Silent Image, Greater）</h3>
+        <div class="school">幻术系（虚假感官）</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 2，吟游诗人 2</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小片丝绸）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>效果</td><td>创造一个幻象</td></tr>
+            <tr><td>持续时间</td><td>专注，最长1分钟/级（可解消）</td></tr>
+            <tr><td>豁免检定</td><td>意志disbelief（如果互动）</td></tr>
+            <tr><td>法术抗力</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术创造一个视觉、听觉、嗅觉和触觉的幻象。这个幻象可以被看穿（如果观察者成功意志豁免），但只要你保持专注，它会持续存在。</p>
+          <p>这个法术是<em>无声幻影</em>（1级法术）的强化版，可以创造更大的幻象（最大10尺/级）并且有声音和气味。</p>
+          <p><strong>材料成分</strong>：一小片丝绸。这个丝绸在法术持续期间不会消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>幻象</strong>：这个幻象看起来、听起来、闻起来和感觉起来都是真实的。但它不会造成真实伤害。</li>
+            <li><strong>看穿</strong>：如果观察者与你互动（例如，触摸幻象、攻击幻象、或仔细搜查），他们可以进行意志豁免来看穿幻象。</li>
+            <li><strong>专注</strong>：你需要保持专注来维持幻象。如果你受伤或分心，你需要进行专注检定来保持幻象。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：3级法师Elara需要分散守卫的注意力。她施展<em>高等无声幻影</em>，创造一个开着门的幻象。</p>
+          <p><strong>结果</strong>：守卫看到门打开了。他们会去调查，给Elara机会潜入。</p>
+          <p><strong>战术</strong>：这个法术是潜行和欺骗场景的重要工具。在3R中，强化版增加了声音和气味，让幻象更加真实。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Arcane》p. 112（社区改编）<br>
+          <strong>平衡性</strong>：2级法术，创造真实幻象。非常实用。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spell-section">
+      <h2>💀 死灵学派（Necromancy）</h2>
+
+      <div class="spell-block">
+        <h3>生命吸取（强化版）（Life Drain, Greater）</h3>
+        <div class="school">死灵系</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 6</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小块黑曜石）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>目标</td><td>一个活物生物</td></tr>
+            <tr><td>持续时间</td><td>立即</td></tr>
+            <tr><td>豁免检定</td><td>强韧partial</td></tr>
+            <tr><td>法术抗力</td><td>可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：这个法术从目标身上吸取生命力，造成1d6/级（最大15d6）负能量伤害。你获得临时生命值等于造成的伤害（最高+10每3施法者等级）。</p>
+          <p>这是一个非常强大的法术，既可以造成伤害，又可以治疗自己（通过临时生命值）。</p>
+          <p><strong>材料成分</strong>：一小块黑曜石。这个黑曜石在法术施展时消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>负能量伤害</strong>：这种伤害会被负能量抗力减少，被负能量弱点增加。不死生物会被这个法术治疗而不是伤害。</li>
+            <li><strong>临时生命值</strong>：你获得的临时生命值持续1小时。它们可以被用来吸收伤害。</li>
+            <li><strong>强韧partial</strong>：如果目标通过强韧豁免，它只承受一半伤害（并且你获得一半临时生命值）。</li>
+          </ul>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Libris Mortis》p. 72（社区改编）<br>
+          <strong>平衡性</strong>：6级法术，造成伤害并获得临时生命值。非常强大。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spell-section">
+      <h2>🦅 变化学派（Transmutation）</h2>
+
+      <div class="spell-block">
+        <h3>鹰之威仪（群体）（Eagle's Splendor, Mass）</h3>
+        <div class="school">变化系</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>术士/法师 6，牧师 6</td></tr>
+            <tr><td>成分</td><td>V, S, M（一小片鹰的羽毛）</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>目标</td><td>最多一个生物/级</td></tr>
+            <tr><td>持续时间</td><td>1分钟/级</td></tr>
+            <tr><td>豁免检定</td><td>意志negates（无害）</td></tr>
+            <tr><td>法术抗力</td><td>可（无害）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：如<em>鹰之威仪</em>（2级法术），但影响多个目标。目标的魅力获得+4魅力调整值（最低魅力18）。</p>
+          <p>这个法术是社交场景的重要工具。它让你和你的队友在交涉、威吓等技能上获得加值。</p>
+          <p><strong>材料成分</strong>：一小片鹰的羽毛。这个羽毛在法术持续期间不会消耗。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>魅力加值</strong>：+4魅力调整值影响基于魅力的技能（交涉、威吓、表演等）和法术豁免DC（对于术士和吟游诗人）。</li>
+            <li><strong>多个目标</strong>：你可以影响最多一个生物/级。目标是你选择的，必须在施法距离内。</li>
+            <li><strong>最低18</strong>：如果目标的魅力已经高于18，这个法术不会提供额外加值。</li>
+          </ul>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《PHB》p. 226（社区改编，群体版）<br>
+          <strong>平衡性</strong>：6级法术，群体增强魅力。适合社交场景。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spell-section">
+      <h2>💚 神术（Divine Spells）</h2>
+
+      <div class="spell-block">
+        <h3>神圣愤怒（Divine Wrath）</h3>
+        <div class="school">神术 - 塑能</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>牧师 3，圣武士 3</td></tr>
+            <tr><td>成分</td><td>V, S, DF</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>目标</td><td>一个邪恶异界生物</td></tr>
+            <tr><td>持续时间</td><td>立即</td></tr>
+            <tr><td>豁免检定</td><td>强韧半伤</td></tr>
+            <tr><td>法术抗力</td><td>可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你召唤神圣能量打击邪恶异界生物，造成1d8/级（最大10d8）神圣伤害。邪恶异界生物在通过强韧豁免后可以减半伤害。</p>
+          <p><strong>限制</strong>：只能对邪恶异界生物使用。对善良或中立异界生物无效。</p>
+          <p><strong>3R改进</strong>：在《Complete Divine》中，神圣愤怒可以附加额外效果：如果目标死亡，它会变成灰烬（无法复活，除非使用<em>真复活术</em>或更强法术）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>异界生物</strong>：只有具有"异界生物"子类型的生物才会受此法术影响。</li>
+            <li><strong>神圣伤害</strong>：这种伤害可以忽略对邪恶生物的伤害减免（如果它们有伤害减免的话）。</li>
+            <li><strong>灰烬效果</strong>：在3R中，如果目标死亡并变成灰烬，这意味着它无法被普通复活术复活。只有<em>真复活术</em>或<em>奇迹术</em>可以复活它。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：4级牧师Tycho面对一只恶魔（邪恶异界生物）。他施展<em>神圣愤怒</em>。</p>
+          <p><strong>结果</strong>：恶魔承受4d8神圣伤害。如果它没有通过强韧豁免，它会承受全额伤害。如果它通过豁免，它承受一半伤害。</p>
+          <p><strong>战术</strong>：神圣愤怒是牧师和圣武士对抗邪恶异界生物的主要法术。在3R中，它的灰烬效果让它更加致命。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Divine》p. 164<br>
+          <strong>平衡性</strong>：3级神术，专门对抗邪恶异界生物。非常强大。
+        </div>
+      </div>
+    </div>
+
+    <!-- 更多3R法术 -->
+    <div class="spell-section">
+      <h2>更多3R法术</h2>
+
+      <!-- 防护学派 -->
+      <div class="spell-block">
+        <div class="spell-name">法术抗力屏障</div>
+        <div class="school">防护 - 防护</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>法师/术士 4</td></tr>
+            <tr><td>成分</td><td>V, S, M</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>接触</td></tr>
+            <tr><td>目标</td><td>接触的生物</td></tr>
+            <tr><td>持续时间</td><td>1分钟/级</td></tr>
+            <tr><td>豁免检定</td><td>意志否定（无害）</td></tr>
+            <tr><td>法术抗力</td><td>可（无害）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你为接触的生物创造一个法术抗力屏障。目标获得法术抗力等于10+你的施法等级。这个法术抗力可以用来否定其他法术的效果。</p>
+          <p><strong>3R改进</strong>：在《Complete Arcane》中，法术抗力屏障可以叠加。如果目标已经有法术抗力，新的法术抗力取较高值。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>法术抗力</strong>：法术抗力用来否定其他法术。当一个人对你施展法术时，你可以进行法术抗力检定（1d20+SR对抗法术DC）。</li>
+            <li><strong>叠加</strong>：在3R中，法术抗力屏障可以叠加。如果目标已经有法术抗力（如ceremony of aura），新的法术抗力取较高值。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：8级法师Elara为战士同伴施展<em>法术抗力屏障</em>。</p>
+          <p><strong>结果</strong>：战士获得SR 18。如果敌人法师对战士施展<em>火球术</em>，战士可以进行SR检定（1d20+18对抗DC 14）。如果成功，火球术对战士无效。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Arcane》p. 182<br>
+          <strong>平衡性</strong>：4级法术，为无SR的职业提供SR。
+        </div>
+      </div>
+
+      <!-- 咒法学派 -->
+      <div class="spell-block">
+        <div class="spell-name">召唤元素盟友</div>
+        <div class="school">咒法 - 召唤</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>法师/术士 4，德鲁伊 4</td></tr>
+            <tr><td>成分</td><td>V, S, M</td></tr>
+            <tr><td>施法时间</td><td>1轮</td></tr>
+            <tr><td>距离</td><td>近距（25尺+5尺/2级）</td></tr>
+            <tr><td>效果</td><td>召唤一个元素盟友</td></tr>
+            <tr><td>持续时间</td><td>1轮/级</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>不可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你从元素位面召唤一个元素盟友。你可以选择火、水、土、气四种元素之一。元素盟友的CR等于你的施法等级除以3（最大CR 6）。元素盟友会听从你的命令。</p>
+          <p><strong>3R改进</strong>：在《Complete Divine》中，召唤元素盟友可以选择更具体的元素生物（如efreeti、djinni、dao、marid）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>元素盟友</strong>：元素盟友是来自元素位面的生物。它们不是召唤怪物，而是请求帮助。</li>
+            <li><strong>CR</strong>：元素盟友的CR = 施法等级/3。例如，8级施法者召唤CR 2的元素盟友。</li>
+            <li><strong>命令</strong>：元素盟友会听从你的命令，但它们有自己的意志。如果命令与它们的本性冲突，它们可能拒绝。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：8级德鲁伊Thorne施展<em>召唤元素盟友</em>，选择火元素。</p>
+          <p><strong>结果</strong>：一个CR 2的火元素出现。Thorne命令它攻击敌人。火元素会攻击，但它的火焰攻击可能对队友造成误伤。</p>
+          <p><strong>战术</strong>：召唤元素盟友是德鲁伊和法师的重要法术。在选择元素类型时，要考虑战斗环境和队友。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Divine》p. 188<br>
+          <strong>平衡性</strong>：4级法术，召唤元素盟友。非常有用。
+        </div>
+      </div>
+
+      <!-- 预言学派 -->
+      <div class="spell-block">
+        <div class="spell-name">识破隐形（强化版）</div>
+        <div class="school">预言 - 预言</div>
+
+        <div class="spell-info">
+          <table>
+            <tr><td>等级</td><td>法师/术士 2，牧师 2，巡林客 2</td></tr>
+            <tr><td>成分</td><td>V, S, M</td></tr>
+            <tr><td>施法时间</td><td>1标准动作</td></tr>
+            <tr><td>距离</td><td>个人</td></tr>
+            <tr><td>目标</td><td>自己</td></tr>
+            <tr><td>持续时间</td><td>1分钟/级</td></tr>
+            <tr><td>豁免检定</td><td>无</td></tr>
+            <tr><td>法术抗力</td><td>不可</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你获得看破隐形的能力。你可以看到隐形生物和物体，以及星界位面和灵界位面的生物。这个法术也让你能够看到60英尺内的密门和陷阱。</p>
+          <p><strong>3R改进</strong>：在《Complete Diviner》中，识破隐形（强化版）可以看破<em>模糊术</em>和<em> displacement</em>的效果。你对抗这些法术的豁免有+4加值。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>看破隐形</strong>：这个法术让你能够看到隐形生物和物体。隐形生物在你的视野中显示为半透明轮廓。</li>
+            <li><strong>强化版</strong>：在3R中，这个法术可以看破<em>模糊术</em>和<em>displacement</em>。这些法术通常让攻击者受到20%失手几率（miss chance），但识破隐形（强化版）将这个失手几率减少到0%。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：4级法师Elara怀疑房间里有隐形敌人。她施展<em>识破隐形（强化版）</em>。</p>
+          <p><strong>结果</strong>：她看到房间角落里有一个隐形刺客。她还可以看到墙上的密门。她现在可以攻击刺客，不受隐形惩罚。</p>
+          <p><strong>战术</strong>：识破隐形（强化版）是探索和解谜的重要法术。在3R中，它的强化效果让它更有用。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Diviner》p. 156<br>
+          <strong>平衡性</strong>：2级法术，看破隐形和幻影。非常有用。
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="color: #666; margin-bottom: 10px;">D&D 3.5e 中文Wiki - 3R拓展功能大全</p>
+      <p style="color: #999; font-size: 0.9em;">本页面内容基于官方资料和社区创作 | 最后更新：2026-06-20</p>
+      <p style="color: #999; font-size: 0.85em; margin-top: 10px;">专业Wiki标准：完整法术属性 | 详细机制 | 使用示例 | 来源标注</p>
+    </div>
+  </div>
+</body>
+</html>

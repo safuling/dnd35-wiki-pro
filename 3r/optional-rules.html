@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3R拓展功能大全 - 可选规则 | D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .header p { font-size: 1.1em; opacity: 0.9; }
+
+    .nav-links { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .nav-links a { padding: 8px 16px; background: white; color: #667eea; text-decoration: none; border-radius: 4px; border: 2px solid #667eea; transition: all 0.3s; }
+    .nav-links a:hover { background: #667eea; color: white; }
+
+    .intro { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .intro h2 { color: #667eea; margin-bottom: 15px; }
+
+    .section { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .section h2 { color: #764ba2; margin-bottom: 20px; border-bottom: 2px solid #764ba2; padding-bottom: 10px; }
+
+    .rule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+
+    .rule-card { border: 2px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: all 0.3s; background: #fafafa; }
+    .rule-card:hover { border-color: #667eea; box-shadow: 0 4px 12px rgba(102,126,234,0.2); }
+    .rule-card h3 { color: #667eea; margin-bottom: 10px; font-size: 1.3em; }
+    .rule-card .category { display: inline-block; padding: 3px 10px; background: #764ba2; color: white; border-radius: 3px; font-size: 0.85em; margin-bottom: 10px; }
+    .rule-card .desc { font-size: 0.95em; color: #555; line-height: 1.5; margin: 10px 0; }
+    .rule-card .effect { background: #e8f5e9; padding: 10px; border-radius: 4px; margin: 10px 0; font-size: 0.9em; }
+
+    .table-container { overflow-x: auto; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+    th { background: #667eea; color: white; font-weight: 600; }
+    tr:hover { background: #f5f5f5; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="container">
+    <div class="header">
+      <h1>📜 3R拓展功能大全</h1>
+      <p>可选规则 - D&D 3.5e 扩展内容</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">🏠 返回主页</a>
+      <a href="new-races.html">🧝 新增种族</a>
+      <a href="new-classes.html">⚔️ 新增职业</a>
+      <a href="new-feats.html">🌟 新增专长</a>
+      <a href="new-spells.html">✨ 新增法术</a>
+      <a href="new-equipment.html">⚔️ 新增装备</a>
+      <a href="new-monsters.html">👹 新增怪物</a>
+      <a href="optional-rules.html">📜 可选规则</a>
+    </div>
+
+    <div class="intro">
+      <h2>📖 关于可选规则</h2>
+      <p><strong>3R拓展</strong>中的可选规则包括：</p>
+      <ul style="margin-left: 20px; margin-top: 10px;">
+        <li><strong>战斗可选规则</strong>：格挡、缴械、解除武器、两脚规战斗等</li>
+        <li><strong>魔法可选规则</strong>：法术失败、法术成分变更、法术平衡调整等</li>
+        <li><strong>战役可选规则</strong>：快速升级、慢速升级、多职业限制等</li>
+        <li><strong>角色创建可选规则</strong>：买点系统、随机属性、背景故事奖励等</li>
+        <li><strong>其他可选规则</strong>：天气系统、战利品表、名声系统等</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>⚔️ 战斗可选规则</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>格挡规则</h3>
+          <span class="category">战斗</span>
+          <div class="desc">在防御时可以用盾牌或武器格挡攻击。</div>
+          <div class="effect">
+            <strong>规则</strong>： standard action, 盾牌加值+2（可叠加到AC）, 攻击检定-2。<br>
+            <strong>专长</strong>：<em>精通格挡</em>可以消除攻击减值。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>缴械规则</h3>
+          <span class="category">战斗</span>
+          <div class="desc">可以尝试缴械对手的武器。</div>
+          <div class="effect">
+            <strong>规则</strong>：melee touch attack, 对手反射检定DC = 你的攻击检定。<br>
+            <strong>失败后果</strong>：武器掉落，需要move action捡起。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>两脚规战斗</h3>
+          <span class="category">战斗</span>
+          <div class="desc">使用长武器（如长矛、长柄刀）的战斗风格。</div>
+          <div class="effect">
+            <strong>规则</strong>：10尺触及, 可以对触及内的敌人攻击而不被反击。<br>
+            <strong>专长</strong>：<em>精通长武器</em>。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>夹击改进</h3>
+          <span class="category">战斗</span>
+          <div class="desc">改进的夹击规则，提供更多的战术选择。</div>
+          <div class="effect">
+            <strong>规则</strong>：夹击给予+4攻击加值（原为+2）, 夹击的敌人可以选择对哪个夹击者进行attacks of opportunity。<br>
+            <strong>可选</strong>：夹击时可以尝试特殊动作（如摔绊、缴械）。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>✨ 魔法可选规则</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>法术失败规则</h3>
+          <span class="category">魔法</span>
+          <div class="desc">施法时可能失败，特别是在受到攻击时。</div>
+          <div class="effect">
+            <strong>规则</strong>：受到攻击时施法需要 concentration check (DC = 伤害的一半)。<br>
+            <strong>失败后果</strong>：法术位丢失，法术失败。<br>
+            <strong>专长</strong>：<em>钢铁意志</em>提供+4加值。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>法术成分简化</h3>
+          <span class="category">魔法</span>
+          <div class="desc">简化法术成分，让施法更流畅。</div>
+          <div class="effect">
+            <strong>规则</strong>：材料成分可以用施法者包代替（100 gp施法者包可以替代所有价值≤50 gp的材料成分）。<br>
+            <strong>专注</strong>：专注成分可以简化（不需要crossbow bolt）。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>法术平衡调整</h3>
+          <span class="category">魔法</span>
+          <div class="desc">调整某些过于强大或过于弱小的法术。</div>
+          <div class="effect">
+            <strong>调整</strong>：<br>
+            - <em>魅惑怪物</em>：HD限制降低（原9d4→6d4）<br>
+            - <em>唤醒</em>：可以pets multiple animals<br>
+            - <em>隐形</em>：不再被攻击击穿<br>
+            <strong>目的</strong>：让法术更平衡。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📜 战役可选规则</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>快速升级</h3>
+          <span class="category">战役</span>
+          <div class="desc">降低升级所需经验值，让角色更快成长。</div>
+          <div class="effect">
+            <strong>规则</strong>：升级所需经验值减半。<br>
+            <strong>效果</strong>：角色更快达到高等级，适合短campaign。<br>
+            <strong>推荐</strong>：新手玩家、短campaign（1-5级）。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>慢速升级</h3>
+          <span class="category">战役</span>
+          <div class="desc">提高升级所需经验值，让角色更慢成长。</div>
+          <div class="effect">
+            <strong>规则</strong>：升级所需经验值翻倍。<br>
+            <strong>效果</strong>：角色更慢达到高等级，适合长篇campaign。<br>
+            <strong>推荐</strong>：经验丰富的玩家、长篇campaign（1-20级）。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>多职业限制</h3>
+          <span class="category">战役</span>
+          <div class="desc">限制多职业，让角色更专业化。</div>
+          <div class="effect">
+            <strong>规则</strong>：最多只能有两个职业，且第二个职业不能超过第一个职业的等级-3。<br>
+            <strong>效果</strong>：角色更专业化，避免"样样通样样松"。<br>
+            <strong>可选</strong>：完全禁止多职业。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🎲 角色创建可选规则</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>买点系统</h3>
+          <span class="category">角色创建</span>
+          <div class="desc">使用买点系统分配属性，而不是掷骰子。</div>
+          <div class="effect">
+            <strong>规则</strong>：25买点（标准）, 32买点（高幻想）, 18买点（低魔法）。<br>
+            <strong>属性花费</strong>：8(0), 9(1), 10(2), 11(3), 12(4), 13(5), 14(6), 15(8), 16(10), 17(13), 18(16)。<br>
+            <strong>优点</strong>：更平衡，避免极端属性。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>背景故事奖励</h3>
+          <span class="category">角色创建</span>
+          <div class="desc">为背景故事丰富的角色提供奖励。</div>
+          <div class="effect">
+            <strong>规则</strong>：写1000+字背景故事的角色获得额外100 gp或1个额外专长。<br>
+            <strong>目的</strong>：鼓励角色扮演，让角色更有深度。<br>
+            <strong>限制</strong>：DM审核背景故事的合理性。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>随机属性（改良版）</h3>
+          <span class="category">角色创建</span>
+          <div class="desc">使用改良的随机属性生成方法。</div>
+          <div class="effect">
+            <strong>规则</strong>：4d6 drop lowest, 可以重掷任何属性低于8的结果一次。<br>
+            <strong>优点</strong>：保留随机性，但避免极端低属性。<br>
+            <strong>可选</strong>：可以swap any two ability scores。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🌟 其他可选规则</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>规则名称</th>
+              <th>类别</th>
+              <th>效果</th>
+              <th>适用场景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>天气系统</strong></td>
+              <td>环境</td>
+              <td>复杂的天气效果，影响移动、射击、施法等</td>
+              <td>户外冒险、长期campaign</td>
+            </tr>
+            <tr>
+              <td><strong>战利品表</strong></td>
+              <td>奖励</td>
+              <td>根据怪物CR生成战利品表</td>
+              <td>所有campaign</td>
+            </tr>
+            <tr>
+              <td><strong>名声系统</strong></td>
+              <td>社交</td>
+              <td>角色的名声影响NPC的态度和价格</td>
+              <td>城市冒险、政治campaign</td>
+            </tr>
+            <tr>
+              <td><strong>受伤系统</strong></td>
+              <td>战斗</td>
+              <td>受到重创后获得临时penalty，需要heal或rest</td>
+              <td>现实主义campaign</td>
+            </tr>
+            <tr>
+              <td><strong>武器耐久</strong></td>
+              <td>装备</td>
+              <td>武器和护甲会损坏，需要修理</td>
+              <td>现实主义campaign</td>
+            </tr>
+            <tr>
+              <td><strong>魔法物品稀缺</strong></td>
+              <td>魔法</td>
+              <td>魔法物品更稀有，价格翻倍</td>
+              <td>低魔法campaign</td>
+            </tr>
+            <tr>
+              <td><strong>快速战斗</strong></td>
+              <td>战斗</td>
+              <td>简化战斗规则，加快节奏</td>
+              <td>大型战斗、新手玩家</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>⚔️ 战斗可选规则（补充）</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>压制攻击</h3>
+          <span class="category">战斗</span>
+          <div class="desc">用持续远程火力压制敌人，限制其行动自由。</div>
+          <div class="effect">
+            <strong>规则</strong>：同一敌人每轮被远程攻击命中至少一次，则下一轮该敌人的移动速度减半，且对其进行的首次近战攻击获得+2偏袒加值。<br>
+            <strong>限制</strong>：仅对可见且40尺内的敌人有效；对大型或更大体型敌人效果减半（仅速度-1/4）。<br>
+            <strong>专长</strong>：<em>精准射击</em>可将有效距离延伸至60尺。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>战斗姿态</h3>
+          <span class="category">战斗</span>
+          <div class="desc">战斗开始前选择姿态，获得持续性战斗加成。</div>
+          <div class="effect">
+            <strong>姿态选项</strong>：<br>
+            - <em>防御姿态</em>：AC +2，所有攻击检定 -2<br>
+            - <em>攻击姿态</em>：所有攻击检定 +2，AC -2<br>
+            - <em>迅捷姿态</em>：先攻检定 +4，反射豁免 -2<br>
+            <strong>切换</strong>：以标准动作切换姿态；姿态效果持续至下次切换或战斗结束。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>远程距离惩罚</h3>
+          <span class="category">战斗</span>
+          <div class="desc">远程攻击随距离增加承受更真实的精度惩罚。</div>
+          <div class="effect">
+            <strong>规则</strong>：远程攻击在中距离（20-40尺）-2，远距离（40-80尺）-5，极远距离（80尺以上）-10。<br>
+            <strong>弓类例外</strong>：长弓、短弓的最大射程为100尺，惩罚同上。<br>
+            <strong>专长</strong>：<em>近程射击</em>抵消中距惩罚；<em>远距离射击</em>抵消远距及极远距惩罚。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>流血与重伤</h3>
+          <span class="category">战斗</span>
+          <div class="desc">严重伤害会导致持续流血，需要及时医疗处理。</div>
+          <div class="effect">
+            <strong>触发</strong>：单次受到伤害超过当前生命值一半时，立即获得1d4点流血伤害/轮。<br>
+            <strong>止血</strong>：DC 15医疗检定（标准动作）或任何治疗法术可止住流血。<br>
+            <strong>叠加</strong>：多次流血效果叠加骰值，但同一伤害来源不重复触发。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>✨ 魔法可选规则（补充）</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>法术位恢复</h3>
+          <span class="category">魔法</span>
+          <div class="desc">允许通过短期休息恢复部分已消耗的法术位。</div>
+          <div class="effect">
+            <strong>规则</strong>：进行1小时短休后，可恢复总数不超过已消耗法术位1/4的法术位（向上取整），且恢复的法术位环数总和不超过角色等级的一半。<br>
+            <strong>限制</strong>：每24小时只能恢复一次；不能恢复最高环的法术位。<br>
+            <strong>平衡</strong>：避免施法者在一日多场战斗中过度强势。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>仪式法术</h3>
+          <span class="category">魔法</span>
+          <div class="desc">某些非战斗法术可通过长时间仪式免费施展，不消耗法术位。</div>
+          <div class="effect">
+            <strong>规则</strong>：法术环数 × 10分钟仪式时间 + 100 gp材料组件，施展时不消耗法术位。<br>
+            <strong>适用范围</strong>：仅限无即时战斗价值的法术（DM裁定），如<em>识破隐形</em>、<em>高等复原术</em>、<em>通晓语言</em>等。<br>
+            <strong>平衡</strong>：仪式期间角色易受影响，且需提前规划。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>法术融合</h3>
+          <span class="category">魔法</span>
+          <div class="desc">将多个低环法术位融合为更高环的法术位，提供法术位灵活性。</div>
+          <div class="effect">
+            <strong>规则</strong>：消耗两个同环法术位，融合为一个下一环的法术位（最高至9环）；融合在长休时完成。<br>
+            <strong>限制</strong>：融合后的法术位必须在下次长休前使用，否则消散。<br>
+            <strong>平衡</strong>：牺牲法术位数量换取高环法术的释放能力，适合特殊战术需求。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>施法干扰</h3>
+          <span class="category">魔法</span>
+          <div class="desc">在喧闹或危险环境中施法面临更大失败风险。</div>
+          <div class="effect">
+            <strong>规则</strong>：在噪声≥50 dB的环境中施法，专注检定DC额外+2；在行走/骑行中施法，专注检定DC+4。<br>
+            <strong>失败后果</strong>：失败的法术仍消耗法术位；DC低于10则法术位也保留。<br>
+            <strong>专长</strong>：<em>寂静施法</em>专长可使环境惩罚减半。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🤝 社交可选规则</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>声望系统</h3>
+          <span class="category">社交</span>
+          <div class="desc">角色在特定地区或组织中的名声会显著影响游戏体验。</div>
+          <div class="effect">
+            <strong>数值</strong>：声望范围-20（臭名昭著）至+20（传奇），初始为0。<br>
+            <strong>正面效果</strong>：声望≥10时，目标地区内商品价格-10%，相关社交检定+2。<br>
+            <strong>负面效果</strong>：声望≤-10时，守卫主动敌视，商品价格+50%，社交检定-4。<br>
+            <strong>改变</strong>：完成重大任务+1d4，公开犯罪或背信-1d6；改变后需在该地区停留至少一周才能生效。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>人脉网络</h3>
+          <span class="category">社交</span>
+          <div class="desc">角色可以建立并维护人脉关系，在需要时获得帮助和信息。</div>
+          <div class="effect">
+            <strong>获得</strong>：每升两级获得一个新的人脉（上限10人）；人脉类型包括信息贩子、工匠、学者、盗贼等。<br>
+            <strong>使用</strong>：每周一次可联系人脉获得帮助，需成功的交涉检定（DC 12-18）。<br>
+            <strong>风险</strong>：人脉可能被威胁、贿赂或杀害；人脉死亡或背叛后需重新建立。<br>
+            <strong>专长</strong>：<em>交际大师</em>专长可使人脉上限+5。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>威望奖励</h3>
+          <span class="category">社交</span>
+          <div class="desc">在关键社交场合表现出色可获得威望点数，用于换取社交优势。</div>
+          <div class="effect">
+            <strong>获得</strong>：在贵族舞会、审判、谈判等关键社交场景中，成功检定可获得1-3威望点数。<br>
+            <strong>消费</strong>：1点可换取某NPC态度改善一阶；3点可换取一次入场许可或珍贵情报；5点可请求势力提供帮助（DM裁定）。<br>
+            <strong>重置</strong>：每章节（约4-6次会话）威望重置为0；未使用的点数不累积。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🗺️ 探索可选规则</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>旅行疲劳</h3>
+          <span class="category">探索</span>
+          <div class="desc">长途强行军会积累疲劳，影响角色的生理和战斗表现。</div>
+          <div class="effect">
+            <strong>规则</strong>：每天行军超过8小时的部分，每额外小时所有角色获得1点疲劳（体质检定DC 15可避免）。<br>
+            <strong>效果</strong>：每有1点疲劳，所有基于力量、敏捷、体质的检定-1，移动速度-5尺，强韧豁免-1。<br>
+            <strong>恢复</strong>：每晚充分睡眠恢复1d4点疲劳；<em>移除疲劳</em>法术可立即移除所有疲劳。<br>
+            <strong>极限</strong>：疲劳点数上限为角色等级+体质调整值。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>资源消耗</h3>
+          <span class="category">探索</span>
+          <div class="desc">在荒野中探险时，食物、水和装备会逐渐消耗，需要主动管理。</div>
+          <div class="effect">
+            <strong>消耗率</strong>：每个角色每天消耗1磅食物和1加仑水；缺少食物时每天体质-1（最低0）；缺少水时每天体质-2（最低0）。<br>
+            <strong>狩猎/采集</strong>：生存检定DC 15可在野外找到食物和水；DC 20可找到足够全队一天的补给。<br>
+            <strong>装备损耗</strong>：每在荒野度过3天，需进行装备检定（DC 12），失败则某件装备损坏（需修理）。<br>
+            <strong>目的</strong>：增强荒野探索的紧张感和资源管理的重要性。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>定向迷航</h3>
+          <span class="category">探索</span>
+          <div class="desc">在没有明确路标或地图的地区，角色有可能迷失方向。</div>
+          <div class="effect">
+            <strong>规则</strong>：在荒地、密林、地下或海上等环境中，向导需每4小时进行一次生存检定（DC 12-20，取决于环境难度）以确定方向。<br>
+            <strong>失败后果</strong>：迷路时队伍实际移动方向偏离目标45-90度；DM可安排额外遭遇或延迟到达时间。<br>
+            <strong>修正</strong>：拥有<em>方向感</em>专长的角色获得+4加值；拥有地图或路标时DC-5。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🔧 其他创意规则</h2>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <h3>属性上限突破</h3>
+          <span class="category">角色进阶</span>
+          <div class="desc">达到高等级后，允许通过特殊途径将属性值提高到20以上。</div>
+          <div class="effect">
+            <strong>解锁条件</strong>：角色等级达到20级后，可完成史诗任务或消耗100,000 XP将一项属性上限提高至22。<br>
+            <strong>渐进提升</strong>：从22提升至24需额外200,000 XP；24以上每+2需再翻倍。<br>
+            <strong>效果</strong>：属性超过20后，每+2仍获得一次调整值+1（即22→调整值+6，24→调整值+7，以此类推）。<br>
+            <strong>平衡</strong>：仅在史诗级战役（25级以上）中启用。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>死亡创伤</h3>
+          <span class="category">战役</span>
+          <div class="desc">角色死亡并复活后会承受永久性创伤，使死亡更具分量。</div>
+          <div class="effect">
+            <strong>规则</strong>：角色被复活后，获得1d4点<em>创伤值</em>，可分配至体质、力量、敏捷、智力中的任意项（每项最多承受等于角色等级的创伤）。<br>
+            <strong>效果</strong>：每点创伤使对应属性调整值-1（最低-5）。<br>
+            <strong>恢复</strong>：<em>复原术</em>可移除1d4点创伤；<em>奇迹术</em>或<em>许愿术</em>可移除所有创伤；长期休养（1个月）可恢复1点创伤。<br>
+            <strong>目的</strong>：避免"死亡无代价"的问题，增加战役的紧张感。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>幸运点</h3>
+          <span class="category">通用</span>
+          <div class="desc">每位角色每场游戏会议获得幸运点，可用于重掷不满意的骰子。</div>
+          <div class="effect">
+            <strong>获得</strong>：每4小时游戏时间获得1点幸运点（单场会议上限3点）。<br>
+            <strong>使用</strong>：可在任何d20检定或豁免检定后消耗1点幸运点重掷；必须接受第二次掷骰结果。<br>
+            <strong>额外获得</strong>：出色的角色扮演表现（DM判定）可在会议结束时获得额外1点幸运点。<br>
+            <strong>继承</strong>：未使用的幸运点可累积至下次会议（上限5点）。
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>多职业不同步惩罚</h3>
+          <span class="category">角色创建</span>
+          <div class="desc">为多职业角色添加轻微惩罚，鼓励职业专精。</div>
+          <div class="effect">
+            <strong>规则</strong>：当角色拥有多职业时，所有职业的豁免加值、攻击加值和专业技能调整值-1（可降至最低+0）。<br>
+            <strong>例外</strong>：兼职不超过4级的不受惩罚；高等角色（15级以上）所受惩罚减半。<br>
+            <strong>目的</strong>：避免"样样通样样松"的优化构建，让单职业和适度的多职业更具竞争力。<br>
+            <strong>DM裁量</strong>：可选择仅在PVP或高难度战役中启用此规则。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="color: #666; margin-bottom: 10px;">D&D 3.5e 中文Wiki - 3R拓展功能大全</p>
+      <p style="color: #999; font-size: 0.9em;">本页面内容基于官方资料和社区创作 | 最后更新：2026-06-20</p>
+    </div>
+  </div>
+</body>
+</html>

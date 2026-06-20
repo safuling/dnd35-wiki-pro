@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3R拓展功能大全 - 新增怪物 | D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .header p { font-size: 1.1em; opacity: 0.9; }
+
+    .nav-links { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .nav-links a { padding: 8px 16px; background: white; color: #667eea; text-decoration: none; border-radius: 4px; border: 2px solid #667eea; transition: all 0.3s; font-size: 0.9em; }
+    .nav-links a:hover { background: #667eea; color: white; }
+
+    .intro { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .intro h2 { color: #667eea; margin-bottom: 15px; }
+    .intro p { margin-bottom: 10px; }
+
+    .monster-section { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .monster-section h2 { color: #764ba2; margin-bottom: 20px; border-bottom: 2px solid #764ba2; padding-bottom: 10px; }
+
+    .monster-block { border: 3px solid #667eea; border-radius: 8px; padding: 20px; margin-bottom: 30px; background: #fefefe; }
+    .monster-block h3 { color: #667eea; font-size: 1.8em; margin-bottom: 5px; }
+    .monster-block .subtitle { color: #666; font-style: italic; margin-bottom: 15px; }
+
+    .stat-block { background: #f9f9f9; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #764ba2; }
+    .stat-block h4 { color: #764ba2; margin-bottom: 10px; }
+    .stat-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 5px 0; }
+    .stat-item { flex: 1; min-width: 150px; }
+
+    .ability-scores { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 15px 0; }
+    .ability-box { text-align: center; padding: 10px; background: white; border-radius: 4px; border: 1px solid #ddd; }
+    .ability-box .name { font-weight: bold; color: #667eea; }
+    .ability-box .score { font-size: 1.5em; font-weight: bold; }
+    .ability-box .mod { color: #666; }
+
+    .tactics, .ecology, .variants { background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 15px 0; }
+    .tactics h4, .ecology h4, .variants h4 { color: #2e7d32; margin-bottom: 10px; }
+
+    .source { background: #fff3e0; padding: 10px; border-radius: 4px; margin-top: 15px; font-size: 0.9em; }
+    .source strong { color: #e65100; }
+
+    .table-container { overflow-x: auto; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+    th { background: #667eea; color: white; font-weight: 600; }
+    tr:hover { background: #f5f5f5; }
+
+    .cr-badge { display: inline-block; padding: 5px 15px; background: #d32f2f; color: white; border-radius: 4px; font-weight: bold; font-size: 1.1em; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="container">
+    <div class="header">
+      <h1>👹 3R拓展功能大全</h1>
+      <p>新增怪物 - D&D 3.5e 扩展内容</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">🏠 返回主页</a>
+      <a href="new-races.html">🧝 新增种族</a>
+      <a href="new-classes.html">⚔️ 新增职业</a>
+      <a href="new-feats.html">🌟 新增专长</a>
+      <a href="new-spells.html">✨ 新增法术</a>
+      <a href="new-equipment.html">⚔️ 新增装备</a>
+      <a href="new-monsters.html">👹 新增怪物</a>
+      <a href="optional-rules.html">📜 可选规则</a>
+      <a href="resources-tools.html">🔧 资源与工具</a>
+    </div>
+
+    <div class="intro">
+      <h2>📖 关于新增怪物</h2>
+      <p>本页面收录了来自<strong>官方拓展资料</strong>和<strong>社区平衡创作</strong>的新增怪物。</p>
+      <p>每个怪物条目包含：</p>
+      <ul style="margin-left: 20px; margin-top: 10px;">
+        <li><strong>完整属性块</strong>：所有战斗数据</li>
+        <li><strong>战术分析</strong>：怪物如何战斗</li>
+        <li><strong>生态信息</strong>：栖息地、行为、社会结构</li>
+        <li><strong>变体</strong>：不同环境的变体</li>
+        <li><strong>来源标注</strong>：官方资料书或社区来源</li>
+      </ul>
+    </div>
+
+    <div class="monster-section">
+      <h2>🧠 灵能生物</h2>
+
+      <div class="monster-block">
+        <h3>灵能据点（Cerebral Parasite）</h3>
+        <div class="subtitle">超小型异怪</div>
+        <span class="cr-badge">CR 2</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：15 (3d6+6)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：15（天生）</div>
+            <div class="stat-item"><strong>接触AC</strong>：17</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：13</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>基本攻击加值</strong>：+2</div>
+            <div class="stat-item"><strong>擒抱</strong>：-4</div>
+            <div class="stat-item"><strong>攻击加值</strong>：+4 近战（心灵穿刺）</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>速度</strong>：20尺，攀爬20尺</div>
+            <div class="stat-item"><strong>空间/触及</strong>：2.5尺/0尺</div>
+            <div class="stat-item"><strong>特殊攻击</strong>：心灵穿刺、寄生</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">6</div>
+              <div class="mod">(-2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">16</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">12</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">8</div>
+              <div class="mod">(-1)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>豁免检定</strong>：强韧+4，反射+5，意志+4</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>技能</strong>：攀爬+8，隐匿+12，察觉+7，专注+7</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>专长</strong>：<a href="../feats/alertness.html">警觉</a>、<a href="../feats/stealthy.html">隐匿</a></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>环境</strong>：地下</div>
+            <div class="stat-item"><strong>组织</strong>：单独、一对、群落（3-8）</div>
+            <div class="stat-item"><strong>挑战等级</strong>：2</div>
+            <div class="stat-item"><strong>宝藏</strong>：无</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>战斗风格</strong>：灵能据点会尝试偷偷接近目标，然后发动突然的<em>心灵穿刺</em>攻击。它们偏好攻击落单的、看起来较弱的目标（如施法者）。</p>
+          <p><strong>寄生策略</strong>：一旦目标被心灵穿刺命中并受到体质伤害，据点会尝试寄生。它们会优先寄生昏迷或睡眠的生物。</p>
+          <p><strong>撤退</strong>：如果受到严重伤害（HP低于5），据点会尝试逃跑，使用攀爬速度逃到天花板或墙壁。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>栖息地</strong>：地下城市废墟、古老的图书馆、被遗弃的灵能实验室。</p>
+          <p><strong>饮食</strong>：以智慧生物的思想能量为食。寄生时吸取宿主的智力属性。</p>
+          <p><strong>繁殖</strong>：当寄生宿主死亡后，据点会从宿主脑部孵化，产生1d4个新个体。</p>
+          <p><strong>社会结构</strong>：通常是独居，但在丰富的"食物源"（如大型城市下水道）附近可能形成群落。</p>
+        </div>
+
+        <div class="variants">
+          <h4>🔄 变体</h4>
+          <p><strong>强化据点（CR 3）</strong>：HP 25 (5d6+10)，AC 17，伤害1d6心灵+1d6体质。存在于高灵压区域。</p>
+          <p><strong>群居据点（CR 4）</strong>：3-5个据点协同攻击，可以共享心灵链接（范围内无须检定沟通）。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Expanded Psionics Handbook》p. 134<br>
+          <strong>转换说明</strong>：从d20现代系统转换到D&D 3.5e，调整了CR和属性。
+        </div>
+      </div>
+    </div>
+
+    <div class="monster-section">
+      <h2>🔥 元素生物</h2>
+
+      <div class="monster-block">
+        <h3>火焰巨灵贵族（Efreeti Noble）</h3>
+        <div class="subtitle">大型元素（火，外层位面）</div>
+        <span class="cr-badge">CR 10</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：95 (10d10+40)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：23（天生+10，偏斜+3）</div>
+            <div class="stat-item"><strong>接触AC</strong>：13</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：20</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>基本攻击加值</strong>：+10</div>
+            <div class="stat-item"><strong>擒抱</strong>：+19</div>
+            <div class="stat-item"><strong>攻击加值</strong>：+15 近战（+1 火焰弯刀）或 +13 远程（法术）</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">22</div>
+              <div class="mod">(+6)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">16</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">19</div>
+              <div class="mod">(+4)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">15</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">17</div>
+              <div class="mod">(+3)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>豁免检定</strong>：强韧+11，反射+10，意志+9</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>技能</strong>：唬骗+16，察觉+15，威吓+16，知识（位面）+15，知识（贵族）+12</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>专长</strong>：<a href="../feats/power-attack.html">猛力攻击</a>、<a href="../feats/cleave.html">顺势劈</a>、<a href="../feats/improved-initiative.html">精通先攻</a></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>环境</strong>：火元素位面（Pane of Fire）</div>
+            <div class="stat-item"><strong>组织</strong>：单独、成对、宫廷（3-12+1个侍从）</div>
+            <div class="stat-item"><strong>挑战等级</strong>：10</div>
+            <div class="stat-item"><strong>宝藏</strong>：三倍标准</div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>特殊攻击</strong>：希望炉火（火球术）、元素召唤</div>
+            <div class="stat-item"><strong>特殊品质</strong>：变形、金丝炉、火焰抗力20、寒冷抗力10</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>第一阶段</strong>：火焰巨灵贵族会先使用<em>希望炉火</em>（火球术）攻击群体敌人，造成大面积伤害。</p>
+          <p><strong>第二阶段</strong>：如果敌人数量多，会召唤1d4个普通火焰巨灵协助战斗。</p>
+          <p><strong>近战</strong>：使用+1火焰弯刀攻击，每次命中造成1d8+7挥砍+1d6火焰伤害。</p>
+          <p><strong>撤退</strong>：如果HP低于30，会使用<em>变形</em>变成无害生物逃跑，或plane shift回火元素位面。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>社会结构</strong>：火焰巨灵有严格的等级制度。贵族统治着大量普通巨灵和奴隶（通常是其他位面生物）。</p>
+          <p><strong>政治</strong>：贵族之间经常密谋和背叛。他们渴望获得更多力量和影响力。</p>
+          <p><strong>与凡人的关系</strong>：火焰巨灵贵族有时会与人类或其他凡人建立契约，提供愿望以换取服务。</p>
+          <p><strong>金丝炉</strong>：这是火焰巨灵最著名的魔法物品，可以囚禁灵魂。贵族通常拥有1-3个金丝炉。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Monster Manual》p. 116（火焰巨灵基础）+ 贵族变体（DMG p. 178）<br>
+          <strong>调整</strong>：增加了贵族的能力和 Treasure。
+        </div>
+      </div>
+    </div>
+
+    <div class="monster-section">
+      <h2>👤 人型强化生物</h2>
+
+      <div class="monster-block">
+        <h3>暗影刺客（Shadow Assassin）</h3>
+        <div class="subtitle">中型人型怪物（强化，邪恶）</div>
+        <span class="cr-badge">CR 7</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：52 (8d8+16)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：19（天生+4，敏捷+4，盔甲+1）</div>
+            <div class="stat-item"><strong>接触AC</strong>：15</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：15</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">18</div>
+              <div class="mod">(+4)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">12</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>特殊攻击</strong>：偷袭+4d6、死亡攻击、暗影步</div>
+            <div class="stat-item"><strong>特殊品质</strong>：暗影隐形、昏暗视觉60尺、移动无声</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>首选战术</strong>：暗影刺客会利用<em>暗影隐形</em>接近目标，然后从夹击位置发动攻击。如果可能，会使用<em>死亡攻击</em>一击必杀。</p>
+          <p><strong>暗影步</strong>：可以瞬移到阴影区域，用于重新定位或逃跑。</p>
+          <p><strong>对付施法者</strong>：优先攻击施法者，使用夹击和偷袭最大化伤害。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《Complete Adventurer》的刺客进阶职业）<br>
+          <strong>平衡性</strong>：CR 7适合8级队伍遭遇（4人）。
+        </div>
+      </div>
+    </div>
+
+    <div class="monster-section">
+      <h2>🧠 灵能生物（续）</h2>
+
+      <div class="monster-block">
+        <h3>灵能战士（Psionic Warrior）</h3>
+        <div class="subtitle">中型人型怪物（灵能）</div>
+        <span class="cr-badge">CR 3</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：34 (4d10+8)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：18（天生+4，盾牌+2，敏捷+2）</div>
+            <div class="stat-item"><strong>接触AC</strong>：12</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：16</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>基本攻击加值</strong>：+4</div>
+            <div class="stat-item"><strong>擒抱</strong>：+7</div>
+            <div class="stat-item"><strong>攻击加值</strong>：+7 近战（灵能战锤）或 +5 远程（灵能飞弹）</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>速度</strong>：30尺</div>
+            <div class="stat-item"><strong>空间/触及</strong>：5尺/5尺</div>
+            <div class="stat-item"><strong>特殊攻击</strong>：灵能打击、心灵堡垒</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">16</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">15</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">12</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">13</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>豁免检定</strong>：强韧+6，反射+5，意志+5</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>技能</strong>：平衡+7，攀爬+7，专注+8，跳跃+7，察觉+5</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>专长</strong>：<a href="../feats/power-attack.html">猛力攻击</a>、<a href="../feats/improved-bull-rush.html">精通冲撞</a>、灵能天赋</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>环境</strong>：任何（通常地下或灵能学院）</div>
+            <div class="stat-item"><strong>组织</strong>：单独、小队（2-4）、战队（5-12+1个队长）</div>
+            <div class="stat-item"><strong>挑战等级</strong>：3</div>
+            <div class="stat-item"><strong>宝藏</strong>：标准</div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>灵能显能</strong>：显示3点灵能点（ML 3级）</div>
+            <div class="stat-item"><strong>已知灵能</strong>：灵能打击、心灵堡垒、力量强化</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>战斗风格</strong>：灵能战士是前线战斗者，使用<em>灵能打击</em>增强武器攻击，造成额外心灵伤害。</p>
+          <p><strong>防御策略</strong>：激活<em>心灵堡垒</em>获得伤害减免，持续战斗。</p>
+          <p><strong>协同作战</strong>：在小队中，战士会保护后排的灵能者，使用冲撞将敌人推离友方。</p>
+          <p><strong>撤退</strong>：如果HP低于10，会使用灵能能力加速撤退或请求支援。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>起源</strong>：灵能战士通常来自灵能学院或修道院，接受严格的身心训练。</p>
+          <p><strong>社会角色</strong>：在许多灵能社会中，战士是守卫和探险者。他们重视荣誉和纪律。</p>
+          <p><strong>与其他生物的关系</strong>：对普通战士怀有竞争心理，对法师保持警惕（惧怕心灵控制）。</p>
+          <p><strong>训练</strong>：从小接受灵能和武术双重训练，通常在10岁时开始启蒙。</p>
+        </div>
+
+        <div class="variants">
+          <h4>🔄 变体</h4>
+          <p><strong>精英灵能战士（CR 5）</strong>：HP 58 (7d10+14)，ML 5级，额外灵能：震地打击、灵能加速。AC 20。</p>
+          <p><strong>灵能骑士（CR 6）</strong>：骑乘灵能战马，拥有<em>灵能冲锋</em>能力。挑战等级适合6级队伍。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Expanded Psionics Handbook》p. 156（灵能战士进阶职业转换）<br>
+          <strong>转换说明</strong>：将PC进阶职业转换为NPC怪物模板，调整了CR和灵能点。
+        </div>
+      </div>
+
+      <div class="monster-block">
+        <h3>心灵术士（Psion Telepath）</h3>
+        <div class="subtitle">中型人型怪物（灵能）</div>
+        <span class="cr-badge">CR 5</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：27 (5d6+10)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：15（天生+3，敏捷+2）</div>
+            <div class="stat-item"><strong>接触AC</strong>：13</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：13</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>基本攻击加值</strong>：+2</div>
+            <div class="stat-item"><strong>擒抱</strong>：+1</div>
+            <div class="stat-item"><strong>攻击加值</strong>：+1 近战 或 +4 远程（心灵射弹）</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">8</div>
+              <div class="mod">(-1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">16</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">18</div>
+              <div class="mod">(+4)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">12</div>
+              <div class="mod">(+1)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>豁免检定</strong>：强韧+3，反射+4，意志+9</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>技能</strong>：唬骗+9，专注+10，交涉+9，知识（灵能）+11，察觉+12，察言观色+12</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>专长</strong>：<a href="../feats/alertness.html">警觉</a>、灵能天赋、<a href="../feats/iron-will.html">钢铁意志</a></div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>灵能显能</strong>：显示7点灵能点（ML 5级）</div>
+            <div class="stat-item"><strong>已知灵能</strong>：心灵震爆、意识控制、心灵读取、灵能加速、心灵护盾</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>控制战术</strong>：心灵术士优先使用<em>意识控制</em>支配敌人，使其攻击友军。</p>
+          <p><strong>远程攻击</strong>：使用<em>心灵震爆</em>攻击群体敌人，造成心灵伤害并可能震慑。</p>
+          <p><strong>防御</strong>：保持距离，使用<em>心灵护盾</em>获得AC加值。如果近战威胁，使用灵能加速撤退。</p>
+          <p><strong>审讯</strong>：捕获敌人后，使用<em>心灵读取</em>获取情报。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>栖息地</strong>：灵能学院、高塔、或被遗忘的图书馆。</p>
+          <p><strong>社会结构</strong>：心灵术士通常独居或进行秘密研究。他们可能领导一个灵能教派。</p>
+          <p><strong>动机</strong>：追求灵能知识的极限， often at the cost of their sanity。</p>
+          <p><strong>与凡人的关系</strong>：被视为神秘和危险的存在。一些统治者会雇佣他们作为间谍或顾问。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Expanded Psionics Handbook》p. 128（心灵术士进阶职业转换）<br>
+          <strong>平衡性</strong>：CR 5适合6级队伍遭遇（4人）。
+        </div>
+      </div>
+    </div>
+
+    <div class="monster-section">
+      <h2>❄️ 元素生物变体</h2>
+
+      <div class="monster-block">
+        <h3>冰霜元素（Greater Ice Elemental）</h3>
+        <div class="subtitle">大型元素（冰，水，外层位面）</div>
+        <span class="cr-badge">CR 4</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：60 (8d10+16)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：21（天生+8，偏斜+3）</div>
+            <div class="stat-item"><strong>接触AC</strong>：13</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：18</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>基本攻击加值</strong>：+6</div>
+            <div class="stat-item"><strong>擒抱</strong>：+14</div>
+            <div class="stat-item"><strong>攻击加值</strong>：+10 近战（冰霜打击）</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">22</div>
+              <div class="mod">(+6)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">12</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">18</div>
+              <div class="mod">(+4)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">8</div>
+              <div class="mod">(-1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>豁免检定</strong>：强韧+8，反射+3，意志+3</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>技能</strong>：隐匿+5，察觉+8</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>专长</strong>：<a href="../feats/power-attack.html">猛力攻击</a>、<a href="../feats/cleave.html">顺势劈</a></div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>特殊攻击</strong>：冰霜打击（1d8+6挥砍+2d6寒冷）、冰冻吐息</div>
+            <div class="stat-item"><strong>特殊品质</strong>：元素特性、冰霜抗力10、火焰抗力-10（易伤）、冰行</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>近战压制</strong>：冰霜元素会直接冲向敌人，使用<em>冰霜打击</em>造成挥砍和寒冷双重伤害。</p>
+          <p><strong>冰冻吐息</strong>：30尺锥形，造成4d6寒冷伤害（反射DC 16减半）。用于攻击群体敌人或阻止追击。</p>
+          <p><strong>冰行</strong>：可以在冰面上以双倍速度移动，不会滑倒。在冰雪地形中具有优势。</p>
+          <p><strong>弱点</strong>：对火焰伤害易伤（抗力-10）。聪明的敌人会使用火系法术或武器。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>栖息地</strong>：冰元素位面、极地、高海拔雪山、被诅咒的永冬之地。</p>
+          <p><strong>行为</strong>：冰霜元素是冰元素位面的原生生物，代表着冰冷的寂静和缓慢的时间。</p>
+          <p><strong>召唤</strong>：法师和德鲁伊可以召唤冰霜元素作为盟友或仆从。</p>
+          <p><strong>对立</strong>：与火元素天然敌对，相遇时会爆发激烈战斗。</p>
+        </div>
+
+        <div class="variants">
+          <h4>🔄 变体</h4>
+          <p><strong> elder冰霜元素（CR 7）</strong>：HP 95 (10d10+40)，大型→巨型，伤害2d8+9挥砍+3d6寒冷。AC 24。</p>
+          <p><strong>冰霜元素领主（CR 9）</strong>：可以施展<em>冰风暴</em>和<em>极地爆发</em>法术。拥有冰雪控制能力。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Manual of the Planes》p. 89（元素变体）+ 《Stormwrack》p. 156（冰霜元素扩展）<br>
+          <strong>转换说明</strong>：基于标准元素模板创建冰霜变体。
+        </div>
+      </div>
+
+      <div class="monster-block">
+        <h3>雷电巨灵（Djinni Stormcaller）</h3>
+        <div class="subtitle">大型元素（气，外层位面）</div>
+        <span class="cr-badge">CR 6</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：68 (8d10+24)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：22（天生+9，偏斜+3）</div>
+            <div class="stat-item"><strong>接触AC</strong>：13</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：19</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">20</div>
+              <div class="mod">(+5)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">18</div>
+              <div class="mod">(+4)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">16</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">16</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">15</div>
+              <div class="mod">(+2)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>特殊攻击</strong>：风暴之怒（闪电链）、旋风攻击、召唤气元素</div>
+            <div class="stat-item"><strong>特殊品质</strong>：飞行60尺（完美）、气元素特性、闪电抗力20</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>空中优势</strong>：雷电巨灵会飞行到敌人上方，使用<em>风暴之怒</em>发射闪电链（6d6电击伤害，反射DC 17减半）。</p>
+          <p><strong>旋风攻击</strong>：可以变成旋风状（直径10尺，高30尺），对任何接触的生物造成2d8挥砍伤害。</p>
+          <p><strong>召唤</strong>：如果战斗不利，会召唤1d2个气元素协助。</p>
+          <p><strong>机动性</strong>：利用飞行能力保持距离，只与近战职业正面对抗当它有利时。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>社会结构</strong>：雷电巨灵是气元素位面的贵族，统治着普通风元素和风巨灵。</p>
+          <p><strong>性格</strong>：骄傲且自由奔放，讨厌被囚禁或命令。他们尊重勇气和力量。</p>
+          <p><strong>与凡人的关系</strong>：有时会赋予凡人"风暴之力的祝福"，但通常要求代价。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Manual of the Planes》p. 112（巨灵变体）<br>
+          <strong>平衡性</strong>：CR 6适合7级队伍遭遇。
+        </div>
+      </div>
+    </div>
+
+    <div class="monster-section">
+      <h2>👥 人型强化生物（续）</h2>
+
+      <div class="monster-block">
+        <h3>堕落祭司（Fallen Priest）</h3>
+        <div class="subtitle">中型人型怪物（强化，邪恶）</div>
+        <span class="cr-badge">CR 4</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：39 (6d8+12)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：20（天生+4，盔甲+5，盾牌+1）</div>
+            <div class="stat-item"><strong>接触AC</strong>：10</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：20</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">12</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">13</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">17</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">15</div>
+              <div class="mod">(+2)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>豁免检定</strong>：强韧+6，反射+3，意志+10</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>技能</strong>：专注+9，治疗+11，知识（宗教）+9，交涉+10</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><strong>专长</strong>：<a href="../feats/alertness.html">警觉</a>、<a href="../feats/iron-will.html">钢铁意志</a>、邪恶献祭</div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>法术</strong>：施法者等级6级（邪神牧师）</div>
+            <div class="stat-item"><strong>准备法术</strong>：造成轻伤、信仰之盾、致盲/致聋、邪恶光辉、命令术、造成中度伤害、沉默术、黑暗术</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>战术角色</strong>：堕落祭司是支援和控场者。优先施展<em>信仰之盾</em>保护自己和盟友，<em>邪恶光辉</em>震慑敌人。</p>
+          <p><strong>攻击法术</strong>：使用<em>造成中度伤害</em>攻击关键目标，<em>致盲/致聋</em>削弱敌人。</p>
+          <p><strong>近战</strong>：作为最后手段，使用+1钉头锤攻击（如果还有行动）。</p>
+          <p><strong>献祭</strong>：如果有俘虏或盟友尸体，可以进行邪恶献祭恢复法术位。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>起源</strong>：堕落祭司曾经是善良或中立神祇的牧师，因诱惑、绝望或背叛而转向邪神。</p>
+          <p><strong>动机</strong>：追求被禁止的知识、复仇、或获得堕落神力赐予的力量。</p>
+          <p><strong>巢穴</strong>：通常在地下神殿、被遗忘的墓穴、或腐化教堂中活动。</p>
+          <p><strong>追随者</strong>：可能领导一群邪教徒或亡灵生物。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《Complete Divine》的堕落牧师模板）<br>
+          <strong>平衡性</strong>：CR 4适合5级队伍遭遇。
+        </div>
+      </div>
+    </div>
+
+    <div class="monster-section">
+      <h2>👹 异界生物</h2>
+
+      <div class="monster-block">
+        <h3>异界猎犬（Extraplanar Hound）</h3>
+        <div class="subtitle">中型异界（跨位面，邪恶）</div>
+        <span class="cr-badge">CR 3</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：42 (6d10+6)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：16（天生+4，敏捷+2）</div>
+            <div class="stat-item"><strong>接触AC</strong>：13</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：14</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">18</div>
+              <div class="mod">(+4)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">15</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">13</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">6</div>
+              <div class="mod">(-2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">14</div>
+              <div class="mod">(+2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>特殊攻击</strong>：喷吐攻击（酸性唾液）、异界嚎叫</div>
+            <div class="stat-item"><strong>特殊品质</strong>：黑暗视觉60尺、敏锐嗅觉、异界追踪、伤害减免5/善良</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>群体狩猎</strong>：异界猎犬通常以2-6只群体行动，包围并分割猎物。</p>
+          <p><strong>喷吐攻击</strong>：30尺射线，造成3d6酸液伤害（反射DC 14减半）。每1d4轮可以使用一次。</p>
+          <p><strong>异界嚎叫</strong>：使30尺内所有善良阵营生物震慑1轮（意志DC 15 Neg）。每天3次。</p>
+          <p><strong>追踪</strong>：可以通过异界追踪追踪跨位面的目标（如逃避到另一个位面的敌人）。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>起源</strong>：异界猎犬是邪恶位面（如九层地狱、无底深渊）的原生掠食者，有时被召唤到物质位面。</p>
+          <p><strong>用途</strong>：邪神、魔鬼领主、或黑巫师会饲养它们作为守卫或猎犬。</p>
+          <p><strong>智能</strong>：虽然智力低，但足够聪明以理解简单命令和识别盟友/敌人。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Fiendish Codex I》p. 134（异界生物模板）<br>
+          <strong>转换说明</strong>：基于炼狱猎犬模板创建跨位面变体。
+        </div>
+      </div>
+
+      <div class="monster-block">
+        <h3>炎魔领主（Balor Lord）</h3>
+        <div class="subtitle">大型异界（混乱，邪恶，跨位面）</div>
+        <span class="cr-badge">CR 12</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：184 (16d10+96)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：35（天生+15，偏斜+5，敏捷+5）</div>
+            <div class="stat-item"><strong>接触AC</strong>：20</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：30</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">28</div>
+              <div class="mod">(+9)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">20</div>
+              <div class="mod">(+5)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">22</div>
+              <div class="mod">(+6)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">16</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">16</div>
+              <div class="mod">(+3)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">20</div>
+              <div class="mod">(+5)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>特殊攻击</strong>：火焰之鞭（6d6火焰+6d6电击）、史诗死亡之触、召唤恶魔</div>
+            <div class="stat-item"><strong>特殊品质</strong>：伤害减免15/寒铁+善良、火焰抗力30、寒冷抗力10、真实视觉60尺</div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>法术类能力</strong>：随意施展<em>律令死亡</em>（意志DC 25 Neg）、<em>许愿术</em>（有限）、<em>异界传送</em></div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>领袖战术</strong>：炎魔领主通常指挥一群普通炎魔和恶魔。它会让手下先战斗，自己观察并寻找弱点。</p>
+          <p><strong>火焰之鞭</strong>：40尺触及，可以同时攻击多个目标。每次命中造成双重元素伤害。</p>
+          <p><strong>史诗死亡之触</strong>：近战接触攻击，如果目标失败强韧豁免（DC 30），立即死亡。</p>
+          <p><strong>撤退</strong>：如果HP低于50，会使用<em>异界传送</em>撤退到安全位面，并计划复仇。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>地位</strong>：炎魔领主是无底深渊中塔纳利恶魔的高阶领主，统治着广阔的恶魔国度。</p>
+          <p><strong>政治</strong>：它们不断密谋推翻更强大的恶魔领主（如狄摩高根、欧库斯），也想避免被其他恶魔推翻。</p>
+          <p><strong>与凡人的关系</strong>：炎魔领主有时会赋予凡人力量或知识，以换取服务和灵魂。</p>
+          <p><strong>巢穴</strong>：在物质位面，它们会占据火山、被诅咒的城堡、或腐化的神殿作为要塞。</p>
+        </div>
+
+        <div class="variants">
+          <h4>🔄 变体</h4>
+          <p><strong>炎魔将军（CR 15）</strong>：HP 264 (22d10+132)，DR 20/寒铁+善良，拥有<em>史诗法术抗力</em>（SR 28）。</p>
+          <p><strong>炎魔之王（CR 18）</strong>：近乎半神级别，可以施展<em>史诗毁灭洪流</em>和<em>真实复活</em>。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Monster Manual》p. 132（炎魔基础）+ 《Epic Level Handbook》p. 178（领主变体）<br>
+          <strong>平衡性</strong>：CR 12适合13级队伍遭遇（4人）。
+        </div>
+      </div>
+    </div>
+
+    <div class="monster-section">
+      <h2>🗿 构装体变体</h2>
+
+      <div class="monster-block">
+        <h3>灵能晶壁（Psionic Crystal Wall）</h3>
+        <div class="subtitle">大型构装体（灵能）</div>
+        <span class="cr-badge">CR 5</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：76 (8d10+32)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：26（天生+16，偏斜+0）</div>
+            <div class="stat-item"><strong>接触AC</strong>：10</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：26</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">24</div>
+              <div class="mod">(+7)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">—</div>
+              <div class="mod">(—)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">12</div>
+              <div class="mod">(+1)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">1</div>
+              <div class="mod">(-5)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>特殊攻击</strong>：灵能脉冲、心灵震慑光环</div>
+            <div class="stat-item"><strong>特殊品质</strong>：构装体特性、伤害减免10/钝击、灵能感测、免疫心灵影响</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>防御姿态</strong>：灵能晶壁通常会形成一个防御线，阻挡通道或门口。</p>
+          <p><strong>灵能脉冲</strong>：每2轮发射一次灵能脉冲（60尺射线），造成6d6心灵伤害（强韧DC 17减半）。</p>
+          <p><strong>心灵震慑光环</strong>：30尺半径，所有进入的生物必须通过意志豁免（DC 15）否则震慑1d4轮。</p>
+          <p><strong>弱点</strong>：虽然伤害减免很高，但对音波和电击伤害易伤（抗力-5）。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>创造者</strong>：灵能晶壁是由高等灵能者或灵能文明创造的构装体，用于守卫灵能圣地和实验室。</p>
+          <p><strong>激活</strong>：通常处于休眠状态（看起来像普通水晶墙），当感知到思想（灵能感测）时激活。</p>
+          <p><strong>修复</strong>：如果严重损坏，会进入自修复模式，消耗储存的灵能点修复自己。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Expanded Psionics Handbook》p. 145（灵能构装体）+ 《Lords of Madness》p. 167（晶壁变体）<br>
+          <strong>平衡性</strong>：CR 5适合6级队伍遭遇。
+        </div>
+      </div>
+
+      <div class="monster-block">
+        <h3>腐化魔像（Corrupted Golem）</h3>
+        <div class="subtitle">大型构装体（增强，邪恶）</div>
+        <span class="cr-badge">CR 7</span>
+
+        <div class="stat-block">
+          <h4>属性块</h4>
+          <div class="stat-row">
+            <div class="stat-item"><strong>生命值</strong>：112 (12d10+48)</div>
+            <div class="stat-item"><strong>护甲等级</strong>：28（天生+18）</div>
+            <div class="stat-item"><strong>接触AC</strong>：8</div>
+            <div class="stat-item"><strong>措手不及AC</strong>：28</div>
+          </div>
+
+          <div class="ability-scores">
+            <div class="ability-box">
+              <div class="name">力量</div>
+              <div class="score">26</div>
+              <div class="mod">(+8)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">敏捷</div>
+              <div class="score">6</div>
+              <div class="mod">(-2)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">体质</div>
+              <div class="score">—</div>
+              <div class="mod">(—)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">智力</div>
+              <div class="score">3</div>
+              <div class="mod">(-4)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">感知</div>
+              <div class="score">10</div>
+              <div class="mod">(+0)</div>
+            </div>
+            <div class="ability-box">
+              <div class="name">魅力</div>
+              <div class="score">1</div>
+              <div class="mod">(-5)</div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-item"><strong>特殊攻击</strong>：腐化之触（造成体质吸取）、地震踩踏</div>
+            <div class="stat-item"><strong>特殊品质</strong>：构装体特性、伤害减免15/魔法+辉煌、腐化灵光、免疫毒素和疾病</div>
+          </div>
+        </div>
+
+        <div class="tactics">
+          <h4>⚔️ 战术</h4>
+          <p><strong>正面冲锋</strong>：腐化魔像会直线冲向最近的敌人，不在乎借机攻击（它有伤害减免）。</p>
+          <p><strong>腐化之触</strong>：近战接触攻击，如果命中，目标必须通过强韧豁免（DC 18）否则受到1d4体质吸取。</p>
+          <p><strong>地震踩踏</strong>：当HP低于50时，每轮可以使用一次地震踩踏（10尺半径，造成3d6钝击伤害，倒地）。</p>
+          <p><strong>弱点</strong>：对辉煌和圣署武器伤害易伤（忽略伤害减免）。</p>
+        </div>
+
+        <div class="ecology">
+          <h4>🌍 生态</h4>
+          <p><strong>起源</strong>：腐化魔像是普通魔像被邪恶法术或邪神力量腐化的结果。它们失去了原本的控制符文，变得狂暴和邪恶。</p>
+          <p><strong>创造者</strong>：通常是黑巫师或邪神牧师故意创造的，用于守卫腐化地点或作为战争机器。</p>
+          <p><strong>修复</strong>：与普通魔像不同，腐化魔像可以在战斗中消耗生命力自我修复（每轮恢复2d10 HP）。</p>
+        </div>
+
+        <div class="variants">
+          <h4>🔄 变体</h4>
+          <p><strong>巨型腐化魔像（CR 10）</strong>：HP 184 (16d10+96)，伤害减免20/魔法+辉煌，拥有<em>腐化吐息</em>（30尺锥状，造成6d6负能量伤害）。</p>
+          <p><strong>腐化魔像领主（CR 13）</strong>：可以召唤其他不死生物或腐化生物协助战斗。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Lords of Madness》p. 189（腐化构装体模板）+ 《Fiendish Codex II》p. 145（邪恶增强）<br>
+          <strong>平衡性</strong>：CR 7适合8级队伍遭遇。
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="color: #666; margin-bottom: 10px;">D&D 3.5e 中文Wiki - 3R拓展功能大全</p>
+      <p style="color: #999; font-size: 0.9em;">本页面内容基于官方资料和社区创作 | 最后更新：2026-06-20</p>
+      <p style="color: #999; font-size: 0.85em; margin-top: 10px;">专业Wiki标准：完整属性块 | 战术分析 | 生态信息 | 变体 | 来源标注</p>
+    </div>
+  </div>
+</body>
+</html>

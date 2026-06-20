@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魔法物品 Magic Items - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .mi-intro { background:var(--bg-card); border-left:4px solid var(--accent-purple); padding:16px 20px; margin:0 0 24px; border-radius:0 var(--radius) var(--radius) 0; font-size:14px; }
+  .mi-intro strong { color:var(--accent-purple); }
+  .mi-section-header { display:flex; align-items:center; gap:10px; background:var(--bg-infobox); border-radius:var(--radius); padding:12px 18px; margin:28px 0 14px; font-size:18px; font-weight:700; color:var(--text-heading); }
+  table.mi-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
+  table.mi-table th { background:var(--bg-table-head); padding:8px 12px; text-align:left; font-weight:600; color:#4a2c0a; border-bottom:2px solid var(--border-main); }
+  table.mi-table td { border:1px solid var(--border-light); padding:7px 12px; }
+  table.mi-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  table.mi-table tr:hover { background:#e8dcc8; }
+  .mi-type-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:14px; margin:18px 0; }
+  .mi-type-card { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow-soft); transition:transform 0.2s, box-shadow 0.2s; cursor:default; }
+  .mi-type-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-card); }
+  .mi-type-card h3 { margin:0 0 6px; font-size:16px; color:var(--text-heading); }
+  .mi-type-card p { font-size:13px; color:#666; margin:0; line-height:1.5; }
+  .mi-type-icon { font-size:26px; margin-bottom:8px; }
+  .mi-slot-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; margin:14px 0; }
+  .mi-slot-item { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius); padding:10px 14px; text-align:center; }
+  .mi-slot-item .slot-name { font-weight:700; font-size:14px; color:var(--text-heading); }
+  .mi-slot-item .slot-eng { font-size:11px; color:var(--text-subtle); }
+  .mi-enchant-tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:12px; font-weight:600; margin-right:4px; }
+  .tag-plus1 { background:#e8f5e9; color:#2e7d32; }
+  .tag-plus2 { background:#fff3e0; color:#e65100; }
+  .tag-plus3 { background:#fce4ec; color:#c62828; }
+  .tag-plus4 { background:#e3f2fd; color:#1565c0; }
+  .tag-plus5 { background:#ede7f6; color:#6a1b9a; }
+  .mi-tip { background:#f0f4ff; border-left:3px solid var(--accent-blue); padding:10px 14px; margin:8px 0; font-size:13px; border-radius:0 var(--radius) var(--radius) 0; }
+  .mi-craft-box { background:var(--bg-card); border:1px solid var(--border-main); border-radius:var(--radius); padding:18px 22px; margin:16px 0; }
+  .mi-craft-box h4 { margin-top:0; color:var(--accent-gold); }
+  .mi-price-tag { color:var(--accent-gold); font-weight:700; }
+  .mi-sub-header { font-size:15px; font-weight:600; color:var(--text-heading); margin:20px 0 8px; padding-bottom:4px; border-bottom:1px dashed var(--border-light); }
+  .mi-ref-box { margin-top:32px; padding:16px; background:var(--bg-card); border-radius:var(--radius); border:1px solid var(--border-light); }
+  .mi-toc { background:var(--bg-card); border:1px solid var(--border-main); border-radius:var(--radius); padding:16px 20px; margin:20px 0; display:inline-block; min-width:280px; }
+  .mi-toc-title { font-weight:700; font-size:15px; margin-bottom:10px; color:var(--text-heading); }
+  .mi-toc ol { list-style:none; padding-left:0; }
+  .mi-toc ol li { padding:3px 0; font-size:14px; }
+  .mi-toc ol li a { color:var(--text-link); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html" class="active">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">装备</div>
+      <a href="intro.html">装备总览</a>
+      <a href="weapons.html">武器</a>
+      <a href="armor.html">防具</a>
+      <a href="goods.html">商品与服务</a>
+      <a href="magic-items.html" class="active">魔法物品</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">本节内容</div>
+      <a href="#overview">概述</a>
+      <a href="#types">物品类型</a>
+      <a href="#slots">身体部位</a>
+      <a href="#weapon-enchant">武器附魔</a>
+      <a href="#armor-enchant">防具附魔</a>
+      <a href="#wondrous">经典奇物</a>
+      <a href="#crafting">制造规则</a>
+      <a href="#random">随机宝藏</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="intro.html">装备总览</a>
+      <a href="../feats/intro.html">制造专长</a>
+      <a href="../spells/intro.html">法术列表</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>✨ 魔法物品（Magic Items）</h1>
+    <p style="color:var(--text-subtle);font-size:14px;">D&D 3.5e 魔法物品完整参考 | 来源：DMG第7章 · Magic Item Compendium</p>
+
+    <!-- 目录 -->
+    <div class="mi-toc">
+      <div class="mi-toc-title">📑 目录</div>
+      <ol>
+        <li>1. <a href="#overview">概述与基本规则</a></li>
+        <li>2. <a href="#types">魔法物品类型总览</a></li>
+        <li>3. <a href="#slots">身体部位系统</a></li>
+        <li>4. <a href="#weapon-enchant">武器附魔列表</a></li>
+        <li>5. <a href="#armor-enchant">防具附魔列表</a></li>
+        <li>6. <a href="#wondrous">经典奇物列表</a></li>
+        <li>7. <a href="#rings-staffs">戒指、法杖与权杖</a></li>
+        <li>8. <a href="#potions-scrolls-wands">药水、卷轴与魔杖</a></li>
+        <li>9. <a href="#intelligent">智能物品与诅咒物品</a></li>
+        <li>10. <a href="#artifacts">神器与圣物</a></li>
+        <li>11. <a href="#crafting">制造魔法物品</a></li>
+        <li>12. <a href="#random">随机宝藏生成</a></li>
+      </ol>
+    </div>
+
+    <!-- ===== 1. 概述 ===== -->
+    <h2 id="overview">📖 概述与基本规则</h2>
+
+    <div class="mi-intro">
+      魔法物品是D&D 3.5e中冒险者最重要的资源之一。从初级的<em>+1长剑</em>到传说中的<em>神器</em>，
+      魔法物品赋予角色超越凡人的能力。完整的魔法物品规则详见<strong>《城主指南》（DMG）第7章</strong>，
+      扩展内容见<strong>《Magic Item Compendium》（MIC）</strong>。
+    </div>
+
+    <h3>基本使用规则</h3>
+    <ul>
+      <li><strong>辨识魔法物品：</strong>使用<em>辨识法术（Identify）</em>法术或<em>察识术（Detect Magic）</em>可以了解物品的魔法属性。使用<em>法术辨识（Spellcraft）</em>检定（DC = 物品施法者等级 + 5）也可以辨识。</li>
+      <li><strong>启动方式：</strong>魔法物品的启动方式分为四种——<em>法术完成型（Spell Completion）</em>、<em>法术触发型（Spell Trigger）</em>、<em>命令词型（Command Word）</em>、<em>使用激活型（Use-Activated）</em>。</li>
+      <li><strong>施法者等级（Caster Level）：</strong>每件魔法物品都有一个施法者等级，决定其效果强度和对抗法术抗力（SR）的能力。</li>
+      <li><strong>豁免检定DC：</strong>魔法物品的豁免DC = 10 + 法术等级 + 最低属性调整值（除非另有说明）。</li>
+      <li><strong>魔法灵光（Magic Aura）：</strong>每件魔法物品散发特定魔法灵光，可用<em>察识术</em>侦测其学派和强度。</li>
+    </ul>
+
+    <h3>加值类型与叠加规则</h3>
+    <div class="mi-tip">
+      <strong>核心原则：</strong>同类型的加值不叠加，只取最高值。不同类型可以叠加。常见加值类型包括：
+      <em>增强加值（Enhancement）</em>、<em>抗力加值（Resistance）</em>、<em>偏斜加值（Deflection）</em>、
+      <em>天生护甲加值（Natural Armor）</em>、<em>洞察加值（Insight）</em>、<em>运气加值（Luck）</em>、
+      <em>神圣加值（Sacred）</em>、<em>能力加值（Competence）</em>。
+    </div>
+
+    <!-- ===== 2. 类型总览 ===== -->
+    <h2 id="types">📦 魔法物品类型总览</h2>
+    <p>魔法物品按功能和规则机制分为以下主要类型：</p>
+
+    <div class="mi-type-grid">
+      <div class="mi-type-card">
+        <div class="mi-type-icon">⚔️</div>
+        <h3>魔法武器</h3>
+        <p>Magic Weapons — 具有增强加值或特殊属性的武器，提升攻击和伤害骰。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">🛡️</div>
+        <h3>魔法防具</h3>
+        <p>Magic Armor &amp; Shields — 具有增强加值或特殊属性的盔甲和盾牌。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">💍</div>
+        <h3>戒指</h3>
+        <p>Rings — 佩戴在手指上的魔法物品，提供持续性或启动式效果。每人最多佩戴2枚魔法戒指。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">🔱</div>
+        <h3>法杖</h3>
+        <p>Rods — 长约2-3英尺的魔法器具，具有各种强大的启动式能力。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">🪄</div>
+        <h3>权杖</h3>
+        <p>Staffs — 储存多种法术的长杖，施法者可用自己的属性决定法术效果。50发充能。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">📜</div>
+        <h3>卷轴</h3>
+        <p>Scrolls — 一次性使用的法术储存媒介。分为<em>奥术卷轴</em>和<em>神术卷轴</em>。法术完成型物品。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">✨</div>
+        <h3>魔杖</h3>
+        <p>Wands — 储存单一法术（4环以下）的细棒，50发充能。法术触发型物品。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">🧪</div>
+        <h3>药水</h3>
+        <p>Potions — 可饮用的魔法液体，通常模仿3环以下作用于自身的法术。使用激活型物品。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">🏺</div>
+        <h3>奇物</h3>
+        <p>Wondrous Items — 不属于以上任何类别的魔法物品，种类最为丰富多样。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">🔮</div>
+        <h3>符文法杖</h3>
+        <p>Runestaffs — 出自PHB2/MIC，允许施法者将法术列表中已知法术替换为法杖内储存的法术。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">🧠</div>
+        <h3>智能物品</h3>
+        <p>Intelligent Items — 具有智力、感知、魅力属性以及自我意识的魔法物品，可能有自己的目的。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">💀</div>
+        <h3>诅咒物品</h3>
+        <p>Cursed Items — 具有负面效果的魔法物品，可能伪装成有益物品。需要<em>移除诅咒</em>才能脱下。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">⛪</div>
+        <h3>圣物</h3>
+        <p>Relics — 出自MIC，与特定神祗关联的物品，信徒可通过信仰通道获得额外能力。</p>
+      </div>
+      <div class="mi-type-card">
+        <div class="mi-type-icon">👑</div>
+        <h3>神器</h3>
+        <p>Artifacts — 极其强大的传说级物品，分为<em>次级神器（Minor）</em>和<em>高等神器（Major）</em>，不可制造。</p>
+      </div>
+    </div>
+
+    <!-- ===== 3. 身体部位 ===== -->
+    <h2 id="slots">🧍 身体部位系统（Body Slots）</h2>
+    <p>大多数穿戴类魔法物品占据特定的身体部位（Body Slot）。每个部位通常只能佩戴一件魔法物品（戒指除外，可佩戴2枚）。未占据部位的物品标记为"无位置（Slotless）"。</p>
+
+    <div class="mi-slot-grid">
+      <div class="mi-slot-item">
+        <div class="slot-name">👑 头部</div>
+        <div class="slot-eng">Head</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">头环、头冠、头盔</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">👁️ 面部</div>
+        <div class="slot-eng">Face / Eyes</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">护目镜、面具、面纱</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">📿 颈部</div>
+        <div class="slot-eng">Neck / Throat</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">护符、项链、项圈</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">🧣 肩部</div>
+        <div class="slot-eng">Shoulders</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">斗篷、披风、肩甲</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">👔 胸部</div>
+        <div class="slot-eng">Chest</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">背心、胸甲、袍服</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">👘 躯体</div>
+        <div class="slot-eng">Body</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">长袍、法袍、全身甲</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">💪 臂部</div>
+        <div class="slot-eng">Arms</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">护腕、臂铠</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">🧤 手部</div>
+        <div class="slot-eng">Hands</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">手套、手甲</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">🪢 腰部</div>
+        <div class="slot-eng">Belt / Waist</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">腰带、腰链</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">👢 脚部</div>
+        <div class="slot-eng">Feet</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">靴子、凉鞋</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">💍 戒指</div>
+        <div class="slot-eng">Rings (×2)</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">最多佩戴2枚</div>
+      </div>
+      <div class="mi-slot-item">
+        <div class="slot-name">🌟 无位置</div>
+        <div class="slot-eng">Slotless</div>
+        <div style="font-size:12px;color:#666;margin-top:4px;">不占据任何部位</div>
+      </div>
+    </div>
+
+    <div class="mi-tip">
+      <strong>MIC规则：</strong>《Magic Item Compendium》引入了<em>物品套装（Item Set）</em>概念——收集同一系列的多件物品可激活额外的套装奖励效果。
+    </div>
+
+    <!-- ===== 4. 武器附魔 ===== -->
+    <h2 id="weapon-enchant">⚔️ 武器附魔列表（Weapon Enchantments）</h2>
+    <p>魔法武器的增强加值（Enhancement Bonus）从+1到+5，此外还可以附加特殊属性。每件特殊属性都有等效的增强加值等级，总等效加值不超过+10。</p>
+
+    <div class="mi-tip">
+      <strong>武器价格计算：</strong>基础价格 = （增强加值 + 特殊属性等效加值）²× 2,000 gp。
+      加上武器本身的价格和精制品（Masterwork）费用（300 gp）。
+    </div>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus1">+1</span> 一级附魔（等效+1增强加值）</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>效果说明</th><th>施法者等级</th></tr></thead>
+      <tbody>
+        <tr><td>炽焰</td><td>Flaming</td><td>命中时额外造成1d6火焰伤害</td><td>CL 10</td></tr>
+        <tr><td>霜寒</td><td>Frost</td><td>命中时额外造成1d6寒冷伤害</td><td>CL 10</td></tr>
+        <tr><td>电击</td><td>Shock</td><td>命中时额外造成1d6闪电伤害</td><td>CL 10</td></tr>
+        <tr><td>锐利</td><td>Keen</td><td>重击威胁范围翻倍（不与精通重击专长叠加）</td><td>CL 10</td></tr>
+        <tr><td>重击</td><td>Bane</td><td>对指定生物类型：攻击+2，伤害+2d6（需选择类型）</td><td>CL 8</td></tr>
+        <tr><td>光耀</td><td>Holy</td><td>视为善良阵营武器，对邪恶生物额外+2d6伤害</td><td>CL 7</td></tr>
+        <tr><td>幽冥</td><td>Ghost Touch</td><td>可正常攻击虚体（Incorporeal）生物</td><td>CL 9</td></tr>
+        <tr><td>回力</td><td>Returning</td><td>投掷后自动返回投掷者手中</td><td>CL 7</td></tr>
+        <tr><td>投掷</td><td>Throwing</td><td>使近战武器可投掷，射程增量10英尺</td><td>CL 5</td></tr>
+        <tr><td>秩序</td><td>Axiomatic</td><td>视为守序武器，对混乱生物额外+2d6伤害</td><td>CL 7</td></tr>
+        <tr><td>混沌</td><td>Anarchic</td><td>视为混乱武器，对守序生物额外+2d6伤害</td><td>CL 7</td></tr>
+        <tr><td>黑暗</td><td>Unholy</td><td>视为邪恶武器，对善良生物额外+2d6伤害</td><td>CL 7</td></tr>
+        <tr><td>魔法</td><td>Merciful</td><td>额外+1d6伤害，所有伤害变为非致命伤害</td><td>CL 5</td></tr>
+        <tr><td>寻踪</td><td>Seeking</td><td>远程武器：忽略掩蔽（不含全掩蔽），无视失手率</td><td>CL 12</td></tr>
+        <tr><td>灵巧</td><td>Agile (MIC)</td><td>允许使用敏捷调整值代替力量进行近战伤害</td><td>CL 9</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus2">+2</span> 二级附魔（等效+2增强加值）</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>效果说明</th><th>施法者等级</th></tr></thead>
+      <tbody>
+        <tr><td>炽焰爆</td><td>Flaming Burst</td><td>包含炽焰效果，重击确认时额外+1d10火焰伤害（×3武器+2d10，×4武器+3d10）</td><td>CL 12</td></tr>
+        <tr><td>寒冰爆</td><td>Icy Burst</td><td>包含霜寒效果，重击确认时额外+1d10寒冷伤害</td><td>CL 12</td></tr>
+        <tr><td>电击爆</td><td>Shocking Burst</td><td>包含电击效果，重击确认时额外+1d10闪电伤害</td><td>CL 12</td></tr>
+        <tr><td>追击</td><td>Speed</td><td>使用全回合攻击时，可使用该武器额外进行一次最高攻击加值的攻击</td><td>CL 7</td></tr>
+        <tr><td>舞空</td><td>Dancing</td><td>标准动作释放武器，武器自行攻击4轮（使用持有者BAB）</td><td>CL 15</td></tr>
+        <tr><td>吸血</td><td>Vampiric</td><td>造成1d6体质吸取，持有者获得等量临时生命值</td><td>CL 15</td></tr>
+        <tr><td>瓦解</td><td>Disruption</td><td>命中不死生物时，对方须通过DC 14意志豁免，否则被摧毁</td><td>CL 14</td></tr>
+        <tr><td>雷鸣</td><td>Thundering</td><td>重击确认时额外+1d8音波伤害（×3为+2d8，×4为+3d8）</td><td>CL 8</td></tr>
+        <tr><td> Brilliant Energy</td><td>光能</td><td>武器可穿过非生物物质（衣物、盔甲），不影响不死生物和构装体</td><td>CL 16</td></tr>
+        <tr><td>距离</td><td>Distance</td><td>远程武器：射程增量翻倍</td><td>CL 6</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus3">+3</span> 三级附魔（等效+3增强加值）</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>效果说明</th><th>施法者等级</th></tr></thead>
+      <tbody>
+        <tr><td>纯善爆</td><td>Holy Burst</td><td>包含光耀效果，重击确认时额外+2d10神圣伤害</td><td>CL 15</td></tr>
+        <tr><td> Brilliant</td><td>光辉</td><td>包含光耀效果，额外对不死生物造成1d6光芒伤害</td><td>CL 15</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus4">+4</span> 四级附魔（等效+4增强加值）</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>效果说明</th><th>施法者等级</th></tr></thead>
+      <tbody>
+        <tr><td> Brilliant Energy (高级)</td><td>—</td><td>部分高级附魔组合达到+4等效</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus5">+5</span> 五级附魔（等效+5增强加值）</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>效果说明</th><th>施法者等级</th></tr></thead>
+      <tbody>
+        <tr><td>速斩</td><td>Vorpal</td><td>重击确认时（自然20），直接斩首目标（对免疫重击的生物无效）</td><td>CL 18</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 5. 防具附魔 ===== -->
+    <h2 id="armor-enchant">🛡️ 防具附魔列表（Armor &amp; Shield Enchantments）</h2>
+    <p>魔法防具（盔甲和盾牌）同样具有增强加值（+1至+5），以及可附加的特殊属性。防具增强加值直接提升AC。</p>
+
+    <div class="mi-tip">
+      <strong>防具价格计算：</strong>基础价格 = （增强加值 + 特殊属性等效加值）²× 1,000 gp（盔甲）或 × 1,000 gp（盾牌）。
+      加上防具本身价格和精制品费用（150 gp）。
+    </div>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus1">+1</span> 一级防具附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>效果说明</th><th>适用</th></tr></thead>
+      <tbody>
+        <tr><td>轻护命</td><td>Light Fortification</td><td>25%几率将重击或偷袭转化为普通攻击</td><td>盔甲/盾牌</td></tr>
+        <tr><td>暗影</td><td>Shadow</td><td>隐藏检定+5（在阴暗环境中+10）</td><td>盔甲</td></tr>
+        <tr><td>无声</td><td>Silent Moves</td><td>潜行检定+5</td><td>盔甲</td></tr>
+        <tr><td>滑溜</td><td>Slick</td><td>逃脱检定+5</td><td>盔甲</td></tr>
+        <tr><td>抗火</td><td>Fire Resistance</td><td>火焰抗性5</td><td>盔甲/盾牌</td></tr>
+        <tr><td>抗寒</td><td>Cold Resistance</td><td>寒冷抗性5</td><td>盔甲/盾牌</td></tr>
+        <tr><td>抗电</td><td>Electricity Resistance</td><td>闪电抗性5</td><td>盔甲/盾牌</td></tr>
+        <tr><td>抗酸</td><td>Acid Resistance</td><td>酸液抗性5</td><td>盔甲/盾牌</td></tr>
+        <tr><td>次级法术抵抗</td><td>Minor Spell Resistance</td><td>SR 11</td><td>盔甲</td></tr>
+        <tr><td>活化</td><td>Animated (Shield)</td><td>盾牌自行飘浮保护持有者，释放双手</td><td>盾牌</td></tr>
+        <tr><td>飞矢</td><td>Arrow Catching</td><td>吸引附近远程攻击射向盾牌，AC+2对抗远程</td><td>盾牌</td></tr>
+        <tr><td>猛击</td><td>Bashing</td><td>盾牌视为+1武器（盾击伤害1d8）</td><td>盾牌</td></tr>
+        <tr><td>眩光</td><td>Glamered</td><td>可用命令词改变防具外观</td><td>盔甲</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus2">+2</span> 二级防具附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>效果说明</th><th>适用</th></tr></thead>
+      <tbody>
+        <tr><td>中护命</td><td>Moderate Fortification</td><td>50%几率将重击或偷袭转化为普通攻击</td><td>盔甲/盾牌</td></tr>
+        <tr><td>高等滑溜</td><td>Improved Slick</td><td>逃脱检定+10</td><td>盔甲</td></tr>
+        <tr><td>高等暗影</td><td>Improved Shadow</td><td>隐藏检定+10</td><td>盔甲</td></tr>
+        <tr><td>高等无声</td><td>Improved Silent Moves</td><td>潜行检定+10</td><td>盔甲</td></tr>
+        <tr><td>抗能量</td><td>Energy Resistance</td><td>选择一种能量类型，抗性10</td><td>盔甲/盾牌</td></tr>
+        <tr><td>法术抵抗</td><td>Spell Resistance</td><td>SR 15</td><td>盔甲</td></tr>
+        <tr><td>矢返</td><td>Arrow Deflection</td><td>如同"拨挡飞箭"专长，AC+2对抗远程</td><td>盾牌</td></tr>
+        <tr><td>盲斗</td><td>Blindsighted</td><td>盲感10英尺</td><td>盔甲</td></tr>
+        <tr><td>虚体之触</td><td>Etherealness</td><td>每天3次<em>幻化灵体</em>效果</td><td>盔甲</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus3">+3</span> 三级防具附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>效果说明</th><th>适用</th></tr></thead>
+      <tbody>
+        <tr><td>重护命</td><td>Heavy Fortification</td><td>75%几率将重击或偷袭转化为普通攻击</td><td>盔甲/盾牌</td></tr>
+        <tr><td>高等抗能量</td><td>Improved Energy Resistance</td><td>选择一种能量类型，抗性20</td><td>盔甲/盾牌</td></tr>
+        <tr><td>高等法术抵抗</td><td>Greater Spell Resistance</td><td>SR 19</td><td>盔甲</td></tr>
+        <tr><td>高等猛击</td><td>Greater Bashing</td><td>盾击视为+2武器，伤害2d6</td><td>盾牌</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus4">+4</span> / <span class="mi-enchant-tag tag-plus5">+5</span> 高级防具附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>等效加值</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>超级抗能量</td><td>Major Energy Resistance</td><td>+4</td><td>选择一种能量类型，抗性30</td></tr>
+        <tr><td>超级法术抵抗</td><td>Major Spell Resistance</td><td>+4</td><td>SR 23</td></tr>
+        <tr><td>完全护命</td><td>Undying (MIC)</td><td>+5</td><td>100%几率免疫重击和偷袭</td></tr>
+        <tr><td>影遁</td><td>Shadowblight (MIC)</td><td>+4</td><td>穿戴者可在阴影中自由隐匿，+15隐藏</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 6. 经典奇物 ===== -->
+    <h2 id="wondrous">🏺 经典奇物列表（Wondrous Items by Slot）</h2>
+
+    <div class="mi-sub-header">👑 头部（Head）</div>
+    <table class="mi-table">
+      <thead><tr><th>物品名称</th><th>英文</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>智力头带 +2</td><td>Headband of Intellect +2</td><td class="mi-price-tag">4,000 gp</td><td>智力获得+2增强加值</td></tr>
+        <tr><td>智力头带 +4</td><td>Headband of Intellect +4</td><td class="mi-price-tag">16,000 gp</td><td>智力获得+4增强加值</td></tr>
+        <tr><td>智力头带 +6</td><td>Headband of Intellect +6</td><td class="mi-price-tag">36,000 gp</td><td>智力获得+6增强加值</td></tr>
+        <tr><td>感知头环 +2</td><td>Periapt of Wisdom +2</td><td class="mi-price-tag">4,000 gp</td><td>感知获得+2增强加值</td></tr>
+        <tr><td>感知头环 +4</td><td>Periapt of Wisdom +4</td><td class="mi-price-tag">16,000 gp</td><td>感知获得+4增强加值</td></tr>
+        <tr><td>魅力头冠</td><td>Circlet of Persuasion</td><td class="mi-price-tag">4,500 gp</td><td>魅力获得+2增强加值</td></tr>
+        <tr><td>天眼宝冠</td><td>Helm of Brilliance</td><td class="mi-price-tag">125,000 gp</td><td>镶嵌宝石可释放多种法术，附魔武器</td></tr>
+        <tr><td>读心头盔</td><td>Helm of Telepathy</td><td class="mi-price-tag">12,000 gp</td><td>持续侦测思想，可发送心灵信息</td></tr>
+        <tr><td>水下呼吸头盔</td><td>Helm of Underwater Action</td><td class="mi-price-tag">400 gp</td><td>穿戴者可在水中呼吸和正常说话</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">👁️ 面部（Face / Eyes）</div>
+    <table class="mi-table">
+      <thead><tr><th>物品名称</th><th>英文</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>鹰眼镜</td><td>Eyes of the Eagle</td><td class="mi-price-tag">2,500 gp</td><td>侦查检定+5</td></tr>
+        <tr><td>魅惑眼镜</td><td>Eyes of Charming</td><td class="mi-price-tag">7,500 gp</td><td>每天3次<em>魅惑人类</em></td></tr>
+        <tr><td>石化眼镜</td><td>Eyes of Petrification</td><td class="mi-price-tag">9,800 gp</td><td>每天3次<em>石化术</em>，凝视攻击</td></tr>
+        <tr><td>真知宝石</td><td>Gem of Seeing</td><td class="mi-price-tag">15,000 gp</td><td>每天3次<em>真知术</em></td></tr>
+        <tr><td>隐匿面具</td><td>Mask of the Skull</td><td class="mi-price-tag">500 gp</td><td>每天1次<em>恐惧术</em></td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">📿 颈部（Neck / Throat）</div>
+    <table class="mi-table">
+      <thead><tr><th>物品名称</th><th>英文</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>健康护符 +2</td><td>Amulet of Health +2</td><td class="mi-price-tag">4,000 gp</td><td>体质获得+2增强加值</td></tr>
+        <tr><td>健康护符 +4</td><td>Amulet of Health +4</td><td class="mi-price-tag">16,000 gp</td><td>体质获得+4增强加值</td></tr>
+        <tr><td>天生护甲护符 +1</td><td>Amulet of Natural Armor +1</td><td class="mi-price-tag">1,000 gp</td><td>AC获得+1天生护甲增强加值</td></tr>
+        <tr><td>天生护甲护符 +2</td><td>Amulet of Natural Armor +2</td><td class="mi-price-tag">4,000 gp</td><td>AC获得+2天生护甲增强加值</td></tr>
+        <tr><td>天生护甲护符 +3</td><td>Amulet of Natural Armor +3</td><td class="mi-price-tag">9,000 gp</td><td>AC获得+3天生护甲增强加值</td></tr>
+        <tr><td>防侦测护符</td><td>Amulet of Proof against Detection and Location</td><td class="mi-price-tag">35,000 gp</td><td>免疫预言系侦测法术</td></tr>
+        <tr><td>先知护符 +1</td><td>Cloak of Resistance +1</td><td class="mi-price-tag">1,000 gp</td><td>全豁免+1抗力加值（注：此物品在肩部）</td></tr>
+        <tr><td>力量护符</td><td>Periapt of Mighty Fists</td><td>可变</td><td>徒手攻击获得增强加值</td></tr>
+        <tr><td>生命护符</td><td>Periapt of Health</td><td class="mi-price-tag">7,500 gp</td><td>免疫所有疾病（包括超自然和魔法疾病）</td></tr>
+        <tr><td>伤口愈合护符</td><td>Periapt of Wound Closure</td><td class="mi-price-tag">20,000 gp</td><td>自然恢复速度翻倍，稳定伤势</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">🧣 肩部（Shoulders）</div>
+    <table class="mi-table">
+      <thead><tr><th>物品名称</th><th>英文</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>抗力斗篷 +1</td><td>Cloak of Resistance +1</td><td class="mi-price-tag">1,000 gp</td><td>全豁免+1抗力加值</td></tr>
+        <tr><td>抗力斗篷 +2</td><td>Cloak of Resistance +2</td><td class="mi-price-tag">4,000 gp</td><td>全豁免+2抗力加值</td></tr>
+        <tr><td>抗力斗篷 +3</td><td>Cloak of Resistance +3</td><td class="mi-price-tag">9,000 gp</td><td>全豁免+3抗力加值</td></tr>
+        <tr><td>抗力斗篷 +4</td><td>Cloak of Resistance +4</td><td class="mi-price-tag">16,000 gp</td><td>全豁免+4抗力加值</td></tr>
+        <tr><td>抗力斗篷 +5</td><td>Cloak of Resistance +5</td><td class="mi-price-tag">25,000 gp</td><td>全豁免+5抗力加值</td></tr>
+        <tr><td>魅力斗篷 +2</td><td>Cloak of Charisma +2</td><td class="mi-price-tag">4,000 gp</td><td>魅力获得+2增强加值</td></tr>
+        <tr><td>魅力斗篷 +4</td><td>Cloak of Charisma +4</td><td class="mi-price-tag">16,000 gp</td><td>魅力获得+4增强加值</td></tr>
+        <tr><td>蛛行斗篷</td><td>Cloak of Arachnida</td><td class="mi-price-tag">14,000 gp</td><td>免疫蛛网、攀爬检定+8、每天1次<em>蛛网术</em></td></tr>
+        <tr><td>蝠翼斗篷</td><td>Winged Cloak</td><td class="mi-price-tag">16,000 gp</td><td>飞行速度60英尺（良好），每天3次</td></tr>
+        <tr><td>高等隐形斗篷</td><td>Cloak of Greater Invisibility</td><td class="mi-price-tag">—</td><td>同<em>高等隐形</em>法术效果</td></tr>
+        <tr><td>次级位移斗篷</td><td>Cloak of Minor Displacement</td><td class="mi-price-tag">12,000 gp</td><td>20%失手率</td></tr>
+        <tr><td>高等位移斗篷</td><td>Cloak of Major Displacement</td><td class="mi-price-tag">50,000 gp</td><td>50%失手率</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">👔 胸部（Chest）与 👘 躯体（Body）</div>
+    <table class="mi-table">
+      <thead><tr><th>物品名称</th><th>英文</th><th>部位</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>抵抗背心</td><td>Vest of Resistance +2</td><td>胸部</td><td class="mi-price-tag">4,000 gp</td><td>全豁免+2（与抗力斗篷不叠加）</td></tr>
+        <tr><td>法师法袍</td><td>Robe of the Archmagi</td><td>躯体</td><td class="mi-price-tag">75,000 gp</td><td>AC+5偏斜，SR 17，法术穿透+2，奥术施法失败降低</td></tr>
+        <tr><td>光辉法袍</td><td>Robe of Scintillating Colors</td><td>躯体</td><td class="mi-price-tag">6,000 gp</td><td>每天3次<em>催眠图纹</em>和<em>虹光图纹</em></td></tr>
+        <tr><td>星袍</td><td>Robe of Stars</td><td>躯体</td><td class="mi-price-tag">60,000 gp</td><td>每天6枚流星飞弹（各6d6），可进入星界</td></tr>
+        <tr><td>僧侣服</td><td>Monk's Belt</td><td>腰部</td><td class="mi-price-tag">13,000 gp</td><td>AC+5（智慧加值计入），武僧职业能力+1</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">💪 臂部（Arms）与 🧤 手部（Hands）</div>
+    <table class="mi-table">
+      <thead><tr><th>物品名称</th><th>英文</th><th>部位</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>蛮力护腕 +2</td><td>Bracers of Mighty Fists (MIC)</td><td>臂部</td><td class="mi-price-tag">4,000 gp</td><td>力量获得+2增强加值（通常占腰部）</td></tr>
+        <tr><td>箭术护腕</td><td>Bracers of Archery</td><td>臂部</td><td class="mi-price-tag">5,000 gp</td><td>弓术攻击+1，伤害+1</td></tr>
+        <tr><td>高等箭术护腕</td><td>Bracers of Archery, Greater</td><td>臂部</td><td class="mi-price-tag">25,000 gp</td><td>弓术攻击+2，伤害+2，武器熟练</td></tr>
+        <tr><td>护甲护腕 +4</td><td>Bracers of Armor +4</td><td>臂部</td><td class="mi-price-tag">16,000 gp</td><td>AC获得+4护甲加值（不与实甲叠加）</td></tr>
+        <tr><td>食人魔力量手套</td><td>Gauntlets of Ogre Power</td><td>手部</td><td class="mi-price-tag">4,000 gp</td><td>力量获得+2增强加值</td></tr>
+        <tr><td>灵巧手套</td><td>Gloves of Dexterity +2</td><td>手部</td><td class="mi-price-tag">4,000 gp</td><td>敏捷获得+2增强加值</td></tr>
+        <tr><td>游荡者手套</td><td>Gloves of Thievery</td><td>手部</td><td class="mi-price-tag">3,000 gp</td><td>开锁和解除装置检定+5</td></tr>
+        <tr><td>游泳手套</td><td>Gloves of Swimming and Climbing</td><td>手部</td><td class="mi-price-tag">6,250 gp</td><td>游泳+10，攀爬+5</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">🪢 腰部（Belt / Waist）与 👢 脚部（Feet）</div>
+    <table class="mi-table">
+      <thead><tr><th>物品名称</th><th>英文</th><th>部位</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>巨人力量腰带 +2</td><td>Belt of Giant Strength +2</td><td>腰部</td><td class="mi-price-tag">4,000 gp</td><td>力量获得+2增强加值</td></tr>
+        <tr><td>巨人力量腰带 +4</td><td>Belt of Giant Strength +4</td><td>腰部</td><td class="mi-price-tag">16,000 gp</td><td>力量获得+4增强加值</td></tr>
+        <tr><td>巨人力量腰带 +6</td><td>Belt of Giant Strength +6</td><td>腰部</td><td class="mi-price-tag">36,000 gp</td><td>力量获得+6增强加值</td></tr>
+        <tr><td>飞翼靴</td><td>Winged Boots</td><td>脚部</td><td class="mi-price-tag">16,000 gp</td><td>飞行速度60英尺（良好），每天3次，每次5分钟</td></tr>
+        <tr><td>速度靴</td><td>Boots of Speed</td><td>脚部</td><td class="mi-price-tag">12,000 gp</td><td>每天10轮<em>加速术</em>效果（可分多次使用）</td></tr>
+        <tr><td>跳跃靴</td><td>Boots of Striding and Springing</td><td>脚部</td><td class="mi-price-tag">5,500 gp</td><td>速度+10英尺，跳跃+5</td></tr>
+        <tr><td>水上行走靴</td><td>Boots of the Winterlands</td><td>脚部</td><td class="mi-price-tag">2,500 gp</td><td>冰面行走，抗寒5，可在冰雪上正常移动</td></tr>
+        <tr><td>精灵之靴</td><td>Boots of Elvenkind</td><td>脚部</td><td class="mi-price-tag">2,500 gp</td><td>潜行检定+5</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 7. 戒指、法杖、权杖 ===== -->
+    <h2 id="rings-staffs">💍 戒指、法杖与权杖</h2>
+
+    <div class="mi-sub-header">经典戒指（Rings）</div>
+    <table class="mi-table">
+      <thead><tr><th>戒指名称</th><th>英文</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>防护戒指 +1</td><td>Ring of Protection +1</td><td class="mi-price-tag">2,000 gp</td><td>AC获得+1偏斜加值</td></tr>
+        <tr><td>防护戒指 +2</td><td>Ring of Protection +2</td><td class="mi-price-tag">8,000 gp</td><td>AC获得+2偏斜加值</td></tr>
+        <tr><td>防护戒指 +3</td><td>Ring of Protection +3</td><td class="mi-price-tag">18,000 gp</td><td>AC获得+3偏斜加值</td></tr>
+        <tr><td>防护戒指 +4</td><td>Ring of Protection +4</td><td class="mi-price-tag">32,000 gp</td><td>AC获得+4偏斜加值</td></tr>
+        <tr><td>防护戒指 +5</td><td>Ring of Protection +5</td><td class="mi-price-tag">50,000 gp</td><td>AC获得+5偏斜加值</td></tr>
+        <tr><td>抗性戒指 +1</td><td>Ring of Resistance +1</td><td class="mi-price-tag">1,000 gp</td><td>全豁免+1抗力加值（MIC版）</td></tr>
+        <tr><td>再生戒指</td><td>Ring of Regeneration</td><td class="mi-price-tag">90,000 gp</td><td>每轮恢复1点生命值，可再生肢体</td></tr>
+        <tr><td>法术储存戒指</td><td>Ring of Spell Storing</td><td class="mi-price-tag">50,000 gp</td><td>可储存至多5环法术</td></tr>
+        <tr><td>次级法术储存戒指</td><td>Ring of Spell Storing, Minor</td><td class="mi-price-tag">18,000 gp</td><td>可储存至多3环法术</td></tr>
+        <tr><td>反制法术戒指</td><td>Ring of Counterspells</td><td class="mi-price-tag">4,000 gp</td><td>储存1个法术，对方施放该法术时自动反制</td></tr>
+        <tr><td>隐形戒指（次级）</td><td>Ring of Invisibility</td><td class="mi-price-tag">20,000 gp</td><td>命令词启动<em>隐形术</em></td></tr>
+        <tr><td>心灵护盾戒指</td><td>Ring of Mind Shielding</td><td class="mi-price-tag">8,000 gp</td><td>免疫<em>侦测思想</em>、<em>辨识阵营</em>、<em>辨识谎言</em></td></tr>
+        <tr><td>羽落戒指</td><td>Ring of Feather Falling</td><td class="mi-price-tag">2,200 gp</td><td>坠落时自动触发<em>羽落术</em></td></tr>
+        <tr><td>攀爬戒指</td><td>Ring of Climbing</td><td class="mi-price-tag">2,500 gp</td><td>攀爬检定+5</td></tr>
+        <tr><td>闪现戒指</td><td>Ring of Blinking</td><td class="mi-price-tag">27,000 gp</td><td>命令词启动<em>闪现术</em></td></tr>
+        <tr><td>许愿戒指（三愿）</td><td>Ring of Three Wishes</td><td class="mi-price-tag">97,950 gp</td><td>储存3次<em>祈愿术</em></td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">经典法杖（Rods）</div>
+    <table class="mi-table">
+      <thead><tr><th>法杖名称</th><th>英文</th><th>价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>统御法杖</td><td>Rod of Rulership</td><td class="mi-price-tag">26,000 gp</td><td>每天1次<em>群体暗示术</em>（最多影响100HD生物）</td></tr>
+        <tr><td>吸收法杖</td><td>Rod of Absorption</td><td class="mi-price-tag">50,000 gp</td><td>吸收以持有者为目标的法术能量，可用来施法</td></tr>
+        <tr><td> negate法杖</td><td>Rod of Negation</td><td class="mi-price-tag">5,000 gp</td><td>消除其他法杖或魔杖的效果</td></tr>
+        <tr><td>大法师法杖</td><td>Rod of the Archmagi</td><td class="mi-price-tag">—</td><td>极高价值的施法增幅法杖</td></tr>
+        <tr><td>警戒法杖</td><td>Rod of Alertness</td><td class="mi-price-tag">60,000 gp</td><td>侦查/聆听+10，可插入地面自动警戒</td></tr>
+        <tr><td>火焰法杖</td><td>Immovable Rod</td><td class="mi-price-tag">5,000 gp</td><td>按下按钮后在空间中固定不动，可承重8,000磅</td></tr>
+        <tr><td>变形法杖</td><td>Rod of Wonder</td><td class="mi-price-tag">12,000 gp</td><td>随机效果法杖，每次使用产生不同结果</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">经典权杖（Staffs）</div>
+    <table class="mi-table">
+      <thead><tr><th>权杖名称</th><th>英文</th><th>价格</th><th>内含法术</th></tr></thead>
+      <tbody>
+        <tr><td>火焰权杖</td><td>Staff of Fire</td><td class="mi-price-tag">17,750 gp</td><td><em>燃烧之手、火球术、火墙术</em></td></tr>
+        <tr><td>寒冰权杖</td><td>Staff of Frost</td><td class="mi-price-tag">26,000 gp</td><td><em>冰风暴、冰墙术、寒冰锥</em></td></tr>
+        <tr><td>治疗权杖</td><td>Staff of Healing</td><td class="mi-price-tag">27,750 gp</td><td><em>治疗轻伤、治疗重伤、群体治疗轻伤</em></td></tr>
+        <tr><td>雷电权杖</td><td>Staff of Power</td><td class="mi-price-tag">200,000 gp</td><td>多种高等法术，可释放<em>爆裂术</em></td></tr>
+        <tr><td>变形权杖</td><td>Staff of Transmutation</td><td class="mi-price-tag">60,750 gp</td><td><em>缩小术、加速术、变形术</em>等</td></tr>
+        <tr><td>召唤权杖</td><td>Staff of Summoning</td><td class="mi-price-tag">30,000 gp</td><td><em>怪物召唤 I-IX</em></td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-tip">
+      <strong>权杖使用规则：</strong>权杖使用持有者自身的属性值来计算法术的DC和施法者等级，这使得高属性的施法者使用权杖的效果远优于魔杖。权杖初始包含50发充能。
+    </div>
+
+    <!-- ===== 8. 药水、卷轴、魔杖 ===== -->
+    <h2 id="potions-scrolls-wands">🧪 药水、卷轴与魔杖</h2>
+
+    <div class="mi-sub-header">药水（Potions）— 常见列表</div>
+    <p>药水是<em>使用激活型</em>一次性物品，通常复制3环以下以自身为目标的法术。饮用药水是标准动作，会触发借机攻击。</p>
+    <table class="mi-table">
+      <thead><tr><th>药水名称</th><th>英文</th><th>法术等级</th><th>CL</th><th>价格</th><th>效果</th></tr></thead>
+      <tbody>
+        <tr><td>治疗轻伤药水</td><td>Potion of Cure Light Wounds</td><td>1环</td><td>1</td><td class="mi-price-tag">50 gp</td><td>恢复1d8+1 HP</td></tr>
+        <tr><td>治疗中伤药水</td><td>Potion of Cure Moderate Wounds</td><td>2环</td><td>3</td><td class="mi-price-tag">300 gp</td><td>恢复2d8+3 HP</td></tr>
+        <tr><td>熊之坚韧药水</td><td>Potion of Bear's Endurance</td><td>2环</td><td>3</td><td class="mi-price-tag">300 gp</td><td>体质+4增强，1分钟/等级</td></tr>
+        <tr><td>牛之力量药水</td><td>Potion of Bull's Strength</td><td>2环</td><td>3</td><td class="mi-price-tag">300 gp</td><td>力量+4增强，1分钟/等级</td></tr>
+        <tr><td>猫之优雅药水</td><td>Potion of Cat's Grace</td><td>2环</td><td>3</td><td class="mi-price-tag">300 gp</td><td>敏捷+4增强，1分钟/等级</td></tr>
+        <tr><td>隐形药水</td><td>Potion of Invisibility</td><td>2环</td><td>3</td><td class="mi-price-tag">300 gp</td><td>同<em>隐形术</em>，攻击后解除</td></tr>
+        <tr><td>飞行药水</td><td>Potion of Fly</td><td>3环</td><td>5</td><td class="mi-price-tag">750 gp</td><td>飞行速度60英尺，1分钟/等级</td></tr>
+        <tr><td>加速药水</td><td>Potion of Haste</td><td>3环</td><td>5</td><td class="mi-price-tag">750 gp</td><td>同<em>加速术</em>，1轮/等级</td></tr>
+        <tr><td>水下呼吸药水</td><td>Potion of Water Breathing</td><td>3环</td><td>5</td><td class="mi-price-tag">750 gp</td><td>水下呼吸，2小时/等级</td></tr>
+        <tr><td>变巨药水</td><td>Potion of Enlarge Person</td><td>1环</td><td>1</td><td class="mi-price-tag">50 gp</td><td>体型增大一级，1分钟/等级</td></tr>
+        <tr><td>护盾信仰药水</td><td>Potion of Shield of Faith +2</td><td>1环</td><td>1</td><td class="mi-price-tag">50 gp</td><td>AC+2偏斜，1分钟/等级</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">卷轴（Scrolls）</div>
+    <p>卷轴是<em>法术完成型</em>物品。施法者使用自己的施法者等级和属性值，但法术本身储存在卷轴中。若法术不在施法者的法术列表中，须通过<em>使用魔法装置（UMD）</em>检定。</p>
+    <table class="mi-table">
+      <thead><tr><th>法术等级</th><th>最低CL</th><th>奥术卷轴价格</th><th>神术卷轴价格</th></tr></thead>
+      <tbody>
+        <tr><td>0环（戏法）</td><td>1</td><td class="mi-price-tag">12.5 gp</td><td class="mi-price-tag">12.5 gp</td></tr>
+        <tr><td>1环</td><td>1</td><td class="mi-price-tag">25 gp</td><td class="mi-price-tag">25 gp</td></tr>
+        <tr><td>2环</td><td>3</td><td class="mi-price-tag">150 gp</td><td class="mi-price-tag">150 gp</td></tr>
+        <tr><td>3环</td><td>5</td><td class="mi-price-tag">375 gp</td><td class="mi-price-tag">375 gp</td></tr>
+        <tr><td>4环</td><td>7</td><td class="mi-price-tag">700 gp</td><td class="mi-price-tag">700 gp</td></tr>
+        <tr><td>5环</td><td>9</td><td class="mi-price-tag">1,125 gp</td><td class="mi-price-tag">1,125 gp</td></tr>
+        <tr><td>6环</td><td>11</td><td class="mi-price-tag">1,650 gp</td><td class="mi-price-tag">1,650 gp</td></tr>
+        <tr><td>7环</td><td>13</td><td class="mi-price-tag">2,275 gp</td><td class="mi-price-tag">2,275 gp</td></tr>
+        <tr><td>8环</td><td>15</td><td class="mi-price-tag">3,000 gp</td><td class="mi-price-tag">3,000 gp</td></tr>
+        <tr><td>9环</td><td>17</td><td class="mi-price-tag">3,825 gp</td><td class="mi-price-tag">3,825 gp</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">魔杖（Wands）</div>
+    <p>魔杖是<em>法术触发型</em>物品，储存一个4环以下的法术，初始50发充能。使用标准动作启动。</p>
+    <table class="mi-table">
+      <thead><tr><th>法术等级</th><th>最低CL</th><th>市场价格</th><th>常见选择</th></tr></thead>
+      <tbody>
+        <tr><td>0环</td><td>1</td><td class="mi-price-tag">375 gp</td><td><em>酸液飞溅、侦测魔法</em></td></tr>
+        <tr><td>1环</td><td>1</td><td class="mi-price-tag">750 gp</td><td><em>魔法飞弹、护盾术、法师护甲</em></td></tr>
+        <tr><td>2环</td><td>3</td><td class="mi-price-tag">4,500 gp</td><td><em>灼热金属、蛛网术、隐形术</em></td></tr>
+        <tr><td>3环</td><td>5</td><td class="mi-price-tag">11,250 gp</td><td><em>火球术、闪电束、解除魔法</em></td></tr>
+        <tr><td>4环</td><td>7</td><td class="mi-price-tag">21,000 gp</td><td><em>冰风暴、次元门、石肤术</em></td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-tip">
+      <strong>魔杖价格公式：</strong>法术等级 × 施法者等级 × 750 gp。
+      <strong>卷轴价格公式：</strong>法术等级 × 施法者等级 × 25 gp（0环视为0.5级）。
+      <strong>药水价格公式：</strong>法术等级 × 施法者等级 × 50 gp（0环视为0.5级）。
+    </div>
+
+    <!-- ===== 9. 智能物品与诅咒物品 ===== -->
+    <h2 id="intelligent">🧠 智能物品与 💀 诅咒物品</h2>
+
+    <div class="mi-sub-header">智能物品（Intelligent Items）</div>
+    <p>智能物品具有自己的智力（Int）、感知（Wis）、魅力（Cha）属性，拥有自我意识、语言能力，甚至可能有特殊目的（Special Purpose）。</p>
+    <table class="mi-table">
+      <thead><tr><th>属性</th><th>规则说明</th></tr></thead>
+      <tbody>
+        <tr><td>智力 (Int)</td><td>1-19，决定物品可交流的语言数量和特殊能力</td></tr>
+        <tr><td>感知 (Wis)</td><td>1-19，影响物品的感知能力</td></tr>
+        <tr><td>魅力 (Cha)</td><td>1-19，影响物品的个性和说服力</td></tr>
+        <tr><td>阵营</td><td>物品有固定阵营，与使用者阵营冲突时可能产生Ego对抗</td></tr>
+        <tr><td>自我值 (Ego)</td><td>智力+魅力+Ego加值，用于与持有者的意志对抗</td></tr>
+        <tr><td>感官</td><td>根据智力等级，拥有60-120英尺的视觉/听觉</td></tr>
+        <tr><td>沟通能力</td><td>半心灵感应（Int 1-6）、心灵感应（Int 7-12）、语言（Int 13+）</td></tr>
+        <tr><td>特殊目的</td><td>部分智能物品有特定目标（如消灭某类生物），达成后获得额外力量</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">诅咒物品（Cursed Items）</div>
+    <p>诅咒物品具有负面效果，通常无法通过普通方式丢弃或移除。需要<em>移除诅咒（Remove Curse）</em>或更高阶的法术。</p>
+    <table class="mi-table">
+      <thead><tr><th>诅咒物品</th><th>英文</th><th>诅咒效果</th></tr></thead>
+      <tbody>
+        <tr><td>负加值武器</td><td>—</td><td>攻击和伤害获得负数加值（如-2长剑）</td></tr>
+        <tr><td>附身盔甲</td><td>Armor of Attraction</td><td>吸引所有远程攻击命中穿戴者</td></tr>
+        <tr><td>负荷之靴</td><td>Boots of Dancing</td><td>穿戴者被迫跳舞，无法自由移动</td></tr>
+        <tr><td>愚钝头盔</td><td>Helm of Opposite Alignment</td><td>穿戴者的阵营反转</td></tr>
+        <tr><td>诅咒卷轴</td><td>Scroll of Curse</td><td>阅读者受到诅咒效果</td></tr>
+        <tr><td>粘手戒指</td><td>Ring of Clumsiness</td><td>无法脱下，敏捷-4</td></tr>
+        <tr><td>吸血鬼尖牙</td><td>Vampire Fangs</td><td>看似有益，实际吸取穿戴者生命</td></tr>
+        <tr><td>传送斗篷</td><td>Cloak of Poison</td><td>穿上后每轮受到毒素伤害</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-tip">
+      <strong>鉴定诅咒物品：</strong><em>辨识法术（Identify）</em>只能揭示物品的正面能力。要检测诅咒效果，需使用<em>分析法术（Analyze Dweomer）</em>（CL 12）或通过<em>法术辨识</em>检定（DC = 诅咒DC + 10）。
+    </div>
+
+    <!-- ===== 10. 神器与圣物 ===== -->
+    <h2 id="artifacts">👑 神器与 ⛪ 圣物</h2>
+
+    <div class="mi-sub-header">神器（Artifacts）</div>
+    <p>神器是D&D中最强大的物品，分为次级神器（Minor Artifacts）和高等神器（Major Artifacts）。它们不可被制造，通常具有独特的历史和传说背景。</p>
+    <table class="mi-table">
+      <thead><tr><th>神器名称</th><th>英文</th><th>等级</th><th>描述</th></tr></thead>
+      <tbody>
+        <tr><td>贤者之书</td><td>Book of Exalted Deeds</td><td>次级</td><td>阅读后善良阵营角色获得等级+1和属性提升</td></tr>
+        <tr><td>堕落之书</td><td>Book of Vile Darkness</td><td>次级</td><td>阅读后邪恶角色获得等级+1，善良角色受到伤害</td></tr>
+        <tr><td>无限愿望术牌</td><td>Deck of Many Things</td><td>次级</td><td>每张牌产生不同命运效果，从获得愿望到灵魂被囚</td></tr>
+        <tr><td>奥法之手</td><td>Hand of Vecna</td><td>高等</td><td>维克那的左手，强大的死灵系能力</td></tr>
+        <tr><td>奥法之眼</td><td>Eye of Vecna</td><td>高等</td><td>维克那的左眼，与手配合获得更强大的力量</td></tr>
+        <tr><td>贤哲之杖</td><td>Staff of the Magi</td><td>高等</td><td>可吸收法术、释放所有充能产生毁灭火球</td></tr>
+        <tr><td>贤者之球</td><td>Orb of Dragonkind</td><td>高等</td><td>控制龙的强大宝珠，每颗对应一种龙族</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">圣物（Relics）— 出自MIC</div>
+    <p>圣物是与特定神祗或信仰关联的物品。只有信仰对应神祗的角色（需有<em>信仰通道</em>）才能激活圣物的完整能力。</p>
+    <table class="mi-table">
+      <thead><tr><th>圣物名称</th><th>关联神祗</th><th>基础价格</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>培罗的日耀披风</td><td>Pelor</td><td class="mi-price-tag">12,000 gp</td><td>对不死生物造成额外光耀伤害，<em>日光术</em></td></tr>
+        <tr><td>柯瑞隆的弓弦</td><td>Corellon</td><td class="mi-price-tag">8,000 gp</td><td>弓术增强，对兽人和地精重击确认</td></tr>
+        <tr><td>摩拉丁的战锤符文</td><td>Moradin</td><td class="mi-price-tag">10,000 gp</td><td>锻造增强，战锤获得额外附魔效果</td></tr>
+        <tr><td>海若尼斯的圣剑</td><td>Heironeous</td><td class="mi-price-tag">15,000 gp</td><td>对邪恶生物获得攻击和伤害加值</td></tr>
+        <tr><td>厄瑞斯努的暗杀匕首</td><td>Erythnul</td><td class="mi-price-tag">8,000 gp</td><td>偷袭伤害增加，<em>杀戮术</em></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 11. 制造规则 ===== -->
+    <h2 id="crafting">🔨 制造魔法物品（Magic Item Creation）</h2>
+
+    <p>角色可以通过相应的制造专长（Item Creation Feat）来制造魔法物品。制造需要满足施法者等级要求、拥有相应专长、花费材料和XP。</p>
+
+    <div class="mi-sub-header">制造专长一览</div>
+    <table class="mi-table">
+      <thead><tr><th>专长名称</th><th>英文</th><th>最低CL</th><th>可制造物品</th></tr></thead>
+      <tbody>
+        <tr><td>调制药水</td><td>Brew Potion</td><td>CL 3</td><td>3环以下的药水（仅作用于自身的法术）</td></tr>
+        <tr><td>抄写卷轴</td><td>Scribe Scroll</td><td>CL 1</td><td>任何已知法术的卷轴</td></tr>
+        <tr><td>制造奇物</td><td>Craft Wondrous Item</td><td>CL 3</td><td>所有奇物（种类最多的物品类型）</td></tr>
+        <tr><td>锻造魔法武器与防具</td><td>Craft Magic Arms and Armor</td><td>CL 5</td><td>魔法武器、盔甲和盾牌</td></tr>
+        <tr><td>锻造戒指</td><td>Forge Ring</td><td>CL 12</td><td>所有魔法戒指</td></tr>
+        <tr><td>制造法杖</td><td>Craft Staff</td><td>CL 12</td><td>所有权杖（Staffs）</td></tr>
+        <tr><td>制造魔杖</td><td>Craft Wand</td><td>CL 5</td><td>4环以下的魔杖</td></tr>
+        <tr><td>制造法杖（Rod）</td><td>Craft Rod</td><td>CL 9</td><td>所有法杖（Rods）</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-craft-box">
+      <h4>📐 制造成本与时间</h4>
+      <table class="mi-table">
+        <thead><tr><th>项目</th><th>规则说明</th></tr></thead>
+        <tbody>
+          <tr><td>材料成本</td><td>物品<strong>基础价格的一半</strong>（如2,000 gp的物品需花费1,000 gp材料）</td></tr>
+          <tr><td>XP消耗</td><td>物品基础价格 ÷ 25（如2,000 gp物品消耗80 XP）</td></tr>
+          <tr><td>制造时间</td><td>每<strong>1,000 gp</strong>基础价格需要<strong>1天</strong>（最少1天）</td></tr>
+          <tr><td>前提条件</td><td>必须拥有对应专长，达到最低施法者等级，能够施放所需法术</td></tr>
+          <tr><td>检定</td><td>法术辨识检定（DC = 5 + 物品施法者等级），失败则浪费材料和XP</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mi-craft-box">
+      <h4>📊 各类型物品基础价格公式</h4>
+      <table class="mi-table">
+        <thead><tr><th>物品类型</th><th>价格公式</th><th>示例</th></tr></thead>
+        <tbody>
+          <tr><td>药水</td><td>法术等级 × CL × 50 gp</td><td>治疗轻伤：1×1×50 = 50 gp</td></tr>
+          <tr><td>卷轴</td><td>法术等级 × CL × 25 gp</td><td>火球术：3×5×25 = 375 gp</td></tr>
+          <tr><td>魔杖</td><td>法术等级 × CL × 750 gp</td><td>魔法飞弹：1×1×750 = 750 gp</td></tr>
+          <tr><td>武器附魔</td><td>加值² × 2,000 gp</td><td>+2长剑：4×2,000 = 8,000 gp（加武器本身）</td></tr>
+          <tr><td>防具附魔</td><td>加值² × 1,000 gp</td><td>+2链甲：4×1,000 = 4,000 gp（加防具本身）</td></tr>
+          <tr><td>属性增强物品</td><td>加值² × 1,000 gp</td><td>力量腰带+4：4²×1,000 = 16,000 gp</td></tr>
+          <tr><td>AC偏斜物品</td><td>加值² × 2,000 gp</td><td>防护戒指+3：9×2,000 = 18,000 gp</td></tr>
+          <tr><td>豁免抗力物品</td><td>加值² × 1,000 gp</td><td>抗力斗篷+5：25×1,000 = 25,000 gp</td></tr>
+          <tr><td>天生护甲物品</td><td>加值² × 1,000 gp</td><td>天生护甲护符+2：4×1,000 = 4,000 gp</td></tr>
+          <tr><td>持续效果物品</td><td>法术等级 × CL × 2,000 gp × 修正</td><td>根据持续时间调整系数</td></tr>
+          <tr><td>每日N次物品</td><td>法术等级 × CL × 2,000 gp ÷ (5/N)</td><td>N为每天使用次数</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mi-craft-box">
+      <h4>⚠️ 制造持续时间修正系数</h4>
+      <table class="mi-table">
+        <thead><tr><th>法术持续时间</th><th>修正系数</th></tr></thead>
+        <tbody>
+          <tr><td>按轮计算</td><td>×4</td></tr>
+          <tr><td>按分钟/等级</td><td>×2</td></tr>
+          <tr><td>按10分钟/等级</td><td>×1.5</td></tr>
+          <tr><td>按小时/等级或更长</td><td>×1</td></tr>
+          <tr><td>24小时或持续（Permanent）</td><td>×0.5（除以2）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== 12. 随机宝藏 ===== -->
+    <h2 id="random">🎲 随机宝藏生成</h2>
+    <p>DM可使用以下表格快速确定随机获得的魔法物品类型和强度等级。详细表格见DMG第7章。</p>
+
+    <div class="mi-sub-header">宝藏等级与物品强度</div>
+    <table class="mi-table">
+      <thead><tr><th>宝藏等级</th><th>对应CR</th><th>常见物品强度</th><th>金币价值范围</th></tr></thead>
+      <tbody>
+        <tr><td>低</td><td>CR 1-3</td><td>药水、1环卷轴、+1武器/防具</td><td>200-800 gp</td></tr>
+        <tr><td>中低</td><td>CR 4-5</td><td>+1附魔物品、低级奇物、2-3环魔杖</td><td>800-3,000 gp</td></tr>
+        <tr><td>中等</td><td>CR 6-8</td><td>+2武器/防具、中级奇物、中级戒指</td><td>3,000-10,000 gp</td></tr>
+        <tr><td>中高</td><td>CR 9-12</td><td>+3武器/防具、高级奇物、法杖</td><td>10,000-30,000 gp</td></tr>
+        <tr><td>高</td><td>CR 13-16</td><td>+4/+5武器、高级戒指、权杖</td><td>30,000-80,000 gp</td></tr>
+        <tr><td>极高</td><td>CR 17+</td><td>组合附魔物品、次级神器</td><td>80,000+ gp</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">随机物品类型骰表（d%）</div>
+    <table class="mi-table">
+      <thead><tr><th>d% 掷骰</th><th>物品类型</th></tr></thead>
+      <tbody>
+        <tr><td>01-04</td><td>护甲（Armor）</td></tr>
+        <tr><td>05-10</td><td>武器（Weapons）</td></tr>
+        <tr><td>11-15</td><td>药水（Potions）</td></tr>
+        <tr><td>16-20</td><td>戒指（Rings）</td></tr>
+        <tr><td>21-25</td><td>法杖（Rods）</td></tr>
+        <tr><td>26-35</td><td>卷轴（Scrolls）</td></tr>
+        <tr><td>36-40</td><td>权杖（Staffs）</td></tr>
+        <tr><td>41-45</td><td>魔杖（Wands）</td></tr>
+        <tr><td>46-100</td><td>奇物（Wondrous Items）</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-tip">
+      <strong>财富等级参考（WBL - Wealth By Level）：</strong>角色在每个等级应拥有的总财富（按市场价计算）：<br>
+      3级: 2,700 gp | 5级: 9,000 gp | 8级: 27,000 gp | 10级: 49,000 gp | 12级: 81,000 gp | 14级: 150,000 gp | 16级: 260,000 gp | 18级: 440,000 gp | 20级: 760,000 gp
+    </div>
+
+    <!-- 参考资料 -->
+    <div class="mi-ref-box">
+      <strong>📚 参考资料与延伸阅读：</strong>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li>DMG 第7章：Creating Magic Items — 完整的魔法物品创造规则</li>
+        <li>DMG 第8章：Glossary — 魔法物品术语和特殊能力列表</li>
+        <li>Magic Item Compendium (MIC) — 扩展魔法物品和物品套装规则</li>
+        <li>Arms and Armor Guide — 扩展武器和防具附魔选项</li>
+        <li>Spell Compendium — 法术参考，用于确定卷轴和魔杖的法术选择</li>
+        <li>更多装备信息：<a href="intro.html">装备总览 →</a></li>
+        <li>3R拓展装备：<a href="../3r/new-equipment.html">3R新增装备 →</a></li>
+      </ul>
+    </div>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;text-align:center;">
+      📚 数据来源：D&D 3.5e DMG第7章（魔法物品）| Magic Item Compendium | Arms and Armor Guide
+    </p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

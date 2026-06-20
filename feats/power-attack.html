@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>猛力攻击 Power Attack - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .feat-detail {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 18px;
+    margin: 16px 0;
+  }
+  .feat-detail h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: var(--accent-blue);
+  }
+  .feat-strategy {
+    background: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+  .feat-warning {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长分类</div>
+      <a href="intro.html">总览</a>
+      <a href="combat.html">战斗专长</a>
+      <a href="spell-feats.html">施法专长</a>
+      <a href="general.html">通用专长</a>
+      <a href="metamagic.html">超魔专长</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心专长</div>
+      <a href="power-attack.html" class="active">猛力攻击</a>
+      <a href="cleave.html">顺劈斩</a>
+      <a href="weapon-focus.html">武器专精</a>
+      <a href="dodge.html">闪避</a>
+      <a href="iron-will.html">钢铁意志</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="infobox">
+      <div class="infobox-title">⚔️ 猛力攻击 Power Attack</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <table class="infobox-table">
+        <tr><td>类型</td><td>战斗专长</td></tr>
+        <tr><td>先决条件</td><td>力量 13+</td></tr>
+        <tr><td>益处</td><td>攻击-5，伤害+10（近战）<br>攻击-4，伤害+4（远程）</td></tr>
+        <tr><td>特殊</td><td>可与"顺劈斩"链配合</td></tr>
+        <tr><td>来源</td><td>PHB p.98 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>猛力攻击（Power Attack）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心专长</span>
+      <span class="badge badge-feat">PHB p.98</span>
+      <span class="badge badge-note">近战输出必备</span>
+    </p>
+    <p><strong>猛力攻击</strong>是 D&D 3.5e 中<strong>近战输出角色</strong>的必备专长。
+    它允许你在攻击检定上承受<strong>惩罚</strong>，以换取<strong>伤害骰加值</strong>。</p>
+    <p>在 D&D 3.5e 的 Min-Max（数值最优化）社区中，猛力攻击被认为是<strong>近战构建的核心</strong>。
+    它与"顺劈斩（Cleave）"、"战斗反射（Combat Reflexes）"等组成强大的<strong>近战专长链</strong>。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#mechanics">机制详解</a></li>
+        <li><a href="#calculation">伤害计算</a></li>
+        <li><a href="#strategy">战术应用</a></li>
+        <li><a href="#prerequisites">先决条件</a></li>
+        <li><a href="#builds">构建建议</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+        <li><a href="#source">数据来源</a></li>
+      </ol>
+    </div>
+
+    <h2 id="mechanics">⚙️ 机制详解</h2>
+    <div class="feat-detail">
+      <h3>基础效果</h3>
+      <p>选择猛力攻击专长后，你在每次攻击时可以选择：</p>
+      <ul>
+        <li><strong>近战攻击</strong>：攻击检定 -5，伤害骰 +10（每 5 点攻击惩罚+2 伤害加值）</li>
+        <li><strong>远程攻击</strong>：攻击检定 -4，伤害骰 +4（每 4 点攻击惩罚+1 伤害加值）</li>
+        <li><strong>双武器</strong>：主手和副手攻击都受影响。</li>
+        <li><strong>可选幅度</strong>：你可以选择<strong>部分惩罚</strong>（-1、-2、-3、-4、-5），而不是全部 -5。</li>
+      </ul>
+      <p><strong>关键规则：</strong></p>
+      <ol>
+        <li> penalty 必须在<strong>掷攻击骰之前</strong>声明。</li>
+        <li> penalty <strong>影响所有攻击</strong>（包括额外攻击、借机攻击）。</li>
+        <li> penalty <strong>不与"加速术"等捷变叠加</strong>（它们提供不同加值类型）。</li>
+      </ol>
+    </div>
+
+    <div class="feat-detail">
+      <h3>与"加速术"的交互</h3>
+      <p><strong>常见误解</strong>：加速术（Haste）提供"额外攻击"，但那个攻击<strong>不能</strong>使用猛力攻击的 penalty。</p>
+      <p><strong>正确规则</strong>：</p>
+      <ul>
+        <li>加速术的额外攻击是<strong>奖励攻击</strong>（Bonus Attack），不能使用需要标准动作的专长。</li>
+        <li>猛力攻击只能用于<strong>正常攻击动作</strong>（Standard Action 或 Full Attack Action）。</li>
+      </ul>
+    </div>
+
+    <h2 id="calculation">📊 伤害计算</h2>
+    <div class="feat-detail">
+      <h3>近战伤害计算示例</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>攻击惩罚</th><th>伤害加值</th><th>适用场景</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>-1</td><td>+2</td><td>对抗高AC敌人时</td></tr>
+          <tr><td>-2</td><td>+4</td><td>平衡选择</td></tr>
+          <tr><td>-3</td><td>+6</td><td>对抗中AC敌人时</td></tr>
+          <tr><td>-4</td><td>+8</td><td>对抗低AC敌人时</td></tr>
+          <tr><td>-5</td><td>+10</td><td>对抗极低AC敌人时</td></tr>
+        </tbody>
+      </table>
+      <p><strong>计算示例：</strong></p>
+      <ul>
+        <li>10级战士（BAB +10），力量 18（+4），长剑 1d8+4</li>
+        <li>选择 -5 攻击 penalty：攻击 +9（10+4-5），伤害 1d8+14（4+10）</li>
+        <li>选择 -2 攻击 penalty：攻击 +12（10+4-2），伤害 1d8+8（4+4）</li>
+      </ul>
+    </div>
+
+    <h2 id="strategy">🎯 战术应用</h2>
+    <div class="feat-strategy">
+      <h3>💡 何时使用猛力攻击？</h3>
+      <ul>
+        <li><strong>敌人AC ≤ 你的攻击加值 -5</strong>：放心使用 -5 penalty。</li>
+        <li><strong>敌人AC > 你的攻击加值 -5</strong>：使用 -1 或 -2 penalty，保证命中。</li>
+        <li><strong>对抗 Boss</strong>：Boss 通常高 HP，低 AC。可以放心 -5。</li>
+        <li><strong>对抗小怪</strong>：小怪通常高 AC（因为要生存），需要平衡 penalty。</li>
+      </ul>
+    </div>
+
+    <div class="feat-warning">
+      <h3>⚠️ 何时避免猛力攻击？</h3>
+      <ul>
+        <li><strong>你是命中关键角色</strong>：例如需要命中以触发"偷袭"的盗贼。</li>
+        <li><strong>敌人AC极高</strong>：例如穿着全身甲的战士（AC 20+）。</li>
+        <li><strong>你需要命中以触发特效</strong>：例如武器有"麻痹"特效，需要命中才能触发。</li>
+      </ul>
+    </div>
+
+    <h2 id="prerequisites">📖 先决条件</h2>
+    <div class="feat-detail">
+      <h3>必需条件</h3>
+      <ul>
+        <li><strong>力量 13+</strong>：这是唯一的先决条件。</li>
+        <li><strong>无职业限制</strong>：任何职业都可以选择（只要满足力量要求）。</li>
+      </ul>
+      <p><strong>推荐构建：</strong></p>
+      <ul>
+        <li><strong>战士/野蛮人</strong>：优先在 1级选择（人类奖励专长）。</li>
+        <li><strong>圣武士/游侠</strong>：在 3级或 6级选择。</li>
+        <li><strong>武僧</strong>：通常不选择（武僧依赖徒手攻击，伤害骰固定）。</li>
+      </ul>
+    </div>
+
+    <h2 id="builds">🏗️ 构建建议</h2>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>⚔️ 近战输出流</h3>
+        <p><strong>属性优先级</strong>：力量（STR）> 体质（CON）> 敏捷（DEX）</p>
+        <p><strong>专长链</strong>：猛力攻击 → 顺劈斩 → 精通顺劈斩 → 战斗反射</p>
+        <p><strong>战术</strong>：高力量 + 猛力攻击 = 毁灭性伤害。</p>
+      </div>
+      <div class="section-card">
+        <h3>🛡️ 坦克流</h3>
+        <p><strong>属性优先级</strong>：体质（CON）> 力量（STR）> 敏捷（DEX）</p>
+        <p><strong>专长链</strong>：猛力攻击（轻度使用） → 钢铁意志 → 闪避</p>
+        <p><strong>战术</strong>：不依赖猛力攻击，专注于生存。</p>
+      </div>
+      <div class="section-card">
+        <h3>🏹 远程流</h3>
+        <p><strong>属性优先级</strong>：敏捷（DEX）> 力量（STR）> 体质（CON）</p>
+        <p><strong>专长链</strong>：远程射击 → 精准射击 → 猛力攻击（远程版）</p>
+        <p><strong>战术</strong>：远程猛力攻击 penalty 较小（-4），但收益也较小（+4）。</p>
+      </div>
+    </div>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"猛力攻击"是否影响"借机攻击"</h3>
+      <p><strong>冲突描述：</strong>猛力攻击的攻击 penalty 是否适用于<strong>借机攻击（Attack of Opportunity, AOO）</strong>？</p>
+      <p><strong>SRD 和 PHB 的明确说法：</strong>"When you use Power Attack, you take a penalty on melee attack rolls ... This penalty applies to all melee attack rolls you make this round." (SRD · Combat · Special Attacks)</p>
+      <p>即：<strong>适用于所有近战攻击检定</strong>，包括借机攻击、夹击攻击等。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.98</span></p>
+      <p><strong>DM 解释差异：</strong>某些 DM 可能 house rule "借机攻击不承受猛力攻击 penalty"。建议提前确认。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>关于"猛力攻击"与"加速术"额外攻击的交互</h3>
+      <p><strong>冲突描述：</strong>加速术（Haste）提供的额外攻击是否可以使用猛力攻击？</p>
+      <p><strong>SRD 的明确说法：</strong>"Haste grants one extra attack ... This extra attack is made using your full base attack bonus." (SRD · Spells · Haste)</p>
+      <p>即：<strong>不可以。</strong>加速术的额外攻击是"奖励攻击"（Bonus Attack），不能使用需要标准动作的专长。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.239</span></p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.98 —— 猛力攻击专长描述</li>
+      <li>📘 <strong>SRD 3.5</strong> · Feats → Power Attack —— 开放式游戏规则</li>
+      <li>📗 <strong>DMG（城主手册）3.5版</strong> p.177 —— 专长选择建议</li>
+      <li>📗 <strong>Complete Warrior</strong> —— 猛力攻击变体和扩展</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="intro.html">← 返回专长总览</a> | <a href="cleave.html">下一页：顺劈斩 →</a>
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 猛力攻击专长详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的收藏夹 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .fav-header { background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%); border-radius:12px; padding:28px 32px; margin:20px 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .fav-header h2 { color:#fff; margin:0; font-size:1.4rem; }
+  .fav-count { color:#f39c12; font-size:1rem; }
+  .btn-row { display:flex; gap:10px; flex-wrap:wrap; margin:16px 0; }
+  .btn-action { padding:8px 18px; border-radius:8px; border:1px solid; cursor:pointer; font-size:0.9rem; font-weight:600; transition:.2s; background:transparent; }
+  .btn-clear { border-color:#e74c3c; color:#e74c3c; }
+  .btn-clear:hover { background:#e74c3c; color:#fff; }
+  .btn-export { border-color:#2ecc71; color:#2ecc71; }
+  .btn-export:hover { background:#2ecc71; color:#fff; }
+  .btn-compare { border-color:#3498db; color:#3498db; }
+  .btn-compare:hover { background:#3498db; color:#fff; }
+  .btn-search { border-color:var(--accent); color:var(--accent); }
+  .btn-search:hover { background:var(--accent); color:#fff; }
+  .spell-table { width:100%; border-collapse:collapse; }
+  .spell-table th { background:var(--bg-card); color:var(--accent); padding:10px 12px; text-align:left; font-size:0.85rem; border-bottom:2px solid var(--border); }
+  .spell-table td { padding:9px 12px; border-bottom:1px solid var(--border); font-size:0.9rem; vertical-align:middle; }
+  .spell-table tr:hover { background:var(--bg-card); }
+  .school-tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.78rem; border:1px solid; }
+  .btn-remove { padding:3px 10px; border-radius:6px; border:1px solid #e74c3c; background:transparent; color:#e74c3c; cursor:pointer; font-size:0.8rem; transition:.15s; }
+  .btn-remove:hover { background:#e74c3c; color:#fff; }
+  .btn-view { padding:3px 10px; border-radius:6px; border:1px solid var(--accent); background:transparent; color:var(--accent); cursor:pointer; font-size:0.8rem; transition:.15s; }
+  .btn-view:hover { background:var(--accent); color:#fff; }
+  .empty-state { text-align:center; padding:60px 20px; color:var(--text-muted); }
+  .empty-icon { font-size:4rem; margin-bottom:16px; }
+  .empty-title { font-size:1.3rem; margin-bottom:8px; color:var(--text); }
+  .source-badge { display:inline-block; padding:1px 7px; border-radius:6px; font-size:0.72rem; margin-left:4px; }
+  .source-phb { background:#1a4a2e; color:#2ecc71; border:1px solid #2ecc71; }
+  .source-3r { background:#2a1a4a; color:#9b59b6; border:1px solid #9b59b6; }
+  .filter-bar { display:flex; gap:10px; margin:12px 0; flex-wrap:wrap; align-items:center; }
+  .filter-bar input, .filter-bar select { padding:6px 10px; border-radius:6px; border:1px solid var(--border); background:var(--bg-card); color:var(--text); font-size:0.88rem; }
+  .info-banner { background:#1a3a2a; border:1px solid #2ecc71; border-radius:8px; padding:12px 16px; margin:12px 0; font-size:0.88rem; color:#2ecc71; }
+  /* 弹窗 */
+  .modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; align-items:center; }
+  .modal-overlay.active { display:flex; }
+  .modal-content { background:var(--bg-card); border-radius:12px; max-width:720px; width:92%; max-height:85vh; overflow-y:auto; padding:28px; position:relative; }
+  .modal-close { position:absolute; top:12px; right:16px; background:none; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; }
+  .spell-info-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px 20px; margin:16px 0; font-size:0.9rem; }
+  .spell-info-item { display:flex; gap:6px; }
+  .spell-info-label { color:var(--text-muted); min-width:80px; }
+  .spell-desc-box { background:var(--bg-main); border:1px solid var(--border); border-radius:8px; padding:16px; margin:16px 0; line-height:1.7; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html" class="active">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+<div class="page-wrapper">
+  <!-- 左侧导航 -->
+  <nav class="sidebar">
+    <div class="nav-header">
+      <span class="nav-logo">⚔️</span>
+      <span class="nav-title">D&D 3.5e</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 首页</a></li>
+      <li><a href="../rules.html">📜 核心规则</a></li>
+      <li><a href="intro.html" class="active">✨ 法术大全</a></li>
+      <li><a href="../classes/intro.html">⚔️ 职业</a></li>
+      <li><a href="../races/intro.html">🧝 种族</a></li>
+      <li><a href="../feats/intro.html">🏆 专长</a></li>
+      <li><a href="../skills/intro.html">📊 技能</a></li>
+      <li><a href="../equipment/intro.html">🎒 装备</a></li>
+      <li><a href="../monsters/intro.html">👹 怪物</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a> &gt; <a href="intro.html">法术大全</a> &gt; <span>我的收藏夹</span>
+    </div>
+
+    <!-- 页头 -->
+    <div class="fav-header">
+      <div>
+        <h2>⭐ 我的法术收藏夹</h2>
+        <p style="color:var(--text-muted);margin:4px 0 0;font-size:0.9rem;">收藏你常用或感兴趣的法术，方便快速查阅</p>
+      </div>
+      <div class="fav-count" id="favCount">0 个法术</div>
+    </div>
+
+    <div class="info-banner">
+      💡 收藏数据保存在浏览器本地存储中，清除浏览器数据会丢失。建议定期导出备份。
+    </div>
+
+    <!-- 操作栏 -->
+    <div class="btn-row">
+      <button class="btn-action btn-search" onclick="window.location.href='search.html'">🔍 返回法术搜索</button>
+      <button class="btn-action btn-compare" id="btnCompare" onclick="compareSelected()">🔀 对比选中法术 <span id="selectedCount"></span></button>
+      <button class="btn-action btn-export" onclick="exportFavorites()">📥 导出收藏（JSON）</button>
+      <button class="btn-action btn-export" onclick="exportCSV()" style="border-color:#27ae60;color:#27ae60;">📊 导出收藏（CSV）</button>
+      <button class="btn-action btn-clear" onclick="clearAllFavorites()">🗑️ 清空全部收藏</button>
+    </div>
+
+    <!-- 筛选栏 -->
+    <div class="filter-bar">
+      <input type="text" id="filterInput" placeholder="在收藏中搜索…" oninput="renderFavorites()" style="min-width:200px;">
+      <select id="filterLevel" onchange="renderFavorites()">
+        <option value="">全部环级</option>
+        <option value="0">戏法 (0环)</option>
+        <option value="1">1环</option>
+        <option value="2">2环</option>
+        <option value="3">3环</option>
+        <option value="4">4环</option>
+        <option value="5">5环</option>
+        <option value="6">6环</option>
+        <option value="7">7环</option>
+        <option value="8">8环</option>
+        <option value="9">9环</option>
+      </select>
+      <select id="filterSchool" onchange="renderFavorites()">
+        <option value="">全部学派</option>
+      </select>
+      <select id="filterSource" onchange="renderFavorites()">
+        <option value="">全部来源</option>
+        <option value="PHB">PHB 核心</option>
+        <option value="3R">3R 拓展</option>
+      </select>
+    </div>
+
+    <!-- 收藏表格 -->
+    <div id="favContent"></div>
+
+    <div class="footer">
+      <p>Dungeons & Dragons 3.5版 中文Wiki · 非官方粉丝制作 · 基于SRD（OGL协议）</p>
+    </div>
+  </main>
+</div>
+
+<!-- 法术详情弹窗 -->
+<div id="spellModal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="../js/spells-data.js"></script>
+<script src="../js/spells-domains.js"></script>
+<script>
+const SCHOOL_COLORS = {'咒法系':'#9b59b6','变化系':'#3498db','惑控系':'#e74c3c','死灵系':'#2c3e50','塑能系':'#e67e22','预言系':'#1abc9c','防护系':'#f1c40f','幻术系':'#e91e63','通用系':'#95a5a6'};
+const CLASS_NAMES_ZH = {wizard:'法师',sorcerer:'术士',cleric:'牧师',druid:'德鲁伊',bard:'吟游诗人',paladin:'圣武士',ranger:'巡林客'};
+const DOMAIN_COLORS = {'气':'#87CEEB','动物':'#8BC34A','混乱':'#9C27B0','死亡':'#424242','破坏':'#FF5722','土':'#795548','邪恶':'#E91E63','火':'#F44336','善良':'#4CAF50','治疗':'#00BCD4','知识':'#2196F3','守序':'#3F51B5','幸运':'#FFC107','魔法':'#9C27B0','植物':'#4CAF50','防护':'#607D8B','力量':'#D32F2F','太阳':'#FF9800','旅行':'#00BCD4','诡术':'#E91E63','战争':'#B71C1C','水':'#2196F3'};
+
+// ===== 收藏管理 =====
+function getFavorites(){ try{ return JSON.parse(localStorage.getItem('dnd35_favorites')||'[]'); }catch{ return []; } }
+function saveFavorites(favs){ localStorage.setItem('dnd35_favorites', JSON.stringify(favs)); }
+function removeFavorite(id){ saveFavorites(getFavorites().filter(f=>f!==id)); renderFavorites(); updateFavCount(); }
+function clearAllFavorites(){
+  if(!confirm('确定要清空所有收藏吗？此操作不可撤销。')) return;
+  saveFavorites([]); renderFavorites(); updateFavCount();
+}
+function updateFavCount(){
+  const count = getFavorites().length;
+  document.getElementById('favCount').textContent = `${count} 个法术`;
+}
+
+// ===== 对比功能 =====
+let selectedForCompare = [];
+function toggleSelectForCompare(id, checkbox){
+  if(checkbox.checked){
+    if(selectedForCompare.length >= 4){ alert('最多选择4个法术进行对比'); checkbox.checked=false; return; }
+    selectedForCompare.push(id);
+  } else {
+    selectedForCompare = selectedForCompare.filter(x=>x!==id);
+  }
+  const countEl = document.getElementById('selectedCount');
+  countEl.textContent = selectedForCompare.length > 0 ? `(${selectedForCompare.length})` : '';
+}
+function compareSelected(){
+  if(selectedForCompare.length < 2){ alert('请至少选择2个法术进行对比'); return; }
+  sessionStorage.setItem('dnd35_compare', JSON.stringify(selectedForCompare));
+  window.location.href = 'compare.html';
+}
+
+// ===== 渲染收藏表格 =====
+function renderFavorites(){
+  const favIds = getFavorites();
+  const q = (document.getElementById('filterInput').value||'').toLowerCase();
+  const filterLevel = document.getElementById('filterLevel').value;
+  const filterSchool = document.getElementById('filterSchool').value;
+  const filterSource = document.getElementById('filterSource').value;
+
+  let favSpells = favIds.map(id => SPELLS.find(s=>s.id===id)).filter(Boolean);
+
+  // 筛选
+  if(q) favSpells = favSpells.filter(s => (s.nameZh||'').includes(q) || (s.nameEn||'').toLowerCase().includes(q));
+  if(filterLevel !== '') favSpells = favSpells.filter(s => s.level == parseInt(filterLevel));
+  if(filterSchool) favSpells = favSpells.filter(s => s.school === filterSchool);
+  if(filterSource) favSpells = favSpells.filter(s => s.source === filterSource);
+
+  const container = document.getElementById('favContent');
+
+  if(favIds.length === 0){
+    container.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">⭐</div>
+      <div class="empty-title">收藏夹是空的</div>
+      <p>在<a href="search.html" style="color:var(--accent);">法术搜索</a>页面中，点击法术旁的 ☆ 按钮来收藏法术</p>
+    </div>`;
+    return;
+  }
+
+  if(favSpells.length === 0){
+    container.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><p>没有匹配的收藏法术</p></div>';
+    return;
+  }
+
+  let html = `<table class="spell-table">
+    <thead><tr>
+      <th style="width:32px;"><input type="checkbox" title="全选" onchange="document.querySelectorAll('.row-select').forEach(cb=>{ cb.checked=this.checked; toggleSelectForCompare(cb.dataset.id, cb); })"></th>
+      <th>法术名称</th>
+      <th>环级</th>
+      <th>学派</th>
+      <th>成分</th>
+      <th>施法时间</th>
+      <th>来源</th>
+      <th>操作</th>
+    </tr></thead><tbody>`;
+  
+  favSpells.forEach(s => {
+    const scColor = SCHOOL_COLORS[s.school] || '#95a5a6';
+    const sourceBadge = s.source === 'PHB' 
+      ? '<span class="source-badge source-phb">PHB</span>'
+      : (s.source === '3R' ? '<span class="source-badge source-3r">3R</span>' : '');
+    html += `<tr>
+      <td><input type="checkbox" class="row-select" data-id="${s.id}" onchange="toggleSelectForCompare('${s.id}',this)"></td>
+      <td style="cursor:pointer;" onclick="openSpell('${s.id}')">
+        <strong style="color:var(--accent);">${s.nameZh}</strong><br>
+        <span style="font-size:0.8rem;color:var(--text-muted);">${s.nameEn}</span>
+      </td>
+      <td>${s.level===0?'戏法':s.level+'环'}</td>
+      <td><span class="school-tag" style="color:${scColor};border-color:${scColor};">${s.school}</span></td>
+      <td>${s.components}</td>
+      <td>${s.castingTime}</td>
+      <td>${sourceBadge}</td>
+      <td style="white-space:nowrap;">
+        <button class="btn-view" onclick="openSpell('${s.id}')">详情</button>
+        <button class="btn-remove" onclick="removeFavorite('${s.id}')">移除</button>
+      </td>
+    </tr>`;
+  });
+
+  html += '</tbody></table>';
+  html += `<p style="margin-top:12px;color:var(--text-muted);font-size:0.85rem;">共 ${favSpells.length} 个法术${favSpells.length < favIds.length ? `（已筛选，总收藏 ${favIds.length} 个）` : ''}</p>`;
+  container.innerHTML = html;
+}
+
+// ===== 导出功能 =====
+function exportFavorites(){
+  const favIds = getFavorites();
+  const favSpells = favIds.map(id => SPELLS.find(s=>s.id===id)).filter(Boolean);
+  const data = { exportTime: new Date().toISOString(), count: favSpells.length, spells: favSpells };
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='dnd35_favorites.json'; a.click();
+  URL.revokeObjectURL(url);
+}
+function exportCSV(){
+  const favIds = getFavorites();
+  const favSpells = favIds.map(id => SPELLS.find(s=>s.id===id)).filter(Boolean);
+  const headers = ['中文名','英文名','环级','学派','成分','施法时间','距离','持续时间','豁免检定','法术抗力','来源','描述'];
+  const rows = favSpells.map(s => [
+    s.nameZh, s.nameEn, s.level===0?'戏法':s.level+'环', s.school,
+    s.components, s.castingTime, s.range, s.duration,
+    s.savingThrow, s.spellResist, s.source||'',
+    (s.desc||'').replace(/[\n\r"]/g,' ')
+  ]);
+  const csv = [headers, ...rows].map(row => row.map(v => `"${v||''}"`).join(',')).join('\n');
+  const blob = new Blob(['\ufeff'+csv], {type:'text/csv;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='dnd35_favorites.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ===== 法术详情弹窗 =====
+function openSpell(id){
+  const s = SPELLS.find(x=>x.id===id);
+  if(!s) return;
+  const scColor = SCHOOL_COLORS[s.school] || '#95a5a6';
+  function getDomainTags(spellId){
+    if(typeof SPELL_DOMAINS==='undefined'||!SPELL_DOMAINS[spellId]) return '';
+    return SPELL_DOMAINS[spellId].map(d=>
+      `<span style="padding:1px 5px;border-radius:4px;font-size:0.72rem;border:1px solid ${DOMAIN_COLORS[d]||'#999'};color:${DOMAIN_COLORS[d]||'#999'};">${d}</span>`
+    ).join(' ');
+  }
+  const sourceBadge = s.source==='PHB'?'<span class="source-badge source-phb">PHB 核心</span>':(s.source==='3R'?'<span class="source-badge source-3r">3R 拓展</span>':'');
+  document.getElementById('modalBody').innerHTML = `
+    <h2 style="margin-bottom:4px;">${s.nameZh} <span style="font-weight:400;font-size:1rem;color:var(--text-muted);">${s.nameEn}</span>${sourceBadge}</h2>
+    <div><span style="padding:3px 12px;border-radius:12px;font-size:0.82rem;border:1px solid ${scColor};color:${scColor};">${s.school}</span></div>
+    <div class="spell-info-grid">
+      <div class="spell-info-item"><span class="spell-info-label">环级</span><span>${s.level===0?'戏法':s.level+'环'}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">成分</span><span>${s.components}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">施法时间</span><span>${s.castingTime}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">距离</span><span>${s.range}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">目标/范围</span><span>${s.target}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">持续时间</span><span>${s.duration}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">豁免检定</span><span>${s.savingThrow}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">法术抗力</span><span>${s.spellResist}</span></div>
+      ${typeof SPELL_DOMAINS!=='undefined'&&SPELL_DOMAINS[s.id]?`<div class="spell-info-item"><span class="spell-info-label">领域</span><span style="display:flex;gap:3px;flex-wrap:wrap;">${getDomainTags(s.id)}</span></div>`:''}
+    </div>
+    <div class="spell-desc-box">${(s.desc||'').replace(/\n/g,'<br>')}</div>
+    ${s.material?`<p><strong>🧪 材料成分：</strong>${s.material}</p>`:''}
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+      <button onclick="removeFavorite('${s.id}');closeModal();" style="padding:6px 16px;border-radius:8px;border:1px solid #e74c3c;background:transparent;color:#e74c3c;cursor:pointer;">🗑️ 移除收藏</button>
+    </div>
+  `;
+  document.getElementById('spellModal').classList.add('active');
+}
+function closeModal(evt){ if(evt&&evt.target!==document.getElementById('spellModal')) return; document.getElementById('spellModal').classList.remove('active'); }
+
+// ===== 初始化 =====
+function init(){
+  // 填充学派筛选
+  const schools = [...new Set(SPELLS.map(s=>s.school))].sort();
+  document.getElementById('filterSchool').innerHTML = 
+    '<option value="">全部学派</option>' + schools.map(sc=>`<option value="${sc}">${sc}</option>`).join('');
+  
+  updateFavCount();
+  renderFavorites();
+}
+
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+init();
+</script>
+</body>
+</html>

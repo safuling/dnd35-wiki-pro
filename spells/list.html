@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法术列表 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .browse-section { margin: 32px 0; }
+  .browse-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .level-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .level-card { background: var(--bg-card); border: 2px solid var(--border); border-radius: 10px; padding: 20px 12px; text-align: center; cursor: pointer; transition: .2s; text-decoration: none; color: var(--text); }
+  .level-card:hover { border-color: var(--accent); background: var(--accent); color: #fff; transform: translateY(-2px); }
+  .level-num { font-size: 2.5rem; font-weight: 900; display: block; }
+  .level-label { font-size: 0.85rem; opacity: 0.7; }
+  .school-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .school-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; cursor: pointer; transition: .2s; text-decoration: none; color: var(--text); }
+  .school-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }
+  .school-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+  .domain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .domain-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; cursor: pointer; transition: .2s; text-decoration: none; color: var(--text); font-size: 0.9rem; }
+  .domain-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }
+  .domain-name { font-weight: 600; display: block; margin-bottom: 4px; }
+  .domain-name-en { font-size: 0.8rem; opacity: 0.6; }
+  .spell-count { font-size: 0.85rem; color: var(--accent); margin-top: 8px; }
+  .type-tabs { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  .type-tab { padding: 10px 20px; border-radius: 8px; border: 2px solid var(--border); background: var(--bg-card); cursor: pointer; transition: .2s; font-weight: 500; }
+  .type-tab.active { border-color: var(--accent); background: var(--accent); color: #fff; }
+  .type-tab:hover { border-color: var(--accent); }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html" class="active">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+<div class="page-wrapper">
+  <!-- 左侧导航 -->
+  <nav class="sidebar">
+    <div class="nav-header">
+      <span class="nav-logo">⚔️</span>
+      <span class="nav-title">D&D 3.5e</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 首页</a></li>
+      <li><a href="../rules.html">📜 核心规则</a></li>
+      <li><a href="intro.html" class="active">✨ 法术大全</a></li>
+      <li><a href="../classes/intro.html">⚔️ 职业</a></li>
+      <li><a href="../races/intro.html">🧝 种族</a></li>
+      <li><a href="../feats/intro.html">🏆 专长</a></li>
+      <li><a href="../skills/intro.html">📊 技能</a></li>
+      <li><a href="../equipment/intro.html">🎒 装备</a></li>
+      <li><a href="../monsters/intro.html">👹 怪物</a></li>
+      <li><a href="../conflicts.html">⚠️ 规则冲突</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <!-- 面包屑 -->
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a> &gt; <a href="intro.html">法术大全</a> &gt; <span>法术列表</span>
+    </div>
+
+    <!-- 页面标题 -->
+    <div class="page-header">
+      <h1>📋 法术列表</h1>
+      <p class="page-subtitle">按环级、学派、领域浏览所有法术</p>
+    </div>
+
+    <!-- 快速搜索 -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 24px;">
+      <input type="text" id="quickSearch" placeholder="快速搜索法术（中/英文名称）..." style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 2px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem;" oninput="quickSearchSpells()">
+      <div id="quickResults" style="margin-top: 12px; max-height: 300px; overflow-y: auto;"></div>
+    </div>
+
+    <!-- 按环级浏览 -->
+    <div class="browse-section">
+      <h2 class="browse-title">📊 按环级浏览</h2>
+      <div class="level-grid">
+        <a class="level-card" href="level0.html">
+          <span class="level-num">0</span>
+          <span class="level-label">戏法 / 祷言</span>
+        </a>
+        <a class="level-card" href="level1.html">
+          <span class="level-num">1</span>
+          <span class="level-label">1环法术</span>
+        </a>
+        <a class="level-card" href="level2.html">
+          <span class="level-num">2</span>
+          <span class="level-label">2环法术</span>
+        </a>
+        <a class="level-card" href="level3.html">
+          <span class="level-num">3</span>
+          <span class="level-label">3环法术</span>
+        </a>
+        <a class="level-card" href="level4.html">
+          <span class="level-num">4</span>
+          <span class="level-label">4环法术</span>
+        </a>
+        <a class="level-card" href="level5.html">
+          <span class="level-num">5</span>
+          <span class="level-label">5环法术</span>
+        </a>
+        <a class="level-card" href="level6.html">
+          <span class="level-num">6</span>
+          <span class="level-label">6环法术</span>
+        </a>
+        <a class="level-card" href="level7.html">
+          <span class="level-num">7</span>
+          <span class="level-label">7环法术</span>
+        </a>
+        <a class="level-card" href="level8.html">
+          <span class="level-num">8</span>
+          <span class="level-label">8环法术</span>
+        </a>
+        <a class="level-card" href="level9.html">
+          <span class="level-num">9</span>
+          <span class="level-label">9环法术</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 按学派浏览 -->
+    <div class="browse-section">
+      <h2 class="browse-title">🎓 按学派浏览</h2>
+      <div class="school-grid" id="schoolGrid">
+        <!-- JS填充 -->
+      </div>
+    </div>
+
+    <!-- 按领域浏览 -->
+    <div class="browse-section">
+      <h2 class="browse-title">📜 按领域浏览</h2>
+      <div class="domain-grid" id="domainGrid">
+        <!-- JS填充 -->
+      </div>
+    </div>
+
+    <!-- 按类型浏览 -->
+    <div class="browse-section">
+      <h2 class="browse-title">⚡ 按类型浏览</h2>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="search.html?type=arcane" style="display: inline-block; padding: 16px 32px; background: var(--bg-card); border: 2px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); font-weight: 600; transition: .2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="color: #e74c3c; font-size: 1.2rem;">⚡</span> 奥术法术
+        </a>
+        <a href="search.html?type=divine" style="display: inline-block; padding: 16px 32px; background: var(--bg-card); border: 2px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); font-weight: 600; transition: .2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="color: #2ecc71; font-size: 1.2rem;">✨</span> 神术法术
+        </a>
+        <a href="search.html?type=both" style="display: inline-block; padding: 16px 32px; background: var(--bg-card); border: 2px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); font-weight: 600; transition: .2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="color: #9b59b6; font-size: 1.2rem;">🔮</span> 奥术+神术
+        </a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- 法术数据 -->
+<script src="../js/spells-data.js"></script>
+<script src="../js/spells-domains.js"></script>
+<script>
+// 学派数据
+const SCHOOLS = [
+  { id: 'abjuration', nameZh: '防护', nameEn: 'Abjuration', icon: '🛡️' },
+  { id: 'conjuration', nameZh: '咒法', nameEn: 'Conjuration', icon: '✨' },
+  { id: 'divination', nameZh: '预言', nameEn: 'Divination', icon: '🔮' },
+  { id: 'enchantment', nameZh: '魅惑', nameEn: 'Enchantment', icon: '💫' },
+  { id: 'evocation', nameZh: '塑能', nameEn: 'Evocation', icon: '⚡' },
+  { id: 'illusion', nameZh: '幻术', nameEn: 'Illusion', icon: '👁️' },
+  { id: 'necromancy', nameZh: '死灵', nameEn: 'Necromancy', icon: '💀' },
+  { id: 'transmutation', nameZh: '变化', nameEn: 'Transmutation', icon: '🔄' },
+  { id: 'universalist', nameZh: '通用', nameEn: 'Universalist', icon: '📚' }
+];
+
+// 渲染学派卡片
+function renderSchools() {
+  const grid = document.getElementById('schoolGrid');
+  if (!grid) return;
+  
+  grid.innerHTML = SCHOOLS.map(school => {
+    const count = SPELLS.filter(s => s.school === school.id).length;
+    return `
+      <a class="school-card" href="search.html?school=${school.id}">
+        <span class="school-icon">${school.icon}</span>
+        <strong>${school.nameZh}</strong><br>
+        <small style="opacity:0.6;">${school.nameEn}</small>
+        <div class="spell-count">${count} 个法术</div>
+      </a>
+    `;
+  }).join('');
+}
+
+// 渲染领域卡片
+function renderDomains() {
+  const grid = document.getElementById('domainGrid');
+  if (!grid) return;
+  
+  if (typeof ALL_DOMAINS === 'undefined') return;
+  
+  grid.innerHTML = ALL_DOMAINS.map(domain => {
+    const domainName = DOMAIN_NAMES ? (DOMAIN_NAMES[domain] || domain) : domain;
+    const count = Object.values(SPELL_DOMAINS || {}).filter(domains => domains.includes(domain)).length;
+    return `
+      <a class="domain-card" href="search.html?domain=${domain}">
+        <span class="domain-name">${domainName}</span>
+        <span class="domain-name-en">${domain}</span>
+        <div class="spell-count">${count} 个法术</div>
+      </a>
+    `;
+  }).join('');
+}
+
+// 快速搜索
+function quickSearchSpells() {
+  const input = document.getElementById('quickSearch');
+  const resultsDiv = document.getElementById('quickResults');
+  if (!input || !resultsDiv) return;
+  
+  const query = input.value.trim().toLowerCase();
+  if (query.length < 2) {
+    resultsDiv.innerHTML = '';
+    return;
+  }
+  
+  const results = SPELLS.filter(s => 
+    s.nameZh.toLowerCase().includes(query) || 
+    s.nameEn.toLowerCase().includes(query)
+  ).slice(0, 20);
+  
+  if (results.length === 0) {
+    resultsDiv.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 20px;">未找到匹配的法术</p>';
+    return;
+  }
+  
+  resultsDiv.innerHTML = `
+    <div style="display: grid; gap: 8px;">
+      ${results.map(s => `
+        <a href="spell-detail.html?id=${s.id}" style="display: block; padding: 12px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text); transition: .2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <strong>${s.nameZh}</strong> <small style="opacity:0.6;">${s.nameEn}</small>
+          <span style="float: right; font-size: 0.85rem; color: var(--accent);">${Object.values(s.level)[0]}环</span>
+        </a>
+      `).join('')}
+    </div>
+    ${results.length >= 20 ? '<p style="text-align: center; color: var(--text-muted); margin-top: 12px;">... 仅显示前20个结果，请使用<a href="search.html">高级搜索</a>查看全部</p>' : ''}
+  `;
+}
+
+// 页面加载
+document.addEventListener('DOMContentLoaded', () => {
+  renderSchools();
+  renderDomains();
+});
+</script>
+</body>
+</html>

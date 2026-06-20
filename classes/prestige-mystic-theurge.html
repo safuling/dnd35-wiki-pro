@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秘术师 Mystic Theurge - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>秘术师 <span style="font-size:0.6em;color:#888;">Mystic Theurge</span></h1>
+    <p style="color:#666;font-size:0.95em;">出自《城主指南》(DMG) p.199</p>
+
+    <div style="padding:12px 16px;background:#fff3cd;border:1px solid #ffc107;border-radius:6px;margin:1em 0;">
+      <strong>核心定位：</strong>秘术师是D&D 3.5e中最具标志性的双重施法进阶职业。它同时推进奥术和神术的施法等级，使角色成为同时掌握两种魔法体系的万能施法者。
+    </div>
+
+    <!-- 信息框 -->
+    <div class="infobox" style="float:right;width:320px;margin:0 0 1em 1.5em;border:1px solid #b8860b;border-radius:6px;background:#fdf6e3;">
+      <div style="background:#8b6914;color:#fff;padding:10px;text-align:center;font-size:1.2em;font-weight:bold;">秘术师 Mystic Theurge</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">生命骰</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">d4</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">等级数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">10</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">阵营限制</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">无</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能点数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">2 + 智力调整值</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">本职技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">专注、知识（奥术）、知识（宗教）、法术辨识、察言观色</td></tr>
+        <tr style="background:#f5f0e0;"><td colspan="2" style="padding:8px 10px;font-weight:bold;color:#8b6914;">先决条件</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">知识（奥术）6级，知识（宗教）6级</td></tr>
+        <tr><td style="padding:6px 10px;font-weight:bold;">施法能力</td><td style="padding:6px 10px;">可施展2级奥术和2级神术</td></tr>
+      </table>
+    </div>
+
+    <h2>职业概述</h2>
+    <p>秘术师是同时掌握奥术与神术两大魔法体系的大师。他们不满足于只精通一种魔法传统，而是致力于弥合奥术与神术之间的鸿沟。通过对两种魔法本质的深入研究，秘术师发现了它们之间隐藏的联系，从而能够同时推进两种施法能力。</p>
+    <p>秘术师的核心吸引力在于其<strong>双重施法进展</strong>——每一级秘术师都同时增加一级奥术和一级神术的施法者等级、每日法术数量和可知法术。这使得秘术师在法术数量和多样性上远超任何单一施法职业，代价是进入门槛较高（需要至少3级奥术职业和3级神术职业），且最高环位法术的获取会比纯施法职业慢约6级。</p>
+
+    <h2>职业技能表</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#8b6914;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">等级</th>
+          <th style="padding:8px;border:1px solid #ddd;">基本攻击加值</th>
+          <th style="padding:8px;border:1px solid #ddd;">强韧豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">反射豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">意志豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">特殊能力</th>
+          <th style="padding:8px;border:1px solid #ddd;">施法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">1级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">2级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">3级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">4级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">5级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">6级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">7级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">8级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">9级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">10级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+7</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 奥术 / +1 神术</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详解</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>秘术师不会获得额外的武器或防具熟练。</p>
+
+    <h3>施法 (Spellcasting)</h3>
+    <p>这是秘术师最核心也是唯一的能力——每升一级秘术师，角色的<strong>奥术施法职业</strong>和<strong>神术施法职业</strong>的施法者等级、每日法术数量和可知法术都同时增加一级，就好像在两个职业上各提升了一级。</p>
+
+    <div style="padding:12px 16px;background:#e8f5e9;border:1px solid #4caf50;border-radius:6px;margin:1em 0;">
+      <strong>举例说明：</strong>一个术士3/牧师3的角色进入秘术师，在秘术师1级时，其施法能力相当于4级术士和4级牧师。在秘术师10级时，相当于13级术士和13级牧师——可以施展7级奥术和7级神术。虽然比纯职业慢约6级获得最高环位法术，但每日法术总量和法术种类远超任何单一施法者。
+    </div>
+
+    <p><strong>重要规则细节：</strong></p>
+    <ul>
+      <li>如果角色有多个奥术施法职业（如法师+术士），必须选择秘术师的奥术施法进展加到哪一个。同样适用于多个神术施法职业的情况。</li>
+      <li>一旦选定，不可更改。</li>
+      <li>秘术师的施法进展适用于所有施法相关属性：施法者等级、每日法术数量、可知法术（对自发施法者）、豁免DC不受影响（仍基于原始属性）。</li>
+    </ul>
+
+    <h3>没有其他特殊能力</h3>
+    <p>值得注意的是，秘术师除了双重施法进展外，<strong>没有任何其他特殊能力</strong>。这意味着它的所有价值都来自于施法能力的双重推进。对于不施法的角色来说，秘术师完全没有用处。</p>
+
+    <h2>角色构建建议</h2>
+
+    <h3>经典构建路线</h3>
+
+    <p><strong>术士3/牧师3/秘术师10</strong>（角色等级16）：这是最高效的秘术师路线之一。术士和牧师各3级满足先决条件（2级奥术+2级神术+知识技能），然后10级秘术师同时推进两者。最终拥有13级术士和13级牧师的施法能力。</p>
+
+    <p><strong>法师3/牧师3/秘术师10</strong>（角色等级16）：与术士/牧师类似，但法师拥有更广泛的法术选择。代价是法术准备系统的灵活性略低于术士的自发施法。</p>
+
+    <p><strong>术士3/天界领域牧师1/秘术师10</strong>：如果使用1级天界领域牧师（获得2级法术位），可以更快进入秘术师。但需确认DM是否允许这种变体。</p>
+
+    <h3>进阶后续</h3>
+    <p>完成10级秘术师后（角色等级16），还有4级可以分配：</p>
+    <ul>
+      <li><strong>+4 秘术师外职业等级：</strong>例如2级法师+2级牧师，获得8级奥术和8级神术</li>
+      <li><strong>+4 单一职业：</strong>例如4级牧师，获得17级神术施法（9级神术！），奥术停留在13级</li>
+    </ul>
+
+    <h3>秘术师的优劣势分析</h3>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#2e7d32;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;width:50%;">优势</th>
+          <th style="padding:8px;border:1px solid #ddd;width:50%;background:#c62828;">劣势</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;vertical-align:top;">
+            <ul style="margin:0;padding-left:1.2em;">
+              <li>每日法术总量极为充沛</li>
+              <li>法术种类多样——同时拥有奥术和神术列表</li>
+              <li>极高的团队支援价值（治疗+增益+控制）</li>
+              <li>施法灵活性极强——总有合适的法术</li>
+              <li>不依赖单一法术列表</li>
+            </ul>
+          </td>
+          <td style="padding:8px;border:1px solid #ddd;vertical-align:top;background:#ffebee;">
+            <ul style="margin:0;padding-left:1.2em;">
+              <li>最高环位法术获取比纯职业慢6级</li>
+              <li>无法在20级前获得9级法术（除非特殊构建）</li>
+              <li>d4生命骰，生存能力弱</li>
+              <li>进入门槛高——前期需要投入6级</li>
+              <li>没有额外战斗或防御能力</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>推荐法术组合</h3>
+    <p><strong>奥术方面（战斗/控制）：</strong></p>
+    <ul>
+      <li><em>火球术</em>、<em>闪电束</em> — 范围伤害</li>
+      <li><em>解除魔法</em>、<em>反魔法力场</em> — 魔法对抗</li>
+      <li><em>加速术</em>、<em>缓慢术</em> — 战场控制</li>
+      <li><em>石肤术</em>、<em>护盾术</em> — 防御增益</li>
+    </ul>
+    <p><strong>神术方面（治疗/辅助）：</strong></p>
+    <ul>
+      <li><em>治疗创伤系列</em> — 团队治疗</li>
+      <li><em>移除疾病</em>、<em>中和毒性</em> — 状态恢复</li>
+      <li><em>神圣力量</em>、<em>援助术</em> — 增益辅助</li>
+      <li><em>召唤自然盟友</em> — 额外战力</li>
+    </ul>
+
+    <h2>角色扮演建议</h2>
+    <p>秘术师在学术上追求"大一统理论"——他们相信奥术和神术本质上源自同一种力量，只是被不同的传统以不同方式表达。这种信念使他们在正统的奥术学院和宗教机构中都可能被视为异端。</p>
+    <p>许多秘术师是独立的学者或流浪研究者，他们游走于各种魔法传统之间，汲取双方的精华。一些秘术师可能属于跨宗教-学术的秘密组织，致力于解开魔法的终极奥秘。</p>
+    <p><strong>性格特征建议：</strong>思想开放、不拘泥于传统、对两种魔法体系都抱有深厚的尊重、喜欢在辩论中引用奥术和神术两方面的典籍、在面对教条主义时表现出温和但坚定的反对。</p>
+
+    <div style="margin-top:2em;padding:1em;background:#f5f0e0;border-left:4px solid #8b6914;border-radius:4px;">
+      <strong>编者注：</strong>秘术师是D&D 3.5e中设计最简洁但影响最深远的进阶职业之一。它没有任何花哨的特殊能力，只有纯粹的双重施法进展。这使得它在"法术就是一切"的战役中极为强大，但在需要非魔法解决方案的场景中可能显得力不从心。选择秘术师之前，请确保你享受管理大量法术位和准备两套法术列表的乐趣——因为这将是你作为秘术师的日常。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>潜行 - D&D 3.5e Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<main>
+<aside class="sidebar">
+  <h3>技能导航</h3>
+  <ul>
+    <li><a href="intro.html">技能总览</a></li>
+    <li><a href="move-silently.html" class="active">潜行</a></li>
+    <li><a href="hide.html">隐匿</a></li>
+    <li><a href="spot.html">侦察</a></li>
+    <li><a href="listen.html">聆听</a></li>
+    <li><a href="climb.html">攀爬</a></li>
+    <li><a href="swim.html">游泳</a></li>
+    <li><a href="jump.html">跳跃</a></li>
+  </ul>
+</aside>
+
+<article class="main-content">
+  <div class="page-header">
+    <h1>潜行 <span class="skill-en">(Move Silently)</span></h1>
+    <div class="page-meta">
+      <span class="skill-key">敏捷</span>
+      <span class="armor-check">防具防碍：是</span>
+    </div>
+  </div>
+
+  <div class="infobox">
+    <div class="infobox-title">潜行 (Move Silently)</div>
+    <div class="infobox-content">
+      <div><span class="label">关键属性</span><span class="value">敏捷</span></div>
+      <div><span class="label">防具防碍</span><span class="value">是（防甲与盾牌）</span></div>
+      <div><span class="label">可否智力加速</span><span class="value">否</span></div>
+      <div><span class="label">本职职业</span><span class="value">游荡者、德鲁伊、游侠</span></div>
+    </div>
+  </div>
+
+  <h2>技能描述</h2>
+  <p>潜行技能让你能悄无声息地移动，避免被敌人发现。</p>
+
+  <h2>技能检定</h2>
+  <p>潜行检定是对抗检定，与对手的<strong>聆听检定</strong>对抗。</p>
+  <ul>
+    <li><strong>静止隐匿</strong>：当你完全静止时，结合<strong>隐匿</strong>技能使用。</li>
+    <li><strong>移动潜行</strong>：移动速度减半（最多两倍正常移动）。</li>
+    <li><strong>加速潜行</strong>：移动速度等于正常速度，但受-5罚值。</li>
+  </ul>
+
+  <h3>环境影响</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>环境</th>
+        <th>潜行DC调整</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>非常吵闹（战斗、瀑布旁）</td>
+        <td>-4（更容易）</td>
+      </tr>
+      <tr>
+        <td>一般噪音（森林、街道）</td>
+        <td>±0</td>
+      </tr>
+      <tr>
+        <td>非常安静（图书馆、深夜）</td>
+        <td>+4（更困难）</td>
+      </tr>
+      <tr>
+        <td>在嘈杂环境中奔跑</td>
+        <td>-4（但依然困难）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>特殊说明</h2>
+  <ul>
+    <li><strong>防具防碍</strong>：防甲和盾牌会对潜行检定造成防碍。轻甲-3，中甲-5，重甲-7。</li>
+    <li><strong>种族特性</strong>：半身人获得+2种族加值（天生安静）。</li>
+    <li><strong>尺寸调整</strong>：小型生物+4，中型生物±0，大型生物-4。</li>
+    <li><strong>表面类型</strong>：在松软表面（地毯、泥土）上+2，在硬表面（石头、金属）上-2。</li>
+  </ul>
+
+  <h2>实战示例</h2>
+  <div class="examples">
+    <h3>示例：游荡者潜行</h3>
+    <p>一个游荡者（敏捷18，潜行技能+8）在森林中潜行（DC 15）。调整值=4（敏捷）+8（技能）+2（种族，如果是半身人）=14。需要掷骰1d20+14，对抗守卫的聆听检定。</p>
+    
+    <h3>示例：穿着防甲潜行</h3>
+    <p>同样游荡者穿着链甲衫（防碍-3）。调整值=14-3=11。在安静环境中（DC 19）几乎不可能成功潜行。</p>
+  </div>
+
+  <h2>规则冲突</h2>
+  <div class="conflict-box">
+    <div class="conflict-title">⚠️ 规则冲突标注</div>
+    <div class="conflict-content">
+      <p><strong>冲突点：潜行与隐匿的结合使用</strong></p>
+      <p>PHB规定：当你静止时，使用"隐匿"技能；当你移动时，使用"潜行"技能。然而，在实践中，玩家经常交替使用。一些DM允许在移动中同时进行潜行和隐匿检定（取较低者）。</p>
+      <p><strong>建议</strong>：严格按PHB规则，静止用隐匿，移动用潜行。允许游荡者的"偷袭"在潜行成功后立即发动。</p>
+    </div>
+  </div>
+
+  <div class="rule-source">
+    <strong>规则出处：</strong>《玩家手册》第151页
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <p>D&D 3.5e Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

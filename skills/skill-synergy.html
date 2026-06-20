@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技能共效 Skill Synergy - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .synergy-highlight {
+    background: linear-gradient(135deg, #fef9e7 0%, #fdebd0 100%);
+    border-left: 4px solid #d4a017;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .synergy-highlight strong { color: #8b6914; }
+  .rule-callout {
+    background: #eaf2f8;
+    border: 1px solid #aed6f1;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .rule-callout h4 {
+    margin-top: 0;
+    color: #2471a3;
+  }
+  .synergy-table th { white-space: nowrap; }
+  .synergy-table .source-skill {
+    font-weight: 600;
+    color: #4a2c0a;
+  }
+  .synergy-table .target-skill {
+    color: #2c2c2c;
+  }
+  .bonus-badge {
+    display: inline-block;
+    background: #27ae60;
+    color: #fff;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+  .missing-card {
+    background: #faf6ee;
+    border: 1px solid #e8dcc8;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .missing-card h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #d4a017;
+    padding-bottom: 6px;
+  }
+  .stat-block {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 16px;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #e8dcc8;
+    border-radius: 4px;
+  }
+  .stat-block .label {
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+  }
+  .stat-block .value {
+    color: #2c2c2c;
+  }
+  .dc-mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 13px;
+  }
+  .dc-mini-table th {
+    background: #d4b896;
+    padding: 5px 10px;
+    text-align: left;
+    font-weight: 600;
+    color: #4a2c0a;
+    border: 1px solid #c9a96e;
+  }
+  .dc-mini-table td {
+    padding: 4px 10px;
+    border: 1px solid #e8dcc8;
+  }
+  .dc-mini-table tr:nth-child(even) { background: #f7f3ea; }
+  .section-divider {
+    border: none;
+    border-top: 2px solid #d4a017;
+    margin: 36px 0;
+  }
+  .ability-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 4px;
+  }
+  .tag-str { background: #c0392b; }
+  .tag-dex { background: #27ae60; }
+  .tag-con { background: #d35400; }
+  .tag-int { background: #2980b9; }
+  .tag-wis { background: #8e44ad; }
+  .tag-cha { background: #f39c12; }
+  .tag-none { background: #95a5a6; }
+  .toc-synergy {
+    background: #faf6ee;
+    border: 1px solid #d4b896;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    min-width: 280px;
+  }
+  .toc-synergy h4 { margin-top: 0; color: #4a2c0a; }
+  .toc-synergy ul { list-style: none; padding-left: 0; }
+  .toc-synergy ul li { padding: 3px 0; font-size: 14px; }
+  .toc-synergy ul li a { color: #21618c; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">技能</div>
+      <a href="intro.html">技能总览</a>
+      <a href="skill-synergy.html" class="active">技能共效</a>
+      <a href="appraise.html">估价</a>
+      <a href="bluff.html">唬骗</a>
+      <a href="climb.html">攀爬</a>
+      <a href="craft.html">手艺</a>
+      <a href="decipher-script.html">解读文书</a>
+      <a href="disable-device.html">解除装置</a>
+      <a href="disguise.html">易容</a>
+      <a href="escape-artist.html">脱逃</a>
+      <a href="forgery.html">伪造文书</a>
+      <a href="gather-information.html">收集信息</a>
+      <a href="handle-animal.html">驯养动物</a>
+      <a href="heal.html">医疗</a>
+      <a href="move-silently.html">潜行</a>
+      <a href="open-lock.html">开锁</a>
+      <a href="perform.html">表演</a>
+      <a href="profession.html">专业</a>
+      <a href="ride.html">骑术</a>
+      <a href="search.html">搜索</a>
+      <a href="sense-motive.html">察言观色</a>
+      <a href="sleight-of-hand.html">巧手</a>
+      <a href="swim.html">游泳</a>
+      <a href="use-rope.html">绳技</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>技能共效与缺失技能补全</h1>
+    <p style="color:#7f8c8d;font-size:14px;">Skill Synergy & Missing Skill Reference | 来源：PHB（玩家手册）第四章</p>
+
+    <div class="toc-synergy">
+      <h4>本页目录</h4>
+      <ul>
+        <li><a href="#rules">一、技能共效规则说明</a></li>
+        <li><a href="#synergy-table">二、完整技能共效表</a></li>
+        <li><a href="#stacking">三、共效加值叠加规则</a></li>
+        <li><a href="#strategy">四、角色构建中的共效策略</a></li>
+        <li><a href="#missing">五、缺失技能补全</a></li>
+      </ul>
+    </div>
+
+    <!-- ========== 第一部分：规则说明 ========== -->
+    <h2 id="rules">一、技能共效规则说明 (Skill Synergy)</h2>
+
+    <div class="synergy-highlight">
+      <p><strong>核心规则：</strong>当一个角色在某项技能上拥有 <strong>5级或更高</strong> 的技能等级（Rank）时，该角色在某些相关技能上获得 <strong>+2 协同加值（Synergy Bonus）</strong>。</p>
+      <p>这是《玩家手册》（PHB）中非常重要但经常被新手玩家忽略的规则。合理利用技能共效可以在角色构建时用最少的技能点获得最大的技能收益。</p>
+    </div>
+
+    <h3>基本要点</h3>
+    <ul>
+      <li><strong>触发条件：</strong>来源技能（Source Skill）必须达到 <strong>5级（5 Ranks）</strong>，不是5个技能点。技能等级 = 投入技能点 + 其他加值（如法术、物品），但共效只计算实际投入的技能等级（Ranks）。</li>
+      <li><strong>加值大小：</strong>固定为 <strong>+2</strong>。即使来源技能超过5级，加值也不会增加（除非特殊能力另有说明）。</li>
+      <li><strong>加值类型：</strong>协同加值（Synergy Bonus）。同类型的加值不叠加，但协同加值与大多数其他加值类型可以叠加。</li>
+      <li><strong>无需检定：</strong>共效加值是被动生效的，不需要进行任何检定或花费动作。</li>
+      <li><strong>跨职业技能：</strong>即使目标技能是跨职业技能（Cross-class Skill），只要来源技能达到5级，共效加值同样生效。</li>
+    </ul>
+
+    <div class="rule-callout">
+      <h4>规则澄清：技能等级 vs 技能调整值</h4>
+      <p>技能共效要求的是 <strong>5个技能等级（Ranks）</strong>，不是技能调整值（Modifier）达到+5。例如，一个智力18的法师在知识(奥秘)上投入5个技能点，其技能调整为 5(等级) + 4(智力) = +9，满足共效条件。但如果只投入3个技能点，即使加上智力调整值达到+7，也不满足共效条件。</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ========== 第二部分：完整共效表 ========== -->
+    <h2 id="synergy-table">二、完整技能共效表</h2>
+
+    <p>以下表格列出了 PHB 及常见扩展中所有技能共效关系。当左侧技能达到5级时，右侧对应技能获得+2协同加值。</p>
+
+    <table class="wiki-table synergy-table">
+      <thead>
+        <tr>
+          <th style="width:38%;">来源技能（需5级）</th>
+          <th style="width:42%;">目标技能（获得+2加值）</th>
+          <th style="width:20%;">备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="source-skill">驯养动物 (Handle Animal)</td>
+          <td class="target-skill">骑术 (Ride) <span class="bonus-badge">+2</span></td>
+          <td>驯兽经验助力骑乘</td>
+        </tr>
+        <tr>
+          <td class="source-skill">跳跃 (Jump)</td>
+          <td class="target-skill">翻滚 (Tumble) <span class="bonus-badge">+2</span></td>
+          <td>弹跳力增强翻滚</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(奥秘) (Knowledge: Arcana)</td>
+          <td class="target-skill">辨识法术 (Spellcraft) <span class="bonus-badge">+2</span></td>
+          <td>奥术理论辅助法术辨识</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(建筑与工程) (Knowledge: Architecture &amp; Engineering)</td>
+          <td class="target-skill">搜索 (Search) <span class="bonus-badge">+2</span></td>
+          <td>建筑结构知识帮助搜索密门</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(地下城) (Knowledge: Dungeoneering)</td>
+          <td class="target-skill">生存 (Survival) <span class="bonus-badge">+2</span></td>
+          <td>仅限地下环境</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(地理) (Knowledge: Geography)</td>
+          <td class="target-skill">生存 (Survival) <span class="bonus-badge">+2</span></td>
+          <td>仅限野外/地表环境</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(历史) (Knowledge: History)</td>
+          <td class="target-skill">吟游诗人知识 (Bardic Knowledge) <span class="bonus-badge">+2</span></td>
+          <td>仅限吟游诗人职业特性</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(地方) (Knowledge: Local)</td>
+          <td class="target-skill">收集信息 (Gather Information) <span class="bonus-badge">+2</span></td>
+          <td>地方消息灵通</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(自然) (Knowledge: Nature)</td>
+          <td class="target-skill">生存 (Survival) <span class="bonus-badge">+2</span></td>
+          <td>仅限自然环境</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(贵族与皇室) (Knowledge: Nobility &amp; Royalty)</td>
+          <td class="target-skill">外交 (Diplomacy) <span class="bonus-badge">+2</span></td>
+          <td>了解礼仪有助于交涉</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(宗教) (Knowledge: Religion)</td>
+          <td class="target-skill">驱散亡灵 (Turn Undead) <span class="bonus-badge">+2</span></td>
+          <td>仅限驱散检定</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(位面) (Knowledge: The Planes)</td>
+          <td class="target-skill">生存 (Survival) <span class="bonus-badge">+2</span></td>
+          <td>仅限位面旅行环境</td>
+        </tr>
+        <tr>
+          <td class="source-skill">知识(位面) (Knowledge: The Planes)</td>
+          <td class="target-skill">辨识法术 (Spellcraft) <span class="bonus-badge">+2</span></td>
+          <td>识别涉及位面的法术效果</td>
+        </tr>
+        <tr>
+          <td class="source-skill">生存 (Survival)</td>
+          <td class="target-skill">追踪 (Track) 专长检定 <span class="bonus-badge">+2</span></td>
+          <td>需拥有追踪（Track）专长</td>
+        </tr>
+        <tr>
+          <td class="source-skill">搜索 (Search)</td>
+          <td class="target-skill">追踪 (Track) 专长检定 <span class="bonus-badge">+2</span></td>
+          <td>需拥有追踪（Track）专长</td>
+        </tr>
+        <tr>
+          <td class="source-skill">翻滚 (Tumble)</td>
+          <td class="target-skill">平衡 (Balance) <span class="bonus-badge">+2</span></td>
+          <td>身体协调帮助保持平衡</td>
+        </tr>
+        <tr>
+          <td class="source-skill">翻滚 (Tumble)</td>
+          <td class="target-skill">跳跃 (Jump) <span class="bonus-badge">+2</span></td>
+          <td>翻滚训练提升弹跳</td>
+        </tr>
+        <tr>
+          <td class="source-skill">绳技 (Use Rope)</td>
+          <td class="target-skill">攀爬 (Climb) <span class="bonus-badge">+2</span></td>
+          <td>绳索使用辅助攀爬</td>
+        </tr>
+        <tr>
+          <td class="source-skill">绳技 (Use Rope)</td>
+          <td class="target-skill">脱逃 (Escape Artist) <span class="bonus-badge">+2</span></td>
+          <td>仅限挣脱绳索束缚</td>
+        </tr>
+        <tr>
+          <td class="source-skill">侦查 (Spot)</td>
+          <td class="target-skill">搜索 (Search) <span class="bonus-badge">+2</span></td>
+          <td>敏锐视觉帮助搜索</td>
+        </tr>
+        <tr>
+          <td class="source-skill">潜行 (Move Silently)</td>
+          <td class="target-skill">躲藏 (Hide) <span class="bonus-badge">+2</span></td>
+          <td>无声移动利于隐蔽</td>
+        </tr>
+        <tr>
+          <td class="source-skill">表演 (Perform)</td>
+          <td class="target-skill">易容 (Disguise) <span class="bonus-badge">+2</span></td>
+          <td>当你进行表演时生效</td>
+        </tr>
+        <tr>
+          <td class="source-skill">巧手 (Sleight of Hand)</td>
+          <td class="target-skill">开锁 (Open Lock) <span class="bonus-badge">+2</span></td>
+          <td>灵巧手指帮助开锁</td>
+        </tr>
+        <tr>
+          <td class="source-skill">察言观色 (Sense Motive)</td>
+          <td class="target-skill">外交 (Diplomacy) <span class="bonus-badge">+2</span></td>
+          <td>察言观色辅助谈判</td>
+        </tr>
+        <tr>
+          <td class="source-skill">唬骗 (Bluff)</td>
+          <td class="target-skill">威吓 (Intimidate) <span class="bonus-badge">+2</span></td>
+          <td>欺骗技巧增强恐吓</td>
+        </tr>
+        <tr>
+          <td class="source-skill">唬骗 (Bluff)</td>
+          <td class="target-skill">巧手 (Sleight of Hand) <span class="bonus-badge">+2</span></td>
+          <td>分散注意力辅助手法</td>
+        </tr>
+        <tr>
+          <td class="source-skill">唬骗 (Bluff)</td>
+          <td class="target-skill">易容 (Disguise) <span class="bonus-badge">+2</span></td>
+          <td>表演能力增强伪装</td>
+        </tr>
+        <tr>
+          <td class="source-skill">外交 (Diplomacy)</td>
+          <td class="target-skill">唬骗 (Bluff) <span class="bonus-badge">+2</span></td>
+          <td>交涉经验辅助欺骗</td>
+        </tr>
+        <tr>
+          <td class="source-skill">解读文书 (Decipher Script)</td>
+          <td class="target-skill">使用魔法装置 (Use Magic Device) <span class="bonus-badge">+2</span></td>
+          <td>解读能力辅助使用卷轴</td>
+        </tr>
+        <tr>
+          <td class="source-skill">辨识法术 (Spellcraft)</td>
+          <td class="target-skill">使用魔法装置 (Use Magic Device) <span class="bonus-badge">+2</span></td>
+          <td>法术知识辅助启动装置</td>
+        </tr>
+        <tr>
+          <td class="source-skill">医疗 (Heal)</td>
+          <td class="target-skill">知识(自然) (Knowledge: Nature) <span class="bonus-badge">+2</span></td>
+          <td>仅限毒素相关鉴定</td>
+        </tr>
+        <tr>
+          <td class="source-skill">聆听 (Listen)</td>
+          <td class="target-skill">理解语言 (Understand Language) <span class="bonus-badge">+2</span></td>
+          <td>听力辅助理解口语</td>
+        </tr>
+        <tr>
+          <td class="source-skill">集中 (Concentration)</td>
+          <td class="target-skill">辨识法术 (Spellcraft) <span class="bonus-badge">+2</span></td>
+          <td>某些扩展中的可选规则</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="rule-callout">
+      <h4>关于"知识(奥秘) + 辨识法术"双重共效</h4>
+      <p>部分扩展规则提到：当角色同时拥有 <strong>知识(奥秘) 5级</strong> 和 <strong>辨识法术 5级</strong> 时，在使用魔法装置（Use Magic Device）检定上获得额外共效加值。这是特殊的"双重共效"规则，具体请参照扩展来源和DM裁定。</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ========== 第三部分：叠加规则 ========== -->
+    <h2 id="stacking">三、共效加值叠加规则</h2>
+
+    <h3>多个共效可以叠加吗？</h3>
+    <p>答案是：<strong>视情况而定</strong>。</p>
+
+    <ul>
+      <li><strong>同一来源技能的共效：</strong>每个来源技能只能提供一次+2加值，不会因为技能等级超过5级而翻倍。</li>
+      <li><strong>不同来源技能指向同一目标：</strong>如果多个不同的来源技能都为同一个目标技能提供共效，这些加值 <strong>可以叠加</strong>。因为它们来自不同的来源。</li>
+    </ul>
+
+    <h3>叠加示例</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>目标技能</th>
+          <th>可能的共效来源</th>
+          <th>最大叠加</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>生存 (Survival)</strong></td>
+          <td>知识(地下城) +2, 知识(地理) +2, 知识(自然) +2, 知识(位面) +2</td>
+          <td>+8（四种知识各5级）</td>
+        </tr>
+        <tr>
+          <td><strong>辨识法术 (Spellcraft)</strong></td>
+          <td>知识(奥秘) +2, 知识(位面) +2</td>
+          <td>+4</td>
+        </tr>
+        <tr>
+          <td><strong>外交 (Diplomacy)</strong></td>
+          <td>知识(贵族与皇室) +2, 察言观色 +2</td>
+          <td>+4</td>
+        </tr>
+        <tr>
+          <td><strong>使用魔法装置 (UMD)</strong></td>
+          <td>解读文书 +2, 辨识法术 +2</td>
+          <td>+4</td>
+        </tr>
+        <tr>
+          <td><strong>追踪 (Track)</strong></td>
+          <td>生存 +2, 搜索 +2</td>
+          <td>+4</td>
+        </tr>
+        <tr>
+          <td><strong>唬骗 (Bluff)</strong></td>
+          <td>外交 +2</td>
+          <td>+2</td>
+        </tr>
+        <tr>
+          <td><strong>跳跃 (Jump)</strong></td>
+          <td>翻滚 +2</td>
+          <td>+2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="section-divider">
+
+    <!-- ========== 第四部分：构建策略 ========== -->
+    <h2 id="strategy">四、角色构建中的共效策略</h2>
+
+    <h3>高效技能构建建议</h3>
+
+    <div class="missing-card">
+      <h3>施法者推荐共效链</h3>
+      <p>对于法师/术士等施法者，优先投入以下技能各5级：</p>
+      <ul>
+        <li><strong>知识(奥秘) 5级</strong> &rarr; 辨识法术 +2</li>
+        <li><strong>辨识法术 5级</strong> &rarr; 使用魔法装置 +2</li>
+        <li><strong>解读文书 5级</strong> &rarr; 使用魔法装置 +2（总计+4 UMD）</li>
+        <li><strong>知识(位面) 5级</strong> &rarr; 辨识法术额外+2（总计+4法术辨识）</li>
+      </ul>
+      <p>总计投入 20 个技能点，获得辨识法术+4、使用魔法装置+4的被动加值。</p>
+    </div>
+
+    <div class="missing-card">
+      <h3>游荡者/斥候推荐共效链</h3>
+      <ul>
+        <li><strong>侦查 5级</strong> &rarr; 搜索 +2</li>
+        <li><strong>搜索 5级</strong> &rarr; 追踪 +2</li>
+        <li><strong>生存 5级</strong> &rarr; 追踪 +2（追踪总计+4）</li>
+        <li><strong>绳技 5级</strong> &rarr; 攀爬 +2, 脱逃 +2</li>
+        <li><strong>潜行 5级</strong> &rarr; 躲藏 +2</li>
+      </ul>
+    </div>
+
+    <div class="missing-card">
+      <h3>交涉型角色推荐共效链</h3>
+      <ul>
+        <li><strong>知识(贵族与皇室) 5级</strong> &rarr; 外交 +2</li>
+        <li><strong>察言观色 5级</strong> &rarr; 外交 +2（外交总计+4）</li>
+        <li><strong>外交 5级</strong> &rarr; 唬骗 +2</li>
+        <li><strong>唬骗 5级</strong> &rarr; 威吓 +2, 巧手 +2, 易容 +2</li>
+        <li><strong>知识(地方) 5级</strong> &rarr; 收集信息 +2</li>
+      </ul>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ========== 第五部分：缺失技能补全 ========== -->
+    <h2 id="missing">五、缺失技能补全</h2>
+
+    <p>D&D 3.5e 标准规则共有 <strong>36个核心技能</strong>。以下列出本Wiki目前可能尚未建立独立页面或需要补充内容的技能，并为每个技能提供完整的简要资料卡。</p>
+
+    <!-- 平衡 -->
+    <div class="missing-card" id="balance">
+      <h3>平衡 (Balance)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-dex">DEX</span> 敏捷</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">适用</span>
+        <span class="label">共效加值来源</span><span class="value">翻滚 (Tumble) 5级 &rarr; 平衡 +2</span>
+        <span class="label">本职职业</span><span class="value">吟游诗人、武僧、游荡者、杂技演员</span>
+      </div>
+      <p>在狭窄表面（如绳索、墙头、刀刃）上行走的能力。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>表面宽度</th><th>示例</th></tr></thead>
+        <tbody>
+          <tr><td>10</td><td>7-12英寸宽</td><td>普通墙壁顶部</td></tr>
+          <tr><td>15</td><td>2-6英寸宽</td><td>窄栏杆</td></tr>
+          <tr><td>20</td><td>不到2英寸宽</td><td>刀刃</td></tr>
+          <tr><td>20</td><td>不均匀/倾斜面</td><td>碎石斜坡</td></tr>
+          <tr><td>25</td><td>湿滑/不稳固面</td><td>冰面、摇晃的绳索</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 跳跃 -->
+    <div class="missing-card" id="jump">
+      <h3>跳跃 (Jump)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-str">STR</span> 力量</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">适用</span>
+        <span class="label">共效加值来源</span><span class="value">翻滚 (Tumble) 5级 &rarr; 跳跃 +2</span>
+        <span class="label">共效提供</span><span class="value">5级 &rarr; 翻滚 (Tumble) +2</span>
+        <span class="label">本职职业</span><span class="value">野蛮人、战士、游侠、武僧</span>
+      </div>
+      <p>跳远和跳高的能力，DC取决于跳跃距离。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>跳远距离</th><th>跳高距离</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>5英尺</td><td>-</td></tr>
+          <tr><td>10</td><td>10英尺</td><td>-</td></tr>
+          <tr><td>15</td><td>15英尺</td><td>-</td></tr>
+          <tr><td>20</td><td>20英尺</td><td>-</td></tr>
+          <tr><td>25</td><td>25英尺</td><td>3英尺</td></tr>
+          <tr><td>30</td><td>30英尺</td><td>4英尺</td></tr>
+          <tr><td>40</td><td>-</td><td>5英尺</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 翻滚 -->
+    <div class="missing-card" id="tumble">
+      <h3>翻滚 (Tumble)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-dex">DEX</span> 敏捷</span>
+        <span class="label">受训/未受训</span><span class="value"><strong>不可</strong>未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">适用</span>
+        <span class="label">共效加值来源</span><span class="value">跳跃 (Jump) 5级 &rarr; 翻滚 +2</span>
+        <span class="label">共效提供</span><span class="value">5级 &rarr; 平衡 +2, 跳跃 +2</span>
+        <span class="label">本职职业</span><span class="value">吟游诗人、武僧、游荡者、杂技演员</span>
+      </div>
+      <p>通过翻滚、侧翻等动作闪避攻击或穿越危险地形。翻滚是高级杂技动作的总称。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>动作</th><th>效果</th></tr></thead>
+        <tbody>
+          <tr><td>15</td><td>防御翻滚</td><td>翻滚20英尺，不引发借机攻击</td></tr>
+          <tr><td>25</td><td>快速翻滚</td><td>翻滚10英尺（正常移速），不引发借机攻击</td></tr>
+          <tr><td>35</td><td>穿越敌人</td><td>翻滚穿过敌人占据空间</td></tr>
+        </tbody>
+      </table>
+      <p><strong>特殊加成：</strong>翻滚5级时，防御战斗获得+1AC加值；10级时+2；15级时+3；20级时+4（与战斗专长的防御战斗叠加）。</p>
+    </div>
+
+    <!-- 躲藏 -->
+    <div class="missing-card" id="hide">
+      <h3>躲藏 (Hide)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-dex">DEX</span> 敏捷</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">适用</span>
+        <span class="label">共效加值来源</span><span class="value">潜行 (Move Silently) 5级 &rarr; 躲藏 +2</span>
+        <span class="label">本职职业</span><span class="value">吟游诗人、武僧、游荡者、游侠、刺客</span>
+      </div>
+      <p>隐蔽自己，使他人无法发现你。躲藏检定与观察者的侦查（Spot）检定对抗。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>情境</th><th>调整值</th></tr></thead>
+        <tbody>
+          <tr><td>被观察</td><td>无法躲藏（需先摆脱视线）</td></tr>
+          <tr><td>半隐蔽（矮墙、灌木）</td><td>可用掩蔽躲藏</td></tr>
+          <tr><td>全隐蔽（黑暗、浓雾）</td><td>+2 加值</td></tr>
+          <tr><td>隐形</td><td>+20（移动中）或+40（静止不动）</td></tr>
+          <tr><td>移动超过半速</td><td>-5 减值</td></tr>
+          <tr><td>狙击后重新躲藏</td><td>-20 减值</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 威吓 -->
+    <div class="missing-card" id="intimidate">
+      <h3>威吓 (Intimidate)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-cha">CHA</span> 魅力</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">共效加值来源</span><span class="value">唬骗 (Bluff) 5级 &rarr; 威吓 +2</span>
+        <span class="label">本职职业</span><span class="value">野蛮人、战士、圣武士、游荡者</span>
+      </div>
+      <p>通过恐吓改变他人行为，可以让目标害怕或被迫合作。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>效果</th></tr></thead>
+        <tbody>
+          <tr><td>10 + 目标HD</td><td>威吓成功，目标态度变为害怕</td></tr>
+          <tr><td>对抗目标等级检定</td><td>战斗中挫败士气（标准动作）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>害怕持续时间：</strong>1d6 x 10分钟（非战斗场景）。战斗中挫败士气持续1轮。</p>
+    </div>
+
+    <!-- 外交 -->
+    <div class="missing-card" id="diplomacy">
+      <h3>外交 (Diplomacy)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-cha">CHA</span> 魅力</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">共效加值来源</span><span class="value">知识(贵族与皇室) 5级 &rarr; +2；察言观色 5级 &rarr; +2</span>
+        <span class="label">共效提供</span><span class="value">5级 &rarr; 唬骗 (Bluff) +2</span>
+        <span class="label">本职职业</span><span class="value">吟游诗人、圣武士、游荡者、贵族</span>
+      </div>
+      <p>通过谈判、说服和社交技巧改变NPC的态度。外交是社交遭遇中最常用的技能。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>初始态度</th><th>变为不友善</th><th>变为中立</th><th>变为友善</th><th>变为热情</th></tr></thead>
+        <tbody>
+          <tr><td>敌对</td><td>-</td><td>DC 20</td><td>DC 25</td><td>DC 35</td></tr>
+          <tr><td>不友善</td><td>DC 5</td><td>-</td><td>DC 15</td><td>DC 25</td></tr>
+          <tr><td>中立</td><td>DC 0</td><td>DC 1</td><td>-</td><td>DC 15</td></tr>
+          <tr><td>友善</td><td>DC -5</td><td>DC -5</td><td>DC 1</td><td>-</td></tr>
+        </tbody>
+      </table>
+      <p><strong>交涉耗时：</strong>至少1分钟（10轮），可能需要更长时间。</p>
+    </div>
+
+    <!-- 知识系列 -->
+    <div class="missing-card" id="knowledge-series">
+      <h3>知识系列技能 (Knowledge Skills)</h3>
+      <p>知识技能涵盖10个子类别，每个子类别独立计算技能等级。所有知识技能共用以下基础属性：</p>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-int">INT</span> 智力</span>
+        <span class="label">受训/未受训</span><span class="value"><strong>不可</strong>未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">本职职业</span><span class="value">吟游诗人、法师、牧师、术士（部分子类别）</span>
+      </div>
+      <table class="wiki-table" style="margin-top:12px;">
+        <thead>
+          <tr>
+            <th>子类别</th>
+            <th>涵盖范围</th>
+            <th>共效提供</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>奥秘 (Arcana)</strong></td>
+            <td>魔法传统、奥秘符号、龙类、魔法兽</td>
+            <td>&rarr; 辨识法术 +2</td>
+          </tr>
+          <tr>
+            <td><strong>建筑与工程 (Architecture &amp; Engineering)</strong></td>
+            <td>建筑物、要塞、桥梁、隧道</td>
+            <td>&rarr; 搜索 +2</td>
+          </tr>
+          <tr>
+            <td><strong>地下城 (Dungeoneering)</strong></td>
+            <td>异怪、洞穴、穴居生物、泥怪</td>
+            <td>&rarr; 生存（地下）+2</td>
+          </tr>
+          <tr>
+            <td><strong>地理 (Geography)</strong></td>
+            <td>地形、气候、居民、风俗</td>
+            <td>&rarr; 生存（野外）+2</td>
+          </tr>
+          <tr>
+            <td><strong>历史 (History)</strong></td>
+            <td>王室、战争、殖民、迁徙、建城</td>
+            <td>&rarr; 吟游诗人知识 +2</td>
+          </tr>
+          <tr>
+            <td><strong>地方 (Local)</strong></td>
+            <td>法律、风俗、官员、人形生物</td>
+            <td>&rarr; 收集信息 +2</td>
+          </tr>
+          <tr>
+            <td><strong>自然 (Nature)</strong></td>
+            <td>动物、精类、魔法兽、植物、季节</td>
+            <td>&rarr; 生存（自然）+2</td>
+          </tr>
+          <tr>
+            <td><strong>贵族与皇室 (Nobility &amp; Royalty)</strong></td>
+            <td>血统、纹章、宫廷礼仪、格言</td>
+            <td>&rarr; 外交 +2</td>
+          </tr>
+          <tr>
+            <td><strong>宗教 (Religion)</strong></td>
+            <td>神祇、神话历史、教会传统、亡灵</td>
+            <td>&rarr; 驱散亡灵 +2</td>
+          </tr>
+          <tr>
+            <td><strong>位面 (The Planes)</strong></td>
+            <td>内层位面、外层位面、星界、灵界</td>
+            <td>&rarr; 辨识法术 +2, 生存（位面）+2</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="dc-mini-table" style="margin-top:12px;">
+        <thead><tr><th>DC</th><th>知识问题难度</th></tr></thead>
+        <tbody>
+          <tr><td>10</td><td>简单问题（常识）</td></tr>
+          <tr><td>15</td><td>基础问题</td></tr>
+          <tr><td>20</td><td>困难问题</td></tr>
+          <tr><td>25</td><td>非常困难的问题</td></tr>
+          <tr><td>30</td><td>极其困难/专业问题</td></tr>
+          <tr><td>40+</td><td>传说/失落的知识</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 生存 -->
+    <div class="missing-card" id="survival">
+      <h3>生存 (Survival)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-wis">WIS</span> 感知</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">共效加值来源</span><span class="value">知识(地下城/地理/自然/位面) 各5级 &rarr; 各+2</span>
+        <span class="label">共效提供</span><span class="value">5级 &rarr; 追踪 (Track) 专长检定 +2</span>
+        <span class="label">本职职业</span><span class="value">野蛮人、德鲁伊、游侠、巡林客</span>
+      </div>
+      <p>在荒野中生存、辨别方向、狩猎、躲避自然灾害的能力。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>任务</th></tr></thead>
+        <tbody>
+          <tr><td>10</td><td>在野外找到食物和水（供养一人）</td></tr>
+          <tr><td>15</td><td>耐受恶劣天气，避免非致命伤害</td></tr>
+          <tr><td>15</td><td>辨别方向，避免迷路</td></tr>
+          <tr><td>18</td><td>预测未来24小时天气（每多5可多预测一天）</td></tr>
+          <tr><td>20</td><td>在野外找到食物和水（供养六人）</td></tr>
+          <tr><td>20</td><td>躲避自然灾害（如流沙）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 追踪 -->
+    <div class="missing-card" id="track">
+      <h3>追踪 (Track)</h3>
+      <div class="stat-block">
+        <span class="label">类型</span><span class="value">专长 (Feat)，非技能（但使用生存技能检定）</span>
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-wis">WIS</span> 感知（通过生存技能）</span>
+        <span class="label">共效加值来源</span><span class="value">生存 5级 &rarr; +2；搜索 5级 &rarr; +2</span>
+        <span class="label">前置条件</span><span class="value">追踪 (Track) 专长</span>
+      </div>
+      <p>追踪是一种专长而非独立技能，但追踪检定的DC由生存技能决定。追踪者需要沿踪迹前进并判断方向。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>地面状况</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>非常柔软（新雪、厚尘、湿泥）</td></tr>
+          <tr><td>10</td><td>柔软（草地、软泥）</td></tr>
+          <tr><td>15</td><td>坚实（普通户外地面）</td></tr>
+          <tr><td>20</td><td>坚硬（裸岩、室内地面）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>调整值：</strong>每3个被追踪生物 -1DC；目标群体每多1个生物 +1DC；追踪经过每过24小时 +1DC；下雨后每过1小时 +1DC；降雪后 +10DC；目标隐藏踪迹 +5DC。</p>
+    </div>
+
+    <!-- 辨识法术 -->
+    <div class="missing-card" id="spellcraft">
+      <h3>辨识法术 (Spellcraft)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-int">INT</span> 智力</span>
+        <span class="label">受训/未受训</span><span class="value"><strong>不可</strong>未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">共效加值来源</span><span class="value">知识(奥秘) 5级 &rarr; +2；知识(位面) 5级 &rarr; +2</span>
+        <span class="label">共效提供</span><span class="value">5级 &rarr; 使用魔法装置 (UMD) +2</span>
+        <span class="label">本职职业</span><span class="value">吟游诗人、牧师、德鲁伊、法师、术士</span>
+      </div>
+      <p>辨识法术是施法者的核心技能，用于识别正在施放的法术、解读书写法术、分析魔法效果。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>任务</th></tr></thead>
+        <tbody>
+          <tr><td>15 + 法术等级</td><td>辨识正在施放的法术（在施法时可观察到）</td></tr>
+          <tr><td>15 + 法术等级</td><td>从法术效果中推断法术（观察到效果但未见施法）</td></tr>
+          <tr><td>20</td><td>辨识正在运作的法术材料成分</td></tr>
+          <tr><td>20 + 法术等级</td><td>反制法术（识别对手正在施放的法术以便反制）</td></tr>
+          <tr><td>25</td><td>理解魔法物品的运作原理（首次使用时）</td></tr>
+          <tr><td>25</td><td>解读魔法铭文（不触发效果）</td></tr>
+          <tr><td>30 + 法术等级</td><td>识别法术的具体效果</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 集中 -->
+    <div class="missing-card" id="concentration">
+      <h3>集中 (Concentration)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-con">CON</span> 体质</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">共效加值来源</span><span class="value">无标准共效来源</span>
+        <span class="label">共效提供</span><span class="value">某些扩展中 &rarr; 辨识法术 +2</span>
+        <span class="label">本职职业</span><span class="value">所有施法职业的本职技能</span>
+      </div>
+      <p>集中是施法者维持法术、在受伤或干扰时继续施法的关键技能。每个施法者都应该优先投资此技能。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>干扰情况</th></tr></thead>
+        <tbody>
+          <tr><td>10 + 伤害值</td><td>施法时受到伤害</td></tr>
+          <tr><td>15 + 法术等级</td><td>施法时受到持续伤害</td></tr>
+          <tr><td>15 + 法术等级</td><td>被擒抱或束缚时施法</td></tr>
+          <tr><td>20 + 法术等级</td><td>剧烈运动（奔跑、骑马战斗）时施法</td></tr>
+          <tr><td>20 + 法术等级</td><td>恶劣天气（强风、暴雨）下施法</td></tr>
+          <tr><td>25 + 法术等级</td><td>被网住或处于缠绕状态时施法</td></tr>
+          <tr><td>15 + 法术等级</td><td>防御式施法（避免借机攻击）</td></tr>
+          <tr><td>15 + 法术等级</td><td>维持需要集中的法术</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 使用魔法装置 -->
+    <div class="missing-card" id="umd">
+      <h3>使用魔法装置 (Use Magic Device)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-cha">CHA</span> 魅力</span>
+        <span class="label">受训/未受训</span><span class="value"><strong>不可</strong>未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">共效加值来源</span><span class="value">解读文书 5级 &rarr; +2；辨识法术 5级 &rarr; +2</span>
+        <span class="label">本职职业</span><span class="value">吟游诗人、游荡者（大多数其他职业不可作为本职）</span>
+      </div>
+      <p>使用魔法装置允许角色绕过魔法物品的职业、种族、阵营等使用限制。这是游荡者和吟游诗人最强大的技能之一。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>任务</th></tr></thead>
+        <tbody>
+          <tr><td>20</td><td>盲目启动（不知道具体效果的物品）</td></tr>
+          <tr><td>20</td><td> decipher 卷轴法术（解读卷轴以使用）</td></tr>
+          <tr><td>20</td><td>使用法杖（模拟所需属性）</td></tr>
+          <tr><td>20 + 施法者等级</td><td>模拟法术能力（使用施法完成型物品）</td></tr>
+          <tr><td>25</td><td>模拟种族特性（使用限种族的物品）</td></tr>
+          <tr><td>25</td><td>模拟属性值（满足物品属性要求）</td></tr>
+          <tr><td>30</td><td>模拟阵营（使用限制阵营的物品）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>失败惩罚：</strong>如果检定掷出自然1，在24小时内无法再次尝试启动同一物品。</p>
+    </div>
+
+    <!-- 侦查 -->
+    <div class="missing-card" id="spot">
+      <h3>侦查 (Spot)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-wis">WIS</span> 感知</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">共效加值来源</span><span class="value">无标准共效来源</span>
+        <span class="label">共效提供</span><span class="value">5级 &rarr; 搜索 (Search) +2</span>
+        <span class="label">本职职业</span><span class="value">几乎所有职业（通用技能）</span>
+      </div>
+      <p>侦查用于发现隐藏的生物或物体，通常与躲藏（Hide）技能对抗。侦查检定在被动状态下也可自动进行。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>情境</th><th>调整值</th></tr></thead>
+        <tbody>
+          <tr><td>距离每增加10英尺</td><td>-1 减值</td></tr>
+          <tr><td>分心（战斗中、交谈中）</td><td>-5 减值</td></tr>
+          <tr><td>隐形目标</td><td>DC 20（注意到模糊）或 DC 40（精确定位）</td></tr>
+          <tr><td>睡着时</td><td>无法侦查（除非被动唤醒）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 聆听 -->
+    <div class="missing-card" id="listen">
+      <h3>聆听 (Listen)</h3>
+      <div class="stat-block">
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-wis">WIS</span> 感知</span>
+        <span class="label">受训/未受训</span><span class="value">可以未受训使用</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+        <span class="label">共效加值来源</span><span class="value">无标准共效来源</span>
+        <span class="label">本职职业</span><span class="value">几乎所有职业（通用技能）</span>
+      </div>
+      <p>聆听用于侦测声音，通常与潜行（Move Silently）技能对抗。是发现隐形或躲藏敌人的重要手段。</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>DC</th><th>声音来源</th></tr></thead>
+        <tbody>
+          <tr><td>-10</td><td>战斗声响</td></tr>
+          <tr><td>0</td><td>人们交谈</td></tr>
+          <tr><td>5</td><td>人们小声交谈</td></tr>
+          <tr><td>10</td><td>盔甲穿戴者安静行走</td></tr>
+          <tr><td>15</td><td>无甲者安静行走</td></tr>
+          <tr><td>19</td><td>猫潜行</td></tr>
+          <tr><td>30</td><td>猫头鹰俯冲</td></tr>
+        </tbody>
+      </table>
+      <p><strong>调整值：</strong>距离每增加10英尺 -1减值；隔门 -5减值；隔石墙 -15减值；分心 -5减值；睡着中 -10减值。</p>
+    </div>
+
+    <!-- 动物共感 -->
+    <div class="missing-card" id="wild-empathy">
+      <h3>动物共感 (Wild Empathy)</h3>
+      <div class="stat-block">
+        <span class="label">类型</span><span class="value">职业特性（非标准技能）</span>
+        <span class="label">关键属性</span><span class="value"><span class="ability-tag tag-cha">CHA</span> 魅力</span>
+        <span class="label">可用职业</span><span class="value">德鲁伊 (Druid)、巡林客/游侠 (Ranger)</span>
+        <span class="label">受训/未受训</span><span class="value">不适用（职业特性）</span>
+        <span class="label">防具检定惩罚</span><span class="value">不适用</span>
+      </div>
+      <p>动物共感是德鲁伊和巡林客的职业特性，类似于对动物使用外交（Diplomacy）技能。可以改变动物的态度。</p>
+      <p><strong>检定公式：</strong>1d20 + 德鲁伊/巡林客等级 + 魅力调整值</p>
+      <table class="dc-mini-table">
+        <thead><tr><th>目标</th><th>初始态度</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>家养动物</td><td>冷漠 (Indifferent)</td><td>狗、马、家畜等</td></tr>
+          <tr><td>野生动物</td><td>不友善 (Unfriendly)</td><td>狼、熊、鹰等</td></tr>
+          <tr><td>魔法兽</td><td>-</td><td>需巡林客等级 -4 减值</td></tr>
+        </tbody>
+      </table>
+      <p><strong>使用时间：</strong>标准动作（影响家养动物）或1分钟（影响野生动物）。</p>
+      <p><strong>作用距离：</strong>30英尺内。目标必须能看见和听见使用者。</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ========== 总结 ========== -->
+    <h2>总结与提醒</h2>
+
+    <div class="synergy-highlight">
+      <h4>构建角色时的技能共效清单</h4>
+      <ol>
+        <li>先确定角色最终想使用的高优先级技能（如：使用魔法装置、外交、辨识法术）</li>
+        <li>反查共效表，找出所有能为目标技能提供+2加值的来源技能</li>
+        <li>在低等级时优先将来源技能各投入5级</li>
+        <li>注意：跨职技能的每级消耗2个技能点，需提前规划技能点预算</li>
+        <li>多个共效来源的+2加值可以叠加，这是技能系统中最强大的隐藏机制之一</li>
+      </ol>
+    </div>
+
+    <p style="margin-top:24px;color:#7f8c8d;font-size:13px;">
+      本页内容基于《玩家手册》(Player's Handbook) 第四章"技能"部分的官方规则整理。部分扩展共效关系参照《Complete》系列补充书。请以DM最终裁定为准。
+    </p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

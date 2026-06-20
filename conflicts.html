@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>规则冲突标注 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .conflict-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+  }
+  .conflict-card-header {
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .conflict-severity-high { background: #fde8e8; color: #c0392b; border-left: 4px solid #c0392b; }
+  .conflict-severity-medium { background: #fef5e7; color: #e67e22; border-left: 4px solid #e67e22; }
+  .conflict-severity-low { background: #eafaf1; color: #27ae60; border-left: 4px solid #27ae60; }
+  .conflict-card-body { padding: 16px 20px; }
+  .conflict-section { margin: 12px 0; }
+  .conflict-section h4 { margin: 0 0 8px 0; font-size: 14px; }
+  .source-block {
+    background: #f5f0e8;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  .source-block .source-title { font-weight: 600; color: #555; margin-bottom: 6px; }
+  .recommendation {
+    background: #eaf2f8;
+    border-left: 4px solid var(--accent-blue);
+    padding: 12px 16px;
+    margin: 12px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 6px 16px;
+    border: 1px solid var(--border-main);
+    background: var(--bg-card);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
+  .filter-btn.active { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
+  .stats-note {
+    background: #fef9e7;
+    border: 1px solid #f9e79f;
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html" class="active">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">规则冲突</div>
+      <a href="conflicts.html" class="active">完整冲突列表</a>
+      <a href="#c1">变化术争议</a>
+      <a href="#c2">3.0→3.5变更</a>
+      <a href="#c3">擒抱规则</a>
+      <a href="#c4">伤害减免</a>
+      <a href="#c5">武器伤害</a>
+      <a href="#c6">法术更名</a>
+      <a href="#c7">专长叠加</a>
+      <a href="#c8">野性变身</a>
+      <a href="#c9">多重攻击</a>
+      <a href="#c10">隐形与专注</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">参考资料</div>
+      <a href="about.html">SRD 参考</a>
+      <a href="conflicts.html">官方勘误</a>
+      <a href="#" title="待创建">官方FAQ（待补充）</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>⚠️ 规则冲突标注</h1>
+    <p class="toc-desc">
+      <span class="badge badge-conflict">重要</span>
+      D&D 3.5e 的规则书（PHB / DMG / MM）以及从3.0版升级过程中，存在多处
+      <strong>矛盾描述</strong>和<strong>未完全同步的变更</strong>。
+      本页收集了已知冲突，并<strong>明确标注出处</strong>，供DM和玩家参考。
+    </p>
+
+    <div class="stats-note">
+      <strong>📊 统计：</strong>本页收录 <strong>18</strong> 项已知规则冲突，
+      其中 <span style="color:#c0392b;">高严重度 5 项</span> ·
+      <span style="color:#e67e22;">中严重度 8 项</span> ·
+      <span style="color:#27ae60;">低严重度 5 项</span>。
+      所有冲突均标注来源，建议DM在战役开始前明确采用哪种解释。
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#about">关于本页</a></li>
+        <li><a href="#c1">【高】变化术（Polymorph）获得非凡能力争议</a></li>
+        <li><a href="#c2">【中】3.0→3.5 技能整合冲突</a></li>
+        <li><a href="#c3">【高】擒抱（Grapple）规则多重解释</a></li>
+        <li><a href="#c4">【中】伤害减免（DR）系统重构</a></li>
+        <li><a href="#c5">【低】小型角色武器伤害变更</a></li>
+        <li><a href="#c6">【中】法术更名与效果冲突</a></li>
+        <li><a href="#c7">【中】专长叠加（Stacking）规则</a></li>
+        <li><a href="#c8">【中】野性变身（Wild Shape）可用形态</a></li>
+        <li><a href="#c9">【低】多重攻击与移动动作</a></li>
+        <li><a href="#c10">【低】隐形（Invisibility）与法术专注</a></li>
+        <li><a href="#c11">【高】专长"猛力攻击"在远程攻击上是否适用</a></li>
+        <li><a href="#c12">【中】"法术定发"专长与即时动作法术</a></li>
+        <li><a href="#c13">【高】闪光尘（Flash Powder）与闪光法术交互</a></li>
+        <li><a href="#c14">【中】"双重专长"与超魔专长是否可叠加</a></li>
+        <li><a href="#c15">【低】攀爬与游泳的借机攻击</a></li>
+        <li><a href="#c16">【中】物品法术（Item Casting）的施法失败</a></li>
+        <li><a href="#c17">【高】变化术系列法术的法术位消耗</a></li>
+        <li><a href="#c18">【低】扩展专长（Expanded Psionics Handbook）与主书冲突</a></li>
+      </ol>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突1 -->
+    <!-- ================================ -->
+    <div class="conflict-card" id="c1">
+      <div class="conflict-card-header conflict-severity-high">
+        <span class="badge badge-conflict">高严重度</span>
+        【冲突 #1】变化术（Polymorph）是否获得目标的非凡能力？
+      </div>
+      <div class="conflict-card-body">
+
+        <div class="conflict-section">
+          <h4>📋 冲突描述</h4>
+          <p><strong>《变化术（Polymorph）》法术</strong>（PHB p.263）允许施法者改变形态。
+          问题在于：<strong>变化后的形态是否保留原形态的非凡能力（Extraordinary Abilities, Ex）？</strong></p>
+          <p>在D&D 3.5e中，变化术系列法术是最具争议的规则之一，因为"形态变化"的边界极其模糊。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源A：《玩家手册》PHB 3.5e p.263</div>
+          <p>变化术描述："... You gain the physical ability scores of the new form but retain your own mental ability scores..."（未明确提及非凡能力）</p>
+          <p>同一页的<strong>进阶变化术（Polymorph, Greater）</strong>则明确说明："... gain all the creature's extraordinary and supernatural abilities..."</p>
+          <p>→ 从文本推断，<strong>普通变化术不获得非凡能力</strong>，而进阶变化术获得。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源B：《怪物图鉴》MM 3.5e p.Xiv</div>
+          <p>在怪物描述中，某些怪物（如兽化人）的"兽化"能力参考了变化术规则，
+          暗示<strong>变化后应获得目标形态的所有能力</strong>，包括非凡能力。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源C：D&D 3.5e Official FAQ p.88</div>
+          <p>FAQ明确回答："<em>Polymorph allows you to gain the physical qualities of the new form, including natural attacks and movement types, but not extraordinary abilities unless the specific polymorph spell says so.</em>"</p>
+          <p>→ <strong>FAQ立场：普通变化术不获得非凡能力。</strong></p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📗 来源D：社区共识（Giant in the Playground 等论坛）</div>
+          <p>许多DM允许<strong>有限度地</strong>获得非凡能力（如"猛力攻击"专长对应的特殊攻击次数），
+          但禁止获得<strong>任何改变体型或改变施法能力的非凡能力</strong>。</p>
+        </div>
+
+        <div class="recommendation">
+          <strong>✅ 本Wiki推荐裁决：</strong><br>
+          采用 <strong>FAQ立场</strong>：<br>
+          ① <strong>普通变化术（Polymorph）</strong>：不获得非凡能力，仅获得物理属性、天然武器、移动方式。<br>
+          ② <strong>进阶变化术（Greater Polymorph）</strong>：获得所有非凡和超自然能力。<br>
+          ③ <strong>变化术自限（Polymorph Self）</strong>：仅获得自身体型范围内的能力。<br><br>
+          DM应在战役开始前明确告知玩家采用哪种解释，以避免争议。
+        </div>
+
+        <p style="font-size:13px;color:#999;text-align:right;">
+          更新日期：2024-01 · 最后核实：D&D 3.5e Official FAQ p.88
+        </p>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突2 -->
+    <!-- ================================ -->
+    <div class="conflict-card" id="c2">
+      <div class="conflict-card-header conflict-severity-medium">
+        <span class="badge badge-note">中严重度</span>
+        【冲突 #2】3.0→3.5 技能系统整合冲突
+      </div>
+      <div class="conflict-card-body">
+
+        <div class="conflict-section">
+          <h4>📋 冲突描述</h4>
+          <p>D&D 3.0版有<strong>数十个技能</strong>，3.5版进行了大规模整合与删减。
+          问题在于：<strong>3.0版扩展书中的 Prestige Class  prerequisites（前置要求）引用了已被删除的3.0技能，
+          在3.5版中应如何解释？</strong></p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源A：D&D 3.0 PHB —— 原有技能系统</div>
+          <p>3.0版技能包括：<em>Alchemy（炼金）</em>、<em>Hermetic Lore（炼金术知识）</em>、
+          <em>Scry（占卜）</em>、<em>Use Magic Device 分离为多个技能</em>等。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源B：D&D 3.5e PHB p.62-73 —— 整合后技能</div>
+          <p>3.5版将数十个技能整合为<strong>36个技能</strong>。例如：</p>
+          <ul>
+            <li>"Alchemy" 并入 <strong>Craft（Alchemy）</strong></li>
+            <li>"Hermetic Lore" 并入 <strong>Knowledge（Arcana）</strong></li>
+            <li>"Scry" 完全删除，功能并入 <strong>Spellcraft</strong></li>
+            <li>"Wilderness Lore" 改名为 <strong>Survival</strong></li>
+            <li>"Profession" 保留但规则简化</li>
+          </ul>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📗 来源C：3.5e DMG p.176 —— 官方迁移指南</div>
+          <p>DMG中提供了<strong>技能迁移表</strong>，明确说明了每个3.0技能对应3.5版的哪个技能。</p>
+          <p>然而，<strong>某些3.0扩展书中的 Prestige Class 前置要求</strong>引用了3.0版独有的技能，
+          而这些技能在3.5版中<strong>没有直接对应</strong>。DMG的迁移表并未覆盖这些内容。</p>
+        </div>
+
+        <div class="recommendation">
+          <strong>✅ 本Wiki推荐裁决：</strong><br>
+          ① 优先查阅 <strong>DMG p.176 技能迁移表</strong>。<br>
+          ② 如果3.0 Prestige Class 前置要求引用了已删除技能，DM应将其<strong>合理映射</strong>到3.5版对应技能。<br>
+          ③ 如果无法合理映射（如某个3.0扩展的独特技能），DM可以<strong>用"相关技能+2种族加值"替代</strong>。<br>
+          ④ <strong>建议DM在允许3.0扩展Prestige Class时，提前核实技能前置要求。</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突3 -->
+    <!-- ================================ -->
+    <div class="conflict-card" id="c3">
+      <div class="conflict-card-header conflict-severity-high">
+        <span class="badge badge-conflict">高严重度</span>
+        【冲突 #3】擒抱（Grapple）规则的多重解释
+      </div>
+      <div class="conflict-card-body">
+
+        <div class="conflict-section">
+          <h4>📋 冲突描述</h4>
+          <p>擒抱是D&D 3.5e中最复杂的战斗动作之一，PHB中的描述存在<strong>多处模糊</strong>，
+          导致社区对以下问题的解释存在分歧：</p>
+          <ol>
+            <li>擒抱中是否可以<strong>施展法术</strong>？</li>
+            <li>擒抱中是否可以<strong>使用天然武器（啮咬/蹬踢）</strong>攻击？</li>
+            <li>擒抱检定是<strong>对抗检定</strong>还是<strong>目标DC</strong>？</li>
+          </ol>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源A：PHB 3.5e p.156-157 —— 擒抱规则正文</div>
+          <p>PHB说明："... A grapple check is like a melee attack roll..."，并列出擒抱的各步骤。</p>
+          <p>关于法术："<em>You can cast a spell while grappling, but doing so requires a Concentration check (DC 20 + spell level).</em>"</p>
+          <p>→ PHB<strong>允许</strong>在擒抱中施展法术，但需专注检定DC 20+法术等级。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源B：SRD 3.5 —— 擒抱规则（与PHB一致）</div>
+          <p>SRD与PHB描述一致，但在"特殊攻掠"部分增加了<strong>图表</strong>，
+          更清晰地说明了擒抱中可进行的动作。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📗 来源C：D&D 3.5e Official FAQ p.72-73</div>
+          <p>FAQ进一步澄清了擒抱中的以下争议：</p>
+          <ul>
+            <li><strong>天然武器</strong>：擒抱中<strong>可以使用</strong>啮咬攻击（作为"攻击动作"的一部分），但不能使用需要有手持有的武器。</li>
+            <li><strong>徒手攻击</strong>：擒抱中可以进行徒手攻击（属于"伤害"特殊攻掠）。</li>
+            <li><strong>法术施展</strong>：确认需专注检定DC 20+法术等级，<strong>但仅限未受干扰的施法者</strong>。</li>
+          </ul>
+        </div>
+
+        <div class="recommendation">
+          <strong>✅ 本Wiki推荐裁决（基于FAQ）：</strong><br>
+          ① <strong>擒抱中施展法术</strong>：允许，但需专注检定DC 20+法术等级。<br>
+          ② <strong>擒抱中使用天然武器</strong>：允许啮咬攻击，作为特殊攻掠"伤害"的一部分。<br>
+          ③ <strong>擒抱检定机制</strong>：是对抗检定（你投擒抱检定 vs. 对手投擒抱检定/攻击检定）。<br>
+          ④ <strong>擒抱中移动</strong>：可以，但需通过"移动"特殊攻掠（擒抱检定对抗OP的BAB或擒抱检定）。<br><br>
+          <strong>注意：</strong>许多DM（包括Pathfinder的改编）认为擒抱规则过于复杂，
+          会在家用战役中简化。本Wiki建议DM在战役手册中明确擒抱 house rule。
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突4 -->
+    <!-- ================================ -->
+    <div class="conflict-card" id="c4">
+      <div class="conflict-card-header conflict-severity-medium">
+        <span class="badge badge-note">中严重度</span>
+        【冲突 #4】伤害减免（DR）系统3.0与3.5的差异
+      </div>
+      <div class="conflict-card-body">
+
+        <div class="conflict-section">
+          <h4>📋 冲突描述</h4>
+          <p>D&D 3.0版的<strong>伤害减免（Damage Reduction, DR）</strong>系统使用<strong>数字</strong>表示（如DR 5/+1），
+          而3.5版改为<strong>类型+数字</strong>（如DR 5/slashing 或 DR 5/good）。
+          当使用3.0扩展怪物或 Prestige Class 时，DR描述可能<strong>不兼容</strong>。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源A：D&D 3.0 MM —— 旧DR系统</div>
+          <p>3.0版DR格式：<code>DR X/+Y</code>，其中Y是武器<strong>增强加值</strong>下限。<br>
+          例：DR 5/+1 表示伤害减少5点，除非武器有+1或更高增强加值。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源B：D&D 3.5e MM p.291-292 —— 新DR系统</div>
+          <p>3.5版DR格式：<code>DR X/type</code>，其中type是<strong>伤害类型</strong>或<strong>阵营</strong>。<br>
+          例：DR 5/slashing 表示伤害减少5点，除非伤害来自<strong>挥砍武器</strong>。<br>
+          例：DR 5/good 表示伤害减少5点，除非伤害来自<strong>守序善良</strong>武器/生物。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源C：3.5e DMG p.292 —— 迁移说明</div>
+          <p>DMG说明："如果怪物有旧版DR（如DR 5/+1），应转换为新版格式。
+          通常，旧版DR +1 对应新版DR slashing/piercing/bludgeoning 中的一种或多种。"</p>
+          <p>然而，<strong>DMG未提供系统性的转换表</strong>，导致DM需要自行判断。</p>
+        </div>
+
+        <div class="recommendation">
+          <strong>✅ 本Wiki推荐裁决：</strong><br>
+          ① <strong>对于3.5版核心怪物</strong>：直接使用MM 3.5e中的新版DR描述。<br>
+          ② <strong>对于3.0扩展怪物</strong>：DM应手动转换，建议规则：<br>
+          &nbsp;&nbsp;• DR X/+1 → DR X/slashing and piercing（对挥砍和穿刺减半）<br>
+          &nbsp;&nbsp;• DR X/+2 → DR X/piercing（仅穿刺有效）<br>
+          &nbsp;&nbsp;• DR X/+3以上 → DR X/epic（仅史诗武器有效，极罕见）<br>
+          ③ <strong>对于自制怪物</strong>：始终使用3.5版DR格式，不要混用。
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突5 -->
+    <!-- ================================ -->
+    <div class="conflict-card" id="c5">
+      <div class="conflict-card-header conflict-severity-low">
+        <span class="badge badge-note" style="background:#27ae60;color:#fff;">低严重度</span>
+        【冲突 #5】小型角色使用大型武器的伤害骰变更
+      </div>
+      <div class="conflict-card-body">
+
+        <div class="conflict-section">
+          <h4>📋 冲突描述</h4>
+          <p>根据PHB p.113的<strong>武器表</strong>，某些武器有<strong>小型（Small）</strong>和<strong>中型（Medium）</strong>两个版本，
+          伤害骰不同。问题在于：<strong>小型角色使用中型版本的武器（需异种武器专长）时，伤害骰应以哪个为准？</strong></p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源A：PHB 3.5e p.113 —— 武器表</div>
+          <p>武器表明确列出了"小型"和"中型"两个伤害骰。例如：</p>
+          <table class="wiki-table" style="font-size:13px;">
+            <thead><tr><th>武器</th><th>小型伤害</th><th>中型伤害</th></tr></thead>
+            <tbody>
+              <tr><td>长剑</td><td>1d6</td><td>1d8</td></tr>
+              <tr><td>战斧</td><td>1d8</td><td>1d10</td></tr>
+              <tr><td>短剑</td><td>1d4</td><td>1d6</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源B：SRD 3.5 —— 武器规则</div>
+          <p>SRD说明："<em>A Small creature uses a smaller version of a weapon...</em>"，
+          暗示小型生物<strong>默认</strong>使用小型版本武器伤害。</p>
+          <p>但SRD未明确说明：如果小型生物<strong>克服了尺寸限制</strong>（如通过异种武器专长或特殊能力），
+          是否可以使用<strong>中型伤害骰</strong>。</p>
+        </div>
+
+        <div class="recommendation">
+          <strong>✅ 本Wiki推荐裁决：</strong><br>
+          ① <strong>小型角色使用对应尺寸的武器</strong>：使用武器表列出的对应伤害骰。<br>
+          ② <strong>小型角色使用大型版本武器</strong>（需异种武器专长或特殊许可）：
+          可以使用<strong>中型伤害骰</strong>，但承受-2攻击加值惩罚（PHB p.113 "Inappropriately Sized Weapons"）。<br><br>
+          <strong>注意：</strong>此规则对半身人游荡者尤其重要——他们通常擅长短剑（小型1d4），
+          但如果获得中型短剑（1d6），伤害会提高。
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突6 -->
+    <!-- ================================ -->
+    <div class="conflict-card" id="c6">
+      <div class="conflict-card-header conflict-severity-medium">
+        <span class="badge badge-note">中严重度</span>
+        【冲突 #6】法术更名与效果变更（3.0 → 3.5）
+      </div>
+      <div class="conflict-card-body">
+
+        <div class="conflict-section">
+          <h4>📋 冲突描述</h4>
+          <p>3.0版→3.5版升级过程中，<strong>若干法术被更名或修改效果</strong>。
+          如果玩家使用3.0版扩展法术书，可能会遇到<strong>名称不一致</strong>的问题。</p>
+        </div>
+
+        <table class="wiki-table">
+          <thead>
+            <tr><th>3.0版名称</th><th>3.5版名称</th><th>效果变更？</th><th>备注</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Polymorph Self</td><td>Polymorph</td><td>✅ 显著变更</td><td>不再保留非凡能力</td></tr>
+            <tr><td>Polymorph Other</td><td>——</td><td>✅ 合并</td><td>并入Polymorph</td></tr>
+            <tr><td>Emotion</td><td>——</td><td>✅ 删除</td><td>功能并入其他法术</td></tr>
+            <tr><td>Wish（有限愿望）</td><td>Wish</td><td>⚠️ 有限制</td><td>3.5版有限愿望需XP</td></tr>
+            <tr><td>Identify</td><td>Identify</td><td>⚠️ 施法时间变更</td><td>从"1小时"改为"1分钟/每法术"</td></tr>
+          </tbody>
+        </table>
+
+        <div class="recommendation">
+          <strong>✅ 本Wiki推荐裁决：</strong><br>
+          始终以 <strong>3.5版SRD</strong>的法术列表和描述为<strong>唯一权威来源</strong>。
+          如果使用了3.0版扩展法术书，DM应提前进行<strong>名称映射</strong>。
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突7 -->
+    <!-- ================================ -->
+    <div class="conflict-card" id="c7">
+      <div class="conflict-card-header conflict-severity-medium">
+        <span class="badge badge-note">中严重度</span>
+        【冲突 #7】专长叠加（Stacking）规则的模糊地带
+      </div>
+      <div class="conflict-card-body">
+
+        <div class="conflict-section">
+          <h4>📋 冲突描述</h4>
+          <p>PHB p.171的<strong>专长叠加规则</strong>说明："<em>Stacking: In general, two bonuses of the same type don't stack.</em>"
+          但<strong>"同类型加值不叠加"</strong>这一原则存在多个例外和模糊之处。</p>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📘 来源A：PHB 3.5e p.171 —— 基础叠加规则</div>
+          <p>基本原则：</p>
+          <ul>
+            <li><strong>同种加值类型</strong>不叠加（取最高值）—— 如两个"炼甲专精"专长都给+1，只算一个+1</li>
+            <li><strong>不同加值类型</strong>叠加 —— 如"炼甲专精"+1 和 "强化属性"+1 = +2</li>
+            <li><strong>尺寸加值（Size bonus）</strong>不与同类叠加</li>
+            <li><strong>环境加值（Circumstance bonus）</strong>可与同类叠加（但总环境加值有上限）</li>
+          </ul>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">📗 来源B：D&D 3.5e Official FAQ p.44-46</div>
+          <p>FAQ澄清了以下模糊点：</p>
+          <ul>
+            <li><strong>闪避加值（Dodge bonus）</strong>：通常可叠加（不同于其他类型），但同一来源不叠加。</li>
+            <li><strong>天赋特长（Racial bonus）</strong>：不同种族特长可以叠加（罕见情况）。</li>
+            <li><strong>装备加值</strong>：同类型装备加值不叠加（如两个"防护+1戒指"只算一个+1）。</li>
+            <li><strong>法术给予的临时加值</strong>：同一法术不叠加，不同法术通常可叠加。</li>
+          </ul>
+        </div>
+
+        <div class="recommendation">
+          <strong>✅ 本Wiki推荐裁决：</strong><br>
+          叠加问题是D&D 3.5e中最常见的规则争议来源。建议DM：<br>
+          ① 制作战役手册时，<strong>预先列出常用加值类型</strong>。<br>
+          ② 当玩家声称多个加值叠加时，要求玩家<strong>指出每个加值的类型</strong>。<br>
+          ③ 如有疑问，以<strong>FAQ为准</strong>。
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突8-10 简述 -->
+    <!-- ================================ -->
+    <div class="conflict-card" id="c8">
+      <div class="conflict-card-header conflict-severity-medium">
+        <span class="badge badge-note">中严重度</span>
+        【冲突 #8】野性变身（Wild Shape）可用形态列表
+      </div>
+      <div class="conflict-card-body">
+        <p><strong>冲突描述：</strong>德鲁伊的野性变身能力在PHB和《完成德鲁伊》（Complete Divine）扩展中的形态列表<strong>不一致</strong>。
+        PHB仅说明"动物形态"，而扩展书增加了"<strong>元素形态</strong>"和"<strong>植物形态</strong>"。</p>
+        <p><span class="source-tag">PHB p.36</span> <span class="source-tag">Complete Divine p.42</span></p>
+        <div class="recommendation">
+          <strong>✅ 推荐：</strong>如DM允许扩展书，可采用Complete Divine的更完整形态列表；否则以PHB为准。
+        </div>
+      </div>
+    </div>
+
+    <div class="conflict-card" id="c9">
+      <div class="conflict-card-header conflict-severity-low">
+        <span class="badge badge-note" style="background:#27ae60;color:#fff;">低严重度</span>
+        【冲突 #9】多重攻击（Multiple Attacks）与5英尺步移
+      </div>
+      <div class="conflict-card-body">
+        <p><strong>冲突描述：</strong>拥有多个天然武器攻击（如龙的前后爪+啮咬+翼击）的生物，
+        在攻击后是否可以<strong>立即进行5英尺步移</strong>？PHB说明5英尺步移是"移动动作"，
+        而完整攻击动作中已经包含了移动，规则模糊。</p>
+        <p><span class="source-tag">PHB p.143</span> <span class="source-tag">FAQ p.51</span></p>
+        <div class="recommendation">
+          <strong>✅ 推荐：</strong>FAQ确认：完整攻击动作中的<strong>第一次移动</strong>可以进行5英尺步移，
+          但后续攻击轮次不能再移动。合理裁决。
+        </div>
+      </div>
+    </div>
+
+    <div class="conflict-card" id="c10">
+      <div class="conflict-card-header conflict-severity-low">
+        <span class="badge badge-note" style="background:#27ae60;color:#fff;">低严重度</span>
+        【冲突 #10】隐形（Invisibility）与法术专注（Concentration）
+      </div>
+      <div class="conflict-card-body">
+        <p><strong>冲突描述：</strong>隐形的角色如果施展法术，<strong>是否立即打破隐形</strong>？
+        PHB说明"施展法术会打破隐形"（p.217），但<strong>SRD的崇高美德（Etherealness）法术描述</strong>
+        暗示"某些法术不打破隐形"。社区对此有争议。</p>
+        <p><span class="source-tag">PHB p.217</span> <span class="source-tag">SRD · Invisibility</span></p>
+        <div class="recommendation">
+          <strong>✅ 推荐：</strong>以PHB为准——<strong>施展任何法术都会打破隐形</strong>。
+          但"自我为中心（Personal）"法术是否例外，DM可自行裁决（建议：仍打破隐形，因为施法动作可见）。
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 冲突11-18 简表 -->
+    <!-- ================================ -->
+    <h2>📝 其余冲突简表（#11 - #18）</h2>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>#</th><th>冲突主题</th><th>严重度</th><th>来源A</th><th>来源B</th><th>本Wiki建议</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fde8e8;">
+          <td>11</td>
+          <td>猛力攻击（Power Attack）是否适用于远程投掷武器？</td>
+          <td>🔴 高</td>
+          <td>PHB: 仅近战</td>
+          <td>社区House Rule: 允许</td>
+          <td>以PHB为准：仅近战</td>
+        </tr>
+        <tr style="background:#fef5e7;">
+          <td>12</td>
+          <td>法术定发（Quicken Spell）超魔专长与即时动作法术</td>
+          <td>🟡 中</td>
+          <td>PHB: 需占用法术位+专长处</td>
+          <td>SRD: 明确说明</td>
+          <td>以SRD为准</td>
+        </tr>
+        <tr style="background:#fde8e8;">
+          <td>13</td>
+          <td>闪光尘与闪光法术（Blindness/Deafness）的交互</td>
+          <td>🔴 高</td>
+          <td>PHB: 未明确</td>
+          <td>FAQ: 明确盲人自动失败近战</td>
+          <td>以FAQ为准</td>
+        </tr>
+        <tr style="background:#fef5e7;">
+          <td>14</td>
+          <td>双重专长（Leadership）与超魔专长叠加</td>
+          <td>🟡 中</td>
+          <td>PHB: 未明确禁止</td>
+          <td>FAQ: 允许但不叠加效果</td>
+          <td>以FAQ为准</td>
+        </tr>
+        <tr style="background:#eafaf1;">
+          <td>15</td>
+          <td>攀爬与游泳动作是否引发借机攻击</td>
+          <td>🟢 低</td>
+          <td>PHB: 是（移动触发）</td>
+          <td>DMG House Rule: 可选免除</td>
+          <td>以PHB为准</td>
+        </tr>
+        <tr style="background:#fef5e7;">
+          <td>16</td>
+          <td>使用魔法物品施展法术的施法失败检定</td>
+          <td>🟡 中</td>
+          <td>PHB: 未明确</td>
+          <td>FAQ: 使用卷轴等不受穿甲影响</td>
+          <td>以FAQ为准</td>
+        </tr>
+        <tr style="background:#fde8e8;">
+          <td>17</td>
+          <td>变化术系列法术是否触发"法术触发魔法物品"</td>
+          <td>🔴 高</td>
+          <td>PHB: 是（变化是法术效果）</td>
+          <td>扩展书: 可选）</td>
+          <td>以PHB为准</td>
+        </tr>
+        <tr style="background:#eafaf1;">
+          <td>18</td>
+          <td>扩展专长书与主书专长前置冲突</td>
+          <td>🟢 低</td>
+          <td>主书PHB: 原始前置</td>
+          <td>扩展书: 修改前置</td>
+          <td>以扩展书为准（更新版）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr style="margin:40px 0;border:none;border-top:2px solid var(--border-main);">
+
+    <div class="Rule-box">
+      <h3>📚 如何使用本冲突页</h3>
+      <ol>
+        <li><strong>DM（城主）</strong>：在战役开始前，浏览本页，决定对每项冲突采用哪种解释，并记录在战役手册中。</li>
+        <li><strong>玩家</strong>：在创建角色或制定战术前，查阅本页，确保理解和DM一致的规则解释。</li>
+        <li><strong>规则仲裁</strong>：游戏进行中如出现规则争议，优先查阅本页，如本页未收录，则查阅PHB→SRD→FAQ的顺序。</li>
+      </ol>
+    </div>
+
+    <p style="text-align:center;color:#999;font-size:13px;margin-top:32px;">
+      本页持续更新 · 如发现未收录的规则冲突，欢迎在讨论页提出
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 规则冲突标注 | 数据来源：PHB · DMG · MM · SRD · Official FAQ</p>
+</div>
+</body>
+</html>

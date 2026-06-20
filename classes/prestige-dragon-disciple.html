@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>龙脉术士 Dragon Disciple - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html" class="active">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>龙脉术士 <span class="en-name">Dragon Disciple</span></h1>
+    <p class="source">来源：《地下城主指南》(DMG) 第187页</p>
+
+    <div class="infobox">
+      <h3>职业信息</h3>
+      <table>
+        <tr><th>生命骰 (HD)</th><td>d12</td></tr>
+        <tr><th>阵营限制</th><td>任意非守序</td></tr>
+        <tr><th>关键属性</th><td>魅力 (CHA)、力量 (STR)、体质 (CON)</td></tr>
+        <tr><th>施法进阶</th><td>部分等级提升奥术施法（第1-4、6-7、9-10级）</td></tr>
+        <tr><th>来源</th><td>DMG p.187</td></tr>
+      </table>
+
+      <h3>入门条件</h3>
+      <table>
+        <tr><th>技能</th><td>知识(神秘) (Knowledge: arcana) 8级</td></tr>
+        <tr><th>语言</th><td>龙语 (Draconic)</td></tr>
+        <tr><th>施法能力</th><td>能够自发施展奥术法术 (spontaneous arcane casting)</td></tr>
+        <tr><th>种族</th><td>非龙类生物 (nondragon creature)，不允许已经拥有龙类亚种</td></tr>
+      </table>
+
+      <h3>本职技能</h3>
+      <p>专注 (Concentration)、脱逃术 (Escape Artist)、搜集信息 (Gather Information)、知识(所有，分别选取) (Knowledge)、聆听 (Listen)、搜索 (Search)、辨识法术 (Spellcraft)、侦察 (Spot)</p>
+      <p>技能点：2 + 智力调整值</p>
+    </div>
+
+    <h2>职业特性表</h2>
+    <table class="class-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>BAB</th>
+          <th>强韧</th>
+          <th>反射</th>
+          <th>意志</th>
+          <th>特殊能力</th>
+          <th>每日法术</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>+0</td><td>+2</td><td>+0</td><td>+2</td>
+          <td>奖励技能 (Bonus Skill)、奖励语言 (Bonus Languages)、龙族血脉 (Draconic Heritage)</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>2</td><td>+1</td><td>+3</td><td>+0</td><td>+3</td>
+          <td>属性加值 (STR +2)、天生防御 +1 (Natural Armor +1)</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>3</td><td>+2</td><td>+3</td><td>+1</td><td>+3</td>
+          <td>爪击/啮咬 (Claws and Bite)</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>4</td><td>+3</td><td>+4</td><td>+1</td><td>+4</td>
+          <td>属性加值 (STR +2)、天生防御 +2</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>5</td><td>+3</td><td>+4</td><td>+1</td><td>+4</td>
+          <td>吐息武器 (Breath Weapon)</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>6</td><td>+4</td><td>+5</td><td>+2</td><td>+5</td>
+          <td>属性加值 (CON +2)、天生防御 +3</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>7</td><td>+5</td><td>+5</td><td>+2</td><td>+5</td>
+          <td>龙类视觉 (Dragon Senses)：盲感 30英尺</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>8</td><td>+6</td><td>+6</td><td>+2</td><td>+6</td>
+          <td>属性加值 (CON +2)、天生防御 +4</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>9</td><td>+6</td><td>+6</td><td>+3</td><td>+6</td>
+          <td>翅膀 (Wings)</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td>10</td><td>+7</td><td>+7</td><td>+3</td><td>+7</td>
+          <td>属性加值 (STR +4)、半龙模板 (Half-Dragon)</td>
+          <td>+1 现有奥术施法等级</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详述</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>龙脉术士不获得任何额外的武器或防具熟练。</p>
+
+    <h3>法术 (Spells)</h3>
+    <p>在大部分龙脉术士等级（第1、2、4、5、6、7、9、10级），角色获得新的每日法术数量，如同他同时在之前的自发奥术施法职业上也提升了一级。第3级和第8级不提升施法等级。</p>
+    <p>龙脉术士只能将施法等级应用于自发奥术施法职业（通常是术士或吟游诗人）。角色必须在获得第一个龙脉术士等级时选择将哪个施法职业与龙脉术士等级叠加。</p>
+
+    <h3>奖励技能 (Bonus Skill)</h3>
+    <p>在第1级，龙脉术士获得4级知识(神秘) (Knowledge: arcana) 技能作为奖励。如果龙脉术士已经有此技能，则技能等级直接+4。</p>
+
+    <h3>奖励语言 (Bonus Languages)</h3>
+    <p>龙脉术士在第1级获得龙语 (Draconic) 作为奖励语言。如果已经知道龙语，则可以选择另一种语言作为奖励。</p>
+
+    <h3>龙族血脉 (Draconic Heritage)</h3>
+    <p>在第1级，龙脉术士必须选择一种龙的颜色作为自己的龙族血脉。此选择决定了之后获得的吐息武器类型和能量抗性。可选的龙色包括：</p>
+    <ul>
+      <li><strong>黑龙 (Black)：</strong>酸 (acid) 吐息，线形</li>
+      <li><strong>蓝龙 (Blue)：</strong>闪电 (electricity) 吐息，线形</li>
+      <li><strong>绿龙 (Green)：</strong>酸 (acid) 吐息，锥形</li>
+      <li><strong>红龙 (Red)：</strong>火 (fire) 吐息，锥形</li>
+      <li><strong>白龙 (White)：</strong>寒冷 (cold) 吐息，锥形</li>
+      <li><strong>黄铜龙 (Brass)：</strong>火 (fire) 吐息，线形</li>
+      <li><strong>青铜龙 (Bronze)：</strong>闪电 (electricity) 吐息，线形</li>
+      <li><strong>赤铜龙 (Copper)：</strong>酸 (acid) 吐息，线形</li>
+      <li><strong>金龙 (Gold)：</strong>火 (fire) 吐息，锥形</li>
+      <li><strong>银龙 (Silver)：</strong>寒冷 (cold) 吐息，锥形</li>
+    </ul>
+    <p>一旦选择，不能更改。此选择还决定了龙脉术士获得的能量抗力类型（与吐息武器的能量类型相同）。</p>
+
+    <h3>属性加值 (Ability Boost)</h3>
+    <p>随着龙脉术士等级的提升，龙族的血脉越来越强烈地改变其身体。角色在以下等级获得属性加值：</p>
+    <ul>
+      <li>第2级：力量 +2</li>
+      <li>第4级：力量 +2</li>
+      <li>第6级：体质 +2</li>
+      <li>第8级：体质 +2</li>
+      <li>第10级：力量 +4</li>
+    </ul>
+    <p>总计：力量 +8、体质 +4。</p>
+
+    <h3>天生防御 (Natural Armor)</h3>
+    <p>龙脉术士的皮肤逐渐变得像龙鳞一样坚硬。天生防御加值如下：</p>
+    <ul>
+      <li>第2级：+1</li>
+      <li>第4级：+2（替换+1，不叠加）</li>
+      <li>第6级：+3</li>
+      <li>第8级：+4</li>
+    </ul>
+    <p>此天生防御加值与种族的天生防御加值叠加。</p>
+
+    <h3>爪击与啮咬 (Claws and Bite)</h3>
+    <p>从第3级开始，龙脉术士获得爪击和啮咬天然武器攻击。爪击造成 1d4 伤害（小体型 1d3），啮咬造成 1d6 伤害（小体型 1d4）。如果龙脉术士使用制造的所有天然武器攻击，啮咬攻击承受-5减值（除非拥有多重攻击专长）。</p>
+    <p>如果龙脉术士使用的武器占据了手部（如双手持剑），则不能使用爪击。使用武器的手不能同时进行爪击。</p>
+
+    <h3>吐息武器 (Breath Weapon)</h3>
+    <p>从第5级开始，龙脉术士获得吐息武器攻击。吐息武器的形状和能量类型取决于第1级选择的龙族血脉（见上文）。吐息武器造成 2d8 伤害（每龙脉术士等级+1），反射豁免 DC = 10 + 龙脉术士等级 + 体质调整值，成功减半。</p>
+    <p>吐息武器每 1d4 轮可以使用一次。形状根据龙色而定：</p>
+    <ul>
+      <li>锥形吐息（红、白、绿、金、银）：30英尺锥形</li>
+      <li>线形吐息（黑、蓝、黄铜、青铜、赤铜）：60英尺线形</li>
+    </ul>
+
+    <h3>龙类视觉 (Dragon Senses)</h3>
+    <p>从第7级开始，龙脉术士获得盲感 (blindsight) 30英尺。他可以使用非视觉感官（敏锐的听觉和嗅觉）来感知周围环境和生物，不需要进行侦察或聆听检定。</p>
+
+    <h3>翅膀 (Wings)</h3>
+    <p>从第9级开始，龙脉术士背上长出龙翼。龙脉术士获得飞行能力，飞行速度等于陆地速度（良好机动性）。如果角色穿戴中甲或重甲，或使用中载或重载，则无法飞行。</p>
+
+    <h3>半龙 (Half-Dragon)</h3>
+    <p>在第10级，龙脉术士的龙族变身完成。角色获得半龙模板 (half-dragon template)，具体效果包括：</p>
+    <ul>
+      <li>类型变为龙类 (dragon)</li>
+      <li>获得与所选龙色相关的能量抗力 30（与吐息武器能量类型相同）</li>
+      <li>黑暗视觉 60英尺、微光视觉</li>
+      <li>免疫睡眠和麻痹效果</li>
+      <li>天生武器（爪击和啮咬）伤害提升一级</li>
+      <li>吐息武器伤害提升至 4d8（每龙脉术士等级+1）</li>
+      <li>天生防御额外+4（总计+4 来自此特性）</li>
+      <li>魅力 +2</li>
+    </ul>
+
+    <h2>构建建议 (Build Tips)</h2>
+
+    <h3>推荐种族</h3>
+    <ul>
+      <li><strong>人类 (Human)：</strong>灵活的属性分配和额外专长/技能点，适合各种龙色选择。</li>
+      <li><strong>半精灵 (Half-elf)：</strong>没有属性惩罚，拥有黑暗视觉，且可以很好地扮演"追寻龙族血脉"的角色。</li>
+      <li><strong>半身人 (Halfling)：</strong>虽然体型小会减少天然武器伤害，但敏捷加值和幸运加值对某些构建很有帮助。</li>
+    </ul>
+
+    <h3>推荐基础职业</h3>
+    <ul>
+      <li><strong>术士 (Sorcerer)：</strong>最佳选择。术士本身就是自发施法者，满足前置条件。龙脉术士的背景设定与术士的"血脉觉醒"主题完美契合。术士的已知法术数量有限，但龙脉术士的属性加值可以弥补这一缺陷。</li>
+      <li><strong>吟游诗人 (Bard)：</strong>也满足自发奥术施法的前置条件。吟游诗人的多才多艺配合龙脉术士的变身能力，可以创造出非常独特的角色。</li>
+    </ul>
+
+    <h3>构建思路</h3>
+    <ul>
+      <li>龙脉术士最大的特点是物理能力的巨大提升——+8力量和+4体质使角色在近战中也非常强大。</li>
+      <d12 HD 和+4天生防御使角色异常坚韧——这是少数能让施法者"变成坦克"的进阶职业。</li>
+      <li>注意第3级和第8级不提升施法等级——总共损失2级施法。如果需要完整的施法进度，可能需要其他进阶来弥补。</li>
+      <li>选择龙色时考虑战斗风格：红龙/金龙适合配合火系法术，银龙/白龙适合冰系法术。</li>
+      <li>第10级获得半龙模板后，角色的类型变为龙类——这意味着不再受人形针对法术影响，但也失去了一些针对人形生物的增益。</li>
+    </ul>
+
+    <h2>角色扮演建议 (Role-playing Suggestions)</h2>
+    <ul>
+      <li>龙脉术士是体内流淌着龙之血脉的术士。他们通过不断觉醒血脉中的龙族力量，逐渐从凡人变为半龙生物。这是一个身体和精神都在不断变化的过程。</li>
+      <li>扮演龙脉术士时可以展现角色对自己变化的复杂情感——从最初的惊奇和好奇，到逐渐接受并拥抱龙族身份。</li>
+      <li>许多龙脉术士痴迷于龙的传说和知识。他们可能四处寻找龙的巢穴、研究龙的习性，甚至试图与真正的龙交流。</li>
+      <li>龙脉术士通常具有强烈的个人骄傲和力量感——毕竟他们的血脉中流淌着世界上最强大生物的力量。</li>
+      <li>非守序阵营的限制意味着龙脉术士通常不受传统和规则的束缚——他们可能像龙一样独来独往，追求个人力量和财富。</li>
+    </ul>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

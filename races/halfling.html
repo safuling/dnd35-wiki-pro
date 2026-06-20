@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>半身人 Halfling - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html" class="active">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">种族</div>
+      <a href="intro.html">总览</a>
+      <a href="human.html">人类 Human</a>
+      <a href="elf.html">精灵 Elf</a>
+      <a href="dwarf.html">矮人 Dwarf</a>
+      <a href="halfling.html" class="active">半身人 Halfling</a>
+      <a href="gnome.html">侏儒 Gnome</a>
+      <a href="half-elf.html">半精灵 Half-elf</a>
+      <a href="half-orc.html">半兽人 Half-orc</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- 信息盒子 -->
+    <div class="infobox">
+      <div class="infobox-title">🧒 半身人 Halfling</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <div class="infobox-img" style="padding:20px;font-size:64px;opacity:0.3;">🧒🌿🍃</div>
+      <table class="infobox-table">
+        <tr><td>体型</td><td>小型</td></tr>
+        <tr><td>属性调整</td><td>力量-2，敏捷+2</td></tr>
+        <tr><td>速度</td><td>20英尺</td></tr>
+        <tr><td>视力</td><td>正常视觉</td></tr>
+        <tr><td>语言</td><td>通用语、半身人语</td></tr>
+        <tr><td>偏爱职业</td><td>漫游者（男性）、吟游诗人（女性）</td></tr>
+        <tr><td>挑战等级</td><td>1（1级角色）</td></tr>
+        <tr><td>来源</td><td>PHB p.20 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>半身人（Halfling）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心种族</span>
+      <span class="badge badge-race">PHB p.20</span>
+      <span class="badge badge-note">乐观·敏捷·家庭导向</span>
+    </p>
+    <p>半身人是费伦大陆最<strong>乐观</strong>且<strong>敏捷</strong>的种族之一。他们喜欢舒适的家园，
+    但也会因为冒险精神而离开家乡。在D&D 3.5e中，半身人以其<strong>敏捷+2</strong>和
+    <strong>小型体型优势</strong>成为优秀的远程射手和漫游者。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#traits">种族特性</a></li>
+        <li><a href="#mechanics">机制分析</a></li>
+        <li><a href="#multiclass">多职业建议</a></li>
+        <li><a href="#roleplay">角色扮演建议</a></li>
+        <li><a href="#names">姓名习惯</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+        <li><a href="#source">数据来源</a></li>
+      </ol>
+    </div>
+
+    <h2 id="traits">📊 种族特性</h2>
+    <div class="Rule">
+      <h3>属性调整</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>属性</th><th>调整值</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>力量（STR）</td><td><span style="color:var(--accent-red);"><strong>-2</strong></span></td><td>近战伤害-1</td></tr>
+          <tr><td>敏捷（DEX）</td><td><strong>+2</strong></td><td>远程/AC/先攻</td></tr>
+          <tr><td>体质（CON）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>智力（INT）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>感知（WIS）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>魅力（CHA）</td><td>±0</td><td>无调整</td></tr>
+        </tbody>
+      </table>
+      <p><strong>力量-2/敏捷+2</strong>使半身人成为<strong>优秀的远程射手</strong>。
+      力量-2在近战中很痛，但远程攻击不受影响。</p>
+    </div>
+
+    <div class="Rule">
+      <h3>独有种族特性</h3>
+      <ol>
+        <li><strong>小型体型</strong>：AC +1偏转加值，攻击+1尺寸加值。但力量-2导致近战伤害-1。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;"><strong>机制意义：</strong>小型生物有天然的AC优势，但近战伤害有惩罚。</p>
+        </li>
+        <li><strong>投掷武器娴熟（Throwing Strength Penalty Negation）</strong>：半身人在使用投掷武器（飞镖、投石索）时，
+          不会受到小型体型的<strong>力量惩罚</strong>。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;">这使半身人成为优秀的投掷武器专家。</p>
+        </li>
+        <li><strong>回避巨人+4（Giant Dodge Bonus）</strong>：对抗体型为大型或更大的生物时，
+          AC和豁免有+4种族加值。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;">对抗巨人类（ hill giant、stone giant等）时极其有效。</p>
+        </li>
+        <li><strong>攀爬/跳跃+2</strong>：种族加值，使半身人成为优秀的侦察兵和陷阱解除者。</li>
+        <li><strong>偏爱职业</strong>：男性半身人偏爱<strong>漫游者</strong>，女性半身人偏爱<strong>吟游诗人</strong>。
+          选择其他职业会触发<strong>兼职惩罚</strong>（经验值-20%）。</li>
+        <li><strong>速度20英尺</strong>：小型生物的基础速度。</li>
+      </ol>
+    </div>
+
+    <h2 id="mechanics">⚙️ 机制分析</h2>
+    <div class="Rule">
+      <h3>半身人的优劣对比</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>优势</th><th>劣势</th><th>评价</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>敏捷+2（远程/AC/先攻）</td><td>力量-2（近战伤害-1）</td><td>适合远程/技能型</td></tr>
+          <tr><td>小型体型（AC+1/攻击+1）</td><td>——</td><td>前排生存能力强</td></tr>
+          <tr><td>回避巨人+4</td><td>——</td><td>对抗大型生物有效</td></tr>
+          <tr><td>投掷武器娴熟</td><td>——</td><td>投掷流派优秀</td></tr>
+        </tbody>
+      </table>
+      <p><strong>结论：</strong>半身人是最适合<strong>远程射手</strong>和<strong>漫游者</strong>的种族。
+      力量-2在近战中很痛，但远程攻击不受影响。小型体型带来AC优势。</p>
+    </div>
+
+    <div class="Rule">
+      <h3>半身人漫游者：技能大师</h3>
+      <p>半身人漫游者是D&D 3.5e中<strong>最全面的技能型角色</strong>：</p>
+      <ul>
+        <li>✅ <strong>敏捷+2</strong> = 更好的远程攻击和先攻。</li>
+        <li>✅ <strong>攀爬/跳跃+2</strong> = 更好的陷阱解除和侦察能力。</li>
+        <li>✅ <strong>小型体型</strong> = AC+1，更难被击中。</li>
+        <li>❌ <strong>力量-2</strong> = 近战伤害-1，但漫游者主要用远程/双武器。</li>
+      </ul>
+      <p><strong>构建建议：</strong>优先提升<strong>敏捷（DEX）</strong>和<strong>智力（INT）</strong>（技能点）。
+      选择<strong>双武器战斗</strong>或<strong>弓箭专精</strong>专长。</p>
+    </div>
+
+    <h2 id="multiclass">🔄 多职业建议</h2>
+    <p>半身人的<strong>偏爱职业限制</strong>（男性漫游者/女性吟游诗人）使多职业需要谨慎规划。</p>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>半身人漫游者 / 战士</h3>
+        <p><strong>经典组合。</strong>漫游者提供技能，战士提供近战生存和攻击加值。</p>
+        <p style="font-size:13px;color:#666;">⚠️ 注意：女性半身人选择此组合会触发兼职惩罚。</p>
+      </div>
+      <div class="section-card">
+        <h3>半身人吟游诗人</h3>
+        <p><strong>女性半身人首选。</strong>吟游诗人的魅力和法术配合半身人的生存能力。</p>
+        <p style="font-size:13px;color:#666;">需高魅力（CHA 14+）。</p>
+      </div>
+      <div class="section-card">
+        <h3>半身人术士</h3>
+        <p><strong>不错选择。</strong>小型体型和敏捷加值提供生存能力，适合术士构建。</p>
+        <p style="font-size:13px;color:#666;">魅力调整值需14+（术士施法关键）。</p>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#c0392b;margin-top:15px;"><strong>⚠️ 兼职惩罚警告：</strong>
+    半身人的偏爱职业是<strong>性别特定</strong>的。如果男性半身人选择非漫游者职业，或女性半身人选择非吟游诗人职业，
+    将触发<strong>兼职惩罚</strong>（经验值-20%）。</p>
+
+    <h2 id="roleplay">🎭 角色扮演建议</h2>
+    <div class="Rule">
+      <h3>半身人的"家园情结"与冒险精神</h3>
+      <p>半身人通常<strong>乐观、好奇、热爱家庭</strong>。他们喜欢舒适的生活，但也会因为冒险精神而离开家乡。</p>
+      <p>常见性格原型：</p>
+      <ul>
+        <li><strong>家园守护者</strong>：为了保护家乡而踏上冒险。</li>
+        <li><strong>好奇探险家</strong>：对外部世界充满好奇，离家探险。</li>
+        <li><strong>美食家</strong>：为了品尝各地美食而旅行。</li>
+        <li><strong>宝藏猎人</strong>：热爱收集珠宝和财宝。</li>
+        <li><strong>社交蝴蝶</strong>：喜欢结交各种族朋友。</li>
+      </ul>
+    </div>
+
+    <h2 id="names">📛 姓名习惯</h2>
+    <p>半身人姓名通常<strong>亲切、朴实、有田园感</strong>。在费伦设定中：</p>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>性别</th><th>示例姓名</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>男性</td><td>佛罗多（Frodo）、山姆（Samwise）、梅里（Meriadoc）</td><td>取自《霍比特人》/《魔戒》</td></tr>
+        <tr><td>女性</td><td>罗丝（Rosie）、戴西（Daisy）、玛丽（Mari）</td><td>亲切朴实</td></tr>
+        <tr><td>姓氏</td><td>花园（Gardner）、袋底（Baggins）、绿坡（Greenhill）</td><td>描述家园特征</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:#777;">注：半身人通常有名无姓，或采用"名·姓氏"格式。</p>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"投掷武器娴熟"的适用范围</h3>
+      <p><strong>冲突描述：</strong>半身人的"投掷武器娴熟"是否适用于<strong>所有投掷武器</strong>？</p>
+      <p><strong>SRD和PHB的明确说法：</strong>"Halflings are proficient with slings and treat them as martial weapons."（SRD · Races · Halfling）</p>
+      <p>即：<strong>仅限投石索（sling）和飞镖（dart）</strong>，不是所有投掷武器。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.21</span></p>
+      <p><strong>DM解释差异：</strong>某些DM可能house rule "适用于所有投掷武器"。建议提前确认。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>关于"小型体型"的武器限制</h3>
+      <p><strong>冲突描述：</strong>小型生物是否可以使用<strong>大型武器</strong>？</p>
+      <p><strong>SRD的明确说法：</strong>"A creature ... can use a ... weapon of its size or smaller."（SRD · Combat · Weapon Size）</p>
+      <p>即：<strong>小型生物只能使用小型或更小尺寸的武器</strong>。大型武器（如大型长剑）无法使用。</p>
+      <p><span class="source-tag">来源：SRD</span></p>
+      <p><strong>注意：</strong>某些宽松DM可能允许小型生物使用大型武器（需双手且-2惩罚）。</p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.20-22 —— 半身人种族特性</li>
+      <li>📘 <strong>SRD 3.5</strong> · Races → Halfling —— 开放式游戏规则</li>
+      <li>📗 <strong>DMG（城主手册）3.5版</strong> p.173 —— 兼职惩罚规则</li>
+      <li>📗 <strong>Forgotten Realms Campaign Setting</strong> —— 费伦设定中的半身人文化</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="dwarf.html">← 上一页：矮人</a> | <a href="gnome.html">下一页：侏儒 →</a>
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 半身人种族详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

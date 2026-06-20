@@ -1,0 +1,476 @@
+[
+  {
+    "id": "obscuring_mist",
+    "domains": [
+      "水"
+    ]
+  },
+  {
+    "id": "air_walk",
+    "domains": [
+      "气"
+    ]
+  },
+  {
+    "id": "control_winds",
+    "domains": [
+      "气"
+    ]
+  },
+  {
+    "id": "elemental_body_air",
+    "domains": [
+      "气"
+    ]
+  },
+  {
+    "id": "calm_animals",
+    "domains": [
+      "动物"
+    ]
+  },
+  {
+    "id": "speak_with_animals",
+    "domains": [
+      "动物"
+    ]
+  },
+  {
+    "id": "dominate_animal",
+    "domains": [
+      "动物"
+    ]
+  },
+  {
+    "id": "summon_natures_ally_iv",
+    "domains": [
+      "动物"
+    ]
+  },
+  {
+    "id": "antilife_shell",
+    "domains": [
+      "动物"
+    ]
+  },
+  {
+    "id": "animal_shapes",
+    "domains": [
+      "动物"
+    ]
+  },
+  {
+    "id": "summon_natures_ally_ix",
+    "domains": [
+      "动物"
+    ]
+  },
+  {
+    "id": "protect_from_law",
+    "domains": [
+      "混乱"
+    ]
+  },
+  {
+    "id": "magic_circle_against_law",
+    "domains": [
+      "混乱"
+    ]
+  },
+  {
+    "id": "chaos_hammer",
+    "domains": [
+      "混乱"
+    ]
+  },
+  {
+    "id": "power_word_chaos",
+    "domains": [
+      "混乱"
+    ]
+  },
+  {
+    "id": "cloak_of_chaos",
+    "domains": [
+      "混乱"
+    ]
+  },
+  {
+    "id": "summon_monster_9_chaos",
+    "domains": [
+      "混乱"
+    ]
+  },
+  {
+    "id": "death_knell",
+    "domains": [
+      "死亡"
+    ]
+  },
+  {
+    "id": "inflict_light_wounds",
+    "domains": [
+      "破坏"
+    ]
+  },
+  {
+    "id": "shatter",
+    "domains": [
+      "破坏"
+    ]
+  },
+  {
+    "id": "inflict_critical_wounds",
+    "domains": [
+      "破坏"
+    ]
+  },
+  {
+    "id": "magic_stone",
+    "domains": [
+      "土"
+    ]
+  },
+  {
+    "id": "soften_earth_and_stone",
+    "domains": [
+      "土"
+    ]
+  },
+  {
+    "id": "stone_shape",
+    "domains": [
+      "土"
+    ]
+  },
+  {
+    "id": "spike_stones",
+    "domains": [
+      "土"
+    ]
+  },
+  {
+    "id": "iron_body",
+    "domains": [
+      "土"
+    ]
+  },
+  {
+    "id": "desecrate",
+    "domains": [
+      "邪恶"
+    ]
+  },
+  {
+    "id": "magic_circle_against_good",
+    "domains": [
+      "邪恶"
+    ]
+  },
+  {
+    "id": "unholy_blade",
+    "domains": [
+      "邪恶"
+    ]
+  },
+  {
+    "id": "dispel_good",
+    "domains": [
+      "邪恶"
+    ]
+  },
+  {
+    "id": "unholy_word",
+    "domains": [
+      "邪恶"
+    ]
+  },
+  {
+    "id": "summon_monster_9_evil",
+    "domains": [
+      "邪恶"
+    ]
+  },
+  {
+    "id": "produce_flame",
+    "domains": [
+      "火"
+    ]
+  },
+  {
+    "id": "shield_other",
+    "domains": [
+      "防护"
+    ]
+  },
+  {
+    "id": "magic_circle_against_evil",
+    "domains": [
+      "善良"
+    ]
+  },
+  {
+    "id": "holy_smite",
+    "domains": [
+      "善良"
+    ]
+  },
+  {
+    "id": "dispel_evil",
+    "domains": [
+      "善良"
+    ]
+  },
+  {
+    "id": "blade_barrier",
+    "domains": [
+      "战争"
+    ]
+  },
+  {
+    "id": "holy_word",
+    "domains": [
+      "善良"
+    ]
+  },
+  {
+    "id": "summon_monster_9_good",
+    "domains": [
+      "善良"
+    ]
+  },
+  {
+    "id": "detect_thoughts",
+    "domains": [
+      "知识"
+    ]
+  },
+  {
+    "id": "discern_location",
+    "domains": [
+      "知识"
+    ]
+  },
+  {
+    "id": "protection_from_chaos",
+    "domains": [
+      "守序"
+    ]
+  },
+  {
+    "id": "calm_emotions",
+    "domains": [
+      "守序"
+    ]
+  },
+  {
+    "id": "magic_circle_against_chaos",
+    "domains": [
+      "守序"
+    ]
+  },
+  {
+    "id": "order_whip",
+    "domains": [
+      "守序"
+    ]
+  },
+  {
+    "id": "dispel_chaos",
+    "domains": [
+      "守序"
+    ]
+  },
+  {
+    "id": "summon_monster_9_law",
+    "domains": [
+      "守序"
+    ]
+  },
+  {
+    "id": "imbue_with_spell_ability",
+    "domains": [
+      "魔法"
+    ]
+  },
+  {
+    "id": "spell_resistance",
+    "domains": [
+      "防护"
+    ]
+  },
+  {
+    "id": "permanency",
+    "domains": [
+      "魔法"
+    ]
+  },
+  {
+    "id": "mage_s_layer",
+    "domains": [
+      "魔法"
+    ]
+  },
+  {
+    "id": "entangle",
+    "domains": [
+      "植物"
+    ]
+  },
+  {
+    "id": "_tree_empathy_2",
+    "domains": [
+      "植物"
+    ]
+  },
+  {
+    "id": "plant_growth",
+    "domains": [
+      "植物"
+    ]
+  },
+  {
+    "id": "command_plants",
+    "domains": [
+      "植物"
+    ]
+  },
+  {
+    "id": "wall_of_thorns",
+    "domains": [
+      "植物"
+    ]
+  },
+  {
+    "id": "animate_plants",
+    "domains": [
+      "植物"
+    ]
+  },
+  {
+    "id": "sanctuary",
+    "domains": [
+      "防护"
+    ]
+  },
+  {
+    "id": "spell_immunity",
+    "domains": [
+      "防护"
+    ]
+  },
+  {
+    "id": "mind_blank",
+    "domains": [
+      "防护"
+    ]
+  },
+  {
+    "id": "magic_vestment",
+    "domains": [
+      "力量"
+    ]
+  },
+  {
+    "id": "divine_power",
+    "domains": [
+      "战争"
+    ]
+  },
+  {
+    "id": "righteous_might",
+    "domains": [
+      "力量"
+    ]
+  },
+  {
+    "id": "stoneskin",
+    "domains": [
+      "力量"
+    ]
+  },
+  {
+    "id": "sunbeam",
+    "domains": [
+      "太阳"
+    ]
+  },
+  {
+    "id": "sunray",
+    "domains": [
+      "太阳"
+    ]
+  },
+  {
+    "id": "longstrider",
+    "domains": [
+      "旅行"
+    ]
+  },
+  {
+    "id": "locate_object",
+    "domains": [
+      "旅行"
+    ]
+  },
+  {
+    "id": "teleport_object",
+    "domains": [
+      "旅行"
+    ]
+  },
+  {
+    "id": "disguise_self",
+    "domains": [
+      "诡术"
+    ]
+  },
+  {
+    "id": "project_image",
+    "domains": [
+      "诡术"
+    ]
+  },
+  {
+    "id": "spiritual_weapon",
+    "domains": [
+      "战争"
+    ]
+  },
+  {
+    "id": "flame_strike",
+    "domains": [
+      "战争"
+    ]
+  },
+  {
+    "id": "watery_bubble",
+    "domains": [
+      "水"
+    ]
+  },
+  {
+    "id": "control_water",
+    "domains": [
+      "水"
+    ]
+  },
+  {
+    "id": "acid_fog",
+    "domains": [
+      "水"
+    ]
+  },
+  {
+    "id": "vortex",
+    "domains": [
+      "水"
+    ]
+  },
+  {
+    "id": "energy_flood_cold",
+    "domains": [
+      "水"
+    ]
+  }
+]

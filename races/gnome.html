@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>侏儒 Gnome - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html" class="active">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">种族</div>
+      <a href="intro.html">总览</a>
+      <a href="human.html">人类 Human</a>
+      <a href="elf.html">精灵 Elf</a>
+      <a href="dwarf.html">矮人 Dwarf</a>
+      <a href="halfling.html">半身人 Halfling</a>
+      <a href="gnome.html" class="active">侏儒 Gnome</a>
+      <a href="half-elf.html">半精灵 Half-elf</a>
+      <a href="half-orc.html">半兽人 Half-orc</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="infobox">
+      <div class="infobox-title">🧙 侏儒 Gnome</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <table class="infobox-table">
+        <tr><td>体型</td><td>小型</td></tr>
+        <tr><td>属性调整</td><td>力量-2，体质+2</td></tr>
+        <tr><td>速度</td><td>20英尺</td></tr>
+        <tr><td>视力</td><td>低光视觉 60英尺</td></tr>
+        <tr><td>语言</td><td>通用语、侏儒语</td></tr>
+        <tr><td>偏爱职业</td><td>法师（男性）、牧师（女性）</td></tr>
+        <tr><td>来源</td><td>PHB p.22 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>侏儒（Gnome）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心种族</span>
+      <span class="badge badge-race">PHB p.22</span>
+    </p>
+    <p>侏儒是费伦大陆最<strong>聪明</strong>且<strong>好奇</strong>的种族之一。他们喜欢收集宝石、制作机关、研究魔法。</p>
+
+    <h2>📊 种族特性</h2>
+    <div class="Rule-box">
+      <h3>属性调整</h3>
+      <table class="wiki-table">
+        <thead><tr><th>属性</th><th>调整值</th></tr></thead>
+        <tbody>
+          <tr><td>力量（STR）</td><td>-2</td></tr>
+          <tr><td>敏捷（DEX）</td><td>±0</td></tr>
+          <tr><td>体质（CON）</td><td>+2</td></tr>
+          <tr><td>智力（INT）</td><td>±0</td></tr>
+          <tr><td>感知（WIS）</td><td>±0</td></tr>
+          <tr><td>魅力（CHA）</td><td>±0</td></tr>
+        </tbody>
+      </table>
+      <p><strong>体质+2</strong>使侏儒拥有更强的生存能力，同时<strong>力量-2</strong>限制了近战能力。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>独有种族特性</h3>
+      <ol>
+        <li><strong>低光视觉 60英尺</strong>：在昏暗光线下可视物距离翻倍。</li>
+        <li><strong>小型体型</strong>：AC +1偏转加值，攻击+1尺寸加值。</li>
+        <li><strong>精通地精类语言</strong>：自动会说地精语、兽人语、土族语。</li>
+        <li><strong>对抗法术+2</strong>：对抗法师/牧师法术的豁免有+2种族加值。</li>
+        <li><strong>偏爱职业限制</strong>：男性偏爱法师，女性偏爱牧师。</li>
+      </ol>
+    </div>
+
+    <h2>⚙️ 机制分析</h2>
+    <div class="Rule-box">
+      <p><strong>优势：</strong>体质+2（额外HP）、小型体型（AC+1）</p>
+      <p><strong>劣势：</strong>力量-2（近战伤害-1）、小型体型（武器限制）</p>
+      <p><strong>结论：</strong>侏儒是最适合<strong>法师</strong>的种族之一。</p>
+    </div>
+
+    <h2>🎭 角色扮演建议</h2>
+    <div class="Rule-box">
+      <p>侏儒通常<strong>好奇、发明家、热爱宝石</strong>。他们喜欢收集宝石、制作机关、研究魔法。</p>
+    </div>
+
+    <h2>⚠️ 规则冲突标注</h2>
+    <div style="background:linear-gradient(135deg,#fff9e6 0%,#fff3cd 100%);border-left:4px solid #ffc107;padding:16px 20px;border-radius:8px;margin:20px 0;">
+      <div style="font-weight:700;color:#e67700;margin-bottom:12px;font-size:1.05rem;">⚠️ 本种族存在以下规则冲突或易混淆点</div>
+
+      <div style="margin-bottom:16px;padding:12px;background:#fff;border-radius:6px;border:1px solid #ffeaa7;">
+        <div style="font-weight:600;color:#c0392b;margin-bottom:6px;">❌ 冲突点1：侏儒偏爱职业限制（最争议）</div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#3498db;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">PHB p.23</span>
+          <span>男性侏儒偏爱职业为<strong>法师</strong>，女性侏儒偏爱职业为<strong>牧师</strong>。</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#e74c3c;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">争议点</span>
+          <span>许多玩家和DM认为这种<strong>性别限制</strong>过时且不公平。Complete Arcane（p.63）和许多现代DM都允许<strong>忽略性别限制</strong>，允许所有侏儒选择法师或牧师作为偏爱职业。</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#27ae60;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">建议</span>
+          <span>采用<strong>现代解读</strong>：忽略性别限制，允许所有侏儒选择法师<strong>或</strong>牧师作为偏爱职业。如果坚持PHB规则，需明确标注性别限制。</span>
+        </div>
+        <div style="font-size:0.85rem;color:#666;margin-top:8px;">
+          <span style="display:inline-block;background:#95a5a6;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">来源</span>
+          PHB p.23 · Complete Arcane p.63 · 3.5 FAQ p.18
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;padding:12px;background:#fff;border-radius:6px;border:1px solid #ffeaa7;">
+        <div style="font-weight:600;color:#c0392b;margin-bottom:6px;">⚠️ 冲突点2：侏儒幻术系法术亲和（争议）</div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#3498db;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">PHB p.23</span>
+          <span>侏儒对<strong>幻术系（Illusion）</strong>法术有天然亲和， casting save DC +1。</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#e74c3c;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">争议点</span>
+          <span>这个+1加值是否适用于<strong>所有幻术系法术</strong>（包括法师和牧师法术）？还是只适用于<strong>侏儒法术列表</strong>中的幻术系法术？官方FAQ澄清适用于所有幻术系法术。</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#27ae60;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">建议</span>
+          <span>采用<strong>官方FAQ解读</strong>：+1加值适用于所有幻术系法术（无论法术来源）。如果DM有不同解读，需在 Session 0 明确说明。</span>
+        </div>
+        <div style="font-size:0.85rem;color:#666;margin-top:8px;">
+          <span style="display:inline-block;background:#95a5a6;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">来源</span>
+          PHB p.23 · 3.5 FAQ p.45 · SRD
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;padding:12px;background:#fff;border-radius:6px;border:1px solid #ffeaa7;">
+        <div style="font-weight:600;color:#c0392b;margin-bottom:6px;">📏 冲突点3：小型体型武器限制（易错）</div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#3498db;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">PHB p.113</span>
+          <span>小型生物只能使用<strong>轻型或单手</strong>武器，不能使用双手武器或重型武器。</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#e74c3c;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">易错点</span>
+          <span>许多玩家忘记小型生物不能使用<strong>大型武器</strong>（如大型长剑）。侏儒法师需特别注意法杖（Quarterstaff）是双手武器，小型侏儒使用时受-2惩罚（除非有"武器熟练"专长）。</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#27ae60;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">建议</span>
+          <span>为侏儒角色选择<strong>轻型武器</strong>（如轻弩、短剑、匕首）。法师可选择<strong>法杖专攻</strong>专长来消除双手武器惩罚。</span>
+        </div>
+        <div style="font-size:0.85rem;color:#666;margin-top:8px;">
+          <span style="display:inline-block;background:#95a5a6;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">来源</span>
+          PHB p.113 · Arms & Equipment Guide p.15
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;padding:12px;background:#fff;border-radius:6px;border:1px solid #ffeaa7;">
+        <div style="font-weight:600;color:#c0392b;margin-bottom:6px;">🗣️ 冲突点4：侏儒语言熟练（易忽略）</div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#3498db;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">PHB p.23</span>
+          <span>侏儒自动会说<strong>通用语、侏儒语</strong>，并且<strong>精通地精类语言</strong>（自动会说地精语、兽人语、土族语）。</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#e74c3c;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">易忽略</span>
+          <span>许多玩家忘记侏儒自动获得<strong>3种额外语言</strong>（地精语、兽人语、土族语）。这使侏儒成为最佳<strong>语言学家</strong>种族之一。</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="display:inline-block;background:#27ae60;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">建议</span>
+          <span>充分利用侏儒的<strong>语言优势</strong>：在角色背景中增加与地精、兽人、土族的互动。这也为侦察（Spot）和聆听（Listen）提供了更多情境加值。</span>
+        </div>
+        <div style="font-size:0.85rem;color:#666;margin-top:8px;">
+          <span style="display:inline-block;background:#95a5a6;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:6px;">来源</span>
+          PHB p.23 · SRD · Races → Gnome
+        </div>
+      </div>
+    </div>
+
+    <h2>📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.22-24 —— 侏儒种族特性</li>
+      <li>📘 <strong>SRD 3.5</strong> · Races → Gnome —— 开放式游戏规则</li>
+      <li>📘 <strong>Complete Arcane</strong> p.63 —— 侏儒法师变体规则</li>
+      <li>📘 <strong>3.5 FAQ</strong> p.18, p.45 —— 官方常见问题解答</li>
+    </ul>
+
+    <hr style="margin:40px 0;">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="halfling.html">← 上一页：半身人</a> | <a href="half-elf.html">下一页：半精灵 →</a>
+    </p>
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 侏儒种族详细页</p>
+</div>
+</body>
+</html>

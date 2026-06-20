@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>改进卸武 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #8B0000, #DC143C); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #8B0000; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #8B0000; border-bottom: 2px solid #8B0000; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color: #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">D&D 3.5e Wiki</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="intro.html" class="active">专长</a></li>
+        <li><a href="../spells/intro.html">法术</a></li>
+        <li><a href="../classes/intro.html">职业</a></li>
+        <li><a href="../races/intro.html">种族</a></li>
+        <li><a href="../conflicts.html">规则冲突</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="feat-header">
+      <h1>⚔️ 改进卸武</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Improved Disarm</p>
+      <span class="feat-type">通用专长</span>
+      <span class="feat-type">【战斗】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">通用专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">敏捷 13+</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">卸武攻击 +4 加值</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">只能选择一次</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 95</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">战士、特定构建</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你擅长卸武攻击，能够更有效地击落敌人的武器。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>敏捷 (Dexterity) 13+</strong></li>
+      </ul>
+      <p><strong>说明</strong>：改进卸武需要较高的敏捷来协调卸武攻击。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>当你进行<strong>卸武攻击</strong>时，你获得 <strong>+4 加值</strong>。</p>
+      <ul>
+        <li><strong>卸武攻击</strong>：近战攻击特殊动作，尝试击落敌人的武器</li>
+        <li><strong>+4 加值</strong>：应用于卸武攻击的攻击掷骰</li>
+        <li><strong>例外</strong>：你不会在卸武攻击失败时触发借机攻击</li>
+      </ul>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>卸武攻击流程</h3>
+    <ol>
+      <li><strong>声明卸武攻击</strong>：在你的近战攻击动作中声明</li>
+      <li><strong>进行攻击掷骰</strong>：攻击加值 = BAB + 力量调整值 + 其他 + 4（改进卸武）</li>
+      <li><strong>对手对抗</strong>：对手进行对抗掷骰（d20 + BAB + 力量调整值或敏捷调整值）</li>
+      <li><strong>判定结果</strong>：如果你的攻击掷骰 > 对手对抗掷骰 → 卸武成功</li>
+      <li><strong>击落武器</strong>：敌人的武器掉落在地面</li>
+    </ol>
+
+    <h3>重要规则</h3>
+    <ul>
+      <li><strong>触发借机攻击</strong>：卸武攻击会触发借机攻击（除非有改进卸武）</li>
+      <li><strong>失败后果</strong>：卸武攻击失败时，对手可以进行借机攻击（除非有改进卸武）</li>
+      <li><strong>徒手卸武</strong>：你可以尝试徒手卸武（但风险更高）</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：战士（BAB +6，力量 16，+3）对兽人（BAB +3，力量 18，+4）进行卸武攻击。</p>
+      <p><strong>战士攻击掷骰</strong>：d20 + 6 + 3 + 4（改进卸武） = d20 + 13</p>
+      <p><strong>兽人对抗掷骰</strong>：d20 + 3 + 4 = d20 + 7</p>
+      <p><strong>分析</strong>：改进卸武显著提高了卸武攻击的成功率，适合对抗依赖武器的敌人。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 推荐搭配专长</h4>
+      <ul>
+        <li><strong>改进卸武 (Improved Disarm)</strong> - 本专长，卸武攻击 +4 加值</li>
+        <li><strong>猛力攻击 (Power Attack)</strong> - 提高伤害</li>
+        <li><strong>顺劈斩 (Cleave)</strong> - 重击后触发顺劈斩</li>
+        <li><strong>武器专攻 (Weapon Focus)</strong> - 提高命中</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>⚔️ 推荐构建</h4>
+      <p><strong>1. 卸武战士 (Disarm Warrior)</strong></p>
+      <ul>
+        <li>专攻：改进卸武 → 猛力攻击 → 顺劈斩 → 武器专攻</li>
+        <li>特点：擅长卸武攻击，适合对抗依赖武器的敌人</li>
+        <li>推荐武器：长剑（平衡）</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：改进卸武与借机攻击</h4>
+      <p><strong>冲突点</strong>：改进卸武是否完全避免借机攻击？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 95</strong>：改进卸武专长描述</li>
+        <li><strong>PHB p. 137</strong>：借机攻击规则</li>
+      </ul>
+      <p><strong>冲突描述</strong>：改进卸武专长描述说"你不会在卸武攻击失败时触发借机攻击"，但是否完全避免借机攻击存在争议。</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>完全避免解释</strong>：改进卸武完全避免卸武攻击的借机攻击</li>
+        <li><strong>部分避免解释</strong>：改进卸武只在卸武攻击失败时避免借机攻击</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>部分避免解释</strong>（只在失败时避免）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 95 - 改进卸武专长描述</li>
+      <li><strong>玩家手册 (PHB)</strong> p. 137 - 卸武攻击规则</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

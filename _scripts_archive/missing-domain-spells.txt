@@ -1,0 +1,3 @@
+true-strike	战争
+slay-living	邪恶
+flame-strike	战争

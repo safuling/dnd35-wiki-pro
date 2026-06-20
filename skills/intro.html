@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技能总览 - D&D 3.5e 中文Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .skill-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .skill-table th, .skill-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .skill-table th {
+            background: #8B4513;
+            color: white;
+        }
+        .skill-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .ability-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 5px;
+        }
+        .str { background: #c0392b; }
+        .dex { background: #27ae60; }
+        .con { background: #d35400; }
+        .int { background: #2980b9; }
+        .wis { background: #8e44ad; }
+        .cha { background: #f39c12; }
+        .filter-bar {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .filter-bar select {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+    <nav class="top-nav">
+        <div class="nav-brand">🐉 D&D 3.5e Wiki</div>
+        <div class="nav-links">
+            <a href="../index.html">首页</a>
+            <a href="intro.html" class="active">技能</a>
+            <a href="skill-synergy.html">技能共效</a>
+            <a href="../spells/intro.html">法术</a>
+            <a href="../races/human.html">种族</a>
+            <a href="../classes/wizard.html">职业</a>
+            <a href="../feats/intro.html">专长</a>
+            <a href="../conflicts.html">规则冲突</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>⚡ 技能总览</h1>
+            <p class="subtitle">D&D 3.5版 核心技能列表与详解</p>
+        </div>
+
+        <div class="filter-bar">
+            <label>按属性过滤：</label>
+            <select id="abilityFilter" onchange="filterSkills()">
+                <option value="all">全部</option>
+                <option value="力量">力量 (STR)</option>
+                <option value="敏捷">敏捷 (DEX)</option>
+                <option value="体质">体质 (CON)</option>
+                <option value="智力">智力 (INT)</option>
+                <option value="感知">感知 (WIS)</option>
+                <option value="魅力">魅力 (CHA)</option>
+            </select>
+            <label>搜索技能：</label>
+            <input type="text" id="skillSearch" placeholder="输入技能名称..." onkeyup="filterSkills()">
+        </div>
+
+        <div class="info-box">
+            <h3>📚 技能系统说明</h3>
+            <p><strong>技能</strong>代表角色在特定领域的训练和能力。技能分为以下类型：</p>
+            <ul>
+                <li><strong>力量技能</strong>：攀爬、跳跃、游泳等</li>
+                <li><strong>敏捷技能</strong>：隐匿、开锁、脱逃、体操等</li>
+                <li><strong>体质技能</strong>：无（体质不影响任何技能）</li>
+                <li><strong>智力技能</strong>：知识、法术辨识、侦查、读手语等</li>
+                <li><strong>感知技能</strong>：侦察、聆听、生存、察言观色等</li>
+                <li><strong>魅力技能</strong>：交涉、威吓、表演、驯养动物等</li>
+            </ul>
+            <p><strong>技能调整值 = 调整值点数 + 关键属性调整值 + 其他调整值</strong></p>
+        </div>
+
+        <h2>🔧 技能列表</h2>
+        <table class="skill-table" id="skillTable">
+            <thead>
+                <tr>
+                    <th>技能名称</th>
+                    <th>关键属性</th>
+                    <th>可否使用</th>
+                    <th>说明</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="skillTableBody">
+                <!-- 技能行将通过JS动态生成 -->
+            </tbody>
+        </table>
+
+        <div class="section">
+            <h2>📝 技能机制详解</h2>
+            <h3>技能调整值计算</h3>
+            <p class="formula">技能调整值 = 调整值点数 + 关键属性调整值 + 其他调整值（种族、装备、法术等）</p>
+            
+            <h3>技能调整值类型</h3>
+            <ul>
+                <li><strong>训练（Class Skill）</strong>：角色职业初始提供技能，调整值+3</li>
+                <li><strong>跨职业（Cross-Class Skill）</strong>：非职业初始技能，调整值最高只能到角色等级+3</li>
+            </ul>
+
+            <h3>技能检定</h3>
+            <p>1d20 + 技能调整值 ≥ 难度等级（DC）即成功</p>
+            <ul>
+                <li><strong>简单任务</strong>：DC 0-10</li>
+                <li><strong>中等任务</strong>：DC 10-20</li>
+                <li><strong>困难任务</strong>：DC 20-30</li>
+                <li><strong>极难任务</strong>：DC 30+</li>
+            </ul>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：技能调整值上限</h3>
+            <p><strong>冲突点</strong>：跨职业技能的调整值上限是角色等级+3，还是无限？</p>
+            <p><strong>官方规则（PHB p.62）</strong>：跨职业技能调整值最高只能到角色等级+3。</p>
+            <p><strong>网络误传</strong>：部分网站/DM允许跨职业技能无限提升。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行，但DM可以 houserule 取消限制。</p>
+            <p class="source">📚 出处：PHB p.62, 3.5版 FAQ</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>🐉 D&D 3.5e 中文Wiki | 基于《玩家手册》(PHB) 规则</p>
+        <p>本网站为粉丝制作，非官方作品。Dungeons & Dragons 是 Wizards of the Coast 的商标。</p>
+    </footer>
+
+    <script>
+        const skills = [
+            { name: "攀爬", nameEn: "Climb", ability: "力量", usable: "否", desc: "在表面攀爬" },
+            { name: "跳跃", nameEn: "Jump", ability: "力量", usable: "否", desc: "跳跃更远/更高" },
+            { name: "游泳", nameEn: "Swim", ability: "力量", usable: "否", desc: "在水中移动" },
+            { name: "隐匿", nameEn: "Hide", ability: "敏捷", usable: "否", desc: "不被发现" },
+            { name: "开锁", nameEn: "Open Lock", ability: "敏捷", usable: "是", desc: "打开机械锁" },
+            { name: "脱逃", nameEn: "Escape Artist", ability: "敏捷", usable: "否", desc: "脱离束缚/绳索" },
+            { name: "体操", nameEn: "Tumble", ability: "敏捷", usable: "否", desc: "翻滚/穿越威胁区域" },
+            { name: "幻术辨识", nameEn: "Spellcraft", ability: "智力", usable: "否", desc: "识别法术/法术效果" },
+            { name: "知识（奥术）", nameEn: "Knowledge (Arcana)", ability: "智力", usable: "否", desc: "奥术/魔法知识" },
+            { name: "知识（地下城）", nameEn: "Knowledge (Dungeoneering)", ability: "智力", usable: "否", desc: "地下城/洞穴知识" },
+            { name: "知识（地理）", nameEn: "Knowledge (Geography)", ability: "智力", usable: "否", desc: "地理/地形知识" },
+            { name: "知识（历史）", nameEn: "Knowledge (History)", ability: "智力", usable: "否", desc: "历史/传说知识" },
+            { name: "知识（地方）", nameEn: "Knowledge (Local)", ability: "智力", usable: "否", desc: "本地/人物知识" },
+            { name: "知识（自然）", nameEn: "Knowledge (Nature)", ability: "智力", usable: "否", desc: "自然/动物/天气知识" },
+            { name: "知识（贵族）", nameEn: "Knowledge (Nobility)", ability: "智力", usable: "否", desc: "贵族/皇室/纹章知识" },
+            { name: "知识（宗教）", nameEn: "Knowledge (Religion)", ability: "智力", usable: "否", desc: "神祇/神术/教堂知识" },
+            { name: "知识（位面）", nameEn: "Knowledge (The Planes)", ability: "智力", usable: "否", desc: "位面/异界生物知识" },
+            { name: "搜索", nameEn: "Search", ability: "智力", usable: "否", desc: "寻找隐藏物品/机关" },
+            { name: "侦查", nameEn: "Spot", ability: "感知", usable: "否", desc: "发现远处/隐藏事物" },
+            { name: "聆听", nameEn: "Listen", ability: "感知", usable: "否", desc: "听到声音/接近的敌人" },
+            { name: "生存", nameEn: "Survival", ability: "感知", usable: "否", desc: "追踪/野外生存" },
+            { name: "察言观色", nameEn: "Sense Motive", ability: "感知", usable: "否", desc: "察觉谎言/隐藏意图" },
+            { name: "交涉", nameEn: "Diplomacy", ability: "魅力", usable: "否", desc: "改变NPC态度" },
+            { name: "威吓", nameEn: "Intimidate", ability: "魅力", usable: "否", desc: "迫使他人合作" },
+            { name: "表演", nameEn: "Perform", ability: "魅力", usable: "否", desc: "娱乐观众" },
+            { name: "驯养动物", nameEn: "Handle Animal", ability: "魅力", usable: "是", desc: "训练/指挥动物" },
+            { name: "骑术", nameEn: "Ride", ability: "敏捷", usable: "否", desc: "骑马/控制坐骑" },
+            { name: "使用魔法装置", nameEn: "Use Magic Device", ability: "魅力", usable: "是", desc: "使用卷轴/魔杖/法杖" },
+            { name: "炼金术", nameEn: "Craft (Alchemy)", ability: "智力", usable: "否", desc: "制作炼金物品" },
+            { name: "估价", nameEn: "Appraise", ability: "智力", usable: "否", desc: "评估物品价值" },
+            { name: "专业", nameEn: "Profession", ability: "感知", usable: "否", desc: "从事专业工作" },
+            { name: "手艺", nameEn: "Craft", ability: "智力", usable: "否", desc: "制作物品" },
+            { name: "禁用装置", nameEn: "Disable Device", ability: "智力", usable: "是", desc: "拆除陷阱/装置" },
+            { name: "伪造", nameEn: "Forgery", ability: "智力", usable: "否", desc: "伪造文件/签名" },
+            { name: "行医", nameEn: "Heal", ability: "感知", usable: "否", desc: "治疗伤者/疾病" },
+            { name: "读手语", nameEn: "Read Lips", ability: "智力", usable: "否", desc: "解读唇语" }
+        ];
+
+        function renderSkills() {
+            const tbody = document.getElementById('skillTableBody');
+            tbody.innerHTML = '';
+            
+            skills.forEach(skill => {
+                const abilityClass = getAbilityClass(skill.ability);
+                const row = document.createElement('tr');
+                row.dataset.ability = skill.ability;
+                row.innerHTML = `
+                    <td><a href="${getSkillPage(skill.name)}">${skill.name}</a><br><small>${skill.nameEn}</small></td>
+                    <td><span class="ability-icon ${abilityClass}">${skill.ability.substring(0,1)}</span> ${skill.ability}</td>
+                    <td>${skill.usable === '是' ? '✅ 可以' : '❌ 不行'}</td>
+                    <td>${skill.desc}</td>
+                    <td><a href="${getSkillPage(skill.name)}" class="btn-small">查看详情</a></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function getAbilityClass(ability) {
+            const map = {
+                '力量': 'str',
+                '敏捷': 'dex',
+                '体质': 'con',
+                '智力': 'int',
+                '感知': 'wis',
+                '魅力': 'cha'
+            };
+            return map[ability] || 'int';
+        }
+
+        function getSkillPage(skillName) {
+            const pageMap = {
+                '攀爬': 'climb.html',
+                '跳跃': 'jump.html',
+                '游泳': 'swim.html',
+                '隐匿': 'hide.html',
+                '开锁': 'open-lock.html',
+                '脱逃': 'escape-artist.html',
+                '体操': 'tumble.html',
+                '幻术辨识': 'spellcraft.html',
+                '知识（奥术）': 'knowledge-arcana.html',
+                '搜索': 'search.html',
+                '侦查': 'spot.html',
+                '聆听': 'listen.html',
+                '生存': 'survival.html',
+                '察言观色': 'sense-motive.html',
+                '交涉': 'diplomacy.html',
+                '威吓': 'intimidate.html',
+                '表演': 'perform.html',
+                '骑术': 'ride.html',
+                '使用魔法装置': 'use-magic-device.html'
+            };
+            return pageMap[skillName] ? `skills/${pageMap[skillName]}` : '#';
+        }
+
+        function filterSkills() {
+            const abilityFilter = document.getElementById('abilityFilter').value;
+            const searchText = document.getElementById('skillSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#skillTableBody tr');
+            
+            rows.forEach(row => {
+                const ability = row.dataset.ability;
+                const skillName = row.cells[0].textContent.toLowerCase();
+                
+                const matchesAbility = abilityFilter === 'all' || ability === abilityFilter;
+                const matchesSearch = skillName.includes(searchText);
+                
+                row.style.display = (matchesAbility && matchesSearch) ? '' : 'none';
+            });
+        }
+
+        // 初始化
+        renderSkills();
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闪避 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <h3>专长导航</h3>
+  <ul>
+    <li><a href="intro.html">专长总览</a></li>
+    <li class="nav-divider">战斗专长</li>
+    <li><a href="power-attack.html">猛力攻击</a></li>
+    <li><a href="cleave.html">顺劈斩</a></li>
+    <li><a href="weapon-focus.html">武器专攻</a></li>
+    <li><a href="improved-initiative.html">警觉</a></li>
+    <li><a href="dodge.html" class="active">闪避</a></li>
+    <li><a href="combat-expertise.html">战斗技巧</a></li>
+    <li class="nav-divider">施法专长</li>
+    <li><a href="spell-focus.html">法术专攻</a></li>
+    <li><a href="combat-casting.html">战斗施法</a></li>
+    <li class="nav-divider">通用专长</li>
+    <li><a href="toughness.html">强韧</a></li>
+    <li><a href="iron-will.html">钢铁意志</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 闪避</nav>
+<h1>闪避 (Dodge)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">战斗专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">敏捷 13+</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">AC 获得 +1 闪避加值（每轮选择一名敌人）</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">每轮可更换目标</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你擅长通过灵活移动来躲避攻击。</p>
+<p>每轮你可选择一名对手，在与该对手的攻击对抗中，你的 <strong>AC 获得 +1 闪避加值</strong>。你可在每轮开始时（或在你的行动中）更换所选对手。</p>
+
+<h2 id="prerequisite">先决条件</h2>
+<ul>
+  <li><strong>敏捷调整值 +1 或以上</strong>：敏捷 13（+1）、14（+2）等。</li>
+  <li>如果你的敏捷因盔甲或魔法效果降低，可能暂时失去此专长。</li>
+</ul>
+
+<h2 id="benefit">益处详解</h2>
+<ul>
+  <li><strong>闪避加值 (Dodge Bonus)</strong>：+1 AC，属于"闪避"类别，可与"护甲"、"盾牌"、"天生"、"偏转"加值 <strong>叠加</strong>。</li>
+  <li><strong>每轮选择目标</strong>：在你的回合开始时，可选择一名敌人作为"闪避目标"。</li>
+  <li><strong>仅对该目标有效</strong>：+1 AC 只适用于该敌人的攻击。其他敌人的攻击不受影响。</li>
+  <li><strong>可更换目标</strong>：如果目标死亡或不再威胁，可在下一轮选择新目标。</li>
+</ul>
+
+<h2 id="restrictions">限制与注意事项</h2>
+<div class="warning-box">
+  <p><strong>⚠️ 重要限制：</strong></p>
+  <ul>
+    <li><strong>无法闪避</strong>：如果你被 <em>魅惑</em>、<em>沉睡</em>、<em>麻痹</em>、<em>石化</em> 或处于 <strong>无助状态</strong>，无法获得闪避加值。</li>
+    <li><strong>负载过重</strong>：如果负重超过轻负载（如中负载或重负载），无法获得闪避加值。</li>
+    <li><strong>看不见目标</strong>：如果目标具有 <em>隐形</em> 或完全隐蔽，无法对其使用闪避（但可选择可见敌人）。</li>
+  </ul>
+</div>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>灵活移动 (Mobility)</strong>：需要闪避，在借机攻击前移动不引发借机攻击。</li>
+  <li><strong>精通闪避 (Spring Attack)</strong>：需要闪避和敏捷 13，可在攻击后安全撤离。</li>
+  <li><strong>跳跃攻击 (Leap Attack)</strong>：需要闪避和猛力攻击，结合跳跃与猛力攻击。</li>
+  <li><strong>alertness (警觉)</strong>：提高先攻，先手选择闪避目标。</li>
+</ul>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">武僧 (Monk)</strong>：敏捷高，且闪避是武僧核心专长链的起点。</li>
+  <li><strong class="highlight">盗贼 (Rogue)</strong>：高敏捷，需要生存能力。</li>
+  <li><strong class="highlight">游侠 (Ranger)</strong>：需要闪避配合双武器战斗。</li>
+  <li><strong>任何高敏捷角色</strong>：无职业限制，适合需要提高AC的角色。</li>
+</ul>
+
+<h2 id="tactics">战术应用</h2>
+<div class="tactic-box">
+  <p><strong>如何选择闪避目标？</strong></p>
+  <ul>
+    <li><strong>优先选择威胁最大的敌人</strong>：如敌方战士、圣武士等高BAB职业。</li>
+    <li><strong>选择远程攻击者</strong>：如果敌方法师或弓箭手威胁大，可选择他们。</li>
+    <li><strong>选择近战攻击者</strong>：如果多个敌人近战，选择BAB最高的。</li>
+    <li><strong>灵活更换</strong>：如果目标死亡，立即选择新目标。</li>
+  </ul>
+</div>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例：武僧的闪避</strong></p>
+  <p>人类武僧 1级，敏捷 16（+3），选择"闪避"专长。</p>
+  <ul>
+    <li>AC = 10 + 敏捷调整值 (+3) + 武僧天生AC (+0) + 闪避 (+1) = <strong>14</strong>（对所选目标）</li>
+    <li>面对兽人战士（BAB +1）攻击时，AC = 14</li>
+    <li>面对兽人弓箭手攻击时，AC = 13（闪避不作用于弓箭手）</li>
+    <li>如果兽人战士死亡，下一轮可选择弓箭手作为闪避目标</li>
+  </ul>
+</div>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点 1：闪避加值是否适用于"借机攻击"的AC？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：闪避加值适用于"与该对手的攻击对抗"。</p>
+  <p>✅ <strong>官方 FAQ 澄清</strong>：借机攻击是攻击动作，闪避加值 <strong>适用</strong>。</p>
+  <p>⚠️ <strong>部分误解</strong>：有玩家认为借机攻击不适用闪避。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+<div class="conflict-box">
+  <p><strong>冲突点 2：负重对闪避的影响</strong></p>
+  <p>📝 <strong>PHB 页162</strong>：中负载或重负载对敏捷调整值有惩罚。</p>
+  <p>✅ <strong>正确规则</strong>：如果负重导致敏捷调整值降低（如从 +2 降到 +0），则失去闪避专长（因为先决条件不再满足）。</p>
+  <p>⚠️ <strong>DM 裁决</strong>：部分 DM 允许"闪避加值仍适用，但敏捷调整值降低"。需提前确认。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页136</strong>：先攻详解（闪避与先攻无关，但常被混淆）。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

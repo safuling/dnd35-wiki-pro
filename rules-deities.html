@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神祇与阵营 Deities & Alignment - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心规则</div>
+      <a href="rules.html">规则总览</a>
+      <a href="rules-adventure.html">冒险</a>
+      <a href="rules-planes.html">位面</a>
+      <a href="rules-companions.html">伙伴</a>
+      <a href="rules-deities.html" class="active">神祇与阵营</a>
+      <a href="conflicts.html">规则冲突</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>神祇与阵营 <span class="en-subtitle">Deities & Alignment</span></h1>
+    <p class="lead">阵营是角色道德与哲学的基石，神祇则是信仰与力量的源泉。本页汇总 D&D 3.5e 核心规则中的阵营体系与神祇资料。</p>
+
+    <div class="toc">
+      <h2>目录</h2>
+      <ul>
+        <li><a href="#alignment">一、阵营 (Alignment)</a></li>
+        <li><a href="#alignment-effects">二、阵营对游戏机制的影响</a></li>
+        <li><a href="#alignment-shift">三、阵营转变</a></li>
+        <li><a href="#deities">四、核心神祇 (Core Deities)</a></li>
+        <li><a href="#divine-rank">五、神祇等级 (Divine Rank)</a></li>
+      </ul>
+    </div>
+
+    <!-- ====== Part 1: 阵营 ====== -->
+    <section id="alignment">
+      <h2>一、阵营 (Alignment)</h2>
+
+      <p>阵营由两个维度构成：<strong>道德轴</strong>（善良—邪恶）和<strong>秩序轴</strong>（守序—混乱），交叉组合形成九种阵营。每个角色、生物和神祇都属于其中一种。</p>
+
+      <h3>九宫格阵营图</h3>
+
+      <table class="alignment-grid">
+        <thead>
+          <tr>
+            <th style="width:33%"></th>
+            <th style="width:33%">守序 (Lawful)</th>
+            <th style="width:33%">中立 (Neutral)</th>
+            <th style="width:34%">混乱 (Chaotic)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>善良 (Good)</th>
+            <td class="cell-lg"><strong>守序善良</strong><br>Lawful Good<br><em>"十字军"</em><br>以荣誉和纪律行善，相信秩序是造福众生的途径。典型代表：圣武士、正义的国王。</td>
+            <td class="cell-lg"><strong>中立善良</strong><br>Neutral Good<br><em>"施恩者"</em><br>行善不拘泥于形式，既尊重法律也不排斥灵活变通。典型代表：善良的牧师、游侠。</td>
+            <td class="cell-lg"><strong>混乱善良</strong><br>Chaotic Good<br><em>"反叛者"</em><br>相信个人自由是行善的前提，反对以秩序之名压迫他人。典型代表：义贼、自由斗士。</td>
+          </tr>
+          <tr>
+            <th>中立 (Neutral)</th>
+            <td class="cell-lg"><strong>守序中立</strong><br>Lawful Neutral<br><em>"审判者"</em><br>信奉规则与秩序本身，不在意善恶之辩，只关心法律是否被执行。典型代表：法官、武僧。</td>
+            <td class="cell-lg"><strong>绝对中立</strong><br>True Neutral<br><em>"中立者"</em><br>不偏向任何极端，追求自然平衡或纯粹的个人哲学。典型代表：德鲁伊、隐士。</td>
+            <td class="cell-lg"><strong>混乱中立</strong><br>Chaotic Neutral<br><em>"自由人"</em><br>追求个人自由与随性，不受传统和道德约束。典型代表：冒险者、流浪者。</td>
+          </tr>
+          <tr>
+            <th>邪恶 (Evil)</th>
+            <td class="cell-lg"><strong>守序邪恶</strong><br>Lawful Evil<br><em>"暴君"</em><br>利用规则和制度来实施控制与压迫，以秩序之名行恶。典型代表：魔鬼、暴君。</td>
+            <td class="cell-lg"><strong>中立邪恶</strong><br>Neutral Evil<br><em>"自私者"</em><br>纯粹追求私利，不在乎手段是否合法或混乱。典型代表：贪婪的商人、冷血杀手。</td>
+            <td class="cell-lg"><strong>混乱邪恶</strong><br>Chaotic Evil<br><em>"毁灭者"</em><br>以破坏和杀戮为乐，蔑视一切规则与生命。典型代表：恶魔、疯狂的屠夫。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ====== 阵营对机制的影响 ====== -->
+    <section id="alignment-effects">
+      <h2>二、阵营对游戏机制的影响</h2>
+
+      <h3>1. 法术与阵营</h3>
+      <ul>
+        <li><strong>侦测邪恶/善良 (Detect Evil/Good)</strong>：可以感知生物的阵营光环，强度取决于生物的生命骰和类型。具有邪恶亚种的生物（如恶魔、魔鬼）始终散发邪恶灵光。</li>
+        <li><strong>神圣惩击 (Smite Evil)</strong>：圣武士每日一次对邪恶目标发动攻击时，攻击加值获得魅力加值加成，伤害增加等于圣武士等级的数值。</li>
+        <li><strong>防护阵营法术</strong>：<em>防护邪恶 (Protection from Evil)</em> 提供 +2 偏斜加值 AC 和豁免，并阻止召唤生物的接触攻击。</li>
+        <li><strong>阵营描述符</strong>：某些法术带有 [邪恶] 或 [善良] 描述符。善良施法者施放邪恶法术可能会引起神祇不满；施放与自身阵营对立的法术可能触发阵营偏移。</li>
+        <li><strong>神圣武器 (Holy Weapon)</strong>：<em>神圣武器 (Holy Smite)</em>、<em>圣剑 (Holy Sword)</em> 等法术和魔法物品仅对邪恶目标造成额外伤害。</li>
+      </ul>
+
+      <h3>2. 职业限制</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>职业</th>
+            <th>阵营要求</th>
+            <th>失去能力的条件</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>圣武士 (Paladin)</td>
+            <td>必须为守序善良</td>
+            <td>自愿施行邪恶行为则失去所有职业能力，需要 <em>赎罪术 (Atonement)</em> 恢复</td>
+          </tr>
+          <tr>
+            <td>野蛮人 (Barbarian)</td>
+            <td>不能为守序</td>
+            <td>变为守序阵营后失去狂暴能力，无法再提升野蛮人等级</td>
+          </tr>
+          <tr>
+            <td>吟游诗人 (Bard)</td>
+            <td>不能为守序</td>
+            <td>变为守序阵营后无法再提升吟游诗人等级</td>
+          </tr>
+          <tr>
+            <td>德鲁伊 (Druid)</td>
+            <td>必须至少有一轴为中立</td>
+            <td>变为非中立阵营后失去所有德鲁伊法术和自然感知能力</td>
+          </tr>
+          <tr>
+            <td>武僧 (Monk)</td>
+            <td>必须为守序</td>
+            <td>变为非守序阵营后无法再提升武僧等级</td>
+          </tr>
+          <tr>
+            <td>牧师 (Cleric)</td>
+            <td>阵营与神祇阵营不能相差超过一步</td>
+            <td>严重违背神祇信条则失去法术，需要赎罪</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3. 魔宠与动物伙伴</h3>
+      <ul>
+        <li>魔宠 (Familiar) 会获得主人的阵营特征，某些魔宠仅对特定阵营的施法者可用。例如：<em>伪龙 (Pseudodragon)</em> 仅接受善良阵营的主人。</li>
+        <li>动物伙伴 (Animal Companion) 通常为绝对中立。若德鲁伊或游侠的阵营发生剧烈变化，DM 可以判定动物伙伴离开。</li>
+        <li><strong>圣武士的坐骑</strong>：圣武士从5级起可以召唤特殊坐骑（通常是战马或矮种马），此坐骑具有天界生物特征，与圣武士的守序善良阵营绑定。</li>
+      </ul>
+    </section>
+
+    <!-- ====== 阵营转变 ====== -->
+    <section id="alignment-shift">
+      <h2>三、阵营转变 (Alignment Shift)</h2>
+
+      <p>阵营并非一成不变——角色的行为和选择可能导致阵营偏移。</p>
+
+      <h3>转变规则</h3>
+      <ul>
+        <li><strong>渐进转变</strong>：当角色的行为持续偏离当前阵营时，DM 可以告知玩家其阵营正在偏移。每次偏移仅变动一格（例如从守序善良变为中立善良，或从守序善良变为守序中立）。</li>
+        <li><strong>突变转变</strong>：极端事件（如被迫施行邪恶仪式、受到 <em>许愿术 (Wish)</em> 影响）可能导致阵营跳跃式变化。</li>
+        <li><strong>魔法影响</strong>：<em>赎罪术 (Atonement)</em> 可以恢复因非自愿行为导致的阵营偏移。某些诅咒或魔法物品也可以改变阵营。</li>
+        <li><strong>玩家的主动性</strong>：玩家可以声明角色正在有意识地转变阵营，但需要通过角色扮演来体现这一过程，DM 在适当时机确认转变完成。</li>
+      </ul>
+
+      <div class="callout">
+        <strong>DM 提示：</strong>阵营转变应该有叙事上的意义，而不应作为惩罚玩家的手段。在转变发生前，最好与玩家进行沟通。
+      </div>
+    </section>
+
+    <!-- ====== Part 2: 核心神祇 ====== -->
+    <section id="deities">
+      <h2>四、核心神祇 (Core Deities)</h2>
+
+      <p>以下神祇来自《玩家手册》(PHB) 附录及《地下城主指南》(DMG)，是灰鹰 (Greyhawk) 设定中的核心万神殿。每位神祇对应特定的阵营、领域和信徒群体。</p>
+
+      <h3>善良神祇</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>神名</th>
+            <th>English</th>
+            <th>阵营</th>
+            <th>领域 (Domains)</th>
+            <th>偏爱武器</th>
+            <th>典型信徒</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>海若尼斯</strong></td>
+            <td>Heironeous</td>
+            <td>守序善良</td>
+            <td>善良, 秩序, 战争</td>
+            <td>长剑</td>
+            <td>圣武士, 战士</td>
+          </tr>
+          <tr>
+            <td><strong>莫拉丁</strong></td>
+            <td>Moradin</td>
+            <td>守序善良</td>
+            <td>善良, 秩序, 保护, 大地, 力量</td>
+            <td>战锤</td>
+            <td>矮人</td>
+          </tr>
+          <tr>
+            <td><strong>悠达拉</strong></td>
+            <td>Yondalla</td>
+            <td>守序善良</td>
+            <td>善良, 秩序, 保护</td>
+            <td>短剑</td>
+            <td>半身人</td>
+          </tr>
+          <tr>
+            <td><strong>柯瑞隆·拉瑞斯安</strong></td>
+            <td>Corellon Larethian</td>
+            <td>混乱善良</td>
+            <td>善良, 战争, 保护, 混沌</td>
+            <td>长剑</td>
+            <td>精灵</td>
+          </tr>
+          <tr>
+            <td><strong>培罗</strong></td>
+            <td>Pelor</td>
+            <td>中立善良</td>
+            <td>善良, 力量, 太阳, 治疗</td>
+            <td>硬头锤</td>
+            <td>人类, 半精灵</td>
+          </tr>
+          <tr>
+            <td><strong>加尔·闪金</strong></td>
+            <td>Garl Glittergold</td>
+            <td>中立善良</td>
+            <td>善良, 保护, 诡术</td>
+            <td>战斧</td>
+            <td>侏儒</td>
+          </tr>
+          <tr>
+            <td><strong>艾罗妮</strong></td>
+            <td>Ehlonna</td>
+            <td>中立善良</td>
+            <td>善良, 动物, 植物, 太阳</td>
+            <td>长弓</td>
+            <td>精灵, 半精灵, 游侠</td>
+          </tr>
+          <tr>
+            <td><strong>法兰恩</strong></td>
+            <td>Fharlanghn</td>
+            <td>中立善良</td>
+            <td>善良, 旅行, 幸运</td>
+            <td>弯刀</td>
+            <td>旅者, 探险家</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>中立神祇</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>神名</th>
+            <th>English</th>
+            <th>阵营</th>
+            <th>领域 (Domains)</th>
+            <th>偏爱武器</th>
+            <th>典型信徒</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>圣库斯伯特</strong></td>
+            <td>St. Cuthbert</td>
+            <td>守序中立</td>
+            <td>保护, 力量, 秩序, 战争</td>
+            <td>硬头锤</td>
+            <td>人类战士, 城市守卫</td>
+          </tr>
+          <tr>
+            <td><strong>维婕丝</strong></td>
+            <td>Wee Jas</td>
+            <td>守序中立</td>
+            <td>死亡, 魔法, 秩序, 虚荣</td>
+            <td>匕首</td>
+            <td>法师, 死灵研究者</td>
+          </tr>
+          <tr>
+            <td><strong>博卡布</strong></td>
+            <td>Boccob</td>
+            <td>绝对中立</td>
+            <td>魔法, 知识</td>
+            <td>木棒</td>
+            <td>法师, 术士</td>
+          </tr>
+          <tr>
+            <td><strong>欧拜·亥</strong></td>
+            <td>Obad-Hai</td>
+            <td>绝对中立</td>
+            <td>气, 动物, 大地, 火, 植物, 水</td>
+            <td>木棒</td>
+            <td>德鲁伊, 自然守护者</td>
+          </tr>
+          <tr>
+            <td><strong>奥林达梅拉</strong></td>
+            <td>Olidammara</td>
+            <td>混乱中立</td>
+            <td>混沌, 诡术, 幸运</td>
+            <td>短剑</td>
+            <td>盗贼, 吟游诗人</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>邪恶神祇</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>神名</th>
+            <th>English</th>
+            <th>阵营</th>
+            <th>领域 (Domains)</th>
+            <th>偏爱武器</th>
+            <th>典型信徒</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>维克那</strong></td>
+            <td>Vecna</td>
+            <td>守序邪恶</td>
+            <td>邪恶, 魔法, 知识</td>
+            <td>匕首</td>
+            <td>法师, 阴谋家</td>
+          </tr>
+          <tr>
+            <td><strong>海克斯托</strong></td>
+            <td>Hextor</td>
+            <td>守序邪恶</td>
+            <td>邪恶, 秩序, 战争, 毁灭</td>
+            <td>连枷</td>
+            <td>战士, 军事暴君</td>
+          </tr>
+          <tr>
+            <td><strong>提亚玛特</strong></td>
+            <td>Tiamat</td>
+            <td>守序邪恶</td>
+            <td>邪恶, 秩序, 毁灭</td>
+            <td>重型连枷</td>
+            <td>邪恶龙类, 龙脉术士</td>
+          </tr>
+          <tr>
+            <td><strong>奈落</strong></td>
+            <td>Nerull</td>
+            <td>中立邪恶</td>
+            <td>邪恶, 死亡, 瘟疫</td>
+            <td>镰刀</td>
+            <td>死灵法师, 刺客</td>
+          </tr>
+          <tr>
+            <td><strong>厄瑞斯努</strong></td>
+            <td>Erythnul</td>
+            <td>混乱邪恶</td>
+            <td>邪恶, 混沌, 战争, 毁灭</td>
+            <td>晨星锤</td>
+            <td>野蛮人, 嗜血战士</td>
+          </tr>
+          <tr>
+            <td><strong>格乌什</strong></td>
+            <td>Gruumsh</td>
+            <td>混乱邪恶</td>
+            <td>邪恶, 混沌, 战争, 力量</td>
+            <td>长矛</td>
+            <td>兽人, 半兽人</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ====== Part 3: 神祇等级 ====== -->
+    <section id="divine-rank">
+      <h2>五、神祇等级 (Divine Rank)</h2>
+
+      <p>根据《神与半神》(Deities and Demigods)，神祇按神格 (Divine Rank) 划分为不同等级，从凡人之上的准神到超越一切的超神。</p>
+
+      <h3>神格等级总览</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>神格</th>
+            <th>等级分类</th>
+            <th>英文名称</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>英雄/神性存在</td>
+            <td>Hero / Divine Being</td>
+            <td>拥有不朽生命但无真正神力的存在。可能是半神后裔或被赐予神性的凡人。</td>
+          </tr>
+          <tr>
+            <td>1 - 5</td>
+            <td>准神</td>
+            <td>Demigod</td>
+            <td>最低级的真正神祇。拥有有限的领域和信徒，通常侍奉更强大的神。可以在其领域内施展有限的神力。</td>
+          </tr>
+          <tr>
+            <td>6 - 10</td>
+            <td>弱等神力</td>
+            <td>Lesser Deity</td>
+            <td>拥有稳固的信仰基础和数个领域。能创造小型的独立位面作为神域。</td>
+          </tr>
+          <tr>
+            <td>11 - 15</td>
+            <td>中等神力</td>
+            <td>Intermediate Deity</td>
+            <td>在多元宇宙中拥有大量信徒和广泛影响力。拥有多个领域和强大的神力。</td>
+          </tr>
+          <tr>
+            <td>16 - 20</td>
+            <td>强大神力</td>
+            <td>Greater Deity</td>
+            <td>万神殿中的最高位存在，如培罗、格乌什等。其影响力横跨数个位面，拥有几乎不可挑战的力量。</td>
+          </tr>
+          <tr>
+            <td>21+</td>
+            <td>超神</td>
+            <td>Overdeity</td>
+            <td>超越普通神格体系的存在（如AO）。不受神格规则约束，通常不参与凡间事务。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>神祇的免疫与特殊能力</h3>
+
+      <p>所有神祇（神格 1 以上）共享以下基础能力，能力强度随神格提升而增强：</p>
+
+      <h4>通用免疫</h4>
+      <ul>
+        <li><strong>变形免疫</strong>：神祇免疫所有非自愿的变形效果，除非来自同级或更高级的神祇。</li>
+        <li><strong>即死免疫</strong>：免疫 <em>解离术 (Disintegrate)</em>、<em>死亡一指 (Finger of Death)</em> 等即死效果。</li>
+        <li><strong>能量免疫</strong>：对特定能量类型拥有免疫或抗力（取决于领域）。神格越高，抗力覆盖范围越广。</li>
+        <li><strong>心灵免疫</strong>：免疫所有心灵影响法术和能力（魅惑、胁迫等）。</li>
+        <li><strong>监禁与放逐免疫</strong>：免疫 <em>监禁术 (Imprisonment)</em>、<em>放逐术 (Banishment)</em> 等效果。</li>
+      </ul>
+
+      <h4>特殊能力</h4>
+      <ul>
+        <li><strong>神性感官 (Divine Senses)</strong>：神祇可以感知其领域相关的事物，感知范围等于每神格等级 1 英里。</li>
+        <li><strong>远程感知 (Remote Sensing)</strong>：可以感知信徒的活动和提及自己名字的地方。准神范围有限，强大神力几乎无所不知。</li>
+        <li><strong>神授术 (Grant Spells)</strong>：神祇可以向牧师和信徒施法者授予法术。授予法术的最高等级取决于神格。</li>
+        <li><strong>化身 (Avatar)</strong>：神祇可以创造化身投射到凡间。化身拥有神祇的部分力量。强大神力可以同时拥有多个化身。</li>
+        <li><strong>创造物品 (Create Magic Items)</strong>：神祇可以创造任何魔法物品，不受普通制作规则的限制。</li>
+        <li><strong>神域 (Divine Realm)</strong>：每位神祇都拥有自己的神域位面，在其神域内拥有近乎无限的力量。</li>
+      </ul>
+
+      <div class="callout">
+        <strong>规则参考：</strong>神祇等级的详细规则参见《神与半神》(Deities and Demigods, 2002) 和《地下城主指南》(DMG) 第8章。在标准战役中，PC 通常不会与神祇直接战斗——神祇更多是作为信仰对象和叙事工具存在。
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伙伴 Companions - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .companion-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-left: 4px solid var(--accent-gold);
+  }
+  .companion-card h3 { margin-top: 0; color: var(--text-heading); }
+  .companion-card h4 { color: var(--accent-gold); margin: 14px 0 8px; }
+  .intro-box {
+    background: linear-gradient(135deg, #f8f0e0, #ede2cc);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .highlight-box {
+    background: #fef9e7;
+    border: 1px solid #f0d060;
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .info-box {
+    background: #e8f4fd;
+    border: 1px solid #85c1e9;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .danger-box {
+    background: #fde8e8;
+    border: 1px solid #e74c3c;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .formula-box {
+    background: #e8f4fd;
+    border: 1px solid #85c1e9;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    margin: 12px 0;
+  }
+  table.companion-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  table.companion-table th {
+    background: var(--bg-table-head);
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid var(--border-main);
+    color: var(--text-heading);
+  }
+  table.companion-table td {
+    border: 1px solid var(--border-light);
+    padding: 7px 12px;
+    text-align: center;
+  }
+  table.companion-table tr:nth-child(even) {
+    background: var(--bg-table-stripe);
+  }
+  table.companion-table tr:hover {
+    background: #f0e8d8;
+  }
+  .section-anchor {
+    scroll-margin-top: 70px;
+  }
+  .toc-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 16px 24px;
+    margin: 16px 0;
+  }
+  .toc-box h3 { margin-top: 0; color: var(--text-heading); font-size: 16px; }
+  .toc-box ul { margin: 8px 0; padding-left: 20px; }
+  .toc-box li { margin: 4px 0; }
+  .toc-box a { color: var(--accent-gold); text-decoration: none; }
+  .toc-box a:hover { text-decoration: underline; }
+  .companion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .companion-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 12px;
+    text-align: center;
+  }
+  .companion-item .ci-name { font-weight: 700; color: var(--accent-gold); font-size: 15px; }
+  .companion-item .ci-en { font-size: 11px; color: var(--text-subtle); }
+  .companion-item p { font-size: 13px; margin: 6px 0 0; }
+  .type-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .badge-druid { background: #d5f5e3; border: 1px solid #82e0aa; color: #1e8449; }
+  .badge-arcane { background: #d6eaf8; border: 1px solid #85c1e9; color: #1a5276; }
+  .badge-divine { background: #fdebd0; border: 1px solid #f0b27a; color: #935116; }
+  .badge-dark { background: #fadbd8; border: 1px solid #e6b0aa; color: #922b21; }
+  .badge-lead { background: #e8daef; border: 1px solid #c39bd3; color: #6c3483; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心规则</div>
+      <a href="rules.html">规则总览</a>
+      <a href="rules-adventure.html">冒险</a>
+      <a href="rules-planes.html">位面</a>
+      <a href="rules-companions.html" class="active">伙伴</a>
+      <a href="conflicts.html">规则冲突</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>伙伴系统 Companions</h1>
+
+    <div class="intro-box">
+      <p>在D&D 3.5e中，许多职业能够获得忠实的伙伴——从德鲁伊的<strong>动物伙伴</strong>到法师的<strong>魔宠</strong>，从圣武士的<strong>神圣座骑</strong>到暗黑卫士的<strong>炼狱仆役</strong>。这些伙伴不仅是战斗中的助力，更是角色成长的重要组成部分。此外，<strong>领导力</strong>专长允许任何角色招募部属和追随者。</p>
+      <p>本页涵盖所有伙伴类型的完整规则，包括获得条件、能力成长和特殊规则。</p>
+    </div>
+
+    <div class="toc-box">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#animal-companion">一、动物伙伴 (Animal Companion)</a></li>
+        <li><a href="#familiar">二、魔宠 (Familiar)</a></li>
+        <li><a href="#mount">三、座骑 (Mount)</a></li>
+        <li><a href="#fiendish-servant">四、炼狱仆役 (Fiendish Servant)</a></li>
+        <li><a href="#cohorts">五、部属与追随者 (Cohorts & Followers)</a></li>
+      </ul>
+    </div>
+
+    <!-- ==================== 动物伙伴 ==================== -->
+    <section id="animal-companion" class="section-anchor">
+      <h2>一、动物伙伴 <span style="font-size:14px;color:var(--text-subtle);">Animal Companion</span></h2>
+
+      <div class="companion-card">
+        <p><span class="type-badge badge-druid">德鲁伊</span> <span class="type-badge badge-druid">游侠</span></p>
+        <p>德鲁伊可以召唤一只动物伙伴，该伙伴忠诚于德鲁伊并随其冒险。游侠同样能获得动物伙伴，但其有效等级为游侠等级的一半。</p>
+
+        <h4>选择动物伙伴</h4>
+        <p>德鲁伊在1级时可以从以下列表中选择一只动物伙伴。随着等级提升，更多强大的动物可供选择（此时选择新动物伙伴替换旧的，或者原有伙伴获得增强）。</p>
+
+        <h4>有效德鲁伊等级与可获得的动物</h4>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>有效德鲁伊等级</th>
+              <th>可获得的动物伙伴</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1级或更高</td><td>獾、骆驼、猫、犬、鹰、马（轻型或重型）、猫头鹰、鼠、蛇（小型或中型毒蛇）、狼</td></tr>
+            <tr><td>4级或更高</td><td>熊（黑熊）、野猪、猎豹、鳄鱼、犬（骑乘用）、鬣狗、蜥蜴（_monitor_）、豹、蛇（大型毒蛇）、鲨（中型）、虎、狼獾</td></tr>
+            <tr><td>7级或更高</td><td>熊（棕熊）、野猪（dire）、猎豹（dire）、鳄鱼（巨型）、鼠（dire）、鹰（大型）、蜥蜴（巨型）、猫头鹰（巨型）、鼠（巨型）、蛇（巨型毒蛇）、狮、蛇（constrictor）、鲨（大型）、虎（dire）、狼（dire）、狼獾（dire）</td></tr>
+            <tr><td>10级或更高</td><td>熊（北极熊）、熊（dire）、章鱼、鲨（巨型）、虎（剑齿虎）、蛇（巨型constrictor）、 squid</td></tr>
+            <tr><td>13级或更高</td><td>狮（dire）、蛇（精英constrictor）、鲨（超巨型）、鲸（虎鲸）</td></tr>
+            <tr><td>16级或更高</td><td>熊（cave）、章鱼（巨型）、鲸（抹香鲸）、鲨（巨齿鲨）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="companion-card">
+        <h4>动物伙伴基本属性加值表</h4>
+        <p>动物伙伴的属性随有效德鲁伊等级提升而增强。下表列出了所有加值。注意：如果动物伙伴的智力达到10或以上，它可以获得技能点。</p>
+
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>有效德鲁伊等级</th>
+              <th>额外HD (d8)</th>
+              <th>天生护甲加值</th>
+              <th>STR/DEX 加值</th>
+              <th>奖励技巧</th>
+              <th>特殊能力</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1-2级</td><td>+0</td><td>+0</td><td>+0</td><td>1</td><td>链接法术，法术共享</td></tr>
+            <tr><td>3-5级</td><td>+2</td><td>+2</td><td>+1</td><td>2</td><td>反射闪避</td></tr>
+            <tr><td>6-8级</td><td>+4</td><td>+4</td><td>+2</td><td>3</td><td>—</td></tr>
+            <tr><td>9-11级</td><td>+6</td><td>+6</td><td>+3</td><td>4</td><td>多重攻击</td></tr>
+            <tr><td>12-14级</td><td>+8</td><td>+8</td><td>+4</td><td>5</td><td>—</td></tr>
+            <tr><td>15-17级</td><td>+10</td><td>+10</td><td>+5</td><td>6</td><td>精通反射闪避</td></tr>
+            <tr><td>18-20级</td><td>+12</td><td>+12</td><td>+6</td><td>7</td><td>—</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>额外HD：</strong>额外的生命骰（d8），每个额外HD获得如同正常升级般的体质加值HP、攻击加值、豁免加值、技能点和专长。<br>
+          <strong>天生护甲加值：</strong>提升动物伙伴的天生护甲加值。<br>
+          <strong>STR/DEX加值：</strong>加到动物伙伴的力量和敏捷属性上。<br>
+          <strong>奖励技巧：</strong>动物伙伴可以额外学会的技巧数量，从"攻击"、"过来"、"守卫"、"向下"、"取物"、"表演"、"搜索"、"追踪"中选择。
+        </div>
+      </div>
+
+      <div class="companion-card">
+        <h4>动物伙伴特殊能力详解</h4>
+
+        <p><strong>链接法术 (Link, Ex)：</strong>德鲁伊与动物伙伴之间建立了心灵链接。德鲁伊可以用自由动作指挥动物伙伴，也可以以移动动作催促它行动。德鲁伊在与动物伙伴进行野性认同和推挤检定时获得+4环境加值。</p>
+
+        <p><strong>法术共享 (Share Spells, Ex)：</strong>德鲁伊可以将任何以自身为目标的法术同时作用于动物伙伴（如同触及法术），前提是伙伴在德鲁伊5英尺内。德鲁伊还可以施放目标为"你"的法术于动物伙伴上（而非自身）。共享法术对动物伙伴无效时，即使它通常对这类法术免疫，也不会生效。</p>
+
+        <p><strong>反射闪避 (Evasion, Ex)：</strong>当动物伙伴遭受到一个可以通过反射豁免减半伤害的攻击时，如果反射豁免成功则完全不受伤害。</p>
+
+        <p><strong>多重攻击 (Multiattack)：</strong>如果动物伙伴有三次或更多天生武器攻击，则获得多重攻击专长（取代其原有的二次攻击减值，变为-2）。如果天生武器不足三次，则其二次攻击使用完整攻击加值（仅受-5减值）。</p>
+
+        <p><strong>精通反射闪避 (Improved Evasion, Ex)：</strong>类似反射闪避，但即使在反射豁免失败时也只受一半伤害。</p>
+
+        <p><strong>属性提升 (Ability Score Increase)：</strong>动物伙伴的额外HD也会带来属性提升，如同正常角色升级。</p>
+      </div>
+
+      <div class="companion-card">
+        <h4>常见1级动物伙伴速查</h4>
+        <div class="companion-grid">
+          <div class="companion-item">
+            <div class="ci-name">獾</div>
+            <div class="ci-en">Badger</div>
+            <p>HD 1/2 | 穴居动物，有凶猛特性，咬+2爪抓攻击</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">骆驼</div>
+            <div class="ci-en">Camel</div>
+            <p>HD 1 | 沙漠适应，可作骑乘用</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">猫</div>
+            <div class="ci-en">Cat</div>
+            <p>HD 1/4 | 敏捷极高，隐匿+14，悄行+8</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">犬</div>
+            <div class="ci-en">Dog</div>
+            <p>HD 1 | 忠诚可靠，嗅觉追踪+4</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">鹰</div>
+            <div class="ci-en">Eagle</div>
+            <p>HD 1 | 飞行80尺，侦查+14</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">马</div>
+            <div class="ci-en">Horse</div>
+            <p>HD 2-4 | 轻型/重型，可作骑乘，速度50尺</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">猫头鹰</div>
+            <div class="ci-en">Owl</div>
+            <p>HD 1 | 飞行40尺，安静飞行，侦查+14（昏暗）</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">鼠</div>
+            <div class="ci-en">Rat</div>
+            <p>HD 1/4 | 体型微小，攀爬+12，隐匿+18</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">蛇（毒蛇）</div>
+            <div class="ci-en">Snake, Viper</div>
+            <p>HD 1-2 | 毒素攻击，游泳，隐匿优秀</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">狼</div>
+            <div class="ci-en">Wolf</div>
+            <p>HD 2 | 嗅觉灵敏，绊摔攻击，群体猎杀</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">熊（黑熊）</div>
+            <div class="ci-en">Bear, Black</div>
+            <p>HD 3 | 4级可选，凶猛特性，力量19</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">豹</div>
+            <div class="ci-en">Leopard</div>
+            <p>HD 3 | 4级可选，疾跑40尺，耙抓攻击</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">狮</div>
+            <div class="ci-en">Lion</div>
+            <p>HD 5 | 7级可选，猛扑，耙抓，全力攻击凶猛</p>
+          </div>
+          <div class="companion-item">
+            <div class="ci-name">虎</div>
+            <div class="ci-en">Tiger</div>
+            <p>HD 6 | 7级可选，猛扑，耙抓，力量23</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="companion-card">
+        <h4>动物伙伴死亡与替换</h4>
+        <div class="danger-box">
+          <p><strong>动物伙伴死亡：</strong>如果动物伙伴死亡，德鲁伊必须举行24小时的仪式来召唤新的伙伴。仪式需要在安静自然环境中进行。新伙伴不保留前伙伴的任何经验或能力。</p>
+          <p><strong>释放伙伴：</strong>德鲁伊可以自愿释放动物伙伴（自由动作），然后立刻召唤新伙伴。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 魔宠 ==================== -->
+    <section id="familiar" class="section-anchor">
+      <h2>二、魔宠 <span style="font-size:14px;color:var(--text-subtle);">Familiar</span></h2>
+
+      <div class="companion-card">
+        <p><span class="type-badge badge-arcane">法师</span> <span class="type-badge badge-arcane">术士</span></p>
+        <p>魔宠是法师或术士通过魔法仪式召唤的神秘伙伴。魔宠原本是普通动物，但被赋予智力并变得更具灵性。魔宠是施法者不可或缺的助手和战友。</p>
+
+        <h4>召唤魔宠</h4>
+        <p>召唤仪式需要24小时，并消耗价值100gp的魔法材料。仪式完成后，魔宠出现在施法者身边，两者建立终身的心灵链接。</p>
+      </div>
+
+      <div class="companion-card">
+        <h4>魔宠基本能力表（按主人等级）</h4>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>主人职业等级</th>
+              <th>天生护甲加值</th>
+              <th>智力</th>
+              <th>特殊能力</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1-2级</td><td>+1</td><td>6</td><td>警戒，精通反射闪避，法术共享，情感链接</td></tr>
+            <tr><td>3-4级</td><td>+2</td><td>7</td><td>法术传递</td></tr>
+            <tr><td>5-6级</td><td>+3</td><td>8</td><td>与同类交谈</td></tr>
+            <tr><td>7-8级</td><td>+4</td><td>9</td><td>与主人交谈</td></tr>
+            <tr><td>9-10级</td><td>+5</td><td>10</td><td>—</td></tr>
+            <tr><td>11-12级</td><td>+6</td><td>11</td><td>魔抗</td></tr>
+            <tr><td>13-14级</td><td>+7</td><td>12</td><td>窥探魔宠</td></tr>
+            <tr><td>15-16级</td><td>+8</td><td>13</td><td>—</td></tr>
+            <tr><td>17-18级</td><td>+9</td><td>14</td><td>—</td></tr>
+            <tr><td>19-20级</td><td>+10</td><td>15</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="companion-card">
+        <h4>常见魔宠及其主人加值</h4>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>魔宠</th>
+              <th>英文名</th>
+              <th>给予主人的特殊加值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>蝙蝠</td><td>Bat</td><td>飞行检定 +3</td></tr>
+            <tr><td>猫</td><td>Cat</td><td>隐匿检定 +3</td></tr>
+            <tr><td>鹰</td><td>Hawk</td><td>昏暗光照下的侦查检定 +3</td></tr>
+            <tr><td>蜥蜴</td><td>Lizard</td><td>攀爬检定 +3</td></tr>
+            <tr><td>猫头鹰</td><td>Owl</td><td>昏暗光照下的侦查检定 +3</td></tr>
+            <tr><td>鼠</td><td>Rat</td><td>强韧豁免 +2</td></tr>
+            <tr><td>渡鸦</td><td>Raven*</td><td>估价检定 +3</td></tr>
+            <tr><td>蟾蜍</td><td>Toad</td><td>HP +3</td></tr>
+            <tr><td>蛇（毒蛇）</td><td>Viper</td><td>唬骗检定 +3</td></tr>
+            <tr><td>黄鼠狼</td><td>Weasel</td><td>反射豁免 +2</td></tr>
+          </tbody>
+        </table>
+        <div class="info-box">
+          * 渡鸦可以学会说一种语言（通常是通用语），这是其种族特性，不同于魔宠的"与主人交谈"能力。
+        </div>
+      </div>
+
+      <div class="companion-card">
+        <h4>魔宠特殊能力详解</h4>
+
+        <p><strong>警戒 (Alertness, Ex)：</strong>当魔宠在主人手臂可及范围内时，主人获得警觉专长的好处（侦查和聆听检定+2）。</p>
+
+        <p><strong>精通反射闪避 (Improved Evasion, Ex)：</strong>当魔宠遭受可以通过反射豁免减半伤害的攻击时，成功则不受伤害，失败也只受一半伤害。</p>
+
+        <p><strong>法术共享 (Share Spells, Ex)：</strong>与动物伙伴的法术共享相同——主人可以将以自身为目标的法术共享给5英尺内的魔宠。</p>
+
+        <p><strong>情感链接 (Empathic Link, Su)：</strong>主人与魔宠之间有心灵感应链接，范围为1英里。主人无法通过魔宠的眼睛看东西，但可以感知其大致情感状态。</p>
+
+        <p><strong>法术传递 (Deliver Touch Spells, Su)：</strong>3级起，主人可以将接触类法术通过魔宠传递。魔宠在施法后必须接触目标，如同主人自己施放。如果法术持续时间已过而魔宠未传递，法术失效。</p>
+
+        <p><strong>与同类交谈 (Speak with Animals of Its Kind, Ex)：</strong>5级起，魔宠可以与同类动物交谈。沟通受限于动物本身的智力水平。</p>
+
+        <p><strong>与主人交谈 (Speak with Master, Ex)：</strong>7级起，魔宠和主人可以用共通语言进行口头交流。其他人无法理解此对话（除非使用魔法）。</p>
+
+        <p><strong>魔抗 (Spell Resistance, Su)：</strong>11级起，魔宠获得等于"主人等级+5"的法术抗力。要影响魔宠的法术必须克服此SR。</p>
+
+        <p><strong>窥探魔宠 (Scry on Familiar, Sp)：</strong>13级起，主人可以对魔宠施放窥视术（如同同名法术），无需法术位或材料成分。</p>
+      </div>
+
+      <div class="companion-card">
+        <h4>魔宠死亡规则</h4>
+        <div class="danger-box">
+          <p><strong>魔宠死亡或解散：</strong>如果魔宠死亡或主人将其遣散，主人必须进行DC 15的强韧豁免。失败时，主人失去200×主人等级的经验值（不可降至0以下）；成功时损失一半。</p>
+          <p><strong>重新召唤：</strong>主人可以在魔宠死亡后一年零一天之后重新召唤新的魔宠。</p>
+          <p><strong>复活魔宠：</strong>可以像复活角色一样复活魔宠，复活后魔宠不会失去能力。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 座骑 ==================== -->
+    <section id="mount" class="section-anchor">
+      <h2>三、座骑 <span style="font-size:14px;color:var(--text-subtle);">Mount</span></h2>
+
+      <div class="companion-card">
+        <p><span class="type-badge badge-divine">圣武士</span> <span class="type-badge badge-divine">骑士</span></p>
+        <p>圣武士在5级时获得一匹特殊的座骑——这不是一匹普通的战马，而是被神圣力量祝福的魔法生物。座骑与圣武士之间有着特殊的纽带。</p>
+
+        <h4>获得座骑</h4>
+        <p>圣武士在达到5级时，座骑会自动出现（通常是一匹特别健壮的战马或一匹矮种马，取决于圣武士的体型）。召唤不需要仪式——座骑是被神祇派遣而来的。</p>
+        <p>如果座骑死亡，圣武士可以在30天后召唤新的座骑。新座骑与原来的完全相同（包括额外HD和能力），但不会继承前座骑的经验。</p>
+      </div>
+
+      <div class="companion-card">
+        <h4>圣武士特殊座骑属性表</h4>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>圣武士等级</th>
+              <th>额外HD (d10)</th>
+              <th>天生护甲加值</th>
+              <th>STR 加值</th>
+              <th>特殊能力</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>5-7级</td><td>+2</td><td>+4</td><td>+1</td><td>情感链接，法术共享，反射闪避</td></tr>
+            <tr><td>8-10级</td><td>+4</td><td>+6</td><td>+2</td><td>速度+10尺</td></tr>
+            <tr><td>11-13级</td><td>+6</td><td>+8</td><td>+3</td><td>命令（1次/天）</td></tr>
+            <tr><td>14-16级</td><td>+8</td><td>+10</td><td>+4</td><td>法术抗力</td></tr>
+            <tr><td>17-19级</td><td>+10</td><td>+12</td><td>+5</td><td>精通反射闪避</td></tr>
+            <tr><td>20级</td><td>+12</td><td>+14</td><td>+6</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="companion-card">
+        <h4>座骑特殊能力详解</h4>
+
+        <p><strong>情感链接 (Empathic Link, Su)：</strong>圣武士与座骑之间有心灵感应链接，范围1英里。圣武士可以感知座骑的大致情感状态。</p>
+
+        <p><strong>法术共享 (Share Spells, Ex)：</strong>圣武士可以将以自身为目标的法术共享给5英尺内的座骑。座骑在法术持续时间结束后仍可享受法术效果。</p>
+
+        <p><strong>反射闪避 (Evasion, Ex)：</strong>座骑可以进行反射豁免以避免全额伤害——成功则不受伤害，失败则受一半。</p>
+
+        <p><strong>速度提升：</strong>8级起，座骑的移动速度提升10英尺。</p>
+
+        <p><strong>命令 (Command, Sp)：</strong>11级起，圣武士可以每日一次对座骑使用命令术，如同施放同名法术，施法者等级等于圣武士等级。</p>
+
+        <p><strong>法术抗力 (Spell Resistance, Ex)：</strong>14级起，座骑获得等于"圣武士等级+5"的法术抗力。</p>
+
+        <p><strong>精通反射闪避 (Improved Evasion, Ex)：</strong>17级起，座骑即使反射豁免失败也只受一半伤害。</p>
+      </div>
+
+      <div class="info-box">
+        <strong>基础座骑：</strong>5级圣武士的标准座骑为一匹重型战马（Heavy Warhorse），基础属性为：HD 4d10+12，速度50尺，AC 14（+2天生，-1体型，+3敏捷），攻击：蹄踢 +6（1d6+4）。
+      </div>
+    </section>
+
+    <!-- ==================== 炼狱仆役 ==================== -->
+    <section id="fiendish-servant" class="section-anchor">
+      <h2>四、炼狱仆役 <span style="font-size:14px;color:var(--text-subtle);">Fiendish Servant</span></h2>
+
+      <div class="companion-card">
+        <p><span class="type-badge badge-dark">暗黑卫士</span></p>
+        <p>暗黑卫士（Blackguard）在其堕落之路上获得一名来自下位面的炼狱仆役。这名仆役是黑暗力量的化身，效忠于暗黑卫士并协助其完成邪恶使命。</p>
+
+        <h4>获得条件</h4>
+        <p>暗黑卫士在达到5级时获得炼狱仆役。仆役由暗黑卫士所侍奉的黑暗力量派遣，无需召唤仪式。如果仆役被杀，暗黑卫士可以在30天后获得新的仆役。</p>
+      </div>
+
+      <div class="companion-card">
+        <h4>炼狱仆役类型</h4>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>仆役类型</th>
+              <th>英文名</th>
+              <th>最低暗黑卫士等级</th>
+              <th>特点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>炼狱蝙蝠</td><td>Fiendish Bat</td><td>5级</td><td>飞行侦察，超声波定位</td></tr>
+            <tr><td>炼狱猫</td><td>Fiendish Cat</td><td>5级</td><td>敏捷高，隐匿优秀</td></tr>
+            <tr><td>炼狱犬</td><td>Fiendish Dog</td><td>5级</td><td>忠诚护卫，嗅觉追踪</td></tr>
+            <tr><td>炼狱鹰</td><td>Fiendish Hawk</td><td>5级</td><td>空中攻击，侦查</td></tr>
+            <tr><td>炼狱马</td><td>Fiendish Heavy Warhorse</td><td>5级</td><td>可骑乘，战斗坐骑</td></tr>
+            <tr><td>炼狱蜥蜴</td><td>Fiendish Lizard</td><td>5级</td><td>攀爬，伏击</td></tr>
+            <tr><td>炼狱猫头鹰</td><td>Fiendish Owl</td><td>5级</td><td>夜间侦察，安静飞行</td></tr>
+            <tr><td>炼狱鼠</td><td>Fiendish Rat</td><td>5级</td><td>体型微小，潜入</td></tr>
+            <tr><td>炼狱蛇（毒蛇）</td><td>Fiendish Viper</td><td>5级</td><td>毒素攻击</td></tr>
+            <tr><td>炼狱狼</td><td>Fiendish Wolf</td><td>5级</td><td>群体猎杀，绊摔</td></tr>
+            <tr><td>小魔鬼</td><td>Imp</td><td>8级</td><td>变形，隐形，毒素，法术抗力</td></tr>
+            <tr><td>夸塞魔</td><td>Quasit</td><td>8级</td><td>变形，隐形，恐惧光环，魔抗</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="companion-card">
+        <h4>炼狱仆役能力表</h4>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>暗黑卫士等级</th>
+              <th>额外HD (d8)</th>
+              <th>天生护甲加值</th>
+              <th>STR/DEX 加值</th>
+              <th>特殊能力</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>5-7级</td><td>+2</td><td>+2</td><td>+1</td><td>情感链接，精通反射闪避</td></tr>
+            <tr><td>8-10级</td><td>+4</td><td>+4</td><td>+2</td><td>法术共享，速度+10尺</td></tr>
+            <tr><td>11-13级</td><td>+6</td><td>+6</td><td>+3</td><td>法术抗力</td></tr>
+            <tr><td>14-16级</td><td>+8</td><td>+8</td><td>+4</td><td>—</td></tr>
+            <tr><td>17-19级</td><td>+10</td><td>+10</td><td>+5</td><td>—</td></tr>
+            <tr><td>20级</td><td>+12</td><td>+12</td><td>+6</td><td>—</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <p><strong>炼狱特性：</strong>所有炼狱仆役都具有以下炼狱模板特性——黑暗视觉60尺，法术抗力等于"5+HD"，对寒冷和火焰各5点抗力，伤害减免"5/魔法"（HD达到11时提升至"10/魔法"）。</p>
+          <p><strong>仆役死亡：</strong>如果仆役被杀，暗黑卫士可以在30天后召唤新仆役。新仆役不具有前任的任何经验。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 部属与追随者 ==================== -->
+    <section id="cohorts" class="section-anchor">
+      <h2>五、部属与追随者 <span style="font-size:14px;color:var(--text-subtle);">Cohorts & Followers</span></h2>
+
+      <div class="companion-card">
+        <p><span class="type-badge badge-lead">领导力专长</span></p>
+        <p>领导力（Leadership）专长允许角色招募一名<strong>部属（Cohort）</strong>——一位忠诚的NPC同伴，以及若干<strong>追随者（Followers）</strong>——一群忠心的低级NPC。这是非施法职业获得长期同伴的主要方式。</p>
+
+        <h4>获得条件</h4>
+        <p>角色必须达到6级才能选取领导力专长。部属和追随者会在角色获得该专长后不久加入，通常在角色返回城镇或营地时出现。</p>
+      </div>
+
+      <div class="companion-card">
+        <h4>领导力分数计算</h4>
+        <div class="formula-box">
+          领导力分数 = 角色等级 + 魅力调整值 + 声望调整值 + 其他修正
+        </div>
+
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>因素</th>
+              <th>修正值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>角色等级</td><td>+角色等级</td></tr>
+            <tr><td>魅力调整值</td><td>+CHA调整值</td></tr>
+            <tr><td>声望：伟大领袖</td><td>+2</td></tr>
+            <tr><td>声望：公平慷慨</td><td>+1</td></tr>
+            <tr><td>声望：残忍暴虐</td><td>-1</td></tr>
+            <tr><td>特殊能力（如贵族血统）</td><td>+1</td></tr>
+            <tr><td>拥有要塞或大本营</td><td>+1</td></tr>
+            <tr><td>导致追随者死亡</td><td>-1（每次）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="companion-card">
+        <h4>部属等级表</h4>
+        <p>部属是一名高等级NPC同伴，其等级由角色的领导力分数决定。</p>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>领导力分数</th>
+              <th>部属等级</th>
+              <th>领导力分数</th>
+              <th>部属等级</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>—</td><td>14</td><td>11级</td></tr>
+            <tr><td>2</td><td>—</td><td>15</td><td>12级</td></tr>
+            <tr><td>3</td><td>—</td><td>16</td><td>13级</td></tr>
+            <tr><td>4</td><td>—</td><td>17</td><td>14级</td></tr>
+            <tr><td>5</td><td>—</td><td>18</td><td>15级</td></tr>
+            <tr><td>6</td><td>—</td><td>19</td><td>16级</td></tr>
+            <tr><td>7</td><td>5级</td><td>20</td><td>17级</td></tr>
+            <tr><td>8</td><td>6级</td><td>21</td><td>17级</td></tr>
+            <tr><td>9</td><td>7级</td><td>22</td><td>17级</td></tr>
+            <tr><td>10</td><td>7级</td><td>23</td><td>17级</td></tr>
+            <tr><td>11</td><td>8级</td><td>24</td><td>17级</td></tr>
+            <tr><td>12</td><td>9级</td><td>25+</td><td>17级</td></tr>
+            <tr><td>13</td><td>10级</td><td>—</td><td>—</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <p><strong>部属等级限制：</strong>部属的等级永远不能等于或超过角色自身等级。部属也拥有自己的装备（由DM决定，通常符合NPC财富标准）。</p>
+          <p><strong>部属死亡：</strong>如果部属死亡，角色领导力分数-1（持续至获得足够的经验恢复此减值）。如果角色导致部属死亡，该减值可能更大。新部属在30天后到来。</p>
+        </div>
+      </div>
+
+      <div class="companion-card">
+        <h4>追随者数量表</h4>
+        <p>追随者是一群低级NPC，按等级分布。角色可以同时拥有多个追随者。</p>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>领导力分数</th>
+              <th>1级</th>
+              <th>2级</th>
+              <th>3级</th>
+              <th>4级</th>
+              <th>5级</th>
+              <th>6级</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1-9</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>10</td><td>5</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>11</td><td>6</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>12</td><td>8</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>13</td><td>10</td><td>1</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>14</td><td>15</td><td>1</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>15</td><td>20</td><td>2</td><td>1</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>16</td><td>25</td><td>2</td><td>1</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>17</td><td>30</td><td>3</td><td>1</td><td>1</td><td>—</td><td>—</td></tr>
+            <tr><td>18</td><td>40</td><td>3</td><td>1</td><td>1</td><td>—</td><td>—</td></tr>
+            <tr><td>19</td><td>50</td><td>4</td><td>2</td><td>1</td><td>1</td><td>—</td></tr>
+            <tr><td>20</td><td>60</td><td>5</td><td>3</td><td>1</td><td>1</td><td>—</td></tr>
+            <tr><td>21</td><td>75</td><td>6</td><td>3</td><td>2</td><td>1</td><td>1</td></tr>
+            <tr><td>22</td><td>100</td><td>7</td><td>4</td><td>2</td><td>2</td><td>1</td></tr>
+            <tr><td>23</td><td>125</td><td>9</td><td>5</td><td>3</td><td>2</td><td>1</td></tr>
+            <tr><td>24</td><td>150</td><td>11</td><td>6</td><td>4</td><td>2</td><td>2</td></tr>
+            <tr><td>25+</td><td>200</td><td>13</td><td>7</td><td>5</td><td>3</td><td>2</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <p><strong>追随者替换：</strong>追随者死亡后不会被自动替换。新的追随者只有在角色领导力分数增加后才会到来（通常是通过升级获得更多追随者名额）。</p>
+          <p><strong>追随者装备：</strong>追随者使用标准NPC装备标准，通常装备简陋。高等级追随者可能拥有较好的装备。</p>
+        </div>
+      </div>
+
+      <div class="companion-card">
+        <h4>部属与追随者的忠诚度</h4>
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>忠诚度</th>
+              <th>领导力分数修正</th>
+              <th>含义</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>憎恨</td><td>-5</td><td>部属/追随者可能在危险时背叛或逃离</td></tr>
+            <tr><td>厌恶</td><td>-2</td><td>部属/追随者不会冒生命危险，可能消极怠工</td></tr>
+            <tr><td>冷淡</td><td>+0</td><td>部属/追随者按吩咐行事，但不会超出职责</td></tr>
+            <tr><td>友善</td><td>+1</td><td>部属/追随者愿意冒一定风险</td></tr>
+            <tr><td>热心</td><td>+2</td><td>部属/追随者愿意冒生命危险</td></tr>
+            <tr><td>狂热</td><td>+4</td><td>部属/追随者誓死效忠，不惜一切代价</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 伙伴对比总表 ==================== -->
+    <section class="section-anchor">
+      <h2>伙伴类型对比总表</h2>
+      <div class="companion-card">
+        <table class="companion-table">
+          <thead>
+            <tr>
+              <th>特性</th>
+              <th>动物伙伴</th>
+              <th>魔宠</th>
+              <th>座骑</th>
+              <th>炼狱仆役</th>
+              <th>部属</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>获得职业</strong></td>
+              <td>德鲁伊/游侠</td>
+              <td>法师/术士</td>
+              <td>圣武士</td>
+              <td>暗黑卫士</td>
+              <td>任何（领导力专长）</td>
+            </tr>
+            <tr>
+              <td><strong>获得等级</strong></td>
+              <td>1级</td>
+              <td>1级</td>
+              <td>5级</td>
+              <td>5级</td>
+              <td>6级</td>
+            </tr>
+            <tr>
+              <td><strong>生物类型</strong></td>
+              <td>动物</td>
+              <td>魔法兽</td>
+              <td>魔法兽</td>
+              <td>异界生物</td>
+              <td>类人生物</td>
+            </tr>
+            <tr>
+              <td><strong>智力</strong></td>
+              <td>随等级提升</td>
+              <td>随等级提升（最高15）</td>
+              <td>6</td>
+              <td>保持原值</td>
+              <td>正常NPC</td>
+            </tr>
+            <tr>
+              <td><strong>共享法术</strong></td>
+              <td>是</td>
+              <td>是</td>
+              <td>是</td>
+              <td>是</td>
+              <td>否</td>
+            </tr>
+            <tr>
+              <td><strong>反射闪避</strong></td>
+              <td>3级</td>
+              <td>1级（精通）</td>
+              <td>5级</td>
+              <td>5级（精通）</td>
+              <td>否</td>
+            </tr>
+            <tr>
+              <td><strong>法术传递</strong></td>
+              <td>否</td>
+              <td>3级</td>
+              <td>否</td>
+              <td>否</td>
+              <td>否</td>
+            </tr>
+            <tr>
+              <td><strong>魔抗</strong></td>
+              <td>否</td>
+              <td>11级</td>
+              <td>14级</td>
+              <td>炼狱模板自带</td>
+              <td>否</td>
+            </tr>
+            <tr>
+              <td><strong>死亡惩罚</strong></td>
+              <td>24小时仪式</td>
+              <td>经验值损失+等待期</td>
+              <td>30天等待</td>
+              <td>30天等待</td>
+              <td>领导力减值</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="highlight-box">
+      <strong>参考资料：</strong>《玩家手册》(Player's Handbook) 第三章 - 德鲁伊、法师、圣武士职业描述；《城主指南》(Dungeon Master's Guide) 关于NPC和领导力的章节。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

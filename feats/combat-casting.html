@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战斗施法 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <h3>专长导航</h3>
+  <ul>
+    <li><a href="intro.html">专长总览</a></li>
+    <li class="nav-divider">战斗专长</li>
+    <li><a href="power-attack.html">猛力攻击</a></li>
+    <li><a href="cleave.html">顺劈斩</a></li>
+    <li><a href="weapon-focus.html">武器专攻</a></li>
+    <li><a href="improved-initiative.html">警觉</a></li>
+    <li><a href="dodge.html">闪避</a></li>
+    <li><a href="combat-expertise.html">战斗技巧</a></li>
+    <li class="nav-divider">施法专长</li>
+    <li><a href="spell-focus.html">法术专攻</a></li>
+    <li><a href="combat-casting.html" class="active">战斗施法</a></li>
+    <li class="nav-divider">通用专长</li>
+    <li><a href="toughness.html">强韧</a></li>
+    <li><a href="iron-will.html">钢铁意志</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 战斗施法</nav>
+<h1>战斗施法 (Combat Casting)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">施法专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">能够施放法术</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">集中检定获得 +4 加值；机会攻击的触碰AC获得 +4 加值</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择一次</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你擅长在战斗中施放法术，即使受到攻击也能保持专注。</p>
+<p>战斗施法提供两个关键益处：</p>
+<ol>
+  <li><strong>集中检定 +4 加值</strong>：当你在战斗中施放法术时，如果受到伤害或受到勾斩，集中检定获得 +4 加值。</li>
+  <li><strong>机会攻击防御 +4 加值</strong>：当你在敌人威胁范围内施放法术时，敌人对你进行机会攻击的触碰AC获得 +4 加值（即敌人更难命中你）。</li>
+</ol>
+
+<h2 id="benefit-detail">益处详解</h2>
+
+<h3>1. 集中检定加值</h3>
+<ul>
+  <li><strong>触发条件</strong>：在战斗中施放法术时，如果受到以下情况，需要进行集中检定：
+    <ul>
+      <li>在施放法术过程中受到 <strong>伤害</strong></li>
+      <li>在施放法术过程中受到 <strong>勾斩 (Grappled)</strong></li>
+      <li>在施放法术过程中被 <strong>展开 (Tripped)</strong></li>
+    </ul>
+  </li>
+  <li><strong>检定DC</strong> = 10 + 法术等级 + 受到的伤害点数</li>
+  <li><strong>加值效果</strong>：战斗施法使你的集中调整值获得 +4 加值，提高通过检定的概率。</li>
+</ul>
+
+<h3>2. 机会攻击防御</h3>
+<ul>
+  <li><strong>触发条件</strong>：当你在敌人威胁范围内（即敌人可以对你进行机会攻击）施放法术时。</li>
+  <li><strong>防御机制</strong>：敌人对你进行机会攻击时，其攻击掷骰受到 <strong>-4 惩罚</strong>（相当于你的AC获得 +4 加值）。</li>
+  <li><strong>重要</strong>：这仅适用于 <strong>触碰攻击 (Touch Attack)</strong>，因为法术施放通常引发触碰机会攻击。</li>
+</ul>
+
+<h2 id="value">价值评估</h2>
+<div class="tactic-box">
+  <p><strong>为什么战斗施法重要？</strong></p>
+  <ul>
+    <li><strong>避免法术失败</strong>：在战斗中，法师经常受到攻击。如果没有战斗施法，集中检定失败会导致法术失败（浪费轮次和法术位）。</li>
+    <li><strong>提高生存能力</strong>：机会攻击防御加值使你更难被敌人打断施法。</li>
+    <li><strong>必备专长</strong>：对-frontline 法师（如术士、龙脉术士）尤为重要。</li>
+  </ul>
+</div>
+
+<h2 id="scenario">实战场景</h2>
+<div class="example-box">
+  <p><strong>场景 1：集中检定</strong></p>
+  <p>人类法师 1级，感知 14（+2），选择"战斗施法"专长。正在施放 <em>火球术</em> (3环) 时，受到兽人战士的攻击（造成 5 点伤害）。</p>
+  <ul>
+    <li>集中检定 DC = 10 + 3 (法术等级) + 5 (伤害) = <strong>18</strong></li>
+    <li>集中调整值 = 感知调整值 (+2) + 战斗施法 (+4) = <strong>+6</strong></li>
+    <li>需要掷出 12+ 才能成功（成功率 45%）</li>
+    <li>如果没有战斗施法，需要掷出 16+（成功率 25%）</li>
+  </ul>
+</div>
+<div class="example-box">
+  <p><strong>场景 2：机会攻击防御</strong></p>
+  <p>人类法师在兽人战士威胁范围内施放 <em>睡眠</em> 法术。</p>
+  <ul>
+    <li>兽人战士可以进行机会攻击（近战触碰攻击）</li>
+    <li>兽人战士的攻击掷骰受到 <strong>-4 惩罚</strong></li>
+    <li>如果兽人战士的攻击加值为 +3，则实际攻击加值 = +3 - 4 = <strong>-1</strong></li>
+    <li>大幅提高法术成功施放的概率</li>
+  </ul>
+</div>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">法师 (Wizard)</strong>：d4 生命骰，HP 极低，容易被打断施法。<strong>强烈推荐</strong>。</li>
+  <li><strong class="highlight">术士 (Sorcerer)</strong>：d4 生命骰，且通常-frontline 施法。<strong>强烈推荐</strong>。</li>
+  <li><strong class="highlight">牧师 (Cleric)</strong>：d8 生命骰，但经常需要-frontline 施法。推荐。</li>
+  <li><strong>德鲁伊 (Druid)</strong>：d8 生命骰，变形后不需要此专长。</li>
+  <li><strong>吟游诗人 (Bard)</strong>：d6 生命骰，推荐。</li>
+</ul>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>法术极效 (Quicken Spell)</strong>：需要战斗施法，使法术施放不需要标准动作（避免机会攻击）。</li>
+  <li><strong>法术默发 (Silent Spell)</strong>：需要战斗施法，在勾斩中施放法术不需要语言成分。</li>
+  <li><strong>法术定发 (Still Spell)</strong>：需要战斗施法，在勾斩中施放法术不需要姿势成分。</li>
+</ul>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点 1：战斗施法是否适用于"准备法术"？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：战斗施法只适用于"施放法术"（cast a spell），不适用于"准备法术"（prepare a spell）。</p>
+  <p>✅ <strong>正确规则</strong>：</p>
+  <ul>
+    <li>战斗施法 <strong>不适用</strong>于准备法术（法师每日准备法术时）。</li>
+    <li>战斗施法 <strong>只适用</strong>于战斗中随机施放的法术。</li>
+  </ul>
+  <p>⚠️ <strong>常见误解</strong>：有玩家认为战斗施法能加速准备法术。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+<div class="conflict-box">
+  <p><strong>冲突点 2：机会攻击防御加值是否适用于"远程机会攻击"？</strong></p>
+  <p>📝 <strong>规则争议</strong>：PHB 未明确说明。</p>
+  <p>✅ <strong>官方 FAQ 澄清</strong>：机会攻击防御加值 <strong>只适用于近战触碰攻击</strong>，不适用于远程机会攻击（因为远程机会攻击通常使用远程武器，而非触碰攻击）。</p>
+  <p>⚠️ <strong>DM 裁决</strong>：部分 DM 允许适用于所有机会攻击。需提前确认。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页140</strong>：集中检定详解。</li>
+  <li>📚 <strong>PHB 页143</strong>：机会攻击与施法。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

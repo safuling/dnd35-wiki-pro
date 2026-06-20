@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大地旅者 Horizon Walker - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>大地旅者 <span style="font-size:0.6em;color:#888;">Horizon Walker</span></h1>
+    <p style="color:#666;font-size:0.95em;">出自《城主指南》(DMG) p.194</p>
+
+    <!-- 信息框 -->
+    <div class="infobox" style="float:right;width:320px;margin:0 0 1em 1.5em;border:1px solid #b8860b;border-radius:6px;background:#fdf6e3;">
+      <div style="background:#8b6914;color:#fff;padding:10px;text-align:center;font-size:1.2em;font-weight:bold;">大地旅者 Horizon Walker</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">生命骰</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">d8</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">等级数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">10</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">阵营限制</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">无</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能点数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">4 + 智力调整值</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">本职技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">平衡、攀爬、跳跃、知识（地理）、知识（自然）、知识（位面）、聆听、潜行、生存、游泳</td></tr>
+        <tr style="background:#f5f0e0;"><td colspan="2" style="padding:8px 10px;font-weight:bold;color:#8b6914;">先决条件</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">基本攻击加值</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">+5</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">知识（地理）4级，生存4级</td></tr>
+        <tr><td style="padding:6px 10px;font-weight:bold;">其他</td><td style="padding:6px 10px;">必须曾到访过至少5种不同的地形类型</td></tr>
+      </table>
+    </div>
+
+    <h2>职业概述</h2>
+    <p>大地旅者是穿越荒野的终极探险家——他们的足迹遍布大陆的每一个角落，从灼热的沙漠到幽深的地下，从苍翠的森林到危险的沼泽。通过与大地的深层联系，大地旅者在熟悉的地形中获得超越常人的优势，随着经验的积累，他们甚至能将这种掌控力延伸到异位面的奇异地域。</p>
+    <p>大地旅者是一个非常适合探索型战役的进阶职业。如果你的冒险经常发生在各种多样化的地形中，大地旅者的能力将发挥到最大价值。</p>
+
+    <h2>职业技能表</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#8b6914;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">等级</th>
+          <th style="padding:8px;border:1px solid #ddd;">基本攻击加值</th>
+          <th style="padding:8px;border:1px solid #ddd;">强韧豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">反射豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">意志豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">1级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;">地形掌控（第1种地形）</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">2级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;">地形掌控（第2种地形）</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">3级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">地形掌控（第3种地形）</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">4级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">地形掌控（第4种地形）</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">5级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">地形掌控（第5种地形）</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">6级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">地形掌控（第6种地形）</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">7级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+7</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">地形掌控（第7种地形）/ 位面地形掌控</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">8级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+8</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">地形掌控（第8种地形）/ 位面地形掌控</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">9级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+9</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">位面地形掌控</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">10级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+10</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+7</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">位面地形掌控</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详解</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>大地旅者不会获得额外的武器或防具熟练。</p>
+
+    <h3>地形掌控 (Terrain Mastery)</h3>
+    <p>每一级大地旅者都可以选择一种地形类型进行掌控。在对应地形中，大地旅者获得相应的特殊加值。可选的地形类型及其加值如下：</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#6b8e23;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">地形类型</th>
+          <th style="padding:8px;border:1px solid #ddd;">加值效果</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#f5f8ee;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">沙漠 Desert</td>
+          <td style="padding:8px;border:1px solid #ddd;">+4生存检定避免非致命伤害；免疫疲乏；+10英尺基础速度（仅在沙漠中）；炎热伤害减半</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">森林 Forest</td>
+          <td style="padding:8px;border:1px solid #ddd;">+4躲闪AC（森林中）；潜行检定+4；在森林中追踪时生存检定+4</td>
+        </tr>
+        <tr style="background:#f5f8ee;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">丘陵 Hills</td>
+          <td style="padding:8px;border:1px solid #ddd;">+2攻击加值（丘陵中）；攀爬检定+8；+4生存检定避免非致命伤害</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">沼泽 Marsh</td>
+          <td style="padding:8px;border:1px solid #ddd;">+4攻击加值（沼泽中）；对疾病豁免+4；在沼泽中不受移动惩罚</td>
+        </tr>
+        <tr style="background:#f5f8ee;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">山地 Mountain</td>
+          <td style="padding:8px;border:1px solid #ddd;">+4攀爬检定；+2反射豁免（山地中）；免疫高原反应；在山地中速度不受影响</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">平原 Plains</td>
+          <td style="padding:8px;border:1px solid #ddd;">+4先攻检定（平原中）；+2反射豁免；潜行检定+4（平原中）；基础速度+10英尺（平原中）</td>
+        </tr>
+        <tr style="background:#f5f8ee;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">地下 Underground</td>
+          <td style="padding:8px;border:1px solid #ddd;">60英尺黑暗视觉；潜行检定+2（地下）；搜索检定+4（发现密门/陷阱）；+2反射豁免（地下）</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">水域 Aquatic</td>
+          <td style="padding:8px;border:1px solid #ddd;">可以水中呼吸；+8游泳检定；水下攻击不受惩罚；水下速度正常</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>位面地形掌控 (Planar Terrain Mastery)</h3>
+    <p>从第7级开始，大地旅者的地形掌控能力扩展到异位面。每获得一次位面地形掌控，可以选择以下位面地形类型之一：</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#4a0e4e;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">位面地形</th>
+          <th style="padding:8px;border:1px solid #ddd;">加值效果</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#f5eef5;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">炽炎位面 (Fiery)</td>
+          <td style="padding:8px;border:1px solid #ddd;">火焰抗性10；+4豁免对抗火焰效果；炎热伤害减半</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">寒冷位面 (Cold)</td>
+          <td style="padding:8px;border:1px solid #ddd;">寒冷抗性10；+4豁免对抗寒冷效果；寒冷伤害减半</td>
+        </tr>
+        <tr style="background:#f5eef5;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">混沌位面 (Chaotic)</td>
+          <td style="padding:8px;border:1px solid #ddd;">+2意志豁免；法术抗力等于10+大地旅者等级</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">秩序位面 (Lawful)</td>
+          <td style="padding:8px;border:1px solid #ddd;">+2所有豁免；法术抗力等于5+大地旅者等级</td>
+        </tr>
+        <tr style="background:#f5eef5;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">善良位面 (Good-aligned)</td>
+          <td style="padding:8px;border:1px solid #ddd;">+2攻击加值对抗邪恶生物；+4豁免对抗邪恶效果</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">邪恶位面 (Evil-aligned)</td>
+          <td style="padding:8px;border:1px solid #ddd;">+2攻击加值对抗善良生物；+4豁免对抗善良效果</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>角色构建建议</h2>
+
+    <h3>最佳搭配职业</h3>
+    <p><strong>游侠 (Ranger)：</strong>游侠是大地旅者的最佳搭配。游侠的战斗风格、宿敌、追踪能力与大地旅者的地形掌控完美互补。游侠5/大地旅者10是一个极其强大的荒野探索者。</p>
+    <p><strong>战士 (Fighter)：</strong>战士提供充沛的奖励专长来补充大地旅者的探索能力。战士5/大地旅者10拥有坚实的近战能力和地形优势。</p>
+    <p><strong>野蛮人 (Barbarian)：</strong>野蛮人的狂暴与大地旅者的地形加值叠加，在特定地形中可以成为极其恐怖的战斗力量。</p>
+
+    <h3>地形选择策略</h3>
+    <ul>
+      <li><strong>通用冒险型：</strong>地下 → 森林 → 沙漠 → 沼泽 → 山地。这五种地形涵盖了最常见的冒险场景。</li>
+      <li><strong>城市冒险型：</strong>地下 → 平原 → 丘陵 → 森林 → 水域。适合以城镇和周边地区为中心的战役。</li>
+      <li><strong>位面旅行型：</strong>地下 → 森林 → 沙漠 → 炽炎位面 → 混沌位面 → 邪恶位面。适合高等级的位面冒险战役。</li>
+    </ul>
+
+    <h3>推荐专长</h3>
+    <ul>
+      <li><strong>追踪 (Track)：</strong>与大地旅者的生存加值完美配合</li>
+      <li><strong>坚忍 (Endurance)：</strong>增强荒野生存能力</li>
+      <li><strong>武器专攻：</strong>弥补大地旅者缺少特殊战斗能力的不足</li>
+    </ul>
+
+    <h2>角色扮演建议</h2>
+    <p>大地旅者是天生的探索者和向导。他们可能是经验丰富的探险队领队、退役的军事侦察兵、或是独自游历世界的流浪者。大地旅者通常沉默寡言，更善于用行动而非言语来表达自己。</p>
+    <p>在冒险队伍中，大地旅者自然担任起向导和侦察兵的角色。他们对环境的深刻理解使他们能够在队伍进入危险地带前提供宝贵的预警。</p>
+    <p><strong>性格特征建议：</strong>观察力敏锐、沉默而可靠、对自然环境充满敬畏、习惯性地记录所到之处的地形特征、在面对未知地域时表现出兴奋而非恐惧。</p>
+
+    <div style="margin-top:2em;padding:1em;background:#f5f0e0;border-left:4px solid #8b6914;border-radius:4px;">
+      <strong>编者注：</strong>大地旅者的价值很大程度上取决于战役类型。如果冒险主要发生在地下城或城市中，大地旅者的能力利用率较低。但如果战役包含大量的荒野探索和多样化地形，大地旅者可以成为一个极其有价值的全能型角色。选择前请与你的DM讨论战役的类型和主要场景。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

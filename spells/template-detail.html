@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{name_zh} - D&D 3.5e 法术 - D&D 3.5e Wiki</title>
+<meta name="description" content="{name_zh}（{name_en}）：{short_desc}">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html" class="active">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<main>
+<article class="main-content">
+  <div class="page-header">
+    <h1>{name_zh} <span class="spell-en">({name_en})</span></h1>
+    <div class="page-meta">
+      <span class="spell-level">环级：{level_display}</span>
+      <span class="spell-school">学派：{school}</span>
+    </div>
+  </div>
+
+  <div class="infobox">
+    <div class="infobox-title">{name_zh} ({name_en})</div>
+    <div class="infobox-content">
+      <div><span class="label">环级</span><span class="value">{level_display}</span></div>
+      <div><span class="label">学派</span><span class="value">{school}</span></div>
+      <div><span class="label">成分</span><span class="value">{components}</span></div>
+      <div><span class="label">施法时间</span><span class="value">{casting_time}</span></div>
+      <div><span class="label">距离</span><span class="value">{range}</span></div>
+      <div><span class="label">目标/范围/效果</span><span class="value">{target}</span></div>
+      <div><span class="label">持续时间</span><span class="value">{duration}</span></div>
+      <div><span class="label">豁免检定</span><span class="value">{saving_throw}</span></div>
+      <div><span class="label">法术抗力</span><span class="value">{spell_resist}</span></div>
+      {material_row}
+      {focus_row}
+    </div>
+  </div>
+
+  <h2>法术描述</h2>
+  <p>{desc}</p>
+
+  <h2>法术来源</h2>
+  <p>本{f.level_display}法术来自《玩家手册》{source_book}。</p>
+
+  <h2>规则冲突</h2>
+  <div class="conflict-box">
+    <div class="conflict-title">⚠️ 规则冲突标注</div>
+    <div class="conflict-content">
+      <p>本{f.level_display}法术在不同资料源中基本一致，但存在一些细则差异：</p>
+      <ul>
+        <li><strong>PHB规则</strong>：标准规则，适用于大多数情况。</li>
+        <li><strong>拓展规则</strong>：某些拓展书可能添加额外效果或调整持续时间。</li>
+      </ul>
+      <p><strong>建议</strong>：以PHB规则为准，DM可选择是否采用拓展规则。</p>
+    </div>
+  </div>
+
+  <h2>实战应用</h2>
+  <div class="examples">
+    <h3>常见用途</h3>
+    <p>{name_zh}常用于{common_use}。</p>
+    
+    <h3>搭配专长/法术</h3>
+    <p>{synergy}</p>
+  </div>
+
+  <div class="rule-source">
+    <strong>规则出处：</strong>《玩家手册》第{page_num}页
+  </div>
+  
+  <div class="spell-navigation">
+    <a href="intro.html" class="back-to-list">← 返回法术列表</a>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <p>D&D 3.5e Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

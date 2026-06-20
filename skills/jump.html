@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳跃 - D&D 3.5e 中文Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .skill-header {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .ability-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .jump-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .jump-table th, .jump-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .jump-table th {
+            background: #c0392b;
+            color: white;
+        }
+        .jump-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .conflict-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+    <nav class="top-nav">
+        <div class="nav-brand">🐉 D&D 3.5e Wiki</div>
+        <div class="nav-links">
+            <a href="../index.html">首页</a>
+            <a href="intro.html" class="active">技能</a>
+            <a href="../spells/intro.html">法术</a>
+            <a href="../races/human.html">种族</a>
+            <a href="../classes/wizard.html">职业</a>
+            <a href="../feats/intro.html">专长</a>
+            <a href="../conflicts.html">规则冲突</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="skill-header">
+            <h1>🦘 跳跃 (Jump)</h1>
+            <p class="subtitle">力量技能 · 跨职业技能</p>
+            <div>
+                <span class="ability-badge">关键属性：力量 (STR)</span>
+                <span class="ability-badge">调整值：1d20 + 调整值点数 + 力量调整值</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 技能描述</h3>
+            <p>跳跃技能允许你跳得更远或更高。跳跃分为<strong>远跳</strong>（水平距离）和<strong>高跳</strong>（垂直高度）。</p>
+            
+            <h4>调整值计算</h4>
+            <p class="formula">跳跃调整值 = 跳跃调整值点数 + 力量调整值 + 其他调整值</p>
+            <p class="formula">实际距离 = 基础距离 + (跳跃调整值 × 每点调整值对应距离)</p>
+            
+            <h4>检定条件</h4>
+            <ul>
+                <li><strong>动作</strong>：移动等效动作（Move-Equivalent Action）或即时动作（Jumping是移动的一部分）</li>
+                <li><strong>重试</strong>：可以，但失败会导致坠落伤害</li>
+                <li><strong>特殊</strong>：跳跃距离受角色尺寸和力量影响</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 跳跃距离表</h2>
+            <table class="jump-table">
+                <thead>
+                    <tr>
+                        <th>跳跃类型</th>
+                        <th>基础距离</th>
+                        <th>每+1调整值增加</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>远跳（助跑）</td>
+                        <td>10英尺</td>
+                        <td>+2英尺</td>
+                        <td>需要20英尺助跑</td>
+                    </tr>
+                    <tr>
+                        <td>远跳（原地）</td>
+                        <td>5英尺</td>
+                        <td>+1英尺</td>
+                        <td>无助跑</td>
+                    </tr>
+                    <tr>
+                        <td>高跳（助跑）</td>
+                        <td>4英尺</td>
+                        <td>+0.5英尺</td>
+                        <td>需要20英尺助跑</td>
+                    </tr>
+                    <tr>
+                        <td>高跳（原地）</td>
+                        <td>2英尺</td>
+                        <td>+0.25英尺</td>
+                        <td>无助跑</td>
+                    </tr>
+                    <tr>
+                        <td>加速跳跃</td>
+                        <td colspan="3">DC +2（每加速10英尺），最高速度 = 地面速度</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📋 技能细则</h2>
+            
+            <h3>远跳（Long Jump）</h3>
+            <p>从地面起跳，越过水平距离。</p>
+            <ul>
+                <li><strong>助跑远跳</strong>：需要至少20英尺助跑，距离 = 10 + (调整值 × 2) 英尺</li>
+                <li><strong>原地远跳</strong>：无助跑，距离 = 5 + (调整值 × 1) 英尺</li>
+                <li><strong>着陆</strong>：需要平衡检定（DC = 跳跃DC），失败会摔倒</li>
+            </ul>
+
+            <h3>高跳（High Jump）</h3>
+            <p>从地面起跳，到达垂直高度。</p>
+            <ul>
+                <li><strong>助跑高跳</strong>：需要至少20英尺助跑，高度 = 4 + (调整值 × 0.5) 英尺</li>
+                <li><strong>原地高跳</strong>：无助跑，高度 = 2 + (调整值 × 0.25) 英尺</li>
+                <li><strong>触碰高度</strong>：可以比最高跳跃高度高1英尺（手臂长度）</li>
+            </ul>
+
+            <h3>特殊能力</h3>
+            <ul>
+                <li><strong>跳跃攻击（Spring Attack）专长</strong>：跳跃时可以进行攻击，然后安全退回</li>
+                <li><strong>野蛮人狂暴</strong>：获得+4力量调整值，间接提升跳跃距离</li>
+                <li><strong>加速术（Expeditious Retreat）</strong>：提升地面速度，间接提升助跑距离</li>
+                <li><strong>跳跃药水（Potion of Jump）</strong>：获得+10跳跃调整值（持续1分钟）</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <h3>💡 实战示例</h3>
+            <p><strong>场景</strong>：你是一名5级野蛮人（力量18，+4调整值），有6点跳跃调整值。</p>
+            <p><strong>总调整值</strong>：6（调整值点数）+ 4（力量调整值）= <strong>+10</strong></p>
+            <p><strong>任务</strong>：助跑远跳，越过一条15英尺宽的沟壑。</p>
+            <p><strong>计算</strong>：距离 = 10 + (10 × 2) = <strong>30英尺</strong>。可以轻松越过15英尺沟壑。</p>
+            <p><strong>检定</strong>：1d20 + 10 = <strong>22</strong>。你成功跳跃30英尺，安全落到对面。</p>
+            <p><strong>变体</strong>：如果是原地远跳（无助跑），距离 = 5 + (10 × 1) = <strong>15英尺</strong>。刚好可以越过沟壑，但需要平衡检定（DC 15）。1d20 + 10 = 18 ≥ 15，成功！你保持平衡，没有摔倒。</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 搭配专长</h2>
+            <ul>
+                <li><strong>运动敏捷（Athletic）</strong>：跳跃和攀爬调整值+2</li>
+                <li><strong>跳跃攻击（Spring Attack）</strong>：跳跃时可以进行攻击，然后安全退回</li>
+                <li><strong>力量强大（Powerful Build）</strong>：某些种族（如半巨人）获得+4天生力量调整值</li>
+            </ul>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：跳跃的动作类型</h3>
+            <p><strong>冲突点</strong>：跳跃是移动等效动作、即时动作，还是特殊动作？</p>
+            <p><strong>官方规则（PHB p.76）</strong>：跳跃是<strong>移动等效动作</strong>，可以在移动中使用。但某些DM可能要求<strong>即时动作</strong>（如果跳跃很困难）。</p>
+            <p><strong>网络误传</strong>：部分网站声称"跳跃是标准动作，会消耗整轮"。这是错误的，跳跃是移动的一部分。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行，跳跃是移动等效动作。例外：如果跳跃非常困难（如跨越陷阱），DM可以要求即时动作或标准动作。</p>
+            <p class="source">📚 出处：PHB p.76, 3.5版 FAQ v.2.0</p>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：加速跳跃的速度限制</h3>
+            <p><strong>冲突点</strong>：加速跳跃的最高速度是否等于穿着护甲后的地面速度？</p>
+            <p><strong>官方规则（PHB p.76 & DMG p.21）</strong>：加速跳跃的最高速度等于你的地面速度。如果穿着护甲且护甲惩罚>0，则地面速度降低，加速跳跃速度也相应降低。</p>
+            <p><strong>网络误传</strong>：部分网站声称"加速跳跃速度始终等于正常地面速度，无视护甲"。这是错误的。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行。穿着重型护甲的角色跳跃速度会大幅降低。例外：如果有"行动自如"（Freedom of Movement）法术，则可以无视护甲惩罚。</p>
+            <p class="source">📚 出处：PHB p.76, DMG p.21, Complete Warrior p.97</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 规则出处</h3>
+            <ul>
+                <li><strong>玩家手册 (PHB)</strong>：p.76，跳跃技能详细描述</li>
+                <li><strong>地下城主指南 (DMG)</strong>：p.21，跳跃相关规则</li>
+                <li><strong>Complete Warrior</strong>：p.97，跳跃攻击专长</li>
+                <li><strong>3.5版 FAQ</strong>：v.2.0，跳跃相关问答</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>🐉 D&D 3.5e 中文Wiki | 基于《玩家手册》(PHB) 规则</p>
+        <p>本网站为粉丝制作，非官方作品。Dungeons & Dragons 是 Wizards of the Coast 的商标。</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>野蛮人 Barbarian - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .class-table { font-size:13px; width:100%; border-collapse:collapse; margin:12px 0; }
+  .class-table th { background:var(--bg-table-head); padding:7px 10px; text-align:center; font-size:12px; }
+  .class-table td { border:1px solid var(--border-light); padding:6px 10px; text-align:center; }
+  .class-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .feature-box { background:var(--bg-card); border-left:4px solid #c0392b; padding:14px 18px; margin:12px 0; border-radius:0 var(--radius) var(--radius) 0; }
+  .feature-box h4 { margin:0 0 6px; color:var(--text-heading); }
+  .tip-box { background:#e8f5e9; border-left:3px solid #27ae60; padding:10px 14px; margin:10px 0; font-size:14px; border-radius:0 var(--radius) var(--radius) 0; }
+  .warn-box { background:#fff3e0; border-left:3px solid #ff9800; padding:10px 14px; margin:10px 0; font-size:14px; border-radius:0 var(--radius) var(--radius) 0; }
+  .infobox { float:right; width:280px; background:var(--bg-infobox); border:1px solid var(--border-main); border-radius:var(--radius); padding:14px; margin:0 0 16px 20px; font-size:13px; }
+  .infobox h3 { margin:0 0 10px; text-align:center; background:var(--bg-table-head); padding:8px; margin:-14px -14px 12px; border-radius:var(--radius) var(--radius) 0 0; }
+  .infobox-row { display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid var(--border-light); }
+  .infobox-row:last-child { border-bottom:none; }
+  .ib-label { color:var(--text-subtle); }
+  .ib-value { font-weight:600; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html" class="active">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">快速导航</div>
+      <a href="#overview">职业概述</a>
+      <a href="#features">职业特性</a>
+      <a href="#level-table">等级表</a>
+      <a href="#rage">狂暴详解</a>
+      <a href="#build">构建建议</a>
+      <a href="#conflicts">规则冲突</a>
+    </div>
+  </aside>
+
+  <article class="main-content">
+
+    <div class="infobox">
+      <h3>野蛮人 (Barbarian)</h3>
+      <div class="infobox-row"><span class="ib-label">生命骰</span><span class="ib-value">d12</span></div>
+      <div class="infobox-row"><span class="ib-label">基础攻击加值</span><span class="ib-value">高（等级×1）</span></div>
+      <div class="infobox-row"><span class="ib-label">强韧豁免</span><span class="ib-value">高</span></div>
+      <div class="infobox-row"><span class="ib-label">反射豁免</span><span class="ib-value">低</span></div>
+      <div class="infobox-row"><span class="ib-label">意志豁免</span><span class="ib-value">低</span></div>
+      <div class="infobox-row"><span class="ib-label">技能点/级</span><span class="ib-value">4 + 智力调整值</span></div>
+      <div class="infobox-row"><span class="ib-label">武器防具精通</span><span class="ib-value">全部简单+军用武器，轻/中型护甲，盾牌</span></div>
+      <div class="infobox-row"><span class="ib-label">主要属性</span><span class="ib-value">力量、体质</span></div>
+      <div class="infobox-row"><span class="ib-label">阵营限制</span><span class="ib-value">非守序阵营</span></div>
+    </div>
+
+    <h1>野蛮人 <span style="font-size:0.6em;color:var(--text-subtle);">(Barbarian)</span></h1>
+
+    <h2 id="overview">📖 职业概述</h2>
+    <p>野蛮人是来自文明边缘的凶猛战士，依靠本能和原始力量而非严格训练来战斗。他们最强大的能力是<strong>狂暴（Rage）</strong>——一种战斗发狂状态，能够极大提升力量和体质，代价是战斗结束后的疲劳。</p>
+    <p>野蛮人拥有游戏中最高的生命骰（d12），使其成为最耐打的近战职业之一。他们还具有无与伦比的直觉，能够感知危险并快速移动。</p>
+
+    <div class="tip-box">
+      <strong>💡 适合野蛮人的玩家：</strong> 喜欢直接、高伤害近战风格；愿意接受"先打爆再说"的策略；希望不依赖复杂魔法系统。
+    </div>
+
+    <h2 id="features">🌟 职业特性</h2>
+
+    <div class="feature-box">
+      <h4>⚡ 狂暴（Rage）</h4>
+      <p>野蛮人可以进入战斗狂暴状态。每日使用次数：<strong>1次 + 体质调整值</strong>（最低1次）。</p>
+      <p><strong>效果：</strong>力量+4，体质+4（附加HP），意志豁免+2，AC-2</p>
+      <p><strong>持续时间：</strong>3 + 体质调整值轮（进入时按原始体质计算）</p>
+      <p><strong>结束后：</strong>疲劳（力量/敏捷-2），持续遭遇结束。不能在疲劳时再次狂暴。</p>
+      <p><strong>注意：</strong>狂暴时不能使用需要专注的能力（如牧师祈祷、复杂技能）。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>🚀 快速移动（Fast Movement）</h4>
+      <p><strong>1级</strong>：移动速度+10英尺（穿着轻型/中型护甲或无护甲时有效）。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>⚠️ 直觉闪避（Uncanny Dodge）</h4>
+      <p><strong>2级</strong>：即使被夹击，仍保留敏捷AC加值；不会因措手不及失去敏捷AC加值。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>🧘 不屈意志（Indomitable Will）</h4>
+      <p><strong>3级</strong>：在狂暴状态中，意志豁免额外+4（取代狂暴的+2）。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>🎯 陷阱感知（Trap Sense）</h4>
+      <p><strong>3级起</strong>：对陷阱的反射豁免和AC各+1（每3级再+1，共5次：3/6/9/12/15级）。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>⚡ 强化直觉闪避（Improved Uncanny Dodge）</h4>
+      <p><strong>5级</strong>：只有等级至少是野蛮人等级+4的盗贼才能潜伏攻击你（借助夹击）。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>💀 破坏减免（Damage Reduction）</h4>
+      <p><strong>7级起</strong>：DR 1/—（每3级+1：7/10/13/16/19/20级，最高DR 5/—）。物理伤害减免，任何武器无法绕过。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>⚡ 更大狂暴（Greater Rage）</h4>
+      <p><strong>11级</strong>：狂暴效果提升为力量+6，体质+6，意志+3。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>⚡ 疲惫免疫（Tireless Rage）</h4>
+      <p><strong>17级</strong>：狂暴结束后不再疲劳。</p>
+    </div>
+
+    <div class="feature-box">
+      <h4>⚡ 传奇狂暴（Mighty Rage）</h4>
+      <p><strong>20级</strong>：狂暴效果提升为力量+8，体质+8，意志+4。</p>
+    </div>
+
+    <h2 id="level-table">📊 等级成长表</h2>
+    <table class="class-table">
+      <thead>
+        <tr><th>等级</th><th>BAB</th><th>强韧</th><th>反射</th><th>意志</th><th>特殊能力</th><th>狂暴次数/日</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>+1</td><td>+2</td><td>+0</td><td>+0</td><td>狂暴、快速移动</td><td>1+CON调整值</td></tr>
+        <tr><td>2</td><td>+2</td><td>+3</td><td>+0</td><td>+0</td><td>直觉闪避</td><td>同上</td></tr>
+        <tr><td>3</td><td>+3</td><td>+3</td><td>+1</td><td>+1</td><td>陷阱感知+1, 不屈意志</td><td>同上</td></tr>
+        <tr><td>4</td><td>+4</td><td>+4</td><td>+1</td><td>+1</td><td>狂暴次数+1</td><td>+1次</td></tr>
+        <tr><td>5</td><td>+5</td><td>+4</td><td>+1</td><td>+1</td><td>强化直觉闪避</td><td>同上</td></tr>
+        <tr><td>6</td><td>+6/+1</td><td>+5</td><td>+2</td><td>+2</td><td>陷阱感知+2</td><td>同上</td></tr>
+        <tr><td>7</td><td>+7/+2</td><td>+5</td><td>+2</td><td>+2</td><td>破坏减免 1/—</td><td>+1次</td></tr>
+        <tr><td>8</td><td>+8/+3</td><td>+6</td><td>+2</td><td>+2</td><td>狂暴次数+1</td><td>+1次</td></tr>
+        <tr><td>9</td><td>+9/+4</td><td>+6</td><td>+3</td><td>+3</td><td>陷阱感知+3</td><td>同上</td></tr>
+        <tr><td>10</td><td>+10/+5</td><td>+7</td><td>+3</td><td>+3</td><td>破坏减免 2/—</td><td>+1次</td></tr>
+        <tr><td>11</td><td>+11/+6/+1</td><td>+7</td><td>+3</td><td>+3</td><td>更大狂暴</td><td>+1次</td></tr>
+        <tr><td>12</td><td>+12/+7/+2</td><td>+8</td><td>+4</td><td>+4</td><td>陷阱感知+4</td><td>+1次</td></tr>
+        <tr><td>13</td><td>+13/+8/+3</td><td>+8</td><td>+4</td><td>+4</td><td>破坏减免 3/—</td><td>+1次</td></tr>
+        <tr><td>14</td><td>+14/+9/+4</td><td>+9</td><td>+4</td><td>+4</td><td>—</td><td>+1次</td></tr>
+        <tr><td>15</td><td>+15/+10/+5</td><td>+9</td><td>+5</td><td>+5</td><td>陷阱感知+5</td><td>+1次</td></tr>
+        <tr><td>16</td><td>+16/+11/+6/+1</td><td>+10</td><td>+5</td><td>+5</td><td>破坏减免 4/—</td><td>+1次</td></tr>
+        <tr><td>17</td><td>+17/+12/+7/+2</td><td>+10</td><td>+5</td><td>+5</td><td>疲惫免疫</td><td>+1次</td></tr>
+        <tr><td>18</td><td>+18/+13/+8/+3</td><td>+11</td><td>+6</td><td>+6</td><td>陷阱感知+6</td><td>+1次</td></tr>
+        <tr><td>19</td><td>+19/+14/+9/+4</td><td>+11</td><td>+6</td><td>+6</td><td>破坏减免 5/—</td><td>+1次</td></tr>
+        <tr><td>20</td><td>+20/+15/+10/+5</td><td>+12</td><td>+6</td><td>+6</td><td>传奇狂暴</td><td>+1次</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="rage">🔥 狂暴详解</h2>
+    <p>狂暴时的完整效果：</p>
+    <ul style="margin:10px 0 0 20px;line-height:2;">
+      <li><strong>力量</strong> 临时+4（影响近战攻击/伤害）</li>
+      <li><strong>体质</strong> 临时+4（每级+2临时HP）</li>
+      <li><strong>意志豁免</strong> +2（或3级后+4）</li>
+      <li><strong>AC</strong> -2（未防御状态）</li>
+      <li><strong>禁止</strong>：使用技能（大多数）、施法、激活魔法物品（如卷轴）</li>
+      <li><strong>可以</strong>：全力攻击、移动、使用武器特殊能力</li>
+    </ul>
+    <div class="warn-box">
+      <strong>⚠️ 疲劳提示：</strong>狂暴结束后疲劳（-2力量/敏捷），无法快速移动或再次狂暴，直到遭遇结束或休息8小时。
+    </div>
+
+    <h2 id="build">🎯 构建建议</h2>
+    <h3>属性优先级</h3>
+    <ol style="margin:8px 0 0 20px;line-height:2;">
+      <li><strong>力量</strong>（18+）：直接影响近战攻击和伤害</li>
+      <li><strong>体质</strong>（16+）：决定HP和每日狂暴次数</li>
+      <li><strong>敏捷</strong>（12-14）：AC和反射豁免</li>
+      <li><strong>感知</strong>（10-12）：意志豁免（野蛮人低，需补强）</li>
+      <li>智力/魅力：通常放低优先级</li>
+    </ol>
+
+    <h3>推荐专长</h3>
+    <ul style="margin:8px 0 0 20px;line-height:2;">
+      <li><strong>力量攻势（Power Attack）</strong>：野蛮人高BAB+大武器，可以大量抽力量换伤害</li>
+      <li><strong>强力冲锋（Leap Attack）</strong>：配合冲锋动作，Power Attack效果翻倍</li>
+      <li><strong>强化体型（Toughness）</strong>：+3HP，配合d12生命骰很好</li>
+      <li><strong>铁腕（Iron Will）</strong>：弥补低意志豁免</li>
+      <li><strong>大型武器精通（Weapon Focus + Weapon Specialization）</strong>：特化一种大型武器</li>
+    </ul>
+
+    <h3>推荐种族</h3>
+    <ul style="margin:8px 0 0 20px;line-height:2;">
+      <li><strong>半兽人</strong>：力量+2，没有智力惩罚（实际上有感知-2），但力量优势明显</li>
+      <li><strong>人类</strong>：额外专长+技能点，灵活性高</li>
+      <li><strong>矮人</strong>：体质+2，抗毒素/魔法，但速度-10ft（快速移动可补偿）</li>
+    </ul>
+
+    <h3>多职业组合</h3>
+    <ul style="margin:8px 0 0 20px;line-height:2;">
+      <li><strong>野蛮人/战士</strong>：获得额外专长，弥补专长不足</li>
+      <li><strong>野蛮人/游侠</strong>：获得双手武器战斗专长树，增加多攻击能力</li>
+      <li><strong>野蛮人 2 / 战士X</strong>：取直觉闪避后全转战士，专注专长</li>
+    </ul>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div style="background:#fdf2e9;border-left:4px solid var(--accent-gold);padding:14px 18px;border-radius:0 var(--radius) var(--radius) 0;margin:12px 0;">
+      <h4 style="margin:0 0 8px;color:var(--accent-red);">狂暴持续时间计算</h4>
+      <p><strong>规则文字（PHB p.25）：</strong>"lasts for a number of rounds equal to 3 + the character's (newly improved) Constitution modifier"</p>
+      <p><strong>澄清：</strong>用进入狂暴<em>后</em>的体质调整值计算持续时间，即+4体质加成已生效。</p>
+      <p><span style="background:#e8f5e9;padding:2px 8px;border-radius:4px;font-size:12px;">来源：PHB 3.5版 p.25</span></p>
+    </div>
+    <div style="background:#f3e5f5;border-left:4px solid #9c27b0;padding:14px 18px;border-radius:0 var(--radius) var(--radius) 0;margin:12px 0;">
+      <h4 style="margin:0 0 8px;color:#6a1b9a;">临时HP与死亡</h4>
+      <p>狂暴结束时，临时HP（来自体质+4）消失。如果角色当前HP因此变为负值，仍然存活（只是从临时HP变回正式HP损失）。</p>
+      <p><strong>注意：</strong>很多玩家误解"狂暴结束=角色可能当场死亡"，实际上不会。</p>
+    </div>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      📚 来源：PHB p.25-27 | SRD · Barbarian | 
+      <a href="bard.html">← 上一页：吟游诗人</a> | <a href="cleric.html">下一页：牧师 →</a>
+    </p>
+  </article>
+</div>
+
+<footer class="site-footer" style="background:var(--bg-navbar);color:#aaa;padding:16px;text-align:center;font-size:13px;">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+</body>
+</html>

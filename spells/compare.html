@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法术对比 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .compare-hero {
+    background:linear-gradient(135deg,#0d1b2e 0%,#16213e 100%);
+    border-radius:12px; padding:24px 32px; margin:16px 0;
+  }
+  .compare-hero h2 { color:#fff; margin:0 0 6px; font-size:1.3rem; }
+  .compare-hero p { color:var(--text-muted); margin:0; font-size:0.9rem; }
+  .spell-selector { background:var(--bg-card); border-radius:10px; padding:20px; margin-bottom:20px; }
+  .selector-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px; margin-top:12px; }
+  .selector-slot {
+    border:2px dashed var(--border); border-radius:8px; padding:12px; min-height:80px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    transition:.2s; cursor:pointer; position:relative;
+  }
+  .selector-slot:hover { border-color:var(--accent); }
+  .selector-slot.filled { border-style:solid; border-color:var(--accent); background:var(--bg-main); }
+  .selector-slot .spell-name { font-weight:600; color:var(--accent); font-size:0.9rem; text-align:center; }
+  .selector-slot .spell-level { font-size:0.78rem; color:var(--text-muted); }
+  .selector-slot .btn-remove-slot {
+    position:absolute; top:4px; right:6px; background:none; border:none; color:#e74c3c;
+    cursor:pointer; font-size:1rem; padding:0; line-height:1;
+  }
+  .btn-add-slot {
+    color:var(--text-muted); font-size:0.85rem; text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+  }
+  .btn-add-slot .plus { font-size:1.8rem; line-height:1; }
+  .btn-row { display:flex; gap:10px; flex-wrap:wrap; margin:16px 0; }
+  .btn-action { padding:8px 20px; border-radius:8px; border:none; cursor:pointer; font-size:0.9rem; font-weight:600; transition:.2s; }
+  .btn-primary { background:var(--accent); color:#fff; }
+  .btn-primary:hover { opacity:.9; }
+  .btn-secondary { background:var(--bg-card); color:var(--text); border:1px solid var(--border); }
+  .btn-secondary:hover { border-color:var(--accent); }
+
+  /* 对比表格 */
+  .compare-table-wrapper { overflow-x:auto; }
+  .compare-table { width:100%; border-collapse:collapse; min-width:600px; }
+  .compare-table th.attr-col { 
+    background:var(--bg-card); color:var(--text-muted); padding:10px 12px;
+    text-align:left; font-size:0.82rem; font-weight:700; border-bottom:2px solid var(--border);
+    width:120px; white-space:nowrap;
+  }
+  .compare-table th.spell-col {
+    background:var(--bg-card); padding:14px 12px; text-align:center;
+    border-bottom:2px solid var(--border); border-left:1px solid var(--border);
+  }
+  .compare-table .spell-header-name { font-weight:700; color:var(--accent); font-size:1rem; }
+  .compare-table .spell-header-en { font-size:0.8rem; color:var(--text-muted); }
+  .compare-table td.attr-name {
+    background:var(--bg-card); padding:9px 12px; font-size:0.82rem; color:var(--text-muted);
+    font-weight:600; border-bottom:1px solid var(--border); white-space:nowrap;
+  }
+  .compare-table td.spell-val {
+    padding:9px 14px; border-bottom:1px solid var(--border); border-left:1px solid var(--border);
+    font-size:0.88rem; text-align:center; vertical-align:top;
+  }
+  .compare-table tr:hover td { background:var(--bg-card); }
+  .diff-better { background:#1a4a2e !important; color:#2ecc71; }
+  .diff-worse { background:#4a1a1a !important; color:#e74c3c; }
+  .school-tag { display:inline-block; padding:2px 10px; border-radius:10px; font-size:0.78rem; border:1px solid; }
+  .source-badge { display:inline-block; padding:1px 7px; border-radius:6px; font-size:0.72rem; }
+  .source-phb { background:#1a4a2e; color:#2ecc71; border:1px solid #2ecc71; }
+  .source-3r { background:#2a1a4a; color:#9b59b6; border:1px solid #9b59b6; }
+  .empty-compare { text-align:center; padding:60px; color:var(--text-muted); }
+  .empty-compare .icon { font-size:4rem; margin-bottom:12px; }
+  /* 搜索添加弹窗 */
+  .add-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; align-items:flex-start; padding-top:80px; box-sizing:border-box; }
+  .add-modal.active { display:flex; }
+  .add-modal-inner { background:var(--bg-card); border-radius:12px; width:92%; max-width:640px; max-height:70vh; display:flex; flex-direction:column; }
+  .add-modal-head { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+  .add-modal-body { padding:16px 20px; overflow-y:auto; flex:1; }
+  .add-modal input { width:100%; padding:10px 14px; border-radius:8px; border:1px solid var(--border); background:var(--bg-main); color:var(--text); font-size:0.95rem; box-sizing:border-box; margin-bottom:12px; }
+  .add-modal input:focus { outline:none; border-color:var(--accent); }
+  .search-result-item { 
+    padding:10px 12px; border-radius:6px; cursor:pointer; transition:.15s;
+    border:1px solid transparent; margin-bottom:4px; display:flex; justify-content:space-between; align-items:center;
+  }
+  .search-result-item:hover { background:var(--bg-main); border-color:var(--accent); }
+  .result-name { font-weight:600; color:var(--accent); }
+  .result-meta { font-size:0.8rem; color:var(--text-muted); }
+  .btn-modal-close { background:none; border:none; color:var(--text-muted); font-size:1.3rem; cursor:pointer; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html" class="active">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+<div class="page-wrapper">
+  <!-- 左侧导航 -->
+  <nav class="sidebar">
+    <div class="nav-header">
+      <span class="nav-logo">⚔️</span>
+      <span class="nav-title">D&D 3.5e</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 首页</a></li>
+      <li><a href="../rules.html">📜 核心规则</a></li>
+      <li><a href="intro.html" class="active">✨ 法术大全</a></li>
+      <li><a href="../classes/intro.html">⚔️ 职业</a></li>
+      <li><a href="../races/intro.html">🧝 种族</a></li>
+      <li><a href="../feats/intro.html">🏆 专长</a></li>
+      <li><a href="../skills/intro.html">📊 技能</a></li>
+      <li><a href="../equipment/intro.html">🎒 装备</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a> &gt; <a href="intro.html">法术大全</a> &gt; <span>法术对比</span>
+    </div>
+
+    <div class="compare-hero">
+      <h2>🔀 法术对比工具</h2>
+      <p>最多同时对比 4 个法术，差异会高亮显示。点击槽位从法术库中选择法术。</p>
+    </div>
+
+    <!-- 法术选择器 -->
+    <div class="spell-selector">
+      <h3 style="margin:0 0 4px;font-size:1rem;">选择要对比的法术</h3>
+      <p style="margin:0 0 12px;font-size:0.85rem;color:var(--text-muted);">选择 2-4 个法术进行对比</p>
+      <div class="selector-grid" id="selectorGrid">
+        <!-- JS填充 -->
+      </div>
+    </div>
+
+    <!-- 操作按钮 -->
+    <div class="btn-row">
+      <button class="btn-action btn-primary" onclick="renderCompare()">🔀 开始对比</button>
+      <button class="btn-action btn-secondary" onclick="clearAll()">🗑️ 清空全部</button>
+      <button class="btn-action btn-secondary" onclick="window.location.href='search.html'">← 返回搜索</button>
+      <button class="btn-action btn-secondary" onclick="window.location.href='favorites.html'">⭐ 我的收藏</button>
+    </div>
+
+    <!-- 对比结果 -->
+    <div id="compareResult"></div>
+
+    <div class="footer" style="margin-top:40px;">
+      <p>Dungeons & Dragons 3.5版 中文Wiki · 非官方粉丝制作</p>
+    </div>
+  </main>
+</div>
+
+<!-- 添加法术弹窗 -->
+<div id="addModal" class="add-modal" onclick="if(event.target===this)closeAddModal()">
+  <div class="add-modal-inner">
+    <div class="add-modal-head">
+      <strong>选择法术</strong>
+      <button class="btn-modal-close" onclick="closeAddModal()">✕</button>
+    </div>
+    <div class="add-modal-body">
+      <input type="text" id="addSearchInput" placeholder="输入法术名称（中/英文）搜索…" oninput="searchForAdd()">
+      <div id="addSearchResults"></div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/spells-data.js"></script>
+<script src="../js/spells-domains.js"></script>
+<script>
+const SCHOOL_COLORS = {'咒法系':'#9b59b6','变化系':'#3498db','惑控系':'#e74c3c','死灵系':'#2c3e50','塑能系':'#e67e22','预言系':'#1abc9c','防护系':'#f1c40f','幻术系':'#e91e63','通用系':'#95a5a6'};
+const DOMAIN_COLORS = {'气':'#87CEEB','动物':'#8BC34A','混乱':'#9C27B0','死亡':'#424242','破坏':'#FF5722','土':'#795548','邪恶':'#E91E63','火':'#F44336','善良':'#4CAF50','治疗':'#00BCD4','知识':'#2196F3','守序':'#3F51B5','幸运':'#FFC107','魔法':'#9C27B0','植物':'#4CAF50','防护':'#607D8B','力量':'#D32F2F','太阳':'#FF9800','旅行':'#00BCD4','诡术':'#E91E63','战争':'#B71C1C','水':'#2196F3'};
+const MAX_SLOTS = 4;
+
+// ===== 状态 =====
+let compareList = [];  // 当前对比的法术ID列表
+let addingToSlot = -1; // 正在添加到哪个槽
+
+// ===== 初始化 =====
+function init(){
+  // 从sessionStorage加载对比列表
+  try {
+    const saved = JSON.parse(sessionStorage.getItem('dnd35_compare') || '[]');
+    compareList = saved.filter(id => SPELLS.find(s=>s.id===id));
+  } catch { compareList = []; }
+  
+  renderSlots();
+  if(compareList.length >= 2) renderCompare();
+}
+
+// ===== 槽位渲染 =====
+function renderSlots(){
+  const grid = document.getElementById('selectorGrid');
+  let html = '';
+  for(let i = 0; i < MAX_SLOTS; i++){
+    if(i < compareList.length){
+      const s = SPELLS.find(x=>x.id===compareList[i]);
+      const scColor = SCHOOL_COLORS[s?.school] || '#95a5a6';
+      html += `<div class="selector-slot filled" onclick="openAddModal(${i})">
+        <button class="btn-remove-slot" onclick="event.stopPropagation();removeSlot(${i})">✕</button>
+        <div class="spell-name">${s?.nameZh||'未知'}</div>
+        <div class="spell-level" style="color:${scColor};">${s?.level===0?'戏法':s?.level+'环'} · ${s?.school||''}</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);">${s?.nameEn||''}</div>
+      </div>`;
+    } else if(i < MAX_SLOTS){
+      html += `<div class="selector-slot" onclick="openAddModal(${i})">
+        <div class="btn-add-slot"><div class="plus">+</div><div>点击添加法术</div></div>
+      </div>`;
+    }
+  }
+  grid.innerHTML = html;
+  sessionStorage.setItem('dnd35_compare', JSON.stringify(compareList));
+}
+
+function removeSlot(index){
+  compareList.splice(index, 1);
+  renderSlots();
+  if(compareList.length >= 2) renderCompare();
+  else document.getElementById('compareResult').innerHTML = '';
+}
+
+function clearAll(){
+  compareList = [];
+  renderSlots();
+  document.getElementById('compareResult').innerHTML = '';
+}
+
+// ===== 添加弹窗 =====
+function openAddModal(slotIndex){
+  addingToSlot = slotIndex;
+  document.getElementById('addSearchInput').value = '';
+  document.getElementById('addSearchResults').innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:20px;">输入法术名称开始搜索…</p>';
+  document.getElementById('addModal').classList.add('active');
+  setTimeout(()=>document.getElementById('addSearchInput').focus(), 100);
+}
+function closeAddModal(){
+  document.getElementById('addModal').classList.remove('active');
+}
+function addSpellToSlot(id){
+  if(compareList.includes(id)){ alert('该法术已在对比列表中'); return; }
+  if(addingToSlot < compareList.length) compareList[addingToSlot] = id;
+  else compareList.push(id);
+  closeAddModal();
+  renderSlots();
+  if(compareList.length >= 2) renderCompare();
+}
+function searchForAdd(){
+  const q = (document.getElementById('addSearchInput').value||'').toLowerCase().trim();
+  const container = document.getElementById('addSearchResults');
+  if(!q){ container.innerHTML='<p style="color:var(--text-muted);text-align:center;padding:12px;">输入法术名称开始搜索…</p>'; return; }
+  const results = SPELLS.filter(s => 
+    (s.nameZh||'').includes(q) || (s.nameEn||'').toLowerCase().includes(q)
+  ).slice(0, 20);
+  if(!results.length){ container.innerHTML='<p style="color:var(--text-muted);text-align:center;padding:12px;">未找到匹配法术</p>'; return; }
+  const scColors = SCHOOL_COLORS;
+  container.innerHTML = results.map(s=>{
+    const inList = compareList.includes(s.id);
+    const scColor = scColors[s.school]||'#95a5a6';
+    return `<div class="search-result-item ${inList?'':''}${inList?'style="opacity:.5"':''}" onclick="${inList?'alert(\"已在对比列表中\")':'addSpellToSlot(\"'+s.id+'\")'}" title="${inList?'已在对比列表中':'添加到对比'}">
+      <div>
+        <div class="result-name">${s.nameZh} <span style="font-weight:400;font-size:0.82rem;color:var(--text-muted);">${s.nameEn}</span></div>
+        <div class="result-meta" style="color:${scColor};">${s.level===0?'戏法':s.level+'环'} · ${s.school}</div>
+      </div>
+      ${inList ? '<span style="color:#999;font-size:0.8rem;">已添加</span>' : '<span style="color:var(--accent);font-size:0.8rem;">+ 添加</span>'}
+    </div>`;
+  }).join('');
+}
+
+// ===== 对比渲染 =====
+const COMPARE_ATTRS = [
+  { key:'level', label:'⚡ 环级', format: v => v===0?'戏法':v+'环', compare:'lower' },
+  { key:'school', label:'🎓 学派', format: v => v },
+  { key:'components', label:'🔤 施法成分', format: v => v },
+  { key:'castingTime', label:'⏱ 施法时间', format: v => v },
+  { key:'range', label:'📏 距离', format: v => v },
+  { key:'target', label:'🎯 目标/范围', format: v => v },
+  { key:'duration', label:'🕐 持续时间', format: v => v },
+  { key:'savingThrow', label:'🛡 豁免检定', format: v => v },
+  { key:'spellResist', label:'✋ 法术抗力', format: v => v },
+  { key:'source', label:'📚 来源', format: v => v==='PHB'?'PHB（核心）':(v==='3R'?'3R（拓展）':v||'—') },
+];
+
+function renderCompare(){
+  const container = document.getElementById('compareResult');
+  if(compareList.length < 2){
+    container.innerHTML = `<div class="empty-compare"><div class="icon">⚖️</div><p>请选择至少 2 个法术进行对比</p></div>`;
+    return;
+  }
+  const spells = compareList.map(id => SPELLS.find(s=>s.id===id)).filter(Boolean);
+
+  // 表头
+  let html = '<div class="compare-table-wrapper"><table class="compare-table"><thead><tr>';
+  html += '<th class="attr-col">属性</th>';
+  spells.forEach(s => {
+    const scColor = SCHOOL_COLORS[s.school]||'#95a5a6';
+    const sourceBadge = s.source==='PHB' 
+      ? '<span class="source-badge source-phb">PHB</span>'
+      : (s.source==='3R' ? '<span class="source-badge source-3r">3R</span>' : '');
+    html += `<th class="spell-col">
+      <div class="spell-header-name">${s.nameZh}</div>
+      <div class="spell-header-en">${s.nameEn}</div>
+      <div style="margin-top:4px;"><span class="school-tag" style="color:${scColor};border-color:${scColor};">${s.school}</span> ${sourceBadge}</div>
+    </th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  // 每个属性行
+  COMPARE_ATTRS.forEach(attr => {
+    html += `<tr><td class="attr-name">${attr.label}</td>`;
+    const vals = spells.map(s => s[attr.key]);
+    
+    spells.forEach((s, i) => {
+      const val = s[attr.key];
+      let cellClass = 'spell-val';
+      
+      // 等级对比：低的更好
+      if(attr.compare === 'lower' && typeof val === 'number'){
+        const minVal = Math.min(...vals.filter(v=>typeof v==='number'));
+        const maxVal = Math.max(...vals.filter(v=>typeof v==='number'));
+        if(val === minVal && minVal !== maxVal) cellClass += ' diff-better';
+        else if(val === maxVal && minVal !== maxVal) cellClass += ' diff-worse';
+      }
+      
+      // 差异高亮（非数值）
+      if(!attr.compare && vals.some(v=>v!==val)){
+        // 有差异的话高亮（不用绿/红，只是背景区别）
+      }
+      
+      html += `<td class="${cellClass}">${attr.format(val)||'—'}</td>`;
+    });
+    html += '</tr>';
+  });
+
+  // 领域行
+  if(typeof SPELL_DOMAINS !== 'undefined'){
+    html += '<tr><td class="attr-name">📜 领域</td>';
+    spells.forEach(s => {
+      const domains = SPELL_DOMAINS[s.id] || [];
+      html += `<td class="spell-val">${domains.length > 0 
+        ? domains.map(d=>`<span style="padding:1px 6px;border-radius:8px;font-size:0.75rem;border:1px solid ${DOMAIN_COLORS[d]||'#999'};color:${DOMAIN_COLORS[d]||'#999'};">${d}</span>`).join(' ')
+        : '—'}</td>`;
+    });
+    html += '</tr>';
+  }
+
+  // 描述行
+  html += '<tr><td class="attr-name">📝 法术描述</td>';
+  spells.forEach(s => {
+    html += `<td class="spell-val" style="text-align:left;font-size:0.82rem;line-height:1.6;max-width:300px;">${(s.desc||'').replace(/\n/g,'<br>')}</td>`;
+  });
+  html += '</tr>';
+
+  html += '</tbody></table></div>';
+
+  // 简要说明
+  html += `<p style="margin-top:12px;font-size:0.82rem;color:var(--text-muted);">
+    <span style="display:inline-block;width:12px;height:12px;background:#1a4a2e;border-radius:2px;margin-right:4px;vertical-align:middle;"></span>绿色背景 = 等级更低（需求更低）
+    &nbsp;&nbsp;
+    <span style="display:inline-block;width:12px;height:12px;background:#4a1a1a;border-radius:2px;margin-right:4px;vertical-align:middle;"></span>红色背景 = 等级更高
+  </p>`;
+
+  container.innerHTML = html;
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key==='Escape') closeAddModal();
+});
+init();
+</script>
+</body>
+</html>

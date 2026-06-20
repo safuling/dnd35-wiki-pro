@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3R拓展功能大全 - 资源与工具 | D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .header p { font-size: 1.1em; opacity: 0.9; }
+
+    .nav-links { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .nav-links a { padding: 8px 16px; background: white; color: #667eea; text-decoration: none; border-radius: 4px; border: 2px solid #667eea; transition: all 0.3s; }
+    .nav-links a:hover { background: #667eea; color: white; }
+
+    .intro { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .intro h2 { color: #667eea; margin-bottom: 15px; }
+
+    .section { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .section h2 { color: #764ba2; margin-bottom: 20px; border-bottom: 2px solid #764ba2; padding-bottom: 10px; }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+    .tool-card { border: 2px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: all 0.3s; background: #fafafa; }
+    .tool-card:hover { border-color: #667eea; box-shadow: 0 4px 12px rgba(102,126,234,0.2); transform: translateY(-2px); }
+    .tool-card h3 { color: #667eea; margin-bottom: 10px; font-size: 1.2em; }
+    .tool-card .desc { font-size: 0.95em; color: #555; line-height: 1.5; margin: 10px 0; }
+    .tool-card .btn { display: inline-block; padding: 8px 16px; background: #667eea; color: white; text-decoration: none; border-radius: 4px; margin-top: 10px; transition: all 0.3s; }
+    .tool-card .btn:hover { background: #764ba2; }
+
+    .table-container { overflow-x: auto; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+    th { background: #667eea; color: white; font-weight: 600; }
+    tr:hover { background: #f5f5f5; }
+
+    .random-table { background: #f9f9f9; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #667eea; }
+    .random-table h4 { color: #764ba2; margin-bottom: 10px; }
+
+    .calculator { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 15px 0; }
+    .calculator input { padding: 8px; margin: 5px; border: 1px solid #ccc; border-radius: 4px; }
+    .calculator button { padding: 8px 16px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer; margin: 5px; }
+    .calculator button:hover { background: #764ba2; }
+    .calculator .result { margin-top: 15px; padding: 10px; background: white; border-radius: 4px; font-weight: bold; }
+
+    .highlight { background: #fff3cd; padding: 2px 6px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="container">
+    <div class="header">
+      <h1>🔧 3R拓展功能大全</h1>
+      <p>资源与工具 - D&D 3.5e 扩展内容</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">🏠 返回主页</a>
+      <a href="new-races.html">🧝 新增种族</a>
+      <a href="new-classes.html">⚔️ 新增职业</a>
+      <a href="new-feats.html">🌟 新增专长</a>
+      <a href="new-spells.html">✨ 新增法术</a>
+      <a href="new-equipment.html">⚔️ 新增装备</a>
+      <a href="new-monsters.html">👹 新增怪物</a>
+      <a href="optional-rules.html">📜 可选规则</a>
+      <a href="resources-tools.html">🔧 资源与工具</a>
+    </div>
+
+    <div class="intro">
+      <h2>📖 关于资源与工具</h2>
+      <p><strong>3R拓展</strong>中的资源与工具包括：</p>
+      <ul style="margin-left: 20px; margin-top: 10px;">
+        <li><strong>随机表</strong>：随机事件、遭遇、战利品、NPC生成等</li>
+        <li><strong>计算器</strong>：属性买点、经验值、战斗加成等</li>
+        <li><strong>快速参考表</strong>：常见检定DC、伤害表、价格表等</li>
+        <li><strong>版本转换指南</strong>：从其他版本（如5E）转换到3.5e的指南</li>
+      </ul>
+      <p style="margin-top: 15px;">这些工具可以帮助DM和玩家更快地运行游戏，减少准备时间。</p>
+    </div>
+
+    <div class="section">
+      <h2>🎲 随机表</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>随机事件表</h3>
+          <div class="desc">在旅行或城镇中遇到的随机事件。</div>
+          <div class="random-table">
+            <h4>d20 随机事件</h4>
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td>1-2</td><td>遭遇盗贼（1d4个）</td></tr>
+              <tr><td>3-4</td><td>发现宝箱（1d4×100 gp）</td></tr>
+              <tr><td>5-6</td><td>遇到商人（可以买卖）</td></tr>
+              <tr><td>7-8</td><td>恶劣天气（延迟1d4小时）</td></tr>
+              <tr><td>9-10</td><td>遇到流浪者（可以获得情报）</td></tr>
+              <tr><td>11-12</td><td>发现草药（治疗1d4点伤害）</td></tr>
+              <tr><td>13-14</td><td>遭遇野兽（1d6狼或熊）</td></tr>
+              <tr><td>15-16</td><td>找到捷径（节省1d4小时）</td></tr>
+              <tr><td>17-18</td><td>遇到贵族（可以得到任务）</td></tr>
+              <tr><td>19-20</td><td>发现遗迹（可能有宝藏或怪物）</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>NPC快速生成表</h3>
+          <div class="desc">快速生成NPC的外观、性格、目标。</div>
+          <div class="random-table">
+            <h4>d20 外观特征</h4>
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td>1-2</td><td>高大威猛，疤痕满脸</td></tr>
+              <tr><td>3-4</td><td>瘦小精悍，眼神锐利</td></tr>
+              <tr><td>5-6</td><td>衣着华丽，佩戴珠宝</td></tr>
+              <tr><td>7-8</td><td>衣衫褴褛，看起来贫穷</td></tr>
+              <tr><td>9-10</td><td>面容和善，笑容可掬</td></tr>
+              <tr><td>11-12</td><td>神情严肃，不苟言笑</td></tr>
+              <tr><td>13-14</td><td>异族特征（尖耳、獠牙等）</td></tr>
+              <tr><td>15-16</td><td>残疾（眼罩、木腿等）</td></tr>
+              <tr><td>17-18</td><td>纹身或彩绘</td></tr>
+              <tr><td>19-20</td><td>ROLL TWICE</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>战利品表</h3>
+          <div class="desc">根据怪物CR生成战利品。</div>
+          <div class="random-table">
+            <h4>按CR战利品</h4>
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td>CR 1-2</td><td>1d4×10 gp + 1d2件魔法物品（次等）</td></tr>
+              <tr><td>CR 3-5</td><td>1d4×100 gp + 1d2件魔法物品（中等）</td></tr>
+              <tr><td>CR 6-8</td><td>1d4×500 gp + 1d2件魔法物品（良好）</td></tr>
+              <tr><td>CR 9-11</td><td>1d4×1,000 gp + 1d2件魔法物品（优秀）</td></tr>
+              <tr><td>CR 12+</td><td>1d4×5,000 gp + 1d2件魔法物品（传奇）</td></tr>
+            </table>
+            <p style="margin-top: 10px; font-size: 0.85em;">注：魔法物品等级需要参考《Dungeon Master's Guide》中的魔法物品表。</p>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>遭遇等级表</h3>
+          <div class="desc">根据队伍等级和人数确定合适的遭遇CR。</div>
+          <div class="random-table">
+            <h4>队伍等级 vs 遭遇CR</h4>
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td>1级队伍（4人）</td><td>适宜CR 1-3</td></tr>
+              <tr><td>2级队伍（4人）</td><td>适宜CR 2-4</td></tr>
+              <tr><td>3级队伍（4人）</td><td>适宜CR 3-5</td></tr>
+              <tr><td>4级队伍（4人）</td><td>适宜CR 4-6</td></tr>
+              <tr><td>5级队伍（4人）</td><td>适宜CR 5-7</td></tr>
+              <tr><td colspan="2">每多1人，+0.5 CR；每少1人，-0.5 CR</td></tr>
+              <tr><td colspan="2">困难遭遇：+2 CR；致命遭遇：+4 CR</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🔢 计算器</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>属性买点计算器</h3>
+          <div class="desc">计算使用买点系统时属性的花费。</div>
+          <div class="calculator">
+            <div style="margin: 10px 0;">
+              <label>买点总数：</label>
+              <input type="number" id="pointBuyTotal" value="25" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>属性1 (6-18)：</label>
+              <input type="number" id="stat1" value="10" min="6" max="18" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>属性2 (6-18)：</label>
+              <input type="number" id="stat2" value="10" min="6" max="18" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>属性3 (6-18)：</label>
+              <input type="number" id="stat3" value="10" min="6" max="18" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>属性4 (6-18)：</label>
+              <input type="number" id="stat4" value="10" min="6" max="18" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>属性5 (6-18)：</label>
+              <input type="number" id="stat5" value="10" min="6" max="18" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>属性6 (6-18)：</label>
+              <input type="number" id="stat6" value="10" min="6" max="18" style="width: 60px;">
+            </div>
+            <button onclick="calculatePointBuy()">计算</button>
+            <div class="result" id="pointBuyResult">剩余买点：25</div>
+          </div>
+          <script>
+            function calculatePointBuy() {
+              const costs = {6: -2, 7: -1, 8: 0, 9: 1, 10: 2, 11: 3, 12: 4, 13: 5, 14: 6, 15: 8, 16: 10, 17: 13, 18: 16};
+              const total = parseInt(document.getElementById('pointBuyTotal').value);
+              let spent = 0;
+              for (let i = 1; i <= 6; i++) {
+                const stat = parseInt(document.getElementById('stat' + i).value);
+                spent += costs[stat] || 0;
+              }
+              const remaining = total - spent;
+              document.getElementById('pointBuyResult').innerHTML = `花费买点：${spent}<br>剩余买点：${remaining}`;
+            }
+          </script>
+        </div>
+
+        <div class="tool-card">
+          <h3>经验值计算器</h3>
+          <div class="desc">根据怪物CR和队伍等级计算获得的经验值。</div>
+          <div class="calculator">
+            <div style="margin: 10px 0;">
+              <label>怪物CR：</label>
+              <input type="number" id="monsterCR" value="2" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>怪物数量：</label>
+              <input type="number" id="monsterCount" value="1" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>队伍人数：</label>
+              <input type="number" id="partySize" value="4" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>队伍平均等级：</label>
+              <input type="number" id="partyLevel" value="2" style="width: 60px;">
+            </div>
+            <button onclick="calculateXP()">计算</button>
+            <div class="result" id="xpResult">每人获得经验值：-</div>
+          </div>
+          <script>
+            function calculateXP() {
+              const xpTable = {1: 300, 2: 600, 3: 900, 4: 1200, 5: 1500, 6: 1800, 7: 2100, 8: 2400, 9: 2700, 10: 3000};
+              const cr = parseInt(document.getElementById('monsterCR').value);
+              const count = parseInt(document.getElementById('monsterCount').value);
+              const size = parseInt(document.getElementById('partySize').value);
+              const baseXP = xpTable[cr] || cr * 300;
+              const totalXP = baseXP * count * (1 + (count - 1) * 0.5);
+              const perPlayer = Math.floor(totalXP / size);
+              document.getElementById('xpResult').innerHTML = `总经验值：${totalXP}<br>每人获得：${perPlayer} XP`;
+            }
+          </script>
+        </div>
+
+        <div class="tool-card">
+          <h3>战斗加值计算器</h3>
+          <div class="desc">计算攻击加值、伤害加值、AC等。</div>
+          <div class="calculator">
+            <div style="margin: 10px 0;">
+              <label>基础攻击加值（BAB）：</label>
+              <input type="number" id="bab" value="4" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>属性调整值：</label>
+              <input type="number" id="statMod" value="3" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>尺寸加值：</label>
+              <input type="number" id="sizeMod" value="0" style="width: 60px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>其他加值：</label>
+              <input type="number" id="miscMod" value="0" style="width: 60px;">
+            </div>
+            <button onclick="calculateAttack()">计算</button>
+            <div class="result" id="attackResult">攻击加值：-</div>
+          </div>
+          <script>
+            function calculateAttack() {
+              const bab = parseInt(document.getElementById('bab').value);
+              const statMod = parseInt(document.getElementById('statMod').value);
+              const sizeMod = parseInt(document.getElementById('sizeMod').value);
+              const miscMod = parseInt(document.getElementById('miscMod').value);
+              const total = bab + statMod + sizeMod + miscMod;
+              document.getElementById('attackResult').innerHTML = `总攻击加值：+${total}<br>（BAB +${bab}, 属性 +${statMod}, 尺寸 +${sizeMod}, 其他 +${miscMod}）`;
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📋 快速参考表</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>检定类型</th>
+              <th>DC</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>简单任务</strong></td><td>5</td><td>任何人都能轻易完成</td></tr>
+            <tr><td><strong>普通任务</strong></td><td>10</td><td>需要一些训练或天赋</td></tr>
+            <tr><td><strong>困难任务</strong></td><td>15</td><td>需要专业知识</td></tr>
+            <tr><td><strong>极难任务</strong></td><td>20</td><td>只有专家才能尝试</td></tr>
+            <tr><td><strong>几乎不可能</strong></td><td>25+</td><td>需要传奇能力</td></tr>
+            <tr><td><strong>察觉秘密门</strong></td><td>15-25</td><td>取决于隐藏质量</td></tr>
+            <tr><td><strong>察觉伏击</strong></td><td>15-20</td><td>取决于敌方Hide检定</td></tr>
+            <tr><td><strong>打开简易锁</strong></td><td>15</td><td>复杂锁DC 20-30</td></tr>
+            <tr><td><strong>攀爬平滑墙壁</strong></td><td>15</td><td>粗糙墙壁DC 5-10</td></tr>
+            <tr><td><strong>游泳（平静水域）</strong></td><td>10</td><td>湍流DC 15-20</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📚 版本转换指南</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>从5E转换到3.5e</h3>
+          <div class="desc">属性调整值转换：</div>
+          <div class="random-table">
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td><strong>5E属性</strong></td><td><strong>3.5e属性</strong></td><td><strong>调整值</strong></td></tr>
+              <tr><td>10-11</td><td>10-11</td><td>+0</td></tr>
+              <tr><td>12-13</td><td>12-13</td><td>+1</td></tr>
+              <tr><td>14-15</td><td>14-15</td><td>+2</td></tr>
+              <tr><td>16-17</td><td>16-17</td><td>+3</td></tr>
+              <tr><td>18-19</td><td>18</td><td>+4</td></tr>
+              <tr><td>20</td><td>18+特殊奖励</td><td>+4+</td></tr>
+            </table>
+            <p style="margin-top: 10px;"><strong>注意</strong>：5E的属性上限更高，转换到3.5e时可能需要限制。</p>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>挑战等级（CR）转换</h3>
+          <div class="desc">5E挑战等级 vs 3.5e挑战等级：</div>
+          <div class="random-table">
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td><strong>5E CR</strong></td><td><strong>3.5e CR</strong></td><td><strong>说明</strong></td></tr>
+              <tr><td>1</td><td>1</td><td>基本相同</td></tr>
+              <tr><td>2</td><td>2-3</td><td>5E稍强</td></tr>
+              <tr><td>3</td><td>3-4</td><td>5E稍强</td></tr>
+              <tr><td>4</td><td>4-5</td><td>5E稍强</td></tr>
+              <tr><td>5+</td><td>需要调整</td><td>5E High CR更强</td></tr>
+            </table>
+            <p style="margin-top: 10px;"><strong>建议</strong>：从5E转换时，将怪物HP减半，伤害加值+2。</p>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>法术等级转换</h3>
+          <div class="desc">5E法术环级 vs 3.5e法术等级：</div>
+          <div class="random-table">
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td><strong>5E环级</strong></td><td><strong>3.5e等级</strong></td><td><strong>示例</strong></td></tr>
+              <tr><td>戏法</td><td>0级</td><td>火花术、神导术</td></tr>
+              <tr><td>1环</td><td>1级</td><td>治疗轻伤、法师护甲</td></tr>
+              <tr><td>2环</td><td>2级</td><td>镜影术、蛛爬术</td></tr>
+              <tr><td>3环</td><td>3级</td><td>火球术、飞行术</td></tr>
+              <tr><td>4环</td><td>4级</td><td>任意门、石肤术</td></tr>
+              <tr><td>5环</td><td>5级</td><td> maturation、巨虫术</td></tr>
+            </table>
+            <p style="margin-top: 10px;"><strong>注意</strong>：大多数法术可以直接转换，但某些法术在5E中更强。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📊 其他有用资源</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>法术成分快速参考</h3>
+          <div class="desc">常见法术成分的快速参考表。</div>
+          <div class="random-table">
+            <p><strong>V（言语）</strong>：需要说话，被gagged或in silence无法施法</p>
+            <p><strong>S（姿势）</strong>：需要手势，被bound或wearing gauntlets可能受影响</p>
+            <p><strong>M（材料）</strong>：需要材料成分，可以用施法者包代替（≤50 gp）</p>
+            <p><strong>F（专注）</strong>：需要专注成分（如十字弓箭），必须手持</p>
+            <p><strong>DF（神优专注）</strong>：需要神优符号或圣杯</p>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>伤害类型快速参考</h3>
+          <div class="desc">常见伤害类型及其对抗方法。</div>
+          <div class="random-table">
+            <p><strong>钝击（Bludgeoning）</strong>：骨头、石头、非锋利武器</p>
+            <p><strong>穿刺（Piercing）</strong>：箭、矛、匕首</p>
+            <p><strong>挥砍（Slashing）</strong>：剑、斧</p>
+            <p><strong>酸（Acid）</strong>：抗力10点/环级</p>
+            <p><strong>冷（Cold）</strong>：抗力10点/环级</p>
+            <p><strong>电（Electricity）</strong>：抗力10点/环级</p>
+            <p><strong>火（Fire）</strong>：抗力10点/环级</p>
+            <p><strong>音（Sonic）</strong>：抗力10点/环级</p>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>常见条件状态</h3>
+          <div class="desc">D&D 3.5e中的常见条件状态。</div>
+          <div class="random-table">
+            <p><strong>夹击（Flanked）</strong>：承受-2 AC惩罚</p>
+            <p><strong>倒地（Prone）</strong>：近战攻击+4，远程攻击-4</p>
+            <p><strong>隐形（Invisible）</strong>：攻击者承受50%失手几率</p>
+            <p><strong>恐慌（Panicked）</strong>：只能移动和逃跑</p>
+            <p><strong>震骇（Shaken）</strong>：所有检定-2</p>
+            <p><strong>惊惧（Frightened）</strong>：远离恐惧源</p>
+            <p><strong>昏迷（Unconscious）</strong>：hp ≤ -1，稳定-1到-9</p>
+            <p><strong>死亡（Dead）</strong>：hp ≤ -10</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🎲 额外随机表</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>城镇事件表</h3>
+          <div class="desc">当PC进入城镇或停留期间可能发生的随机事件。</div>
+          <div class="random-table">
+            <h4>d20 城镇事件</h4>
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td>1</td><td>市集日——所有物品价格降低10%</td></tr>
+              <tr><td>2</td><td>节日庆典——全镇举行盛大宴会</td></tr>
+              <tr><td>3</td><td>火灾——城镇某处起火，需要救援</td></tr>
+              <tr><td>4</td><td>盗窃案——有商铺被盗，悬赏缉拿</td></tr>
+              <tr><td>5</td><td>贵族访问——一位贵族带着随从来到城镇</td></tr>
+              <tr><td>6</td><td>瘟疫传闻——附近村庄爆发瘟疫</td></tr>
+              <tr><td>7</td><td>怪物袭击——郊区出现怪物踪迹</td></tr>
+              <tr><td>8</td><td>商人车队——大型商队抵达，带来稀有商品</td></tr>
+              <tr><td>9</td><td>宗教仪式——当地神殿举办公开仪式</td></tr>
+              <tr><td>10</td><td>审判日——公开审判正在进行</td></tr>
+              <tr><td>11</td><td>竞技比赛——比武大会或箭术比赛</td></tr>
+              <tr><td>12</td><td>失踪事件——有人离奇失踪</td></tr>
+              <tr><td>13</td><td>谣言四起——关于某位NPC的离奇传闻</td></tr>
+              <tr><td>14</td><td>征兵令——领主正在招募士兵</td></tr>
+              <tr><td>15</td><td>暴雨洪水——连日暴雨导致洪水</td></tr>
+              <tr><td>16</td><td>政变阴谋——有人密谋推翻当地统治者</td></tr>
+              <tr><td>17</td><td>宝藏传闻——据说附近某处埋有宝藏</td></tr>
+              <tr><td>18</td><td>幻术表演——巡游魔术师在表演，可能有诈</td></tr>
+              <tr><td>19</td><td>怪物入城——有怪物潜入城市下水道</td></tr>
+              <tr><td>20</td><td>龙之传闻——据说附近有龙出没</td></tr>
+            </table>
+            <p style="margin-top: 8px; font-size: 0.85em;">掷骰方法：PC进入城镇时掷1d20，或每停留1d4天掷一次。</p>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>地下城陷阱表</h3>
+          <div class="desc">地下城探索时可能触发的各种陷阱。</div>
+          <div class="random-table">
+            <h4>d20 陷阱种类</h4>
+            <table style="width: 100%; font-size: 0.9em;">
+              <tr><td>1-2</td><td>毒针陷阱——1d3穿刺，DC 12强韧 vs 1d4体质伤害</td></tr>
+              <tr><td>3-4</td><td>落石——2d6钝击，DC 15反射减半</td></tr>
+              <tr><td>5-6</td><td>毒气——DC 14强韧 vs 昏迷1d4轮</td></tr>
+              <tr><td>7-8</td><td>绊索——DC 12反射 vs 倒地</td></tr>
+              <tr><td>9-10</td><td>箭矢陷阱——1d8穿刺，攻击加值+10</td></tr>
+              <tr><td>11-12</td><td>闪光陷阱——DC 13强韧 vs 目盲1d4轮</td></tr>
+              <tr><td>13-14</td><td>酸液喷溅——2d4酸，DC 14反射减半</td></tr>
+              <tr><td>15-16</td><td>闪电符文——2d8电，DC 15反射减半</td></tr>
+              <tr><td>17-18</td><td>传送陷阱——传送到地下城随机位置</td></tr>
+              <tr><td>19-20</td><td>诅咒陷阱——DC 16意志 vs 属性-4（持续1小时）</td></tr>
+            </table>
+            <p style="margin-top: 8px; font-size: 0.85em;">搜索DC：基础DC 20；盗贼可使用解除装置技能。陷阱CR = 队伍等级 ±1。</p>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>魔法物品强化表</h3>
+          <div class="desc">随机生成武器或防具的魔法强化效果。</div>
+          <div class="random-table">
+            <h4>d100 武器强化</h4>
+            <table style="width: 100%; font-size: 0.85em;">
+              <tr><td>1-10</td><td>+1增强加值</td></tr>
+              <tr><td>11-18</td><td>+2增强加值</td></tr>
+              <tr><td>19-24</td><td>+3增强加值</td></tr>
+              <tr><td>25-28</td><td>+4增强加值</td></tr>
+              <tr><td>29-30</td><td>+5增强加值</td></tr>
+              <tr><td>31-38</td><td>炽焰（+1d6火焰伤害）</td></tr>
+              <tr><td>39-46</td><td>冻寒（+1d6寒冰伤害）</td></tr>
+              <tr><td>47-54</td><td>电击（+1d6电击伤害）</td></tr>
+              <tr><td>55-60</td><td>锐锋（重击范围翻倍）/ 回力（投掷后返回）</td></tr>
+              <tr><td>61-66</td><td>护体（AC+1偏斜加值）</td></tr>
+              <tr><td>67-72</td><td>防御（AC+1，可叠加）</td></tr>
+              <tr><td>73-78</td><td>储法（可储存一个接触法术）</td></tr>
+              <tr><td>79-84</td><td>幽冥（可攻击虚体生物）</td></tr>
+              <tr><td>85-90</td><td>瓦解（对构装体额外2d6伤害）</td></tr>
+              <tr><td>91-94</td><td>追击（加快武器速度）</td></tr>
+              <tr><td>95-97</td><td>舞空（武器自行战斗4轮）</td></tr>
+              <tr><td>98-99</td><td>斩首（重击时即死，DC可变）</td></tr>
+              <tr><td>100</td><td>重ROLL两次并叠加效果</td></tr>
+            </table>
+            <p style="margin-top: 8px; font-size: 0.85em;">适用：武器/防具均可。每+1等效加值约等于+1增强加值的价格。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🔢 额外计算器</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>属性检定DC成功率计算器</h3>
+          <div class="desc">输入技能等级和属性调整值，查看各DC的成功率。</div>
+          <div class="calculator">
+            <div style="margin: 10px 0;">
+              <label>技能等级：</label>
+              <input type="number" id="skillRank" value="5" min="0" max="23" style="width: 70px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>属性调整值：</label>
+              <input type="number" id="abilityCheckMod" value="2" style="width: 70px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>其他加值：</label>
+              <input type="number" id="abilityCheckMisc" value="0" style="width: 70px;">
+            </div>
+            <button onclick="calcAbilityCheck()">计算成功率</button>
+            <div class="result" id="abilityCheckResult">总加值：-<br>请点击计算</div>
+          </div>
+          <script>
+            function calcAbilityCheck() {
+              const rank = parseInt(document.getElementById('skillRank').value) || 0;
+              const mod = parseInt(document.getElementById('abilityCheckMod').value) || 0;
+              const misc = parseInt(document.getElementById('abilityCheckMisc').value) || 0;
+              const total = rank + mod + misc;
+              const dcs = [5, 10, 15, 20, 25, 30, 35, 40];
+              let html = `<strong>总加值：+${total}</strong>`;
+              html += '<table style="margin-top:8px;width:100%;font-size:0.9em;"><tr><th>DC</th><th>需要d20</th><th>成功率</th></tr>';
+              for (const dc of dcs) {
+                const needed = dc - total;
+                let chance;
+                if (needed <= 1) chance = '100% (自动成功)';
+                else if (needed > 20) chance = '0% (不可能)';
+                else chance = Math.round((21 - needed) / 20 * 100) + '%';
+                html += `<tr><td>${dc}</td><td>${needed <= 1 ? '自动' : needed > 20 ? 'N/A' : needed + '+'}</td><td>${chance}</td></tr>`;
+              }
+              html += '</table>';
+              document.getElementById('abilityCheckResult').innerHTML = html;
+            }
+          </script>
+        </div>
+
+        <div class="tool-card">
+          <h3>法术DC计算器</h3>
+          <div class="desc">计算3.5e法术豁免DC：10 + 法术等级 + 施法属性调整值 + 专长加值。</div>
+          <div class="calculator">
+            <div style="margin: 10px 0;">
+              <label>法术等级（0-9）：</label>
+              <input type="number" id="spellLevel" value="3" min="0" max="9" style="width: 70px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>施法属性调整值：</label>
+              <input type="number" id="spellAbilityMod" value="4" style="width: 70px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>专长加值（法术专攻等）：</label>
+              <input type="number" id="spellFeatBonus" value="0" min="0" max="6" style="width: 70px;">
+            </div>
+            <div style="margin: 10px 0;">
+              <label>其他加值：</label>
+              <input type="number" id="spellMiscBonus" value="0" style="width: 70px;">
+            </div>
+            <button onclick="calcSpellDC()">计算DC</button>
+            <div class="result" id="spellDcResult">法术豁免DC：-</div>
+          </div>
+          <script>
+            function calcSpellDC() {
+              const sl = parseInt(document.getElementById('spellLevel').value) || 0;
+              const am = parseInt(document.getElementById('spellAbilityMod').value) || 0;
+              const fb = parseInt(document.getElementById('spellFeatBonus').value) || 0;
+              const mb = parseInt(document.getElementById('spellMiscBonus').value) || 0;
+              const dc = 10 + sl + am + fb + mb;
+              document.getElementById('spellDcResult').innerHTML = `<strong>法术豁免DC：${dc}</strong><br>（基础10 + 法术等级${sl} + 属性${am} + 专长${fb} + 其他${mb}）`;
+            }
+          </script>
+        </div>
+
+        <div class="tool-card">
+          <h3>伤害掷骰模拟器</h3>
+          <div class="desc">输入掷骰表达式（如"2d6+3"或"3d8+1d6-1"），模拟掷骰结果。</div>
+          <div class="calculator">
+            <div style="margin: 10px 0;">
+              <label>掷骰表达式：</label>
+              <input type="text" id="diceExpr" value="2d6+3" style="width: 160px;" placeholder="如 2d6+3, 1d20+5">
+            </div>
+            <button onclick="rollDiceExpr()">掷骰！</button> 
+            <button onclick="rollDiceExprMulti(5)" style="background:#764ba2;">连续掷5次</button>
+            <div class="result" id="diceExprResult">等待掷骰...</div>
+          </div>
+          <script>
+            function rollDiceExpr() { rollDiceExprInternal(1); }
+            function rollDiceExprMulti(n) { rollDiceExprInternal(n); }
+            function rollDiceExprInternal(times) {
+              const expr = document.getElementById('diceExpr').value.trim();
+              let html = '';
+              for (let t = 0; t < times; t++) {
+                let total = 0;
+                let details = [];
+                const diceRegex = /(\d+)d(\d+)/gi;
+                let match;
+                const exprCopy = expr;
+                while ((match = diceRegex.exec(exprCopy)) !== null) {
+                  const count = parseInt(match[1]);
+                  const sides = parseInt(match[2]);
+                  let rolls = [];
+                  for (let i = 0; i < count; i++) {
+                    rolls.push(Math.floor(Math.random() * sides) + 1);
+                  }
+                  const sum = rolls.reduce((a, b) => a + b, 0);
+                  details.push(`${count}d${sides}=[${rolls.join(',')}]=${sum}`);
+                  total += sum;
+                }
+                const mods = expr.replace(/\d+d\d+/gi, '').match(/[+-]\d+/g);
+                if (mods) {
+                  mods.forEach(m => {
+                    const val = parseInt(m);
+                    total += val;
+                    details.push(val > 0 ? '+' + val : '' + val);
+                  });
+                }
+                if (details.length === 0) {
+                  html = '无效的掷骰表达式！格式如：2d6+3';
+                  break;
+                }
+                if (times > 1) html += `<div style="margin: 5px 0; padding: 5px; background: #f0f0f0; border-radius: 4px;"><strong>#${t + 1} 合计：${total}</strong> (${details.join(' + ')})</div>`;
+                else html = `<strong>合计：${total}</strong><br><span style="font-size:0.9em;">${details.join('<br>')}</span>`;
+              }
+              document.getElementById('diceExprResult').innerHTML = html;
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>⚡ 快速生成器</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>NPC性格与背景生成器</h3>
+          <div class="desc">一键生成NPC的完整性格、动机与背景。</div>
+          <div class="calculator">
+            <button onclick="generateNPC()" style="width:100%; padding:12px;">🎲 随机生成NPC</button>
+            <div class="result" id="npcGenResult" style="min-height: 80px;">点击按钮生成NPC...</div>
+          </div>
+          <script>
+            function generateNPC() {
+              const personalities = ['勇敢无畏', '谨慎多疑', '幽默风趣', '阴沉寡言', '热情友善', '冷漠傲慢', '急躁冲动', '深思熟虑', '天真烂漫', '世故圆滑', '暴戾好斗', '温柔体贴', '偏执疯狂', '懒散随性', '偏执狂', '理想主义者', '现实主义', '悲观焦虑', '乐天豁达', '狡诈阴险'];
+              const ideals = ['正义与秩序', '自由高于一切', '财富即力量', '知识就是力量', '家族荣誉至上', '复仇是唯一目标', '艺术与美', '力量征服一切', '爱与和平', '生存第一', '传统不可违背', '变革才是出路', '荣耀与名声', '自然平衡', '享乐主义', '无私奉献'];
+              const bonds = ['保护家人', '偿还旧债', '寻找失踪的爱人', '守护祖传宝物', '向组织效忠', '完成未竟的任务', '追随某个导师', '保护某个地点', '抚养孤儿', '寻求救赎', '对故土的眷恋', '对宿敌的仇恨', '对宠物的深爱', '对某件物品的执念', '对信仰的虔诚', '证明自己的价值'];
+              const flaws = ['酗酒成性', '嗜赌如命', '难以抑制的好奇心', '过于自负', '优柔寡断', '易怒暴躁', '贪婪无度', '懦弱胆小', '好色风流', '说谎成癖', '洁癖', '健忘', '固执己见', '过分慷慨', '偏食挑食', '迷信'];
+              const secrets = ['其实是贵族私生子', '曾犯下重罪', '掌握黑暗法术', '是某个秘密组织成员', '身患绝症', '曾目睹不该看到的事情', '有双重身份', '欠大笔债务给犯罪组织', '来自异世界/未来', '是预言中的人物', '曾背叛过挚友', '隐藏了真实种族', '拥有未觉醒的强大力量', '被诅咒缠身', '认识关键反派', '知道宝藏的真实位置'];
+              const names = ['艾德温', '瑟琳娜', '加雷斯', '莉莉安', '托林', '艾拉瑞斯', '布兰', '莫瑞甘', '卡德加', '希瓦娜', '达里安', '薇洛', '斯塔克', '吉安娜', '索林', '阿拉斯特'];
+
+              const p = personalities[Math.floor(Math.random() * personalities.length)];
+              const i = ideals[Math.floor(Math.random() * ideals.length)];
+              const b = bonds[Math.floor(Math.random() * bonds.length)];
+              const f = flaws[Math.floor(Math.random() * flaws.length)];
+              const s = secrets[Math.floor(Math.random() * secrets.length)];
+              const n = names[Math.floor(Math.random() * names.length)];
+
+              document.getElementById('npcGenResult').innerHTML = 
+                `<strong>姓名：</strong>${n}<br>` +
+                `<strong>性格：</strong>${p}<br>` +
+                `<strong>信念：</strong>${i}<br>` +
+                `<strong>羁绊：</strong>${b}<br>` +
+                `<strong>缺陷：</strong>${f}<br>` +
+                `<strong>秘密：</strong>${s}`;
+            }
+          </script>
+        </div>
+
+        <div class="tool-card">
+          <h3>冒险钩子生成器</h3>
+          <div class="desc">一键生成完整冒险任务线索，包括委托人、目标、地点与意外转折。</div>
+          <div class="calculator">
+            <button onclick="generateQuest()" style="width:100%; padding:12px;">⚔️ 生成冒险钩子</button>
+            <div class="result" id="questGenResult" style="min-height: 80px;">点击按钮生成冒险...</div>
+          </div>
+          <script>
+            function generateQuest() {
+              const questTypes = ['拯救/护送', '调查/解谜', '刺杀/消灭', '寻回/盗取', '守护/防御', '外交/谈判', '探索/发现', '追捕/缉拿'];
+              const patrons = ['当地领主', '神秘法师', '商会会长', '神殿祭司', '盗贼公会', '流浪骑士', '精灵贵族', '矮人工匠', '村庄长老', '秘密组织', '幽灵亡魂', '巨龙'];
+              const targets = ['失踪的商队', '古老墓穴中的神器', '盘踞的怪物头目', '被盗的魔法物品', '叛乱的首领', '被囚禁的无辜者', '沉没神庙的宝藏', '邪恶教团', '远古巨兽', '异界入侵者', '叛变的前盟友', '瘟疫源头'];
+              const locations = ['黑暗森林深处', '废弃矿坑', '古代遗迹', '被诅咒的沼泽', '山巅城堡', '海底洞窟', '沙漠中的金字塔', '城市下水道', '云端浮岛', '活火山内部', '被遗忘的神殿', '位面裂隙'];
+              const twists = ['委托人其实是反派', '目标已被他人捷足先登', '真相与描述完全相反', '有第三方势力暗中操控', '任务中发现了更大的阴谋', 'NPC并非表面身份', '时间紧迫——必须在X天内完成', '有叛徒在队伍中泄密', '任务地点有强大的守卫', '目标物品其实是陷阱'];
+
+              const qt = questTypes[Math.floor(Math.random() * questTypes.length)];
+              const p = patrons[Math.floor(Math.random() * patrons.length)];
+              const t = targets[Math.floor(Math.random() * targets.length)];
+              const l = locations[Math.floor(Math.random() * locations.length)];
+              const tw = twists[Math.floor(Math.random() * twists.length)];
+
+              document.getElementById('questGenResult').innerHTML = 
+                `<strong>任务类型：</strong>${qt}<br>` +
+                `<strong>委托人：</strong>${p}<br>` +
+                `<strong>任务目标：</strong>${t}<br>` +
+                `<strong>任务地点：</strong>${l}<br>` +
+                `<strong>意外转折：</strong>${tw}<br>` +
+                `<span style="font-size:0.85em;color:#888;">（适合队伍等级：${Math.floor(Math.random()*10)+1}-${Math.floor(Math.random()*8)+3}级）</span>`;
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📋 额外参考表</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>常见怪物抗性与伤害减免</h3>
+          <div class="desc">快速查询各类型怪物的典型抗性、免疫和伤害减免。</div>
+          <div class="random-table">
+            <table style="width: 100%; font-size: 0.85em;">
+              <tr><td><strong>恶魔</strong></td><td>电/毒免疫；酸/冷/火抗力10；DR 10/寒铁或善良</td></tr>
+              <tr><td><strong>魔鬼</strong></td><td>火/毒免疫；酸/冷抗力10；DR 10/银或善良</td></tr>
+              <tr><td><strong>龙（彩色）</strong></td><td>对应元素免疫；DR 5-20/魔法</td></tr>
+              <tr><td><strong>不死生物</strong></td><td>冷/电免疫；DR 5-15/魔法或银</td></tr>
+              <tr><td><strong>构装体</strong></td><td>多数免疫重击/偷袭；DR 5-15/精金</td></tr>
+              <tr><td><strong>元素生物</strong></td><td>对应元素免疫；DR 5-10/-</td></tr>
+              <tr><td><strong>精类</strong></td><td>DR 5-10/寒铁</td></tr>
+              <tr><td><strong>兽化人</strong></td><td>DR 5-15/银</td></tr>
+              <tr><td><strong>异怪</strong></td><td>各类抗性不定；部分有法术抗力</td></tr>
+              <tr><td><strong>外界者</strong></td><td>视阵营：酸/冷/电/火抗力5-10</td></tr>
+              <tr><td><strong>泥怪</strong></td><td>盲视；重击/偷袭免疫；分裂特性</td></tr>
+              <tr><td><strong>虫类</strong></td><td>无心智免疫；部分有毒</td></tr>
+            </table>
+            <p style="margin-top: 8px; font-size: 0.85em;">注意：具体数值因怪物而异，请以怪物的详细数据卡为准。法术抗力（SR）未在此表中列出。</p>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>武器价格与重量表</h3>
+          <div class="desc">常见简易、军用及异种武器的价格与重量快速参考。</div>
+          <div class="random-table">
+            <table style="width: 100%; font-size: 0.85em;">
+              <tr style="background:#e8e0f0;"><th colspan="5" style="color:#764ba2;">简易武器</th></tr>
+              <tr style="font-weight:600;"><td>武器名</td><td>伤害</td><td>重击</td><td>价格</td><td>重量</td></tr>
+              <tr><td>匕首</td><td>1d4</td><td>19-20/x2</td><td>2 gp</td><td>1 lb.</td></tr>
+              <tr><td>短矛</td><td>1d6</td><td>x2</td><td>1 gp</td><td>3 lb.</td></tr>
+              <tr><td>木棍</td><td>1d6</td><td>x2</td><td>-</td><td>4 lb.</td></tr>
+              <tr><td>轻弩</td><td>1d8</td><td>19-20/x2</td><td>35 gp</td><td>4 lb.</td></tr>
+              <tr><td>钉头锤（轻型）</td><td>1d6</td><td>x2</td><td>5 gp</td><td>4 lb.</td></tr>
+              <tr style="background:#e8e0f0;"><th colspan="5" style="color:#764ba2;">军用武器</th></tr>
+              <tr style="font-weight:600;"><td>武器名</td><td>伤害</td><td>重击</td><td>价格</td><td>重量</td></tr>
+              <tr><td>长剑</td><td>1d8</td><td>19-20/x2</td><td>15 gp</td><td>4 lb.</td></tr>
+              <tr><td>巨剑</td><td>2d6</td><td>19-20/x2</td><td>50 gp</td><td>8 lb.</td></tr>
+              <tr><td>手斧</td><td>1d6</td><td>x3</td><td>6 gp</td><td>3 lb.</td></tr>
+              <tr><td>巨斧</td><td>1d12</td><td>x3</td><td>20 gp</td><td>12 lb.</td></tr>
+              <tr><td>长弓</td><td>1d8</td><td>x3</td><td>75 gp</td><td>3 lb.</td></tr>
+              <tr><td>弯刀</td><td>1d6</td><td>18-20/x2</td><td>15 gp</td><td>4 lb.</td></tr>
+              <tr><td>戟</td><td>1d10</td><td>x3</td><td>10 gp</td><td>12 lb.</td></tr>
+              <tr><td>重型链枷</td><td>1d10</td><td>19-20/x2</td><td>15 gp</td><td>10 lb.</td></tr>
+              <tr style="background:#e8e0f0;"><th colspan="5" style="color:#764ba2;">异种武器（需专长）</th></tr>
+              <tr style="font-weight:600;"><td>武器名</td><td>伤害</td><td>重击</td><td>价格</td><td>重量</td></tr>
+              <tr><td>重剑</td><td>1d10</td><td>19-20/x2</td><td>35 gp</td><td>6 lb.</td></tr>
+              <tr><td>矮人重斧</td><td>1d10</td><td>x3</td><td>30 gp</td><td>8 lb.</td></tr>
+              <tr><td>刺链</td><td>2d4</td><td>x2</td><td>25 gp</td><td>10 lb.</td></tr>
+              <tr><td>双头剑</td><td>1d8/1d8</td><td>19-20/x2</td><td>100 gp</td><td>10 lb.</td></tr>
+              <tr><td>侏儒钩锤</td><td>1d8</td><td>x3</td><td>20 gp</td><td>5 lb.</td></tr>
+            </table>
+            <p style="margin-top: 8px; font-size: 0.85em;">所有价格均为市场价。精制品武器额外+300 gp，且攻击检定+1。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="color: #666; margin-bottom: 10px;">D&D 3.5e 中文Wiki - 3R拓展功能大全</p>
+      <p style="color: #999; font-size: 0.9em;">本页面内容基于官方资料和社区创作 | 最后更新：2026-06-20</p>
+    </div>
+  </div>
+</body>
+</html>

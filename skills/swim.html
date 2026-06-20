@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>游泳 - D&D 3.5e Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<main>
+<aside class="sidebar">
+  <h3>技能导航</h3>
+  <ul>
+    <li><a href="intro.html">技能总览</a></li>
+    <li><a href="climb.html">攀爬</a></li>
+    <li><a href="swim.html" class="active">游泳</a></li>
+    <li><a href="jump.html">跳跃</a></li>
+    <li><a href="hide.html">隐匿</a></li>
+    <li><a href="move-silently.html">潜行</a></li>
+    <li><a href="spot.html">侦察</a></li>
+    <li><a href="listen.html">聆听</a></li>
+    <li><a href="survival.html">生存</a></li>
+    <li><a href="diplomacy.html">交涉</a></li>
+    <li><a href="intimidate.html">威吓</a></li>
+    <li><a href="spellcraft.html">法术辨识</a></li>
+    <li><a href="knowledge-arcana.html">知识（奥术）</a></li>
+    <li><a href="use-magic-device.html">使用魔法装置</a></li>
+  </ul>
+</aside>
+
+<article class="main-content">
+  <div class="page-header">
+    <h1>游泳 <span class="skill-en">(Swim)</span></h1>
+    <div class="page-meta">
+      <span class="skill-key">力量</span>
+      <span class="armor-check">防具防碍：-¼</span>
+    </div>
+  </div>
+
+  <div class="infobox">
+    <div class="infobox-title">游泳 (Swim)</div>
+    <div class="infobox-content">
+      <div><span class="label">关键属性</span><span class="value">力量</span></div>
+      <div><span class="label">防具防碍</span><span class="value">-¼（防甲与盾牌）</span></div>
+      <div><span class="label">可否智力加速</span><span class="value">否</span></div>
+      <div><span class="label">兼职职业</span><span class="value">野蛮人、战士、游荡者</span></div>
+      <div><span class="label">职业等级</span><span class="value">野蛮人、战士、游荡者、游侠、野蛮人</span></div>
+    </div>
+  </div>
+
+  <h2>技能描述</h2>
+  <p>游泳技能让你能在水中移动，抗拒水流并避免溺水。</p>
+
+  <h2 id="check">技能检定</h2>
+  <p>游泳检定通常按轮（6秒）进行。根据水流情况，DC如下表：</p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>水流情况</th>
+        <th>游泳DC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>平静的水（池塘、湖泊、有遮蔽的海湾）</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>一般水流（缓慢河流、轻微波浪）</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>急流（快速河流、海浪）</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>危险水流（激流、海啸）</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>游泳上（对抗浮力）</td>
+        <td>+5</td>
+      </tr>
+      <tr>
+        <td>游泳下（借助浮力）</td>
+        <td>-5</td>
+      </tr>
+      <tr>
+        <td>游泳一段距离（每100英尺）</td>
+        <td>+1（每整100尺）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>特殊规定</h3>
+  <ul>
+    <li><strong>溺水</strong>：如果游泳检定失败，你将沉入水中。<strong>溺水规则</strong>：你需要每轮进行强韧检定（DC 10 + 淹水轮数）来避免溺水。失败则进入昏迷（0 hp），再过一轮则死亡。</li>
+    <li><strong>加速游泳</strong>：进行游泳检定（DC 15 + 加速额外DC）来加速游泳。每额外加速10英尺，DC+2。</li>
+    <li><strong>游泳攻击</strong>：在水中攻击时，你受到-2攻击罚值（除非你有"水下战斗"专长）。</li>
+    <li><strong>游泳施法</strong>：在水中只能施展指定"水中施法"的法术，否则需要施法者进行专注检定（DC 15 + 法术等级）。</li>
+  </ul>
+
+  <h2 id="retry">重试</h2>
+  <p>你可以每轮重试游泳检定。然而，如果失败导致你沉入水中并开始溺水，重试可能来不及。</p>
+
+  <h2 id="special">特殊说明</h2>
+  <ul>
+    <li><strong>游泳速度</strong>：你的游泳速度等于你的陆地移动速度的一半（最少10英尺）。</li>
+    <li><strong>防具防碍</strong>：防甲和盾牌会对游泳检定造成-¼防碍。越重的防甲防碍越大（全身甲-7）。</li>
+    <li><strong>种族特性</strong>：
+      <ul>
+        <li>水栖种族（如水元素、鱼人）获得游泳技能作为本职技能，且游泳速度等于陆地速度。</li>
+        <li>半人马获得+2种族加值（四蹄稳定）。</li>
+      </ul>
+    </li>
+    <li><strong>专长</strong>：
+      <ul>
+        <li>运动健将（Athlete）专长让你在游泳和攀爬上获得+2加值。</li>
+        <li>水下战斗（Underwater Combat）专长让你在水中战斗时不受罚值。</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 id="conflicts">规则冲突</h2>
+  <div class="conflict-box">
+    <div class="conflict-title">⚠️ 规则冲突标注</div>
+    <div class="conflict-content">
+      <p><strong>冲突点1：游泳速度计算</strong></p>
+      <p>不同资料对游泳速度的计算有细微差异：</p>
+      <table class="table table-bordered">
+        <tr>
+          <th>来源</th>
+          <th>游泳速度</th>
+        </tr>
+        <tr>
+          <td>玩家手册（PHB p.150）</td>
+          <td>陆地移动速度的一半（最少10尺）</td>
+        </tr>
+        <tr>
+          <td>拓展规则（Stormwrack p.37）</td>
+          <td>相同，但可增加游泳速度专长（Swim Speed）来提升</td>
+        </tr>
+      </table>
+      <p><strong>建议</strong>：采用PHB规则，游泳速度=陆地速度/2（最小10尺）。允许"游泳速度"专长（Stormwrack）将游泳速度提升至陆地速度。</p>
+
+      <p><strong>冲突点2：防具防碍数值</strong></p>
+      <p>防具防碍的具体数值在不同资料中有差异：</p>
+      <table class="table table-bordered">
+        <tr>
+          <th>防甲类型</th>
+          <th>PHB防碍</th>
+          <th>Stormwrack防碍</th>
+        </tr>
+        <tr>
+          <td>轻甲</td>
+          <td>-3至-5</td>
+          <td>相同</td>
+        </tr>
+        <tr>
+          <td>中甲</td>
+          <td>-5至-7</td>
+          <td>相同</td>
+        </tr>
+        <tr>
+          <td>重甲</td>
+          <td>-7</td>
+          <td>相同，但可"水下行动"专长减少</td>
+        </tr>
+      </table>
+      <p><strong>建议</strong>：采用PHB防碍数值。如允许Stormwrack拓展，可添加"水下行动"专长（水下战斗不受防碍）。</p>
+    </div>
+  </div>
+
+  <h2 id="examples">实战示例</h2>
+  <div class="examples">
+    <h3>示例1：平静水面游泳</h3>
+    <p>一个人类战士（力量14，游泳技能+4）在平静的湖中游泳。DC 10，他需要调整值：14（力量）+4（技能）+2（种族，如果人类有）+其他加值。通常能成功游泳。</p>
+
+    <h3>示例2：急流游泳</h3>
+    <p>同样战士在急流中（DC 20）。调整值=14+4=18，可能失败。失败后需进行强韧检定避免溺水。</p>
+
+    <h3>示例3：穿着全身甲游泳</h3>
+    <p>战士穿着全身甲（防碍-7）游泳。调整值=14+4-7=11。在平静水面（DC 10）勉强成功，但在急流中（DC 20）几乎不可能成功。</p>
+  </div>
+
+  <h2 id="synergy">关联技能</h2>
+  <ul>
+    <li><strong>攀爬</strong>：两者都是力量技能，体质高的角色通常两者兼修。</li>
+    <li><strong>生存</strong>：在水域环境中生存需要游泳技能。</li>
+    <li><strong>平衡</strong>：在水中保持平衡需要平衡技能（DC 15）。</li>
+  </ul>
+
+  <div class="rule-source">
+    <strong>规则出处：</strong>《玩家手册》第150页<br>
+    《Stormwrack》第37-41页（拓展水下规则）
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <p>D&D 3.5e Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

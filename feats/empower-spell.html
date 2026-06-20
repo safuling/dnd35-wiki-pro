@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法术强效 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <h3>专长导航</h3>
+  <ul>
+    <li><a href="intro.html">专长总览</a></li>
+    <li class="nav-divider">战斗专长</li>
+    <li><a href="power-attack.html">猛力攻击</a></li>
+    <li><a href="cleave.html">顺劈斩</a></li>
+    <li class="nav-divider">施法专长</li>
+    <li><a href="spell-focus.html">法术专攻</a></li>
+    <li><a href="combat-casting.html">战斗施法</a></li>
+    <li><a href="empower-spell.html" class="active">法术强效</a></li>
+    <li><a href="maximize-spell.html">法术极效</a></li>
+    <li><a href="quicken-spell.html">法术极效</a></li>
+    <li class="nav-divider">通用专长</li>
+    <li><a href="toughness.html">强韧</a></li>
+    <li><a href="iron-will.html">钢铁意志</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 法术强效</nav>
+<h1>法术强效 (Empower Spell)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">法术超魔专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">能够施放法术</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">法术变量效果（伤害、治疗等）提高50%，法术等级+2</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择多次</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你可以强化法术的效果，使其造成更多伤害或提供更强治疗。</p>
+<p>选择一道法术。该法术的 <span class="rule-keyword">变量效果（伤害、治疗、距离等）</span> 提高 <span class="rule-keyword">50%</span>，但法术等级 <span class="rule-keyword">+2</span>（影响法术位消耗和DC）。</p>
+
+<h2 id="benefit-detail">益处详解</h2>
+<ul>
+  <li><strong>变量效果提高50%</strong>：
+    <ul>
+      <li>伤害法术：伤害掷骰结果 × 1.5（向下取整）</li>
+      <li>治疗法术：治疗量 × 1.5（向下取整）</li>
+      <li>距离法术：影响半径 × 1.5</li>
+    </ul>
+  </li>
+  <li><strong>法术等级+2</strong>：
+    <ul>
+      <li>消耗的法术位提高2级</li>
+      <li>法术DC提高2（因为法术等级提高）</li>
+      <li>受法术抗力影响时，法术穿透检定获得+2加值</li>
+    </ul>
+  </li>
+  <li><strong>可选择多次</strong>：每次选择"法术强效"，可以强化不同法术，或同一法术多次。</li>
+</ul>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例：法术强效（火球术）</strong></p>
+  <p>人类法师 5级，智力 18（+4），选择"法术强效"强化 <em>火球术</em> (3环)。</p>
+  <ul>
+    <li><strong>正常火球术</strong>：5d6 伤害（平均 17.5）</li>
+    <li><strong>强效火球术</strong>：5d6 × 1.5 = 7d6 伤害（平均 24.5）</li>
+    <li>消耗法术位：5环（3+2）</li>
+    <li>DC = 10 + 5 (法术等级) + 4 (智力) = <strong>19</strong>（正常为 17）</li>
+    <li><strong>伤害提高 40%，DC提高 2</strong></li>
+  </ul>
+</div>
+<div class="example-box">
+  <p><strong>示例：法术强效（治疗轻伤）</strong></p>
+  <p>人类牧师 3级，感知 16（+3），选择"法术强效"强化 <em>治疗轻伤</em> (1环)。</p>
+  <ul>
+    <li><strong>正常治疗轻伤</strong>：1d8+3 治疗量（平均 7.5）</li>
+    <li><strong>强效治疗轻伤</strong>：(1d8+3) × 1.5 = 1d8+3+4（平均 11）</li>
+    <li>消耗法术位：3环（1+2）</li>
+    <li><strong>治疗量提高 47%</strong></li>
+  </ul>
+</div>
+
+<h2 id="value">价值评估</h2>
+<div class="tactic-box">
+  <p><strong>法术强效 vs. 法术极效 (Quicken Spell)</strong></p>
+  <ul>
+    <li><strong>法术强效</strong>：提高 <strong>法术效果</strong>（伤害、治疗）。适合 <strong>输出型法师</strong>。</li>
+    <li><strong>法术极效</strong>：法术施放不需要 <strong>标准动作</strong>（改为自由动作）。适合 <strong>控制型法师</strong>。</li>
+    <li><strong>推荐</strong>：输出型选法术强效；控制型选法术极效。</li>
+  </ul>
+</div>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">法师、术士</strong>：法术强效是输出型施法者的核心专长。</li>
+  <li><strong class="highlight">牧师、德鲁伊</strong>：治疗法术强效价值极高。</li>
+  <li><strong>任何施法职业</strong>：无职业限制，适合所有施法者。</li>
+</ul>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>法术专攻 (Spell Focus)</strong>：提高DC，搭配法术强效提高整体效果。</li>
+  <li><strong>法术极效 (Maximize Spell)</strong>：法术伤害固定最大值，搭配强效进一步提高。</li>
+  <li><strong>法术默发 (Silent Spell)</strong>：在沉默环境中施放强效法术。</li>
+</ul>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：法术强效是否适用于"即死效果"？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：法术强效只影响"变量效果"。</p>
+  <p>✅ <strong>正确规则</strong>：</p>
+  <ul>
+    <li>法术强效 <strong>不适用</strong>于即死效果（如 <em>即死术</em>）。</li>
+    <li>法术强效 <strong>不适用</strong>于法术的"特殊效果"（如 <em>魅惑人类</em> 的魅力调整）。</li>
+    <li>法术强效 <strong>只影响</strong>变量数值（伤害、治疗、距离等）。</li>
+  </ul>
+  <p>⚠️ <strong>常见误解</strong>：有玩家认为法术强效能提高所有法术效果。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页120</strong>：法术超魔详解。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

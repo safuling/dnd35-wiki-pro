@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法术详情 - D&D 3.5e Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html" class="active">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<main>
+<article class="main-content">
+  <div id="spell-detail">
+    <p>加载中...</p>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <p>D&D 3.5e Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+<script src="../js/spells-data.js"></script>
+<script src="../js/spells-domains.js"></script>
+<script src="../js/spells-conflicts.js"></script>
+<script src="../js/spells-conflicts-batch2.js"></script>
+<script src="../js/spells-conflicts-batch3.js"></script>
+<script src="../js/spells-conflicts-batch4.js"></script>
+<script src="../js/spells-conflicts-batch5.js"></script>
+<script>
+// 获取URL参数中的法术ID
+const urlParams = new URLSearchParams(window.location.search);
+const spellId = urlParams.get('id');
+
+// 查找法术数据
+const spell = window.spellsData ? window.spellsData.find(s => s.id === spellId) : null;
+
+// 合并规则冲突标注（从 spells-conflicts.js、batch2、batch3 加载）
+if (spell) {
+  if (!spell.conflicts) spell.conflicts = [];
+  
+  // 从第一批加载
+  if (typeof conflictsData !== 'undefined' && conflictsData[spellId]) {
+    for (const c of conflictsData[spellId]) {
+      spell.conflicts.push(c);
+    }
+  }
+  
+  // 从第二批加载
+  if (typeof window.conflictsDataBatch2 !== 'undefined' && window.conflictsDataBatch2[spellId]) {
+    for (const c of window.conflictsDataBatch2[spellId]) {
+      spell.conflicts.push(c);
+    }
+  }
+  
+  // 从第三批加载
+  if (typeof window.conflictsDataBatch3 !== 'undefined' && window.conflictsDataBatch3[spellId]) {
+    for (const c of window.conflictsDataBatch3[spellId]) {
+      spell.conflicts.push(c);
+    }
+  }
+  
+  // 从第四批加载
+  if (typeof window.conflictsDataBatch4 !== 'undefined' && window.conflictsDataBatch4[spellId]) {
+    for (const c of window.conflictsDataBatch4[spellId]) {
+      spell.conflicts.push(c);
+    }
+  }
+  
+  // 从第五批加载
+  if (typeof window.conflictsDataBatch5 !== 'undefined' && window.conflictsDataBatch5[spellId]) {
+    for (const c of window.conflictsDataBatch5[spellId]) {
+      spell.conflicts.push(c);
+    }
+  }
+}
+
+const detailContainer = document.getElementById('spell-detail');
+
+if (spell) {
+  // 更新页面标题
+  document.title = `${spell.nameZh} - D&D 3.5e Wiki`;
+  
+  // 构建环级显示
+  let levelDisplay = '';
+  if (spell.arcane) {
+    const classes = Object.entries(spell.arcane)
+      .filter(([k, v]) => v > 0)
+      .map(([k, v]) => `${k} ${v}环`);
+    levelDisplay += classes.join('、');
+  }
+  if (spell.divine) {
+    if (levelDisplay) levelDisplay += ' / ';
+    const classes = Object.entries(spell.divine)
+      .filter(([k, v]) => v > 0)
+      .map(([k, v]) => `${k} ${v}环`);
+    levelDisplay += classes.join('、');
+  }
+  
+  // 构建法术类型
+  let spellType = [];
+  if (spell.arcane && Object.values(spell.arcane).some(v => v > 0)) spellType.push('奥术');
+  if (spell.divine && Object.values(spell.divine).some(v => v > 0)) spellType.push('神术');
+  
+  // 渲染法术详情
+  detailContainer.innerHTML = `
+    <div class="page-header">
+      <h1>${spell.nameZh} <span class="spell-en">(${spell.nameEn})</span></h1>
+      <div class="page-meta">
+        <span class="spell-level">环级：${levelDisplay || '未知'}</span>
+        <span class="spell-school">学派：${spell.school || '未知'}</span>
+        <span class="spell-type">类型：${spellType.join('、')}</span>
+      </div>
+    </div>
+    
+    <div class="infobox">
+      <div class="infobox-title">${spell.nameZh} (${spell.nameEn})</div>
+      <div class="infobox-content">
+        <div><span class="label">环级</span><span class="value">${levelDisplay || '未知'}</span></div>
+        <div><span class="label">学派</span><span class="value">${spell.school || '未知'}</span></div>
+        <div><span class="label">成分</span><span class="value">${spell.components || '未知'}</span></div>
+        <div><span class="label">施法时间</span><span class="value">${spell.castingTime || '标准动作'}</span></div>
+        <div><span class="label">距离</span><span class="value">${spell.range || '未知'}</span></div>
+        <div><span class="label">目标/范围/效果</span><span class="value">${spell.target || '未知'}</span></div>
+        <div><span class="label">持续时间</span><span class="value">${spell.duration || '未知'}</span></div>
+        <div><span class="label">豁免检定</span><span class="value">${spell.savingThrow || '无'}</span></div>
+        <div><span class="label">法术抗性</span><span class="value">${spell.spellResist || '见描述'}</span></div>
+        ${typeof SPELL_DOMAINS !== 'undefined' && SPELL_DOMAINS[spellId] ? `<div><span class="label">领域</span><span class="value">${SPELL_DOMAINS[spellId].join('、')}</span></div>` : ''}
+        ${spell.material ? `<div><span class="label">材料成分</span><span class="value">${spell.material}</span></div>` : ''}
+        ${spell.focus ? `<div><span class="label">法器</span><span class="value">${spell.focus}</span></div>` : ''}
+      </div>
+    </div>
+    
+    <h2>法术描述</h2>
+    <p>${spell.desc || '无描述'}</p>
+    
+    ${spell.xpCost ? `<h2>经验值代价</h2><p>施展此法术需要付出 ${spell.xpCost} 经验值。</p>` : ''}
+    
+    ${spell.conflicts && spell.conflicts.length > 0 ? `
+    <h2>规则冲突</h2>
+    <div class="conflict-box">
+      <div class="conflict-title">⚠️ 规则冲突标注（${spell.conflicts.length}个）</div>
+      <div class="conflict-content">
+        ${spell.conflicts.map((c, i) => `
+        <p><strong>冲突点${i+1}：${c.point}</strong></p>
+        ${c.phbRule ? `<p><strong>PHB规则</strong>：${c.phbRule}</p>` : ''}
+        ${c.controversy ? `<p><strong>争议</strong>：${c.controversy}</p>` : ''}
+        ${c.suggestion ? `<p><strong>建议</strong>：${c.suggestion}</p>` : ''}
+        ${c.source ? `<p><span class="source-tag">来源：${c.source}</span></p>` : ''}
+        ${i < spell.conflicts.length - 1 ? '<hr>' : ''}
+        `).join('')}
+      </div>
+    </div>
+    ` : ''}
+    
+    <div class="spell-navigation">
+      <a href="intro.html" class="back-to-list">← 返回法术列表</a>
+    </div>
+  `;
+} else {
+  detailContainer.innerHTML = `
+    <div class="page-header">
+      <h1>法术未找到</h1>
+    </div>
+    <p>未找到ID为 "${spellId}" 的法术。</p>
+    <p><a href="intro.html">返回法术列表</a></p>
+  `;
+}
+</script>
+</body>
+</html>

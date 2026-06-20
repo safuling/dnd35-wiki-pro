@@ -1,0 +1,309 @@
+/**
+ * D&D 3.5e 领域法术映射（完整版）
+ * 每个领域有1-9级法术各一个
+ * 使用方法：在 HTML 中 <script src="spells-domains.js"></script>
+ *   然后访问 window.SPELL_DOMAINS, window.ALL_DOMAINS, window.DOMAIN_NAMES
+ */
+
+const SPELL_DOMAINS = {
+  // ========= 气领域 (Air) =========
+  'gust-of-wind': ['气'],
+  'invisibility-mundane': ['气'],
+  'fly': ['气'],
+  'air-walk': ['气'],
+  'control-winds': ['气'],
+  'chain-lightning': ['气'],
+  'control-weather': ['气'],
+  'whirlwind': ['气'],
+  'elemental-swarm-air': ['气'],
+
+  // ========= 动物领域 (Animal) =========
+  'charm-animal': ['动物'],
+  'speak-with-animals': ['动物'],
+  "lions-charge": ['动物'],
+  'divination-animal': ['动物'],
+  'beast-shape-i': ['动物'],
+  'beast-shape-ii': ['动物'],
+  'beast-shape-iii': ['动物'],
+  'beast-shape-iv': ['动物'],
+  'shapechange': ['动物'],
+
+  // ========= 混乱领域 (Chaos) =========
+  'true-strike': ['混乱'],
+  'chaos-hammer': ['混乱'],
+  'logic-lapse': ['混乱'],
+  'fear': ['混乱'],
+  'chaos-bolt': ['混乱'],
+  'chaos-bolt-mass': ['混乱'],
+  'power-word-blind': ['混乱'],
+  'power-word-stun': ['混乱'],
+  'power-word-kill': ['混乱'],
+
+  // ========= 死亡领域 (Death) =========
+  'bane': ['死亡'],
+  'death-knell': ['死亡'],
+  'animate-dead': ['死亡'],
+  'create-undead': ['死亡'],
+  'slay-living': ['死亡'],
+  'create-undead-greater': ['死亡'],
+  'power-word-blind': ['死亡'],
+  'power-word-stun': ['死亡'],
+  'power-word-kill': ['死亡'],
+
+  // ========= 破坏领域 (Destruction) =========
+  'inflict-light-wounds': ['破坏'],
+  'shatter': ['破坏'],
+  'inflict-moderate-wounds': ['破坏'],
+  'inflict-critical-wounds': ['破坏'],
+  'inflict-light-wounds-mass': ['破坏'],
+  'disintegrate': ['破坏'],
+  'inflict-moderate-wounds-mass': ['破坏'],
+  'inflict-critical-wounds-mass': ['破坏'],
+  'implosion': ['破坏'],
+
+  // ========= 土领域 (Earth) =========
+  'stone-fist': ['土'],
+  'stone-call': ['土'],
+  'meld-into-stone': ['土'],
+  'stoneskin': ['土'],
+  'transmute-mud-to-rock': ['土'],
+  'transmute-rock-to-mud': ['土'],
+  'earthquake': ['土'],
+  'iron-body': ['土'],
+  'elemental-swarm-earth': ['土'],
+
+  // ========= 邪恶领域 (Evil) =========
+  'bane': ['邪恶'],
+  'death-knell': ['邪恶'],
+  'contagion': ['邪恶'],
+  'poison': ['邪恶'],
+  'slay-living': ['邪恶'],
+  'create-undead': ['邪恶'],
+  'blasphemy': ['邪恶'],
+  'unholy-aura': ['邪恶'],
+  'wish-evil': ['邪恶'],
+
+  // ========= 火领域 (Fire) =========
+  'flare': ['火'],
+  'burning-hands': ['火'],
+  'fireball': ['火'],
+  'wall-of-fire': ['火'],
+  'fire-shield': ['火'],
+  'fire-seeds': ['火'],
+  'fire-storm': ['火'],
+  'incendiary-cloud': ['火'],
+  'elemental-swarm-fire': ['火'],
+
+  // ========= 善良领域 (Good) =========
+  'bless': ['善良'],
+  'aid': ['善良'],
+  'searing-light': ['善良'],
+  'holy-smite': ['善良'],
+  'flame-strike': ['善良'],
+  'bolts-of-bedevilment': ['善良'],
+  'holy-word': ['善良'],
+  'holy-aura': ['善良'],
+  'miracle': ['善良'],
+
+  // ========= 治疗领域 (Healing) =========
+  'cure-light-wounds': ['治疗'],
+  'cure-moderate-wounds': ['治疗'],
+  'cure-serious-wounds': ['治疗'],
+  'cure-critical-wounds': ['治疗'],
+  'cure-light-wounds-mass': ['治疗'],
+  'heal': ['治疗'],
+  'cure-moderate-wounds-mass': ['治疗'],
+  'cure-critical-wounds-mass': ['治疗'],
+  'heal-mass': ['治疗'],
+
+  // ========= 知识领域 (Knowledge) =========
+  'detect-secret-doors': ['知识'],
+  'detect-thoughts': ['知识'],
+  'confusion': ['知识'],
+  'divination': ['知识'],
+  'true-seeing': ['知识'],
+  'find-the-path': ['知识'],
+  'legend-lore': ['知识'],
+  'discern-location': ['知识'],
+  'foresight': ['知识'],
+
+  // ========= 守序领域 (Law) =========
+  'command': ['守序'],
+  'order-wrath': ['守序'],
+  'magic-circle-law': ['守序'],
+  'discern-lies': ['守序'],
+  'command-greater': ['守序'],
+  'hold-monster': ['守序'],
+  'power-word-faithful': ['守序'],
+  'power-word-true': ['守序'],
+  'power-word-justify': ['守序'],
+
+  // ========= 幸运领域 (Luck) =========
+  'true-strike': ['幸运'],
+  'aid': ['幸运'],
+  'serendipity': ['幸运'],
+  'freedom-of-movement': ['幸运'],
+  'break-enchantment': ['幸运'],
+  'mislead': ['幸运'],
+  'esp': ['幸运'],
+  'maze': ['幸运'],
+  'miracle-luck': ['幸运'],
+
+  // ========= 魔法领域 (Magic) =========
+  'charm-person': ['魔法'],
+  'identify': ['魔法'],
+  'dispel-magic': ['魔法'],
+  'imbue-with-spell-ability': ['魔法'],
+  'spell-resistance': ['魔法'],
+  'antisiigil': ['魔法'],
+  'spell-turning': ['魔法'],
+  'protection-spells': ['魔法'],
+  'mage-hand-mass': ['魔法'],
+
+  // ========= 植物领域 (Plant) =========
+  'entangle': ['植物'],
+  'tree-shape': ['植物'],
+  'plant-growth': ['植物'],
+  'command-plants': ['植物'],
+  'wall-of-thorns': ['植物'],
+  'repel-wood': ['植物'],
+  'animate-plants': ['植物'],
+  'ironwood': ['植物'],
+  'liveoak': ['植物'],
+
+  // ========= 防护领域 (Protection) =========
+  'sanctuary': ['防护'],
+  'shield-other': ['防护'],
+  'protection-from-energy': ['防护'],
+  'spell-immunity': ['防护'],
+  'spell-resistance': ['防护'],
+  'antimagic-field': ['防护'],
+  'repulsion': ['防护'],
+  'mind-blank': ['防护'],
+  'prismatic-sphere': ['防护'],
+
+  // ========= 力量领域 (Strength) =========
+  'enlarge-person': ['力量'],
+  'bulls-strength': ['力量'],
+  'magic-vestment': ['力量'],
+  'divine-power': ['力量'],
+  'righteous-might': ['力量'],
+  'stoneskin': ['力量'],
+  'heal-mass': ['力量'],
+  'iron-body': ['力量'],
+  'shapechange': ['力量'],
+
+  // ========= 太阳领域 (Sun) =========
+  'light': ['太阳'],
+  'continual-flame': ['太阳'],
+  'searing-light': ['太阳'],
+  'fireball': ['太阳'],
+  'flame-strike': ['太阳'],
+  'fire-storm': ['太阳'],
+  'sunbeam': ['太阳'],
+  'sunburst': ['太阳'],
+  'prismatic-sphere': ['太阳'],
+
+  // ========= 旅行领域 (Travel) =========
+  'longstrider': ['旅行'],
+  'find-vehicle': ['旅行'],
+  'fly': ['旅行'],
+  'dimension-door': ['旅行'],
+  'teleport': ['旅行'],
+  'find-the-path': ['旅行'],
+  'teleport-greater': ['旅行'],
+  'phase-door': ['旅行'],
+  'astral-projection': ['旅行'],
+
+  // ========= 诡术领域 (Trickery) =========
+  'charm-person': ['诡术'],
+  'invisibility': ['诡术'],
+  'nondetection': ['诡术'],
+  'dimension-door': ['诡术'],
+  'dominate-person': ['诡术'],
+  'mislead': ['诡术'],
+  'veil': ['诡术'],
+  'polymorph-any-object': ['诡术'],
+  'shapechange': ['诡术'],
+
+  // ========= 战争领域 (War) =========
+  'true-strike': ['战争'],
+  'spiritual-weapon': ['战争'],
+  'magic-vestment': ['战争'],
+  'divine-power': ['战争'],
+  'flame-strike': ['战争'],
+  'bolt-of-glory': ['战争'],
+  'power-word-faithful': ['战争'],
+  'power-word-true': ['战争'],
+  'power-word-justify': ['战争'],
+
+  // ========= 水领域 (Water) =========
+  'create-water': ['水'],
+  'obscure': ['水'],
+  'water-breathing': ['水'],
+  'control-water': ['水'],
+  'ice-storm': ['水'],
+  'freezing-sphere': ['水'],
+  'tsunami': ['水'],
+  'control-weather': ['水'],
+  'elemental-swarm-water': ['水']
+};
+
+// 所有领域列表（中英文）
+const ALL_DOMAINS = [
+  {zh:'气', en:'Air'},
+  {zh:'动物', en:'Animal'},
+  {zh:'混乱', en:'Chaos'},
+  {zh:'死亡', en:'Death'},
+  {zh:'破坏', en:'Destruction'},
+  {zh:'土', en:'Earth'},
+  {zh:'邪恶', en:'Evil'},
+  {zh:'火', en:'Fire'},
+  {zh:'善良', en:'Good'},
+  {zh:'治疗', en:'Healing'},
+  {zh:'知识', en:'Knowledge'},
+  {zh:'守序', en:'Law'},
+  {zh:'幸运', en:'Luck'},
+  {zh:'魔法', en:'Magic'},
+  {zh:'植物', en:'Plant'},
+  {zh:'防护', en:'Protection'},
+  {zh:'力量', en:'Strength'},
+  {zh:'太阳', en:'Sun'},
+  {zh:'旅行', en:'Travel'},
+  {zh:'诡术', en:'Trickery'},
+  {zh:'战争', en:'War'},
+  {zh:'水', en:'Water'}
+];
+
+// 领域名称映射（英文->中文）
+const DOMAIN_NAMES = {
+  Air: '气',
+  Animal: '动物',
+  Chaos: '混乱',
+  Death: '死亡',
+  Destruction: '破坏',
+  Earth: '土',
+  Evil: '邪恶',
+  Fire: '火',
+  Good: '善良',
+  Healing: '治疗',
+  Knowledge: '知识',
+  Law: '守序',
+  Luck: '幸运',
+  Magic: '魔法',
+  Plant: '植物',
+  Protection: '防护',
+  Strength: '力量',
+  Sun: '太阳',
+  Travel: '旅行',
+  Trickery: '诡术',
+  War: '战争',
+  Water: '水'
+};
+
+// 导出给浏览器使用（必须放在文件最末尾）
+if (typeof window !== 'undefined') {
+  window.SPELL_DOMAINS = SPELL_DOMAINS;
+  window.ALL_DOMAINS = ALL_DOMAINS;
+  window.DOMAIN_NAMES = DOMAIN_NAMES;
+}

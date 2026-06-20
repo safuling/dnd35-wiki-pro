@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用魔法装置 - D&D 3.5e 中文Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .skill-header {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .ability-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .device-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .device-table th, .device-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .device-table th {
+            background: #e67e22;
+            color: white;
+        }
+        .device-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .conflict-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+    <nav class="top-nav">
+        <div class="nav-brand">🐉 D&D 3.5e Wiki</div>
+        <div class="nav-links">
+            <a href="../index.html">首页</a>
+            <a href="intro.html" class="active">技能</a>
+            <a href="../spells/intro.html">法术</a>
+            <a href="../races/human.html">种族</a>
+            <a href="../classes/wizard.html">职业</a>
+            <a href="../feats/intro.html">专长</a>
+            <a href="../conflicts.html">规则冲突</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="skill-header">
+            <h1>🔮 使用魔法装置 (Use Magic Device)</h1>
+            <p class="subtitle">魅力技能 · 训练技能（吟游诗人、巡林客）</p>
+            <div>
+                <span class="ability-badge">关键属性：魅力 (CHA)</span>
+                <span class="ability-badge">调整值：1d20 + 调整值点数 + 魅力调整值</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 技能描述</h3>
+            <p><strong>使用魔法装置</strong>允许你使用通常无法使用的魔法物品（卷轴、魔杖、法杖、奇物等）。这是对非施法者非常重要的技能。</p>
+            
+            <h4>调整值计算</h4>
+            <p class="formula">使用魔法装置调整值 = 调整值点数 + 魅力调整值 + 其他调整值</p>
+            
+            <h4>检定条件</h4>
+            <ul>
+                <li><strong>动作</strong>：标准动作（Standard Action）使用物品</li>
+                <li><strong>重试</strong>：可以，但失败可能浪费使用次数</li>
+                <li><strong>特殊</strong>：这是训练技能，只有训练后才能真正擅长</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 使用类型与DC</h2>
+            <table class="device-table">
+                <thead>
+                    <tr>
+                        <th>使用类型</th>
+                        <th>DC</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>激活卷轴（非施法者）</td>
+                        <td>DC 15 + 法术环级</td>
+                        <td>需要正确解读卷轴</td>
+                    </tr>
+                    <tr>
+                        <td>激活魔杖/法杖</td>
+                        <td>DC 15 + 法术环级</td>
+                        <td>需要正确引导魔法</td>
+                    </tr>
+                    <tr>
+                        <td>使用奇物（不属于你的职业）</td>
+                        <td>DC 15</td>
+                        <td>需要理解奇物功能</td>
+                    </tr>
+                    <tr>
+                        <td>模仿职业需求（如模仿牧师神术）</td>
+                        <td>DC 20</td>
+                        <td>需要欺骗魔法物品</td>
+                    </tr>
+                    <tr>
+                        <td>模仿属性需求（如力量14）</td>
+                        <td>DC 15</td>
+                        <td>需要临时增强属性</td>
+                    </tr>
+                    <tr>
+                        <td>模仿阵营需求（如守序善良）</td>
+                        <td>DC 20</td>
+                        <td>需要伪装阵营</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📋 技能细则</h2>
+            
+            <h3>卷轴使用</h3>
+            <p>非施法者可以使用卷轴，但需要成功的使用魔法装置检定。</p>
+            <ul>
+                <li><strong>DC</strong>：15 + 法术环级</li>
+                <li><strong>失败</strong>：卷轴被破坏，法术未施放</li>
+                <li><strong>成功</strong>：卷轴正常消耗，法术生效</li>
+            </ul>
+
+            <h3>魔杖与法杖使用</h3>
+            <p>非施法者可以使用魔杖和法杖，但需要成功的使用魔法装置检定。</p>
+            <ul>
+                <li><strong>DC</strong>：15 + 法术环级</li>
+                <li><strong>失败</strong>：魔法物品未激活，使用次数可能浪费</li>
+                <li><strong>成功</strong>：魔法物品正常激活，消耗使用次数</li>
+            </ul>
+
+            <h3>模仿能力</h3>
+            <p>你可以通过虚假的表演来欺骗魔法物品（让它认为你是符合条件的用户）。</p>
+            <ul>
+                <li><strong>模仿职业</strong>：DC 20，让物品认为你是特定职业</li>
+                <li><strong>模仿属性</strong>：DC 15，让物品认为你有特定属性值</li>
+                <li><strong>模仿阵营</strong>：DC 20，让物品认为你是特定阵营</li>
+            </ul>
+
+            <h3>特殊能力</h3>
+            <ul>
+                <li><strong>吟游诗人（Bard）</strong>：将使用魔法装置作为训练技能（调整值+3）</li>
+                <li><strong>巡林客（Ranger）</strong>：将使用魔法装置作为训练技能</li>
+                <li><strong>技巧（Knack）专长</strong>：可以选择一个训练技能作为跨职业技能</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <h3>💡 实战示例</h3>
+            <p><strong>场景</strong>：你是一名5级战士（魅力12，+1调整值），有6点使用魔法装置调整值。你找到了一根<em>火球术魔杖</em>（3环法术）。</p>
+            <p><strong>总调整值</strong>：6（调整值点数）+ 1（魅力调整值）= +7</p>
+            <p><strong>任务</strong>：激活魔杖，施放火球术。</p>
+            <p><strong>计算</strong>：DC = 15 + 3（法术环级）= 18</p>
+            <p><strong>检定</strong>：1d20 + 7 = 14 < 18，<strong>失败！</strong>魔杖未激活，浪费了一次使用次数。</p>
+            <p><strong>变体</strong>：如果你有<em>乌鸦之爪之戒</em>（使用魔法装置+5），总调整值变为+12。1d20 + 12 = 24 ≥ 18，<strong>成功！</strong>你成功施放了火球术。</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 搭配专长</h2>
+            <ul>
+                <li><strong>技巧（Knack）</strong>：选择一个训练技能作为跨职业技能（可以让战士将使用魔法装置作为训练技能）</li>
+                <li><strong>魅力非凡（Charismatic）</strong>：魅力调整值+2（间接提升使用魔法装置）</li>
+                <li><strong>魔法物品巧匠（Magical Artisan）</strong>：制作魔法物品时获得+2调整值（虽然不是直接使用，但互补）</li>
+            </ul>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：使用卷轴的动作时间</h3>
+            <p><strong>冲突点</strong>：使用卷轴是标准动作、整轮动作，还是移动等效动作？</p>
+            <p><strong>官方规则（PHB p.84 & DMG p.213）</strong>：使用卷轴是标准动作（如同施法）。但某些特殊卷轴可能需要更长时间。</p>
+            <p><strong>网络误传</strong>：部分网站声称"使用卷轴是移动等效动作，可以在移动中使用"。这是错误的，使用卷轴需要专注。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行。使用卷轴是标准动作。例外：如果卷轴描述是"整轮动作"或"标准动作"，则按描述执行。</p>
+            <p class="source">📚 出处：PHB p.84, DMG p.213, 3.5版 FAQ v.2.0</p>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：失败后卷轴是否破坏</h3>
+            <p><strong>冲突点</strong>：使用魔法装置检定失败后，卷轴是否被破坏？</p>
+            <p><strong>官方规则（PHB p.84 & DMG p.213）</strong>：如果检定失败且差值≥5，卷轴被破坏（如同法术失败）。如果失败差值<5，卷轴未破坏，可以重试（但有+5 DC惩罚）。</p>
+            <p><strong>网络误传</strong>：部分论坛声称"失败不会破坏卷轴，可以无限重试"。这会严重破坏游戏平衡。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行。例外：如果DM使用 houserule "卷轴坚固"，则可以降低破坏几率。</p>
+            <p class="source">📚 出处：PHB p.84, DMG p.213, Complete Arcane p.142</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 规则出处</h3>
+            <ul>
+                <li><strong>玩家手册 (PHB)</strong>：p.84-85，使用魔法装置技能详细描述</li>
+                <li><strong>地下城主指南 (DMG)</strong>：p.213，魔法物品使用规则</li>
+                <li><strong>Complete Arcane</strong>：p.142-143，使用魔法装置进阶规则</li>
+                <li><strong>3.5版 FAQ</strong>：v.2.0，使用魔法装置相关问答</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>🐉 D&D 3.5e 中文Wiki | 基于《玩家手册》(PHB) 规则</p>
+        <p>本网站为粉丝制作，非官方作品。Dungeons & Dragons 是 Wizards of the Coast 的商标。</p>
+    </footer>
+</body>
+</html>

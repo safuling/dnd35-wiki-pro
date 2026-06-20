@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灵敏反应 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <h3>专长导航</h3>
+  <ul>
+    <li><a href="intro.html">专长总览</a></li>
+    <li class="nav-divider">战斗专长</li>
+    <li><a href="power-attack.html">猛力攻击</a></li>
+    <li><a href="cleave.html">顺劈斩</a></li>
+    <li><a href="weapon-focus.html">武器专攻</a></li>
+    <li><a href="improved-initiative.html">警觉</a></li>
+    <li><a href="dodge.html">闪避</a></li>
+    <li><a href="combat-expertise.html">战斗技巧</a></li>
+    <li class="nav-divider">施法专长</li>
+    <li><a href="spell-focus.html">法术专攻</a></li>
+    <li><a href="combat-casting.html">战斗施法</a></li>
+    <li class="nav-divider">通用专长</li>
+    <li><a href="toughness.html">强韧</a></li>
+    <li><a href="iron-will.html">钢铁意志</a></li>
+    <li><a href="great-fortitude.html">强韧体魄</a></li>
+    <li><a href="lightning-reflexes.html" class="active">灵敏反应</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 灵敏反应</nav>
+<h1>灵敏反应 (Lightning Reflexes)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">通用专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">无</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">反射豁免检定获得 +2 加值</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择一次</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你的反应迅速，能躲避陷阱、法术和范围攻击。</p>
+<p>你的 <strong>反射豁免检定 (Reflex saving throw)</strong> 获得 <span class="rule-keyword">+2 加值</span>。该加值适用于所有需要反射豁免的情况（如抵抗 <em>火球术</em>、<em>蛛网术</em>、<em>陷阱</em> 等）。</p>
+
+<h2 id="benefit">益处详解</h2>
+<ul>
+  <li><strong>反射豁免</strong>：用于抵抗 <strong>范围效果</strong>、<strong>陷阱</strong>、<strong>法术面积</strong>、<strong>坠落伤害减半</strong> 等。</li>
+  <li><strong>+2 加值</strong>：看似不大，但对低反射豁免的职业（如战士、野蛮人）至关重要。</li>
+  <li><strong>与敏捷调整值叠加</strong>：反射豁免 = 基础加值 + 敏捷调整值 + 灵敏反应 (+2) + 其他加值。</li>
+</ul>
+
+<h2 id="class">适合职业</h2>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>职业</th>
+      <th>反射豁免成长</th>
+      <th>灵敏反应价值</th>
+      <th>建议</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong class="highlight">战士、野蛮人</strong></td>
+      <td>弱 (低敏捷)</td>
+      <td class="highlight">高</td>
+      <td><strong>强烈推荐</strong></td>
+    </tr>
+    <tr>
+      <td><strong class="highlight">法师、术士</strong></td>
+      <td>中</td>
+      <td>中</td>
+      <td>根据敏捷决定</td>
+    </tr>
+    <tr>
+      <td><strong class="highlight">盗贼、游侠</strong></td>
+      <td>强 (高敏捷)</td>
+      <td>低</td>
+      <td>通常不需要</td>
+    </tr>
+    <tr>
+      <td>牧师、德鲁伊</td>
+      <td>中</td>
+      <td>中</td>
+      <td>根据敏捷决定</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>钢铁意志 (Iron Will)</strong>：提高意志豁免，搭配灵敏反应提高全面豁免。</li>
+  <li><strong>强韧体魄 (Great Fortitude)</strong>：提高强韧豁免，成为"豁免坦克"。</li>
+  <li><strong>警觉 (Improved Initiative)</strong>：提高先攻，搭配灵敏反应先手躲避。</li>
+</ul>
+
+<h2 id="scenario">豁免场景示例</h2>
+<div class="example-box">
+  <p><strong>场景 1：抵抗火球术</strong></p>
+  <p>人类战士 1级，敏捷 12（+1），选择"灵敏反应"专长。</p>
+  <ul>
+    <li>反射豁免 = 基础 (+0) + 敏捷 (+1) + 灵敏反应 (+2) = <strong>+3</strong></li>
+    <li>敌人施放 <em>火球术</em>，DC = 16</li>
+    <li>需要掷出 13+ 才能成功（成功率 40%）</li>
+    <li>如果没有灵敏反应，需要掷出 15+（成功率 25%）</li>
+  </ul>
+</div>
+<div class="example-box">
+  <p><strong>场景 2：躲避陷阱</strong></p>
+  <p>人类盗贼 1级，敏捷 18（+4），未选择"灵敏反应"。</p>
+  <ul>
+    <li>反射豁免 = 基础 (+2) + 敏捷 (+4) = <strong>+6</strong></li>
+    <li>触发 <em>飞镖陷阱</em>，DC = 14</li>
+    <li>需要掷出 8+ 才能成功（成功率 65%）</li>
+    <li>如果选择灵敏反应，需要掷出 6+（成功率 75%）</li>
+  </ul>
+</div>
+
+<h2 id="feat-comparison">豁免专长对比</h2>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>专长</th>
+      <th>豁免类型</th>
+      <th>加值</th>
+      <th>先决条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>灵敏反应</strong></td>
+      <td>反射</td>
+      <td class="highlight">+2</td>
+      <td>无</td>
+    </tr>
+    <tr>
+      <td>强韧体魄</td>
+      <td>强韧</td>
+      <td>+2</td>
+      <td>无</td>
+    </tr>
+    <tr>
+      <td>钢铁意志</td>
+      <td>意志</td>
+      <td>+2</td>
+      <td>无</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：灵敏反应是否适用于"借机攻击"的反射？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：灵敏反应只影响"反射豁免检定"。</p>
+  <p>✅ <strong>正确规则</strong>：</p>
+  <ul>
+    <li>灵敏反应 <strong>不适用</strong>于借机攻击（借机攻击是攻击掷骰，不是豁免检定）。</li>
+    <li>灵敏反应 <strong>只影响</strong>反射豁免检定（如火球术、陷阱等）。</li>
+  </ul>
+  <p>⚠️ <strong>常见误解</strong>：有玩家认为灵敏反应能提高AC或躲避借机攻击。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页136</strong>：豁免检定详解。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

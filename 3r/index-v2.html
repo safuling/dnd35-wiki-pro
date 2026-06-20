@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3R 拓展规则大全 | D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Segoe UI',Tahoma,sans-serif; background:#1a1a2e; color:#e0e0e0; line-height:1.6; }
+    .container { max-width:1200px; margin:0 auto; padding:20px; }
+    .header { background:linear-gradient(135deg,#2d1b69 0%,#1a1a2e 100%); border:2px solid #7b2d8a; border-radius:12px; padding:40px; margin-bottom:30px; text-align:center; }
+    .header h1 { font-size:2.8em; color:#d4a017; margin-bottom:10px; }
+    .header .badge { display:inline-block; background:#7b2d8a; color:#fff; padding:4px 16px; border-radius:20px; font-size:0.9em; margin-bottom:15px; }
+    .header p { font-size:1.1em; color:#b0b0b0; }
+    .nav-links { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; justify-content:center; }
+    .nav-links a { padding:8px 16px; background:#2a2a4a; color:#d4a017; text-decoration:none; border-radius:6px; border:1px solid #7b2d8a; transition:all 0.3s; }
+    .nav-links a:hover { background:#7b2d8a; color:#fff; }
+    .section { background:#2a2a4a; padding:25px; border-radius:10px; margin-bottom:25px; border:1px solid #3a3a5a; }
+    .section h2 { color:#d4a017; margin-bottom:15px; border-bottom:2px solid #7b2d8a; padding-bottom:8px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:18px; }
+    .card { background:#1a1a3a; border:1px solid #3a3a5a; border-radius:8px; padding:18px; transition:all 0.3s; }
+    .card:hover { border-color:#d4a017; transform:translateY(-2px); }
+    .card h3 { color:#d4a017; margin-bottom:8px; }
+    .card .desc { font-size:0.9em; color:#9090a0; margin-bottom:10px; }
+    .card .meta { font-size:0.8em; color:#7b2d8a; }
+    .warning { background:#3a2a1a; border:1px solid #d4a017; border-radius:8px; padding:15px; margin:20px 0; }
+    .warning strong { color:#d4a017; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="container">
+    <div class="header">
+      <div class="badge">⚡ 3R 拓展规则</div>
+      <h1>📖 3R 拓展功能大全</h1>
+      <p>D&D 3.5e 扩展规则、可选规则、社区内容</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="../index.html">🏠 返回首页</a>
+      <a href="new-races.html">🧝 新增种族</a>
+      <a href="new-classes.html">⚔️ 新增职业</a>
+      <a href="new-feats.html">🌟 新增专长</a>
+      <a href="new-spells.html">✨ 新增法术</a>
+      <a href="new-equipment.html">🎒 新增装备</a>
+      <a href="new-monsters.html">👹 新增怪物</a>
+      <a href="optional-rules.html">📜 可选规则</a>
+      <a href="resources-tools.html">🔧 资源与工具</a>
+    </div>
+
+    <div class="warning">
+      <strong>⚠️ 注意：</strong>本部分是 <strong>3R 拓展规则</strong>，非 D&D 3.5e 官方核心规则。<br>
+      3R 内容来源于社区扩展、可选规则、第三方资料，与官方核心规则可能存在冲突。<br>
+      使用这些规则前，请与您的 DM 确认。
+    </div>
+
+    <div class="section">
+      <h2>📖 关于 3R 拓展</h2>
+      <p><strong>3R</strong> 是 D&D 3.5e 的扩展规则集合，包括：</p>
+      <ul style="margin:10px 0 10px 20px; color:#b0b0b0;">
+        <li><strong>新增内容</strong>：来自《Complete Warrior》《Expanded Psionics Handbook》等扩展书，以及社区创作内容</li>
+        <li><strong>可选规则</strong>：战斗、魔法、战役、角色创建的可选规则，让游戏更灵活</li>
+        <li><strong>平衡性调整</strong>：部分规则对官方内容进行了平衡性调整</li>
+      </ul>
+      <p style="color:#d4a017; font-weight:600;">📌 与官方核心规则的区别：</p>
+      <ul style="margin:10px 0 0 20px; color:#b0b0b0;">
+        <li>官方核心规则：Player's Handbook、Dungeon Master's Guide、Monster Manual 内容</li>
+        <li>3R 拓展规则：扩展书内容 + 社区创作 + 可选规则</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🧝 新增种族</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>卓尔精灵（Drow）</h3>
+          <div class="desc">来自幽暗地域的黑暗精灵，继承蜘蛛神后的血脉。</div>
+          <div class="meta">类型：官方拓展 | 来源：规则书</div>
+        </div>
+        <div class="card">
+          <h3>提夫林（Tiefling）</h3>
+          <div class="desc">拥有魔鬼血统的种族，天生带有邪异的气质。</div>
+          <div class="meta">类型：官方拓展 | 来源：规则书</div>
+        </div>
+        <div class="card">
+          <h3>换生灵（Changeling）</h3>
+          <div class="desc">天生的变化者，可以改变自己的外貌。</div>
+          <div class="meta">类型：官方拓展 | 来源：Eberron</div>
+        </div>
+        <div class="card">
+          <h3>半巨人（Half-Giant）</h3>
+          <div class="desc">巨人血的种族，力量惊人但不够聪明。</div>
+          <div class="meta">类型：官方拓展 | 来源：Dark Sun</div>
+        </div>
+        <div class="card">
+          <h3>地精（Goblin）</h3>
+          <div class="desc">小型哥布林类生物，狡猾且善于伏击。</div>
+          <div class="meta">类型：社区内容 | 来源：Volo's Guide</div>
+        </div>
+        <div class="card">
+          <h3>海精灵（Sea Elf）</h3>
+          <div class="desc">居住在海中的精灵亚种，善于游泳和海洋生存。</div>
+          <div class="meta">类型：官方拓展 | 来源：规则的补充</div>
+        </div>
+      </div>
+      <p style="margin-top:15px;"><a href="new-races.html" style="color:#d4a017;">查看完整新增种族 →</a></p>
+    </div>
+
+    <div class="section">
+      <h2>⚔️ 新增职业</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>刺客（Assassin）</h3>
+          <div class="desc">专业的杀手，擅长潜行、下毒和致命攻击。</div>
+          <div class="meta">类型：进阶职业 | 生命骰：d6</div>
+        </div>
+        <div class="card">
+          <h3>元素使者（Elemental Agent）</h3>
+          <div class="desc">操控四大元素的职业，可以召唤元素生物。</div>
+          <div class="meta">类型：基础职业 | 生命骰：d8</div>
+        </div>
+        <div class="card">
+          <h3>奥法射手（Arcane Archer）</h3>
+          <div class="desc">将弓箭与奥术结合的职业，射出的箭矢附带魔法效果。</div>
+          <div class="meta">类型：进阶职业 | 生命骰：d8</div>
+        </div>
+        <div class="card">
+          <h3>深渊之刃（Abyssal Blade）</h3>
+          <div class="desc">与恶魔之力签订的战士，可以使用深渊能量。</div>
+          <div class="meta">类型：进阶职业 | 生命骰：d10</div>
+        </div>
+      </div>
+      <p style="margin-top:15px;"><a href="new-classes.html" style="color:#d4a017;">查看完整新增职业 →</a></p>
+    </div>
+
+    <div class="section">
+      <h2>🌟 新增专长</h2>
+      <p style="color:#b0b0b0; margin-bottom:15px;">10+ 个新增专长，包括战斗、法术、技能、超魔、种族专长等。</p>
+      <a href="new-feats.html" style="color:#d4a017; font-weight:600;">查看所有新增专长 →</a>
+    </div>
+
+    <div class="section">
+      <h2>✨ 新增法术</h2>
+      <p style="color:#b0b0b0; margin-bottom:15px;">8+ 个新增法术，涵盖所有法术学派。</p>
+      <a href="new-spells.html" style="color:#d4a017; font-weight:600;">查看所有新增法术 →</a>
+    </div>
+
+    <div class="section">
+      <h2>🎒 新增装备</h2>
+      <p style="color:#b0b0b0; margin-bottom:15px;">25+ 件新增装备，包括武器、护甲、魔法物品、神器。</p>
+      <a href="new-equipment.html" style="color:#d4a017; font-weight:600;">查看所有新增装备 →</a>
+    </div>
+
+    <div class="section">
+      <h2>👹 新增怪物</h2>
+      <p style="color:#b0b0b0; margin-bottom:15px;">详细的怪物资料，包括属性块、战术、生态。</p>
+      <a href="new-monsters.html" style="color:#d4a017; font-weight:600;">查看所有新增怪物 →</a>
+    </div>
+
+    <div class="section">
+      <h2>📜 可选规则</h2>
+      <p style="color:#b0b0b0; margin-bottom:15px;">战斗、魔法、战役、角色创建的可选规则。</p>
+      <a href="optional-rules.html" style="color:#d4a017; font-weight:600;">查看所有可选规则 →</a>
+    </div>
+
+    <div class="section">
+      <h2>🔧 资源与工具</h2>
+      <p style="color:#b0b0b0; margin-bottom:15px;">随机表、计算器、快速参考表、版本转换指南。</p>
+      <a href="resources-tools.html" style="color:#d4a017; font-weight:600;">查看所有资源与工具 →</a>
+    </div>
+
+    <div class="section">
+      <h2>📋 使用建议</h2>
+      <ul style="margin-left:20px; color:#b0b0b0;">
+        <li><strong>与 DM 确认</strong>：使用 3R 内容前，请务必与您的 DM 确认</li>
+        <li><strong>逐步引入</strong>：不要一次性引入太多 3R 内容，逐步测试</li>
+        <li><strong>平衡性检查</strong>：部分 3R 内容可能破坏游戏平衡，需要 DM 调整</li>
+        <li><strong>记录冲突</strong>：如果 3R 内容与核心规则冲突，以 DM 裁决为准</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

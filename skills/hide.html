@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐匿 - D&D 3.5e 中文Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .skill-header {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .ability-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .dc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .dc-table th, .dc-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .dc-table th {
+            background: #27ae60;
+            color: white;
+        }
+        .dc-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .conflict-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+    <nav class="top-nav">
+        <div class="nav-brand">🐉 D&D 3.5e Wiki</div>
+        <div class="nav-links">
+            <a href="../index.html">首页</a>
+            <a href="intro.html" class="active">技能</a>
+            <a href="../spells/intro.html">法术</a>
+            <a href="../races/human.html">种族</a>
+            <a href="../classes/wizard.html">职业</a>
+            <a href="../feats/intro.html">专长</a>
+            <a href="../conflicts.html">规则冲突</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="skill-header">
+            <h1>🫥 隐匿 (Hide)</h1>
+            <p class="subtitle">敏捷技能 · 训练技能（游荡者、德鲁伊、游侠）</p>
+            <div>
+                <span class="ability-badge">关键属性：敏捷 (DEX)</span>
+                <span class="ability-badge">调整值：1d20 + 调整值点数 + 敏捷调整值</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 技能描述</h3>
+            <p>隐匿技能允许你隐藏自己，不被他人发现。你需要在遮挡物或阴影后，并保持静止（或在移动时做特殊检定）。</p>
+            
+            <h4>调整值计算</h4>
+            <p class="formula">隐匿调整值 = 隐匿调整值点数 + 敏捷调整值 + 体型调整值 + 其他调整值</p>
+            
+            <h4>检定条件</h4>
+            <ul>
+                <li><strong>动作</strong>：标准动作（Standard Action）或移动等效动作（Move-Equivalent Action）</li>
+                <li><strong>重试</strong>：可以，但如果被发现了，重试会有+20 DC惩罚</li>
+                <li><strong>特殊</strong>：体型越小，隐匿调整值越高（微形+16，小形+4，中形+0，大形-4）</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 难度等级 (DC)</h2>
+            <table class="dc-table">
+                <thead>
+                    <tr>
+                        <th>隐匿情况</th>
+                        <th>DC</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>在阴影/遮挡物后保持静止</td>
+                        <td>DC 0</td>
+                        <td>非常容易，几乎自动成功</td>
+                    </tr>
+                    <tr>
+                        <td>在中等遮挡物后保持静止</td>
+                        <td>DC 10</td>
+                        <td>需要基本的隐匿技巧</td>
+                    </tr>
+                    <tr>
+                        <td>在轻遮挡物后保持静止</td>
+                        <td>DC 15</td>
+                        <td>需要较高的隐匿技巧</td>
+                    </tr>
+                    <tr>
+                        <td>移动时隐匿</td>
+                        <td>+5 调整值</td>
+                        <td>移动会让隐匿更困难</td>
+                    </tr>
+                    <tr>
+                        <td>在敌人视线内隐匿</td>
+                        <td>+5 调整值</td>
+                        <td>敌人主动观察你</td>
+                    </tr>
+                    <tr>
+                        <td>穿着噪音护甲</td>
+                        <td>+5 调整值</td>
+                        <td>链甲/板甲等发出声音</td>
+                    </tr>
+                    <tr>
+                        <td>在明亮光线中隐匿</td>
+                        <td>+5 调整值</td>
+                        <td>无阴影可躲</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📋 技能细则</h2>
+            
+            <h3>被发现</h3>
+            <p>敌人的侦察（Spot）检定与你的隐匿（Hide）检定对抗。如果敌人的侦察调整值 ≥ 你的隐匿调整值，他们会发现你。</p>
+            <ul>
+                <li><strong>距离影响</strong>：每10英尺距离，敌人的侦察DC+1（最大+10）</li>
+                <li><strong>视线障碍</strong>：烟雾、黑暗、障碍物等提供隐蔽（Concealment），敌人侦察有失败几率</li>
+            </ul>
+
+            <h3>移动隐匿</h3>
+            <p>你可以在移动时做隐匿检定，但DC增加+5。移动速度减半（如同潜行）。</p>
+
+            <h3>特殊能力</h3>
+            <ul>
+                <li><strong>精灵（Elf）</strong>：在森林中隐匿调整值+4（因为``森林隐匿``种族特性）</li>
+                <li><strong>游荡者（Rogue）</strong>：可以将``隐匿``作为训练技能（调整值+3）</li>
+                <li><strong>德鲁伊（Druid）``自然隐匿``</strong>：在某些自然环境中获得+4调整值</li>
+                <li><strong>``隐形``（Invisibility）法术</strong>：完全无法被发现（除非敌人用能侦测隐形的能力）</li>
+            </ul>
+
+            <h3>体型调整值</h3>
+            <table class="dc-table">
+                <thead>
+                    <tr>
+                        <th>体型</th>
+                        <th>调整值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>微形 (Fine)</td><td>+16</td></tr>
+                    <tr><td>极小 (Diminutive)</td><td>+12</td></tr>
+                    <tr><td>超小 (Tiny)</td><td>+8</td></tr>
+                    <tr><td>小形 (Small)</td><td>+4</td></tr>
+                    <tr><td>中形 (Medium)</td><td>+0</td></tr>
+                    <tr><td>大形 (Large)</td><td>-4</td></tr>
+                    <tr><td>超大型 (Huge)</td><td>-8</td></tr>
+                    <tr><td>巨型 (Gargantuan)</td><td>-12</td></tr>
+                    <tr><td>超巨型 (Colossal)</td><td>-16</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="example-box">
+            <h3>💡 实战示例</h3>
+            <p><strong>场景</strong>：你是一名3级游荡者（敏捷18，+4调整值），有8点隐匿调整值。你在森林中（精灵获得+4调整值）。</p>
+            <p><strong>总调整值</strong>：8（调整值点数）+ 4（敏捷调整值）+ 4（森林特性）= +16</p>
+            <p><strong>任务</strong>：在一棵大树后隐匿，保持静止（DC 0）。</p>
+            <p><strong>检定</strong>：1d20 + 16 = 28 ≥ 0，成功！你完美地隐藏了自己。</p>
+            <p><strong>对抗</strong>：一名兽人守卫（侦察调整值+2）试图发现你。他的侦察调整值（2）< 你的隐匿调整值（16），所以他无法发现你。</p>
+            <p><strong>变体</strong>：如果你想在移动时隐匿（DC 0+5=5），1d20 + 16 = 22 ≥ 5，仍然成功！你可以悄无声息地接近敌人。</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 搭配专长</h2>
+            <ul>
+                <li><strong>隐蔽移动（Stealthy）</strong>：隐匿和潜行调整值+2</li>
+                <li><strong>战斗隐匿（Combat Hide）</strong>：可以在战斗中使用隐匿（需要移动等效动作）</li>
+                <li><strong>敏捷遁走（Quick Draw）</strong>：虽然不是直接搭配，但快速拔武器后仍能保持隐匿</li>
+            </ul>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：移动时隐匿的动作类型</h3>
+            <p><strong>冲突点</strong>：移动时隐匿是标准动作、移动等效动作，还是特殊动作？</p>
+            <p><strong>官方规则（PHB p.76）</strong>：隐匿通常是标准动作。你可以在移动等效动作中尝试隐匿，但会有+5 DC惩罚。</p>
+            <p><strong>网络误传</strong>：部分网站声称"移动时隐匿是移动等效动作，无惩罚"。这是错误的。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行。如果想在移动时无障碍隐匿，需要``战斗隐匿``专长。</p>
+            <p class="source">📚 出处：PHB p.76, Complete Adventurer p.103</p>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：被发现后的重试</h3>
+            <p><strong>冲突点</strong>：被发现后重试隐匿，是否有额外DC惩罚？</p>
+            <p><strong>官方规则（PHB p.76）</strong>：如果第一次隐匿失败（被发现了），重试会有+20 DC惩罚。这是因为敌人现在知道你在试图隐藏。</p>
+            <p><strong>网络误传</strong>：部分论坛声称"可以无限重试，无惩罚"。这严重破坏了游戏平衡。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行。例外：如果敌人失去了你的视线（你跑出了视线范围），可以重新隐匿而无惩罚。</p>
+            <p class="source">📚 出处：PHB p.76, 3.5版 FAQ v.2.0</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 规则出处</h3>
+            <ul>
+                <li><strong>玩家手册 (PHB)</strong>：p.76-77，隐匿技能详细描述</li>
+                <li><strong>_complete Adventurer_</strong>：p.103-104，战斗隐匿专长</li>
+                <li><strong>3.5版 FAQ</strong>：v.2.0，隐匿相关问答</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>🐉 D&D 3.5e 中文Wiki | 基于《玩家手册》(PHB) 规则</p>
+        <p>本网站为粉丝制作，非官方作品。Dungeons & Dragons 是 Wizards of the Coast 的商标。</p>
+    </footer>
+</body>
+</html>

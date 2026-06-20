@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>移动射击 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #8B0000, #DC143C); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #8B0000; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #8B0000; border-bottom: 2px solid #8B0000; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color: #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">D&D 3.5e Wiki</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="intro.html" class="active">专长</a></li>
+        <li><a href="../spells/intro.html">法术</a></li>
+        <li><a href="../classes/intro.html">职业</a></li>
+        <li><a href="../races/intro.html">种族</a></li>
+        <li><a href="../conflicts.html">规则冲突</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="feat-header">
+      <h1>🏹 移动射击</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Shot on the Run</p>
+      <span class="feat-type">通用专长</span>
+      <span class="feat-type">【射击】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">通用专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">精准射击 (Precise Shot)、BAB +4</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">移动中射击不触发借机攻击</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">只能选择一次</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 101</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">游侠、特定构建</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你能够在移动中进行射击，而不会触发借机攻击。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>精准射击 (Precise Shot)</strong></li>
+        <li><strong>基本攻击加值 (BAB) +4</strong></li>
+      </ul>
+      <p><strong>说明</strong>：移动射击是精准射击的进阶专长，需要更高的BAB。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>在单次攻击动作中，你可以：</p>
+      <ol>
+        <li><strong>移动</strong>：移动最多你的速度距离</li>
+        <li><strong>射击</strong>：进行一次远程攻击</li>
+        <li><strong>撤离</strong>：继续移动剩余的移动距离</li>
+      </ol>
+      <p><strong>注意</strong>：你在移动和射击时不会触发<a href="attack-of-opportunity.html">借机攻击</a>。</p>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>移动射击流程</h3>
+    <ol>
+      <li><strong>声明使用移动射击</strong>：在你的移动动作中声明</li>
+      <li><strong>移动</strong>：移动最多你的速度距离</li>
+      <li><strong>射击</strong>：进行一次远程攻击（使用你的攻击加值）</li>
+      <li><strong>撤离</strong>：继续移动剩余的移动距离</li>
+      <li><strong>结束移动</strong>：你的移动动作结束</li>
+    </ol>
+
+    <h3>重要规则</h3>
+    <ul>
+      <li><strong>不触发借机攻击</strong>：移动射击允许你在移动和射击时不会触发借机攻击</li>
+      <li><strong>仅限于远程攻击</strong>：移动射击只能用于远程攻击，不能用于近战攻击或法术</li>
+      <li><strong>消耗移动动作</strong>：移动射击消耗你的移动动作，你不能在同一回合内使用其他移动动作</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：6级游侠（BAB +6），速度 30英尺，已选择移动射击。</p>
+      <p><strong>攻击</strong>：</p>
+      <ol>
+        <li><strong>移动</strong>：移动 20英尺 调整位置</li>
+        <li><strong>射击</strong>：进行一次远程攻击（使用长弓）</li>
+        <li><strong>撤离</strong>：继续移动 10英尺 撤离到安全位置</li>
+        <li><strong>结果</strong>：射击敌人后安全撤离，不触发借机攻击</li>
+      </ol>
+      <p><strong>分析</strong>：移动射击非常适合游侠等需要机动性的远程职业，可以在射击后安全撤离。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 推荐搭配专长</h4>
+      <ul>
+        <li><strong>精准射击 (Precise Shot)</strong> - 先决条件，射击邻近敌人的目标无惩罚</li>
+        <li><strong>移动射击 (Shot on the Run)</strong> - 本专长，移动中射击</li>
+        <li><strong>快速射击 (Rapid Shot)</strong> - 单次攻击动作发射两支箭矢</li>
+        <li><strong>多重射击 (Manyshot)</strong> - 单次攻击动作发射两支箭矢（同一目标）</li>
+        <li><strong>近程射击 (Point Blank Shot)</strong> - 近距离射击加值</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>🏹 推荐构建</h4>
+      <p><strong>1. 机动射手 (Mobile Archer)</strong></p>
+      <ul>
+        <li>专攻：近程射击 → 精准射击 → 移动射击 → 快速射击</li>
+        <li>特点：高机动性，适合游击战</li>
+        <li>推荐武器：长弓（1d8伤害）</li>
+      </ul>
+      <p><strong>2. 游击射手 (Guerrilla Archer)</strong></p>
+      <ul>
+        <li>专攻：精准射击 → 移动射击 → 快速射击 → 多重射击</li>
+        <li>特点：高机动性，适合游击战</li>
+        <li>推荐武器：短弓（1d6伤害，轻型）</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：移动射击与快速射击的兼容</h4>
+      <p><strong>冲突点</strong>：移动射击能否与快速射击同时使用？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 101</strong>：移动射击专长描述</li>
+        <li><strong>PHB p. 99</strong>：快速射击专长描述</li>
+      </ul>
+      <p><strong>冲突描述</strong>：移动射击和快速射击都需要在攻击动作中使用，能否在同一回合内使用？</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>兼容解释</strong>：可以同时使用，但移动射击的射击部分可以使用快速射击</li>
+        <li><strong>不兼容解释</strong>：移动射击和快速射击是互斥的，只能选择一种在回合内使用</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>不兼容解释</strong>（移动射击和快速射击不能同时用于同一次攻击动作）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 101 - 移动射击专长描述</li>
+      <li><strong>Complete Warrior</strong> p. 109 - 移动射击的变体规则</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

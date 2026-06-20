@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新增职业 — 3R拓展功能大全 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .class-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))); gap: 16px; margin: 24px 0; }
+  .class-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; transition: .2s; }
+  .class-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }
+  .class-name { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .class-name-en { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; }
+  .class-info { font-size: 0.9rem; line-height: 1.6; color: var(--text); }
+  .class-feature { margin-top: 12px; padding: 12px; background: var(--bg); border-radius: 6px; font-size: 0.85rem; }
+  .class-feature strong { color: var(--accent); }
+  .source-badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-top: 12px; }
+  .source-offical { background: #2ecc71; color: #fff; }
+  .source-community { background: #f39c12; color: #fff; }
+  .source-homebrew { background: #9b59b6; color: #fff; }
+  .prestige-tag { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-top: 8px; margin-right: 8px; background: var(--accent-glow); color: var(--accent); }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+<div class="page-wrapper">
+  <!-- 左侧导航 -->
+  <nav class="sidebar">
+    <div class="nav-header">
+      <span class="nav-logo">⚔️</span>
+      <span class="nav-title">D&D 3.5e</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 首页</a></li>
+      <li><a href="../rules.html">📜 核心规则</a></li>
+      <li><a href="../spells/intro.html">✨ 法术大全</a></li>
+      <li><a href="../classes/intro.html">⚔️ 职业</a></li>
+      <li><a href="../races/intro.html">🧝 种族</a></li>
+      <li><a href="../feats/intro.html">🏆 专长</a></li>
+      <li><a href="../skills/intro.html">📊 技能</a></li>
+      <li><a href="../equipment/intro.html">🎒 装备</a></li>
+      <li><a href="../monsters/intro.html">👹 怪物</a></li>
+      <li><a href="index.html" class="active">📚 3R拓展</a></li>
+      <li><a href="../conflicts.html">⚠️ 规则冲突</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <!-- 面包屑 -->
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a> &gt; <a href="index.html">3R拓展</a> &gt; <span>新增职业</span>
+    </div>
+
+    <!-- 页面标题 -->
+    <div class="page-header">
+      <h1>⚔️ 新增职业</h1>
+      <p class="page-subtitle">D&D 3.5e 第三修订（3R）拓展职业 · 包含基础职业与进阶职业</p>
+    </div>
+
+    <!-- 说明 -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 24px; line-height: 1.8;">
+      <h3 style="margin-bottom: 12px;">📖 使用说明</h3>
+      <ul style="padding-left: 20px; color: var(--text-muted);">
+        <li>本页面收录D&D 3.5e 3R拓展的新增基础职业和进阶职业</li>
+        <li>每个职业包含：职业概述、职业特性、主要属性、良好兼职建议、装备建议等</li>
+        <li>进阶职业标注了前置要求（Prerequisites）</li>
+        <li>标注了内容来源：<span class="source-badge source-offical">官方</span> 官方资料、<span class="source-badge source-community">社区</span> 社区创作、<span class="source-badge source-homebrew">自制</span> 自制内容</li>
+        <li>使用前请与DM确认是否允许</li>
+      </ul>
+    </div>
+
+    <!-- 基础职业 -->
+    <h2 style="margin: 32px 0 16px; font-size: 1.4rem;">⚔️ 新增基础职业</h2>
+    <div class="class-grid">
+      <!-- 刺客 -->
+      <div class="class-card">
+        <div class="class-name">刺客</div>
+        <div class="class-name-en">Assassin</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>敏捷、智力</p>
+          <p><strong>生命骰：</strong>d6</p>
+          <p><strong>基础攻击加值：</strong>中等（+3/4级）</p>
+          <p><strong>强韧豁免：</strong>差</p>
+          <p><strong>反射豁免：</strong>良好</p>
+          <p><strong>意志豁免：</strong>差</p>
+        </div>
+        <div class="class-feature">
+          <strong>职业特性：</strong><br>
+          • <strong>毒药使用：</strong>精通各种毒药的使用<br>
+          • <strong>偷袭：</strong>如同盗贼，对措手不及的敌人造成额外伤害<br>
+          • <strong>伪装：</strong>可以完美伪装成其他人<br>
+          • <strong>暗杀技巧：</strong>获得多种暗杀相关的特殊能力<br>
+          • <strong>法术：</strong>可以施展少数法师法术（基于智力）
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>良好兼职：</strong>盗贼、游侠、武僧<br>
+          <strong>装备建议：</strong>轻甲、细剑、手叉、毒药
+        </div>
+        <span class="source-badge source-community">社区 - 职业手册</span>
+      </div>
+
+      <!-- 元素使者 -->
+      <div class="class-card">
+        <div class="class-name">元素使者</div>
+        <div class="class-name-en">Elemental Adept</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>智力、魅力</p>
+          <p><strong>生命骰：</strong>d8</p>
+          <p><strong>基础攻击加值：</strong>中等（+3/4级）</p>
+          <p><strong>豁免：</strong>反射良好、意志良好</p>
+        </div>
+        <div class="class-feature">
+          <strong>职业特性：</strong><br>
+          • <strong>元素亲和：</strong>选择一种元素（气/土/火/水）作为专精<br>
+          • <strong>元素法术：</strong>可以施展该元素相关的法术<br>
+          • <strong>元素形态：</strong>可以局部或完全变成元素形态<br>
+          • <strong>元素召唤：</strong>可以召唤元素生物协助作战<br>
+          • <strong>元素抗力：</strong>对该元素伤害获得抗力
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>良好兼职：</strong>法师、德鲁伊、牧师<br>
+          <strong>装备建议：</strong>法袍、法器、元素相关魔法物品
+        </div>
+        <span class="source-badge source-homebrew">自制 - 元素使者手册</span>
+      </div>
+
+      <!-- 奥法射手 -->
+      <div class="class-card">
+        <div class="class-name">奥法射手</div>
+        <div class="class-name-en">Arcane Archer</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>敏捷、智力</p>
+          <p><strong>生命骰：</strong>d8</p>
+          <p><strong>基础攻击加值：</strong>良好（+3/4级）</p>
+          <p><strong>豁免：</strong>反射良好、意志差</p>
+        </div>
+        <div class="class-feature">
+          <strong>职业特性：</strong><br>
+          • <strong>奥法射击：</strong>在箭矢上施展法术，射击时触发法术效果<br>
+          • <strong>元素箭：</strong>可以施展元素伤害箭（酸/冷/电/火/音）<br>
+          • <strong>导引箭：</strong>可以引导箭矢追踪敌人<br>
+          • <strong>穿透射击：</strong>可以射击多个目标<br>
+          • <strong>法术：</strong>可以施展少数法师或德鲁伊法术
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>前置要求：</strong>必须已经拥有"远程射击"专长<br>
+          <strong>良好兼职：</strong>游侠、法师、盗贼<br>
+          <strong>装备建议：</strong>长弓、复合弓、魔法箭矢
+        </div>
+        <span class="source-badge source-offical">官方 - 地下城主指南</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+    </div>
+
+    <!-- 进阶职业 -->
+    <h2 style="margin: 32px 0 16px; font-size: 1.4rem;">🎖️ 进阶职业（Prestige Classes）</h2>
+    <div class="class-grid">
+      <!-- 深渊之刃 -->
+      <div class="class-card">
+        <div class="class-name">深渊之刃</div>
+        <div class="class-name-en">Blade of the Abyss</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>力量、魅力</p>
+          <p><strong>生命骰：</strong>d10</p>
+          <p><strong>基础攻击加值：</strong>良好（+1/级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 阵营：混乱邪恶<br>
+          • 专长：猛力攻击<br>
+          • 能够施展1级邪恶领域法术<br>
+          • 必须通过深渊试炼
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>恶魔武器：</strong>武器获得邪恶属性和特殊能力<br>
+          • <strong>深渊抗力：</strong>对邪恶异界生物的法术获得抗力<br>
+          • <strong>召唤恶魔：</strong>可以召唤恶魔协助作战<br>
+          • <strong>恶魔形态：</strong>可以局部变成恶魔形态
+        </div>
+        <span class="source-badge source-offical">官方 - 深渊之书</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 神殿骑士 -->
+      <div class="class-card">
+        <div class="class-name">神殿骑士</div>
+        <div class="class-name-en">Temple Knight</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>力量、魅力</p>
+          <p><strong>生命骰：</strong>d10</p>
+          <p><strong>基础攻击加值：</strong>良好（+1/级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 职业：牧师或圣武士<br>
+          • 基础攻击加值：+5<br>
+          • 能够施展3级神术
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>神圣武器：</strong>武器获得神圣属性和特殊能力<br>
+          • <strong>神殿守护：</strong>可以为盟友提供保护<br>
+          • <strong>审判之令：</strong>可以对敌人宣判特殊效果<br>
+          • <strong>神恩：</strong>每日获得神恩能力
+        </div>
+        <span class="source-badge source-offical">官方 - 被遗忘的国度设定集</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 奥法盗贼 -->
+      <div class="class-card">
+        <div class="class-name">奥法盗贼</div>
+        <div class="class-name-en">Arcane Trickster</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>敏捷、智力</p>
+          <p><strong>生命骰：</strong>d6</p>
+          <p><strong>基础攻击加值：</strong>差（+1/2级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 职业能力：偷袭 +2d6<br>
+          • 能够施展2级奥术<br>
+          • 必须已经拥有"闪避"专长
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>奥法偷袭：</strong>可以将偷袭伤害与法术结合<br>
+          • <strong>隐形法术：</strong>可以施展无声法术<br>
+          • <strong>法术偷盗：</strong>可以从其他施法者偷取法术<br>
+          • <strong>奥法伎俩：</strong>获得多种奥法相关的特殊能力
+        </div>
+        <span class="source-badge source-offical">官方 - 地下城主指南</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 奥法骑士 -->
+      <div class="class-card">
+        <div class="class-name">奥法骑士</div>
+        <div class="class-name-en">Eldritch Knight</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>力量/敏捷、智力</p>
+          <p><strong>生命骰：</strong>d6</p>
+          <p><strong>基础攻击加值：</strong>良好（+1/级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 能够施展1级奥术<br>
+          • 基础攻击加值：+4<br>
+          • 必须具有"战斗施法"专长
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>战斗施法：</strong>可以无机关失败施放法术<br>
+          • <strong>法术剑技：</strong>将法术效果附加到武器攻击上<br>
+          • <strong>奥法护甲：</strong>穿着护甲时施法不致失败<br>
+          • <strong>高级法术：</strong>获得额外法术位
+        </div>
+        <span class="source-badge source-offical">官方 - 玩家手册 v3.5</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 龙弟子 -->
+      <div class="class-card">
+        <div class="class-name">龙弟子</div>
+        <div class="class-name-en">Dragon Disciple</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>力量、体质、魅力</p>
+          <p><strong>生命骰：</strong>d12</p>
+          <p><strong>基础攻击加值：</strong>良好（+1/级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 种族：龙血统（龙裔、半龙等）<br>
+          • 能够施展1级奥术<br>
+          • 知识（龙类）技能检定：4级
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>龙之力量：</strong>力量获得+2至+6加值<br>
+          • <strong>龙之抗性：</strong>获得能量抗性（根据龙血类型）<br>
+          • <strong>龙之武器：</strong>获得爪抓和啮咬攻击<br>
+          • <strong>龙之吐息：</strong>可以使用龙息攻击<br>
+          • <strong>龙之翼：</strong>获得飞行能力
+        </div>
+        <span class="source-badge source-offical">官方 - 玩家手册 v3.5</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 武器大师 -->
+      <div class="class-card">
+        <div class="class-name">武器大师</div>
+        <div class="class-name-en">Weapon Master</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>力量/敏捷、体质</p>
+          <p><strong>生命骰：</strong>d10</p>
+          <p><strong>基础攻击加值：</strong>极好（+1/级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 基础攻击加值：+5<br>
+          • 必须拥有"精通重击"或"精通卸武"<br>
+          • 必须拥有"武器专注"专长（对所选武器）
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>武器专精：</strong>对特定武器获得+1至+4攻击加值<br>
+          • <strong>致命打击：</strong>重击威胁范围扩大<br>
+          • <strong>破甲攻击：</strong>可以忽略敌人的护甲加值<br>
+          • <strong>武器掌握：</strong>获得特殊武器技巧
+        </div>
+        <span class="source-badge source-offical">官方 - 完整战士</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 圣复仇者 -->
+      <div class="class-card">
+        <div class="class-name">圣复仇者</div>
+        <div class="class-name-en">Holy Vindicator</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>魅力、感知</p>
+          <p><strong>生命骰：</strong>d8</p>
+          <p><strong>基础攻击加值：</strong>中等（+3/4级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 能够施展3级神术<br>
+          • 基础攻击加值：+4<br>
+          • 必须崇拜一位善良神祇
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>神圣复仇：</strong>对邪恶异界生物造成额外伤害<br>
+          • <strong>光耀形态：</strong>可以变成光耀形态<br>
+          • <strong>治疗光环：</strong>散发治疗光环（如同治疗轻伤）<br>
+          • <strong>神圣武器：</strong>武器获得神圣属性和特殊能力
+        </div>
+        <span class="source-badge source-offical">官方 - 完整神力</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 心灵武士 -->
+      <div class="class-card">
+        <div class="class-name">心灵武士</div>
+        <div class="class-name-en">Psi Warrior</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>力量、感知</p>
+          <p><strong>生命骰：</strong>d8</p>
+          <p><strong>基础攻击加值：</strong>良好（+3/4级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 具有灵能 manifesting 能力<br>
+          • 基础攻击加值：+4<br>
+          • 意志豁免：强韧
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>灵能打击：</strong>近战攻击可以附带灵能效果<br>
+          • <strong>心灵护甲：</strong>获得灵能力量护甲<br>
+          • <strong>灵能爆发：</strong>可以释放灵能冲击波<br>
+          • <strong>心灵战斗：</strong>获得特殊心灵战斗技巧
+        </div>
+        <span class="source-badge source-offical">官方 - 扩展灵能手册</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+    </div>
+
+    <!-- 更多3R职业 -->
+    <div class="class-grid">
+      <!-- 龙脉术士 -->
+      <div class="class-card">
+        <div class="class-name">龙脉术士</div>
+        <div class="class-name-en">Dragon Disciple</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>力量、魅力</p>
+          <p><strong>生命骰：</strong>d8（进阶职业）</p>
+          <p><strong>基础攻击加值：</strong>良好（+3/4级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 知识（龙）：4级<br>
+          • 龙血统（天生或通过feat）<br>
+          • 能施展3级法术
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>龙鳞：</strong>获得天生护甲（AC+），伤害减免<br>
+          • <strong>龙息武器：</strong>每天数次，可以使用龙息攻击<br>
+          • <strong>力量增强：</strong>力量获得+2、+4、+6加值<br>
+          • <strong>法术获得：</strong>获得龙系法术（如法师护甲、飞行术等）<br>
+          • <strong>龙变：</strong>最高等级可以部分变成龙
+        </div>
+        <span class="source-badge source-official">官方 - 地下城主指南</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 高等法师 -->
+      <div class="class-card">
+        <div class="class-name">高等法师</div>
+        <div class="class-name-en">Archmage</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>智力</p>
+          <p><strong>生命骰：</strong>d4（进阶职业）</p>
+          <p><strong>基础攻击加值：</strong>差（+1/2级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 能施展7级法术<br>
+          • 知识（奥秘）：8级<br>
+          • 施法等级：10级
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>高等法术：</strong>可以创建独特法术<br>
+          • <strong>法术 mastery：</strong>法术DC+1，法术位+2<br>
+          • <strong>特殊能力：</strong>选择5个特殊能力（如arcanefire、mastery of elements等）<br>
+          • <strong>法术抗性：</strong>获得法术抗力（SR）<br>
+          • <strong>异界仆从：</strong>可以召唤异界生物作为仆从
+        </div>
+        <span class="source-badge source-official">官方 - 地下城主指南</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 神圣战士 -->
+      <div class="class-card">
+        <div class="class-name">神圣战士</div>
+        <div class="class-name-en">Holy Warrior</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>力量、魅力</p>
+          <p><strong>生命骰：</strong>d10（进阶职业）</p>
+          <p><strong>基础攻击加值：</strong>优异（+1/1级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 能施展3级神术<br>
+          • 基础攻击加值：+5<br>
+          • 必须崇拜一位神祇
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>神圣打击：</strong>近战攻击造成额外神圣伤害<br>
+          • <strong>治疗之触：</strong>可以治疗自己或他人<br>
+          • <strong>驱散亡灵：</strong>可以驱散或命令亡灵<br>
+          • <strong>神圣光环：</strong>散发神圣光环（对邪恶生物惩罚）<br>
+          • <strong>圣战：</strong>对特定敌人类型造成额外伤害
+        </div>
+        <span class="source-badge source-official">官方 - 完整神力</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 元素大师 -->
+      <div class="class-card">
+        <div class="class-name">元素大师</div>
+        <div class="class-name-en">Elemental Master</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>智力、感知</p>
+          <p><strong>生命骰：</strong>d6（进阶职业）</p>
+          <p><strong>基础攻击加值：</strong>中等（+3/4级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>前置要求：</strong><br>
+          • 能施展5级法术<br>
+          • 专攻法术（Evocation）<br>
+          • 选择一种元素（火/冷/电/酸）
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业特性：</strong><br>
+          • <strong>元素专精：</strong>选择的元素法术DC+2<br>
+          • <strong>元素抗性：</strong>选择的元素伤害免疫<br>
+          • <strong>元素爆发：</strong>可以释放强力元素攻击<br>
+          • <strong>元素形态：</strong>可以变成元素形态<br>
+          • <strong>元素仆从：</strong>可以召唤元素作为仆从
+        </div>
+        <span class="source-badge source-official">官方 - 完整法师</span>
+        <span class="prestige-tag">进阶职业</span>
+      </div>
+
+      <!-- 深渊法师 -->
+      <div class="class-card">
+        <div class="class-name">深渊法师</div>
+        <div class="class-name-en">Abyssal Sorcerer</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>魅力</p>
+          <p><strong>生命骰：</strong>d4</p>
+          <p><strong>基础攻击加值：</strong>差（+1/2级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>职业特性：</strong><br>
+          • <strong>深渊血统：</strong>带有深渊血统，获得恶魔特征<br>
+          • <strong>恶魔法术：</strong>可以获得恶魔系法术<br>
+          • <strong>腐蚀攻击：</strong>法术附带腐蚀效果<br>
+          • <strong>深渊抗性：</strong>获得酸液和火焰抗性<br>
+          • <strong>召唤恶魔：</strong>可以召唤恶魔作为盟友
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业建议：</strong>适合喜欢黑暗魔法的玩家<br>
+          <strong>良好兼职：</strong>术士、法师
+        </div>
+        <span class="source-badge source-official">官方 - 恶魔典</span>
+        <span class="base-tag">基础职业</span>
+      </div>
+
+      <!-- 梦境诗人 -->
+      <div class="class-card">
+        <div class="class-name">梦境诗人</div>
+        <div class="class-name-en">Dream Singer</div>
+        <div class="class-info">
+          <p><strong>主要属性：</strong>魅力、感知</p>
+          <p><strong>生命骰：</strong>d6</p>
+          <p><strong>基础攻击加值：</strong>中等（+3/4级）</p>
+        </div>
+        <div class="class-feature">
+          <strong>职业特性：</strong><br>
+          • <strong>梦境法术：</strong>可以施展梦境系法术<br>
+          • <strong>梦境行走：</strong>可以进入他人的梦境<br>
+          • <strong>预言梦境：</strong>通过梦境预言未来<br>
+          • <strong>梦境治疗：</strong>在梦境中治疗盟友<br>
+          • <strong>梦境幻影：</strong>创造梦境幻影
+        </div>
+        <div class="class-feature" style="margin-top: 8px;">
+          <strong>职业建议：</strong>适合喜欢神秘和支援的玩家<br>
+          <strong>良好兼职：</strong>吟游诗人、德鲁伊
+        </div>
+        <span class="source-badge source-official">官方 - 梦境手册</span>
+        <span class="base-tag">基础职业</span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

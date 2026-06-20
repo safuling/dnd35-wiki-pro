@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魔射手 Arcane Archer - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html" class="active">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>魔射手 <span class="en-name">Arcane Archer</span></h1>
+    <p class="source">来源：《地下城主指南》(DMG) 第182页</p>
+
+    <div class="infobox">
+      <h3>职业信息</h3>
+      <table>
+        <tr><th>生命骰 (HD)</th><td>d8</td></tr>
+        <tr><th>阵营限制</th><td>任意非邪恶</td></tr>
+        <tr><th>种族限制</th><td>精灵 (Elf) 或 半精灵 (Half-elf)</td></tr>
+        <tr><th>关键属性</th><td>敏捷 (DEX)、智力 (INT) 或 魅力 (CHA)</td></tr>
+        <tr><th>施法进阶</th><td>无</td></tr>
+        <tr><th>来源</th><td>DMG p.182</td></tr>
+      </table>
+
+      <h3>入门条件</h3>
+      <table>
+        <tr><th>种族</th><td>精灵或半精灵</td></tr>
+        <tr><th>基本攻击加值 (BAB)</th><td>+6</td></tr>
+        <tr><th>专长</th><td>近程射击 (Point Blank Shot)、精准射击 (Precise Shot)、武器专注(长弓) (Weapon Focus: longbow)</td></tr>
+        <tr><th>施法能力</th><td>能够施展1级奥术法术</td></tr>
+      </table>
+
+      <h3>本职技能</h3>
+      <p>躲藏 (Hide)、聆听 (Listen)、潜行 (Move Silently)、骑术 (Ride)、辨识法术 (Spellcraft)、侦察 (Spot)、野外求生 (Survival)</p>
+      <p>技能点：4 + 智力调整值</p>
+    </div>
+
+    <h2>职业特性表</h2>
+    <table class="class-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>BAB</th>
+          <th>强韧</th>
+          <th>反射</th>
+          <th>意志</th>
+          <th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>+1</td><td>+2</td><td>+2</td><td>+0</td>
+          <td>增强箭矢 +1 (Enhance Arrow +1)</td>
+        </tr>
+        <tr>
+          <td>2</td><td>+2</td><td>+3</td><td>+3</td><td>+0</td>
+          <td>灌注箭矢 (Imbue Arrow)</td>
+        </tr>
+        <tr>
+          <td>3</td><td>+3</td><td>+3</td><td>+3</td><td>+1</td>
+          <td>增强箭矢 +2</td>
+        </tr>
+        <tr>
+          <td>4</td><td>+4</td><td>+4</td><td>+4</td><td>+1</td>
+          <td>追踪箭 (Seeker Arrow)</td>
+        </tr>
+        <tr>
+          <td>5</td><td>+5</td><td>+4</td><td>+4</td><td>+1</td>
+          <td>增强箭矢 +3、相位箭 (Phase Arrow)</td>
+        </tr>
+        <tr>
+          <td>6</td><td>+6</td><td>+5</td><td>+5</td><td>+2</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>7</td><td>+7</td><td>+5</td><td>+5</td><td>+2</td>
+          <td>增强箭矢 +4</td>
+        </tr>
+        <tr>
+          <td>8</td><td>+8</td><td>+6</td><td>+6</td><td>+2</td>
+          <td>箭雨 (Hail of Arrows)</td>
+        </tr>
+        <tr>
+          <td>9</td><td>+9</td><td>+6</td><td>+6</td><td>+3</td>
+          <td>增强箭矢 +5</td>
+        </tr>
+        <tr>
+          <td>10</td><td>+10</td><td>+7</td><td>+7</td><td>+3</td>
+          <td>死亡之箭 (Arrow of Death)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详述</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>魔射手不获得任何额外的武器或防具熟练。</p>
+
+    <h3>增强箭矢 (Enhance Arrow)</h3>
+    <p>在第1级，魔射手射出的任何非魔法箭矢在决定攻击命中和伤害时被视为+1魔法箭矢（包括克服伤害减免）。此增强不与已有的魔法弓或魔法箭矢叠加——它只使非魔法箭矢变为+1箭矢。如果魔射手使用的是魔法弓射击非魔法箭矢，则箭矢获得弓的增强加值和魔射手增强箭矢加值中较高的一个。</p>
+    <p>增强箭矢在第3级提升至+2，第5级为+3，第7级为+4，第9级为+5。从第5级开始，增强箭矢可以赋予特殊属性。魔射手可以将以下特殊能力之一附加到箭矢上（每次射击选择一个）：</p>
+    <ul>
+      <li><strong>爆裂 (Burst)：</strong>命中后爆裂，对目标造成额外1d8火焰伤害，并对10英尺内所有生物造成1d6火焰伤害。</li>
+      <li><strong>寻热 (Seeking)：</strong>箭矢会自动转向目标，无视隐蔽（但仍不能无视全隐蔽）。</li>
+      <li><strong>雷鸣 (Thundering)：</strong>命中时发出巨响，目标必须成功进行 DC 14 的强韧豁免，否则耳聋1轮。</li>
+    </ul>
+
+    <h3>灌注箭矢 (Imbue Arrow)</h3>
+    <p>从第2级开始，魔射手可以将区域效果法术注入箭矢中。当箭矢命中时，法术的区域以箭矢的落点为中心展开（而非以施法者为中心）。此能力使魔射手可以利用弓的射程来释放区域法术。</p>
+    <p>使用此能力时，魔射手在射击箭矢的同时施展法术。该法术必须是一个区域法术，施法时间不得超过1个标准动作。如果箭矢命中目标，法术区域以目标为中心展开。如果箭矢未命中，法术不生效。</p>
+
+    <h3>追踪箭 (Seeker Arrow)</h3>
+    <p>从第4级开始，每天一次，魔射手可以射出一支箭矢，该箭矢会自动飞向魔射手可以看见的目标。箭矢可以绕过障碍物飞行，忽略目标的隐蔽加值（但仍不能忽略全隐蔽）。魔射手不需要指明目标所在的具体位置——他只需要能看到目标。箭矢的射程为弓的最大射程。此能力每天可使用一次。</p>
+
+    <h3>相位箭 (Phase Arrow)</h3>
+    <p>从第5级开始，每天一次，魔射手可以射出一支可以穿过固体障碍物的箭矢。箭矢可以在一条直线上飞行，穿过墙壁、门或其他障碍物。障碍物被视为不存在——箭矢会穿过它们到达目标。但全隐蔽的生物仍不能被此能力攻击。此能力每天可使用一次。</p>
+
+    <h3>箭雨 (Hail of Arrows)</h3>
+    <p>从第8级开始，每天一次，魔射手可以代替常规攻击，以一个标准动作向30英尺内的每个目标各射出一支箭矢（每个目标一支箭）。魔射手必须能看到每个目标。每个目标受到一次独立的攻击检定，使用魔射手的最高基本攻击加值加上适当调整值。此能力消耗与目标数量相同的箭矢。</p>
+
+    <h3>死亡之箭 (Arrow of Death)</h3>
+    <p>从第10级开始，每天一次，魔射手可以创造一支死亡之箭。当此箭矢命中目标时，目标必须成功进行一次 DC 20 的强韧豁免，否则立即死亡。创造此箭矢需要一个完整的回合（标准动作），且必须在同一天使用——如果魔射手当天没有使用此箭矢，它就会消失。</p>
+
+    <h2>构建建议 (Build Tips)</h2>
+
+    <h3>推荐种族</h3>
+    <ul>
+      <li><strong>精灵 (Elf)：</strong>魔射手的种族要求之一。精灵的敏捷加值非常适合弓箭手，且精灵的武器熟练已经包括长弓。</li>
+      <li><strong>半精灵 (Half-elf)：</strong>另一符合种族要求的选项。半精灵没有属性加减值，但拥有黑暗视觉和免疫睡眠等有用特性。</li>
+    </ul>
+
+    <h3>推荐基础职业</h3>
+    <ul>
+      <li><strong>法师 (Wizard) / 战士 (Fighter) 兼职：</strong>经典的6级战士/1级法师组合可以满足 BAB +6 和 1级奥术 的前置要求。战士提供战斗能力，法师提供法术和灌注箭矢的配合。</li>
+      <li><strong>游侠 (Ranger)：</strong>游侠6级可以轻松满足 BAB +6 的要求，且拥有远程战斗风格和野外生存能力。需要兼职1级法师或术士来满足奥术施法要求。</li>
+      <li><strong>战士/术士 (Fighter/Sorcerer)：</strong>类似法师/战士的组合，但术士的魅力加值对某些社交技能有帮助。</li>
+    </ul>
+
+    <h3>构建思路</h3>
+    <ul>
+      <li>魔射手不提升施法等级，因此进入此职业前尽量获取足够的施法等级。</li>
+      <li>增强箭矢配合魔法弓可以造成可观的伤害——但记住增强不叠加，取较高者。</li>
+      <li>灌注箭矢是魔射手最独特的能力——可以配合火球术 (Fireball) 等区域法术，将法术中心精确定位到远距离目标上。</li>
+      <li>追踪箭和相位箭每天只能用一次，用在最关键的时刻。</li>
+    </ul>
+
+    <h2>角色扮演建议 (Role-playing Suggestions)</h2>
+    <ul>
+      <li>魔射手源自精灵古老的军事传统。在精灵的传说中，魔射手是保护森林家园的精锐战士——他们将弓箭技艺与奥术魔法完美融合。</li>
+      <li>扮演魔射手时可以展现精灵的优雅和对自然的热爱。他们可能是沉默寡言的守望者，也可能是热衷于将魔法艺术推向极限的研究者。</li>
+      <li>魔射手通常对弓箭有近乎宗教般的虔诚——他们的弓可能是祖传的神器，或是他们自己用魔法强化的杰作。</li>
+      <li>在队伍中，魔射手是出色的远程火力支援。他们独特的箭矢能力使他们能够应对各种复杂情况，从穿越墙壁攻击隐藏敌人到追踪逃跑的目标。</li>
+    </ul>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

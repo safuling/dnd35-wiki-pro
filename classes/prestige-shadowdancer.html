@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影舞者 Shadowdancer - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>影舞者 <span style="font-size:0.6em;color:#888;">Shadowdancer</span></h1>
+    <p style="color:#666;font-size:0.95em;">出自《城主指南》(DMG) p.201</p>
+
+    <!-- 信息框 -->
+    <div class="infobox" style="float:right;width:320px;margin:0 0 1em 1.5em;border:1px solid #b8860b;border-radius:6px;background:#fdf6e3;">
+      <div style="background:#2c2c54;color:#fff;padding:10px;text-align:center;font-size:1.2em;font-weight:bold;">影舞者 Shadowdancer</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">生命骰</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">d8</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">等级数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">10</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">阵营限制</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">非守序（不可为守序阵营）</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能点数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">6 + 智力调整值</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">本职技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">平衡、脱逃、躲藏、跳跃、聆听、潜行、表演（舞蹈）、搜索、翻腾、绳技、手上功夫</td></tr>
+        <tr style="background:#f5f0e0;"><td colspan="2" style="padding:8px 10px;font-weight:bold;color:#2c2c54;">先决条件</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">表演（舞蹈）5级，躲藏8级，翻腾4级</td></tr>
+        <tr><td style="padding:6px 10px;font-weight:bold;">专长</td><td style="padding:6px 10px;">闪避、灵活移动、跳跃攻击</td></tr>
+      </table>
+    </div>
+
+    <h2>职业概述</h2>
+    <p>影舞者是阴影中的精灵——他们将潜行的艺术提升到了超自然的境界。影舞者不仅仅是隐藏自己，他们与影子建立了一种神秘的联系，使阴影成为他们的盟友和工具。他们可以在开阔地带消失、穿越阴影进行传送、召唤阴影生物为自己服务。</p>
+    <p>影舞者是盗贼和吟游诗人等技能型角色的出色进阶选择，尤其是那些希望在潜行和机动性方面达到巅峰的角色。丰富的职业能力使其成为侦察兵、渗透者和游击战士的完美代表。</p>
+
+    <h2>职业技能表</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#2c2c54;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">等级</th>
+          <th style="padding:8px;border:1px solid #ddd;">基本攻击加值</th>
+          <th style="padding:8px;border:1px solid #ddd;">强韧豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">反射豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">意志豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#f0edf5;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">1级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;">召唤暗影、躲藏于视线中</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">2级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;">反射闪避、暗视</td>
+        </tr>
+        <tr style="background:#f0edf5;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">3级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">影跃 (20英尺)</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">4级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">直觉闪避</td>
+        </tr>
+        <tr style="background:#f0edf5;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">5级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">防御翻滚</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">6级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">影跃 (40英尺)</td>
+        </tr>
+        <tr style="background:#f0edf5;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">7级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">精通直觉闪避、滑溜心智</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">8级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">影跃 (80英尺)</td>
+        </tr>
+        <tr style="background:#f0edf5;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">9级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">精通反射闪避</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px;border:1px solid #ddd;text-align:center;">10级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+7</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+7</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">影跃 (80英尺)，增强召唤暗影</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详解</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>影舞者不会获得额外的武器或防具熟练。</p>
+
+    <h3>召唤暗影 (Summon Shadow)</h3>
+    <p><strong>超自然能力 (Su)。</strong>第1级起，影舞者每天可以召唤一次暗影（Shadow，见怪物手册）。该暗影作为影舞者的仆从出现，服从影舞者的命令。暗影的持续时间为每影舞者等级10分钟。在第10级时，召唤的暗影变得更加强大——获得额外的生命骰和能力。</p>
+    <p>暗影是一个不死生物，拥有创造衍体的能力，是极为有效的侦察兵和战斗伙伴。</p>
+
+    <h3>躲藏于视线中 (Hide in Plain Sight)</h3>
+    <p><strong>超自然能力 (Su)。</strong>第1级起，影舞者可以在被观察的情况下仍然进行躲藏检定。只要影舞者距离任何阴影至少10英尺（包括自己的影子），就可以使用躲藏技能，即使有人正在看着他。这是一个极其强大的能力，使影舞者在几乎任何环境中都能隐匿。</p>
+
+    <h3>反射闪避 (Evasion)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第2级起，当影舞者受到需要进行反射豁免来减半伤害的攻击时，如果豁免成功则完全不受伤害。此能力仅在穿轻甲或不穿甲时有效。如果影舞者已经从其他职业获得反射闪避，则以精通反射闪避替代（第9级时获得精通反射闪避）。</p>
+
+    <h3>暗视 (Darkvision)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第2级起，影舞者获得60英尺暗视。如果已经有暗视，则暗视范围增加30英尺。</p>
+
+    <h3>影跃 (Shadow Jump)</h3>
+    <p><strong>超自然能力 (Su)。</strong>第3级起，影舞者可以通过阴影进行瞬间传送。这如同<em>任意门</em>法术，但起点和终点都必须有阴影存在。每日可使用次数等于影舞者等级。距离随等级提升：</p>
+    <ul>
+      <li><strong>第3级：</strong>每次最多20英尺</li>
+      <li><strong>第6级：</strong>每次最多40英尺</li>
+      <li><strong>第8级：</strong>每次最多80英尺</li>
+    </ul>
+    <p>影跃是一个移动等效动作，不会引发借机攻击。</p>
+
+    <h3>直觉闪避 (Uncanny Dodge)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第4级起，影舞者在措手不及或被隐形攻击者攻击时仍保留AC上的敏捷加值。如果影舞者已经从其他职业获得直觉闪避，则改为获得精通直觉闪避。</p>
+
+    <h3>防御翻滚 (Defensive Roll)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第5级起，当一次近战攻击将影舞者的生命值降至0或更低时，影舞者可以尝试进行翻滚来减轻伤害。进行一次反射豁免（DC等于造成的伤害值），如果成功，则只受到一半伤害。此能力仅在影舞者能自由行动且穿轻甲或不穿甲时可用。每天使用次数不限。</p>
+
+    <h3>精通直觉闪避 (Improved Uncanny Dodge)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第7级起，影舞者不再被夹击（除非攻击者的盗贼等级比影舞者等级高4级或以上）。</p>
+
+    <h3>滑溜心智 (Slippery Mind)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第7级起，当影舞者在意志豁免中失败时（对抗魅惑或胁迫效果），可以在1轮后重新进行一次豁免。第二次豁免只需成功即可摆脱效果。在第二次豁免前，影舞者的行为不受影响。</p>
+
+    <h3>精通反射闪避 (Improved Evasion)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第9级起，影舞者的反射闪避能力增强——即使反射豁免失败，也只受到一半伤害（成功则不受伤害）。</p>
+
+    <h2>角色构建建议</h2>
+
+    <h3>最佳搭配职业</h3>
+    <p><strong>盗贼 (Rogue)：</strong>盗贼是影舞者的天作之合。盗贼的偷袭、丰富技能点和直觉闪避与影舞者的能力完美互补。盗贼5/影舞者10是一个无与伦比的渗透者和侦察兵。</p>
+    <p><strong>吟游诗人 (Bard)：</strong>吟游诗人的社交能力加上影舞者的潜行能力，使其成为完美的间谍和渗透者。吟游诗人的法术还可以进一步增强潜行效果。</p>
+    <p><strong>游侠 (Ranger)：</strong>双武器游侠与影舞者的跳跃攻击组合，可以创造出华丽的游击战士——从阴影中跃出，连续攻击多个目标，然后消失在暗处。</p>
+
+    <h3>经典构建路线</h3>
+    <p><strong>盗贼8/影舞者10</strong>（角色等级18）：先满足所有先决条件（躲藏8级、翻腾4级、表演5级 + 闪避/灵活移动/跳跃攻击专长），然后进入影舞者。获得完整的影舞者能力后，偷袭伤害为4d6。</p>
+
+    <p><strong>盗贼5/影舞者10/盗贼5</strong>（角色等级20）：混合路线，最终偷袭伤害为6d6，同时拥有影舞者的全部能力。</p>
+
+    <h3>推荐专长</h3>
+    <ul>
+      <li><strong>暗影打击 (Shadow Strike)：</strong>从躲藏中发起的攻击获得额外伤害</li>
+      <li><strong>精通先攻 (Improved Initiative)：</strong>在伏击中先手至关重要</li>
+      <li><strong>武器娴熟 (Weapon Finesse)：</strong>用敏捷替代力量进行攻击检定</li>
+      <li><strong>两级武器战斗系列：</strong>配合游击战术</li>
+    </ul>
+
+    <h2>角色扮演建议</h2>
+    <p>影舞者是阴影中的艺术家——他们不是粗鲁的刺客或冷酷的杀手，而是将潜行和欺骗提升到舞蹈般优雅境界的表演者。影舞者通常具有艺术气质，可能在白天是一名舞者或演员，夜晚则化身为阴影中的幽灵。</p>
+    <p>许多影舞者属于秘密的行会或表演团——表面上是著名的舞蹈团体，实际上是由训练有素的间谍和渗透者组成的组织。影舞者的非守序阵营限制反映了这一职业对自由和灵活性的天然倾向。</p>
+    <p><strong>性格特征建议：</strong>优雅而神秘、喜欢用隐喻和谜语交流、对阴影有着异乎寻常的亲近感、行动轻盈无声、在紧张场合中保持令人不安的平静、偶尔会在不经意间跳起舞蹈般的动作。</p>
+
+    <div style="margin-top:2em;padding:1em;background:#f5f0e0;border-left:4px solid #2c2c54;border-radius:4px;">
+      <strong>编者注：</strong>影舞者是D&D 3.5e中能力最丰富的非施法进阶职业之一。它的每一项能力都极具实用价值——尤其是"躲藏于视线中"和"影跃"的组合，使影舞者成为游戏中最难被发现和追踪的角色。如果你想要一个在阴影中翩翩起舞、来去无踪的潇洒角色，影舞者是绝佳的选择。注意先决条件的专长需求较高（闪避+灵活移动+跳跃攻击），需要在前5-7级规划好专长分配。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

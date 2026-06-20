@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大祭司 Hierophant - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>大祭司 <span style="font-size:0.6em;color:#888;">Hierophant</span></h1>
+    <p style="color:#666;font-size:0.95em;">出自《城主指南》(DMG) p.193</p>
+
+    <!-- 信息框 -->
+    <div class="infobox" style="float:right;width:320px;margin:0 0 1em 1.5em;border:1px solid #b8860b;border-radius:6px;background:#fdf6e3;">
+      <div style="background:#8b6914;color:#fff;padding:10px;text-align:center;font-size:1.2em;font-weight:bold;">大祭司 Hierophant</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">生命骰</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">d8</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">等级数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">5</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">阵营限制</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">无</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能点数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">2 + 智力调整值</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">本职技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">专注、交涉、知识（宗教）、知识（位面）、法术辨识</td></tr>
+        <tr style="background:#f5f0e0;"><td colspan="2" style="padding:8px 10px;font-weight:bold;color:#8b6914;">先决条件</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">施法能力</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">可施展7级神术</td></tr>
+        <tr><td style="padding:6px 10px;font-weight:bold;">技能</td><td style="padding:6px 10px;">知识（宗教）15级</td></tr>
+      </table>
+    </div>
+
+    <h2>职业概述</h2>
+    <p>大祭司是神术施法者的终极形态——他们是信仰的化身，是神祇在人间的代言人。通过深入的冥想和对神性的理解，大祭司获得了超越常规神术的特殊能力。他们不再仅仅"施展"神术，而是将神力直接融入自身的存在。</p>
+    <p>大祭司是一个只有5级的短进阶职业，它不推进施法等级，但提供了强大的特殊能力选择。每一级大祭司都可以从一系列超凡能力中选择一种，这些能力往往比失去的施法等级更具价值。</p>
+
+    <h2>职业技能表</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#8b6914;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">等级</th>
+          <th style="padding:8px;border:1px solid #ddd;">基本攻击加值</th>
+          <th style="padding:8px;border:1px solid #ddd;">强韧豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">反射豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">意志豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">特殊能力</th>
+          <th style="padding:8px;border:1px solid #ddd;">施法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">1级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">特殊能力</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">2级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">特殊能力</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">3级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">特殊能力</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">4级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;">特殊能力</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">5级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;">特殊能力</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详解</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>大祭司不会获得额外的武器或防具熟练。</p>
+
+    <h3>特殊能力 (Special Ability)</h3>
+    <p>每一级大祭司都可以从以下特殊能力中选择一种。某些能力可以被多次选择以获得更强的效果。除非另有说明，这些能力均为特异能力（Ex）或超自然能力（Su）。</p>
+
+    <h4>惩戒异端 (Blast Infidel)</h4>
+    <p><strong>超自然能力 (Su)。</strong>大祭司可以消耗一个已准备的7级或更高级神术，将其转化为一道神圣能量束，对30英尺内的一个目标造成每神术等级1d6点伤害（无豁免）。如果目标与大祭司的阵营对立（例如善良大祭司对抗邪恶目标），则伤害增加50%。</p>
+
+    <h4>神圣触及 (Divine Reach)</h4>
+    <p><strong>超自然能力 (Su)。</strong>大祭司可以将任何触及范围为"接触"的神术的触及范围扩展到30英尺。这需要消耗一个整轮动作。此能力可以被选择多次：第二次选择后扩展到60英尺，第三次选择后扩展到90英尺。</p>
+
+    <h4>快速骑乘 (Faith Healing) / 信仰治疗</h4>
+    <p><strong>超自然能力 (Su)。</strong>大祭司可以消耗一个已准备的神术，将其转化为治疗能量，治疗等于该法术等级×大祭司等级点的生命值。此治疗可影响30英尺内的一个目标。</p>
+
+    <h4>神之恩典 (Gift of the Divine)</h4>
+    <p><strong>超自然能力 (Su)。</strong>大祭司可以将自身的神术施法能力分享给一个自愿的生物，持续等于大祭司等级×10分钟的 rounds。在持续时间内，该生物可以施展大祭司的一个已准备法术（由大祭司选择哪个法术），使用大祭司的施法者等级和属性修正。</p>
+
+    <h4>超魔与类法术能力 (Metamagic and Spell-like Ability)</h4>
+    <p><strong>特异能力 (Ex)。</strong>大祭司选择一个他已拥有的超魔专长。此后，他可以将该超魔效果应用于自己的神术，而无需准备时间或更高环位的法术位。此能力可以被多次选择，每次选择不同的超魔专长。</p>
+    <p><strong>注意：</strong>这是一个极其强大的能力。选择强效法术、极效法术或增广法术等超魔专长可以让大祭司在不消耗额外法术位的情况下大幅增强法术效果。</p>
+
+    <h4>自然之力 (Power of Nature)</h4>
+    <p><strong>超自然能力 (Su)。</strong>大祭司可以消耗一个已准备的7级或更高级神术，将其转化为以下效果之一：驱散或斥责不死生物（等同于大祭司等级的牧师驱散能力）、召唤一道自然能量打击（对60英尺内一个目标造成12d6点伤害，反射豁免减半）。</p>
+
+    <h2>角色构建建议</h2>
+
+    <h3>进入时机</h3>
+    <p>大祭司的先决条件要求能施展7级神术，这意味着角色至少需要13级牧师或德鲁伊才能进入。由于大祭司不推进施法等级，角色将永远无法获得9级神术（除非从其他途径补偿）。这是一个重要的权衡——你需要判断5个大祭司特殊能力是否值得放弃9级神术。</p>
+
+    <h3>经典构建路线</h3>
+    <p><strong>牧师15/大祭司5</strong>：在15级牧师时进入大祭司，拥有8级神术。完成5级大祭司后，角色等级20，施法等级仍为15级（最高8级法术），但拥有5个强大的特殊能力。选择"超魔与类法术能力"多次可以极大增强法术效果。</p>
+
+    <p><strong>德鲁伊15/大祭司5</strong>：与牧师类似，但大祭司的能力与德鲁伊的自然主题更为搭配。"自然之力"尤其适合。</p>
+
+    <h3>推荐特殊能力选择</h3>
+    <ul>
+      <li><strong>最强组合（通用型）：</strong>超魔与类法术能力（×3）+ 神圣触及 + 惩戒异端。三次免费的超魔效果可以让你的神术威力倍增。</li>
+      <li><strong>治疗者型：</strong>信仰治疗（×2）+ 神圣触及（×2）+ 神之恩典。成为团队中最强大的治疗者。</li>
+      <li><strong>战斗型：</strong>惩戒异端（×2）+ 自然之力（×2）+ 超魔与类法术能力。强化直接伤害输出。</li>
+    </ul>
+
+    <h2>角色扮演建议</h2>
+    <p>大祭司是信仰领域的最高权威。他们是教团的领袖、神谕的传达者、信徒们仰望的精神导师。大祭司通常性格庄重、言辞有力，他们的存在本身就代表着神祇的意志。</p>
+    <p>一个好的大祭司角色扮演应该体现出对信仰的坚定与深刻理解。他们不仅仅是在"使用"神力，而是与神祇建立了一种深层次的联系。这种联系可能会影响他们的言行举止——例如，一个侍奉战神的大祭司可能在决策时倾向于武力解决，而侍奉知识之神的大祭司则会在任何行动前寻求充分的信息。</p>
+    <p><strong>性格特征建议：</strong>庄严而富有魅力、言辞中经常引用教义或经文、对异教徒保持警惕但并非不宽容、在危急时刻展现出超越凡人的冷静与决断力。</p>
+
+    <div style="margin-top:2em;padding:1em;background:#f5f0e0;border-left:4px solid #8b6914;border-radius:4px;">
+      <strong>编者注：</strong>大祭司是一个非常独特的高阶进阶职业——它牺牲了施法进展来换取极其强大的特殊能力。"超魔与类法术能力"选项尤其值得注意，因为它可以让你的关键超魔专长完全免费使用。对于高等级神术施法者来说，这可能是最有效的力量增幅方式之一。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

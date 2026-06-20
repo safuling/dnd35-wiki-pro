@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战斗技巧 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <h3>专长导航</h3>
+  <ul>
+    <li><a href="intro.html">专长总览</a></li>
+    <li class="nav-divider">战斗专长</li>
+    <li><a href="power-attack.html">猛力攻击</a></li>
+    <li><a href="cleave.html">顺劈斩</a></li>
+    <li><a href="weapon-focus.html">武器专攻</a></li>
+    <li><a href="improved-initiative.html">警觉</a></li>
+    <li><a href="dodge.html">闪避</a></li>
+    <li><a href="combat-expertise.html" class="active">战斗技巧</a></li>
+    <li class="nav-divider">施法专长</li>
+    <li><a href="spell-focus.html">法术专攻</a></li>
+    <li><a href="combat-casting.html">战斗施法</a></li>
+    <li class="nav-divider">通用专长</li>
+    <li><a href="toughness.html">强韧</a></li>
+    <li><a href="iron-will.html">钢铁意志</a></li>
+    <li><a href="great-fortitude.html">强韧体魄</a></li>
+    <li><a href="lightning-reflexes.html">灵敏反应</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 战斗技巧</nav>
+<h1>战斗技巧 (Combat Expertise)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">战斗专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">智力 13+</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">可在回合开始时，将攻击加值暂时转换为AC加值（最多BAB值）</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择一次；是多项高级战斗专长的前提</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你擅长通过战术计算来提高防御能力。</p>
+<p>在每个你的回合开始时，你可以选择将部分 <strong>攻击加值 (Attack Bonus)</strong> 暂时转换为 <strong>护甲等级加值 (AC Bonus)</strong>。转换的数值不能超过你的 <strong>基础攻击加值 (BAB)</strong>。</p>
+
+<h2 id="benefit-detail">益处详解</h2>
+<ul>
+  <li><strong>转换机制</strong>：在你的回合开始时（或行动前），宣布使用战斗技巧。
+    <ul>
+      <li>你的 <strong>攻击掷骰受到惩罚</strong>：-X（你选择的数值）</li>
+      <li>你的 <strong>AC 获得加值</strong>：+X（相同数值）</li>
+      <li>直到你的下一回合开始，该效果持续</li>
+    </ul>
+  </li>
+  <li><strong>上限</strong>：转换数值不能超过你的 BAB。</li>
+  <li><strong>例子</strong>：BAB +6 的角色，最多可转换 6 点（攻击 -6，AC +6）。</li>
+</ul>
+
+<h2 id="value">战术价值</h2>
+<div class="tactic-box">
+  <p><strong>何时使用战斗技巧？</strong></p>
+  <ul>
+    <li><strong>防御型角色</strong>：坦克、前排战士，需要提高AC来承受攻击。</li>
+    <li><strong>面对高攻击敌人</strong>：当敌人BAB很高时，提高AC更有价值。</li>
+    <li><strong>不需要全攻的角色</strong>：如果你只打算标准动作攻击一次，转换部分攻击加值影响不大。</li>
+    <li><strong>搭配猛力攻击</strong>：猛力攻击用攻击加值换伤害；战斗技巧用攻击加值换AC。两者不能同时使用。</li>
+  </ul>
+</div>
+
+<h2 id="prerequisite-chain">专长链起点</h2>
+<p>战斗技巧是多项高级战斗专长的 <strong>先决条件</strong>：</p>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>专长</th>
+      <th>先决条件</th>
+      <th>效果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>改进卸武 (Improved Disarm)</strong></td>
+      <td>战斗技巧</td>
+      <td>卸武无借机攻击</td>
+    </tr>
+    <tr>
+      <td><strong>改进绊摔 (Improved Trip)</strong></td>
+      <td>战斗技巧</td>
+      <td>绊摔无借机攻击</td>
+    </tr>
+    <tr>
+      <td><strong>灵活移动 (Mobility)</strong></td>
+      <td>战斗技巧，闪避</td>
+      <td>借机攻击前移动不引发借机</td>
+    </tr>
+    <tr>
+      <td><strong>跳跃攻击 (Spring Attack)</strong></td>
+      <td>战斗技巧，闪避，敏捷13</td>
+      <td>攻击后可安全撤离</td>
+    </tr>
+    <tr>
+      <td><strong> whirlwind Attack (旋风攻击)</strong></td>
+      <td>战斗技巧，猛力攻击，BAB +4</td>
+      <td>一次攻击周围所有敌人</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例：战士的战斗技巧</strong></p>
+  <p>人类战士 6级（BAB +6），力量 16（+3），选择"战斗技巧"专长。</p>
+  <ul>
+    <li>正常状态：攻击加值 = +6 (BAB) + 3 (力量) = <strong>+9</strong>；AC = 10 + 3 (力量) + 盔甲 = <strong>13+盔甲</strong></li>
+    <li>使用战斗技巧（转换 4 点）：攻击加值 = +9 - 4 = <strong>+5</strong>；AC = 13+盔甲 + 4 = <strong>17+盔甲</strong></li>
+    <li>敌人攻击你需要掷出 17+ 才能命中（之前只需 13+）</li>
+    <li>显著提高了生存能力</li>
+  </ul>
+</div>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">战士、圣武士、游侠</strong>：高BAB，能最大化转换数值。</li>
+  <li><strong class="highlight">武僧</strong>：高敏捷，战斗技巧搭配闪避效果显著。</li>
+  <li><strong>任何高智力近战角色</strong>：先决条件智力13，限制了一些职业。</li>
+</ul>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：战斗技巧是否可以在"全力攻击"动作中使用？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：战斗技巧"在每个你的回合开始时"生效。</p>
+  <p>✅ <strong>正确规则</strong>：</p>
+  <ul>
+    <li>战斗技巧 <strong>可以</strong>在全力攻击中使用（因为全力攻击是在你的回合内进行的）。</li>
+    <li>但转换的攻击惩罚会影响全力攻击的 <strong>所有攻击</strong>（主手、副手等）。</li>
+  </ul>
+  <p>⚠️ <strong>常见误解</strong>：有玩家认为战斗技巧只影响一次攻击。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页136</strong>：战斗动作详解。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

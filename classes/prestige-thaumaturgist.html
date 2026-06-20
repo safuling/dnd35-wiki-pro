@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>咒法召唤师 Thaumaturgist - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>咒法召唤师 <span style="font-size:0.6em;color:#888;">Thaumaturgist</span></h1>
+    <p style="color:#666;font-size:0.95em;">出自《城主指南》(DMG) p.203</p>
+
+    <!-- 信息框 -->
+    <div class="infobox" style="float:right;width:320px;margin:0 0 1em 1.5em;border:1px solid #b8860b;border-radius:6px;background:#fdf6e3;">
+      <div style="background:#8b6914;color:#fff;padding:10px;text-align:center;font-size:1.2em;font-weight:bold;">咒法召唤师 Thaumaturgist</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">生命骰</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">d8</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">等级数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">5</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">阵营限制</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">无</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能点数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">2 + 智力调整值</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">本职技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">专注、交涉、知识（位面）、知识（宗教）、法术辨识</td></tr>
+        <tr style="background:#f5f0e0;"><td colspan="2" style="padding:8px 10px;font-weight:bold;color:#8b6914;">先决条件</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">施法能力</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">可施展5级神术</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">专注8级，知识（位面）4级，知识（宗教）4级</td></tr>
+        <tr><td style="padding:6px 10px;font-weight:bold;">专长</td><td style="padding:6px 10px;">增强召唤 (Augment Summoning)</td></tr>
+      </table>
+    </div>
+
+    <h2>职业概述</h2>
+    <p>咒法召唤师是召唤法术的终极专家——他们精通与异界生物交涉的艺术，能够将召唤来的生物从短暂的仆从变为忠实的盟友。咒法召唤师不仅仅是召唤怪物来战斗，他们建立了一个跨位面的关系网络，拥有随时可以召唤的强大伙伴。</p>
+    <p>咒法召唤师是一个只有5级的短进阶职业，专注于增强召唤类法术的效果。它不推进施法等级，但其提供的能力可以让你的召唤法术产生质的飞跃。对于喜欢"以众凌寡"战术的神术施法者来说，咒法召唤师是无可替代的选择。</p>
+
+    <h2>职业技能表</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#8b6914;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">等级</th>
+          <th style="padding:8px;border:1px solid #ddd;">基本攻击加值</th>
+          <th style="padding:8px;border:1px solid #ddd;">强韧豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">反射豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">意志豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">特殊能力</th>
+          <th style="padding:8px;border:1px solid #ddd;">施法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">1级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">改良盟友</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">2级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">延长召唤</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">3级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">条件召唤</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">4级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">5级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;">位面同伴</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详解</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>咒法召唤师不会获得额外的武器或防具熟练。</p>
+
+    <h3>改良盟友 (Improved Ally)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第1级起，当咒法召唤师使用<em>异界盟友</em>（Planar Ally）系列法术召唤生物时，交涉检定的DC降低2（即服务费用减少）。此外，召唤来的盟友对咒法召唤师的态度初始为"友善"而非"不友善"，使交涉变得更容易。</p>
+    <p>这意味着：</p>
+    <ul>
+      <li>召唤的盟友更愿意接受任务</li>
+      <li>谈判所需的时间和服务费用降低</li>
+      <li>在紧急情况下更容易获得盟友的帮助</li>
+    </ul>
+
+    <h3>延长召唤 (Extended Summoning)</h3>
+    <p><strong>特异能力 (Ex)。</strong>第2级起，咒法召唤师施放的所有召唤法术（如<em>召唤怪物</em>系列、<em>召唤自然盟友</em>系列等）的持续时间翻倍。例如，一个正常持续10轮（1轮/等级）的<em>召唤怪物V</em>在咒法召唤师手中将持续20轮。</p>
+    <p>此效果与<em>延长法术</em>（Extend Spell）超魔专长叠加。如果同时使用延长法术超魔专长，召唤持续时间变为原来的4倍。</p>
+
+    <h3>条件召唤 (Contingent Conjuration)</h3>
+    <p><strong>超自然能力 (Su)。</strong>第3级起，咒法召唤师可以预设一个召唤法术，使其在特定条件触发时自动施放。这类似于<em>触发术</em>（Contingency）法术，但专用于召唤法术。</p>
+    <p><strong>规则细节：</strong></p>
+    <ul>
+      <li>预设的召唤法术环位不能超过咒法召唤师可施放的最高召唤法术环位减2</li>
+      <li>触发条件必须是具体且明确的事件（如"当我受到近战攻击时"、"当我的生命值降至一半以下时"）</li>
+      <li>同一时间只能有一个预设召唤法术生效</li>
+      <li>预设召唤法术在被触发前不会消耗法术位</li>
+      <li>触发后的召唤法术正常消耗法术位和材料</li>
+    </ul>
+    <p>这是一个极其强大的战术工具——想象当敌人对你发动致命一击时，一只召唤生物突然出现挡在你面前。</p>
+
+    <h3>位面同伴 (Planar Cohort)</h3>
+    <p><strong>超自然能力 (Su)。</strong>第5级起，咒法召唤师可以获得一个来自其他位面的永久同伴。这类似于<em>异界盟友</em>法术的效果，但该同伴不需要报酬，且会一直跟随咒法召唤师，直到被杀死或解雇。</p>
+    <p><strong>规则细节：</strong></p>
+    <ul>
+      <li>同伴的CR不能超过咒法召唤师的角色等级减2</li>
+      <li>同伴的行为类似于一位忠诚的同伴（cohort），遵循领导力专长的规则</li>
+      <li>如果同伴被杀死，咒法召唤师可以花费一年零一天来召唤一个新的同伴</li>
+      <li>同伴可以是有智力的异界生物（如元素、天界生物、邪魔等）</li>
+    </ul>
+    <p>位面同伴本质上是一个免费的、强大的NPC伙伴，可以极大增强咒法召唤师的个人战斗力。</p>
+
+    <h2>角色构建建议</h2>
+
+    <h3>最佳搭配职业</h3>
+    <p><strong>牧师 (Cleric)：</strong>牧师是咒法召唤师最自然的搭配。牧师的<em>召唤怪物</em>和<em>异界盟友</em>法术可以被咒法召唤师的能力极大增强。牧师9/咒法召唤师5是一个拥有强大召唤能力的角色（角色等级14）。</p>
+    <p><strong>德鲁伊 (Druid)：</strong>德鲁伊的<em>召唤自然盟友</em>系列法术同样受益于咒法召唤师的延长召唤能力。虽然德鲁伊不能使用<em>异界盟友</em>，但召唤持续时间翻倍本身已极具价值。</p>
+
+    <h3>经典构建路线</h3>
+    <p><strong>牧师9/咒法召唤师5/牧师6</strong>（角色等级20）：在9级牧师时满足所有先决条件（5级神术、专注8级、知识技能、增强召唤专长），5级咒法召唤师获得全部特殊能力，然后继续提升牧师等级至20级，获得9级神术。</p>
+
+    <h3>召唤法术优化建议</h3>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#5d4037;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">策略</th>
+          <th style="padding:8px;border:1px solid #ddd;">说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#efebe9;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">增强召唤 + 延长召唤</td>
+          <td style="padding:8px;border:1px solid #ddd;">召唤生物获得+4力量和+4体质加成，且持续时间翻倍——性价比极高的组合</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">条件召唤 + 高等召唤</td>
+          <td style="padding:8px;border:1px solid #ddd;">预设<em>召唤怪物III</em>作为保护网，同时正常施放高阶召唤法术进行进攻</td>
+        </tr>
+        <tr style="background:#efebe9;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">群体召唤战术</td>
+          <td style="padding:8px;border:1px solid #ddd;">利用延长召唤的持续时间优势，同时维持多个召唤生物在场，形成数量压制</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">位面同伴选择</td>
+          <td style="padding:8px;border:1px solid #ddd;">优先选择具有飞行能力、远程攻击或辅助法术的异界生物（如天使、元素长老等）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>推荐专长</h3>
+    <ul>
+      <li><strong>增强召唤 (Augment Summoning)：</strong>先决条件之一，也是核心专长——召唤生物获得+4力量和+4体质</li>
+      <li><strong>延长法术 (Extend Spell)：</strong>与延长召唤叠加，召唤持续时间变为4倍</li>
+      <li><strong>神圣召唤 (Sacred Summoning)：</strong>如果可用，某些召唤法术可以标准动作施放</li>
+      <li><strong>精通先攻 (Improved Initiative)：</strong>确保在战斗中先手召唤生物</li>
+    </ul>
+
+    <h2>角色扮演建议</h2>
+    <p>咒法召唤师是位面的外交官——他们与来自各个位面的存在建立了复杂的关系网络。一个好的咒法召唤师不仅仅是"召唤怪物来打架"，而是与召唤生物之间建立了真正的联系和互信。</p>
+    <p>许多咒法召唤师可能在某个跨位面组织中担任联络人的角色，或者是某个神殿中专门负责"外交事务"的高级祭司。他们对位面生物的了解远超常人，能够准确判断哪些存在可以被信任，哪些则需要保持距离。</p>
+    <p><strong>性格特征建议：</strong>善于交际和谈判、对不同位面的文化有着深厚的了解、在与异界生物交流时表现出自信而非恐惧、可能有一些来自其他位面的朋友或熟人、在战斗中倾向于指挥召唤生物而非亲自上阵。</p>
+
+    <h3>推荐的位面同伴选择</h3>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#1b5e20;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">同伴类型</th>
+          <th style="padding:8px;border:1px solid #ddd;">优势</th>
+          <th style="padding:8px;border:1px solid #ddd;">适用场景</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#e8f5e9;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">元素 (Elemental)</td>
+          <td style="padding:8px;border:1px solid #ddd;">无智力限制、多种战斗方式、免疫重击</td>
+          <td style="padding:8px;border:1px solid #ddd;">前线战斗、侦察</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">天界生物 (Celestial)</td>
+          <td style="padding:8px;border:1px solid #ddd;">法术能力、飞行、治疗能力</td>
+          <td style="padding:8px;border:1px solid #ddd;">辅助、治疗、空中战斗</td>
+        </tr>
+        <tr style="background:#e8f5e9;">
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">邪魔 (Fiend)</td>
+          <td style="padding:8px;border:1px solid #ddd;">强大的类法术能力、伤害减免</td>
+          <td style="padding:8px;border:1px solid #ddd;">高伤害输出、特殊能力支援</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">龙兽/龙类</td>
+          <td style="padding:8px;border:1px solid #ddd;">飞行、喷吐武器、威慑力</td>
+          <td style="padding:8px;border:1px solid #ddd;">空中战斗、威慑</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:2em;padding:1em;background:#f5f0e0;border-left:4px solid #8b6914;border-radius:4px;">
+      <strong>编者注：</strong>咒法召唤师虽然只有5级，但它的每一项能力都直接增强了召唤法术的核心价值。延长召唤让你的召唤生物在场时间更长，条件召唤提供了紧急保护，位面同伴则给了你一个永久的强大盟友。对于专注于召唤战术的神术施法者来说，这5级的投入绝对物超所值。不过需要注意，咒法召唤师不推进施法等级——如果你更看重法术环位的提升，可能需要考虑其他进阶职业。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

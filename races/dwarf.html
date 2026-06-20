@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>矮人 Dwarf - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html" class="active">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">种族</div>
+      <a href="intro.html">总览</a>
+      <a href="human.html">人类 Human</a>
+      <a href="elf.html">精灵 Elf</a>
+      <a href="dwarf.html" class="active">矮人 Dwarf</a>
+      <a href="halfling.html">半身人 Halfling</a>
+      <a href="gnome.html">侏儒 Gnome</a>
+      <a href="half-elf.html">半精灵 Half-elf</a>
+      <a href="half-orc.html">半兽人 Half-orc</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- 信息盒子 -->
+    <div class="infobox">
+      <div class="infobox-title">🧔 矮人 Dwarf</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <div class="infobox-img" style="padding:20px;font-size:64px;opacity:0.3;">🧔⛏️🍺</div>
+      <table class="infobox-table">
+        <tr><td>体型</td><td>中型</td></tr>
+        <tr><td>属性调整</td><td>体质+2，魅力-2</td></tr>
+        <tr><td>速度</td><td>20英尺（穿甲无减值）</td></tr>
+        <tr><td>视力</td><td>黑暗视觉 60英尺</td></tr>
+        <tr><td>语言</td><td>通用语、矮人语</td></tr>
+        <tr><td>偏爱职业</td><td>战士（男性）、牧师（女性）</td></tr>
+        <tr><td>挑战等级</td><td>1（1级角色）</td></tr>
+        <tr><td>来源</td><td>PHB p.18 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>矮人（Dwarf）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心种族</span>
+      <span class="badge badge-race">PHB p.18</span>
+      <span class="badge badge-note">坚韧·忠诚·嗜酒</span>
+    </p>
+    <p>矮人是费伦大陆最<strong>坚韧</strong>且<strong>忠诚</strong>的种族之一。他们居住在山脉下的宏伟洞穴城市中，
+    以<strong>锻造技艺</strong>和<strong>战斗威势</strong>著称。在D&D 3.5e中，矮人以其<strong>高体质</strong>和
+    <strong>多种抗性</strong>成为优秀的前排坦克和神术施法者。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#traits">种族特性</a></li>
+        <li><a href="#mechanics">机制分析</a></li>
+        <li><a href="#multiclass">多职业建议</a></li>
+        <li><a href="#roleplay">角色扮演建议</a></li>
+        <li><a href="#names">姓名习惯</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+        <li><a href="#source">数据来源</a></li>
+      </ol>
+    </div>
+
+    <h2 id="traits">📊 种族特性</h2>
+    <div class="Rule-box">
+      <h3>属性调整</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>属性</th><th>调整值</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>力量（STR）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>敏捷（DEX）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>体质（CON）</td><td><strong>+2</strong></td><td>额外HP</td></tr>
+          <tr><td>智力（INT）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>感知（WIS）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>魅力（CHA）</td><td><span style="color:var(--accent-red);"><strong>-2</strong></span></td><td>交涉-1</td></tr>
+        </tbody>
+      </table>
+      <p><strong>体质+2/魅力-2</strong>使矮人成为<strong>最坚韧的种族</strong>之一。
+      高HP+穿甲无速度减值=极佳的前排坦克能力。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>独有种族特性</h3>
+      <ol>
+        <li><strong>黑暗视觉（Darkvision）60英尺</strong>：在完全黑暗中可视物60英尺（黑白视觉）。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;"><strong>机制意义：</strong>使矮人成为优秀的地下探险者，无需照明即可战斗。</p>
+        </li>
+        <li><strong>石头cunning（Stonecunning）</strong>：当矮人经过石制建筑/隧道的入口时，
+          有<strong>50%概率</strong>自动识别其为"人造石制品"（DM秘密投骰）。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;">在侦察/聆听检定中，如果与石头相关，DM可给予加值（通常为+2）。</p>
+        </li>
+        <li><strong>对抗毒药+2</strong>：种族加值，使矮人更难中毒。</li>
+        <li><strong>对抗法术+2</strong>：对抗法师/牧师法术的<strong>豁免检定</strong>有+2种族加值。</li>
+        <li><strong>精通地精类语言</strong>：自动会说<strong>地精语、兽人语、土族语、黑暗语</strong>。
+          这使矮人在地下探险时能理解敌人对话。</li>
+        <li><strong>偏爱职业</strong>：男性矮人偏爱<strong>战士</strong>，女性矮人偏爱<strong>牧师</strong>。
+          选择其他职业会触发<strong>兼职惩罚</strong>（经验值-20%）。</li>
+        <li><strong>速度20英尺（穿甲无减值）</strong>：矮人原本速度20英尺，但穿着<strong>轻型/中型/重型装甲</strong>时，
+          不会像其他种族那样受到<strong>速度减值</strong>（通常穿中型装甲-10英尺，重型-20英尺）。</li>
+      </ol>
+    </div>
+
+    <h2 id="mechanics">⚙️ 机制分析</h2>
+    <div class="Rule-box">
+      <h3>矮人的优劣对比</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>优势</th><th>劣势</th><th>评价</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>体质+2（HP+1/级）</td><td>魅力-2（交涉-1）</td><td>施法者需高ROLL</td></tr>
+          <tr><td>速度20英尺</td><td>穿甲无减值</td><td>重甲战士极佳</td></tr>
+          <tr><td>黑暗视觉60英尺</td><td>——</td><td>地下探险必备</td></tr>
+          <tr><td>多种抗性（+2毒/法术）</td><td>偏爱职业限制</td><td>兼职惩罚风险</td></tr>
+          <tr><td>穿甲无速度减值</td><td>——</td><td>重甲战士优秀</td></tr>
+        </tbody>
+      </table>
+      <p><strong>结论：</strong>矮人是最适合<strong>前排坦克</strong>的种族（战士、圣武士、牧师）。
+      魅力-2对施法者（牧师）不利，但可以通过高魅力ROLL弥补。穿甲无速度减值是<strong>被低估的巨优秀能力</strong>。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>矮人牧师：神术坦克</h3>
+      <p>矮人牧师是D&D 3.5e中<strong>最耐久的前排神术施法者</strong>：</p>
+      <ul>
+        <li>✅ <strong>体质+2</strong> = 每级额外+1 HP（对d8生命骰的牧师来说很显著）。</li>
+        <li>✅ <strong>对抗法术+2</strong> = 对抗法术的豁免检定有+2种族加值，提升生存力。</li>
+        <li>✅ <strong>穿甲无减值</strong> = 可以穿重甲而不减速。</li>
+        <li>❌ <strong>魅力-2</strong> = 对"吸引武器"、"神恩"等魅力相关能力有惩罚。</li>
+      </ul>
+      <p><strong>构建建议：</strong>优先提升<strong>感知（WIS）</strong>和<strong>力量（STR）</strong>。
+      选择<strong>战争领域</strong>或<strong>保护领域</strong>以获得更好的战斗能力。</p>
+    </div>
+
+    <h2 id="multiclass">🔄 多职业建议</h2>
+    <p>矮人的<strong>偏爱职业限制</strong>（男性战士/女性牧师）使多职业需要谨慎规划。</p>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>矮人战士 / 牧师</h3>
+        <p><strong>经典组合。</strong>战士提供近战输出，牧师提供治疗和辅助神术。</p>
+        <p style="font-size:13px;color:#666;">⚠️ 注意：女性矮人选择此组合需选择"战士"作为偏爱职业，否则兼职惩罚。</p>
+      </div>
+      <div class="section-card">
+        <h3>矮人圣武士</h3>
+        <p><strong>极佳选择。</strong>体质+2使圣武士极其耐久，对抗法术+2进一步提升生存力。</p>
+        <p style="font-size:13px;color:#666;">需魅力13+（圣武士先决条件）。</p>
+      </div>
+      <div class="section-card">
+        <h3>矮人游荡者</h3>
+        <p>⚠️ <strong>需慎重。</strong>游荡者依赖敏捷/魅力，而矮人没有敏捷调整。</p>
+        <p style="font-size:13px;color:#666;">如果坚持，专注于"陷阱识别"和"开锁"技能。</p>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#c0392b;margin-top:15px;"><strong>⚠️ 兼职惩罚警告：</strong>
+    矮人的偏爱职业是<strong>性别特定</strong>的。如果男性矮人选择非战士职业，或女性矮人选择非牧师职业，
+    将触发<strong>兼职惩罚</strong>（经验值-20%）。</p>
+
+    <h2 id="roleplay">🎭 角色扮演建议</h2>
+    <div class="Rule-box">
+      <h3>矮人的"家园情结"与荣誉感</h3>
+      <p>矮人通常<strong>重视荣誉、家族、祖先</strong>。他们寿命长达350年，但性格却比精灵更<strong>接地气</strong>。</p>
+      <p>常见性格原型：</p>
+      <ul>
+        <li><strong>忠诚卫士</strong>：发誓守护某个人类/精灵领主，直至死亡。</li>
+        <li><strong>复仇者</strong>：家族被龙/兽人摧毁，踏上复仇之路。</li>
+        <li><strong>锻造大师</strong>：追求打造"传说级武器"，为此冒险收集稀有材料。</li>
+        <li><strong>醉鬼战士</strong>：用酒精麻痹对家园的思念，战斗中反而更勇猛。</li>
+        <li><strong>探险考古家</strong>：研究矮人古老文明，寻找失落的洞穴城市。</li>
+      </ul>
+    </div>
+
+    <h2 id="names">📛 姓名习惯</h2>
+    <p>矮人姓名通常<strong>坚硬、沉重、有氏族感</strong>。在费伦设定中：</p>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>性别</th><th>示例姓名</th><th>意义/背景</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>男性</td><td>索林（Thorin）、巴林（Balin）、杜瓦林（Dwalin）</td><td>取自《霍比特人》</td></tr>
+        <tr><td>女性</td><td>迪斯（Dis）、盖尔（Gair）、希尔妲（Hilda）</td><td>简短有力</td></tr>
+        <tr><td>氏族名</td><td>橡木盾（Oakenshield）、铁炉（Ironforge）、石盾（Stoneshield）</td><td>描述祖先事迹</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:#777;">注：矮人通常有名无姓，或采用"名·氏族名"格式。</p>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"穿甲无速度减值"的适用范围</h3>
+      <p><strong>冲突描述：</strong>矮人的"穿甲无速度减值"是否适用于<strong>所有装甲</strong>，还是仅限"矮人装甲"？</p>
+      <p><strong>SRD和PHB的明确说法：</strong>"A dwarf's base land speed is 20 feet. However, a dwarf's
+      speed is never reduced by wearing heavy armor."（SRD · Races · Dwarf）</p>
+      <p>即：<strong>所有重型/中型装甲都不减速</strong>，不仅限于矮人特制装甲。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.19</span></p>
+      <p><strong>DM解释差异：</strong>某些DM可能house rule "仅限矮人特制装甲"。建议提前确认。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>关于"石头cunning"的触发条件</h3>
+      <p><strong>冲突描述：</strong>SRD未明确说明"石头cunning"何时给予<strong>侦察/聆听加值</strong>。</p>
+      <p>不同DM的处理方式：</p>
+      <ol>
+        <li><strong>宽松解释</strong>：只要与石头相关，自动+2。</li>
+        <li><strong>严格解释</strong>：仅限"识别人造石制品"那一下（50%概率）。</li>
+        <li><strong>中间路线</strong>：DM秘密投骰，成功则告知玩家"你感觉到石头的不对劲"。</li>
+      </ol>
+      <p><span class="source-tag">来源：SRD模糊地带</span></p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.18-20 —— 矮人种族特性</li>
+      <li>📘 <strong>SRD 3.5</strong> · Races → Dwarf —— 开放式游戏规则</li>
+      <li>📗 <strong>DMG（城主手册）3.5版</strong> p.173 —— 兼职惩罚规则</li>
+      <li>📗 <strong>Forgotten Realms Campaign Setting</strong> —— 费伦设定中的矮人文化</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="elf.html">← 上一页：精灵</a> | <a href="halfling.html">下一页：半身人 →</a>
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 矮人种族详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

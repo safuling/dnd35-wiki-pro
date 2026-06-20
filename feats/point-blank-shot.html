@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>近程射击 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <h3>专长导航</h3>
+  <ul>
+    <li><a href="intro.html">专长总览</a></li>
+    <li class="nav-divider">战斗专长</li>
+    <li><a href="power-attack.html">猛力攻击</a></li>
+    <li><a href="cleave.html">顺劈斩</a></li>
+    <li><a href="weapon-focus.html">武器专攻</a></li>
+    <li><a href="point-blank-shot.html" class="active">近程射击</a></li>
+    <li><a href="rapid-shot.html">快速射击</a></li>
+    <li class="nav-divider">施法专长</li>
+    <li><a href="spell-focus.html">法术专攻</a></li>
+    <li><a href="combat-casting.html">战斗施法</a></li>
+    <li class="nav-divider">通用专长</li>
+    <li><a href="toughness.html">强韧</a></li>
+    <li><a href="iron-will.html">钢铁意志</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 近程射击</nav>
+<h1>近程射击 (Point Blank Shot)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">远程战斗专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">熟练使用远程武器</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">30英尺内远程攻击：攻击+1，伤害+1</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择一次；是多项远程专长的前提</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你擅长近距离远程战斗。</p>
+<p>当你使用远程武器（弓、弩、飞镖、投石索等）攻击 <strong>30英尺（6格）内</strong>的目标时，获得 <span class="rule-keyword">+1 攻击加值</span> 和 <span class="rule-keyword">+1 伤害加值</span>。</p>
+
+<h2 id="benefit-detail">益处详解</h2>
+<ul>
+  <li><strong>距离限制</strong>：只适用于 <strong>30英尺/6格以内</strong> 的目标。</li>
+  <li><strong>攻击加值</strong>：适用于攻击掷骰（判断是否命中）。</li>
+  <li><strong>伤害加值</strong>：适用于伤害掷骰（计算伤害值）。</li>
+  <li><strong>远程武器</strong>：适用于所有远程武器（弓、弩、飞镖、投石索、远程法术等）。</li>
+</ul>
+
+<h2 id="prerequisite-chain">专长链起点</h2>
+<p>近程射击是多项远程战斗专长的 <strong>先决条件</strong>：</p>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>专长</th>
+      <th>先决条件</th>
+      <th>效果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>快速射击 (Rapid Shot)</strong></td>
+      <td>近程射击，敏捷 13</td>
+      <td>远程全力攻击额外-2攻击，多一次攻击</td>
+    </tr>
+    <tr>
+      <td><strong>多重射击 (Manyshot)</strong></td>
+      <td>近程射击，BAB +6</td>
+      <td>一次远程攻击击中多个目标</td>
+    </tr>
+    <tr>
+      <td><strong>精确射击 (Precise Shot)</strong></td>
+      <td>近程射击</td>
+      <td>射击邻近敌人的目标无-4惩罚</td>
+    </tr>
+    <tr>
+      <td><strong>远程射击 (Far Shot)</strong></td>
+      <td>近程射击</td>
+      <td>远程武器射程加倍</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="value">战术价值</h2>
+<div class="tactic-box">
+  <p><strong>为什么近程射击重要？</strong></p>
+  <ul>
+    <li><strong>基础远程专长</strong>：几乎所有远程专长都需要近程射击作为前提。</li>
+    <li><strong>早期战斗优势</strong>：在低等级时，+1 攻击和伤害显著影响命中率和伤害输出。</li>
+    <li><strong>配合其他专长</strong>：猛力攻击是近战的基础；近程射击是远程的基础。</li>
+  </ul>
+</div>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例：游侠的近程射击</strong></p>
+  <p>人类游侠 1级（BAB +1，敏捷 16/+3），使用长弓攻击。</p>
+  <ul>
+    <li><strong>超过30英尺</strong>：攻击加值 = +1 (BAB) + 3 (敏捷) = <strong>+4</strong>；伤害 = 1d8 + 3 (敏捷)</li>
+    <li><strong>30英尺内</strong>：攻击加值 = +4 + 1 (近程射击) = <strong>+5</strong>；伤害 = 1d8 + 3 + 1 (近程射击) = <strong>1d8+4</strong></li>
+    <li>近程射击将命中率提高 5%，伤害提高 1 点</li>
+  </ul>
+</div>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">游侠 (Ranger)</strong>：远程战斗核心，近程射击是必选。</li>
+  <li><strong class="highlight">战士 (Fighter)</strong>：如果选择远程路线，近程射击是基础。</li>
+  <li><strong class="highlight">盗贼 (Rogue)</strong>：远程偷袭需要精准射击，近程射击有帮助。</li>
+  <li><strong>任何远程角色</strong>：无职业限制，适合所有远程攻击者。</li>
+</ul>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：近程射击是否适用于"远程法术"？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：近程射击适用于"远程武器"攻击。</p>
+  <p>✅ <strong>官方 FAQ 澄清</strong>：</p>
+  <ul>
+    <li>近程射击 <strong>不适用</strong>于远程法术（如 <em>魔法飞弹</em>、<em>闪电束</em>）。</li>
+    <li>近程射击 <strong>只适用</strong>于远程武器攻击（弓、弩、飞镖等）。</li>
+  </ul>
+  <p>⚠️ <strong>常见误解</strong>：有玩家认为近程射击能提高法术伤害。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页136</strong>：远程攻击详解。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

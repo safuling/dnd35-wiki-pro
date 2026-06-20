@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识（奥术） - D&D 3.5e 中文Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .skill-header {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .ability-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .dc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .dc-table th, .dc-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .dc-table th {
+            background: #2980b9;
+            color: white;
+        }
+        .dc-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .conflict-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+    <nav class="top-nav">
+        <div class="nav-brand">🐉 D&D 3.5e Wiki</div>
+        <div class="nav-links">
+            <a href="../index.html">首页</a>
+            <a href="intro.html" class="active">技能</a>
+            <a href="../spells/intro.html">法术</a>
+            <a href="../races/human.html">种族</a>
+            <a href="../classes/wizard.html">职业</a>
+            <a href="../feats/intro.html">专长</a>
+            <a href="../conflicts.html">规则冲突</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="skill-header">
+            <h1>📚 知识（奥术）(Knowledge - Arcana)</h1>
+            <p class="subtitle">智力技能 · 训练技能（法师、术士、吟游诗人）</p>
+            <div>
+                <span class="ability-badge">关键属性：智力 (INT)</span>
+                <span class="ability-badge">调整值：1d20 + 调整值点数 + 智力调整值</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 技能描述</h3>
+            <p>知识（奥术）技能允许你回忆关于奥术魔法、魔法物品、魔法生物、法术成分、魔法理论等的知识。</p>
+            
+            <h4>调整值计算</h4>
+            <p class="formula">知识（奥术）调整值 = 知识（奥术）调整值点数 + 智力调整值 + 其他调整值</p>
+            
+            <h4>检定条件</h4>
+            <ul>
+                <li><strong>动作</strong>：标准动作（Standard Action）或直觉动作（Reaction）</li>
+                <li><strong>重试</strong>：可以，但某些情况下（如已尝试回忆）重试可能有DC惩罚</li>
+                <li><strong>特殊</strong>：这是子技能，需要专门投入调整值点数</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 难度等级 (DC)</h2>
+            <table class="dc-table">
+                <thead>
+                    <tr>
+                        <th>知识类型</th>
+                        <th>DC</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>基础奥术知识（法术名称、学派）</td>
+                        <td>DC 10</td>
+                        <td>需要基础的奥术训练</td>
+                    </tr>
+                    <tr>
+                        <td>中级奥术知识（法术效果、成分）</td>
+                        <td>DC 15</td>
+                        <td>需要较高的奥术训练</td>
+                    </tr>
+                    <tr>
+                        <td>高级奥术知识（罕见法术、魔法物品）</td>
+                        <td>DC 20</td>
+                        <td>需要专家级奥术训练</td>
+                    </tr>
+                    <tr>
+                        <td>传奇奥术知识（传说法术、神器）</td>
+                        <td>DC 25+</td>
+                        <td>需要传奇级奥术训练</td>
+                    </tr>
+                    <tr>
+                        <td>识别法术（施法时）</td>
+                        <td>DC 15 + 法术环级</td>
+                        <td>需要快速识别法术</td>
+                    </tr>
+                    <tr>
+                        <td>识别魔法物品</td>
+                        <td>DC 15-25</td>
+                        <td>需要辨识魔法物品属性</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📋 技能细则</h2>
+            
+            <h3>子技能系统</h3>
+            <p>知识技能是子技能，你需要专门投入调整值点数到"知识（奥术）"才能使用。其他知识子技能包括：</p>
+            <ul>
+                <li><strong>知识（地下城）</strong>：地下城/洞穴知识</li>
+                <li><strong>知识（地理）</strong>：地理/地形知识</li>
+                <li><strong>知识（历史）</strong>：历史/传说知识</li>
+                <li><strong>知识（地方）</strong>：本地/人物知识</li>
+                <li><strong>知识（自然）</strong>：自然/动物/天气知识</li>
+                <li><strong>知识（贵族）</strong>：贵族/皇室/纹章知识</li>
+                <li><strong>知识（宗教）</strong>：神祇/神术/教堂知识</li>
+                <li><strong>知识（位面）</strong>：位面/异界生物知识</li>
+            </ul>
+
+            <h3>识别法术</h3>
+            <p>当你看到别人施法时，可以做知识（奥术）检定来识别法术。</p>
+            <ul>
+                <li><strong>DC</strong>：15 + 法术环级</li>
+                <li><strong>动作</strong>：直觉动作（Reaction）</li>
+                <li><strong>成功</strong>：你知道法术名称、学派、效果</li>
+                <li><strong>失败</strong>：你不知道法术信息</li>
+            </ul>
+
+            <h3>特殊能力</h3>
+            <ul>
+                <li><strong>法师（Wizard）</strong>：将知识（奥术）作为训练技能（调整值+3）</li>
+                <li><strong>术士（Sorcerer）</strong>：将知识（奥术）作为训练技能</li>
+                <li><strong>吟游诗人（Bard）</strong>：将知识（奥术）作为训练技能（但有限制）</li>
+                <li><strong>法术辨识（Spellcraft）</strong>：虽然独立技能，但与知识（奥术）高度相关</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <h3>💡 实战示例</h3>
+            <p><strong>场景</strong>：你是一名5级法师（智力18，+4调整值），有8点知识（奥术）调整值。</p>
+            <p><strong>总调整值</strong>：8（调整值点数）+ 4（智力调整值）= +12</p>
+            <p><strong>任务</strong>：识别一个敌人施放的法术（3环法术"火球术"）。</p>
+            <p><strong>计算</strong>：DC = 15 + 3（法术环级）= 18</p>
+            <p><strong>检定</strong>：1d20 + 12 = 22 ≥ 18，成功！你识别出敌人正在施放"火球术"。</p>
+            <p><strong>变体</strong>：如果敌人施放8环法术"陷阱之墙"，DC = 15 + 8 = 23。1d20 + 12 = 19 < 23，失败！你无法识别这个高级法术。</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 搭配专长</h2>
+            <ul>
+                <li><strong>智力高超（Intelligent）</strong>：智力调整值+2（间接提升知识）</li>
+                <li><strong>学识渊博（Lorekeeper）</strong>：知识技能调整值+2</li>
+                <li><strong>法术辨识（Spellcraft）</strong>：虽然不是专长，但这个技能与知识（奥术）高度互补</li>
+            </ul>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：识别法术的动作类型</h3>
+            <p><strong>冲突点</strong>：识别法术是直觉动作、即时动作，还是需要标准动作？</p>
+            <p><strong>官方规则（PHB p.79 & 3.5版 FAQ）</strong>：识别法术是直觉动作（Reaction），可以在敌人施法时立即进行。但DM可以自由决定是否需要标准动作（如果识别很困难）。</p>
+            <p><strong>网络误传</strong>：部分网站声称"识别法术需要标准动作，敌人施法后下一轮才能识别"。这是错误的，会削弱法师的应对能力。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行，识别法术是直觉动作。但某些特殊情况（如识别非常稀有的法术）可能需要标准动作。</p>
+            <p class="source">📚 出处：PHB p.79, 3.5版 FAQ v.2.0</p>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：知识技能的跨职业限制</h3>
+            <p><strong>冲突点</strong>：知识技能作为跨职业技能时，调整值上限是否为角色等级+3？</p>
+            <p><strong>官方规则（PHB p.62 & p.79）</strong>：知识技能是训练技能，跨职业调整值上限为角色等级+3。但某些职业（如法师）可以将其作为训练技能，无此限制。</p>
+            <p><strong>网络误传</strong>：部分论坛声称"知识技能无跨职业限制，可以无限提升"。这违反了PHB的基本规则。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行。训练技能作为跨职业技能时，调整值上限为角色等级+3。例外：如果有特殊能力/专长移除这个限制（如``全能``专长），则可以超过。</p>
+            <p class="source">📚 出处：PHB p.62, p.79, Complete Adventurer p.106</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 规则出处</h3>
+            <ul>
+                <li><strong>玩家手册 (PHB)</strong>：p.79-80，知识技能详细描述</li>
+                <li><strong>3.5版 FAQ</strong>：v.2.0，知识技能相关问答</li>
+                <li><strong>Complete Adventurer</strong>：p.106-107，知识技能进阶规则</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>🐉 D&D 3.5e 中文Wiki | 基于《玩家手册》(PHB) 规则</p>
+        <p>本网站为粉丝制作，非官方作品。Dungeons & Dragons 是 Wizards of the Coast 的商标。</p>
+    </footer>
+</body>
+</html>

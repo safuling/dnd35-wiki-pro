@@ -1,0 +1,1678 @@
+[
+  {
+    "id": "obscuring_mist",
+    "nameEn": "Obscuring Mist",
+    "nameZh": "云雾术",
+    "level": {
+      "druid": 1
+    },
+    "school": "conjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【水领域】这是一个conjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "air_walk",
+    "nameEn": "Air Walk",
+    "nameZh": "气行术",
+    "level": {
+      "cleric": 4,
+      "druid": 4
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【气领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "control_winds",
+    "nameEn": "Control Winds",
+    "nameZh": "控制风",
+    "level": {
+      "cleric": 5,
+      "druid": 5
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【气领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "elemental_body_air",
+    "nameEn": "Elemental Body (Air)",
+    "nameZh": "元素身体（气）",
+    "level": {
+      "wizard": 7,
+      "sorcerer": 7,
+      "druid": 7
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【气领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "calm_animals",
+    "nameEn": "Calm Animals",
+    "nameZh": "安抚动物",
+    "level": {
+      "druid": 1,
+      "ranger": 1
+    },
+    "school": "enchantment",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【动物领域】这是一个enchantment法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "speak_with_animals",
+    "nameEn": "Speak with Animals",
+    "nameZh": "与动物交谈",
+    "level": {
+      "druid": 1,
+      "ranger": 1
+    },
+    "school": "divination",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【动物领域】这是一个divination法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "dominate_animal",
+    "nameEn": "Dominate Animal",
+    "nameZh": "支配动物",
+    "level": {
+      "druid": 3,
+      "ranger": 3
+    },
+    "school": "enchantment",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【动物领域】这是一个enchantment法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "summon_natures_ally_iv",
+    "nameEn": "Summon Nature's Ally IV",
+    "nameZh": "召唤自然盟友IV",
+    "level": {
+      "druid": 4
+    },
+    "school": "conjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【动物领域】这是一个conjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "antilife_shell",
+    "nameEn": "Antilife Shell",
+    "nameZh": "反生命盾",
+    "level": {
+      "druid": 6
+    },
+    "school": "abjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【动物领域】这是一个abjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "animal_shapes",
+    "nameEn": "Animal Shapes",
+    "nameZh": "动物形态",
+    "level": {
+      "druid": 8
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【动物领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "summon_natures_ally_ix",
+    "nameEn": "Summon Nature's Ally IX",
+    "nameZh": "召唤自然盟友IX",
+    "level": {
+      "druid": 9
+    },
+    "school": "conjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【动物领域】这是一个conjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "protect_from_law",
+    "nameEn": "Protection from Law",
+    "nameZh": "防护律序",
+    "level": {
+      "cleric": 1
+    },
+    "school": "abjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【混乱领域】这是一个abjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "magic_circle_against_law",
+    "nameEn": "Magic Circle against Law",
+    "nameZh": "魔法环反律序",
+    "level": {
+      "cleric": 3
+    },
+    "school": "abjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【混乱领域】这是一个abjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "chaos_hammer",
+    "nameEn": "Chaos Hammer",
+    "nameZh": "混乱锤",
+    "level": {
+      "cleric": 4
+    },
+    "school": "evocation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【混乱领域】这是一个evocation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "power_word_chaos",
+    "nameEn": "Power Word Chaos",
+    "nameZh": "力令混乱",
+    "level": {
+      "cleric": 5
+    },
+    "school": "enchantment",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【混乱领域】这是一个enchantment法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "cloak_of_chaos",
+    "nameEn": "Cloak of Chaos",
+    "nameZh": "混乱之斗篷",
+    "level": {
+      "cleric": 8
+    },
+    "school": "abjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【混乱领域】这是一个abjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "summon_monster_9_chaos",
+    "nameEn": "Summon Monster IX (Chaos)",
+    "nameZh": "召唤怪物IX（混乱）",
+    "level": {
+      "cleric": 9
+    },
+    "school": "conjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【混乱领域】这是一个conjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "death_knell",
+    "nameEn": "Death Knell",
+    "nameZh": "死亡丧钟",
+    "level": {
+      "cleric": 2
+    },
+    "school": "necromancy",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【死亡领域】这是一个necromancy法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "inflict_light_wounds",
+    "nameEn": "Inflict Light Wounds",
+    "nameZh": "造成轻伤",
+    "level": {
+      "cleric": 1
+    },
+    "school": "necromancy",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【破坏领域】这是一个necromancy法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "shatter",
+    "nameEn": "Shatter",
+    "nameZh": "粉碎术",
+    "level": {
+      "cleric": 2,
+      "wizard": 2,
+      "sorcerer": 2
+    },
+    "school": "evocation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【破坏领域】这是一个evocation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "inflict_critical_wounds",
+    "nameEn": "Inflict Critical Wounds",
+    "nameZh": "造成严重伤害",
+    "level": {
+      "cleric": 4
+    },
+    "school": "necromancy",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【破坏领域】这是一个necromancy法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "magic_stone",
+    "nameEn": "Magic Stone",
+    "nameZh": "魔法石",
+    "level": {
+      "cleric": 1,
+      "druid": 1
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【土领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "soften_earth_and_stone",
+    "nameEn": "Soften Earth and Stone",
+    "nameZh": "软化土石",
+    "level": {
+      "druid": 2
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【土领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "stone_shape",
+    "nameEn": "Stone Shape",
+    "nameZh": "塑石术",
+    "level": {
+      "cleric": 3,
+      "wizard": 3,
+      "sorcerer": 3
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【土领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "spike_stones",
+    "nameEn": "Spike Stones",
+    "nameZh": "尖刺石",
+    "level": {
+      "druid": 4
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【土领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "iron_body",
+    "nameEn": "Iron Body",
+    "nameZh": "铁身术",
+    "level": {
+      "wizard": 8,
+      "sorcerer": 8
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【土领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "desecrate",
+    "nameEn": "Desecrate",
+    "nameZh": "【待补充】desecrate",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【邪恶领域】此乃占位符法术，需要补充完整数据。法术ID: desecrate"
+  },
+  {
+    "id": "magic_circle_against_good",
+    "nameEn": "Magic Circle Against Good",
+    "nameZh": "【待补充】magic_circle_against_good",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【邪恶领域】此乃占位符法术，需要补充完整数据。法术ID: magic_circle_against_good"
+  },
+  {
+    "id": "unholy_blade",
+    "nameEn": "Unholy Blade",
+    "nameZh": "【待补充】unholy_blade",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【邪恶领域】此乃占位符法术，需要补充完整数据。法术ID: unholy_blade"
+  },
+  {
+    "id": "dispel_good",
+    "nameEn": "Dispel Good",
+    "nameZh": "【待补充】dispel_good",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【邪恶领域】此乃占位符法术，需要补充完整数据。法术ID: dispel_good"
+  },
+  {
+    "id": "unholy_word",
+    "nameEn": "Unholy Word",
+    "nameZh": "【待补充】unholy_word",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【邪恶领域】此乃占位符法术，需要补充完整数据。法术ID: unholy_word"
+  },
+  {
+    "id": "summon_monster_9_evil",
+    "nameEn": "Summon Monster 9 Evil",
+    "nameZh": "【待补充】summon_monster_9_evil",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【邪恶领域】此乃占位符法术，需要补充完整数据。法术ID: summon_monster_9_evil"
+  },
+  {
+    "id": "produce_flame",
+    "nameEn": "Produce Flame",
+    "nameZh": "【待补充】produce_flame",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【火领域】此乃占位符法术，需要补充完整数据。法术ID: produce_flame"
+  },
+  {
+    "id": "shield_other",
+    "nameEn": "Shield Other",
+    "nameZh": "【待补充】shield_other",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【防护领域】此乃占位符法术，需要补充完整数据。法术ID: shield_other"
+  },
+  {
+    "id": "magic_circle_against_evil",
+    "nameEn": "Magic Circle Against Evil",
+    "nameZh": "【待补充】magic_circle_against_evil",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【善良领域】此乃占位符法术，需要补充完整数据。法术ID: magic_circle_against_evil"
+  },
+  {
+    "id": "holy_smite",
+    "nameEn": "Holy Smite",
+    "nameZh": "【待补充】holy_smite",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【善良领域】此乃占位符法术，需要补充完整数据。法术ID: holy_smite"
+  },
+  {
+    "id": "dispel_evil",
+    "nameEn": "Dispel Evil",
+    "nameZh": "【待补充】dispel_evil",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【善良领域】此乃占位符法术，需要补充完整数据。法术ID: dispel_evil"
+  },
+  {
+    "id": "blade_barrier",
+    "nameEn": "Blade Barrier",
+    "nameZh": "【待补充】blade_barrier",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【战争领域】此乃占位符法术，需要补充完整数据。法术ID: blade_barrier"
+  },
+  {
+    "id": "holy_word",
+    "nameEn": "Holy Word",
+    "nameZh": "【待补充】holy_word",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【善良领域】此乃占位符法术，需要补充完整数据。法术ID: holy_word"
+  },
+  {
+    "id": "summon_monster_9_good",
+    "nameEn": "Summon Monster 9 Good",
+    "nameZh": "【待补充】summon_monster_9_good",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【善良领域】此乃占位符法术，需要补充完整数据。法术ID: summon_monster_9_good"
+  },
+  {
+    "id": "detect_thoughts",
+    "nameEn": "Detect Thoughts",
+    "nameZh": "【待补充】detect_thoughts",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【知识领域】此乃占位符法术，需要补充完整数据。法术ID: detect_thoughts"
+  },
+  {
+    "id": "discern_location",
+    "nameEn": "Discern Location",
+    "nameZh": "【待补充】discern_location",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【知识领域】此乃占位符法术，需要补充完整数据。法术ID: discern_location"
+  },
+  {
+    "id": "protection_from_chaos",
+    "nameEn": "Protection From Chaos",
+    "nameZh": "【待补充】protection_from_chaos",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【守序领域】此乃占位符法术，需要补充完整数据。法术ID: protection_from_chaos"
+  },
+  {
+    "id": "calm_emotions",
+    "nameEn": "Calm Emotions",
+    "nameZh": "【待补充】calm_emotions",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【守序领域】此乃占位符法术，需要补充完整数据。法术ID: calm_emotions"
+  },
+  {
+    "id": "magic_circle_against_chaos",
+    "nameEn": "Magic Circle Against Chaos",
+    "nameZh": "【待补充】magic_circle_against_chaos",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【守序领域】此乃占位符法术，需要补充完整数据。法术ID: magic_circle_against_chaos"
+  },
+  {
+    "id": "order_whip",
+    "nameEn": "Order Whip",
+    "nameZh": "【待补充】order_whip",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【守序领域】此乃占位符法术，需要补充完整数据。法术ID: order_whip"
+  },
+  {
+    "id": "dispel_chaos",
+    "nameEn": "Dispel Chaos",
+    "nameZh": "【待补充】dispel_chaos",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【守序领域】此乃占位符法术，需要补充完整数据。法术ID: dispel_chaos"
+  },
+  {
+    "id": "summon_monster_9_law",
+    "nameEn": "Summon Monster 9 Law",
+    "nameZh": "【待补充】summon_monster_9_law",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【守序领域】此乃占位符法术，需要补充完整数据。法术ID: summon_monster_9_law"
+  },
+  {
+    "id": "imbue_with_spell_ability",
+    "nameEn": "Imbue With Spell Ability",
+    "nameZh": "【待补充】imbue_with_spell_ability",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【魔法领域】此乃占位符法术，需要补充完整数据。法术ID: imbue_with_spell_ability"
+  },
+  {
+    "id": "spell_resistance",
+    "nameEn": "Spell Resistance",
+    "nameZh": "【待补充】spell_resistance",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【防护领域】此乃占位符法术，需要补充完整数据。法术ID: spell_resistance"
+  },
+  {
+    "id": "permanency",
+    "nameEn": "Permanency",
+    "nameZh": "【待补充】permanency",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【魔法领域】此乃占位符法术，需要补充完整数据。法术ID: permanency"
+  },
+  {
+    "id": "mage_s_layer",
+    "nameEn": "Mage S Layer",
+    "nameZh": "【待补充】mage_s_layer",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【魔法领域】此乃占位符法术，需要补充完整数据。法术ID: mage_s_layer"
+  },
+  {
+    "id": "entangle",
+    "nameEn": "Entangle",
+    "nameZh": "【待补充】entangle",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【植物领域】此乃占位符法术，需要补充完整数据。法术ID: entangle"
+  },
+  {
+    "id": "_tree_empathy_2",
+    "nameEn": " Tree Empathy 2",
+    "nameZh": "【待补充】_tree_empathy_2",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【植物领域】此乃占位符法术，需要补充完整数据。法术ID: _tree_empathy_2"
+  },
+  {
+    "id": "plant_growth",
+    "nameEn": "Plant Growth",
+    "nameZh": "【待补充】plant_growth",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【植物领域】此乃占位符法术，需要补充完整数据。法术ID: plant_growth"
+  },
+  {
+    "id": "command_plants",
+    "nameEn": "Command Plants",
+    "nameZh": "【待补充】command_plants",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【植物领域】此乃占位符法术，需要补充完整数据。法术ID: command_plants"
+  },
+  {
+    "id": "wall_of_thorns",
+    "nameEn": "Wall Of Thorns",
+    "nameZh": "【待补充】wall_of_thorns",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【植物领域】此乃占位符法术，需要补充完整数据。法术ID: wall_of_thorns"
+  },
+  {
+    "id": "animate_plants",
+    "nameEn": "Animate Plants",
+    "nameZh": "【待补充】animate_plants",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【植物领域】此乃占位符法术，需要补充完整数据。法术ID: animate_plants"
+  },
+  {
+    "id": "sanctuary",
+    "nameEn": "Sanctuary",
+    "nameZh": "【待补充】sanctuary",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【防护领域】此乃占位符法术，需要补充完整数据。法术ID: sanctuary"
+  },
+  {
+    "id": "spell_immunity",
+    "nameEn": "Spell Immunity",
+    "nameZh": "【待补充】spell_immunity",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【防护领域】此乃占位符法术，需要补充完整数据。法术ID: spell_immunity"
+  },
+  {
+    "id": "mind_blank",
+    "nameEn": "Mind Blank",
+    "nameZh": "【待补充】mind_blank",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【防护领域】此乃占位符法术，需要补充完整数据。法术ID: mind_blank"
+  },
+  {
+    "id": "magic_vestment",
+    "nameEn": "Magic Vestment",
+    "nameZh": "【待补充】magic_vestment",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【力量领域】此乃占位符法术，需要补充完整数据。法术ID: magic_vestment"
+  },
+  {
+    "id": "divine_power",
+    "nameEn": "Divine Power",
+    "nameZh": "【待补充】divine_power",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【战争领域】此乃占位符法术，需要补充完整数据。法术ID: divine_power"
+  },
+  {
+    "id": "righteous_might",
+    "nameEn": "Righteous Might",
+    "nameZh": "【待补充】righteous_might",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【力量领域】此乃占位符法术，需要补充完整数据。法术ID: righteous_might"
+  },
+  {
+    "id": "stoneskin",
+    "nameEn": "Stoneskin",
+    "nameZh": "【待补充】stoneskin",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【力量领域】此乃占位符法术，需要补充完整数据。法术ID: stoneskin"
+  },
+  {
+    "id": "sunbeam",
+    "nameEn": "Sunbeam",
+    "nameZh": "【待补充】sunbeam",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【太阳领域】此乃占位符法术，需要补充完整数据。法术ID: sunbeam"
+  },
+  {
+    "id": "sunray",
+    "nameEn": "Sunray",
+    "nameZh": "【待补充】sunray",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【太阳领域】此乃占位符法术，需要补充完整数据。法术ID: sunray"
+  },
+  {
+    "id": "longstrider",
+    "nameEn": "Longstrider",
+    "nameZh": "【待补充】longstrider",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【旅行领域】此乃占位符法术，需要补充完整数据。法术ID: longstrider"
+  },
+  {
+    "id": "locate_object",
+    "nameEn": "Locate Object",
+    "nameZh": "【待补充】locate_object",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【旅行领域】此乃占位符法术，需要补充完整数据。法术ID: locate_object"
+  },
+  {
+    "id": "teleport_object",
+    "nameEn": "Teleport Object",
+    "nameZh": "【待补充】teleport_object",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【旅行领域】此乃占位符法术，需要补充完整数据。法术ID: teleport_object"
+  },
+  {
+    "id": "disguise_self",
+    "nameEn": "Disguise Self",
+    "nameZh": "【待补充】disguise_self",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【诡术领域】此乃占位符法术，需要补充完整数据。法术ID: disguise_self"
+  },
+  {
+    "id": "project_image",
+    "nameEn": "Project Image",
+    "nameZh": "【待补充】project_image",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【诡术领域】此乃占位符法术，需要补充完整数据。法术ID: project_image"
+  },
+  {
+    "id": "spiritual_weapon",
+    "nameEn": "Spiritual Weapon",
+    "nameZh": "【待补充】spiritual_weapon",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【战争领域】此乃占位符法术，需要补充完整数据。法术ID: spiritual_weapon"
+  },
+  {
+    "id": "flame_strike",
+    "nameEn": "Flame Strike",
+    "nameZh": "【待补充】flame_strike",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【战争领域】此乃占位符法术，需要补充完整数据。法术ID: flame_strike"
+  },
+  {
+    "id": "watery_bubble",
+    "nameEn": "Watery Bubble",
+    "nameZh": "【待补充】watery_bubble",
+    "level": {
+      "cleric": 1
+    },
+    "school": "universal",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "无",
+    "spellResist": false,
+    "desc": "【水领域】此乃占位符法术，需要补充完整数据。法术ID: watery_bubble"
+  },
+  {
+    "id": "control_water",
+    "nameEn": "Control Water",
+    "nameZh": "控制水",
+    "level": {
+      "cleric": 4,
+      "druid": 4
+    },
+    "school": "transmutation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【水领域】这是一个transmutation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "acid_fog",
+    "nameEn": "Acid Fog",
+    "nameZh": "酸雾",
+    "level": {
+      "wizard": 6,
+      "sorcerer": 6
+    },
+    "school": "conjuration",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【水领域】这是一个conjuration法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "vortex",
+    "nameEn": "Vortex",
+    "nameZh": "漩涡",
+    "level": {
+      "cleric": 7,
+      "druid": 7
+    },
+    "school": "evocation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【水领域】这是一个evocation法术。需要补充完整的法术描述。"
+  },
+  {
+    "id": "energy_flood_cold",
+    "nameEn": "Energy Flood (Cold)",
+    "nameZh": "能量洪流（寒冷）",
+    "level": {
+      "wizard": 9,
+      "sorcerer": 9
+    },
+    "school": "evocation",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "castingTime": "标准动作",
+    "range": "近距 (25尺+5尺/2等级)",
+    "target": "见法术描述",
+    "duration": "见法术描述",
+    "savingThrow": "见法术描述",
+    "spellResist": true,
+    "desc": "【水领域】这是一个evocation法术。需要补充完整的法术描述。"
+  }
+]

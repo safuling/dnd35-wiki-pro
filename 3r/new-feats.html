@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3R拓展功能大全 - 新增专长 | D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .header p { font-size: 1.1em; opacity: 0.9; }
+
+    .nav-links { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .nav-links a { padding: 8px 16px; background: white; color: #667eea; text-decoration: none; border-radius: 4px; border: 2px solid #667eea; transition: all 0.3s; font-size: 0.9em; }
+    .nav-links a:hover { background: #667eea; color: white; }
+
+    .intro { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .intro h2 { color: #667eea; margin-bottom: 15px; }
+
+    .feat-section { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .feat-section h2 { color: #764ba2; margin-bottom: 20px; border-bottom: 2px solid #764ba2; padding-bottom: 10px; }
+
+    .feat-block { border: 3px solid #667eea; border-radius: 8px; padding: 20px; margin-bottom: 25px; background: #fefefe; }
+    .feat-block h3 { color: #667eea; font-size: 1.5em; margin-bottom: 5px; }
+    .feat-block .type { color: #666; font-style: italic; margin-bottom: 10px; }
+
+    .feat-info { background: #f9f9f9; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #764ba2; }
+    .feat-info table { width: 100%; border-collapse: collapse; }
+    .feat-info td { padding: 5px 10px; vertical-align: top; }
+    .feat-info td:first-child { font-weight: bold; width: 120px; color: #764ba2; }
+
+    .description { margin: 15px 0; line-height: 1.8; }
+    .mechanics { background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 15px 0; }
+    .mechanics h4 { color: #1976d2; margin-bottom: 10px; }
+    .example { background: #fff3e0; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ff9800; }
+    .example h4 { color: #e65100; margin-bottom: 10px; }
+
+    .source { background: #f3e5f5; padding: 10px; border-radius: 4px; margin-top: 15px; font-size: 0.9em; }
+    .source strong { color: #7b1fa2; }
+
+    .table-container { overflow-x: auto; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+    th { background: #667eea; color: white; font-weight: 600; }
+    tr:hover { background: #f5f5f5; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="container">
+    <div class="header">
+      <h1>🌟 3R拓展功能大全</h1>
+      <p>新增专长 - D&D 3.5e 扩展内容</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">🏠 返回主页</a>
+      <a href="new-races.html">🧝 新增种族</a>
+      <a href="new-classes.html">⚔️ 新增职业</a>
+      <a href="new-feats.html">🌟 新增专长</a>
+      <a href="new-spells.html">✨ 新增法术</a>
+      <a href="new-equipment.html">⚔️ 新增装备</a>
+      <a href="new-monsters.html">👹 新增怪物</a>
+      <a href="optional-rules.html">📜 可选规则</a>
+      <a href="resources-tools.html">🔧 资源与工具</a>
+    </div>
+
+    <div class="intro">
+      <h2>📖 关于新增专长</h2>
+      <p>本页面收录了来自<strong>官方拓展资料</strong>（如《Complete Warrior》《Complete Divine》）和<strong>社区平衡创作</strong>的新增专长。</p>
+      <p>每个专长条目包含：</p>
+      <ul style="margin-left: 20px; margin-top: 10px;">
+        <li><strong>完整专长属性</strong>：先决条件、加成、特殊规则</li>
+        <li><strong>详细机制说明</strong>：如何运作、限制、相互作用</li>
+        <li><strong>使用示例</strong>：实际游戏中的应用</li>
+        <li><strong>来源标注</strong>：官方资料书或社区来源</li>
+      </ul>
+    </div>
+
+    <div class="feat-section">
+      <h2>⚔️ 战斗专长</h2>
+
+      <div class="feat-block">
+        <h3>顺势攻击（Powerful Charge）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>力量13+，猛力攻击专长</td></tr>
+            <tr><td>加成</td><td>冲锋时造成双倍伤害</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>可以（对不同武器）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：当你对冲锋攻击使用近战武器时，你的攻击造成双倍伤害（掷两次伤害骰并加总）。</p>
+          <p>如果你使用双手武器，你造成三倍伤害（掷三次伤害骰并加总）。</p>
+          <p>这个专长只适用于冲锋的第一击。后续攻击不再享受加成。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>双倍伤害</strong>：这意味着你掷两次伤害骰并加总。例如，长剑造成1d8+力量调整值伤害，使用顺势攻击后造成2d8+2×力量调整值伤害。</li>
+            <li><strong>双手武器</strong>：使用双手武器（如巨剑、巨型斧）时，造成三倍伤害（3d8+3×力量调整值）。</li>
+            <li><strong>冲刺限制</strong>：只能在冲锋动作的第一击使用。如果你在冲锋后继续攻击（如通过额外攻击），后续攻击不享受加成。</li>
+            <li><strong>重击</strong>：如果攻击是重击，先双倍伤害，然后加倍（总共四倍或六倍）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：战士Borin（力量18，+4调整值）装备长剑。他对哥布林队长进行冲锋。</p>
+          <p><strong>常规攻击</strong>：造成1d8+4伤害（平均8.5）。</p>
+          <p><strong>使用顺势攻击</strong>：造成2d8+8伤害（平均17）。</p>
+          <p><strong>战术</strong>：这个专长特别适合需要快速消灭敌人的战士。配合<em>猛力攻击</em>，可以在冲锋时承受-5攻击加值+10伤害，造成毁灭性打击。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Warrior》p. 97<br>
+          <strong>平衡性</strong>：适合中等等级战士。在1-2级时非常强大。
+        </div>
+      </div>
+
+      <div class="feat-block">
+        <h3>跳跃攻击（Leap Attack）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>敏捷13+，跳跃鉴定+4，顺势攻击专长</td></tr>
+            <tr><td>加成</td><td>跳跃冲锋时获得额外伤害</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：当你进行跳跃冲锋（jump charge）时，你可以在攻击上获得额外的+2d6伤害。</p>
+          <p>要使用这个专长，你必须在冲锋前跳跃至少10尺距离。这次攻击也受益于<em>顺势攻击</em>专长。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Adventurer》p. 110<br>
+          <strong>平衡性</strong>：适合高机动性角色。
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-section">
+      <h2>✨ 法术专长</h2>
+
+      <div class="feat-block">
+        <h3>法术升环（Spell Boost）</h3>
+        <div class="type">法术专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>能够施展3环法术</td></tr>
+            <tr><td>加成</td><td>可以高环级施展低环级法术以获得更强效果</td></tr>
+            <tr><td>专长类型</td><td>法术</td></tr>
+            <tr><td>可否多次选择</td><td>可以（对不同法术）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：选择这个专长时，选择一个你能施展的法术。你可以以更高的环级施展这个法术，获得以下加成：</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>+1每环级</strong>：法术的豁免DC增加1（如果法术允许豁免）。</li>
+            <li><strong>+1d6伤害每环级</strong>：如果法术造成伤害，增加1d6对应类型的伤害。</li>
+            <li><strong>+1轮持续时间每环级</strong>：如果法术有持续时间，增加1轮。</li>
+          </ul>
+          <p>当你施展这个法术时，你可以选择使用更高的法术位。你必须进行一个施法者等级检定（DC = 10 + 法术的原始环级 + 提升的环级数）来维持提升效果。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>施法者等级检定</strong>：1d20 + 施法者等级 vs DC。如果失败，法术失败且法术位丢失。</li>
+            <li><strong>法术位</strong>：必须使用对应提升后环级的法术位。</li>
+            <li><strong>限制</strong>：最多只能提升2个环级（例如，3环法术最多可以当作5环法术施展）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：5级法师Amir选择<em>火球术</em>（3环）作为他的法术升环专长法术。在战斗中，他决定以5环法术位施展火球术。</p>
+          <p><strong>效果</strong>：</p>
+          <ul style="margin-left: 20px;">
+            <li>伤害从5d6增加到7d6（每环级+1d6）</li>
+            <li>豁免DC从16增加到18（每环级+1）</li>
+            <li>Amir必须进行施法者等级检定：DC = 10 + 3 + 2 = 15。他的施法者等级是5，所以检定是1d20+5 vs DC 15。</li>
+          </ul>
+          <p><strong>战术</strong>：这个专长适合需要最大化关键法术效果的施法者。在高等级，可以造成毁灭性伤害。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：社区创作（基于《Expanded Psionics Handbook》的升环机制）<br>
+          <strong>平衡性</strong>：强力专长，但有不稳定的风险。
+        </div>
+      </div>
+
+      <!-- 顺势斩 -->
+      <div class="feat-block">
+        <h3>顺势斩（Great Cleave）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>力量13+，猛力攻击，顺势攻击</td></tr>
+            <tr><td>加成</td><td>每次击杀后可以继续攻击</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：当你使用近战攻击击杀一个敌人后，你可以立即对另一个敌人进行一次额外的近战攻击（使用你正常的攻击加值）。</p>
+          <p>这个额外的攻击不计入你的正常攻击次数，也不受多次攻击惩罚的影响。</p>
+          <p>只要你继续击杀敌人，你就可以继续攻击。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>触发条件</strong>：必须击杀敌人（造成生命值降到-1或以下）。</li>
+            <li><strong>攻击加值</strong>：使用你当前的攻击加值（包括多次攻击惩罚）。</li>
+            <li><strong>限制</strong>：你只能在你的回合内使用这个专长。你不能在你的回合结束后继续使用（如借机攻击后）。</li>
+            <li><strong>范围</strong>：新目标必须在你的威胁范围内（近战触及）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：5级战士Borin（力量18，+4调整值，猛力攻击-5/+10）面对3个哥布林（每个1d8+4伤害，约8-12HP）。</p>
+          <p><strong>回合1</strong>：Borin_full攻击第一个哥布林，造成15伤害（击杀）。触发<em>顺势斩</em>，立即攻击第二个哥布林，造成12伤害（击杀）。再次触发，攻击第三个哥布林，造成10伤害（击杀）。</p>
+          <p><strong>战术</strong>：这个专长适合清理大量弱敌。在面对多个低HP敌人时非常强大。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Warrior》p. 96<br>
+          <strong>平衡性</strong>：适合中等等级战士。在面对多个弱敌时非常强大。
+        </div>
+      </div>
+
+      <!-- 战斗反射 -->
+      <div class="feat-block">
+        <h3>战斗反射（Combat Reflexes）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>无</td></tr>
+            <tr><td>加成</td><td>获得额外借机攻击次数</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你获得额外的借机攻击次数，等于你的敏捷调整值（最小1次）。</p>
+          <p>此外，当敌人进行卸武尝试、擒抱尝试、或徒手击打时，你不会引发借机攻击。</p>
+          <p>你也可以在移动过程中进行借机攻击（正常情况下，你在移动时不能进行借机攻击）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>额外借机攻击</strong>：正常角色每轮只能进行1次借机攻击。有这个专长后，每轮可以进行（敏捷调整值）次借机攻击。</li>
+            <li><strong>移动借机攻击</strong>：正常情况下，当你移动出敌人的威胁范围时，敌人可以进行借机攻击。有这个专长后，你也可以在移动过程中进行借机攻击（如果敌人进入你的威胁范围）。</li>
+            <li><strong>不会引发借机攻击</strong>：当敌人尝试卸武、擒抱、或徒手击打你时，你不会引发借机攻击。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：战士Borin（敏捷16，+3调整值）面对4个敌人。在没有<em>战斗反射</em>时，每轮只能进行1次借机攻击。有这个专长后，每轮可以进行3次借机攻击。</p>
+          <p><strong>战术</strong>：这个专长适合高敏捷的战士或游荡者。可以保护队友、控制战场、造成大量借机攻击伤害。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 92（3R拓展版本，增加移动借机攻击）<br>
+          <strong>平衡性</strong>：适合高敏捷角色。在控制战场时非常强大。
+        </div>
+      </div>
+
+      <!-- 飞越攻击 -->
+      <div class="feat-block">
+        <h3>飞越攻击（Flyby Attack）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>飞行能力</td></tr>
+            <tr><td>加成</td><td>可以在飞行移动过程中攻击</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：当你在飞行时，你可以在移动过程中的任何点进行攻击（近战或远程），然后继续移动。</p>
+          <p>正常情况下，飞行生物在移动后必须停止移动才能进行攻击。这个专长允许你在移动过程中攻击，然后继续移动（总共移动距离不超过你的飞行速度）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>移动攻击</strong>：你可以在飞行移动的任何点进行攻击，然后继续移动。</li>
+            <li><strong>攻击类型</strong>：可以进行近战攻击或远程攻击。</li>
+            <li><strong>移动距离</strong>：总移动距离不能超过你的飞行速度。</li>
+            <li><strong>多次攻击</strong>：如果你有多个攻击，你可以在移动过程中进行多次攻击（但总移动距离仍然不能超过飞行速度）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：龙（飞行速度200英尺）使用<em>飞越攻击</em>。它飞行100英尺，攻击地面上的敌人，然后继续飞行100英尺。</p>
+          <p><strong>战术</strong>：这个专长适合飞行生物或角色。可以进行"hit and run"战术，避免近战反击。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《怪物图鉴》p. 305（飞行生物专长）<br>
+          <strong>平衡性</strong>：适合飞行角色。在空对地战斗时非常强大。
+        </div>
+      </div>
+    </div>
+
+    <!-- 法术专长（续） -->
+    <div class="feat-section">
+      <h2>✨ 法术专长（续）</h2>
+
+      <!-- 法术专注 -->
+      <div class="feat-block">
+        <h3>法术专注（Spell Focus）</h3>
+        <div class="type">法术专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>能够施展法术</td></tr>
+            <tr><td>加成</td><td>所选法术学派的豁免DC+1</td></tr>
+            <tr><td>专长类型</td><td>法术</td></tr>
+            <tr><td>可否多次选择</td><td>可以（对不同学派）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：选择这个专长时，选择一个法术学派（防护、咒法、预言、附魔、塑能、幻术、死灵、变化）。你施展该学派法术的豁免DC增加1。</p>
+          <p>这个加值适用于所有对抗该法术的豁免检定。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>豁免DC</strong>：法术豁免DC = 10 + 法术环级 + 施法者主要属性调整值 + 1（如果选择了该法术的学派专注）。</li>
+            <li><strong>多个法术专注</strong>：如果你选择多个法术专注（对不同学派），每个专注只适用于对应的学派。</li>
+            <li><strong> Greater Spell Focus</strong>：有一个进阶版本叫做<em>高等法术专注（Greater Spell Focus）</em>，可以将加值增加到+2。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：法师Amir（智力18，+4调整值）选择<em>法术专注（塑能）</em>。他施展<em>火球术</em>（3环塑能法术）。</p>
+          <p><strong>豁免DC</strong>：正常是10+3+4=17。有<em>法术专注</em>后，DC=18。</p>
+          <p><strong>战术</strong>：这个专长适合专注特定学派的施法者。塑能学派和死灵学派是最常见的选择（因为造成直接伤害或负面效果）。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 99<br>
+          <strong>平衡性</strong>：适合所有施法者。是法术专注链的第一步。
+        </div>
+      </div>
+
+      <!-- 法术增远 -->
+      <div class="feat-block">
+        <h3>法术增远（Spell Reach）</h3>
+        <div class="type">法术专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>能够施展3环法术</td></tr>
+            <tr><td>加成</td><td>法术射程增加50%</td></tr>
+            <tr><td>专长类型</td><td>法术</td></tr>
+            <tr><td>可否多次选择</td><td>可以（对不同法术）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：选择这个专长时，选择一个你能施展的法术。该法术的射程增加50%。</p>
+          <p>例如，如果法术射程是100英尺，有这个专长后射程变为150英尺。</p>
+          <p>这个专长只适用于有射程的法术（不适用于 personal范围或touch范围的法术）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>射程增加</strong>：射程增加50%（向下取整）。例如，60英尺变为90英尺，100英尺变为150英尺。</li>
+            <li><strong>限制</strong>：不适用于personal（个人）范围或touch（接触）范围的法术。</li>
+            <li><strong>多重选择</strong>：你可以选择这个专长多次，每次选择不同的法术。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：法师Amir选择<em>火球术</em>（射程长程200英尺）作为他的<em>法术增远</em>专长法术。有这个专长后，射程变为300英尺。</p>
+          <p><strong>战术</strong>：这个专长适合需要远距离施法的施法者。在大规模战斗中非常有用，可以安全地从后排施法。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Arcane》p. 181<br>
+          <strong>平衡性</strong>：适合后排施法者。
+        </div>
+      </div>
+    </div>
+
+    <!-- 其他专长 -->
+    <div class="feat-section">
+      <h2>🛡️ 其他专长</h2>
+
+      <!-- 健壮 -->
+      <div class="feat-block">
+        <h3>健壮（Toughness）</h3>
+        <div class="type">一般专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>无</td></tr>
+            <tr><td>加成</td><td>生命值+3（每3HD再+1）</td></tr>
+            <tr><td>专长类型</td><td>一般</td></tr>
+            <tr><td>可否多次选择</td><td>可以</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你的生命值增加3点。此外，每3个HD（生命骰），你的生命值再增加1点（在4级、7级、10级等时）。</p>
+          <p>如果你选择这个专长多次，每次选择都提供相同的加值（可以叠加）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>生命值增加</strong>：立即获得+3HP。然后在每3个HD时再获得+1HP。</li>
+            <li><strong>多次选择</strong>：可以选择多次，每次都提供+3HP（以及后续的每3HD+1）。</li>
+            <li><strong>效果示例</strong>：一个6级战士（6HD）选择<em>健壮</em>。立即获得+3HP。在3HD时已经获得+1HP，在6HD时再获得+1HP。总共+5HP。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：1级战士Borin（d10生命骰，平均5.5HP）选择<em>健壮</em>。他的HP从6增加到9。</p>
+          <p><strong>战术</strong>：这个专长适合所有角色，特别是前排角色（战士、野蛮人、圣武士）。增加生存能力。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 101<br>
+          <strong>平衡性</strong>：适合所有角色。是最常用的专长之一。
+        </div>
+      </div>
+
+      <!-- 警觉 -->
+      <div class="feat-block">
+        <h3>警觉（Alertness）</h3>
+        <div class="type">一般专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>无</td></tr>
+            <tr><td>加成</td><td>侦察和聆听技能+2</td></tr>
+            <tr><td>专长类型</td><td>一般</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你在侦察（Spot）和聆听（Listen）技能检定上获得+2加值。</p>
+          <p>这些加值适用于所有侦察和聆听检定，包括被动检定（如不主动搜索时的侦察）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>技能加值</strong>：直接+2加值到侦察和聆听技能。</li>
+            <li><strong>被动检定</strong>：也适用于被动侦察和聆听（如不主动搜索时）。</li>
+            <li><strong>协同</strong>：如果你有侦察或聆听作为职业技能，你会获得额外的+3加值（专业）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：游荡者Thief（侦察作为职业技能，+3专业加值，等级+2，敏捷+2）选择<em>警觉</em>。他的侦察技能从+7增加到+9。</p>
+          <p><strong>战术</strong>：这个专长适合侦察兵、游荡者、游侠。可以提高发现陷阱、隐藏敌人、听觉线索的能力。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 89<br>
+          <strong>平衡性</strong>：适合侦察角色。
+        </div>
+      </div>
+
+      <!-- 骑术 -->
+      <div class="feat-block">
+        <h3>骑术（Mounted Combat）</h3>
+        <div class="type">一般专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>乘坐骑乘</td></tr>
+            <tr><td>加成</td><td>骑乘时攻击和AC获得加值</td></tr>
+            <tr><td>专长类型</td><td>一般</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：当你骑乘时，你的近战攻击获得+1加值，你的AC获得+1加值（相当于骑马给予的高度优势）。</p>
+          <p>此外，如果坐骑被攻击，你可以尝试偏转攻击到你自己（需要骑术检定DC 15）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>攻击加值</strong>：+1近战攻击加值（来自高度优势）。</li>
+            <li><strong>AC加值</strong>：+1AC（来自高度优势，敌人更难攻击你）。</li>
+            <li><strong>偏转攻击</strong>：如果坐骑被攻击，你可以尝试偏转攻击到你自己。需要骑术检定DC 15。如果成功，攻击改为针对你（使用同样的攻击加值）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：圣武士Paladin（骑术+4）骑乘战马。他的近战攻击+1，AC+1。如果战马被敌人攻击，他可以尝试偏转攻击到他自己（骑术检定DC 15）。</p>
+          <p><strong>战术</strong>：这个专长适合骑马角色。在平原战斗时非常强大。配合<em>冲锋</em>专长，可以造成毁灭性打击。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 98<br>
+          <strong>平衡性</strong>：适合骑马角色。需要坐骑才能发挥作用。
+        </div>
+      </div>
+
+      <!-- 擅长轻甲 -->
+      <div class="feat-block">
+        <h3>擅长轻甲（Light Armor Proficiency）</h3>
+        <div class="type">一般专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>无</td></tr>
+            <tr><td>加成</td><td>可以穿着轻甲而不受惩罚</td></tr>
+            <tr><td>专长类型</td><td>一般</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你获得轻甲熟练度。你可以穿着任何轻甲而没有AC惩罚（敏捷调整值可以完全应用于AC）。</p>
+          <p>没有这个专长的角色穿着轻甲时，AC的敏捷调整值最多只能+2（即使你的敏捷调整值更高）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>轻甲熟练度</strong>：穿着轻甲时，敏捷调整值可以完全应用于AC（不受限制）。</li>
+            <li><strong>AC惩罚</strong>：没有这个专长时，轻甲的AC敏捷调整值最多+2。</li>
+            <li><strong>中甲和重甲</strong>：这个专长不适用于中甲和重甲。需要对应的<em>中甲熟练度</em>和<em>重甲熟练度</em>专长。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：游荡者Thief（敏捷18，+4调整值）没有<em>轻甲熟练度</em>。他穿着皮甲（AC 12+敏捷调整值）。没有专长时，他的AC是12+2=14。有专长后，AC是12+4=16。</p>
+          <p><strong>战术</strong>：这个专长适合高敏捷角色（游荡者、游侠、吟游诗人）。可以最大化AC。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 97<br>
+          <strong>平衡性</strong>：适合轻甲角色。<br>
+          <strong>注意</strong>：游荡者、游侠、吟游诗人默认已经有轻甲熟练度。
+        </div>
+      </div>
+
+      <!-- 多重攻击 -->
+      <div class="feat-block">
+        <h3>多重攻击（Multiattack）</h3>
+        <div class="type">怪物专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>3+自然攻击</td></tr>
+            <tr><td>加成</td><td>多次自然攻击的惩罚减少</td></tr>
+            <tr><td>专长类型</td><td>战斗（怪物）</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：当你进行多次自然攻击时（如龙的两爪攻击+咬击），第二次和后续攻击的攻击加值惩罚从-5减少到-2。</p>
+          <p>正常情况下，多次攻击的惩罚是：主攻击-0，第二次攻击-5，第三次攻击-10，等等。有这个专长后，第二次和后续攻击的惩罚是-2（而不是-5/-10）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>攻击惩罚</strong>：正常情况下，多次攻击的惩罚是-5/-10/-15等。有这个专长后，第二次和后续攻击的惩罚是-2/-2/-2等（所有后续攻击都是-2）。</li>
+            <li><strong>限制</strong>：只适用于自然攻击（爪、咬、尾击等）。不适用于武器攻击。</li>
+            <li><strong>Improved Multiattack</strong>：有一个进阶版本叫做<em>高等多重攻击（Improved Multiattack）</em>，可以将惩罚减少到-0（所有攻击都是主攻击加值）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：龙（咬+12，爪+12，爪+12，翼+7，尾+7）使用<em>多重攻击</em>。它的攻击加值变为：咬+12，爪+12，爪+12，翼+10，尾+10（而不是+7/+7）。</p>
+          <p><strong>战术</strong>：这个专长适合有多重自然攻击的怪物或角色（如德鲁伊变熊后）。可以显著提高多次攻击的命中率。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《怪物图鉴》p. 304（怪物专长）<br>
+          <strong>平衡性</strong>：适合多重攻击角色/怪物。在选择多重攻击 vs 单次强攻击时，这个专长使多重攻击更有竞争力。
+        </div>
+      </div>
+
+      <!-- 猛力攻击 -->
+      <div class="feat-block">
+        <h3>猛力攻击（Power Attack）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>力量13+，猛力攻击基础专长</td></tr>
+            <tr><td>加成</td><td>近战攻击可以降低攻击加值以增加伤害</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：在每次近战攻击前，你可以选择承受攻击加值惩罚以换取伤害加值。</p>
+          <p>每承受-1攻击加值，你造成+2近战伤害（双手武器+4伤害）。</p>
+          <p>这个专长只能在你的回合使用（不适用于借机攻击）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>攻击/伤害交易</strong>：-1攻击加值 = +2伤害（单手武器），-1攻击加值 = +4伤害（双手武器）。</li>
+            <li><strong>使用时机</strong>：每次攻击前都可以选择不同的数值。例如，第一次攻击-5/+10，第二次攻击-3/+6。</li>
+            <li><strong>限制</strong>：只能在你的回合使用。借机攻击不能使用这个专长。</li>
+            <li><strong>双手武器</strong>：使用双手武器时，伤害加值翻倍（每-1攻击 = +4伤害）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：战士Borin（力量18，+4调整值，猛力攻击-5/+10）面对哥布林（AC 16）。他的正常攻击加值是+6。使用<em>猛力攻击</em>后，攻击加值变为+1，伤害增加+10。</p>
+          <p><strong>战术</strong>：这个专长适合高攻击加值的角色（如战士）。在对抗低AC敌人时非常强大。配合<em>顺势攻击</em>，可以造成毁灭性伤害。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 98（3R拓展版本，明确双手武器伤害翻倍）<br>
+          <strong>平衡性</strong>：适合中等等级战士。是最常用的战斗专长之一。
+        </div>
+      </div>
+
+      <!-- 快速射击 -->
+      <div class="feat-block">
+        <h3>快速射击（Rapid Shot）</h3>
+        <div class="type">远程战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>敏捷13+，擅长远程武器</td></tr>
+            <tr><td>加成</td><td>全回合攻击时获得额外远程攻击</td></tr>
+            <tr><td>专长类型</td><td>战斗（远程）</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：当你使用全回合攻击动作（full-round action）进行远程攻击时，你可以获得一次额外的远程攻击。</p>
+          <p>这次额外的攻击使用你正常的攻击加值（包括多次攻击惩罚），但所有远程攻击的攻击加值承受-2惩罚。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>额外攻击</strong>：全回合攻击时，获得一次额外的远程攻击（使用你正常的攻击加值序列）。</li>
+            <li><strong>攻击惩罚</strong>：所有远程攻击的攻击加值-2（包括额外攻击）。</li>
+            <li><strong>限制</strong>：只能在使用全回合攻击动作时使用。不能使用在移动攻击或标准攻击上。</li>
+            <li><strong>多重攻击</strong>：如果你有多个攻击（如战士的高等级），你获得对应数量的额外攻击（但所有攻击都承受-2惩罚）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：6级战士Borin（敏捷16，+3调整值，擅长长弓）使用<em>快速射击</em>。他的攻击加值是+6/+1。使用快速射击后，攻击加值变为+4/-1/+4（三次攻击，每次-2惩罚）。</p>
+          <p><strong>战术</strong>：这个专长适合远程战士（战士、游侠、游荡者弓箭手）。可以显著提高伤害输出。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 99<br>
+          <strong>平衡性</strong>：适合远程角色。在中等等级时非常强大。
+        </div>
+      </div>
+
+      <!-- 精准射击 -->
+      <div class="feat-block">
+        <h3>精准射击（Precise Shot）</h3>
+        <div class="type">远程战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>擅长远程武器</td></tr>
+            <tr><td>加成</td><td>远程攻击不会引发借机攻击</td></tr>
+            <tr><td>专长类型</td><td>战斗（远程）</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：当你进行远程攻击时，你不会引发借机攻击。</p>
+          <p>正常情况下，当你在敌人的威胁范围内进行远程攻击时，敌人可以进行借机攻击。这个专长消除了这个惩罚。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>取消借机攻击</strong>：远程攻击不会引发借机攻击。</li>
+            <li><strong>威胁范围</strong>：敌人的威胁范围通常是相邻方格（近战触及）。如果你在敌人的威胁范围内进行远程攻击，正常会引发借机攻击。</li>
+            <li><strong>协同</strong>：这个专长是<em>快速射击</em>、<em>多重射击</em>等远程专长的先决条件。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：游侠Elandor（擅长长弓）面对两个哥布林。没有<em>精准射击</em>时，他攻击第一个哥布林时，第二个哥布林可以进行借机攻击。有这个专长后，他可以安全地进行远程攻击。</p>
+          <p><strong>战术</strong>：这个专长适合所有远程角色。是远程战斗的基础专长。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 98<br>
+          <strong>平衡性</strong>：适合所有远程角色。是远程专长链的第一步。
+        </div>
+      </div>
+    </div>
+
+    <!-- 法术专长（续2） -->
+    <div class="feat-section">
+      <h2>✨ 法术专长（续2）</h2>
+
+      <!-- 法术延时 -->
+      <div class="feat-block">
+        <h3>法术延时（Spell Extend）</h3>
+        <div class="type">法术专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>能够施展法术</td></tr>
+            <tr><td>加成</td><td>法术持续时间翻倍</td></tr>
+            <tr><td>专长类型</td><td>法术</td></tr>
+            <tr><td>可否多次选择</td><td>可以（对不同法术）</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：选择这个专长时，选择一个你能施展的法术。该法术的持续时间翻倍。</p>
+          <p>例如，如果法术持续时间是1轮/级，有这个专长后变为2轮/级。</p>
+          <p>这个专长只适用于有持续时间的法术（不适用于瞬时或直接伤害法术）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>持续时间翻倍</strong>：所有持续时间数值翻倍（轮、分钟、小时等）。</li>
+            <li><strong>限制</strong>：不适用于瞬时（instantaneous）或直接伤害法术。</li>
+            <li><strong>多重选择</strong>：你可以选择这个专长多次，每次选择不同的法术。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：法师Amir选择<em>法师护甲</em>（1小时/级）作为他的<em>法术延时</em>专长法术。有这个专长后，持续时间变为2小时/级。</p>
+          <p><strong>战术</strong>：这个专长适合需要长时间维持的法术（如<em>法师护甲</em>、<em>心灵屏障</em>、<em>加速术</em>等）。在长时间冒险时非常有用。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Arcane》p. 179<br>
+          <strong>平衡性</strong>：适合需要维持法术的施法者。
+        </div>
+      </div>
+
+      <!-- 法术穿透 -->
+      <div class="feat-block">
+        <h3>法术穿透（Spell Penetration）</h3>
+        <div class="type">法术专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>能够施展法术</td></tr>
+            <tr><td>加成</td><td>法术穿透检定+2</td></tr>
+            <tr><td>专长类型</td><td>法术</td></tr>
+            <tr><td>可否多次选择</td><td>可以</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你的法术穿透检定获得+2加值。</p>
+          <p>法术穿透检定用于对抗有法术抗力（SR）的敌人。如果你的法术穿透检定（1d20 + 施法者等级）大于等于敌人的SR，法术才能生效。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>法术穿透检定</strong>：1d20 + 施法者等级 vs 敌人的法术抗力（SR）。</li>
+            <li><strong>+2加值</strong>：直接+2到法术穿透检定。</li>
+            <li><strong>多次选择</strong>：可以选择多次，每次+2（可以叠加）。</li>
+            <li><strong>Greater Spell Penetration</strong>：有一个进阶版本叫做<em>高等法术穿透（Greater Spell Penetration）</em>，可以再+2（总共+4）。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：5级法师Amir（施法者等级5）面对一个SR 15的魔鬼。正常法术穿透检定是1d20+5。有<em>法术穿透</em>后，检定是1d20+7。</p>
+          <p><strong>战术</strong>：这个专长适合面对高SR敌人的施法者（如魔鬼、恶魔、龙）。在对抗这些敌人时非常有用。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《玩家手册》p. 100<br>
+          <strong>平衡性</strong>：适合面对高SR敌人的施法者。
+        </div>
+      </div>
+    </div>
+
+    <!-- 更多3R专长 -->
+    <div class="feat-list">
+      <!-- 猛力攻击（进阶） -->
+      <div class="feat-block">
+        <h3>猛力攻击（进阶）（Power Attack, Improved）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>猛力攻击，基础攻击加值+6</td></tr>
+            <tr><td>加成</td><td>近战攻击惩罚可以增加到-10，伤害加值+20（双手武器+30）</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你可以在近战攻击中选择承受高达-10的攻击惩罚，造成额外+20点伤害（使用双手武器时+30点）。这是<em>猛力攻击</em>的进阶版本。</p>
+          <p><strong>3R改进</strong>：在《Complete Warrior》中，猛力攻击（进阶）可以与<em>猛力攻击（猛击）</em>叠加。如果你选择-10攻击惩罚，你实际上承受-15攻击惩罚，但造成+30点伤害（双手武器+45点）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>攻击惩罚</strong>：你选择的攻击惩罚直接应用于你的攻击检定。</li>
+            <li><strong>伤害加值</strong>：你选择的伤害加值直接应用于你的伤害掷骰。</li>
+            <li><strong>双手武器</strong>：如果你使用双手武器（如巨剑），伤害加值x1.5（四舍五入）。</li>
+            <li><strong>叠加</strong>：在3R中，这个专长可以与<em>猛力攻击（猛击）</em>叠加，造成巨大伤害。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：6级战士Thor（基础攻击加值+6）面对一个AC 18的敌人。正常攻击是+9（+-1武器）。使用<em>猛力攻击（进阶）</em>后，攻击是-1（承受-10惩罚），伤害是1d8+11（力量+3，猛力攻击+20）。</p>
+          <p><strong>战术</strong>：这个专长适合高攻击加值的战士。当你需要造成巨大伤害时（如对抗低AC的高HP敌人），这个专长非常有用。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Warrior》p. 156<br>
+          <strong>平衡性</strong>：适合高BAB的战士。在需要爆发伤害时非常有用。
+        </div>
+      </div>
+
+      <!-- 精准射击（进阶） -->
+      <div class="feat-block">
+        <h3>精准射击（进阶）（Precise Shot, Improved）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>精准射击，基础攻击加值+6</td></tr>
+            <tr><td>加成</td><td>远程攻击的误伤几率减少到0%</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你进行远程攻击时，不会再造成误伤（miss chance due to friendly fire）。你的盟友在你和你的目标之间时，你不会击中盟友。</p>
+          <p><strong>3R改进</strong>：在《Complete Warrior》中，精准射击（进阶）可以让你在远程攻击中获得+2加值，如果目标和盟友处于威胁范围（threatened area）。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>误伤</strong>：通常，如果你的远程攻击目标和盟友处于同一格或相邻格，你有50%几率误伤盟友。</li>
+            <li><strong>精准射击</strong>：<em>精准射击</em>将这个几率减少到25%。</li>
+            <li><strong>精准射击（进阶）</strong>：这个专长将几率减少到0%。</li>
+            <li><strong>3R加值</strong>：在3R中，如果目标和盟友处于威胁范围（threatened area），你获得+2加值。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：6级游侠Elara面对一个敌人，她的战士同伴正在与敌人近战。正常远程攻击有25%几率误伤战士。使用<em>精准射击（进阶）</em>后，误伤几率是0%。</p>
+          <p><strong>战术</strong>：这个专长适合经常进行远程攻击的角色（如游侠、战士（远程）、法师（射线法术））。在队友与敌人近战时非常有用。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Warrior》p. 160<br>
+          <strong>平衡性</strong>：适合经常进行远程攻击的角色。
+        </div>
+      </div>
+
+      <!-- 闪避（进阶） -->
+      <div class="feat-block">
+        <h3>闪避（进阶）（Dodge, Improved）</h3>
+        <div class="type">战斗专长</div>
+
+        <div class="feat-info">
+          <table>
+            <tr><td>先决条件</td><td>闪避，敏捷13+，基础攻击加值+6</td></tr>
+            <tr><td>加成</td><td>AC获得+2闪避加值，可以每轮改变闪避对象</td></tr>
+            <tr><td>专长类型</td><td>战斗</td></tr>
+            <tr><td>可否多次选择</td><td>否</td></tr>
+          </table>
+        </div>
+
+        <div class="description">
+          <p><strong>描述</strong>：你获得+2闪避加值到AC。这个加值只对抗一个敌人的攻击。你可以每轮以一个自由动作改变闪避对象。</p>
+          <p><strong>3R改进</strong>：在《Complete Warrior》中，闪避（进阶）可以让你在AC上获得+2闪避加值，对抗所有敌人的攻击（不只是你选择的敌人）。但这个加值在措手不及时丢失。</p>
+        </div>
+
+        <div class="mechanics">
+          <h4>⚙️ 机制说明</h4>
+          <ul style="margin-left: 20px;">
+            <li><strong>闪避加值</strong>：闪避加值是一种特殊的AC加值。它只在你有dexterity调整值时有效。如果你措手不及（flat-footed），你丢失闪避加值。</li>
+            <li><strong>改变对象</strong>：你可以每轮以一个自由动作改变闪避对象。这意味着你可以专注于威胁最大的敌人。</li>
+            <li><strong>3R改进</strong>：在3R中，这个专长可以让你获得+2闪避加值，对抗所有敌人的攻击。这是一个显著的改进。</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <h4>💡 使用示例</h4>
+          <p><strong>场景</strong>：6级武僧Kai（敏捷16，AC 16）面对两个敌人。使用<em>闪避（进阶）</em>后，他的AC是18（对抗所有敌人）。如果他选择一个敌人作为闪避对象，他的AC是18（对抗该敌人）和16（对抗其他敌人）。</p>
+          <p><strong>战术</strong>：这个专长适合高dexterity的角色。在对抗多个敌人时非常有用。</p>
+        </div>
+
+        <div class="source">
+          <strong>来源</strong>：《Complete Warrior》p. 152<br>
+          <strong>平衡性</strong>：适合高dexterity的角色。
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <p style="color: #666; margin-bottom: 10px;">D&D 3.5e 中文Wiki - 3R拓展功能大全</p>
+      <p style="color: #999; font-size: 0.9em;">本页面内容基于官方资料和社区创作 | 最后更新：2026-06-20</p>
+      <p style="color: #999; font-size: 0.85em; margin-top: 10px;">专业Wiki标准：完整专长属性 | 详细机制 | 使用示例 | 来源标注</p>
+    </div>
+  </div>
+</body>
+</html>
+      <p style="color: #999; font-size: 0.85em; margin-top: 10px;">专业Wiki标准：完整专长属性 | 详细机制 | 使用示例 | 来源标注</p>
+    </div>
+  </div>
+</body>
+</html>

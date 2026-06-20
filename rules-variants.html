@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>规则变体 Variant Rules - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心规则</div>
+      <a href="rules.html">规则总览</a>
+      <a href="rules-adventure.html">冒险</a>
+      <a href="rules-planes.html">位面</a>
+      <a href="rules-companions.html">伙伴</a>
+      <a href="rules-deities.html">神祇与阵营</a>
+      <a href="rules-variants.html" class="active">规则变体</a>
+      <a href="conflicts.html">规则冲突</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>规则变体 <span class="en-subtitle">Variant Rules</span></h1>
+    <p class="lead">《地下城主指南》(DMG) 提供了大量可选规则变体，允许 DM 根据战役风格和玩家偏好调整游戏机制。本页汇总主要的规则变体选项。</p>
+
+    <div class="callout">
+      <strong>重要提示：</strong>所有变体规则均为可选内容，采用前应由 DM 与玩家充分讨论。混搭多个变体时需特别注意平衡性问题。
+    </div>
+
+    <div class="toc">
+      <h2>目录</h2>
+      <ul>
+        <li><a href="#overview">一、变体规则概述</a></li>
+        <li><a href="#ability-generation">二、属性生成变体</a></li>
+        <li><a href="#xp-variants">三、经验值变体</a></li>
+        <li><a href="#combat-variants">四、战斗变体</a></li>
+        <li><a href="#magic-variants">五、魔法变体</a></li>
+        <li><a href="#alignment-variants">六、阵营变体</a></li>
+        <li><a href="#skill-variants">七、技能变体</a></li>
+      </ul>
+    </div>
+
+    <!-- ====== 1. 变体规则概述 ====== -->
+    <section id="overview">
+      <h2>一、变体规则概述</h2>
+
+      <p>D&D 3.5e 的核心规则体系是一套经过平衡设计的基础框架。《地下城主指南》第6章和《Unearthed Arcana》(UA) 提供了多种可选规则，允许 DM 对游戏进行定制化调整。</p>
+
+      <h3>采用变体的原则</h3>
+      <ul>
+        <li><strong>一致性</strong>：变体规则一旦采用，应对所有玩家和 NPC 同等适用。DM 不应在战役中途随意更改已确定的变体。</li>
+        <li><strong>平衡性</strong>：某些变体会显著改变职业平衡（如法力值系统有利于施法者）。采用前应评估对各类角色的影响。</li>
+        <li><strong>透明度</strong>：所有采用的变体规则应在战役开始前告知玩家，并记录在房规 (House Rules) 文档中。</li>
+        <li><strong>可叠加性</strong>：部分变体可以组合使用（如属性生成变体 + 经验值变体），但某些组合可能产生冲突（如动作点 + 行动点），需要 DM 裁定。</li>
+      </ul>
+
+      <h3>变体来源</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>来源</th>
+            <th>缩写</th>
+            <th>主要内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>《地下城主指南》</td>
+            <td>DMG</td>
+            <td>属性生成、经验值、战斗、阵营等基础变体</td>
+          </tr>
+          <tr>
+            <td>《Unearthed Arcana》</td>
+            <td>UA</td>
+            <td>深度变体：缺陷系统、特性系统、技能熟练度、施法变体等</td>
+          </tr>
+          <tr>
+            <td>《玩家手册II》</td>
+            <td>PHB2</td>
+            <td>重训规则、团队专长等补充变体</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ====== 2. 属性生成变体 ====== -->
+    <section id="ability-generation">
+      <h2>二、属性生成变体</h2>
+
+      <p>标准规则使用 4d6 取高3的方式生成属性值。以下变体提供了不同的方式来确定角色的初始属性。</p>
+
+      <h3>方法一：掷骰法变体</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>方法</th>
+            <th>掷骰方式</th>
+            <th>特点</th>
+            <th>适合</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>方法 I (标准)</strong></td>
+            <td>4d6 取最高3，共6次，自由分配</td>
+            <td>平均值约 12.2，有一定随机性</td>
+            <td>大多数战役</td>
+          </tr>
+          <tr>
+            <td><strong>方法 II</strong></td>
+            <td>4d6 取最高3，共6次，按顺序分配</td>
+            <td>更随机，角色差异化更大</td>
+            <td>老式风格 (OSR) 战役</td>
+          </tr>
+          <tr>
+            <td><strong>方法 III</strong></td>
+            <td>3d6，共6次，自由分配</td>
+            <td>平均值约 10.5，数值更集中，角色更"凡人化"</td>
+            <td>低魔/写实风格战役</td>
+          </tr>
+          <tr>
+            <td><strong>方法 IV</strong></td>
+            <td>3d6，共6次，按顺序分配</td>
+            <td>最随机、最硬核的方式</td>
+            <td>极端老式风格</td>
+          </tr>
+          <tr>
+            <td><strong>方法 V (高能力)</strong></td>
+            <td>5d6 取最高3，共6次，自由分配</td>
+            <td>平均值约 13.2，角色更强</td>
+            <td>英雄/高能力战役</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>方法二：购点法 (Point Buy)</h3>
+
+      <p>玩家使用固定的"点数"来购买属性值，所有属性从 8 开始。属性越高，消耗点数越多（非线性递增）。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>购点方案</th>
+            <th>总点数</th>
+            <th>特点</th>
+            <th>适合</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>低能力 (Low Powered)</strong></td>
+            <td>25 点</td>
+            <td>角色能力较为平庸，最高约 16-17</td>
+            <td>低魔/写实风格</td>
+          </tr>
+          <tr>
+            <td><strong>标准 (Standard)</strong></td>
+            <td>28 点</td>
+            <td>接近 4d6 取高3的平均结果</td>
+            <td>大多数战役（推荐）</td>
+          </tr>
+          <tr>
+            <td><strong>高能力 (High Powered)</strong></td>
+            <td>32 点</td>
+            <td>角色更强大，可以有 1-2 个高属性</td>
+            <td>英雄式战役</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>购点法消耗表</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>属性值</th>
+            <th>消耗点数</th>
+            <th>属性值</th>
+            <th>消耗点数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>8</td><td>0</td><td>14</td><td>6</td></tr>
+          <tr><td>9</td><td>1</td><td>15</td><td>8</td></tr>
+          <tr><td>10</td><td>2</td><td>16</td><td>10</td></tr>
+          <tr><td>11</td><td>3</td><td>17</td><td>13</td></tr>
+          <tr><td>12</td><td>4</td><td>18</td><td>16</td></tr>
+          <tr><td>13</td><td>5</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>购点法注意事项：</strong>属性不得低于 8（消耗 0 点后无法再降低以获取更多点数，除非 DM 特别允许）。种族调整在购点完成后应用，因此种族加值可以使属性超过 18 或低于 8。
+      </div>
+
+      <h3>方法三：精英阵列 (Elite Array)</h3>
+
+      <div class="highlight-box">
+        <h4>标准精英阵列</h4>
+        <p class="big-numbers">15, 14, 13, 12, 10, 8</p>
+        <p>将这组数值按任意顺序分配到六项属性上，然后应用种族调整。这是 DM 为 NPC 快速生成属性的推荐方式，也适合希望快速创建角色且不想依赖随机的玩家。</p>
+      </div>
+    </section>
+
+    <!-- ====== 3. 经验值变体 ====== -->
+    <section id="xp-variants">
+      <h2>三、经验值变体</h2>
+
+      <p>标准的经验值 (XP) 系统通过击杀怪物和克服挑战来累积 XP。以下变体改变了升级的节奏和方式。</p>
+
+      <h3>1. 里程碑升级 (Milestone Leveling)</h3>
+      <p>DM 在故事达到特定节点时宣布所有玩家升级，不再追踪具体的经验值数字。</p>
+      <ul>
+        <li><strong>优点</strong>：简化记录，所有玩家保持同级，DM 可以控制升级节奏以配合剧情。</li>
+        <li><strong>缺点</strong>：可能削弱玩家的动力感（"为什么打这个怪？反正不会得到 XP"），需要 DM 对节奏的良好把控。</li>
+        <li><strong>建议</strong>：通常每 2-4 个游戏会话 (session) 升一级。在关键剧情节点（如击败Boss、完成重要任务）时触发升级。</li>
+      </ul>
+
+      <h3>2. 训练升级 (Training for Level Advancement)</h3>
+      <p>角色获得足够 XP 后，必须找到导师进行训练才能升级。训练需要时间和金币。</p>
+      <ul>
+        <li><strong>训练时间</strong>：每角色等级需要 1 周时间（如从 5 级升到 6 级需要 6 周）。</li>
+        <li><strong>训练费用</strong>：1,000 gp x 新等级（如升到 6 级需要 6,000 gp）。</li>
+        <li><strong>导师要求</strong>：导师必须比学员高至少 1 级，且拥有相同的职业能力。</li>
+        <li><strong>优点</strong>：增加金币消耗（解决"金币无用"问题），为城镇活动提供动力，增加真实感。</li>
+        <li><strong>缺点</strong>：在荒野冒险中难以实施，可能导致节奏拖沓。</li>
+      </ul>
+
+      <h3>3. 分级经验 (Tiered Experience)</h3>
+      <p>不同等级范围所需的 XP 倍率不同，改变各阶段的升级速度。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>等级范围</th>
+            <th>标准 XP</th>
+            <th>快速模式</th>
+            <th>慢速模式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 - 5</td>
+            <td>标准 (1x)</td>
+            <td>0.5x（快速升级）</td>
+            <td>1.5x（慢速升级）</td>
+          </tr>
+          <tr>
+            <td>6 - 10</td>
+            <td>标准 (1x)</td>
+            <td>0.75x</td>
+            <td>1.25x</td>
+          </tr>
+          <tr>
+            <td>11 - 15</td>
+            <td>标准 (1x)</td>
+            <td>1x</td>
+            <td>1x</td>
+          </tr>
+          <tr>
+            <td>16 - 20</td>
+            <td>标准 (1x)</td>
+            <td>1.5x（减缓节奏）</td>
+            <td>0.75x（快速达到顶级）</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ====== 4. 战斗变体 ====== -->
+    <section id="combat-variants">
+      <h2>四、战斗变体</h2>
+
+      <h3>1. 动作点 (Action Points)</h3>
+
+      <p>动作点为角色提供额外的行动资源，在关键时刻改变战斗走向。此变体来自《DMG》第6章和《Unearthed Arcana》。</p>
+
+      <h4>基础规则</h4>
+      <ul>
+        <li><strong>获取</strong>：1 级角色拥有 5 动作点，之后每次升级获得 <code>5 + 1/2 角色等级</code> 点（向下取整）。未使用的动作点不累积到下一级。</li>
+        <li><strong>使用</strong>：每轮最多使用 1 个动作点，使用为即时动作 (free action)。</li>
+      </ul>
+
+      <h4>动作点的用途</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>用途</th>
+            <th>消耗</th>
+            <th>效果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>额外动作</strong></td>
+            <td>1 点</td>
+            <td>在本回合获得一个额外动作：移动动作、标准动作或整轮动作中的任一种。</td>
+          </tr>
+          <tr>
+            <td><strong>增强检定</strong></td>
+            <td>1 点</td>
+            <td>在任何 d20 检定后、结果公布前投掷额外的 d6 并加到检定结果上。等级越高，骰子越大：1-7 级为 d6，8-14 级为 2d6 取高，15 级以上为 3d6 取高。</td>
+          </tr>
+          <tr>
+            <td><strong>激活专长</strong></td>
+            <td>1-2 点</td>
+            <td>某些特殊专长需要消耗动作点来激活。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2. 伤害减免变体 (Damage Reduction Variants)</h3>
+
+      <p>标准规则中，伤害减免 (DR) 通常要求特定类型的武器来穿透。以下变体改变了 DR 的运作方式：</p>
+
+      <ul>
+        <li><strong>能量抗性替代 DR</strong>：将某些生物的 DR 改为能量抗性。例如，魔鬼的 "DR 5/善良" 变为 "对善良阵营攻击有 5 点伤害减免"。这简化了追踪。</li>
+        <li><strong>穿透值 (Penetration)</strong>：DR 不再完全减免伤害，而是按比例减少。例如 DR 10 表示每次攻击减少 10 点伤害，但不会低于 0。高伤害攻击仍然能穿透。</li>
+        <li><strong>护甲作为 DR</strong>：将护甲的 AC 加值改为 DR。穿着全身铠 (+8 AC) 改为获得 DR 8/-，同时失去 AC 上的护甲加值（但保留敏捷和盾牌加值）。这让战斗更快结束（更容易命中），但角色能承受更多伤害。</li>
+      </ul>
+
+      <h3>3. 致命一击表 (Critical Hit Tables)</h3>
+
+      <p>取代简单的"双倍/三倍伤害"，使用致命一击表来确定额外效果。</p>
+
+      <h4>基本运作</h4>
+      <ul>
+        <li>当确认致命一击时，攻击者额外投掷 d% 并查阅致命一击表。</li>
+        <li>伤害照常计算（通常为双倍），再叠加表上的特殊效果。</li>
+        <li>某些效果可能被目标免疫（如构装体免疫流血效果）。</li>
+      </ul>
+
+      <h4>示例致命一击表 (d%)</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>d% 结果</th>
+            <th>效果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>01 - 30</td><td>普通致命一击（仅双倍伤害，无额外效果）</td></tr>
+          <tr><td>31 - 45</td><td><strong>击退</strong>：目标被击退 5 英尺，并摔倒 (prone)。</td></tr>
+          <tr><td>46 - 55</td><td><strong>流血</strong>：目标每轮受到额外 1d6 流血伤害，持续 3 轮（可通过 DC 15 医疗检定止血）。</td></tr>
+          <tr><td>56 - 65</td><td><strong>震慑</strong>：目标震慑 (stunned) 1 轮（可通过 DC 15 强韧豁免抵抗）。</td></tr>
+          <tr><td>66 - 75</td><td><strong>武器脱手</strong>：目标必须通过 DC 15 反射豁免，否则武器脱手飞出 10 英尺。</td></tr>
+          <tr><td>76 - 85</td><td><strong>致残打击</strong>：目标一肢受伤，速度减半或一只手臂无法使用，持续 24 小时。</td></tr>
+          <tr><td>86 - 95</td><td><strong>内脏打击</strong>：伤害骰改为三倍（而非标准双倍），目标恶心 (sickened) 1d4 轮。</td></tr>
+          <tr><td>96 - 100</td><td><strong>致命创伤</strong>：伤害骰改为三倍，目标获得 1 个负向等级 (negative level)，24 小时后恢复。</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>平衡警告：</strong>致命一击表大幅增加了战斗的致命性和不确定性。对 PC 和 NPC 同样适用，可能导致意外的角色死亡。建议在采用前充分告知玩家风险。
+      </div>
+    </section>
+
+    <!-- ====== 5. 魔法变体 ====== -->
+    <section id="magic-variants">
+      <h2>五、魔法变体</h2>
+
+      <h3>1. 法力值系统 (Spell Points / Mana System)</h3>
+
+      <p>取代传统的"法术位"系统，施法者拥有一池法力值 (Spell Points, SP)，施放法术时从池中消耗对应点数。此变体来自《DMG》第6章和《Unearthed Arcana》。</p>
+
+      <h4>法力值计算</h4>
+      <p>施法者的法力值池 = <strong>基础法力值 + 关键属性加值 x 施法者等级</strong></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>法术等级</th>
+            <th>消耗法力值</th>
+            <th>最低施法者等级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0 环</td><td>0</td><td>1</td></tr>
+          <tr><td>1 环</td><td>1</td><td>1</td></tr>
+          <tr><td>2 环</td><td>3</td><td>3</td></tr>
+          <tr><td>3 环</td><td>5</td><td>5</td></tr>
+          <tr><td>4 环</td><td>7</td><td>7</td></tr>
+          <tr><td>5 环</td><td>9</td><td>9</td></tr>
+          <tr><td>6 环</td><td>11</td><td>11</td></tr>
+          <tr><td>7 环</td><td>13</td><td>13</td></tr>
+          <tr><td>8 环</td><td>15</td><td>15</td></tr>
+          <tr><td>9 环</td><td>17</td><td>17</td></tr>
+        </tbody>
+      </table>
+
+      <h4>关键规则</h4>
+      <ul>
+        <li>施法者仍受最高法术等级限制（如 5 级法师最高施放 3 环法术）。</li>
+        <li>超魔专长额外消耗法力值：等于超魔调整的法术等级 x 2（如瞬发法术 +4 级 = 额外 8 点 SP）。</li>
+        <li>长休息 (8 小时) 恢复全部法力值；短休息不恢复（除非有特殊能力）。</li>
+        <li>0 环法术不消耗法力值，但每日施放次数等于施法者等级。</li>
+      </ul>
+
+      <div class="callout">
+        <strong>平衡影响：</strong>法力值系统让施法者更加灵活（可以选择多次施放低环法术或集中施放高环法术），总体上略微增强了施法者的战力。建议同时减少法师的每日法术准备数量以维持平衡。
+      </div>
+
+      <h3>2. 自发施法变体 (Spontaneous Casting Variants)</h3>
+
+      <ul>
+        <li><strong>全自发施法</strong>：所有施法职业改为自发施法模式。法师不再需要准备法术，而是像术士一样从已知法术中自由选择施放。已知法术数量按照术士的进度表。</li>
+        <li><strong>法术替换 (Spell Substitution)</strong>：准备施法者可以在不消耗法术位的情况下，将已准备的法术临时替换为同环级的其他法术（必须来自法术书/祈祷列表），但需要花费 1 分钟集中精神。</li>
+        <li><strong>混合模式</strong>：准备施法者保留正常的准备规则，但可以消耗 2 个同环级法术位来自发施放一个已知的未准备法术。</li>
+      </ul>
+
+      <h3>3. 施法失败变体 (Spell Failure Variants)</h3>
+
+      <ul>
+        <li><strong>奥术施法失败率 (Arcane Spell Failure)</strong> 变体：
+          <ul>
+            <li><em>熟练度系统</em>：通过专长或训练逐渐减少特定护甲类型的施法失败率，而非直接使用护甲的固定 ASF。</li>
+            <li><em>取消 ASF</em>：完全移除奥术施法失败率规则，让施法者可以自由穿着护甲。平衡方式为给法师类职业添加"轻甲熟练"限制。</li>
+          </ul>
+        </li>
+        <li><strong>施法专注检定</strong>：增加专注检定的难度。例如，受到伤害时专注检定 DC = 15 + 受到伤害值 + 法术等级（而非标准的 10 + 伤害 + 法术等级）。</li>
+        <li><strong>魔法波动 (Wild Magic)</strong>：在特定区域（如魔力紊乱地带），施法时需要投掷 d20，1-5 时法术效果随机偏移（参考《UA》的狂野魔法表）。</li>
+      </ul>
+    </section>
+
+    <!-- ====== 6. 阵营变体 ====== -->
+    <section id="alignment-variants">
+      <h2>六、阵营变体</h2>
+
+      <h3>1. 无阵营 (No Alignment)</h3>
+
+      <p>完全移除阵营系统。适用于道德灰色、注重角色扮演的战役。</p>
+
+      <h4>需要调整的内容</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>规则元素</th>
+            <th>处理方式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>圣武士 (Paladin)</td>
+            <td>改为基于"信条 (Code)"而非阵营。信条由玩家与 DM 共同制定，违背信条的后果与原阵营偏移相同。</td>
+          </tr>
+          <tr>
+            <td>侦测邪恶/善良 (Detect Evil/Good)</td>
+            <td>移除此类法术，或改为"侦测敌意 (Detect Hostility)"/ "侦测威胁 (Detect Threat)"。</td>
+          </tr>
+          <tr>
+            <td>神圣惩击 (Smite Evil)</td>
+            <td>改为"制裁打击 (Smite)"——对 DM 指定的"主要敌对目标"生效，每日次数不变。</td>
+          </tr>
+          <tr>
+            <td>阵营描述符法术</td>
+            <td>移除 [邪恶]/[善良] 描述符，这些法术变为普通法术。</td>
+          </tr>
+          <tr>
+            <td>外层位面 (Outer Planes)</td>
+            <td>保留位面结构但移除阵营绑定。天界和深渊仍然存在，但不再与道德阵营直接关联。</td>
+          </tr>
+          <tr>
+            <td>魔法物品</td>
+            <td><em>神圣武器 (Holy Weapon)</em> 改为对特定类型的敌人（如不死生物、异怪）生效。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2. 简化阵营 (Simplified Alignment)</h3>
+
+      <p>将九宫格简化为三阵营或五阵营系统，减少道德判断的复杂度。</p>
+
+      <h4>方案A：三阵营</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>阵营</th>
+            <th>涵盖</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>秩序 (Law)</strong></td>
+            <td>守序善良、守序中立、守序邪恶</td>
+            <td>信奉规则、等级制度和传统。不一定是"好人"，但尊重体系。</td>
+          </tr>
+          <tr>
+            <td><strong>平衡 (Balance)</strong></td>
+            <td>中立善良、绝对中立、中立邪恶</td>
+            <td>追求平衡或个人利益，不特别偏向秩序或混乱。</td>
+          </tr>
+          <tr>
+            <td><strong>混沌 (Chaos)</strong></td>
+            <td>混乱善良、混乱中立、混乱邪恶</td>
+            <td>追求自由、变革或个人欲望。可能是自由斗士，也可能是无政府主义者。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>方案B：五阵营</h4>
+      <ul>
+        <li><strong>善良 (Good)</strong>：涵盖所有善良阵营。利他主义和保护弱者是核心价值。</li>
+        <li><strong>守序 (Lawful)</strong>：守序中立。信奉规则但不一定善良或邪恶。</li>
+        <li><strong>中立 (Neutral)</strong>：绝对中立。不偏向任何极端。</li>
+        <li><strong>混乱 (Chaotic)</strong>：混乱中立。追求自由和独立。</li>
+        <li><strong>邪恶 (Evil)</strong>：涵盖所有邪恶阵营。自私、残忍、不择手段。</li>
+      </ul>
+    </section>
+
+    <!-- ====== 7. 技能变体 ====== -->
+    <section id="skill-variants">
+      <h2>七、技能变体</h2>
+
+      <h3>1. 技能熟练度 (Skill Proficiency)</h3>
+
+      <p>此变体来自《Unearthed Arcana》，为技能系统增加了"熟练"与"不熟练"的区别。</p>
+
+      <h4>规则</h4>
+      <ul>
+        <li><strong>熟练技能</strong>：角色对某项技能拥有熟练度时，正常投掷 d20 + 技能等级 + 属性修正。熟练度在1级时选择（数量取决于职业和智力修正），升级时按职业进度获得新的熟练技能。</li>
+        <li><strong>不熟练技能</strong>：角色对未获得熟练度的技能只能投掷 d20 + 属性修正的一半（向下取整），无法加入技能等级。即使投入技能点，也只有熟练后才能获得完整加值。</li>
+        <li><strong>专精 (Focus)</strong>：某些职业特性或专长可以给予特定技能的"专精"，在熟练的基础上额外 +3。</li>
+      </ul>
+
+      <h4>初始熟练数量参考</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>职业</th>
+            <th>初始熟练数量</th>
+            <th>每4级新增</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>游荡者 (Rogue)</td><td>8 + 智力修正</td><td>1</td></tr>
+          <tr><td>吟游诗人 (Bard)</td><td>6 + 智力修正</td><td>1</td></tr>
+          <tr><td>游侠 (Ranger)</td><td>6 + 智力修正</td><td>1</td></tr>
+          <tr><td>战士 (Fighter)</td><td>4 + 智力修正</td><td>1</td></tr>
+          <tr><td>牧师 (Cleric)</td><td>4 + 智力修正</td><td>1</td></tr>
+          <tr><td>法师 (Wizard)</td><td>3 + 智力修正</td><td>1</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2. 分组技能 (Skill Groups)</h3>
+
+      <p>将相关技能合并为"技能组"，减少需要单独追踪的技能数量，简化角色创建。</p>
+
+      <h4>技能组划分示例</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>技能组</th>
+            <th>包含技能</th>
+            <th>关键属性</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>运动 (Athletics)</strong></td>
+            <td>攀爬、跳跃、游泳</td>
+            <td>力量</td>
+          </tr>
+          <tr>
+            <td><strong>杂技 (Acrobatics)</strong></td>
+            <td>平衡、翻滚、逃脱</td>
+            <td>敏捷</td>
+          </tr>
+          <tr>
+            <td><strong>隐匿 (Stealth)</strong></td>
+            <td>躲藏、潜行</td>
+            <td>敏捷</td>
+          </tr>
+          <tr>
+            <td><strong>巧手 (Sleight)</strong></td>
+            <td>手上戏法、开锁、绳技</td>
+            <td>敏捷</td>
+          </tr>
+          <tr>
+            <td><strong>感知 (Perception)</strong></td>
+            <td>侦查、聆听、搜索</td>
+            <td>感知</td>
+          </tr>
+          <tr>
+            <td><strong>自然 (Nature)</strong></td>
+            <td>自然知识、生存、驯养动物</td>
+            <td>感知</td>
+          </tr>
+          <tr>
+            <td><strong>社交 (Social)</strong></td>
+            <td>交涉、唬骗、威吓</td>
+            <td>魅力</td>
+          </tr>
+          <tr>
+            <td><strong>学识 (Lore)</strong></td>
+            <td>历史、地方知识、贵族知识、地下城知识</td>
+            <td>智力</td>
+          </tr>
+          <tr>
+            <td><strong>神秘 (Arcana)</strong></td>
+            <td>法术辨识、神秘知识、宗教知识、位面知识</td>
+            <td>智力</td>
+          </tr>
+          <tr>
+            <td><strong>治疗 (Healing)</strong></td>
+            <td>医疗</td>
+            <td>感知</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>分组技能规则</h4>
+      <ul>
+        <li>每个技能组使用单一的技能等级，取代组内所有单独技能的等级。</li>
+        <li>技能点消耗：每个技能组的花费等于最贵单项技能的花费（通常为 1 点/级，本职技能）。</li>
+        <li>跨职技能组的费用加倍（2 点/级），与标准的跨职规则一致。</li>
+        <li>某些技能组可能因为包含不同属性的技能而在具体检定时使用不同属性修正（如"运动"组通常为力量，但"游泳"检定可能因甲胄惩罚而额外调整）。</li>
+      </ul>
+
+      <div class="callout">
+        <strong>兼容性提示：</strong>使用分组技能时，某些依赖特定技能的专长（如"技能专攻：潜行"）需要改为对应的技能组（"技能专攻：隐匿"）。DM 需要审查并调整受影响的专长和职业能力。
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>
