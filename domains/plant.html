@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>植物领域 Plant - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html" class="active">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>植物 <span style="font-size:0.5em;color:#888;">Plant</span></h1>
+    <p><span class="domain-badge" style="background:#27ae60;">植物</span> 植物领域赋予牧师操控与命令植物生物的能力，同时获得自然知识的深厚理解。植物领域的牧师能够叱退或命令植物生物如同邪恶牧师叱喝亡灵一般，并通过一系列操控植物的法术支配自然界的生命形态。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>斥退植物 (Rebuke Plants)</h4>
+      <p>你可以像邪恶牧师叱喝亡灵一样叱退或命令植物生物。每日可使用次数等于3+魅力调整值。此能力属于超自然能力。</p>
+    </div>
+    <div class="power-box">
+      <h4>本职技能 (Class Skill)</h4>
+      <p>知识（自然）成为你的本职技能。此能力在选择领域时立即生效。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=entangle">纠缠术 (Entangle)</a></td><td>植物纠缠区域内的所有生物</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=barkskin">树肤术 (Barkskin)</a></td><td>皮肤变得坚硬如树皮，获得天生护甲加值</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=speak_with_plants">植物交谈 (Speak with Plants)</a></td><td>可以与普通植物和植物生物交谈</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=command_plants">命令植物 (Command Plants)</a></td><td>控制一个或多个植物生物的行动</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=wall_of_thorns">荆棘墙 (Wall of Thorns)</a></td><td>创造一面带刺荆棘的屏障，穿过者受到伤害</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=repel_wood">排斥木材 (Repel Wood)</a></td><td>将木制物体推离施法者</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=animate_plants">活化植物 (Animate Plants)</a></td><td>活化一棵或多棵植物使其像动物一样行动</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell-detail.html?id=control_plants">控制植物 (Control Plants)</a></td><td>控制远距离内大量植物的生长形态</td></tr>
+        <tr><td>9</td><td><a href="../spells/spell-detail.html?id=shambler">蹒跚怪 (Shambler)</a></td><td>召唤1d4+2个蹒跚蔓怪为你作战</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>西凡纳斯</strong><span>Silvanus · N · 自然</span></div>
+      <div class="deity-card"><strong>艾洛娜</strong><span>Ehlonna · NG · 森林/林地</span></div>
+      <div class="deity-card"><strong>蜜莉琪</strong><span>Mielikki · NG · 森林/游侠</span></div>
+      <div class="deity-card"><strong>利利法恩</strong><span>Rillifane Rallathil · CG · 自然/林地</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>德鲁伊经常选择此领域。植物领域额外将知识（自然）作为本职技能，这对于需要频繁进行自然知识检定的冒险者尤为有用。叱退植物能力在面对植物类怪物（如蔓生怪、树人等）时非常有效。</p>
+
+    <p style="margin-top:30px;"><a href="../spells/search.html?domain=植物">→ 查看所有「植物」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

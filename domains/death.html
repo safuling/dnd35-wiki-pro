@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>死亡领域 Death Domain - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.domain-intro-box { background:var(--bg-card,#faf6ee); border-left:4px solid; border-radius:0 8px 8px 0; padding:14px 18px; margin:8px 0; }
+.domain-intro-box h4 { margin:0 0 4px 0; }
+.domain-intro-box p { margin:0; font-size:13px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html" class="active">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>死亡领域 <span style="font-size:0.5em;color:#888;">Death Domain</span></h1>
+    <p><span class="domain-badge" style="background:#2c3e50;">死亡 Death</span> &nbsp; 驾驭死亡之力，操控生死的终极领域。死亡领域的牧师掌握着致命的死亡之触，能够操纵亡灵、创造不死生物，并以死亡的力量威慑一切生者。</p>
+
+    <div class="toc">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#power">神授力量</a></li>
+        <li><a href="#spells">领域法术</a></li>
+        <li><a href="#deities">相关神祇</a></li>
+        <li><a href="#notes">规则备注</a></li>
+      </ul>
+    </div>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>死亡之触 Death Touch</h4>
+      <p>每天一次，你可以进行一次近战接触攻击。掷出等于你牧师等级数量的 d6（例如，9级牧师掷 9d6）。如果总结果大于或等于目标当前生命值，目标立即死亡（强韧豁免 DC = 10 + 牧师等级 + 感知调整值，通过则受到 3d6 伤害代替死亡效果）。这是一个即死效果。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过死亡领域自动获得：</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell.html?id=cause_fear">造成恐惧 (Cause Fear)</a></td><td>使一个HD不超过5的生物惊惧逃跑</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell.html?id=death_knell">死亡丧钟 (Death Knell)</a></td><td>杀死濒死生物，获得临时生命值和施法者等级提升</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell.html?id=animate_dead">操纵死尸 (Animate Dead)</a></td><td>将尸体变成骷髅或僵尸为你服务</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell.html?id=enervation">负能量射线 (Enervation)</a></td><td>远程接触攻击，造成1d4个负向等级</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell.html?id=slay_living">杀生术 (Slay Living)</a></td><td>接触攻击造成即死效果或大量伤害</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell.html?id=create_undead">创造亡灵 (Create Undead)</a></td><td>创造食尸鬼、木乃伊等高级不死生物</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell.html?id=destruction">毁灭术 (Destruction)</a></td><td>即死效果，失败则每级10点伤害</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell.html?id=clone">克隆术 (Clone)</a></td><td>创造一个活物的克隆体</td></tr>
+        <tr><td>9</td><td><a href="../spells/spell.html?id=wail_of_the_banshee">女妖之嚎 (Wail of the Banshee)</a></td><td>即死效果，影响附近每级一个生物</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>内鲁尔</strong><span>Nerull · 中立邪恶 · 死亡与黑暗</span></div>
+      <div class="deity-card"><strong>薇·贾斯</strong><span>Wee Jas · 守序中立 · 死亡与魔法</span></div>
+      <div class="deity-card"><strong>密尔寇</strong><span>Myrkul · 中立邪恶 · 死亡与腐朽</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注 (Notes)</h2>
+    <p>死亡领域代表了对死亡本身的掌控。死亡之触是一个强大的即死能力，但受限于每天一次的使用频率——建议在对付高HP的关键目标时使用。</p>
+    <p>死亡领域的法术列表充满了即死效果和亡灵操控法术。需要注意的是，许多即死法术（如毁灭术、女妖之嚎）都允许强韧豁免来避免即死，因此对抗高豁免的敌人时效果可能有限。</p>
+
+    <p style="margin-top:30px;"><a href="../spells/search.html?domain=死亡">→ 查看所有死亡领域法术</a></p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

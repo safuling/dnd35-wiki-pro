@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>幸运领域 Luck - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html" class="active">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>幸运 <span style="font-size:0.5em;color:#888;">Luck</span></h1>
+    <p><span class="domain-badge" style="background:#27ae60;">幸运</span> 幸运领域赋予牧师掌控命运的能力。其神授力量——重掷一次 d20 的机会——是游戏中最万用的神授力量之一。领域法术链同样涵盖从精准打击到终极奇迹的各类实用法术，使幸运领域成为攻防兼备的通用选择。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>幸运 (Lucky)</h4>
+      <p>每日一次，你可以重掷一次 d20 检定并取两次结果中较好的一个。你必须在知道检定结果之前宣布使用此能力。此力量可用于攻击骰、豁免检定、技能检定或属性检定——几乎涵盖游戏中任何 d20 检定。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=true_strike">克敌机先 (True Strike)</a></td><td>下一次攻击骰获得+20洞察加值，且忽略隐蔽</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=aid">援助术 (Aid)</a></td><td>目标获得1d8临时生命值和+1攻击骰士气加值</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=protection_from_energy">防护能量 (Protection from Energy)</a></td><td>吸收指定能量类型的伤害，每级12点（最高120）</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=freedom_of_movement">行动自如 (Freedom of Movement)</a></td><td>目标不受魔法减速、麻痹和固着效果影响</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=break_enchantment">破除结界 (Break Enchantment)</a></td><td>解除惑控、变化和诅咒效果</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=mislead">假象术 (Mislead)</a></td><td>你变为隐形同时创造你自己的幻象替身</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=spell_turning">法术反转 (Spell Turning)</a></td><td>将瞄准你的法术反弹给施法者</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell-detail.html?id=moment_of_prescience">预见时刻 (Moment of Prescience)</a></td><td>在一次攻击骰、检定或豁免中获得+洞察加值（等于施法者等级）</td></tr>
+        <tr><td>9</td><td><a href="../spells/spell-detail.html?id=miracle">奇迹术 (Miracle)</a></td><td>向神祇祈求几乎任何效果，最强力的牧师法术之一</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>泰摩拉</strong><span>Tymora · CG · 幸运/冒险</span></div>
+      <div class="deity-card"><strong>贝夏巴</strong><span>Beshaba · CE · 厄运</span></div>
+      <div class="deity-card"><strong>法兰朗恩</strong><span>Fharlanghn · NG · 旅行/幸运</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>幸运领域的重掷能力是游戏中最万用的神授力量之一——它适用于任何 d20 检定，没有使用限制条件（除了每日一次），而且可以选择在掷骰后、宣布结果前使用。这使得它在关键时刻（如致命失败的豁免或必须命中的攻击）具有无可替代的价值。领域法术链同样强力，从克敌机先到奇迹术，每一环都有实用价值。</p>
+
+    <p style="margin-top:30px;"><a href="../spells/search.html?domain=幸运">→ 查看所有「幸运」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

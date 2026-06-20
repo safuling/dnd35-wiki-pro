@@ -215,15 +215,29 @@ function renderDomains() {
   
   if (typeof ALL_DOMAINS === 'undefined') return;
   
-  grid.innerHTML = ALL_DOMAINS.map(domain => {
-    const domainName = DOMAIN_NAMES ? (DOMAIN_NAMES[domain] || domain) : domain;
-    const count = Object.values(SPELL_DOMAINS || {}).filter(domains => domains.includes(domain)).length;
+  // 中文名 → 领域页面 slug 映射
+  const domainSlugs = {
+    "气":"air","动物":"animal","混乱":"chaos","死亡":"death","毁灭":"destruction",
+    "土":"earth","邪恶":"evil","火":"fire","善良":"good","治疗":"healing",
+    "知识":"knowledge","秩序":"law","幸运":"luck","魔法":"magic","植物":"plant",
+    "防护":"protection","力量":"strength","太阳":"sun","旅行":"travel",
+    "诡术":"trickery","战争":"war","水":"water"
+  };
+  
+  grid.innerHTML = ALL_DOMAINS.map(d => {
+    const zhName = d.zh || d;
+    const enName = d.en || (DOMAIN_NAMES && DOMAIN_NAMES[zhName]) || zhName;
+    const count = Object.values(SPELL_DOMAINS || {}).filter(domains => domains.includes(zhName)).length;
+    const slug = domainSlugs[zhName] || zhName;
     return `
-      <a class="domain-card" href="search.html?domain=${domain}">
-        <span class="domain-name">${domainName}</span>
-        <span class="domain-name-en">${domain}</span>
-        <div class="spell-count">${count} 个法术</div>
-      </a>
+      <div class="domain-card" style="text-align:center;">
+        <a href="../domains/${slug}.html" style="text-decoration:none;">
+          <span class="domain-name">${zhName}</span>
+          <span class="domain-name-en">${enName}</span>
+          <div class="spell-count">${count} 个法术</div>
+        </a>
+        <a href="search.html?domain=${encodeURIComponent(zhName)}" style="font-size:11px;color:#888;">搜索法术</a>
+      </div>
     `;
   }).join('');
 }

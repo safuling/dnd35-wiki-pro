@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>水领域 Water - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html" class="active">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>水领域 <span style="font-size:0.5em;color:#888;">Water</span></h1>
+    <p><span class="domain-badge" style="background:#2980b9;">水</span> 水领域掌控水流、冰霜与海洋之力。信仰水之神的牧师能够驱散火焰生物，呼唤水域的力量，施放操控水与冰的强大法术。这个领域适合海洋神殿的祭司、极地冻土的萨满以及航行于波涛之间的水手牧师。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+
+    <div class="power-box">
+      <h4>驱散火焰生物 (Turn Fire Creatures)</h4>
+      <p>你可以像善良牧师驱散亡灵一样驱散火焰生物 (Fire Creatures)，每日可使用次数为 3 + 魅力调整值。或者，你可以像邪恶牧师斥退亡灵一样斥退水系生物 (Water Creatures)。</p>
+      <p style="font-size:13px;color:#7f8c8d;margin-top:8px;">此力量让你能够对抗火元素、火蜥蜴、焰鬼等火焰亚种生物。斥退模式则可召唤水元素和鱼人为你服务。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过水领域自动获得，无需额外准备。</p>
+
+    <table class="spell-table">
+      <thead>
+        <tr><th>环</th><th>法术</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Obscuring Mist (云雾术)</td><td>产生遮蔽视线的雾气，提供隐蔽</td></tr>
+        <tr><td>2</td><td>Fog Cloud (云雾术)</td><td>大范围浓雾，严重遮蔽视线</td></tr>
+        <tr><td>3</td><td>Water Breathing (水中呼吸)</td><td>使目标可在水中呼吸，持续数小时</td></tr>
+        <tr><td>4</td><td>Control Water (操控水位)</td><td>升高或降低水位，制造漩涡</td></tr>
+        <tr><td>5</td><td>Ice Storm (冰风暴)</td><td>冰雹与冻雨的区域伤害，减缓移动</td></tr>
+        <tr><td>6</td><td>Cone of Cold (寒冰锥)</td><td>锥形极寒射线，造成大量寒冷伤害</td></tr>
+        <tr><td>7</td><td>Acid Fog (酸雾术)</td><td>腐蚀性酸雾，造成酸伤害并遮蔽视线</td></tr>
+        <tr><td>8</td><td>Horrid Wilting (枯萎术)</td><td>从生物体内抽取水分，造成大量伤害</td></tr>
+        <tr><td>9</td><td>Elemental Swarm (元素集群·水)</td><td>召唤大量水元素为你作战</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>伊斯提西亚</strong><span>Istishia · N · 水之元素领主</span></div>
+      <div class="deity-card"><strong>乌姆柏丽</strong><span>Umberlee · CE · 海洋/风暴</span></div>
+      <div class="deity-card"><strong>艾尔德斯</strong><span>Eldath · NG · 宁静/泉水</span></div>
+      <div class="deity-card"><strong>瓦尔坎</strong><span>Valkur · CG · 海洋/航海保护</span></div>
+      <div class="deity-card"><strong>博卡布</strong><span>Procan · CN · 海洋/天气/海战</span></div>
+      <div class="deity-card"><strong>布里博杜普</strong><span>Blibdoolpoolp · NE · 寇涛鱼人/海洋</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注 (Notes)</h2>
+    <p>水领域牧师获得驱散火焰生物的能力，这在对抗火元素和火焰亚种怪物时非常有用。在寒冷或水域环境中，此领域的法术尤为强大——寒冰锥和冰风暴是优秀的范围伤害法术，而枯萎术则是对付水系生物的克星（因为对水造成的伤害翻倍）。</p>
+    <p>值得注意的是，水领域和火领域是对立的——火领域可以驱散水系生物，而水领域可以驱散火系生物。选择时应考虑战役环境中哪种敌人更常见。</p>
+
+    <p style="margin-top:30px;"><a href="../spells/search.html?domain=水">→ 查看所有「水」领域法术</a></p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

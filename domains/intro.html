@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>领域系统 Domain System - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.domain-intro-box { background:var(--bg-card,#faf6ee); border-left:4px solid; border-radius:0 8px 8px 0; padding:14px 18px; margin:8px 0; }
+.domain-intro-box h4 { margin:0 0 4px 0; }
+.domain-intro-box p { margin:0; font-size:13px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html" class="active">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>领域系统 <span style="font-size:0.5em;color:#888;">Domain System</span></h1>
+
+    <p>在 D&D 3.5e 中，<strong>领域（Domain）</strong>是牧师职业的核心机制之一。每位牧师在1级时选择<strong>两个领域</strong>，每个领域赋予一项<strong>神授力量（Granted Power）</strong>以及一组从1环到9环的<strong>领域法术（Domain Spells）</strong>。牧师每天可以额外准备一个领域法术（从对应环位中选择），并且可以使用领域武器专精（Domain Weapon Focus）。</p>
+
+    <p>德鲁伊也可以选择部分领域（如自然、动物、植物领域），以扩展其神术列表和特殊能力。某些领域受到阵营限制——例如善良阵营角色无法选择邪恶领域，守序角色无法选择混乱领域。</p>
+
+    <h2 class="section-title" id="all-domains">全部领域一览</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:20px 0;">
+
+      <a href="air.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#5dade2;">
+          <h4>气 Air</h4>
+          <p>掌控风与气流，获得风之力量</p>
+        </div>
+      </a>
+
+      <a href="animal.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#27ae60;">
+          <h4>动物 Animal</h4>
+          <p>与自然生灵交流，变身动物形态</p>
+        </div>
+      </a>
+
+      <a href="chaos.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#8e44ad;">
+          <h4>混乱 Chaos</h4>
+          <p>拥抱混沌之力，对抗秩序的束缚</p>
+        </div>
+      </a>
+
+      <a href="death.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#2c3e50;">
+          <h4>死亡 Death</h4>
+          <p>驾驭死亡之力，操控亡灵</p>
+        </div>
+      </a>
+
+      <a href="destruction.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#c0392b;">
+          <h4>毁灭 Destruction</h4>
+          <p>释放毁灭之怒，粉碎一切阻碍</p>
+        </div>
+      </a>
+
+      <a href="earth.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#a0522d;">
+          <h4>土 Earth</h4>
+          <p>掌控大地与岩石之力</p>
+        </div>
+      </a>
+
+      <a href="evil.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#1a1a2e;">
+          <h4>邪恶 Evil</h4>
+          <p>拥抱黑暗与邪恶之力</p>
+        </div>
+      </a>
+
+      <a href="fire.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#e74c3c;">
+          <h4>火 Fire</h4>
+          <p>操控火焰，焚尽一切</p>
+        </div>
+      </a>
+
+      <a href="good.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#f1c40f;">
+          <h4>善良 Good</h4>
+          <p>散播光明与善良之力</p>
+        </div>
+      </a>
+
+      <a href="healing.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#2ecc71;">
+          <h4>治疗 Healing</h4>
+          <p>掌控治愈之力，驱散疾病</p>
+        </div>
+      </a>
+
+      <a href="knowledge.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#3498db;">
+          <h4>知识 Knowledge</h4>
+          <p>追求真理与知识</p>
+        </div>
+      </a>
+
+      <a href="law.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#2c3e50;">
+          <h4>秩序 Law</h4>
+          <p>维护法律与秩序的力量</p>
+        </div>
+      </a>
+
+      <a href="luck.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#27ae60;">
+          <h4>幸运 Luck</h4>
+          <p>掌控命运之力，扭转不利局面</p>
+        </div>
+      </a>
+
+      <a href="magic.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#9b59b6;">
+          <h4>魔法 Magic</h4>
+          <p>操纵奥术本质，增强魔法效果</p>
+        </div>
+      </a>
+
+      <a href="plant.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#27ae60;">
+          <h4>植物 Plant</h4>
+          <p>与植物界交流，掌控自然之力</p>
+        </div>
+      </a>
+
+      <a href="protection.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#3498db;">
+          <h4>防护 Protection</h4>
+          <p>保护盟友，抵御威胁</p>
+        </div>
+      </a>
+
+      <a href="strength.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#e67e22;">
+          <h4>力量 Strength</h4>
+          <p>获得超凡的力量与勇猛</p>
+        </div>
+      </a>
+
+      <a href="sun.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#f39c12;">
+          <h4>太阳 Sun</h4>
+          <p>掌握阳光之力，驱散不死</p>
+        </div>
+      </a>
+
+      <a href="travel.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#1abc9c;">
+          <h4>旅行 Travel</h4>
+          <p>探索未知，自由移动</p>
+        </div>
+      </a>
+
+      <a href="trickery.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#8e44ad;">
+          <h4>诡术 Trickery</h4>
+          <p>欺骗与幻术的大师</p>
+        </div>
+      </a>
+
+      <a href="war.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#c0392b;">
+          <h4>战争 War</h4>
+          <p>战斗之神的领域，精通战争艺术</p>
+        </div>
+      </a>
+
+      <a href="water.html" style="text-decoration:none;color:inherit;">
+        <div class="domain-intro-box" style="border-left-color:#2980b9;">
+          <h4>水 Water</h4>
+          <p>掌控水流与冰霜之力</p>
+        </div>
+      </a>
+
+    </div>
+
+    <h2 class="section-title" id="how-domains-work">领域运作机制</h2>
+
+    <div class="power-box">
+      <h4>神授力量 (Granted Power)</h4>
+      <p>每个领域赋予一项独特的超自然能力或类法术能力。这些力量通常每天可使用一定次数（通常为3+魅力调整值次），且随着牧师等级提升而增强。例如，火领域赋予驱散水系生物的能力，而治疗领域则增强治疗法术的效果。</p>
+    </div>
+
+    <div class="power-box">
+      <h4>领域法术 (Domain Spells)</h4>
+      <p>每个领域包含从1环到9环的9个领域法术。牧师每天可以从所选领域中各准备一个领域法术（占据对应环位的法术位），这些法术不计入牧师的已知法术列表，但可以通过领域法术位自动获得。部分领域法术不在牧师标准法术列表中，这是领域的重要优势。</p>
+    </div>
+
+    <div class="power-box">
+      <h4>领域武器 (Domain Weapon)</h4>
+      <p>某些领域与特定武器关联（如战争领域的战斗之神武器）。牧师对所选领域的偏好武器自动获得武器熟悉和武器专攻（如果尚未拥有），在使用该武器时获得+1攻击加值。</p>
+    </div>
+
+    <h2 class="section-title" id="choosing-domains">选择领域的建议</h2>
+
+    <p>选择领域时应考虑以下因素：</p>
+    <ul>
+      <li><strong>阵营限制：</strong>善良角色不能选邪恶领域，守序角色不能选混乱领域，反之亦然。</li>
+      <li><strong> deity 要求：</strong>你选择的神祇必须提供该领域作为其领域选项之一。</li>
+      <li><strong>互补性：</strong>选择两个互相补充的领域——例如战争+力量提供极强的近战能力，知识+魔法增强施法灵活性。</li>
+      <li><strong>神授力量实用性：</strong>某些神授力量（如幸运领域的重投、知识领域的全知识技能加值）非常实用。</li>
+    </ul>
+
+    <p style="margin-top:30px;">
+      <a href="../classes/cleric.html">→ 查看牧师职业详情</a> &nbsp;|&nbsp;
+      <a href="../spells/search.html">→ 法术搜索（可按领域筛选）</a>
+    </p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

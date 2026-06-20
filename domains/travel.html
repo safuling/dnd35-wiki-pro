@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅行领域 Travel - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html" class="active">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>旅行 <span style="font-size:0.5em;color:#888;">Travel</span></h1>
+    <p><span class="domain-badge" style="background:#1abc9c;">旅行</span> 旅行领域赋予牧师无与伦比的机动性。行动自由能力使牧师在关键时刻无视一切限制移动的效果，配合从飞行到传送的一系列法术，旅行领域牧师能够为整个团队提供无可比拟的战术灵活性。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>行动自由 (Freedom of Movement)</h4>
+      <p>每日一次，你可以获得行动自由效果，持续轮数等于你的牧师等级。在此期间，你无视所有妨碍移动的效果（如缠绕、减速、麻痹等），可以正常在水下行走和战斗。使用轮数不必连续，可按需分配。此为超自然能力。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=longstrider">长步术 (Longstrider)</a></td><td>移动速度增加10英尺</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=locate_object">定位物品 (Locate Object)</a></td><td>感知特定物品的方向</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=fly">飞行术 (Fly)</a></td><td>目标获得60英尺飞行速度</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=dimension_door">任意门 (Dimension Door)</a></td><td>瞬间传送到近距离内的任意位置</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=teleport">传送术 (Teleport)</a></td><td>瞬间传送到数百英里外的已知地点</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=find_the_path">寻路术 (Find the Path)</a></td><td>显示到达特定地点的最短路径</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=greater_teleport">高等传送术 (Greater Teleport)</a></td><td>无误差传送，无视距离限制</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell-detail.html?id=phase_door">相位门 (Phase Door)</a></td><td>创造一道无形的相位通道穿越障碍</td></tr>
+        <tr><td>9</td><td><a href="../spells/spell-detail.html?id=astral_projection">星界投射 (Astral Projection)</a></td><td>将意识投射到星界，可进行位面旅行</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>法兰朗恩</strong><span>Fharlanghn · NG · 旅行/地平线</span></div>
+      <div class="deity-card"><strong>索达库尔</strong><span>Shaundakul · CN · 旅行/探索</span></div>
+      <div class="deity-card"><strong>瑟露涅</strong><span>Sel&ucirc;ne · CG · 月亮/星辰</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>旅行领域提供的机动性在所有领域中首屈一指，尤其在高等级时凭借传送术系列法术可以实现瞬间跨越大陆的战术优势。行动自由能力在对抗定身、减速、纠缠等限制移动效果时极为宝贵，建议在关键战斗轮中按需使用。</p>
+
+    <p style="margin-top:30px;"><a href="../spells/search.html?domain=旅行">→ 查看所有「旅行」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

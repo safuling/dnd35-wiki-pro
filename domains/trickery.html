@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>诡术领域 Trickery - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html" class="active">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>诡术 <span style="font-size:0.5em;color:#888;">Trickery</span></h1>
+    <p><span class="domain-badge" style="background:#8e44ad;">诡术</span> 诡术领域赋予牧师欺瞒与隐匿的精湛技艺。欺骗大师能力将诈唬、易容和躲藏变成本职技能，配合一系列幻术和隐形法术，使诡术领域牧师成为操控战场信息、实施战略欺骗的大师。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>欺骗大师 (Master of Deception)</h4>
+      <p>诈唬（Bluff）、易容（Disguise）和躲藏（Hide）成为你的本职技能。无论你的职业原本是否包含这些技能，选择此领域后即可自由投入技能点。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=disguise_self">伪装术 (Disguise Self)</a></td><td>改变自己的外貌，包括身高体重和衣着</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=invisibility">隐形术 (Invisibility)</a></td><td>使目标完全隐形，攻击后效果消失</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=nondetection">反侦测 (Nondetection)</a></td><td>使目标无法被预言系法术探测到</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=confusion">困惑术 (Confusion)</a></td><td>使区域内目标行为混乱，随机行动</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=false_vision">错误视觉 (False Vision)</a></td><td>欺骗预言系法术使其显示虚假信息</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=mislead">假象术 (Mislead)</a></td><td>隐身并创造一个可操控的幻象分身</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=screen">障幕 (Screen)</a></td><td>屏蔽大片区域的探测和观察</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell-detail.html?id=mass_invisibility">群体隐身术 (Mass Invisibility)</a></td><td>使多个目标同时隐形</td></tr>
+        <tr><td>9</td><td><a href="../spells/spell-detail.html?id=time_stop">时间停止 (Time Stop)</a></td><td>时间暂停1d4+1轮，期间只有你可以行动</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>玛斯克</strong><span>Mask · NE · 盗贼/阴影</span></div>
+      <div class="deity-card"><strong>欧利达玛拉</strong><span>Olidammara · CN · 欢宴/诡术</span></div>
+      <div class="deity-card"><strong>席瑞克</strong><span>Cyric · CE · 纷争/谎言</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>诡术领域是多职业盗贼和吟游诗人兼职牧师时的热门选择。本职技能的加成使得即使少量投入也能显著提升社交和潜入能力。时间停止作为9级领域法术，是游戏中最强大的法术之一，可在暂停的时间中自由布局。</p>
+
+    <p style="margin-top:30px;"><a href="../spells/search.html?domain=诡术">→ 查看所有「诡术」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>
