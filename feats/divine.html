@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神术专长 Divine Feats - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.feat-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.feat-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.feat-card h3 a { color:var(--text-heading,#4a2c0a); text-decoration:none; }
+.feat-card h3 a:hover { text-decoration:underline; }
+.feat-meta { font-size:13px; color:var(--text-subtle,#7f8c8d); margin-bottom:8px; }
+.feat-meta .badge { display:inline-block; padding:2px 8px; border-radius:3px; font-size:11px; font-weight:600; color:#fff; margin-right:4px; }
+.badge-combat { background:#c0392b; }
+.badge-general { background:#2980b9; }
+.badge-metamagic { background:#8e44ad; }
+.badge-item { background:#e67e22; }
+.badge-divine { background:#d4a017; }
+.badge-spell { background:#27ae60; }
+.prereq { font-size:13px; color:#888; margin:4px 0; }
+.benefit { font-size:14px; margin:6px 0; }
+.tactic-tip { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:6px 10px; margin:6px 0; font-size:13px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.build-guide { background:#fdf8e8; border:2px solid #d4a017; border-radius:8px; padding:20px; margin:20px 0; }
+.build-guide h3 { margin-top:0; color:#4a2c0a; }
+.build-class { background:#fff; border:1px solid #e8dcc8; border-radius:6px; padding:14px; margin:10px 0; }
+.build-class h4 { margin-top:0; color:#8e44ad; }
+.build-class ul { margin:6px 0; padding-left:20px; }
+.build-class li { margin:4px 0; font-size:14px; }
+.build-feat-chain { background:#e8f4e8; border-left:3px solid #27ae60; padding:8px 12px; margin:8px 0; font-size:13px; border-radius:0 4px 4px 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长分类</div>
+      <a href="intro.html">总览</a>
+      <a href="feat-list.html">📋 专长详细列表</a>
+      <a href="combat.html">战斗专长</a>
+      <a href="spell-feats.html">施法专长</a>
+      <a href="general.html">通用专长</a>
+      <a href="metamagic.html">超魔专长</a>
+      <a href="item.html">物品专长</a>
+      <a href="divine.html" class="active">神术专长</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心专长</div>
+      <a href="power-attack.html">猛力攻击</a>
+      <a href="cleave.html">顺劈斩</a>
+      <a href="weapon-focus.html">武器专精</a>
+      <a href="dodge.html">闪避</a>
+      <a href="iron-will.html">钢铁意志</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>神术专长 <span style="font-size:0.5em;color:#888;">Divine Feats</span></h1>
+    <p>神术专长是与神力、领域和驱散/斥责亡灵能力相关的专长。这些专长通常要求角色拥有驱散亡灵(turn undead)能力或特定领域。它们允许神职角色以创造性的方式使用驱散次数，或增强与神力相关的战斗和施法能力。来源包括PHB、Complete Divine和Complete Champion等扩展。</p>
+
+    <div class="toc">
+      <h3>本分类专长一览</h3>
+      <ul>
+        <li><a href="#extra-turning">额外驱散</a></li>
+        <li><a href="#divine-vigor">神圣活力</a></li>
+        <li><a href="#divine-might">神圣力量</a></li>
+        <li><a href="#divine-shield">神圣护盾</a></li>
+        <li><a href="#sacred-spell">神圣法术</a></li>
+        <li><a href="#persistent-spell">持续法术</a></li>
+        <li><a href="#divine-metamagic">神圣超魔</a></li>
+        <li><a href="#travel-devotion">旅行虔诚</a></li>
+        <li><a href="#knowledge-devotion">知识虔诚</a></li>
+        <li><a href="#war-devotion">战争虔诚</a></li>
+        <li><a href="#strength-devotion">力量虔诚</a></li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">专长总览表</h2>
+    <table class="quick-table">
+      <thead><tr><th>专长</th><th>前提</th><th>简述</th><th>来源</th></tr></thead>
+      <tbody>
+        <tr><td>额外驱散 Extra Turning</td><td>驱散亡灵能力</td><td>每天额外4次驱散尝试</td><td>PHB</td></tr>
+        <tr><td>神圣活力 Divine Vigor</td><td>驱散亡灵能力</td><td>消耗驱散次数获得临时HP和速度提升</td><td>Complete Divine</td></tr>
+        <tr><td>神圣力量 Divine Might</td><td>力量13，力量领域，驱散亡灵</td><td>消耗驱散次数获得魅力调整值的伤害加值</td><td>Complete Divine</td></tr>
+        <tr><td>神圣护盾 Divine Shield</td><td>驱散亡灵能力</td><td>消耗驱散次数获得盾牌加值</td><td>Complete Divine</td></tr>
+        <tr><td>神圣法术 Sacred Spell</td><td>驱散亡灵能力</td><td>法术获得[善良]描述符，克服DR</td><td>Complete Divine</td></tr>
+        <tr><td>持续法术 Persistent Spell</td><td>超魔专长（延时）</td><td>法术持续时间变为24小时，+6环</td><td>Complete Arcane</td></tr>
+        <tr><td>神圣超魔 Divine Metamagic</td><td>驱散亡灵能力</td><td>消耗驱散次数替代超魔环位消耗</td><td>Complete Divine</td></tr>
+        <tr><td>旅行虔诚 Travel Devotion</td><td>旅行领域或驱散能力</td><td>以迅捷动作移动</td><td>Complete Champion</td></tr>
+        <tr><td>知识虔诚 Knowledge Devotion</td><td>知识5级或驱散能力</td><td>对了解过的生物获得攻击和伤害加值</td><td>Complete Champion</td></tr>
+        <tr><td>战争虔诚 War Devotion</td><td>BAB+1或驱散能力</td><td>以迅捷动作武装自己</td><td>Complete Champion</td></tr>
+        <tr><td>力量虔诚 Strength Devotion</td><td>力量13或驱散能力</td><td>力量检定获得神圣加值</td><td>Complete Champion</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== FEAT CARDS ===== -->
+
+    <h2 class="section-title" id="extra-turning">额外驱散 (Extra Turning)</h2>
+    <div class="feat-card">
+      <h3>额外驱散 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>驱散或斥责亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>你每天可以额外进行4次驱散（或斥责）亡灵的尝试。如果你同时拥有驱散和斥责能力，此专长对两种能力分别提供+4次使用次数。可以多次选取此专长，每次再获得+4次。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>如果你使用神圣超魔（Divine Metamagic）将驱散次数转化为超魔效果，此专长几乎是必选的。每天多4次驱散尝试意味着更多的神圣超魔使用次数。</div>
+    </div>
+
+    <h2 class="section-title" id="divine-vigor">神圣活力 (Divine Vigor)</h2>
+    <div class="feat-card">
+      <h3>神圣活力 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>驱散或斥责亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>作为标准动作，你可以消耗一次驱散尝试来获得临时生命值（等于你的施法者等级）和速度提升（+10尺）。效果持续1分钟。这是一种超自然能力，不需要豁免检定或法术抗力。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>战斗前使用可以提供额外的生命缓冲和机动性。在驱散次数充足时是非常实用的战前增益。适合需要冲进前线的神职战斗者。</div>
+    </div>
+
+    <h2 class="section-title" id="divine-might">神圣力量 (Divine Might)</h2>
+    <div class="feat-card">
+      <h3>神圣力量 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>力量13，力量领域，驱散或斥责亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>作为即时动作，你可以消耗一次驱散尝试，在1轮内将你的魅力调整值加到近战伤害检定上。这是一种超自然能力。对于高魅力的神职战斗者来说，这提供了稳定的额外伤害输出。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>圣武士和战牧的神技！高魅力的圣武士（魅力16=+3调整值）每轮可以额外+3伤害，且作为即时动作不消耗行动。配合力量领域和猛力攻击，神职战士的伤害输出极为可观。</div>
+    </div>
+
+    <h2 class="section-title" id="divine-shield">神圣护盾 (Divine Shield)</h2>
+    <div class="feat-card">
+      <h3>神圣护盾 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>驱散或斥责亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>作为标准动作，你可以消耗一次驱散尝试来获得等于你的魅力调整值的盾牌加值（加到你的AC上）。此加值持续1分钟。这是一种超自然能力，提供的加值与盾牌加值叠加。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>战前增益的好选择。高魅力角色的AC加成非常显著。注意：这是盾牌加值类型，不与魔法盾牌的加值叠加，但可以与盔甲加值和偏斜加值叠加。</div>
+    </div>
+
+    <h2 class="section-title" id="sacred-spell">神圣法术 (Sacred Spell)</h2>
+    <div class="feat-card">
+      <h3>神圣法术 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>驱散或斥责亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>你可以修改一个法术使其获得[善良]描述符。善良法术对邪恶生物造成的伤害可以克服伤害减免(DR)，即使该生物拥有"DR/-"。此外，善良法术无法被邪恶生物的法术抗力抵抗（需要DM裁定）。法术位提升+1环。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>在对抗拥有DR/邪恶的恶魔、魔鬼和其他邪恶异界生物时极为有效。将高伤害法术（如灼热光辉、火焰打击）附加善良描述符，可以完全绕过它们的伤害减免。</div>
+    </div>
+
+    <h2 class="section-title" id="persistent-spell">持续法术 (Persistent Spell)</h2>
+    <div class="feat-card">
+      <h3>持续法术 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>法术延时(Extend Spell)超魔专长</div>
+      <div class="benefit"><strong>效果：</strong>被持续化的法术其持续时间变为24小时。只有持续时间为"个人"或固定时间的法术才能被持续化。例如，一个持续10分钟/级的法术持续化后变为24小时。法术位提升+6环。这使得低环增益法术可以持续整天。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>最强大的超魔专长之一，但+6环的代价极高。最佳策略是配合神圣超魔（Divine Metamagic: Persistent Spell），用驱散次数替代环位消耗，实现免费的24小时增益法术。这是神职施法者的标志性战术。</div>
+    </div>
+
+    <h2 class="section-title" id="divine-metamagic">神圣超魔 (Divine Metamagic)</h2>
+    <div class="feat-card">
+      <h3>神圣超魔 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>驱散或斥责亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>当你施放带有超魔效果的法术时，你可以消耗驱散尝试来替代超魔所需的额外法术位。每次驱散尝试可以替代1环的超魔代价。例如，法术瞬发需要+4环，你可以消耗4次驱散尝试来替代这+4环，无需使用更高等级的法术位。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>被公认为D&D 3.5e中最强大的专长之一。配合额外驱散（增加驱散次数）和持续法术（将增益法术变为24小时），可以实现几乎永久的强力增益效果。这是"永恒之辉"(Persistomancer)构建的核心。</div>
+    </div>
+
+    <h2 class="section-title" id="travel-devotion">旅行虔诚 (Travel Devotion)</h2>
+    <div class="feat-card">
+      <h3>旅行虔诚 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>旅行领域或驱散亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>每天1次，你可以以即时动作激活此能力，持续1分钟。在此期间，你可以每轮以即时动作进行一次移动（等于你的速度），且此移动不会引发借机攻击。这允许你在移动的同时仍然进行全力攻击或施法。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>近战角色的神技。激活后每轮可以全力攻击+自由移动，彻底解决了近战角色"移动vs全力攻击"的两难困境。战士、圣武士、野蛮人都能从中获益极大。</div>
+    </div>
+
+    <h2 class="section-title" id="knowledge-devotion">知识虔诚 (Knowledge Devotion)</h2>
+    <div class="feat-card">
+      <h3>知识虔诚 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>任意知识技能5级或驱散亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>每天1次，作为即时动作激活，持续1分钟。在此期间，你在对任何你成功进行了知识检定的生物进行攻击检定和伤害检定时，获得等于你知识检定结果超过DC的数值的洞察加值（最多+5）。每次成功识别一个生物类型都会提供加值。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高智力角色（如法师、吟游诗人）可以利用多种知识技能获得对各类生物的洞察加值。+5攻击和伤害加值在战斗中极为显著，且没有先决属性要求。</div>
+    </div>
+
+    <h2 class="section-title" id="war-devotion">战争虔诚 (War Devotion)</h2>
+    <div class="feat-card">
+      <h3>战争虔诚 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>基本攻击加值+1或驱散亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>每天1次，你可以以即时动作装备或卸下任何武器、盾牌或盔甲（包括全身甲）。正常情况下穿全身甲需要1d4+1分钟，此能力可以在1个即时动作内完成。此外，激活时你获得武器擅长（所有武器）的好处，持续1分钟。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>主要用于紧急情况——被突袭时可以瞬间穿好盔甲。也可以用于快速切换武器类型以应对不同敌人。对于经常需要在战斗和非战斗之间切换的角色非常实用。</div>
+    </div>
+
+    <h2 class="section-title" id="strength-devotion">力量虔诚 (Strength Devotion)</h2>
+    <div class="feat-card">
+      <h3>力量虔诚 <span class="badge badge-divine">神术</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>力量13或驱散亡灵能力</div>
+      <div class="benefit"><strong>效果：</strong>每天1次，作为即时动作激活，持续1分钟。在此期间，你的力量检定和基于力量的技能检定获得+2虔诚加值。此外，你的负重能力被视为比实际大一个体型等级。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>在需要蛮力的场景中非常有用，如破门、搬运重物或冲撞。+2加值虽然不算巨大，但在关键时刻可以决定成败。适合力量型角色在重要力量检定前使用。</div>
+    </div>
+
+    <!-- ===== DIVINE BUILD GUIDE ===== -->
+
+    <h2 class="section-title">神职构建指南</h2>
+    <div class="build-guide">
+      <h3>神圣角色推荐专长组合</h3>
+
+      <div class="build-class">
+        <h4>牧师 (Cleric) — 战牧构建</h4>
+        <ul>
+          <li><strong>1级：</strong>力量领域 + 战争领域</li>
+          <li><strong>1级专长：</strong>猛力攻击 (Power Attack)</li>
+          <li><strong>3级专长：</strong>神圣力量 (Divine Might)</li>
+          <li><strong>6级专长：</strong>额外驱散 (Extra Turning)</li>
+          <li><strong>9级专长：</strong>神圣超魔 (Divine Metamagic: Persistent Spell)</li>
+          <li><strong>12级专长：</strong>持续法术 (Persistent Spell)</li>
+        </ul>
+        <div class="build-feat-chain">
+          <strong>核心战术链：</strong>额外驱散→神圣超魔→持续法术。消耗驱散次数来持久化增益法术（如神圣恩典、 righteous might），实现全天24小时的超强增益效果。
+        </div>
+      </div>
+
+      <div class="build-class">
+        <h4>德鲁伊 (Druid) — 自然变形构建</h4>
+        <ul>
+          <li><strong>1级专长：</strong>自然施法 (Natural Spell)</li>
+          <li><strong>3级专长：</strong>法术专攻：咒法系 (Spell Focus: Conjuration)</li>
+          <li><strong>6级专长：</strong>旅行虔诚 (Travel Devotion) — 需获取旅行领域</li>
+          <li><strong>9级专长：</strong>精通魔宠 (Improved Familiar)</li>
+          <li><strong>12级专长：</strong>法术增效 (Empower Spell)</li>
+        </ul>
+        <div class="build-feat-chain">
+          <strong>核心战术链：</strong>自然施法+野性变身。在动物形态下施放召唤自然盟友和增益法术，同时保持近战能力。旅行虔诚提供额外的战场机动性。
+        </div>
+      </div>
+
+      <div class="build-class">
+        <h4>圣武士 (Paladin) — 神圣战士构建</h4>
+        <ul>
+          <li><strong>1级专长：</strong>猛力攻击 (Power Attack)</li>
+          <li><strong>3级专长：</strong>神圣力量 (Divine Might)</li>
+          <li><strong>6级专长：</strong>额外驱散 (Extra Turning)</li>
+          <li><strong>9级专长：</strong>骑乘战斗 (Mounted Combat)</li>
+          <li><strong>12级专长：</strong>旋风冲锋 (Spirited Charge)</li>
+          <li><strong>15级专长：</strong>神圣护盾 (Divine Shield)</li>
+        </ul>
+        <div class="build-feat-chain">
+          <strong>核心战术链：</strong>神圣力量+猛力攻击+骑枪冲锋。利用高魅力属性同时增强神圣力量和神圣斩击，配合骑乘冲锋的三倍伤害，实现一击必杀的爆发伤害。
+        </div>
+      </div>
+
+      <div class="build-class">
+        <h4>通用建议：虔诚专长优先级</h4>
+        <ul>
+          <li><strong>S级（必选）：</strong>神圣超魔 Divine Metamagic（配合持续法术）</li>
+          <li><strong>A级（强烈推荐）：</strong>额外驱散 Extra Turning、神圣力量 Divine Might</li>
+          <li><strong>B级（推荐）：</strong>旅行虔诚 Travel Devotion、知识虔诚 Knowledge Devotion</li>
+          <li><strong>C级（可选）：</strong>神圣护盾 Divine Shield、战争虔诚 War Devotion</li>
+        </ul>
+        <p style="font-size:13px;color:#666;margin-top:8px;">注意：Complete Divine和Complete Champion中的许多虔诚专长需要驱散亡灵能力。非神职角色可以通过获取一级牧师或圣武士等级来获得驱散能力，从而使用这些强大的虔诚专长。</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

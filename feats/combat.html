@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战斗专长 Combat Feats - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.feat-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.feat-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.feat-card h3 a { color:var(--text-heading,#4a2c0a); text-decoration:none; }
+.feat-card h3 a:hover { text-decoration:underline; }
+.feat-meta { font-size:13px; color:var(--text-subtle,#7f8c8d); margin-bottom:8px; }
+.feat-meta .badge { display:inline-block; padding:2px 8px; border-radius:3px; font-size:11px; font-weight:600; color:#fff; margin-right:4px; }
+.badge-combat { background:#c0392b; }
+.badge-general { background:#2980b9; }
+.badge-metamagic { background:#8e44ad; }
+.badge-item { background:#e67e22; }
+.badge-divine { background:#d4a017; }
+.badge-spell { background:#27ae60; }
+.prereq { font-size:13px; color:#888; margin:4px 0; }
+.benefit { font-size:14px; margin:6px 0; }
+.tactic-tip { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:6px 10px; margin:6px 0; font-size:13px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长分类</div>
+      <a href="intro.html">总览</a>
+      <a href="feat-list.html">📋 专长详细列表</a>
+      <a href="combat.html" class="active">战斗专长</a>
+      <a href="spell-feats.html">施法专长</a>
+      <a href="general.html">通用专长</a>
+      <a href="metamagic.html">超魔专长</a>
+      <a href="item.html">物品专长</a>
+      <a href="divine.html">神术专长</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心专长</div>
+      <a href="power-attack.html">猛力攻击</a>
+      <a href="cleave.html">顺劈斩</a>
+      <a href="weapon-focus.html">武器专精</a>
+      <a href="dodge.html">闪避</a>
+      <a href="iron-will.html">钢铁意志</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>战斗专长 <span style="font-size:0.5em;color:#888;">Combat Feats</span></h1>
+    <p>战斗专长专注于增强角色的近战、远程和骑乘战斗能力。战士可以将战斗专长作为战士奖励专长选取。本页面汇总了PHB中所有战斗专长，提供速查表格和详细卡片说明。拥有独立详情页的专长可直接跳转查看完整攻略。</p>
+
+    <div class="toc">
+      <h3>本分类专长一览</h3>
+      <ul>
+        <li><a href="#power-attack">猛力攻击</a></li>
+        <li><a href="#cleave">顺劈斩</a></li>
+        <li><a href="#great-cleave">大顺劈</a></li>
+        <li><a href="#weapon-focus">武器专攻</a></li>
+        <li><a href="#greater-weapon-focus">高等武器专攻</a></li>
+        <li><a href="#weapon-specialization">武器专精</a></li>
+        <li><a href="#greater-weapon-specialization">高等武器专精</a></li>
+        <li><a href="#weapon-finesse">武器娴熟</a></li>
+        <li><a href="#improved-unarmed-strike">精通徒手打击</a></li>
+        <li><a href="#improved-bull-rush">精通冲撞</a></li>
+        <li><a href="#whirlwind-attack">旋风攻击</a></li>
+        <li><a href="#rapid-shot">快速射击</a></li>
+        <li><a href="#manyshot">多重射击</a></li>
+        <li><a href="#precise-shot">精准射击</a></li>
+        <li><a href="#far-shot">远程射击</a></li>
+        <li><a href="#two-weapon-fighting">双武器战斗</a></li>
+        <li><a href="#improved-two-weapon-fighting">精通双武器战斗</a></li>
+        <li><a href="#greater-two-weapon-fighting">高等双武器战斗</a></li>
+        <li><a href="#mounted-combat">骑乘战斗</a></li>
+        <li><a href="#mounted-archery">骑乘射击</a></li>
+        <li><a href="#ride-by-attack">骑乘冲锋</a></li>
+        <li><a href="#trample">践踏</a></li>
+        <li><a href="#spirited-charge">旋风冲锋</a></li>
+        <li><a href="#exotic-weapon-proficiency">异种武器熟练</a></li>
+        <li><a href="#quick-draw">快速拔取</a></li>
+        <li><a href="#improved-overrun">精通闯越</a></li>
+        <li><a href="#improved-sunder">精通破武</a></li>
+        <li><a href="#improved-trip">精通绊摔</a></li>
+        <li><a href="#improved-feint">精通虚招</a></li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">专长总览表</h2>
+    <table class="quick-table">
+      <thead><tr><th>专长</th><th>前提</th><th>简述</th><th>详情页</th></tr></thead>
+      <tbody>
+        <tr><td>猛力攻击 Power Attack</td><td>力量13</td><td>牺牲攻击加值换取额外伤害，双手武器效果翻倍</td><td><a href="power-attack.html">详情</a></td></tr>
+        <tr><td>顺劈斩 Cleave</td><td>力量13，猛力攻击</td><td>击杀敌人后可对相邻敌人追加一次攻击</td><td><a href="cleave.html">详情</a></td></tr>
+        <tr><td>大顺劈 Great Cleave</td><td>力量13，猛力攻击，顺劈斩，BAB+4</td><td>移除顺劈斩每轮一次的限制</td><td>-</td></tr>
+        <tr><td>武器专攻 Weapon Focus</td><td>擅长所选武器，BAB+1</td><td>使用所选武器攻击检定+1</td><td><a href="weapon-focus.html">详情</a></td></tr>
+        <tr><td>高等武器专攻 Greater Weapon Focus</td><td>武器专攻，战士等级8</td><td>攻击检定额外+1，与武器专攻叠加</td><td>-</td></tr>
+        <tr><td>武器专精 Weapon Specialization</td><td>武器专攻，战士等级4</td><td>使用所选武器伤害检定+2</td><td><a href="weapon-specialization.html">详情</a></td></tr>
+        <tr><td>高等武器专精 Greater Weapon Specialization</td><td>武器专精，高等武器专攻，战士12</td><td>伤害检定额外+2，共计+4</td><td>-</td></tr>
+        <tr><td>武器娴熟 Weapon Finesse</td><td>BAB+1</td><td>轻型武器可用敏捷代替力量计算攻击加值</td><td>-</td></tr>
+        <tr><td>精通徒手打击 Improved Unarmed Strike</td><td>无</td><td>徒手打击不引发借机攻击，可选致命/非致命伤害</td><td>-</td></tr>
+        <tr><td>精通冲撞 Improved Bull Rush</td><td>力量13，猛力攻击</td><td>冲撞不引发借机攻击，力量检定+4</td><td>-</td></tr>
+        <tr><td>旋风攻击 Whirlwind Attack</td><td>敏捷13，智力13，闪避等，BAB+4</td><td>全力攻击时对触及范围内所有敌人各攻击一次</td><td><a href="whirlwind-attack.html">详情</a></td></tr>
+        <tr><td>快速射击 Rapid Shot</td><td>敏捷13，近程射击</td><td>全力攻击额外一次射击，所有攻击-2</td><td><a href="rapid-shot.html">详情</a></td></tr>
+        <tr><td>多重射击 Manyshot</td><td>敏捷17，近程射击，快速射击，BAB+6</td><td>标准动作同时射出多支箭矢</td><td><a href="manyshot.html">详情</a></td></tr>
+        <tr><td>精准射击 Precise Shot</td><td>近程射击</td><td>向混战中的目标射击不再承受-4减值</td><td><a href="precise-shot.html">详情</a></td></tr>
+        <tr><td>远程射击 Far Shot</td><td>近程射击</td><td>射程增量增加50%（抛射）或翻倍（投掷）</td><td>-</td></tr>
+        <tr><td>双武器战斗 Two-Weapon Fighting</td><td>敏捷15</td><td>双武器攻击减值大幅减少</td><td><a href="two-weapon-fighting.html">详情</a></td></tr>
+        <tr><td>精通双武器战斗 Imp. TWF</td><td>双武器战斗，敏捷17，BAB+6</td><td>副手获得第二次额外攻击</td><td>-</td></tr>
+        <tr><td>高等双武器战斗 Grt. TWF</td><td>精通双武器战斗，敏捷19，BAB+11</td><td>副手获得第三次额外攻击</td><td>-</td></tr>
+        <tr><td>骑乘战斗 Mounted Combat</td><td>骑术1级</td><td>骑术检定可使坐骑被击中的攻击无效</td><td>-</td></tr>
+        <tr><td>骑乘射击 Mounted Archery</td><td>骑术1级，骑乘战斗</td><td>骑乘远程射击减值减半</td><td>-</td></tr>
+        <tr><td>骑乘冲锋 Ride-By Attack</td><td>骑术1级，骑乘战斗</td><td>冲锋时可沿途攻击并继续移动</td><td>-</td></tr>
+        <tr><td>践踏 Trample</td><td>骑术1级，骑乘战斗</td><td>坐骑闯越时目标不能闪避，可蹄踏倒地者</td><td>-</td></tr>
+        <tr><td>旋风冲锋 Spirited Charge</td><td>骑术1级，骑乘战斗，骑乘冲锋，BAB+3</td><td>骑枪冲锋伤害三倍</td><td>-</td></tr>
+        <tr><td>异种武器熟练 Exotic Weapon Prof.</td><td>BAB+1</td><td>学会使用一种异种武器</td><td>-</td></tr>
+        <tr><td>快速拔取 Quick Draw</td><td>BAB+1</td><td>拔取武器为即时动作</td><td>-</td></tr>
+        <tr><td>精通闯越 Improved Overrun</td><td>力量13，猛力攻击</td><td>闯越不引发借机攻击，力量检定+4</td><td>-</td></tr>
+        <tr><td>精通破武 Improved Sunder</td><td>力量13，猛力攻击</td><td>破武不引发借机攻击，力量检定+4</td><td>-</td></tr>
+        <tr><td>精通绊摔 Improved Trip</td><td>智力13，战斗专攻</td><td>绊摔不引发借机攻击，力量检定+4</td><td>-</td></tr>
+        <tr><td>精通虚招 Improved Feint</td><td>智力13，战斗专攻</td><td>虚招改为移动动作</td><td>-</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== FEAT CARDS ===== -->
+
+    <h2 class="section-title" id="power-attack">猛力攻击 (Power Attack)</h2>
+    <div class="feat-card">
+      <h3>猛力攻击 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>牺牲近战攻击加值换取等额伤害加值，使用双手武器时伤害加值翻倍。近战输出构建的核心专长。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>配合双手巨武器和顺劈斩链使用效果最佳。详见 <a href="power-attack.html">猛力攻击详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="cleave">顺劈斩 (Cleave)</h2>
+    <div class="feat-card">
+      <h3>顺劈斩 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>击杀敌人后对相邻敌人追加一次近战攻击，每轮限一次。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>在面对大量弱敌时发挥最大价值。详见 <a href="cleave.html">顺劈斩详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="great-cleave">大顺劈 (Great Cleave)</h2>
+    <div class="feat-card">
+      <h3>大顺劈 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>力量13，猛力攻击，顺劈斩，基本攻击加值+4</div>
+      <div class="benefit"><strong>效果：</strong>移除了顺劈斩每轮使用一次的限制。每当你在同一轮中击杀一个对手时，你都可以立即对相邻的另一个对手进行一次额外的近战攻击。在面对大量弱敌时极为强大，可以像割草一样连续击杀敌人。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>配合猛力攻击的最大伤害减值，在面对地精、兽人等低HP群敌时能触发连锁清扫。高等级时效果更显著，但对抗高HP精英敌人时价值有限。</div>
+    </div>
+
+    <h2 class="section-title" id="weapon-focus">武器专攻 (Weapon Focus)</h2>
+    <div class="feat-card">
+      <h3>武器专攻 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>使用所选武器时攻击检定+1。许多高级战斗专长的先决条件。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>优先选择你最常用的主武器。详见 <a href="weapon-focus.html">武器专攻详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="greater-weapon-focus">高等武器专攻 (Greater Weapon Focus)</h2>
+    <div class="feat-card">
+      <h3>高等武器专攻 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>武器专攻（同武器），擅长所选武器，战士等级8</div>
+      <div class="benefit"><strong>效果：</strong>使用已选取武器专攻的武器时，攻击检定额外获得+1加值。此加值与武器专攻的+1叠加，共计+2攻击加值。可多次选取，每次适用于不同的已拥有武器专攻的武器。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>仅限战士职业可用。如果你走武器专精路线，这是必经之路。+2攻击加值在高等级依然有显著价值。</div>
+    </div>
+
+    <h2 class="section-title" id="weapon-specialization">武器专精 (Weapon Specialization)</h2>
+    <div class="feat-card">
+      <h3>武器专精 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>使用所选武器伤害检定+2。仅限战士职业。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>战士中期核心输出提升。详见 <a href="weapon-specialization.html">武器专精详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="greater-weapon-specialization">高等武器专精 (Greater Weapon Specialization)</h2>
+    <div class="feat-card">
+      <h3>高等武器专精 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>武器专精（同武器），高等武器专攻（同武器），战士等级12</div>
+      <div class="benefit"><strong>效果：</strong>使用已选取武器专精的武器时，伤害检定额外获得+2加值。此加值与武器专精的+2叠加，共计+4伤害加值。可多次选取，每次适用于不同武器。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>需要投入4个专长（武器专攻、高等武器专攻、武器专精、高等武器专精），总计获得+2攻击、+4伤害。适合纯战士构建，其他职业无法选取。</div>
+    </div>
+
+    <h2 class="section-title" id="weapon-finesse">武器娴熟 (Weapon Finesse)</h2>
+    <div class="feat-card">
+      <h3>武器娴熟 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>基本攻击加值+1</div>
+      <div class="benefit"><strong>效果：</strong>使用轻型近战武器、细剑、鞭子或刺链时，你可以使用敏捷调整值代替力量调整值来计算近战攻击加值。若你持用盾牌，盾牌的防具检定减值会应用到此攻击加值上。可多次选取，每次适用于不同武器。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高敏捷低力量角色的救星。细剑、短剑配合此专长可以打造敏捷型近战构建。游荡者、诗人等职业的首选。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-unarmed-strike">精通徒手打击 (Improved Unarmed Strike)</h2>
+    <div class="feat-card">
+      <h3>精通徒手打击 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你的徒手打击不会引发借机攻击，并且你可以选择造成致命或非致命伤害。没有此专长时，徒手打击造成非致命伤害且攻击武装对手时会引发借机攻击。武僧在1级时自动获得此专长。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>如果你打算玩徒手战斗角色（如武僧或拳斗构建），这是必备基础。后续可搭配震慑拳等高级徒手专长。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-bull-rush">精通冲撞 (Improved Bull Rush)</h2>
+    <div class="feat-card">
+      <h3>精通冲撞 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>力量13，猛力攻击</div>
+      <div class="benefit"><strong>效果：</strong>当你进行冲撞时，你不会引发防御者的借机攻击。此外，你在冲撞的力量检定上获得+4加值。冲撞成功可将目标向后推移，配合地形（悬崖、陷阱）可以产生致命效果。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高力量角色配合盾牌冲锋非常有效。可将敌人推入危险区域或为盟友创造战术空间。在狭窄地形中尤其强力。</div>
+    </div>
+
+    <h2 class="section-title" id="whirlwind-attack">旋风攻击 (Whirlwind Attack)</h2>
+    <div class="feat-card">
+      <h3>旋风攻击 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>全力攻击时对触及范围内所有敌人各进行一次攻击。需要大量先决专长。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>投入极高但效果华丽。详见 <a href="whirlwind-attack.html">旋风攻击详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="rapid-shot">快速射击 (Rapid Shot)</h2>
+    <div class="feat-card">
+      <h3>快速射击 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>全力攻击时额外一次射击，所有攻击承受-2减值。远程DPS核心专长。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>远程角色的必选专长。详见 <a href="rapid-shot.html">快速射击详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="manyshot">多重射击 (Manyshot)</h2>
+    <div class="feat-card">
+      <h3>多重射击 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>标准动作射出多支箭矢攻击一个目标。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>标准动作射击的强力选项。详见 <a href="manyshot.html">多重射击详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="precise-shot">精准射击 (Precise Shot)</h2>
+    <div class="feat-card">
+      <h3>精准射击 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>向混战目标射击不再承受-4减值。远程角色必备。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>团队协作的基础。详见 <a href="precise-shot.html">精准射击详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="far-shot">远程射击 (Far Shot)</h2>
+    <div class="feat-card">
+      <h3>远程射击 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>近程射击</div>
+      <div class="benefit"><strong>效果：</strong>你使用抛射武器（如弓）时，射程增量增加1/2（即变为原来的1.5倍）。使用投掷武器时，射程增量翻倍。这大幅减少了远距离射击时的射程减值，让你在更远的距离上保持有效射击。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>适合狙击手构建。配合复合长弓（射程增量110尺），远程射击后变为165尺增量，远距离射击时优势明显。</div>
+    </div>
+
+    <h2 class="section-title" id="two-weapon-fighting">双武器战斗 (Two-Weapon Fighting)</h2>
+    <div class="feat-card">
+      <h3>双武器战斗 <span class="badge badge-combat">战斗</span></h3>
+      <div class="benefit"><strong>简述：</strong>双武器攻击减值大幅减少。轻型副手时主手-2/副手-2。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>双武器构建的基础。详见 <a href="two-weapon-fighting.html">双武器战斗详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-two-weapon-fighting">精通双武器战斗 (Improved Two-Weapon Fighting)</h2>
+    <div class="feat-card">
+      <h3>精通双武器战斗 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>双武器战斗，敏捷17，基本攻击加值+6</div>
+      <div class="benefit"><strong>效果：</strong>除了正常的副手额外攻击之外，你的副手获得第二次额外攻击，但承受-5减值。这使得双武器战斗者在全力攻击中可以进行更多次攻击，大幅提升每轮输出潜力。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>双武器构建的中期核心专长。配合武器附魔（如冻寒、炽焰），每次命中都能触发额外伤害骰，攻击次数越多收益越高。</div>
+    </div>
+
+    <h2 class="section-title" id="greater-two-weapon-fighting">高等双武器战斗 (Greater Two-Weapon Fighting)</h2>
+    <div class="feat-card">
+      <h3>高等双武器战斗 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>精通双武器战斗，双武器战斗，敏捷19，基本攻击加值+11</div>
+      <div class="benefit"><strong>效果：</strong>你的副手获得第三次额外攻击，承受-10减值。配合精通双武器战斗，副手总共可以进行三次额外攻击。双武器全力攻击时攻击次数极多，配合各种伤害加值可以造成惊人的每轮伤害。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高等级双武器构建的终极专长。需要敏捷19，建议在创建角色时就规划好属性分配。游荡者配合偷袭骰伤害极为可观。</div>
+    </div>
+
+    <h2 class="section-title" id="mounted-combat">骑乘战斗 (Mounted Combat)</h2>
+    <div class="feat-card">
+      <h3>骑乘战斗 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>骑术1级</div>
+      <div class="benefit"><strong>效果：</strong>当你的坐骑被击中时，你可以进行一次骑术检定（作为即时动作），若检定结果高于攻击者的攻击检定，则该次攻击无效。每轮可使用一次。这是所有骑乘战斗专长的基础。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高骑术等级的角色可以有效保护坐骑。骑乘战斗是通往骑乘冲锋、践踏等高级骑乘专长的必经之路。骑士/圣武士构建必备。</div>
+    </div>
+
+    <h2 class="section-title" id="mounted-archery">骑乘射击 (Mounted Archery)</h2>
+    <div class="feat-card">
+      <h3>骑乘射击 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>骑术1级，骑乘战斗</div>
+      <div class="benefit"><strong>效果：</strong>你在骑乘时使用远程武器的减值减半。骑乘移动超过坐骑速度的一半时，射击减值从-4降为-2；坐骑奔跑时，减值从-8降为-4。使得骑弓手成为可行的战斗方式。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>骑弓手构建的核心专长。配合精灵的弓箭擅长和骑乘战斗，可以打造高机动的远程打击角色。游牧风格角色的完美选择。</div>
+    </div>
+
+    <h2 class="section-title" id="ride-by-attack">骑乘冲锋 (Ride-By Attack)</h2>
+    <div class="feat-card">
+      <h3>骑乘冲锋 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>骑术1级，骑乘战斗</div>
+      <div class="benefit"><strong>效果：</strong>当骑乘冲锋时，你可以在冲锋路径上的任意一点进行攻击，然后继续移动到冲锋路线的终点。坐骑的总移动距离不能超过其速度的两倍。你不会引发被攻击目标的借机攻击。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>打了就跑的骑乘战术核心。允许你冲锋后脱离敌人的威胁范围，避免被围困。配合冲锋加值和骑枪伤害非常强力。</div>
+    </div>
+
+    <h2 class="section-title" id="trample">践踏 (Trample)</h2>
+    <div class="feat-card">
+      <h3>践踏 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>骑术1级，骑乘战斗</div>
+      <div class="benefit"><strong>效果：</strong>当你的坐骑尝试闯越对手时，目标不能选择闪避。如果目标被击倒，你的坐骑可以对倒地的目标进行一次蹄踏攻击。这使得骑乘闯越变得更加有效和危险，强制对手必须面对你的坐骑。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>配合大型坐骑（如战马或更大的坐骑），可以强制碾压敌人阵型。践踏+骑乘战斗的组合让你在战场上势不可挡。</div>
+    </div>
+
+    <h2 class="section-title" id="spirited-charge">旋风冲锋 (Spirited Charge)</h2>
+    <div class="feat-card">
+      <h3>旋风冲锋 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>骑术1级，骑乘战斗，骑乘冲锋，基本攻击加值+3</div>
+      <div class="benefit"><strong>效果：</strong>当骑乘冲锋时，如果使用骑枪，你造成的伤害翻倍（三倍伤害而非通常的两倍）。如果使用其他武器，伤害仍为正常的两倍。这使得骑枪冲锋成为游戏中单次伤害最高的攻击方式之一。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>配合猛力攻击（全减值）和骑枪，可以造成毁灭性的单次伤害。圣武士的神圣斩击在此基础上再翻倍，一击毙杀Boss不是梦。</div>
+    </div>
+
+    <h2 class="section-title" id="exotic-weapon-proficiency">异种武器熟练 (Exotic Weapon Proficiency)</h2>
+    <div class="feat-card">
+      <h3>异种武器熟练 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>基本攻击加值+1</div>
+      <div class="benefit"><strong>效果：</strong>选择一种异种武器（如矮人战斧、双头剑、手里剑等），你学会正常使用该武器而不承受-4减值。可以多次选取此专长，每次选择不同的异种武器。某些异种武器提供独特的战斗优势。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>大多数异种武器并不比军用武器更强，主要价值在于风格。但双头武器配合双武器战斗链有独特优势，矮人战斧（单手使用d10）也有一定价值。</div>
+    </div>
+
+    <h2 class="section-title" id="quick-draw">快速拔取 (Quick Draw)</h2>
+    <div class="feat-card">
+      <h3>快速拔取 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>基本攻击加值+1</div>
+      <div class="benefit"><strong>效果：</strong>你可以以即时动作拔出武器，而非通常的移动动作。这使得你可以在同一轮中先拔出武器再进行一次全力攻击。此外，你可以快速收存一件手持物品。此专长对于需要在不同武器间切换的角色非常有用。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>对于需要在近战和远程之间切换的角色极为实用。投掷武器使用者配合此专长可以在一回合内投掷多把武器。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-overrun">精通闯越 (Improved Overrun)</h2>
+    <div class="feat-card">
+      <h3>精通闯越 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>力量13，猛力攻击</div>
+      <div class="benefit"><strong>效果：</strong>当你进行闯越时，你不会引发防御者的借机攻击。此外，你在闯越的力量检定上获得+4加值。闯越允许你穿过敌人的空间移动，对于需要突入敌阵的角色非常有用。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>配合践踏和骑乘战斗使用效果更佳。高力量角色可以轻松穿过敌人阵型，打乱敌方部署。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-sunder">精通破武 (Improved Sunder)</h2>
+    <div class="feat-card">
+      <h3>精通破武 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>力量13，猛力攻击</div>
+      <div class="benefit"><strong>效果：</strong>当你攻击对手持用或穿戴的物品时，你不会引发防御者的借机攻击。此外，你在破武的力量检定上获得+4加值。可以有效摧毁敌人的武器和盾牌，削弱其战斗能力。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>针对性策略——面对依赖魔法武器的敌人时，摧毁其武器可以大幅削弱对手。但注意大多数DM不喜此玩法，可能降低游戏乐趣。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-trip">精通绊摔 (Improved Trip)</h2>
+    <div class="feat-card">
+      <h3>精通绊摔 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>智力13，战斗专攻</div>
+      <div class="benefit"><strong>效果：</strong>当你进行绊摔时，你不会引发防御者的借机攻击。此外，你在绊摔的力量检定上获得+4加值。如果你成功绊倒对手，你可以立即对该倒地对手进行一次免费的近战攻击（如同借机攻击）。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>控制型战士的核心专长。绊倒敌人后获得免费攻击，且倒地状态使敌人AC-4、攻击-4。配合长触及武器（如关刀）效果极佳。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-feint">精通虚招 (Improved Feint)</h2>
+    <div class="feat-card">
+      <h3>精通虚招 <span class="badge badge-combat">战斗</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>智力13，战斗专攻</div>
+      <div class="benefit"><strong>效果：</strong>你可以在战斗中以移动动作（而非标准动作）进行虚招（唬骗检定对抗对手的察言观色检定）。成功虚招使目标在下次攻击前失去AC的敏捷加值，这对偷袭等高伤害能力极为有利。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>游荡者配合偷袭的利器。移动动作虚招+标准动作攻击，每轮都能让目标失去敏捷加值，大幅提升偷袭命中率和伤害。</div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经验值追踪器 XP Tracker - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.tool-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.tool-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.tool-card p { font-size:14px; color:#666; }
+.tool-card a { color:var(--text-link,#21618c); text-decoration:none; font-weight:600; }
+.tool-card a:hover { text-decoration:underline; }
+.calc-box { background:#f0ebe0; border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.calc-box label { display:block; margin:6px 0 2px; font-weight:600; font-size:14px; }
+.calc-box input, .calc-box select { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); border-radius:4px; font-size:14px; margin-bottom:8px; }
+.calc-box button { background:var(--accent-gold,#d4a017); color:#fff; border:none; padding:8px 20px; border-radius:4px; cursor:pointer; font-weight:600; margin-top:8px; }
+.calc-box button:hover { background:#b8910f; }
+.result-box { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:10px 14px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.step-list { counter-reset: steps; list-style:none; padding:0; }
+.step-list li { counter-increment: steps; padding:10px 10px 10px 40px; position:relative; margin:6px 0; background:var(--bg-card,#faf6ee); border-radius:4px; border:1px solid var(--border-light,#e8dcc8); }
+.step-list li::before { content:counter(steps); position:absolute; left:10px; top:10px; background:var(--accent-gold,#d4a017); color:#fff; width:22px; height:22px; border-radius:50%; text-align:center; line-height:22px; font-size:12px; font-weight:700; }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.tips-box { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:20px; margin:20px 0; }
+.tips-box h3 { color:var(--accent-gold,#d4a017); margin-top:0; }
+.tips-box ul { margin:12px 0; padding-left:24px; }
+.tips-box li { margin:8px 0; line-height:1.6; }
+.member-row { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:12px; margin:8px 0; }
+.member-row h4 { margin:0 0 8px 0; color:var(--accent-gold,#d4a017); }
+.member-row label { display:inline-block; margin-right:12px; font-size:13px; }
+.member-row input { padding:4px 8px; border:1px solid var(--border-light,#e8dcc8); border-radius:4px; font-size:13px; margin-right:8px; }
+.level-up { background:#d4edda; border-left:3px solid #28a745; padding:10px 14px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; font-weight:600; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">DM工具箱</div>
+      <a href="intro.html">工具总览</a>
+      <a href="character-creation.html">角色创建指南</a>
+      <a href="encounter-builder.html">遭遇构建器</a>
+      <a href="treasure-generator.html">宝藏生成器</a>
+      <a href="random-tables.html">随机表格大全</a>
+      <a href="xp-tracker.html" class="active">经验值追踪器</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="../rules.html">核心规则</a>
+      <a href="../classes/intro.html">职业手册</a>
+      <a href="../monsters/intro.html">怪物图鉴</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>经验值追踪器</h1>
+    <h2>XP Tracker</h2>
+
+    <p>经验值追踪器帮助 DM 管理队伍的经验值进度，记录每场遭遇的奖励，并提醒升级时机。</p>
+
+    <h2 class="section-title">升级经验值表</h2>
+
+    <p>以下是 D&D 3.5e 中从 1 级到 20 级所需的累积经验值：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>累积 XP</th>
+          <th>本级所需</th>
+          <th>等级</th>
+          <th>累积 XP</th>
+          <th>本级所需</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>0</td><td>—</td><td>11</td><td>66,000</td><td>11,000</td></tr>
+        <tr><td>2</td><td>1,000</td><td>1,000</td><td>12</td><td>78,000</td><td>12,000</td></tr>
+        <tr><td>3</td><td>3,000</td><td>2,000</td><td>13</td><td>91,000</td><td>13,000</td></tr>
+        <tr><td>4</td><td>6,000</td><td>3,000</td><td>14</td><td>105,000</td><td>14,000</td></tr>
+        <tr><td>5</td><td>10,000</td><td>4,000</td><td>15</td><td>120,000</td><td>15,000</td></tr>
+        <tr><td>6</td><td>15,000</td><td>5,000</td><td>16</td><td>136,000</td><td>16,000</td></tr>
+        <tr><td>7</td><td>21,000</td><td>6,000</td><td>17</td><td>153,000</td><td>17,000</td></tr>
+        <tr><td>8</td><td>28,000</td><td>7,000</td><td>18</td><td>171,000</td><td>18,000</td></tr>
+        <tr><td>9</td><td>36,000</td><td>8,000</td><td>19</td><td>190,000</td><td>19,000</td></tr>
+        <tr><td>10</td><td>45,000</td><td>9,000</td><td>20</td><td>210,000</td><td>20,000</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">经验值分配规则</h2>
+
+    <p>每场遭遇结束后，经验值按照以下规则分配：</p>
+
+    <ul>
+      <li><strong>总经验值</strong>：根据怪物的 CR 查表获得（见下方速查表）</li>
+      <li><strong>平均分配</strong>：总 XP 除以参与战斗的队伍成员数</li>
+      <li><strong>缺席成员</strong>：通常获得 50% 的经验值（可选规则）</li>
+      <li><strong>NPC 队友</strong>：获得 50% 的经验值（不占用玩家份额）</li>
+      <li><strong>角色扮演奖励</strong>：DM 可额外奖励出色的角色扮演（建议 50-200 XP）</li>
+    </ul>
+
+    <h2 class="section-title">互动追踪器</h2>
+
+    <div class="calc-box">
+      <h3>队伍设置</h3>
+      <label for="partySize">队伍人数：</label>
+      <input type="number" id="partySize" value="4" min="1" max="8" onchange="generateMemberFields()">
+      <button onclick="generateMemberFields()">生成成员字段</button>
+    </div>
+
+    <div class="calc-box">
+      <h3>队伍成员</h3>
+      <div id="memberFields"></div>
+    </div>
+
+    <div class="calc-box">
+      <h3>记录遭遇</h3>
+      <label for="encounterCR">遭遇 CR：</label>
+      <input type="number" id="encounterCR" value="3" min="0" max="25">
+      
+      <label for="encounterXP">或手动输入 XP：</label>
+      <input type="number" id="encounterXP" value="0" min="0">
+      
+      <button onclick="addEncounter()">更新经验值</button>
+      
+      <div id="encounterResult"></div>
+    </div>
+
+    <h2 class="section-title">遭遇经验值速查表</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>CR</th>
+          <th>XP</th>
+          <th>CR</th>
+          <th>XP</th>
+          <th>CR</th>
+          <th>XP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1/8</td><td>50</td><td>7</td><td>3,500</td><td>14</td><td>38,000</td></tr>
+        <tr><td>1/6</td><td>65</td><td>8</td><td>4,800</td><td>15</td><td>48,000</td></tr>
+        <tr><td>1/4</td><td>100</td><td>9</td><td>6,400</td><td>16</td><td>60,000</td></tr>
+        <tr><td>1/3</td><td>135</td><td>10</td><td>8,000</td><td>17</td><td>75,000</td></tr>
+        <tr><td>1/2</td><td>200</td><td>11</td><td>11,200</td><td>18</td><td>90,000</td></tr>
+        <tr><td>1</td><td>300</td><td>12</td><td>15,200</td><td>19</td><td>110,000</td></tr>
+        <tr><td>2</td><td>600</td><td>13</td><td>19,200</td><td>20</td><td>155,000</td></tr>
+        <tr><td>3</td><td>900</td><td>14</td><td>24,000</td><td>21+</td><td>+20,000/CR</td></tr>
+        <tr><td>4</td><td>1,350</td><td>15</td><td>30,000</td><td>—</td><td>—</td></tr>
+        <tr><td>5</td><td>1,800</td><td>16</td><td>38,000</td><td>—</td><td>—</td></tr>
+        <tr><td>6</td><td>2,400</td><td>17</td><td>48,000</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">经验值建议</h2>
+
+    <div class="tips-box">
+      <h3>📊 经验值节奏管理</h3>
+      <ul>
+        <li><strong>升级速度</strong>：一般来说，每 3-5 次游戏升一级比较合适。</li>
+        <li><strong>里程碑升级</strong>：考虑使用里程碑系统，在完成重要剧情时统一升级，而不是计算 XP。</li>
+        <li><strong>会话奖励</strong>：每次游戏结束时给予 100-300 XP 的基础奖励，鼓励出勤。</li>
+        <li><strong>角色扮演奖励</strong>：对出色的角色扮演、创意解决问题给予额外 XP。</li>
+        <li><strong>避免膨胀</strong>：如果升级太快，减少遭遇 XP 或提高升级阈值。</li>
+        <li><strong>保持一致</strong>：对所有玩家使用相同的 XP 规则，避免偏袒。</li>
+      </ul>
+    </div>
+
+    <div class="tips-box">
+      <h3>⚠️ 常见问题</h3>
+      <ul>
+        <li><strong>等级差距过大</strong>：如果队伍等级差距超过 2 级，考虑让低级角色获得额外 XP。</li>
+        <li><strong>缺席玩家</strong>：保持一致的政策，要么给 50% XP，要么不给，但要提前说明。</li>
+        <li><strong>角色死亡重做</strong>：新角色通常从队伍平均等级 -1 开始，或从 1 级快速追赶。</li>
+        <li><strong>史诗级战役</strong>：20 级后可以使用史诗规则，或考虑开始新战役。</li>
+      </ul>
+    </div>
+
+    <script>
+      const xpTable = {
+        0: 0, 1: 0, 2: 1000, 3: 3000, 4: 6000, 5: 10000,
+        6: 15000, 7: 21000, 8: 28000, 9: 36000, 10: 45000,
+        11: 66000, 12: 78000, 13: 91000, 14: 105000, 15: 120000,
+        16: 136000, 17: 153000, 18: 171000, 19: 190000, 20: 210000
+      };
+
+      const crToXP = {
+        0: 50, 1: 300, 2: 600, 3: 900, 4: 1350, 5: 1800, 6: 2400,
+        7: 3500, 8: 4800, 9: 6400, 10: 8000, 11: 11200, 12: 15200,
+        13: 19200, 14: 24000, 15: 30000, 16: 38000, 17: 48000,
+        18: 60000, 19: 75000, 20: 90000, 21: 110000, 22: 130000,
+        23: 155000, 24: 180000, 25: 210000
+      };
+
+      let partyMembers = [];
+
+      function generateMemberFields() {
+        const size = parseInt(document.getElementById('partySize').value);
+        const container = document.getElementById('memberFields');
+        let html = '';
+
+        partyMembers = [];
+        for (let i = 0; i < size; i++) {
+          const existingMember = partyMembers[i];
+          html += `
+            <div class="member-row">
+              <h4>成员 ${i + 1}</h4>
+              <label>姓名: <input type="text" id="name${i}" value="角色${i + 1}" size="15"></label>
+              <label>等级: <input type="number" id="level${i}" value="1" min="1" max="20" size="3"></label>
+              <label>当前 XP: <input type="number" id="xp${i}" value="0" min="0" size="8"></label>
+            </div>
+          `;
+        }
+
+        container.innerHTML = html;
+      }
+
+      function addEncounter() {
+        const cr = parseInt(document.getElementById('encounterCR').value);
+        const manualXP = parseInt(document.getElementById('encounterXP').value);
+        const size = parseInt(document.getElementById('partySize').value);
+
+        // Determine XP
+        let totalXP = manualXP > 0 ? manualXP : (crToXP[cr] || 0);
+        const xpPerMember = Math.floor(totalXP / size);
+
+        // Update each member
+        let resultHTML = '<div class="result-box"><strong>遭遇奖励分配：</strong><br>';
+        resultHTML += `总 XP: ${totalXP.toLocaleString()} (CR ${cr})<br>`;
+        resultHTML += `每人获得: ${xpPerMember.toLocaleString()} XP<br><br>`;
+
+        let levelUps = [];
+
+        for (let i = 0; i < size; i++) {
+          const nameInput = document.getElementById(`name${i}`);
+          const levelInput = document.getElementById(`level${i}`);
+          const xpInput = document.getElementById(`xp${i}`);
+
+          if (!nameInput) continue;
+
+          const name = nameInput.value;
+          let level = parseInt(levelInput.value);
+          let currentXP = parseInt(xpInput.value);
+
+          currentXP += xpPerMember;
+          xpInput.value = currentXP;
+
+          // Check for level up
+          let leveled = false;
+          while (level < 20 && currentXP >= xpTable[level + 1]) {
+            level++;
+            leveled = true;
+          }
+
+          if (leveled) {
+            levelInput.value = level;
+            levelUps.push(name);
+          }
+
+          const nextLevelXP = level < 20 ? xpTable[level + 1] : 'MAX';
+          resultHTML += `<strong>${name}</strong>: 等级 ${level}, XP ${currentXP.toLocaleString()}${level < 20 ? ` / ${nextLevelXP.toLocaleString()}` : ''}<br>`;
+        }
+
+        if (levelUps.length > 0) {
+          resultHTML += '</div>';
+          resultHTML += `<div class="level-up">🎉 升级！${levelUps.join(', ')} 升级了！</div>`;
+        } else {
+          resultHTML += '</div>';
+        }
+
+        document.getElementById('encounterResult').innerHTML = resultHTML;
+      }
+
+      // Initialize with default party size
+      generateMemberFields();
+    </script>
+
+    <h2 class="section-title">非战斗经验值分配</h2>
+
+    <p>除了战斗遭遇，以下情况也应该奖励经验值：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>活动类型</th>
+          <th>建议 XP</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>成功完成主要任务线</td><td>500-2,000</td><td>根据任务难度和重要性</td></tr>
+        <tr><td>解决复杂谜题</td><td>200-500</td><td>需要团队合作和创造性思维</td></tr>
+        <tr><td>出色的角色扮演</td><td>50-200</td><td>鼓励玩家投入角色</td></tr>
+        <tr><td>成功的外交交涉</td><td>200-800</td><td>避免战斗，达成重要协议</td></tr>
+        <tr><td>发现秘密/重要信息</td><td>100-400</td><td>推动剧情发展</td></tr>
+        <tr><td>克服环境障碍</td><td>100-300</td><td>穿越危险地形、逃离陷阱</td></tr>
+        <tr><td>基础出勤奖励</td><td>100-200</td><td>每次游戏固定奖励</td></tr>
+        <tr><td>写角色日志/回顾</td><td>50-100</td><td>鼓励玩家记录游戏</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">多职业经验值规则</h2>
+
+    <p>在 D&D 3.5e 中，多职业角色需要注意以下规则：</p>
+
+    <ul>
+      <li><strong>经验值共享</strong>：获得的 XP 是总数，不分配到各职业</li>
+      <li><strong>升级选择</strong>：达到升级阈值时，选择将新等级加到哪个职业</li>
+      <li><strong>偏好职业惩罚</strong>：如果两个职业的等级差超过 1 级，获得 20% XP 惩罚（人类和半精灵的偏好职业不计入）</li>
+      <li><strong>进阶职业</strong>：进阶职业不受偏好职业惩罚影响</li>
+    </ul>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>职业组合示例</th>
+          <th>等级差</th>
+          <th>XP 惩罚</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>战士 5 / 圣武士 4</td><td>1</td><td>无</td><td>等级差不超过 1</td></tr>
+        <tr><td>战士 6 / 游荡者 3</td><td>3</td><td>20%</td><td>差距过大</td></tr>
+        <tr><td>法师 5 / 进阶 2</td><td>—</td><td>无</td><td>进阶职业不计入</td></tr>
+        <tr><td>人类: 战士 5 / 游荡者 3</td><td>2</td><td>无</td><td>人类偏好职业不计入</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">升级检查清单</h2>
+
+    <p>当角色升级时，需要更新以下内容：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>升级项目</th>
+          <th>说明</th>
+          <th>优先级</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>HP</td><td>掷 HD（或取平均）+ CON 调整值</td><td>必须</td></tr>
+        <tr><td>BAB</td><td>根据新职业等级查表更新</td><td>必须</td></tr>
+        <tr><td>豁免</td><td>更新强韧、反射、意志加值</td><td>必须</td></tr>
+        <tr><td>技能点</td><td>分配新的技能点</td><td>必须</td></tr>
+        <tr><td>专长</td><td>3、6、9、12、15、18级获得新专长</td><td>重要</td></tr>
+        <tr><td>属性点</td><td>4、8、12、16、20级增加1点属性</td><td>重要</td></tr>
+        <tr><td>法术位</td><td>施法职业更新每日法术位</td><td>重要</td></tr>
+        <tr><td>已知法术</td><td>部分职业学习新法术</td><td>重要</td></tr>
+        <tr><td>职业能力</td><td>检查是否获得新职业能力</td><td>重要</td></tr>
+        <tr><td>AC</td><td>重新计算 AC（敏捷可能变化）</td><td>建议</td></tr>
+        <tr><td>攻击加值</td><td>重新计算所有攻击加值</td><td>建议</td></tr>
+        <tr><td>先攻</td><td>检查是否有新加值</td><td>建议</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">里程碑升级法（替代方案）</h2>
+
+    <div class="tips-box">
+      <h3>什么是里程碑升级？</h3>
+      <p>里程碑升级是一种不使用经验值的升级方式。DM 在玩家完成特定目标时统一升级，而不是计算 XP。</p>
+
+      <h4>优点：</h4>
+      <ul>
+        <li>减少计算工作量，节省游戏时间</li>
+        <li>确保所有玩家等级一致</li>
+        <li>鼓励多样化的游戏方式（不只是杀怪）</li>
+        <li>DM 可以控制升级节奏</li>
+      </ul>
+
+      <h4>建议的里程碑设置：</h4>
+      <ul>
+        <li>完成一个主要冒险章节</li>
+        <li>击败重要的 Boss</li>
+        <li>完成角色的个人任务</li>
+        <li>到达新的城市或区域</li>
+        <li>3-5 次游戏后</li>
+      </ul>
+
+      <h4>实施方法：</h4>
+      <p>告诉玩家"当你们完成 X 时，所有人将升到 Y 级"。让他们在升级前准备好新技能、法术和专长的选择。</p>
+    </div>
+
+    <h2 class="section-title">战役节奏参考</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>等级范围</th>
+          <th>战役阶段</th>
+          <th>典型内容</th>
+          <th>建议游戏次数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1-3</td><td>入门阶段</td><td>简单地城、哥布林、野兽</td><td>5-8 次</td></tr>
+        <tr><td>4-6</td><td>成长阶段</td><td>中等地城、强盗团、怪物巢穴</td><td>8-12 次</td></tr>
+        <tr><td>7-10</td><td>英雄阶段</td><td>大型地城、巨龙、政治阴谋</td><td>10-15 次</td></tr>
+        <tr><td>11-15</td><td>传奇阶段</td><td>王国命运、恶魔入侵、古老邪恶</td><td>12-18 次</td></tr>
+        <tr><td>16-20</td><td>史诗阶段</td><td>神祇对抗、跨位面冒险</td><td>8-12 次</td></tr>
+      </tbody>
+    </table>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>游戏频率</th>
+          <th>战役总时长</th>
+          <th>适合等级范围</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>每周 1 次</td><td>6-12 个月</td><td>1-12 级</td></tr>
+        <tr><td>每两周 1 次</td><td>12-24 个月</td><td>1-15 级</td></tr>
+        <tr><td>每月 1 次</td><td>2-3 年</td><td>1-20 级</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>
