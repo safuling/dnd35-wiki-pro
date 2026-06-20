@@ -3,34 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3R 拓展规则大全 | D&D 3.5e 中文Wiki</title>
+  <title>3R 扩展大全 v2.4 | D&D 3.5e 中文Wiki</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Segoe UI',Tahoma,sans-serif; background:#1a1a2e; color:#e0e0e0; line-height:1.6; }
-    .container { max-width:1200px; margin:0 auto; padding:20px; }
-    .header { background:linear-gradient(135deg,#2d1b69 0%,#1a1a2e 100%); border:2px solid #7b2d8a; border-radius:12px; padding:40px; margin-bottom:30px; text-align:center; }
-    .header h1 { font-size:2.8em; color:#d4a017; margin-bottom:10px; }
-    .header .badge { display:inline-block; background:#7b2d8a; color:#fff; padding:4px 16px; border-radius:20px; font-size:0.9em; margin-bottom:15px; }
-    .header p { font-size:1.1em; color:#b0b0b0; }
-    .nav-links { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; justify-content:center; }
-    .nav-links a { padding:8px 16px; background:#2a2a4a; color:#d4a017; text-decoration:none; border-radius:6px; border:1px solid #7b2d8a; transition:all 0.3s; }
-    .nav-links a:hover { background:#7b2d8a; color:#fff; }
-    .section { background:#2a2a4a; padding:25px; border-radius:10px; margin-bottom:25px; border:1px solid #3a3a5a; }
-    .section h2 { color:#d4a017; margin-bottom:15px; border-bottom:2px solid #7b2d8a; padding-bottom:8px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:18px; }
-    .card { background:#1a1a3a; border:1px solid #3a3a5a; border-radius:8px; padding:18px; transition:all 0.3s; }
-    .card:hover { border-color:#d4a017; transform:translateY(-2px); }
-    .card h3 { color:#d4a017; margin-bottom:8px; }
-    .card .desc { font-size:0.9em; color:#9090a0; margin-bottom:10px; }
-    .card .meta { font-size:0.8em; color:#7b2d8a; }
-    .warning { background:#3a2a1a; border:1px solid #d4a017; border-radius:8px; padding:15px; margin:20px 0; }
-    .warning strong { color:#d4a017; }
+    .nav-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .nav-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+    .nav-card h3 { margin-top: 0; margin-bottom: 10px; }
+    .nav-card h3 a { color: var(--text-heading); }
+    .nav-card h3 a:hover { color: var(--accent-gold); text-decoration: none; }
+    .nav-card .card-desc { font-size: 14px; color: #555; margin-bottom: 12px; line-height: 1.6; }
+    .nav-card .card-sources { font-size: 12px; color: var(--text-subtle); border-top: 1px solid var(--border-light); padding-top: 10px; }
+    .Rule-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin: 16px 0;
+    }
+    .Rule-box h3 { margin-top: 0; color: var(--text-heading); }
+    .supplement-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .supplement-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+    }
+    .supplement-item strong { color: var(--text-heading); }
+    .supplement-item .supp-desc { font-size: 13px; color: #555; margin-top: 4px; }
+    .page-header {
+      text-align: center;
+      padding: 20px 0 28px;
+      border-bottom: 2px solid var(--accent-gold);
+      margin-bottom: 28px;
+    }
+    .page-header h1 {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      color: var(--text-heading);
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 10px;
+    }
+    .page-header .subtitle {
+      font-size: 15px;
+      color: var(--text-subtle);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .version-badge {
+      display: inline-block;
+      background: var(--accent-gold);
+      color: #fff;
+      padding: 3px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .source-tag {
+      display: inline-block;
+      background: var(--bg-code);
+      border: 1px solid var(--border-light);
+      border-radius: 3px;
+      padding: 1px 8px;
+      font-size: 12px;
+      color: var(--text-subtle);
+      margin-right: 4px;
+    }
   </style>
 </head>
 <body>
+
+<!-- 顶部导航栏 -->
 <nav class="navbar">
-  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-brand">D&D 3.5e 中文Wiki</div>
   <div class="navbar-links" id="mainNav">
     <a href="../index.html">首页</a>
     <a href="../rules.html">核心规则</a>
@@ -41,7 +106,7 @@
     <a href="../skills/intro.html">技能</a>
     <a href="../equipment/intro.html">装备</a>
     <a href="../monsters/intro.html">怪物</a>
-    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../3r/index-v2.html" class="active">3R拓展</a>
     <a href="../conflicts.html">规则冲突</a>
   </div>
   <div class="navbar-search">
@@ -50,155 +115,564 @@
   </div>
   <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
 </nav>
-  <div class="container">
-    <div class="header">
-      <div class="badge">⚡ 3R 拓展规则</div>
-      <h1>📖 3R 拓展功能大全</h1>
-      <p>D&D 3.5e 扩展规则、可选规则、社区内容</p>
+
+<div class="layout">
+
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">3R 擴展大全</div>
+      <a href="index-v2.html" class="active">总览</a>
+      <a href="classes.html">扩展职业</a>
+      <a href="races.html">扩展种族</a>
+      <a href="feats.html">扩展专长</a>
+      <a href="spells.html">扩展法术</a>
+      <a href="equipment.html">扩展装备</a>
+      <a href="monsters.html">扩展怪物</a>
+      <a href="supplements.html">专题扩展</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">主站</div>
+      <a href="../index.html">首页</a>
+      <a href="../rules.html">核心规则</a>
+      <a href="../spells/intro.html">法术</a>
+      <a href="../classes/intro.html">职业</a>
+      <a href="../races/intro.html">种族</a>
+      <a href="../feats/intro.html">专长</a>
+      <a href="../skills/intro.html">技能</a>
+      <a href="../equipment/intro.html">装备</a>
+      <a href="../monsters/intro.html">怪物</a>
+      <a href="../conflicts.html">规则冲突</a>
+    </div>
+  </aside>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+
+    <!-- ============================================================
+         页面头部
+         ============================================================ -->
+    <div class="page-header">
+      <span class="version-badge">v2.4</span>
+      <h1>3R 擴展大全</h1>
+      <p class="subtitle">
+        基于 <strong>dndlogs.com 扩展大全</strong>的中文 Wiki 版本，
+        覆盖所有官方 D&D 3.5e 扩展规则书，包括 Complete 系列、
+        Player's Handbook II、Spell Compendium、Magic Item Compendium、
+        Tome of Battle 等 <strong>20+ 本官方扩展书</strong>。
+      </p>
     </div>
 
-    <div class="nav-links">
-      <a href="../index.html">🏠 返回首页</a>
-      <a href="new-races.html">🧝 新增种族</a>
-      <a href="new-classes.html">⚔️ 新增职业</a>
-      <a href="new-feats.html">🌟 新增专长</a>
-      <a href="new-spells.html">✨ 新增法术</a>
-      <a href="new-equipment.html">🎒 新增装备</a>
-      <a href="new-monsters.html">👹 新增怪物</a>
-      <a href="optional-rules.html">📜 可选规则</a>
-      <a href="resources-tools.html">🔧 资源与工具</a>
+    <!-- 目录 -->
+    <div class="toc">
+      <div class="toc-title">目录</div>
+      <ol>
+        <li><a href="#sources">扩展书来源列表</a></li>
+        <li><a href="#categories">导航分类</a></li>
+        <li><a href="#supplements">专题扩展</a></li>
+        <li><a href="#guide">使用指南</a></li>
+      </ol>
     </div>
 
-    <div class="warning">
-      <strong>⚠️ 注意：</strong>本部分是 <strong>3R 拓展规则</strong>，非 D&D 3.5e 官方核心规则。<br>
-      3R 内容来源于社区扩展、可选规则、第三方资料，与官方核心规则可能存在冲突。<br>
-      使用这些规则前，请与您的 DM 确认。
-    </div>
+    <!-- ============================================================
+         扩展书来源列表
+         ============================================================ -->
+    <h2 id="sources">扩展书来源列表</h2>
+    <p>本 Wiki 覆盖以下官方 D&D 3.5e 扩展规则书，按系列分类列出。</p>
 
-    <div class="section">
-      <h2>📖 关于 3R 拓展</h2>
-      <p><strong>3R</strong> 是 D&D 3.5e 的扩展规则集合，包括：</p>
-      <ul style="margin:10px 0 10px 20px; color:#b0b0b0;">
-        <li><strong>新增内容</strong>：来自《Complete Warrior》《Expanded Psionics Handbook》等扩展书，以及社区创作内容</li>
-        <li><strong>可选规则</strong>：战斗、魔法、战役、角色创建的可选规则，让游戏更灵活</li>
-        <li><strong>平衡性调整</strong>：部分规则对官方内容进行了平衡性调整</li>
-      </ul>
-      <p style="color:#d4a017; font-weight:600;">📌 与官方核心规则的区别：</p>
-      <ul style="margin:10px 0 0 20px; color:#b0b0b0;">
-        <li>官方核心规则：Player's Handbook、Dungeon Master's Guide、Monster Manual 内容</li>
-        <li>3R 拓展规则：扩展书内容 + 社区创作 + 可选规则</li>
-      </ul>
-    </div>
+    <h3>Complete 系列</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>英文书名</th>
+          <th>中文译名</th>
+          <th>定位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Complete Warrior</td>
+          <td>完美战士</td>
+          <td>战斗型扩展：战士、野蛮人、圣武士等近战职业</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Complete Divine</td>
+          <td>完美神力</td>
+          <td>神术型扩展：牧师、德鲁伊、Favored Soul 等神术职业</td>
+        </tr>
+        <tr>
+          <td>Complete Arcane</td>
+          <td>完美奥术</td>
+          <td>奥术型扩展：法师、术士、Warlock、Wu Jen 等奥术职业</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Complete Adventurer</td>
+          <td>完美冒险者</td>
+          <td>冒险/技能型扩展：游荡者、吟游诗人、技能型职业</td>
+        </tr>
+        <tr>
+          <td>Complete Mage</td>
+          <td>完美法师</td>
+          <td>法师扩展：奥术专长、法术、魔法物品</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Complete Champion</td>
+          <td>完美圣者</td>
+          <td>圣武士/神术战士扩展：神圣战斗、信仰系统</td>
+        </tr>
+        <tr>
+          <td>Complete Scoundrel</td>
+          <td>完美游荡者</td>
+          <td>游荡者/技能战士扩展：诡计、偷袭、技能专长</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Complete Psionic</td>
+          <td>完美灵能</td>
+          <td>灵能扩展：灵能职业、灵能专长、灵能物品</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <div class="section">
-      <h2>🧝 新增种族</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>卓尔精灵（Drow）</h3>
-          <div class="desc">来自幽暗地域的黑暗精灵，继承蜘蛛神后的血脉。</div>
-          <div class="meta">类型：官方拓展 | 来源：规则书</div>
-        </div>
-        <div class="card">
-          <h3>提夫林（Tiefling）</h3>
-          <div class="desc">拥有魔鬼血统的种族，天生带有邪异的气质。</div>
-          <div class="meta">类型：官方拓展 | 来源：规则书</div>
-        </div>
-        <div class="card">
-          <h3>换生灵（Changeling）</h3>
-          <div class="desc">天生的变化者，可以改变自己的外貌。</div>
-          <div class="meta">类型：官方拓展 | 来源：Eberron</div>
-        </div>
-        <div class="card">
-          <h3>半巨人（Half-Giant）</h3>
-          <div class="desc">巨人血的种族，力量惊人但不够聪明。</div>
-          <div class="meta">类型：官方拓展 | 来源：Dark Sun</div>
-        </div>
-        <div class="card">
-          <h3>地精（Goblin）</h3>
-          <div class="desc">小型哥布林类生物，狡猾且善于伏击。</div>
-          <div class="meta">类型：社区内容 | 来源：Volo's Guide</div>
-        </div>
-        <div class="card">
-          <h3>海精灵（Sea Elf）</h3>
-          <div class="desc">居住在海中的精灵亚种，善于游泳和海洋生存。</div>
-          <div class="meta">类型：官方拓展 | 来源：规则的补充</div>
+    <h3>核心规则扩展</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>英文书名</th>
+          <th>中文译名</th>
+          <th>定位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Player's Handbook II</td>
+          <td>玩家手册 II</td>
+          <td>核心规则扩展：新基础职业、新专长、新法术</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Dungeon Master's Guide II</td>
+          <td>城主手册 II</td>
+          <td>城主工具扩展：战役设计、NPC 模板、冒险工具</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>种族扩展系列</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>英文书名</th>
+          <th>中文译名</th>
+          <th>定位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Races of Stone</td>
+          <td>石之种族</td>
+          <td>矮人、侏儒、歌利亚等石系种族扩展</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Races of the Wild</td>
+          <td>荒野种族</td>
+          <td>精灵、半身人、翼人等荒野种族扩展</td>
+        </tr>
+        <tr>
+          <td>Races of Destiny</td>
+          <td>命运种族</td>
+          <td>人类、半精灵、徽民等命运系种族扩展</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Races of the Dragon</td>
+          <td>龙之种族</td>
+          <td>龙裔、龙脉种族、龙脉术士扩展</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>怪物图鉴补充</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>英文书名</th>
+          <th>中文译名</th>
+          <th>定位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monster Manual II</td>
+          <td>怪物图鉴 II</td>
+          <td>核心怪物补充：更多经典怪物</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Monster Manual III</td>
+          <td>怪物图鉴 III</td>
+          <td>核心怪物补充：异怪、异界生物</td>
+        </tr>
+        <tr>
+          <td>Monster Manual IV</td>
+          <td>怪物图鉴 IV</td>
+          <td>核心怪物补充：高 CR 怪物、模板</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Monster Manual V</td>
+          <td>怪物图鉴 V</td>
+          <td>核心怪物补充：精英怪物、BOSS 级</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>法术与魔法物品</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>英文书名</th>
+          <th>中文译名</th>
+          <th>定位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Spell Compendium</td>
+          <td>法术纲要</td>
+          <td>法术扩展大全：整合所有官方 3.5e 法术</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Magic Item Compendium</td>
+          <td>魔法物品纲要</td>
+          <td>魔法物品扩展：武器、护甲、法器、神器</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>专题规则书</h3>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>英文书名</th>
+          <th>中文译名</th>
+          <th>定位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tome of Battle: Book of Nine Swords</td>
+          <td>九剑：战斗之书</td>
+          <td>武术战斗系统： maneuvers、stances、武道学派</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Expanded Psionics Handbook (XPH)</td>
+          <td>扩展灵能手册</td>
+          <td>灵能系统：灵能职业、异能、灵能物品</td>
+        </tr>
+        <tr>
+          <td>Fiendish Codex I: Hordes of the Abyss</td>
+          <td>恶魔法典 I</td>
+          <td>恶魔详述：深渊恶魔领主、恶魔类型</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Fiendish Codex II: Tyrants of the Nine Hells</td>
+          <td>魔鬼法典 II</td>
+          <td>魔鬼详述：九层地狱、魔鬼领主</td>
+        </tr>
+        <tr>
+          <td>Lords of Madness</td>
+          <td>疯狂之主</td>
+          <td>异怪详述：夺心魔、Beholder、异怪生态</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Libris Mortis</td>
+          <td>亡灵之书</td>
+          <td>亡灵详述：不死生物类型、亡灵领主</td>
+        </tr>
+        <tr>
+          <td>Sandstorm</td>
+          <td>沙暴</td>
+          <td>沙漠环境规则：酷热、沙暴、沙漠生存</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Frostburn</td>
+          <td>霜燃</td>
+          <td>极地环境规则：严寒、冰川、极地生存</td>
+        </tr>
+        <tr>
+          <td>Stormwrack</td>
+          <td>风暴残骸</td>
+          <td>海洋环境规则：风暴、海战、水下冒险</td>
+        </tr>
+        <tr style="background:var(--bg-table-stripe)">
+          <td>Cityscape</td>
+          <td>城市风光</td>
+          <td>城市环境规则：城市冒险、组织、社会规则</td>
+        </tr>
+        <tr>
+          <td>Dungeonscape</td>
+          <td>地下城风光</td>
+          <td>地下城环境规则：陷阱、地下城生态</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ============================================================
+         导航卡片网格
+         ============================================================ -->
+    <h2 id="categories">导航分类</h2>
+    <p>以下六大分类涵盖所有 3R 扩展内容，点击卡片进入对应页面。</p>
+
+    <div class="nav-card-grid">
+
+      <!-- 扩展职业 -->
+      <div class="nav-card">
+        <h3><a href="classes.html">扩展职业</a></h3>
+        <p class="card-desc">
+          PHB2 新增基础职业（Beguilier、Dragon Shaman、Knight 等）+
+          Complete 系列进阶职业（Warmage、Dread Necromancer、Warlock 等）+
+          Tome of Battle 武术学派（Warblade、Swordsage、Crusader）。
+        </p>
+        <div class="card-sources">
+          <span class="source-tag">PHB2</span>
+          <span class="source-tag">Complete 系列</span>
+          <span class="source-tag">Tome of Battle</span>
         </div>
       </div>
-      <p style="margin-top:15px;"><a href="new-races.html" style="color:#d4a017;">查看完整新增种族 →</a></p>
-    </div>
 
-    <div class="section">
-      <h2>⚔️ 新增职业</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>刺客（Assassin）</h3>
-          <div class="desc">专业的杀手，擅长潜行、下毒和致命攻击。</div>
-          <div class="meta">类型：进阶职业 | 生命骰：d6</div>
-        </div>
-        <div class="card">
-          <h3>元素使者（Elemental Agent）</h3>
-          <div class="desc">操控四大元素的职业，可以召唤元素生物。</div>
-          <div class="meta">类型：基础职业 | 生命骰：d8</div>
-        </div>
-        <div class="card">
-          <h3>奥法射手（Arcane Archer）</h3>
-          <div class="desc">将弓箭与奥术结合的职业，射出的箭矢附带魔法效果。</div>
-          <div class="meta">类型：进阶职业 | 生命骰：d8</div>
-        </div>
-        <div class="card">
-          <h3>深渊之刃（Abyssal Blade）</h3>
-          <div class="desc">与恶魔之力签订的战士，可以使用深渊能量。</div>
-          <div class="meta">类型：进阶职业 | 生命骰：d10</div>
+      <!-- 扩展种族 -->
+      <div class="nav-card">
+        <h3><a href="races.html">扩展种族</a></h3>
+        <p class="card-desc">
+          Races of Stone/Wild/Destiny/Dragon 系列种族（歌利亚、徽民、翼人、龙裔）+
+          Monster Manual 可玩种族（灰矮人、深侏儒）+
+          Eberron 战役设定种族（铸甲体、变形者）。
+        </p>
+        <div class="card-sources">
+          <span class="source-tag">Races of 系列</span>
+          <span class="source-tag">MM</span>
+          <span class="source-tag">Eberron</span>
         </div>
       </div>
-      <p style="margin-top:15px;"><a href="new-classes.html" style="color:#d4a017;">查看完整新增职业 →</a></p>
+
+      <!-- 扩展专长 -->
+      <div class="nav-card">
+        <h3><a href="feats.html">扩展专长</a></h3>
+        <p class="card-desc">
+          Complete 系列新增专长（战斗专长、法术专长、超魔专长）+
+          PHB2 扩展专长 + 专长链系统（Feat Chain）+
+          种族专长与地域专长。
+        </p>
+        <div class="card-sources">
+          <span class="source-tag">Complete 系列</span>
+          <span class="source-tag">PHB2</span>
+          <span class="source-tag">Races of 系列</span>
+        </div>
+      </div>
+
+      <!-- 扩展法术 -->
+      <div class="nav-card">
+        <h3><a href="spells.html">扩展法术</a></h3>
+        <p class="card-desc">
+          Spell Compendium 整合所有官方新增法术 +
+          PHB2 新增法术 + Complete 系列专属法术 +
+          按学派、等级、职业分类索引。
+        </p>
+        <div class="card-sources">
+          <span class="source-tag">Spell Compendium</span>
+          <span class="source-tag">PHB2</span>
+          <span class="source-tag">Complete 系列</span>
+        </div>
+      </div>
+
+      <!-- 扩展装备 -->
+      <div class="nav-card">
+        <h3><a href="equipment.html">扩展装备</a></h3>
+        <p class="card-desc">
+          Magic Item Compendium 魔法物品大全 +
+          特殊材料与精制品武器 +
+          扩展武器防具列表 + 法器、圣徽、奇物。
+        </p>
+        <div class="card-sources">
+          <span class="source-tag">MIC</span>
+          <span class="source-tag">Complete 系列</span>
+          <span class="source-tag">PHB2</span>
+        </div>
+      </div>
+
+      <!-- 扩展怪物 -->
+      <div class="nav-card">
+        <h3><a href="monsters.html">扩展怪物</a></h3>
+        <p class="card-desc">
+          Monster Manual II-V 补充怪物 +
+          Fiend Folio 异怪 + Lords of Madness 异怪详述 +
+          Fiendish Codex 恶魔/魔鬼 + Libris Mortis 亡灵。
+        </p>
+        <div class="card-sources">
+          <span class="source-tag">MM2-5</span>
+          <span class="source-tag">Fiend Folio</span>
+          <span class="source-tag">专题怪物书</span>
+        </div>
+      </div>
+
     </div>
 
-    <div class="section">
-      <h2>🌟 新增专长</h2>
-      <p style="color:#b0b0b0; margin-bottom:15px;">10+ 个新增专长，包括战斗、法术、技能、超魔、种族专长等。</p>
-      <a href="new-feats.html" style="color:#d4a017; font-weight:600;">查看所有新增专长 →</a>
+    <!-- ============================================================
+         专题扩展
+         ============================================================ -->
+    <h2 id="supplements">专题扩展</h2>
+    <p>除六大分类外，以下专题扩展书提供深度规则系统与环境规则。
+    详见 <a href="supplements.html">专题扩展页面</a>。</p>
+
+    <div class="supplement-list">
+
+      <div class="supplement-item">
+        <strong>灵能系统 (XPH / Complete Psionic)</strong>
+        <p class="supp-desc">
+          完整的灵能（Psionics）规则系统：灵能职业（Psion、Psychic Warrior、Wilders）、
+          异能列表、灵能物品、灵能专长。与奥术/神术并行的第三大魔法体系。
+        </p>
+      </div>
+
+      <div class="supplement-item">
+        <strong>九剑系统 (Tome of Battle)</strong>
+        <p class="supp-desc">
+          武术战斗系统（Book of Nine Swords）： maneuvers（武技）、stances（架势）、
+          九大学派。为近战职业提供类似法术的资源管理系统，大幅提升战士类职业可玩性。
+        </p>
+      </div>
+
+      <div class="supplement-item">
+        <strong>恶魔/魔鬼法典 (Fiendish Codex I/II)</strong>
+        <p class="supp-desc">
+          Fiendish Codex I 详述深渊恶魔（Tanar'ri）与恶魔领主；
+          Codex II 详述九层地狱的魔鬼（Baatezu）与魔鬼领主。包含新怪物、模板、规则。
+        </p>
+      </div>
+
+      <div class="supplement-item">
+        <strong>亡灵之书 / 疯狂之主</strong>
+        <p class="supp-desc">
+          Libris Mortis 详述不死生物生态、亡灵模板、不死领主；
+          Lords of Madness 详述异怪（Aberration）生态，包括夺心魔、Beholder、Aboleth。
+        </p>
+      </div>
+
+      <div class="supplement-item">
+        <strong>环境规则系列</strong>
+        <p class="supp-desc">
+          Sandstorm（沙漠）、Frostburn（极地）、Stormwrack（海洋）三本书提供
+          极端环境规则：环境危害、生存检定、特殊装备、环境专属怪物与法术。
+        </p>
+      </div>
+
+      <div class="supplement-item">
+        <strong>城市与地下城</strong>
+        <p class="supp-desc">
+          Cityscape 提供城市冒险规则：组织声望、城市危害、社会阶层；
+          Dungeonscape 提供地下城生态：陷阱设计、地下城危害、探索规则。
+        </p>
+      </div>
+
     </div>
 
-    <div class="section">
-      <h2>✨ 新增法术</h2>
-      <p style="color:#b0b0b0; margin-bottom:15px;">8+ 个新增法术，涵盖所有法术学派。</p>
-      <a href="new-spells.html" style="color:#d4a017; font-weight:600;">查看所有新增法术 →</a>
-    </div>
+    <!-- ============================================================
+         使用指南
+         ============================================================ -->
+    <h2 id="guide">使用指南</h2>
 
-    <div class="section">
-      <h2>🎒 新增装备</h2>
-      <p style="color:#b0b0b0; margin-bottom:15px;">25+ 件新增装备，包括武器、护甲、魔法物品、神器。</p>
-      <a href="new-equipment.html" style="color:#d4a017; font-weight:600;">查看所有新增装备 →</a>
-    </div>
-
-    <div class="section">
-      <h2>👹 新增怪物</h2>
-      <p style="color:#b0b0b0; margin-bottom:15px;">详细的怪物资料，包括属性块、战术、生态。</p>
-      <a href="new-monsters.html" style="color:#d4a017; font-weight:600;">查看所有新增怪物 →</a>
-    </div>
-
-    <div class="section">
-      <h2>📜 可选规则</h2>
-      <p style="color:#b0b0b0; margin-bottom:15px;">战斗、魔法、战役、角色创建的可选规则。</p>
-      <a href="optional-rules.html" style="color:#d4a017; font-weight:600;">查看所有可选规则 →</a>
-    </div>
-
-    <div class="section">
-      <h2>🔧 资源与工具</h2>
-      <p style="color:#b0b0b0; margin-bottom:15px;">随机表、计算器、快速参考表、版本转换指南。</p>
-      <a href="resources-tools.html" style="color:#d4a017; font-weight:600;">查看所有资源与工具 →</a>
-    </div>
-
-    <div class="section">
-      <h2>📋 使用建议</h2>
-      <ul style="margin-left:20px; color:#b0b0b0;">
-        <li><strong>与 DM 确认</strong>：使用 3R 内容前，请务必与您的 DM 确认</li>
-        <li><strong>逐步引入</strong>：不要一次性引入太多 3R 内容，逐步测试</li>
-        <li><strong>平衡性检查</strong>：部分 3R 内容可能破坏游戏平衡，需要 DM 调整</li>
-        <li><strong>记录冲突</strong>：如果 3R 内容与核心规则冲突，以 DM 裁决为准</li>
+    <div class="Rule-box">
+      <h3>与核心规则的关系</h3>
+      <p>3R 扩展大全中的所有内容均基于 D&D 3.5e <strong>核心三书</strong>
+      （Player's Handbook、Dungeon Master's Guide、Monster Manual）构建。
+      扩展书提供的是<strong>可选内容</strong>，而非规则替换。</p>
+      <ul>
+        <li><strong>新增内容</strong>：新职业、新种族、新专长、新法术等直接添加到现有选项中</li>
+        <li><strong>扩展规则</strong>：灵能系统、九剑系统等是独立的子系统，与核心魔法系统并行</li>
+        <li><strong>规则澄清</strong>：部分扩展书对核心规则进行了澄清和微调，以 FAQ 和 Errata 为准</li>
       </ul>
     </div>
-  </div>
+
+    <div class="Rule-box">
+      <h3>使用建议</h3>
+      <ul>
+        <li><strong>与 DM 确认</strong>：使用任何扩展内容前，务必与 DM 确认是否允许。不同战役对扩展内容的接受程度不同。</li>
+        <li><strong>逐步引入</strong>：建议从 Complete 系列或 PHB2 开始，这些书与核心规则兼容性最好。灵能系统和九剑系统可作为独立子系统单独引入。</li>
+        <li><strong>平衡性注意</strong>：部分扩展内容（如 Spell Compendium 中的某些法术、Complete 系列的某些进阶职业）可能影响游戏平衡，DM 应根据战团情况调整。</li>
+        <li><strong>冲突处理</strong>：当扩展规则与核心规则冲突时，以 DM 的裁决为准。可参考本站的<a href="../conflicts.html">规则冲突页面</a>。</li>
+        <li><strong>推荐入门路径</strong>：
+          <ul>
+            <li>玩家：先阅读 PHB2 和与你职业相关的 Complete 书</li>
+            <li>DM：先阅读 DMG2 和环境规则书（Sandstorm/Frostburn/Stormwrack）</li>
+            <li>所有人：Spell Compendium 和 Magic Item Compendium 是必备参考</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="Rule-box">
+      <h3>快速查找指南</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>我想找...</th>
+            <th>去哪里</th>
+            <th>主要来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>新的可玩职业</td>
+            <td><a href="classes.html">扩展职业</a></td>
+            <td>PHB2、Complete 系列、ToB</td>
+          </tr>
+          <tr>
+            <td>新的可玩种族</td>
+            <td><a href="races.html">扩展种族</a></td>
+            <td>Races of 系列、MM、Eberron</td>
+          </tr>
+          <tr>
+            <td>更多专长选择</td>
+            <td><a href="feats.html">扩展专长</a></td>
+            <td>Complete 系列、PHB2</td>
+          </tr>
+          <tr>
+            <td>新增法术列表</td>
+            <td><a href="spells.html">扩展法术</a></td>
+            <td>Spell Compendium、PHB2</td>
+          </tr>
+          <tr>
+            <td>魔法物品和装备</td>
+            <td><a href="equipment.html">扩展装备</a></td>
+            <td>MIC、Complete 系列</td>
+          </tr>
+          <tr>
+            <td>新的怪物</td>
+            <td><a href="monsters.html">扩展怪物</a></td>
+            <td>MM2-5、专题怪物书</td>
+          </tr>
+          <tr>
+            <td>灵能/九剑等子系统</td>
+            <td><a href="supplements.html">专题扩展</a></td>
+            <td>XPH、ToB、FC I/II</td>
+          </tr>
+          <tr>
+            <td>核心规则冲突</td>
+            <td><a href="../conflicts.html">规则冲突</a></td>
+            <td>PHB、DMG、FAQ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:13px;color:var(--text-subtle);margin-top:40px;text-align:center;">
+      数据来源：D&D 3.5e 官方扩展规则书 (Wizards of the Coast) |
+      基于 dndlogs.com 扩展大全整理 |
+      所有扩展内容需 DM 许可方可使用
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>D&D 3.5e 中文Wiki | 3R 扩展大全 v2.4 | 覆盖 Complete 系列 / PHB2 / Spell Compendium / MIC / ToB 等 20+ 官方扩展书</p>
+</div>
+
 </body>
 </html>
