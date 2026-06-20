@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扩展职业大全 - 3R扩展大全 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .class-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .class-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+  .class-card h3 { margin-top: 0; color: var(--text-heading); }
+  .class-card .class-en { font-size: 13px; color: #888; margin-bottom: 6px; }
+  .class-card .class-meta { font-size: 13px; color: #777; margin: 8px 0; line-height: 1.6; }
+  .class-card .class-meta strong { color: var(--text-heading); }
+  .class-card .class-desc { font-size: 14px; margin: 10px 0; line-height: 1.6; }
+  .class-card .class-features { font-size: 13px; margin-top: 10px; }
+  .class-card .class-features li { margin-bottom: 4px; }
+  .class-card .class-player { font-size: 12px; color: #999; margin-top: 10px; font-style: italic; border-top: 1px dashed #ccc; padding-top: 8px; }
+  .source-group-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-heading);
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 6px;
+    margin: 32px 0 16px;
+  }
+  .prestige-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .prestige-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 16px;
+    transition: transform 0.2s;
+  }
+  .prestige-card:hover { transform: translateY(-2px); }
+  .prestige-card h4 { margin-top: 0; color: var(--text-heading); }
+  .prestige-card .prestige-en { font-size: 12px; color: #888; margin-bottom: 6px; }
+  .prestige-card .prestige-desc { font-size: 13px; line-height: 1.5; }
+  .school-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .school-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .school-card:hover { transform: translateY(-2px); }
+  .school-card h4 { margin-top: 0; color: var(--text-heading); }
+  .school-card .school-en { font-size: 12px; color: #888; }
+  .school-card .school-desc { font-size: 13px; margin-top: 8px; line-height: 1.5; text-align: left; }
+  .source-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .source-phb2 { background: #2ecc71; color: #fff; }
+  .source-complete { background: #3498db; color: #fff; }
+  .source-tob { background: #9b59b6; color: #fff; }
+  .source-tom { background: #e67e22; color: #fff; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" class="active" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">3R 扩展大全</div>
+      <a href="index-v2.html">总览</a>
+      <a href="classes.html" class="active">扩展职业</a>
+      <a href="races.html">扩展种族</a>
+      <a href="feats.html">扩展专长</a>
+      <a href="spells.html">扩展法术</a>
+      <a href="equipment.html">扩展装备</a>
+      <a href="monsters.html">扩展怪物</a>
+      <a href="supplements.html">专题扩展</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">主站</div>
+      <a href="../index.html">首页</a>
+      <a href="../classes/intro.html">核心职业</a>
+      <a href="../rules.html">核心规则</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>⚔️ 扩展职业大全 Expanded Classes</h1>
+    <p class="toc-desc">本页收录 D&D 3.5e 官方扩展规则书中的<strong>新增基础职业</strong>、<strong>Complete 系列进阶职业</strong>以及<strong>Tome of Battle 武术学派</strong>。
+    数据来源于 <strong>Player's Handbook II</strong>、<strong>Complete</strong> 系列、<strong>Tome of Magic</strong> 以及 <strong>Tome of Battle: The Book of Nine Swords</strong>。
+    使用进阶职业前请确认 DM 许可及前置条件。</p>
+
+    <!-- 目录 -->
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#phb2-base">PHB2 新增基础职业（6个）</a></li>
+        <li><a href="#complete-warrior">Complete Warrior 完美战士（8个进阶）</a></li>
+        <li><a href="#complete-divine">Complete Divine 完美神力（6个进阶）</a></li>
+        <li><a href="#complete-arcane">Complete Arcane 完美奥术（6个进阶）</a></li>
+        <li><a href="#complete-adventurer">Complete Adventurer 完美冒险者（5个进阶）</a></li>
+        <li><a href="#complete-mage">Complete Mage（4个进阶）</a></li>
+        <li><a href="#complete-scoundrel">Complete Scoundrel（4个进阶）</a></li>
+        <li><a href="#tob-schools">Tome of Battle 武术学派（9学派）</a></li>
+        <li><a href="#comparison">职业选择对照表</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         一、PHB2 新增基础职业
+         ============================================================ -->
+    <h2 id="phb2-base">📕 一、PHB2 新增基础职业</h2>
+    <p>以下 6 个基础职业来自 <strong>Player's Handbook II</strong> 及相关扩展书，可作为 PHB 核心11职业的补充。
+    这些职业从 1 级开始，无需前置条件，适合希望体验非核心玩法的玩家。</p>
+
+    <div class="class-grid">
+
+      <!-- 战法师 -->
+      <div class="class-card" id="warmage">
+        <h3>战法师 Warmage</h3>
+        <div class="class-en"><span class="source-badge source-phb2">PHB2</span> / Complete Arcane</div>
+        <div class="class-meta">
+          <strong>HD：</strong>d6 &nbsp;|&nbsp;
+          <strong>BAB：</strong>1/2 &nbsp;|&nbsp;
+          <strong>豁免优势：</strong>意志 &nbsp;|&nbsp;
+          <strong>技能点：</strong>6 + Int 调整值
+        </div>
+        <div class="class-desc">
+          <p><strong>重甲施法的奥术师</strong>，专注塑能学派与伤害法术。战法师身穿重甲冲锋陷阵，
+          以毁灭性的火焰与闪电轰击敌人。与法师不同，战法师无需准备法术，而是通过<strong>战法师训练</strong>自动掌握其法术列表中的所有法术。</p>
+        </div>
+        <div class="class-features">
+          <strong>关键职业特性：</strong>
+          <ul>
+            <li><strong>战法师训练（Warmage Training）</strong>：自动掌握法术列表中的所有法术，无需学习或准备</li>
+            <li><strong>战法师护甲（Armored Mage）</strong>：可穿轻甲/中甲/重甲及持盾施法，不受奥术失败率影响</li>
+            <li><strong>战法师武器熟练</strong>：自动熟练所有简易武器和军用武器</li>
+            <li><strong>Sudden Maximize</strong>（第4级）：每天 1 次，无需超魔专长即可将法术伤害骰最大化</li>
+            <li><strong>高级战法师护甲</strong>（第8级）：穿重甲施法时法术失败率降为 0%</li>
+          </ul>
+        </div>
+        <div class="class-player">适合玩家：喜欢重甲+法术双重身份、偏好简单高效的伤害输出型角色的玩家</div>
+      </div>
+
+      <!-- 暗死灵师 -->
+      <div class="class-card" id="dread-necromancer">
+        <h3>暗死灵师 Dread Necromancer</h3>
+        <div class="class-en"><span class="source-badge source-phb2">PHB2</span> / Heroes of Horror</div>
+        <div class="class-meta">
+          <strong>HD：</strong>d6 &nbsp;|&nbsp;
+          <strong>BAB：</strong>1/2 &nbsp;|&nbsp;
+          <strong>豁免优势：</strong>意志 &nbsp;|&nbsp;
+          <strong>技能点：</strong>2 + Int 调整值
+        </div>
+        <div class="class-desc">
+          <p><strong>自发奥术施法者</strong>，专注于死灵学派。暗死灵师操纵亡灵与死亡之力，
+          能自发施放死灵法术而无需准备。随着等级提升，暗死灵师逐渐获得不死生物的特征，
+          是扮演黑暗反英雄或邪恶施法者的绝佳选择。</p>
+        </div>
+        <div class="class-features">
+          <strong>关键职业特性：</strong>
+          <ul>
+            <li><strong>死灵术（Necromancy）</strong>：自发施放死灵学派法术，法术列表专注死亡与亡灵控制</li>
+            <li><strong>亡灵亲和（Undead Affinity）</strong>：对不死生物的驱散/斥退检定获得加值</li>
+            <li><strong>斥退亡灵（Rebuke Undead）</strong>：如同邪恶牧师一般斥退和控制不死生物</li>
+            <li><strong>恐惧灵光（Fear Aura）</strong>（第8级）：周围散发恐惧光环，影响范围内的敌人</li>
+            <li><strong>不死特征</strong>：高级时获得暗视、伤害减免等类不死生物能力</li>
+          </ul>
+        </div>
+        <div class="class-player">适合玩家：喜欢死灵主题、亡灵控制者、黑暗角色扮演、邪恶或反英雄角色的玩家</div>
+      </div>
+
+      <!-- 龙萨满 -->
+      <div class="class-card" id="dragon-shaman">
+        <h3>龙萨满 Dragon Shaman</h3>
+        <div class="class-en"><span class="source-badge source-phb2">PHB2</span></div>
+        <div class="class-meta">
+          <strong>HD：</strong>d8 &nbsp;|&nbsp;
+          <strong>BAB：</strong>3/4 &nbsp;|&nbsp;
+          <strong>豁免优势：</strong>强韧 + 意志 &nbsp;|&nbsp;
+          <strong>技能点：</strong>4 + Int 调整值
+        </div>
+        <div class="class-desc">
+          <p><strong>以龙图腾获得力量的近战职业</strong>。龙萨满选择一种真龙作为精神图腾，
+          从中汲取吐息武器和增益灵光。他们身着中甲或重甲，在战斗前线以吐息攻击和近战能力打击敌人，
+          同时以灵光增益辅助队友。</p>
+        </div>
+        <div class="class-features">
+          <strong>关键职业特性：</strong>
+          <ul>
+            <li><strong>吐息武器（Breath Weapon）</strong>：根据龙图腾类型获得不同元素类型的锥形/线形吐息攻击</li>
+            <li><strong>龙翼/龙爪</strong>：高级时获得龙翼（飞行）或龙爪（天生武器）等龙类能力</li>
+            <li><strong>增益灵光（Aura）</strong>：提供多种增益灵光，如力量灵光、抗性灵光、活力灵光等</li>
+            <li><strong>技能加成</strong>：对某些技能（如威吓、自然知识等）获得职业加值</li>
+            <li><strong>龙图腾选择</strong>：黑龙（酸）、蓝龙（电）、红龙（火）、白龙（冷）、绿龙（酸+毒）等</li>
+          </ul>
+        </div>
+        <div class="class-player">适合玩家：喜欢龙主题、兼顾近战与辅助、不想管理法术的半施法/半战斗型玩家</div>
+      </div>
+
+      <!-- 骑士 -->
+      <div class="class-card" id="knight">
+        <h3>骑士 Knight</h3>
+        <div class="class-en"><span class="source-badge source-phb2">PHB2</span></div>
+        <div class="class-meta">
+          <strong>HD：</strong>d12 &nbsp;|&nbsp;
+          <strong>BAB：</strong>全 BAB &nbsp;|&nbsp;
+          <strong>豁免优势：</strong>强韧 &nbsp;|&nbsp;
+          <strong>技能点：</strong>2 + Int 调整值
+        </div>
+        <div class="class-desc">
+          <p><strong>重装战士与骑士道的结合</strong>。骑士是战场上的核心力量，身披全甲冲锋在前，
+          以骑士挑战吸引敌人注意力。他们遵循严格的<strong>骑士道准则</strong>（Code of Chivalry），
+          在战斗内外展现骑士荣誉。拥有最高的 d12 生命骰，是出色的前排坦克。</p>
+        </div>
+        <div class="class-features">
+          <strong>关键职业特性：</strong>
+          <ul>
+            <li><strong>骑士挑战（Knight's Challenge）</strong>：类似挑衅，强制敌方将攻击目标集中于骑士自身</li>
+            <li><strong>战斗坐骑（Mounted Combat）</strong>：获得特殊战马作为坐骑，坐骑随等级成长</li>
+            <li><strong>骑士道（Code of Chivalry）</strong>：必须遵守骑士行为准则，违反将失去部分职业能力</li>
+            <li><strong>钢铁意志（Iron Will）</strong>：意志豁免获得加值，抵抗精神控制</li>
+            <li><strong>重甲精通</strong>：自动获得所有盔甲和盾牌熟练</li>
+          </ul>
+        </div>
+        <div class="class-player">适合玩家：喜欢重装前排坦克、骑士角色扮演、遵循荣誉准则的玩家</div>
+      </div>
+
+      <!-- 侦察兵 -->
+      <div class="class-card" id="scout">
+        <h3>侦察兵 Scout</h3>
+        <div class="class-en"><span class="source-badge source-phb2">PHB2</span> / Complete Adventurer</div>
+        <div class="class-meta">
+          <strong>HD：</strong>d8 &nbsp;|&nbsp;
+          <strong>BAB：</strong>3/4 &nbsp;|&nbsp;
+          <strong>豁免优势：</strong>反射 &nbsp;|&nbsp;
+          <strong>技能点：</strong>8 + Int 调整值
+        </div>
+        <div class="class-desc">
+          <p><strong>高机动性的侦察战斗者</strong>。侦察兵擅长在战场上快速移动，利用移动后的攻击获得额外伤害。
+          他们是出色的斥候和狙击手，拥有大量技能点，可以胜任侦察、追踪和潜行等多种角色。
+          核心玩法围绕"移动-攻击"循环展开。</p>
+        </div>
+        <div class="class-features">
+          <strong>关键职业特性：</strong>
+          <ul>
+            <li><strong>侦察兵之眼（Skirmish）</strong>：移动至少 10 英尺后的攻击获得额外伤害骰和 AC 加值</li>
+            <li><strong>闪避 AC（Uncanny Dodge）</strong>：获得闪避能力，难以被夹击</li>
+            <li><strong>伪装（Camouflage）</strong>：在自然环境中获得隐藏加值</li>
+            <li><strong>陷阱感知（Trapfinding）</strong>：可以搜索和解除陷阱，如同游荡者</li>
+            <li><strong>盲感/盲视</strong>：高级时获得感知周围敌人的超自然能力</li>
+          </ul>
+        </div>
+        <div class="class-player">适合玩家：喜欢高机动战斗、斥候角色扮演、技能多面手的技巧型玩家</div>
+      </div>
+
+      <!-- 灵契师 -->
+      <div class="class-card" id="binder">
+        <h3>灵契师 Binder</h3>
+        <div class="class-en"><span class="source-badge source-tom">Tome of Magic</span></div>
+        <div class="class-meta">
+          <strong>HD：</strong>d8 &nbsp;|&nbsp;
+          <strong>BAB：</strong>3/4 &nbsp;|&nbsp;
+          <strong>豁免优势：</strong>强韧 + 意志 &nbsp;|&nbsp;
+          <strong>技能点：</strong>2 + Int 调整值
+        </div>
+        <div class="class-desc">
+          <p><strong>与异界存在签订契约以获得力量的独特职业</strong>。灵契师通过神秘的仪式与被称为"残影（Vestige）"的
+          异界存在签订契约，每个残影提供不同的超自然能力。灵契师可以同时持有多个契约，
+          是 3.5e 中最具独特性和可重玩性的职业之一。</p>
+        </div>
+        <div class="class-features">
+          <strong>关键职业特性：</strong>
+          <ul>
+            <li><strong>契约封印（Bind Vestige）</strong>：通过仪式与残影签订契约，获得该残影的超自然能力</li>
+            <li><strong>多契约叠加</strong>：可同时持有多个残影契约，能力叠加组合</li>
+            <li><strong>契约印记（Seal）</strong>：身上出现代表契约的神秘印记，高级时可隐藏</li>
+            <li><strong>残影列表</strong>：数十种不同的残影可供选择，每个提供独特的能力组合</li>
+            <li><strong>特殊召唤</strong>：部分残影允许灵契师召唤相关实体</li>
+          </ul>
+        </div>
+        <div class="class-player">适合玩家：喜欢探索独特机制、享受每天更换能力组合、热爱深度角色定制的玩家</div>
+      </div>
+
+    </div>
+
+    <div class="Rule-box">
+      <h3>PHB2 基础职业快速对比</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>职业</th>
+            <th>HD</th>
+            <th>BAB</th>
+            <th>施法</th>
+            <th>定位</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>战法师</td><td>d6</td><td>1/2</td><td>奥术（自发）</td><td>重甲施法 / 伤害输出</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td>暗死灵师</td><td>d6</td><td>1/2</td><td>奥术（自发）</td><td>死灵控制 / 恐惧</td></tr>
+          <tr><td>龙萨满</td><td>d8</td><td>3/4</td><td>无</td><td>近战 / 吐息 / 辅助灵光</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td>骑士</td><td>d12</td><td>全</td><td>无</td><td>重装坦克 / 骑士道</td></tr>
+          <tr><td>侦察兵</td><td>d8</td><td>3/4</td><td>无</td><td>机动战斗 / 侦察</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td>灵契师</td><td>d8</td><td>3/4</td><td>无（超自然）</td><td>契约能力 / 多变</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         二、Complete 系列进阶职业
+         ============================================================ -->
+    <h2 id="complete-warrior">⚔️ 二、Complete Warrior 完美战士（8个进阶）</h2>
+    <p>《Complete Warrior》聚焦于战斗型角色的进阶职业，提供从狂暴战士到精密决斗家的多种战斗风格。</p>
+
+    <div class="prestige-grid">
+
+      <div class="prestige-card">
+        <h4>蛮力狂 Frenzied Berserker</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CW</span></div>
+        <div class="prestige-desc">
+          <p>将野蛮人的狂暴推向极致的进阶职业。获得<strong>死亡狂热（Death Frenzy）</strong>——即使生命值降至负数仍可继续战斗，
+          以及<strong>无差别狂暴（Frenzy）</strong>——在狂暴状态下可能对队友造成伤害的高风险高回报机制。
+          适合追求极限伤害输出的近战玩家。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>决斗家 Duelist</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CW</span></div>
+        <div class="prestige-desc">
+          <p>精密战斗风格的大师。决斗家放弃重甲，以敏捷和技巧取胜。核心能力包括<strong>招架（Parry）</strong>——牺牲一次攻击来格挡敌方攻击，
+          以及<strong>精密招架（Elaborate Parry）</strong>——高级版的格挡反击。适合喜欢技巧型剑客角色的玩家。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>战之先驱 War Hulking Hurler</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CW</span></div>
+        <div class="prestige-desc">
+          <p>巨型武器投掷专家。这一进阶职业专注于使用超大尺寸投掷武器，能将巨石、巨斧等重型武器投掷出毁灭性的伤害。
+          适合想要扮演"投掷巨人"概念的角色。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>暗之刺客 Invisible Blade</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CW</span></div>
+        <div class="prestige-desc">
+          <p>徒手与小型刀具战斗大师。暗之刺客精于使用匕首和徒手格斗，能在近身缠斗中造成致命伤害。
+          获得<strong>隐形刀刃</strong>等能力，适合刺客型角色扮演。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>蛮族卫士 Barbarian Damphir</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CW</span></div>
+        <div class="prestige-desc">
+          <p>半吸血鬼野蛮人进阶。融合了野蛮人的狂暴与吸血鬼的不死特质，获得暗视、快速治疗等能力，
+          是黑暗英雄角色的理想选择。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>熊战士 Bear Warrior</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CW</span></div>
+        <div class="prestige-desc">
+          <p>在狂暴时变身为巨熊的战斗者。熊战士结合了野蛮人的狂暴与德鲁伊的变形能力，
+          变熊后获得巨大的力量加成和天生护甲，是极为狂野的前排职业。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>秩序骑士 Knight of the Chalice</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CW</span></div>
+        <div class="prestige-desc">
+          <p>恶魔猎手骑士团。秩序骑士专门猎杀恶魔和邪恶异界生物，获得<strong>破邪斩</strong>增强版、
+          恶魔知识以及对抗恶魔的多种防御能力。适合守序善良阵营的圣武士型角色。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>复仇骑士 Vengeance Knight</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CW</span></div>
+        <div class="prestige-desc">
+          <p>以复仇为驱动的战士进阶。复仇骑士追踪并消灭那些伤害过他们或他们所爱之人的敌人，
+          在对付特定仇敌时获得战斗加值，适合有复仇背景故事的角色。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Complete Divine -->
+    <h2 id="complete-divine">🙏 三、Complete Divine 完美神力（6个进阶）</h2>
+    <p>《Complete Divine》为神术施法者和信仰型角色提供进阶职业，涵盖从圣拳武僧到战争祭司的多种风格。</p>
+
+    <div class="prestige-grid">
+
+      <div class="prestige-card">
+        <h4>神圣怒者 Divine Crusader</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CD</span></div>
+        <div class="prestige-desc">
+          <p>单领域自发施法的战斗型神术师。神圣怒者选择一个领域，自发施放该领域的法术，
+          同时保持强大的近战能力。是牧师与战士的融合体。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>圣拳 Sacred Fist</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CD</span></div>
+        <div class="prestige-desc">
+          <p>武僧与牧师的混合进阶。圣拳将武僧的徒手战斗与牧师的神术施法融为一体，
+          可以在徒手攻击时注入神圣能量，获得更强的打击力。适合"战斗修道士"概念。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>教会猎手 Church Inquisitor</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CD</span></div>
+        <div class="prestige-desc">
+          <p>审判型牧师进阶。教会猎手是教会的执法者和审判官，擅长侦测谎言、审问异端和猎杀叛教者。
+          获得真相之视、强制忏悔等能力。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>虹光学徒 Rainbow Servant</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CD</span></div>
+        <div class="prestige-desc">
+          <p>跨越学派界限的神术师。虹光学徒通过虹光之力获得其他学派的法术访问权，
+          可以学习和施展原本不在自身法术列表中的法术，极大地扩展了施法者的法术选择。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>战争祭司 War Priest</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CD</span></div>
+        <div class="prestige-desc">
+          <p>战斗与施法并重的神术进阶。战争祭司在战场上同时挥舞武器和施展神术，
+          获得加速施法、战斗施法等能力，是前线施法者的终极形态。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>圣盾卫士 Radiant Servant of Pelor</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CD</span></div>
+        <div class="prestige-desc">
+          <p>太阳神培罗的精英进阶。圣盾卫士获得太阳之力的加持，
+          拥有更强的驱散亡灵能力、光系法术增幅和神圣治疗能力。是光明阵营牧师的顶级进阶。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Complete Arcane -->
+    <h2 id="complete-arcane">✨ 四、Complete Arcane 完美奥术（6个进阶）</h2>
+    <p>《Complete Arcane》为奥术施法者提供进阶职业，从血魔法师到费伦红袍，涵盖多种奥术专精方向。</p>
+
+    <div class="prestige-grid">
+
+      <div class="prestige-card">
+        <h4>血魔法师 Blood Magus</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CA</span></div>
+        <div class="prestige-desc">
+          <p>以鲜血为媒介的奥术专家。血魔法师通过自残和血祭来增强法术威力，
+          获得血之护甲、血之法术增幅等能力。高风险高回报的施法风格。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>启明师 Initiate of the Sevenfold Veil</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CA</span></div>
+        <div class="prestige-desc">
+          <p>七重面纱防御大师。启明师可以召唤不同颜色的魔法面纱，
+          每层面纱提供不同类型的保护（火焰、寒冷、电击、力场等），是最强大的防御型奥术进阶之一。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>心灵术士 Mindbender</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CA</span></div>
+        <div class="prestige-desc">
+          <p>心灵控制专家。心灵术士专注于魅惑和强迫类法术，
+          获得读心术、永久魅惑、心灵支配等能力。适合喜欢操控敌人意志的角色。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>奥术师 Arcane Trickster</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CA</span></div>
+        <div class="prestige-desc">
+          <p>奥术游荡者进阶（替代核心版本）。将奥术施法与游荡者的偷袭、技能相结合，
+          获得魔法手法、无形偷窃等独特能力。适合法师/游荡者兼职角色。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>绿吟诗人 Green Whisperer</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CA</span></div>
+        <div class="prestige-desc">
+          <p>自然系吟游诗人进阶。绿吟诗人将吟游诗人的音乐魔力与自然力量结合，
+          获得与植物和动物交流、自然伪装等能力，适合自然主题的吟游诗人。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>红袍法师 Red Wizard of Thay</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CA</span></div>
+        <div class="prestige-desc">
+          <p>费伦大陆标志性的红袍法师。专精于一个奥术学派，获得学派专精增强、
+          环法仪式（Circle Magic）和法术共享能力。是费伦设定中法师的经典进阶。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Complete Adventurer -->
+    <h2 id="complete-adventurer">🗺️ 五、Complete Adventurer 完美冒险者（5个进阶）</h2>
+    <p>《Complete Adventurer》为冒险探索型角色提供进阶职业，涵盖从极限探险到城市冒险的多种风格。</p>
+
+    <div class="prestige-grid">
+
+      <div class="prestige-card">
+        <h4>极限探险家 Extreme Explorer</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CAd</span></div>
+        <div class="prestige-desc">
+          <p>探险专家进阶。极限探险家精于在危险环境中生存和前进，
+          获得加速移动、攀爬/游泳/跳跃增强、危险感知等探险能力。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>幸运之星 Lucky Devil</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CAd</span></div>
+        <div class="prestige-desc">
+          <p>幸运能力进阶。幸运之星操纵命运之线，获得重投骰子、
+          幸运加值、厄运转移等能力。适合"运气就是实力"的角色概念。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>影剑客 Shadowmind</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CAd</span></div>
+        <div class="prestige-desc">
+          <p>暗影战斗进阶。影剑客操纵阴影之力进行战斗，
+          获得暗影武器、暗影传送、暗影伪装等能力，融合潜行与战斗。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>荒野学者 Wild Plains Stalker</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CAd</span></div>
+        <div class="prestige-desc">
+          <p>荒野生存战斗进阶。荒野学者精于在草原、荒野环境中追踪和猎杀目标，
+          获得荒野生存、追踪增强和特定地形战斗加值。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>城市行者 Urban Savant</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CAd</span></div>
+        <div class="prestige-desc">
+          <p>城市冒险专家进阶。城市行者精于在城市环境中活动，
+          获得城市导航、社交增强、地下网络等城市冒险特有能力。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Complete Mage -->
+    <h2 id="complete-mage">🔮 六、Complete Mage（4个进阶）</h2>
+    <p>《Complete Mage》为法师和其他奥术施法者提供学派专精方向的进阶职业。</p>
+
+    <div class="prestige-grid">
+
+      <div class="prestige-card">
+        <h4>咒法师 Conjurer Specialist</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CM</span></div>
+        <div class="prestige-desc">
+          <p>咒法学派专精进阶。大幅增强咒法术的能力，获得增强召唤、
+          快速召唤、召唤物增强等能力。是召唤流法师的顶级进阶。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>塑能师 Evocator Specialist</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CM</span></div>
+        <div class="prestige-desc">
+          <p>塑能学派专精进阶。增强塑能法术的威力和灵活性，
+          获得元素专精、法术塑形、增强伤害等能力。适合专注伤害输出的法师。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>预言师 Diviner Specialist</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CM</span></div>
+        <div class="prestige-desc">
+          <p>预言学派专精进阶。大幅增强预言法术，获得增强预言、
+          远见之视、命运操控等能力。适合知识和情报型法师。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>咒术骑士 Eldritch Knight</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CM</span></div>
+        <div class="prestige-desc">
+          <p>补充版咒术骑士（核心版已有）。融合奥术施法与近战战斗的进阶，
+          此版本提供了更多战斗-施法混合能力和扩展选项。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Complete Scoundrel -->
+    <h2 id="complete-scoundrel">🎭 七、Complete Scoundrel（4个进阶）</h2>
+    <p>《Complete Scoundrel》为游荡者和诡计型角色提供进阶职业，涵盖变身、暗杀和命运操纵。</p>
+
+    <div class="prestige-grid">
+
+      <div class="prestige-card">
+        <h4>骗术大师 Master of Masks</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CS</span></div>
+        <div class="prestige-desc">
+          <p>面具变身进阶。骗术大师通过不同的魔法面具获得完全不同的能力，
+          每个面具赋予独特的属性加成和特殊能力，是终极的角色扮演/伪装职业。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>鬼影刺客 Ghost-faced Assassin</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CS</span></div>
+        <div class="prestige-desc">
+          <p>幽灵刺客进阶。鬼影刺客获得幽灵般的暗杀能力，
+          可以短暂变为虚体、穿越墙壁、对目标造成恐惧，是顶级暗杀型进阶。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>魔法骗子 Spellwarp Sniper</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CS</span></div>
+        <div class="prestige-desc">
+          <p>魔法狙击进阶。魔法骗子将法术与远程攻击结合，
+          可以在箭矢上附加法术效果，实现远程魔法狙击。适合法师/弓箭手混合角色。</p>
+        </div>
+      </div>
+
+      <div class="prestige-card">
+        <h4>幸运骗子 Fortune's Wheel</h4>
+        <div class="prestige-en"><span class="source-badge source-complete">CS</span></div>
+        <div class="prestige-desc">
+          <p>命运操纵进阶。幸运骗子可以操纵概率和命运，
+          获得强制重投、命运偏转、概率操控等能力，让骰子为自己服务。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================
+         三、Tome of Battle 武术学派
+         ============================================================ -->
+    <h2 id="tob-schools">🗡️ 八、Tome of Battle 武术学派（9学派概述）</h2>
+    <p>《Tome of Battle: The Book of Nine Swords》引入了<strong>武术 initiate 系统</strong>，
+    让近战职业也能像施法者一样使用"招式（Maneuver）"。该系统包含 9 个武术学派，
+    每个学派有独特的战斗哲学和招式风格。武术家（Warblade）、剑圣（Swordsage）和十字军（Crusader）
+    是三个使用此系统的核心职业。</p>
+
+    <div class="school-grid">
+
+      <div class="school-card">
+        <h4>白鸦 White Raven</h4>
+        <div class="school-en">White Raven</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>领导与团队战术</p>
+          <p><strong>招式数量：</strong>约 20 个招式</p>
+          <p>白鸦学派的招式专注于增强队友和协调团队作战。代表招式包括激励队友的号令、战术协调和战场指挥。
+          最适合担任团队领袖的角色。</p>
+          <p><strong>适合职业：</strong>战士、圣武士、骑士、十字军</p>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <h4>铁心 Iron Heart</h4>
+        <div class="school-en">Iron Heart</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>纯粹剑术巅峰</p>
+          <p><strong>招式数量：</strong>约 25 个招式</p>
+          <p>铁心学派追求剑术的极致，招式涵盖精准斩击、多段攻击和完美防御。
+          是最"正统"的武术学派，适合纯粹的剑客角色。</p>
+          <p><strong>适合职业：</strong>武术家、战士</p>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <h4>钢影 Shadow Hand</h4>
+        <div class="school-en">Shadow Hand</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>暗影暗杀与隐秘</p>
+          <p><strong>招式数量：</strong>约 22 个招式</p>
+          <p>钢影学派利用暗影之力进行潜行、瞬移和暗杀。招式包括影行、暗影传送、暗影打击等。
+          适合刺客和暗影战士。</p>
+          <p><strong>适合职业：</strong>剑圣、游荡者、刺客</p>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <h4>虎爪 Tiger Claw</h4>
+        <div class="school-en">Tiger Claw</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>野性战斗与跳跃攻击</p>
+          <p><strong>招式数量：</strong>约 22 个招式</p>
+          <p>虎爪学派模仿野兽的战斗方式，招式包括猛扑、跳跃攻击、撕裂等野性攻击。
+          适合野蛮人和野性战斗者。</p>
+          <p><strong>适合职业：</strong>野蛮人、游侠、武术家</p>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <h4>石龙 Stone Dragon</h4>
+        <div class="school-en">Stone Dragon</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>坚韧防御与大地之力</p>
+          <p><strong>招式数量：</strong>约 18 个招式</p>
+          <p>石龙学派从大地汲取力量，招式专注于防御、伤害减免和地震效果。
+          部分招式要求与地面接触才能使用。适合坦克型角色。</p>
+          <p><strong>适合职业：</strong>十字军、战士、骑士</p>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <h4>沙漠风 Desert Wind</h4>
+        <div class="school-en">Desert Wind</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>火系攻击与极速</p>
+          <p><strong>招式数量：</strong>约 18 个招式</p>
+          <p>沙漠风学派融合火焰伤害与高速移动，招式包括火焰斩击、快速冲锋和火焰风暴。
+          适合追求高爆发伤害的角色。</p>
+          <p><strong>适合职业：</strong>剑圣、武术家</p>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <h4>碎骨 Devoted Spirit</h4>
+        <div class="school-en">Devoted Spirit</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>圣武士式防御与不屈</p>
+          <p><strong>招式数量：</strong>约 20 个招式</p>
+          <p>碎骨学派体现坚定不移的战斗精神，招式包括圣盾防御、不屈意志和灵魂护盾。
+          类似圣武士的战斗风格，适合防御型角色。</p>
+          <p><strong>适合职业：</strong>十字军、圣武士</p>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <h4>暮光之爪 Setting Sun</h4>
+        <div class="school-en">Setting Sun</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>投掷与反制</p>
+          <p><strong>招式数量：</strong>约 18 个招式</p>
+          <p>暮光之爪学派擅长将敌人的力量反过来对付他们，招式包括投掷敌人、反制攻击和借力打力。
+          适合技巧型战斗者。</p>
+          <p><strong>适合职业：</strong>剑圣、武僧</p>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <h4>永恒冰霜 Frozen Frost</h4>
+        <div class="school-en">Frozen Frost (补充)</div>
+        <div class="school-desc">
+          <p><strong>核心理念：</strong>冰霜控制与寒冷伤害</p>
+          <p><strong>招式数量：</strong>约 15 个招式（补充内容）</p>
+          <p>永恒冰霜学派操控极寒之力，招式包括冰霜打击、冻结领域和寒冰护甲。
+          适合寒冷主题的战斗者，为冰系近战提供独特选择。</p>
+          <p><strong>适合职业：</strong>剑圣、武术家</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="Rule-box">
+      <h3>九剑系统核心概念</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>概念</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>招式（Maneuver）</strong></td><td>类似法术的近战能力，每次使用后需要"恢复（Recover）"才能再次使用</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>架势（Stance）</strong></td><td>持续生效的战斗姿态，可在战斗中自由切换，不需要恢复</td></tr>
+          <tr><td><strong>恢复（Recovery）</strong></td><td>通过特定动作（通常是标准动作或全回合攻击）来恢复已使用的招式</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>武术家 Warblade</strong></td><td>智力型近战，类似战士+法术的融合体，拥有最广泛的学派选择</td></tr>
+          <tr><td><strong>剑圣 Swordsage</strong></td><td>感知型近战施法者，可学习最多学派，类似"近战法师"</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>十字军 Crusader</strong></td><td>魅力型防御战士，招式随机赋予，类似"战斗圣武士"</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         四、职业选择对照表
+         ============================================================ -->
+    <h2 id="comparison">📊 九、职业选择对照表</h2>
+    <p>以下大表格汇总了本页所有职业的核心数据，方便快速对比和选择。</p>
+
+    <div class="Rule-box">
+      <h3>基础职业总览</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>职业</th>
+            <th>来源</th>
+            <th>类型</th>
+            <th>HD</th>
+            <th>BAB</th>
+            <th>施法</th>
+            <th>关键特性</th>
+            <th>适合种族</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>战法师</strong></td>
+            <td>PHB2 / CA</td>
+            <td>基础</td>
+            <td>d6</td>
+            <td>1/2</td>
+            <td>奥术</td>
+            <td>重甲施法、自动掌握法术</td>
+            <td>人类、矮人、半兽人</td>
+          </tr>
+          <tr style="background:var(--bg-table-stripe)">
+            <td><strong>暗死灵师</strong></td>
+            <td>PHB2 / HoH</td>
+            <td>基础</td>
+            <td>d6</td>
+            <td>1/2</td>
+            <td>奥术</td>
+            <td>亡灵控制、斥退亡灵、恐惧灵光</td>
+            <td>人类、提夫林、半精灵</td>
+          </tr>
+          <tr>
+            <td><strong>龙萨满</strong></td>
+            <td>PHB2</td>
+            <td>基础</td>
+            <td>d8</td>
+            <td>3/4</td>
+            <td>无</td>
+            <td>吐息武器、增益灵光、龙类能力</td>
+            <td>龙脉生物、半龙、人类</td>
+          </tr>
+          <tr style="background:var(--bg-table-stripe)">
+            <td><strong>骑士</strong></td>
+            <td>PHB2</td>
+            <td>基础</td>
+            <td>d12</td>
+            <td>全</td>
+            <td>无</td>
+            <td>骑士挑战、坐骑、骑士道</td>
+            <td>人类、矮人、半兽人</td>
+          </tr>
+          <tr>
+            <td><strong>侦察兵</strong></td>
+            <td>PHB2 / CAd</td>
+            <td>基础</td>
+            <td>d8</td>
+            <td>3/4</td>
+            <td>无</td>
+            <td>侦察兵之眼、闪避、陷阱感知</td>
+            <td>精灵、半身人、半身精灵</td>
+          </tr>
+          <tr style="background:var(--bg-table-stripe)">
+            <td><strong>灵契师</strong></td>
+            <td>Tome of Magic</td>
+            <td>基础</td>
+            <td>d8</td>
+            <td>3/4</td>
+            <td>超自然</td>
+            <td>契约封印、多契约叠加</td>
+            <td>人类、提夫林、精灵</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Rule-box">
+      <h3>Complete 系列进阶职业总览</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>职业</th>
+            <th>来源书</th>
+            <th>类型</th>
+            <th>施法</th>
+            <th>关键特性</th>
+            <th>适合种族</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>蛮力狂</strong></td><td>Complete Warrior</td><td>进阶</td><td>无</td><td>死亡狂热、无差别狂暴</td><td>半兽人、歌利亚</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>决斗家</strong></td><td>Complete Warrior</td><td>进阶</td><td>无</td><td>招架、精密招架</td><td>人类、精灵</td></tr>
+          <tr><td><strong>战之先驱</strong></td><td>Complete Warrior</td><td>进阶</td><td>无</td><td>巨型武器投掷</td><td>歌利亚、半巨人</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>暗之刺客</strong></td><td>Complete Warrior</td><td>进阶</td><td>无</td><td>徒手/小刀精通</td><td>人类、半身人</td></tr>
+          <tr><td><strong>蛮族卫士</strong></td><td>Complete Warrior</td><td>进阶</td><td>无</td><td>半吸血鬼特质</td><td>人类、半兽人</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>熊战士</strong></td><td>Complete Warrior</td><td>进阶</td><td>无</td><td>变熊战斗</td><td>半兽人、人类</td></tr>
+          <tr><td><strong>秩序骑士</strong></td><td>Complete Warrior</td><td>进阶</td><td>无</td><td>破邪斩增强、恶魔猎杀</td><td>人类、矮人、阿斯玛</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>复仇骑士</strong></td><td>Complete Warrior</td><td>进阶</td><td>无</td><td>仇敌追踪、复仇加值</td><td>人类、精灵</td></tr>
+          <tr><td><strong>神圣怒者</strong></td><td>Complete Divine</td><td>进阶</td><td>神术</td><td>单领域自发施法</td><td>人类、矮人</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>圣拳</strong></td><td>Complete Divine</td><td>进阶</td><td>神术</td><td>徒手+神术融合</td><td>人类、精灵</td></tr>
+          <tr><td><strong>教会猎手</strong></td><td>Complete Divine</td><td>进阶</td><td>神术</td><td>审问、真相之视</td><td>人类、阿斯玛</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>虹光学徒</strong></td><td>Complete Divine</td><td>进阶</td><td>神术</td><td>跨学派法术获取</td><td>精灵、人类</td></tr>
+          <tr><td><strong>战争祭司</strong></td><td>Complete Divine</td><td>进阶</td><td>神术</td><td>战斗施法、加速施法</td><td>矮人、人类</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>圣盾卫士</strong></td><td>Complete Divine</td><td>进阶</td><td>神术</td><td>太阳之力、增强驱散</td><td>人类、阿斯玛</td></tr>
+          <tr><td><strong>血魔法师</strong></td><td>Complete Arcane</td><td>进阶</td><td>奥术</td><td>血魔法、自残增强</td><td>人类、提夫林</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>启明师</strong></td><td>Complete Arcane</td><td>进阶</td><td>奥术</td><td>七重面纱防御</td><td>精灵、人类</td></tr>
+          <tr><td><strong>心灵术士</strong></td><td>Complete Arcane</td><td>进阶</td><td>奥术</td><td>心灵控制、读心术</td><td>人类、灰精灵</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>奥术师</strong></td><td>Complete Arcane</td><td>进阶</td><td>奥术</td><td>魔法手法、隐形偷窃</td><td>半身人、精灵</td></tr>
+          <tr><td><strong>绿吟诗人</strong></td><td>Complete Arcane</td><td>进阶</td><td>奥术</td><td>自然音乐、植物交流</td><td>精灵、半精灵、侏儒</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>红袍法师</strong></td><td>Complete Arcane</td><td>进阶</td><td>奥术</td><td>学派专精、环法仪式</td><td>人类（费伦）</td></tr>
+          <tr><td><strong>极限探险家</strong></td><td>Complete Adventurer</td><td>进阶</td><td>无</td><td>极限移动、危险感知</td><td>人类、半身人</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>幸运之星</strong></td><td>Complete Adventurer</td><td>进阶</td><td>无</td><td>重投骰子、命运偏转</td><td>半身人、人类</td></tr>
+          <tr><td><strong>影剑客</strong></td><td>Complete Adventurer</td><td>进阶</td><td>无</td><td>暗影武器、暗影传送</td><td>提夫林、精灵</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>荒野学者</strong></td><td>Complete Adventurer</td><td>进阶</td><td>无</td><td>荒野追踪、地形战斗</td><td>人类、半精灵</td></tr>
+          <tr><td><strong>城市行者</strong></td><td>Complete Adventurer</td><td>进阶</td><td>无</td><td>城市导航、地下网络</td><td>人类、半身人</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>咒法师</strong></td><td>Complete Mage</td><td>进阶</td><td>奥术</td><td>增强召唤、快速召唤</td><td>人类、精灵</td></tr>
+          <tr><td><strong>塑能师</strong></td><td>Complete Mage</td><td>进阶</td><td>奥术</td><td>元素专精、增强伤害</td><td>人类、侏儒</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>预言师</strong></td><td>Complete Mage</td><td>进阶</td><td>奥术</td><td>远见之视、命运操控</td><td>精灵、人类</td></tr>
+          <tr><td><strong>咒术骑士</strong></td><td>Complete Mage</td><td>进阶</td><td>奥术</td><td>战斗-施法混合（补充版）</td><td>人类、精灵</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>骗术大师</strong></td><td>Complete Scoundrel</td><td>进阶</td><td>无</td><td>面具变身、多角色切换</td><td>人类、变形者</td></tr>
+          <tr><td><strong>鬼影刺客</strong></td><td>Complete Scoundrel</td><td>进阶</td><td>无</td><td>虚体暗杀、穿墙</td><td>提夫林、人类</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>魔法骗子</strong></td><td>Complete Scoundrel</td><td>进阶</td><td>奥术</td><td>魔法狙击、箭矢附法</td><td>精灵、人类</td></tr>
+          <tr><td><strong>幸运骗子</strong></td><td>Complete Scoundrel</td><td>进阶</td><td>无</td><td>概率操控、强制重投</td><td>半身人、人类</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Rule-box">
+      <h3>九剑学派总览</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>学派</th>
+            <th>核心理念</th>
+            <th>战斗风格</th>
+            <th>最适合职业</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>白鸦</strong></td><td>领导/团队战术</td><td>增益队友、战场指挥</td><td>十字军、战士</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>铁心</strong></td><td>纯剑术巅峰</td><td>精准斩击、多段攻击</td><td>武术家、战士</td></tr>
+          <tr><td><strong>钢影</strong></td><td>暗影暗杀</td><td>潜行、瞬移、暗杀</td><td>剑圣、游荡者</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>虎爪</strong></td><td>野性战斗</td><td>猛扑、跳跃攻击、撕裂</td><td>野蛮人、游侠</td></tr>
+          <tr><td><strong>石龙</strong></td><td>坚韧防御</td><td>防御、伤害减免、地震</td><td>十字军、战士</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>沙漠风</strong></td><td>火系攻击/极速</td><td>火焰斩击、高速冲锋</td><td>剑圣、武术家</td></tr>
+          <tr><td><strong>碎骨</strong></td><td>圣武士式防御</td><td>圣盾、不屈意志、灵魂护盾</td><td>十字军、圣武士</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>暮光之爪</strong></td><td>投掷/反制</td><td>投掷敌人、反制攻击、借力打力</td><td>剑圣、武僧</td></tr>
+          <tr><td><strong>永恒冰霜</strong></td><td>冰霜控制</td><td>冰霜打击、冻结领域、寒冰护甲</td><td>剑圣、武术家</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:13px;color:#999;margin-top:40px;text-align:center;">
+      数据来源：D&D 3.5e PHB2 · Complete Warrior/Divine/Arcane/Adventurer/Mage/Scoundrel · Tome of Magic · Tome of Battle<br>
+      所有进阶职业需 DM 许可并满足前置条件方可使用 · 基础职业从 1 级开始无需前置
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 扩展职业大全 | 数据来源：PHB2 · Complete 系列 · Tome of Magic · Tome of Battle</p>
+</div>
+</body>
+</html>
