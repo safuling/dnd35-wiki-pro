@@ -464,6 +464,61 @@ pre code { background: none; padding: 0; color: var(--text-main); }
 .footer a:hover, .site-footer a:hover { color: var(--accent-gold); }
 
 /* --- 响应式 --- */
+
+/* --- 导航栏下拉菜单 --- */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.nav-dropdown > .drop-trigger {
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #ddd;
+  font-size: 14px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.nav-dropdown > .drop-trigger:hover {
+  background: rgba(255,255,255,0.12);
+  text-decoration: none;
+}
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #2c2c2c;
+  min-width: 180px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  z-index: 1000;
+  padding: 6px 0;
+}
+.nav-dropdown:hover .nav-dropdown-content {
+  display: block;
+}
+.nav-dropdown-content a {
+  display: block;
+  padding: 8px 16px;
+  color: #ddd;
+  font-size: 13px;
+  white-space: nowrap;
+  text-decoration: none;
+  border-radius: 0;
+}
+.nav-dropdown-content a:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--accent-gold);
+}
+.nav-dropdown-content .drop-divider {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 4px 0;
+}
+
 @media (max-width: 900px) {
   .layout { flex-direction: column; }
   .sidebar { width: 100%; min-width: auto; position: static; height: auto; max-height: 280px; overflow-y: auto; }

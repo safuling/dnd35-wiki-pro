@@ -42,28 +42,53 @@
     <a href="../monsters/intro.html">怪物</a>
     <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
     <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
   </div>
   <div class="navbar-search">
-    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../spells/search.html?q='+encodeURIComponent(this.value)">
-    <button onclick="location.href='../spells/search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
   </div>
   <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
 </nav>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <a href="../index.html" class="nav-logo">D&D 3.5e Wiki</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">首页</a></li>
-        <li><a href="intro.html" class="active">专长</a></li>
-        <li><a href="../spells/intro.html">法术</a></li>
-        <li><a href="../classes/intro.html">职业</a></li>
-        <li><a href="../races/intro.html">种族</a></li>
-        <li><a href="../conflicts.html">规则冲突</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
 
-  <div class="container">
+<main class="main-content">
+
     <div class="feat-header">
       <h1>⚔️ 双武器战斗</h1>
       <p style="font-size: 1.2em; margin: 10px 0;">Two-Weapon Fighting</p>
@@ -245,6 +270,8 @@
 
     <div class="clear"></div>
   </div>
+</main>
+</div>
 
   <footer class="main-footer">
     <div class="footer-content">
