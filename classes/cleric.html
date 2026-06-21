@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧师 Cleric - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .spell-prog-table { font-size: 13px; }
+  .spell-prog-table th { font-size: 12px; text-align: center; }
+  .spell-prog-table td { text-align: center; }
+  .domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .domain-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px;
+    font-size: 13px;
+  }
+  .domain-card h4 { margin: 0 0 6px 0; font-size: 14px; }
+  .domain-card .domain-desc { color: #666; font-size: 12px; }
+  .cleric-tip {
+    background: #e8f4fd;
+    border-left: 4px solid var(--accent-blue);
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+  .cleric-warn {
+    background: #fde8e8;
+    border-left: 4px solid var(--accent-red);
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html" class="active">牧师 Cleric</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">牧师专题</div>
+      <a href="../domains/intro.html">领域详解</a>
+      <a href="cleric-spells.html">神术列表</a>
+      <a href="cleric-multiclass.html">多职业建议</a>
+      <a href="cleric-gear.html">装备建议</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- 信息盒子 -->
+    <div class="infobox">
+      <div class="infobox-title">⛪ 牧师 Cleric</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <div class="infobox-img" style="padding:20px;font-size:64px;opacity:0.3;">⛪📿⛪</div>
+      <table class="infobox-table">
+        <tr><td>HD</td><td>d8</td></tr>
+        <tr><td>阵营</td><td>任意守序/中立/混乱（依神祇）</td></tr>
+        <tr><td>施法属性</td><td>感知（WIS）</td></tr>
+        <tr><td>擅长护甲</td><td>中型护甲、重型护甲、盾牌</td></tr>
+        <tr><td>擅长武器</td><td>简单武器、军用锤类</td></tr>
+        <tr><td>BAB</td><td>中（每级+3/4）</td></tr>
+        <tr><td>强韧</td><td>高</td></tr>
+        <tr><td>反射</td><td>低</td></tr>
+        <tr><td>意志</td><td>高</td></tr>
+        <tr><td>技能点</td><td>2 + INT调整值</td></tr>
+        <tr><td>偏爱种族</td><td>矮人、人类</td></tr>
+        <tr><td>来源</td><td>PHB p.30-35 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>牧师（Cleric）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心职业</span>
+      <span class="badge badge-class">PHB p.30</span>
+      <span class="badge badge-spell">神术施法者</span>
+      <span class="badge badge-note">最全面的中等职业</span>
+    </p>
+    <p>牧师是D&D 3.5e中<strong>最全面的中等职业</strong>。他们既能战斗（中型护甲+盾牌+中等BAB），
+    又能施展<strong>神术（Divine Magic）</strong>，还能<strong>治疗队友</strong>。
+    一名高等级牧师可以同时担任<strong>坦克、治疗者、辅助施法者</strong>三个角色。</p>
+    <p>在D&D 3.5e中，牧师的强度高度依赖<strong>领域选择（Domains）</strong>和<strong>感知属性（WIS）</strong>。
+    正确的领域选择可以让牧师适应任何队伍需求。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#role">角色定位</a></li>
+        <li><a href="#mechanics">核心机制</a></li>
+        <li><a href="#spell-progression">法术成长表</a></li>
+        <li><a href="#domains">领域系统详解</a></li>
+        <li><a href="#class-features">职业能力详解</a></li>
+        <li><a href="#feats">推荐专长</a></li>
+        <li><a href="#multiclass">多职业建议</a></li>
+        <li><a href="#equipment">推荐装备</a></li>
+        <li><a href="#spells-known">知晓法术建议</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+      </ol>
+    </div>
+
+    <h2 id="role">🎯 角色定位</h2>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>🛡️ 前排坦克</h3>
+        <p>中型/重型护甲 + 盾牌 + 中等BAB = 极佳的前排生存能力。适合吸引火力。</p>
+      </div>
+      <div class="section-card">
+        <h3>💚 治疗者</h3>
+        <p>神术名单中包含大量治疗法术（治疗重伤、群体治疗等）。适合保护队友生存。</p>
+      </div>
+      <div class="section-card">
+        <h3>📿 辅助施法者</h3>
+        <p>神术名单中包含增益法术（加速术、熊之力量等）。适合提升队友能力。</p>
+      </div>
+      <div class="section-card">
+        <h3>⚔️ 战斗施法者</h3>
+        <p>中型护甲+盾牌+中等BAB = 可以近战输出。适合战斗神术构建。</p>
+      </div>
+    </div>
+
+    <h2 id="mechanics">⚙️ 核心机制</h2>
+    <div class="Rule-box">
+      <h3>神术系统（Prepared Spells）</h3>
+      <p>牧师使用<strong>神术系统</strong>，与法师（奥术）不同：</p>
+      <ul>
+        <li><strong>每日准备法术</strong>：晚上祈祷，早上选择当日法术。</li>
+        <li><strong>法术来源</strong>：依赖<strong>感知（WIS）</strong>属性。</li>
+        <li><strong>法术DC</strong> = 10 + 法术环级 + 感知调整值。</li>
+        <li><strong>每日法术量</strong>：取决于<strong>牧师等级</strong>和<strong>感知调整值</strong>。</li>
+        <li><strong>领域法术</strong>：选择2个领域，获得额外法术（每日各1次）。</li>
+      </ul>
+      <p><strong>关键公式：</strong></p>
+      <ul>
+        <li>每日法术位数量 = 基础法术位 + 感知调整值（每2点+1）</li>
+        <li>法术DC = 10 + 法术环级 + 感知调整值</li>
+        <li>牧师关键属性：<strong>感知（WIS）＞体质（CON）＞力量（STR）＞敏捷（DEX）</strong></li>
+      </ul>
+    </div>
+
+    <div class="Rule-box">
+      <h3>领域系统（Domains）</h3>
+      <p>牧师选择<strong>2个领域</strong>，获得：</p>
+      <ol>
+        <li><strong>领域法术</strong>：每个领域提供1个额外法术（每日各1次）。</li>
+        <li><strong>领域能力</strong>：每个领域提供1个特殊能力（如战争领域的"战斗施法"）。</li>
+        <li><strong>领域专长</strong>：某些领域允许选择特定专长（如战争领域的"武器专精"）。</li>
+      </ol>
+      <p><strong>领域选择策略：</strong></p>
+      <ul>
+        <li><strong>战争领域（War）</strong>：适合前排战斗牧师。</li>
+        <li><strong>治疗领域（Healing）</strong>：适合专注治疗。</li>
+        <li><strong>保护领域（Protection）</strong>：适合坦克构建。</li>
+        <li><strong>知识领域（Knowledge）</strong>：适合技能型牧师。</li>
+        <li><strong>力量领域（Strength）</strong>：适合近战输出。</li>
+      </ul>
+    </div>
+
+    <h2 id="spell-progression">📊 法术成长表</h2>
+    <div class="Rule-box">
+      <h3>牧师法术成长（按等级）</h3>
+      <table class="wiki-table spell-prog-table">
+        <thead>
+          <tr>
+            <th>等级</th><th>0环</th><th>1环</th><th>2环</th><th>3环</th><th>4环</th><th>5环</th><th>6环</th><th>7环</th><th>8环</th><th>9环</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1级</td><td>3</td><td>1+1*</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>3级</td><td>4</td><td>2+1*</td><td>1+1*</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>5级</td><td>4</td><td>3+1*</td><td>2+1*</td><td>1+1*</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>7级</td><td>4</td><td>3+1*</td><td>3+1*</td><td>2+1*</td><td>1+1*</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>9级</td><td>5</td><td>4+1*</td><td>3+1*</td><td>3+1*</td><td>2+1*</td><td>1+1*</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>11级</td><td>5</td><td>4+1*</td><td>4+1*</td><td>3+1*</td><td>3+1*</td><td>2+1*</td><td>1+1*</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>13级</td><td>5</td><td>5+1*</td><td>4+1*</td><td>4+1*</td><td>3+1*</td><td>3+1*</td><td>2+1*</td><td>1+1*</td><td>—</td><td>—</td></tr>
+          <tr><td>15级</td><td>5</td><td>5+1*</td><td>5+1*</td><td>4+1*</td><td>4+1*</td><td>3+1*</td><td>3+1*</td><td>2+1*</td><td>1+1*</td><td>—</td></tr>
+          <tr><td>17级</td><td>5</td><td>5+1*</td><td>5+1*</td><td>5+1*</td><td>4+1*</td><td>4+1*</td><td>3+1*</td><td>3+1*</td><td>2+1*</td><td>1+1*</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:#666;">*领域法术（每日各1次）。实际法术量还需+感知调整值（每2点+1）。</p>
+    </div>
+
+    <h2 id="domains">📖 领域系统详解</h2>
+    <p>选择<strong>2个领域</strong>是牧师构建的核心。每个领域提供额外法术和能力。</p>
+    
+    <div class="domain-grid">
+      <div class="domain-card">
+        <h4>⚔️ 战争领域（War）</h4>
+        <p class="domain-desc"><strong>能力：</strong>战斗施法（Battle Magic）—— 身着护甲时施展神术无失败几率。</p>
+        <p class="domain-desc"><strong>额外法术：</strong>魔法武器、灵能武器、加速术等。</p>
+        <p class="domain-desc"><strong>适合：</strong>前排战斗牧师。</p>
+      </div>
+      <div class="domain-card">
+        <h4>💚 治疗领域（Healing）</h4>
+        <p class="domain-desc"><strong>能力：</strong>治疗增益——治疗法术效果+1 HP/等级。</p>
+        <p class="domain-desc"><strong>额外法术：</strong>治疗轻伤、治疗重伤、群体治疗等。</p>
+        <p class="domain-desc"><strong>适合：</strong>专注治疗者。</p>
+      </div>
+      <div class="domain-card">
+        <h4>🛡️ 保护领域（Protection）</h4>
+        <p class="domain-desc"><strong>能力：</strong>保护灵光——每日数次给予接触目标+2 AC。</p>
+        <p class="domain-desc"><strong>额外法术：</strong>护盾术、法术抗力、反制法术等。</p>
+        <p class="domain-desc"><strong>适合：</strong>坦克构建。</p>
+      </div>
+      <div class="domain-card">
+        <h4>📚 知识领域（Knowledge）</h4>
+        <p class="domain-desc"><strong>能力：</strong>知识加值——所有知识技能+1。</p>
+        <p class="domain-desc"><strong>额外法术：</strong>鉴定术、传说知识、通晓等。</p>
+        <p class="domain-desc"><strong>适合：</strong>技能型牧师。</p>
+      </div>
+      <div class="domain-card">
+        <h4>💪 力量领域（Strength）</h4>
+        <p class="domain-desc"><strong>能力：</strong>力量增益——每日数次接触目标+2力量。</p>
+        <p class="domain-desc"><strong>额外法术：</strong>熊之力量、猫之优雅、鹰之威严等。</p>
+        <p class="domain-desc"><strong>适合：</strong>近战输出。</p>
+      </div>
+      <div class="domain-card">
+        <h4>🔥 火焰领域（Fire）</h4>
+        <p class="domain-desc"><strong>能力：</strong>火焰抵抗——寒冷/火焰/电击伤害减半。</p>
+        <p class="domain-desc"><strong>额外法术：</strong>燃烧之手、火焰箭、炽火球等。</p>
+        <p class="domain-desc"><strong>适合：</strong>输出型牧师。</p>
+      </div>
+    </div>
+
+    <h2 id="class-features">📖 职业能力详解</h2>
+    <div class="Rule-box">
+      <h3>◇ 领域（Domains）</h3>
+      <p>选择2个领域，获得领域法术和领域能力。详见上方"领域系统详解"。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>◇ 施展神术（Spells）</h3>
+      <p>牧师每日准备神术。法术来自<strong>神术名单</strong>，依赖<strong>感知（WIS）</strong>。</p>
+      <ul>
+        <li><strong>法术DC</strong> = 10 + 法术环级 + 感知调整值。</li>
+        <li><strong>每日法术量</strong> = 基础法术位 + 感知调整值（每2点+1）。</li>
+        <li><strong>施展时间</strong>：标准动作（1轮）。</li>
+        <li><strong>施法失败</strong>：身着<strong>重型护甲</strong>时施展神术<strong>不会失败</strong>（与法师不同）。</li>
+      </ul>
+    </div>
+
+    <div class="Rule-box">
+      <h3>◇ 擅长护甲和盾牌</h3>
+      <p>牧师自动擅长<strong>中型护甲、重型护甲、盾牌</strong>。</p>
+      <p>这使牧师可以高AC前排作战。许多牧师构建专注于<strong>战斗神术</strong>。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>◇ 擅长武器</h3>
+      <p>牧师擅长<strong>简单武器</strong>和<strong>军用锤类</strong>（战锤、轻型战锤等）。</p>
+      <p>如果选择<strong>战争领域</strong>，还可以获得<strong>所有军用武器</strong>的熟练。</p>
+    </div>
+
+    <div class="cleric-tip">
+      <h3>💡 牧师构建建议</h3>
+      <p><strong>前排战斗牧师：</strong></p>
+      <ul>
+        <li>选择<strong>战争领域</strong> + <strong>力量领域</strong>。</li>
+        <li>优先提升<strong>感知（WIS）</strong>和<strong>力量（STR）</strong>。</li>
+        <li>穿着<strong>重型护甲+盾牌</strong>（AC 8+）。</li>
+        <li>专长选择<strong>猛力攻击</strong>、<strong>顺劈斩</strong>等近战专长。</li>
+      </ul>
+      <p><strong>后排治疗牧师：</strong></p>
+      <ul>
+        <li>选择<strong>治疗领域</strong> + <strong>保护领域</strong>。</li>
+        <li>优先提升<strong>感知（WIS）</strong>。</li>
+        <li>穿着<strong>中型护甲+盾牌</strong>（保持机动性）。</li>
+        <li>专注治疗和保护法术。</li>
+      </ul>
+    </div>
+
+    <h2 id="feats">🎓 推荐专长</h2>
+    <div class="Rule-box">
+      <h3>牧师核心专长</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>专长</th><th>先决条件</th><th>益处</th><th>评价</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>猛力攻击（Power Attack）</td><td>力量13+</td><td>-攻击+伤害</td><td>近战必备</td></tr>
+          <tr><td>顺劈斩（Cleave）</td><td>猛力攻击</td><td>击杀后额外攻击</td><td>AOE近战</td></tr>
+          <tr><td>战斗反射（Combat Reflexes）</td><td>—</td><td>更多借机攻击</td><td>前排控制</td></tr>
+          <tr><td>法术穿透（Spell Penetration）</td><td>—</td><td>法术抵抗DC+2</td><td>施法者必备</td></tr>
+          <tr><td>法术强效（Empower Spell）</td><td>—</td><td>法术效果+50%</td><td>治疗/增益法术</td></tr>
+          <tr><td>钢铁意志（Iron Will）</td><td>—</td><td>意志豁免+2</td><td>豁免补全</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="multiclass">🔄 多职业建议</h2>
+    <p>牧师是D&D 3.5e中<strong>最适合多职业</strong>的核心职业之一，因为中等BAB和神术的灵活性。</p>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>牧师 / 战士</h3>
+        <p><strong>经典组合。</strong>战士提供高BAB和专长，牧师提供治疗和辅助神术。</p>
+        <p style="font-size:13px;color:#666;">推荐：战士1/牧师1 → 后续牧师为主。</p>
+      </div>
+      <div class="section-card">
+        <h3>牧师 / 圣武士</h3>
+        <p><strong>神圣坦克。</strong>圣武士的"圣疗"和"挑战邪恶"配合牧师的治疗和坦克能力。</p>
+        <p style="font-size:13px;color:#666;">需守序善良阵营。</p>
+      </div>
+      <div class="section-card">
+        <h3>牧师 / 游侠</h3>
+        <p><strong>野外专家。</strong>游侠的"双专精"和"宿敌"配合牧师的神术。</p>
+        <p style="font-size:13px;color:#666;">适合自然景观战役。</p>
+      </div>
+      <div class="section-card">
+        <h3>牧师 / 武僧</h3>
+        <p>⚠️ <strong>需慎重。</strong>武僧不能穿护甲，与牧师的护甲优势冲突。</p>
+        <p style="font-size:13px;color:#666;">如果坚持，选择"保护领域"增强防御。</p>
+      </div>
+    </div>
+
+    <h2 id="equipment">🎒 推荐装备</h2>
+    <div class="Rule-box">
+      <h3>前排战斗牧师</h3>
+      <ul>
+        <li><strong>护甲</strong>：全身甲（AC +8）+ 重型盾牌（AC +2）= AC 20+</li>
+        <li><strong>武器</strong>：战锤（1d8）或长剑（1d8），选择"精通异种武器"专长可使用巨剑</li>
+        <li><strong>魔法物品</strong>：力量手套（+STR）、加速护甲（+DEX）、生命之甲（+HP）</li>
+      </ul>
+    </div>
+    <div class="Rule-box">
+      <h3>后排治疗牧师</h3>
+      <ul>
+        <li><strong>护甲</strong>：链甲（AC +4）+ 盾牌（AC +2）= AC 16+</li>
+        <li><strong>武器</strong>：木棍（法术穿透）或轻型战锤（近战自卫）</li>
+        <li><strong>魔法物品</strong>：感知头环（+WIS）、法术穿透护身符、治疗宝石</li>
+      </ul>
+    </div>
+
+    <h2 id="spells-known">📚 知晓法术建议</h2>
+    <div class="Rule-box">
+      <h3>必选神术（按环级）</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>环级</th><th>法术名称</th><th>用途</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0环</td><td>治疗微伤、萌芽术、造水术</td><td>治疗/侦察/生存</td></tr>
+          <tr><td>1环</td><td>治疗轻伤、守护之盾、魔法武器</td><td>治疗/保护/武器强化</td></tr>
+          <tr><td>2环</td><td>治疗中度伤、熊之力量、猫之优雅</td><td>治疗/增益</td></tr>
+          <tr><td>3环</td><td>治疗重伤、加速术、精神武器</td><td>治疗/增益/输出</td></tr>
+          <tr><td>4环</td><td>治疗临界伤、群体加速、神力武器</td><td>治疗/AOE增益/武器</td></tr>
+          <tr><td>5环</td><td>群体治疗、死亡法术、真知术</td><td>治疗/复活/侦察</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"身着护甲施展神术"的规则差异</h3>
+      <p><strong>冲突描述：</strong>牧师身着<strong>重型护甲</strong>时，施展神术是否会失败？</p>
+      <p><strong>SRD和PHB的明确说法：</strong>"A cleric ... can cast divine spells while wearing armor ... 
+      with a chance of arcane spell failure."（SRD · Classes · Cleric）</p>
+      <p>即：<strong>神术施法者（牧师、德鲁伊）身着护甲施法无失败几率</strong>。只有奥术施法者（法师、术士）有此限制。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.32</span></p>
+      <p><strong>DM解释差异：</strong>某些DM会house rule "牧师穿重型护甲施法有5%失败几率"。建议提前确认。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>关于"领域法术"是否计入"每日法术量"</h3>
+      <p><strong>冲突描述：</strong>领域法术是<strong>额外法术</strong>，还是<strong>占用普通法术位</strong>？</p>
+      <p><strong>SRD的明确说法：</strong>"Each domain gives the cleric access to a domain spell ... 
+      which is cast as an additional spell ... It is a spell slot not billed against the cleric's normal 
+      allotment."（SRD · Classes · Cleric）</p>
+      <p>即：<strong>领域法术是额外法术位，不占用普通法术位</strong>。每日各可施展1次。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.33</span></p>
+    </div>
+    
+    <div class="conflict-preview" style="border-left-color:#9b59b6;background:#f4ecf7;">
+      <h3>冲突3：驱散不死生物的判定</h3>
+      <p><strong>冲突描述：</strong>牧师的<strong>驱散不死生物（Turn Undead）</strong>能力需要每日进行一次<strong>驱散检定</strong>（2d6+魅力调整值+牧师等级）。但具体判定流程是：</p>
+      <table class="wiki-table" style="margin:12px 0;font-size:13px;">
+        <tr><th>目标HD</th><th>驱散结果</th></tr>
+        <tr><td>HD ≤ 驱散检定-4</td><td>摧毁（Destroy）</td></tr>
+        <tr><td>HD ≤ 驱散检定-1</td><td>命令（Command）</td></tr>
+        <tr><td>HD > 驱散检定</td><td>失败</td></tr>
+      </table>
+      <p><strong>冲突点：</strong>某些新DM会误以为<strong>驱散检定</strong>是"一次性"的（只能驱散一次）。实际上，牧师可以<strong>每日进行多次驱散尝试</strong>（每次消耗一个标准动作）。</p>
+      <p><span class="source-tag">PHB p.35 · 驱散不死生物</span> <span class="source-tag">DMG p.149 · DM指南</span></p>
+      <p><strong>建议：</strong>仔细阅读PHB p.35的驱散规则。牧师在战斗中可以进行<strong>多次驱散尝试</strong>，但每次只能影响<strong>HD总和 ≤ 驱散检定</strong>的不死生物。</p>
+    </div>
+    
+    <div class="conflict-preview" style="border-left-color:#2ecc71;background:#eafaf1;">
+      <h3>冲突4：领域选择与职业协同</h3>
+      <p><strong>冲突描述：</strong>牧师在1级时选择<strong>两个领域</strong>。但某些领域的能力是否与<strong>其他职业特性</strong>协同，存在争议：</p>
+      <p><strong>常见争议：</strong></p>
+      <ul>
+        <li><strong>战争领域</strong>的<strong>守御之道</strong>专长（Combat Casting）是否与战士的<strong>战斗反射</strong>专长协同？—— <strong>可以</strong>，两者不冲突。</li>
+        <li><strong>旅行领域</strong>的<strong>自由行动</strong>法术（Freedom of Movement）是否与德鲁伊的<strong>变形</strong>能力协同？—— <strong>可以</strong>，但变形后无法说话施展法术。</li>
+        <li><strong>诡术领域</strong>的<strong>抄写卷轴</strong>能力是否允许抄写<strong>其他领域</strong>的法术？—— <strong>不可以</strong>，只能抄写诡术领域的法术。</li>
+      </ul>
+      <p><span class="source-tag">PHB p.33 · 领域选择</span> <span class="source-tag">Complete Divine · 领域扩展</span></p>
+      <p><strong>建议：</strong>在选择领域前，与DM确认该领域的能力是否与你的构建协同。某些领域（如战争、保护）更适合前排牧师，某些领域（如知识、诡术）更适合后排牧师。</p>
+    </div>
+    
+    <div class="conflict-preview" style="border-left-color:#e74c3c;background:#fdedec;">
+      <h3>冲突5：牧师 vs. 德鲁伊 vs. 圣武士 —— 哪个神术施法者更强？</h3>
+      <p><strong>冲突描述：</strong>这是D&D社区的持久辩论。牧师、德鲁伊、圣武士都是<strong>神术施法者</strong>，但各有优势：</p>
+      <p><strong>牧师优势：</strong></p>
+      <ul>
+        <li><strong>最全面的法术列表</strong>：包含治疗、防护、攻击、辅助法术。</li>
+        <li><strong>领域能力</strong>：两个领域提供额外能力和法术。</li>
+        <li><strong>驱散/命令不死生物</strong>：独特的控场能力。</li>
+        <li><strong>适合任何队伍</strong>：治疗、坦克、输出、辅助都能做。</li>
+      </ul>
+      <p><strong>德鲁伊优势：</strong></p>
+      <ul>
+        <li><strong>变形能力</strong>：5级起能变形成动物，提供极高的灵活性。</li>
+        <li><strong>自然法术</strong>：独特的自然系法术（如召唤自然盟友、控制天气）。</li>
+        <li><strong>高技能点数</strong>：4+INT调整值，能投资更多技能。</li>
+      </ul>
+      <p><strong>圣武士优势：</strong></p>
+      <ul>
+        <li><strong>战斗能力强</strong>：d10生命骰，高BAB，能穿重型护甲。</li>
+        <li><strong>免疫疾病</strong>：3级起对疾病免疫。</li>
+        <li><strong>审判邪恶</strong>：对邪恶异界生物造成额外伤害。</li>
+      </ul>
+      <p><strong>结论：</strong><strong>牧师是最全面的神术施法者</strong>，适合任何队伍。德鲁伊更适合自然主题的战役，圣武士更适合战斗主题的战役。</p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.30-35 —— 牧师职业特性</li>
+      <li>📘 <strong>SRD 3.5</strong> · Classes → Cleric —— 开放式游戏规则</li>
+      <li>📗 <strong>DMG（城主手册）3.5版</strong> p.176 —— 领域详解</li>
+      <li>📗 <strong>Deities and Demigods</strong> —— 神祇与领域扩展</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="fighter.html">← 上一页：战士</a> | <a href="druid.html">下一页：德鲁伊 →</a>
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 牧师职业详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

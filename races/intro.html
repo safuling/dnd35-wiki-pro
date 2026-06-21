@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>种族总览 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .race-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .race-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .race-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+  .race-card h3 { margin-top:0; }
+  .race-card .race-meta { font-size:13px; color:#777; margin:8px 0; }
+  .race-card .race-traits { font-size:13px; margin-top:10px; }
+  .race-card .race-traits li { margin-bottom:4px; }
+  .size-compare {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    margin: 20px 0;
+    border: 1px solid var(--border-light);
+  }
+  .size-item { text-align:center; }
+  .size-item .size-bar {
+    background: var(--accent-gold);
+    border-radius: 4px 4px 0 0;
+    margin: 0 auto;
+    width: 40px;
+  }
+  .size-item .size-label { font-size:12px; color:#666; margin-top:6px; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html" class="active">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">种族</div>
+      <a href="intro.html" class="active">总览</a>
+      <a href="human.html">人类 Human</a>
+      <a href="elf.html">精灵 Elf</a>
+      <a href="dwarf.html">矮人 Dwarf</a>
+      <a href="halfling.html">半身人 Halfling</a>
+      <a href="gnome.html">侏儒 Gnome</a>
+      <a href="half-elf.html">半精灵 Half-elf</a>
+      <a href="half-orc.html">半兽人 Half-orc</a>
+      <a href="expanded-races.html">扩展种族</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心规则</div>
+      <a href="../index.html">系统概述</a>
+      <a href="../conflicts.html">规则冲突</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>🧝 种族总览</h1>
+    <p class="toc-desc">本节收录《玩家手册》（PHB）中七种核心种族的完整资料，
+    包括属性调整、种族特性、体型、移动速度、以及擅长武器等详细数据。
+    所有数据均来自<strong>SRD 3.5</strong>及<strong>PHB 3.5版</strong>，冲突之处已标注。</p>
+
+    <!-- 目录 -->
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#overview">种族选择概述</a></li>
+        <li><a href="#core-races">七大核心种族</a></li>
+        <li><a href="#size">体型对照</a></li>
+        <li><a href="#aging">年龄对照表</a></li>
+        <li><a href="#starting-age">起始年龄</a></li>
+        <li><a href="#height-weight">身高体重</a></li>
+        <li><a href="#languages">语言</a></li>
+        <li><a href="#favored-class">偏爱职业</a></li>
+      </ol>
+    </div>
+
+    <h2 id="overview">📖 种族选择概述</h2>
+    <p>在D&D 3.5e中，种族决定了角色的<strong>基础属性调整值</strong>、<strong>种族特性</strong>以及<strong>偏爱职业</strong>。
+    选择种族时，应考虑与所选职业的协同性：</p>
+    <div class="Rule-box">
+      <h3>种族与职业协同建议</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>如果你要玩...</th><th>推荐种族</th><th>原因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>战士/野蛮人</td><td>人类、矮人、半兽人</td><td>体质/力量加值，偏向近战</td></tr>
+          <tr><td>游荡者</td><td>精灵、半身人、人类</td><td>敏捷加值，天赋特长灵活</td></tr>
+          <tr><td>法师</td><td>精灵、人类</td><td>智力/天赋特长，法术抗力（精灵）</td></tr>
+          <tr><td>牧师</td><td>人类、矮人</td><td>偏爱职业无惩罚，体质高</td></tr>
+          <tr><td>游侠/德鲁伊</td><td>精灵、半身人</td><td>与自然系协同，敏捷加值</td></tr>
+          <tr><td>武僧</td><td>人类、半身人</td><td>天赋特长多，感知加值（半身人）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="core-races">🧝 七大核心种族</h2>
+    <div class="race-grid">
+
+      <div class="race-card">
+        <h3><a href="human.html">人类 Human</a></h3>
+        <div class="race-meta">中型 · 所有属性+0 · 偏爱职业：任意</div>
+        <p>最灵活、最适应力强的种族。独有<strong>额外专长</strong>和<strong>额外技能点</strong>，
+        且偏爱职业为"任意"，是最适合兼职的种族。</p>
+        <div class="race-traits">
+          <strong>关键特性：</strong>
+          <ul>
+            <li>额外专长（1级）</li>
+            <li>额外技能点（每级+4）</li>
+            <li>偏爱职业：任选（无兼职惩罚）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="race-card">
+        <h3><a href="elf.html">精灵 Elf</a></h3>
+        <div class="race-meta">中型 · 敏捷+2/体质-2 · 偏爱职业：法师</div>
+        <p>优雅长寿的森林居民。对<strong>魅惑</strong>和<strong>探知法术</strong>有天然抗性，
+        擅长远程武器和法术。</p>
+        <div class="race-traits">
+          <strong>关键特性：</strong>
+          <ul>
+            <li>法术抗力 +2（对魅惑/幻术）</li>
+            <li>昏暗视觉 60英尺</li>
+            <li>擅长长剑、短剑、短弓、长弓</li>
+            <li>自动施法失败豁免 +2（金属盔甲）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="race-card">
+        <h3><a href="dwarf.html">矮人 Dwarf</a></h3>
+        <div class="race-meta">中型 · 体质+2/魅力-2 · 偏爱职业：战士</div>
+        <p>坚韧的山地种族，以锻造和战斗闻名。对<strong>毒素</strong>和<strong>法术</strong>有天然抗性，
+        擅长战斧和战锤。</p>
+        <div class="race-traits">
+          <strong>关键特性：</strong>
+          <ul>
+            <li>强韧豁免 +2（对毒素）</li>
+            <li>昏暗视觉 60英尺</li>
+            <li>擅长战斧、轻战锤、重战锤</li>
+            <li>对法术鉴定 +2</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="race-card">
+        <h3><a href="halfling.html">半身人 Halfling</a></h3>
+        <div class="race-meta">小型 · 敏捷+2/力量-2 · 偏爱职业：游荡者</div>
+        <p>小巧灵巧的种族，以好运气和敏捷著称。对<strong>恐惧</strong>有天然抗性，
+        是出色的游荡者和射手。</p>
+        <div class="race-traits">
+          <strong>关键特性：</strong>
+          <ul>
+            <li>所有豁免 +1（幸运）</li>
+            <li>使用投掷武器 +1攻击</li>
+            <li>对恐惧效果 +2意志豁免</li>
+            <li>小型体型（AC +1，攻击+1）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="race-card">
+        <h3><a href="gnome.html">侏儒 Gnome</a></h3>
+        <div class="race-meta">小型 · 体质+2/力量-2 · 偏爱职业：吟游诗人</div>
+        <p>矮小的地下种族，与土元素有天然联系。对<strong>幻术法术</strong>有天然抗性，
+        擅长发明和炼金术。</p>
+        <div class="race-traits">
+          <strong>关键特性：</strong>
+          <ul>
+            <li>对幻术法术鉴定 +2</li>
+            <li>法术抗力 +2（对幻术）</li>
+            <li>昏暗视觉 60英尺</li>
+            <li>与大白鼬或獾定契（德鲁伊）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="race-card">
+        <h3><a href="half-elf.html">半精灵 Half-elf</a></h3>
+        <div class="race-meta">中型 · 无属性调整 · 偏爱职业：任意</div>
+        <p>人类与精灵的混血，兼具两族的优点。免疫<strong>睡眠法术</strong>，
+        对<strong>魅惑法术</strong>有抗性，且获得<strong>精灵血统</strong>特长。</p>
+        <div class="race-traits">
+          <strong>关键特性：</strong>
+          <ul>
+            <li>免疫魔法睡眠</li>
+            <li>法术抗力 +2（对魅惑）</li>
+            <li>精灵血统（选一项精灵特长）</li>
+            <li>偏爱职业：任选</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="race-card">
+        <h3><a href="half-orc.html">半兽人 Half-orc</a></h3>
+        <div class="race-meta">中型 · 力量+2/智力-2/魅力-2 · 偏爱职业：野蛮人</div>
+        <p>人类与兽人的混血，以蛮力和凶猛著称。在<strong>恐吓</strong>技能上有+2种族加值，
+        是出色的近战职业选择。</p>
+        <div class="race-traits">
+          <strong>关键特性：</strong>
+          <ul>
+            <li>黑暗vision 60英尺</li>
+            <li>恐吓技能 +2种族加值</li>
+            <li>昏暗视觉 60英尺</li>
+            <li>通常不被文明社会接受</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <h2 id="size">📏 体型对照表</h2>
+    <p>体型影响AC调整值、攻击加值、以及可使用的武器和装备尺寸。</p>
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>体型</th>
+          <th>代表种族</th>
+          <th>空间（平方英尺）</th>
+          <th>触及（英尺）</th>
+          <th>AC/攻击调整</th>
+          <th>隐藏调整</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>超细（Fine）</td><td>昆虫</td><td>0.5英尺</td><td>0</td><td>+8</td><td>+16</td></tr>
+        <tr><td>微型（Diminutive）</td><td>啮齿类</td><td>1英尺</td><td>0</td><td>+4</td><td>+12</td></tr>
+        <tr><td>超小（Tiny）</td><td>猫、鹰</td><td>2.5英尺</td><td>0</td><td>+2</td><td>+8</td></tr>
+        <tr style="background:var(--bg-table-stripe)"><td><strong>小型（Small）</strong></td><td><strong>半身人、侏儒</strong></td><td><strong>5英尺</strong></td><td><strong>5</strong></td><td><strong>+1</strong></td><td><strong>+4</strong></td></tr>
+        <tr style="background:#fff3cd"><td><strong>中型（Medium）</strong></td><td><strong>人类、精灵、矮人</strong></td><td><strong>5英尺</strong></td><td><strong>5</strong></td><td><strong>±0</strong></td><td><strong>±0</strong></td></tr>
+        <tr><td>大型（Large）</td><td>马、巨人</td><td>10英尺</td><td>10</td><td>-1</td><td>-4</td></tr>
+        <tr><td>超大型（Huge）</td><td>巨龙</td><td>15英尺</td><td>15</td><td>-2</td><td>-8</td></tr>
+        <tr><td>巨型（Gargantuan）</td><td>巨龙（古）</td><td>20英尺</td><td>20</td><td>-4</td><td>-12</td></tr>
+        <tr><td>超巨型（Colossal）</td><td>远古巨龙</td><td>30英尺+</td><td>30+</td><td>-8</td><td>-16</td></tr>
+      </tbody>
+    </table>
+    <p class="source-tag">来源：PHB p.162《Table 8-1: Size and Space》</p>
+
+    <h2 id="aging">📅 年龄对照表</h2>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>种族</th><th>未成年</th><th>成年</th><th>中年</th><th>老年</th><th>极老</th><th>最长寿命</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>矮人</td><td>0-39年</td><td>40年</td><td>125年</td><td>167年</td><td>250年</td><td>450年</td></tr>
+        <tr><td>精灵</td><td>0-99年</td><td>110年</td><td>175年</td><td>233年</td><td>350年</td><td>750年</td></tr>
+        <tr><td>侏儒</td><td>0-39年</td><td>40年</td><td>100年</td><td>150年</td><td>200年</td><td>350年</td></tr>
+        <tr><td>半身人</td><td>0-19年</td><td>20年</td><td>50年</td><td>75年</td><td>100年</td><td>200年</td></tr>
+        <tr><td>人类</td><td>0-14年</td><td>15年</td><td>35年</td><td>53年</td><td>70年</td><td>110年</td></tr>
+        <tr><td>半精灵</td><td>0-19年</td><td>20年</td><td>62年</td><td>93年</td><td>125年</td><td>180年</td></tr>
+        <tr><td>半兽人</td><td>0-13年</td><td>14年</td><td>30年</td><td>45年</td><td>60年</td><td>80年</td></tr>
+      </tbody>
+    </table>
+    <p class="source-tag">来源：PHB p.109《Table 6-4: Aging Effects》</p>
+    <div class="conflict-preview" style="margin-top:12px;">
+      <strong>⚠️ 注意：</strong>《被遗忘的国度》战役设定中，精灵的成年年龄被改为<b>100年</b>（而非核心规则的110年），
+      请DM根据所用战役设定确认。
+      <span class="source-tag">冲突来源：PHB vs. Forgotten Realms Campaign Setting</span>
+    </div>
+
+    <h2 id="starting-age">📅 起始年龄</h2>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>种族</th><th>血统职业（野蛮人/战士/游荡者）</th><th>擅长职业（游侠/牧师等）</th><th>法术职业（法师/德鲁伊）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>矮人</td><td>40岁 + 3d6</td><td>40岁 + 5d6</td><td>40岁 + 7d6</td></tr>
+        <tr><td>精灵</td><td>110岁 + 4d6</td><td>110岁 + 6d6</td><td>110岁 + 10d6</td></tr>
+        <tr><td>侏儒</td><td>40岁 + 4d6</td><td>40岁 + 6d6</td><td>40岁 + 9d6</td></tr>
+        <tr><td>半身人</td><td>20岁 + 2d4</td><td>20岁 + 3d4</td><td>20岁 + 4d4</td></tr>
+        <tr><td>人类</td><td>15岁 + 1d4</td><td>15岁 + 1d6</td><td>15岁 + 2d6</td></tr>
+        <tr><td>半精灵</td><td>20岁 + 1d6</td><td>20岁 + 2d6</td><td>20岁 + 3d6</td></tr>
+        <tr><td>半兽人</td><td>14岁 + 1d4</td><td>14岁 + 1d6</td><td>14岁 + 2d6</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="height-weight">📐 身高体重（随机生成）</h2>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>种族</th><th>性别</th><th>基础身高</th><th>加值（2d10）</th><th>基础体重</th><th>乘率（×2d4磅）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="2">人类</td><td>男</td><td>4'10"</td><td>+2d10</td><td>120磅</td><td>×2d4</td></tr>
+        <tr><td>女</td><td>4'5"</td><td>+2d10</td><td>85磅</td><td>×2d4</td></tr>
+        <tr><td rowspan="2">精灵</td><td>男</td><td>4'5"</td><td>+2d6</td><td>85磅</td><td>×1d6</td></tr>
+        <tr><td>女</td><td>4'5"</td><td>+2d6</td><td>80磅</td><td>×1d6</td></tr>
+        <tr><td rowspan="2">矮人</td><td>男</td><td>3'9"</td><td>+2d4</td><td>130磅</td><td>×2d6</td></tr>
+        <tr><td>女</td><td>3'7"</td><td>+2d4</td><td>100磅</td><td>×2d6</td></tr>
+        <tr><td rowspan="2">半身人</td><td>男</td><td>2'8"</td><td>+2d4</td><td>30磅</td><td>×1</td></tr>
+        <tr><td>女</td><td>2'6"</td><td>+2d4</td><td>25磅</td><td>×1</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:#777;">注：完整表格含所有七种族两性数据，详见PHB p.110《Table 6-5: Random Height and Weight》。</p>
+
+    <h2 id="languages">🗣️ 自动语言与可选语言</h2>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>种族</th><th>自动获得语言</th><th>可选额外语言</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>矮人</td><td>通用语、矮人语</td><td>巨人语、地精语、兽人语、土族语、地底通用语</td></tr>
+        <tr><td>精灵</td><td>通用语、精灵语</td><td>龙语、豺狼人语、侏儒语、地精语、木族语、地底通用语</td></tr>
+        <tr><td>侏儒</td><td>通用语、侏儒语</td><td>矮人语、地精语、巨人语、土族语、地底通用语</td></tr>
+        <tr><td>半身人</td><td>通用语、半身人语</td><td>矮人语、精灵语、侏儒语、地精语、地底通用语</td></tr>
+        <tr><td>人类</td><td>通用语</td><td>任意（依智力调整值定数量）</td></tr>
+        <tr><td>半精灵</td><td>通用语、精灵语</td><td>任意（依智力调整值定数量）</td></tr>
+        <tr><td>半兽人</td><td>通用语、兽人语</td><td> Draconic龙语、巨人语、地精语、地底通用语</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="favored-class">❤️ 偏爱职业</h2>
+    <p>当角色的当前职业与其种族的<strong>偏爱职业</strong>不一致时，每次升级如果继续选择非偏爱职业，
+    则会受到<strong>兼职惩罚</strong>：经验值获取减少20%。</p>
+    <div class="Rule-box">
+      <h3>兼职惩罚机制</h3>
+      <p>在D&D 3.5e中，如果角色有多个职业，且其中<strong>没有一个是该种族的偏爱职业</strong>，
+      则角色获得的经验值将减少20%（即乘以0.8）。</p>
+      <p><strong>例外：</strong>人类和半精灵的"偏爱职业"为<strong>任意</strong>，因此人类/半精灵角色
+      <strong>永远不会受到兼职惩罚</strong>，是最适合多职业（Multiclass）的种族。</p>
+      <table class="wiki-table">
+        <thead><tr><th>种族</th><th>偏爱职业</th><th>适合多职业？</th></tr></thead>
+        <tbody>
+          <tr><td>人类</td><td>任意</td><td>✅ 最适合</td></tr>
+          <tr><td>半精灵</td><td>任意</td><td>✅ 最适合</td></tr>
+          <tr><td>矮人</td><td>战士</td><td>⚠️ 战士+任意职业安全</td></tr>
+          <tr><td>精灵</td><td>法师</td><td>⚠️ 法师+任意职业安全</td></tr>
+          <tr><td>半身人</td><td>游荡者</td><td>⚠️ 游荡者+任意职业安全</td></tr>
+          <tr><td>侏儒</td><td>吟游诗人</td><td>⚠️ 吟游诗人+任意职业安全</td></tr>
+          <tr><td>半兽人</td><td>野蛮人</td><td>⚠️ 野蛮人+任意职业安全</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:13px;color:#999;margin-top:40px;text-align:center;">
+      数据来源：D&D 3.5e SRD · PHB《玩家手册》· 如有冲突以SRD为准
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | <a href="../conflicts.html">规则冲突标注</a></p>
+</div>
+</body>
+</html>

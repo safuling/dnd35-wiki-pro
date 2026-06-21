@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>法术极效 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #4B0082, #8A2BE2); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #4B0082; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #4B0082; border-bottom: 2px solid #4B0082; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color: #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+
+    <div class="feat-header">
+      <h1>✨ 法术极效</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Maximize Spell</p>
+      <span class="feat-type">施法专长</span>
+      <span class="feat-type">【奥术/神术】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">施法专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">法术强效 (Empower Spell)、施法者等级 12+</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">法术变量骰值取最大值</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">只能选择一次</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 97</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">法师、牧师、特定构建</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你能够最大限度发挥法术的威力，使法术的变量骰值达到最大可能值。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>法术强效 (Empower Spell)</strong></li>
+        <li><strong>施法者等级 12+</strong></li>
+      </ul>
+      <p><strong>说明</strong>：法术极效是法术强效的进阶专长，需要更高的施法者等级。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>施展法术时，你可以将<strong>法术变量骰值设为最大值</strong>，而不是掷骰。</p>
+      <ul>
+        <li><strong>法术环级调整</strong>：+3 环级（比原本高3环）</li>
+        <li><strong>效果</strong>：法术的变量骰值（如伤害骰）取最大值</li>
+        <li><strong>示例</strong>：火球术原本造成 5d6 点伤害（5-30），法术极效后造成 30 点伤害（固定最大值）</li>
+      </ul>
+      <p><strong>注意</strong>：法术极效只能用于有变量骰值的法术。</p>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>法术极效的计算</h3>
+    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+      <thead>
+        <tr style="background: #4B0082; color: white;">
+          <th style="padding: 10px; text-align: left;">法术</th>
+          <th style="padding: 10px; text-align: center;">原本伤害</th>
+          <th style="padding: 10px; text-align: center;">法术强效后</th>
+          <th style="padding: 10px; text-align: center;">法术极效后</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #f8f9fa;">
+          <td style="padding: 8px;">火球术 (Fireball)</td>
+          <td style="padding: 8px; text-align: center;">5d6 (5-30)</td>
+          <td style="padding: 8px; text-align: center;">7d6+5 (12-47)</td>
+          <td style="padding: 8px; text-align: center; color: #28a745; font-weight: bold;">30 (固定)</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;">闪电束 (Lightning Bolt)</td>
+          <td style="padding: 8px; text-align: center;">5d6 (5-30)</td>
+          <td style="padding: 8px; text-align: center;">7d6+5 (12-47)</td>
+          <td style="padding: 8px; text-align: center; color: #28a745; font-weight: bold;">30 (固定)</td>
+        </tr>
+        <tr style="background: #f8f9fa;">
+          <td style="padding: 8px;">伤害减益 (Harm)</td>
+          <td style="padding: 8px; text-align: center;">10d6 (10-60)</td>
+          <td style="padding: 8px; text-align: center;">15d6+10 (25-100)</td>
+          <td style="padding: 8px; text-align: center; color: #28a745; font-weight: bold;">60 (固定)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>重要规则</h3>
+    <ul>
+      <li><strong>只适用于变量骰值</strong>：法术极效只影响法术的变量骰值（如伤害骰），不影响其他效果</li>
+      <li><strong>环级调整</strong>：法术极效会使法术环级+3，可能影响施法者能施展的法术</li>
+      <li><strong>不能叠加</strong>：法术极效不能与法术强效、法术延效等 metamagic 专长叠加</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：12级法师，施展法术极效的火球术（调整为6环法术）。</p>
+      <p><strong>原本火球术</strong>：5d6 点火焰伤害（5-30，平均17.5）</p>
+      <p><strong>法术极效后</strong>：30 点火焰伤害（固定最大值）</p>
+      <p><strong>分析</strong>：法术极效保证了法术的最大效果，适合对抗高生命值敌人或需要稳定输出的情况。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 推荐搭配专长</h4>
+      <ul>
+        <li><strong>法术强效 (Empower Spell)</strong> - 先决条件，提高法术效果</li>
+        <li><strong>法术极效 (Maximize Spell)</strong> - 本专长，法术变量骰值取最大值</li>
+        <li><strong>法术延效 (Extend Spell)</strong> - 延长法术持续时间</li>
+        <li><strong>法术增远 (Enlarge Spell)</strong> - 增加法术射程</li>
+        <li><strong>法术默发 (Silent Spell)</strong> - 无需言语成分</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>✨ 推荐构建</h4>
+      <p><strong>1. 极效法师 (Maximize Wizard)</strong></p>
+      <ul>
+        <li>专攻：法术强效 → 法术极效 → 法术延效 → 法术增远</li>
+        <li>特点：法术效果稳定且强大</li>
+        <li>推荐法术：火球术、闪电束、伤害减益</li>
+      </ul>
+      <p><strong>2. 爆发牧师 (Burst Cleric)</strong></p>
+      <ul>
+        <li>专攻：法术强效 → 法术极效 → 法术延效</li>
+        <li>特点：神术效果稳定</li>
+        <li>推荐法术：造成轻伤、造成重伤、伤害减益</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：法术极效与法术强效的叠加</h4>
+      <p><strong>冲突点</strong>：法术极效能否与法术强效叠加？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 97</strong>：法术极效专长描述</li>
+        <li><strong>PHB p. 93</strong>：法术强效专长描述</li>
+      </ul>
+      <p><strong>冲突描述</strong>：法术极效和法术强效都是 metamagic 专长，能否同时应用于同一个法术？</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>不叠加解释</strong>：法术极效和法术强效不能同时应用于同一个法术</li>
+        <li><strong>叠加解释</strong>：法术极效和法术强效可以叠加，但环级调整会累加（+3 +2 = +5 环级）</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>不叠加解释</strong>（法术极效和法术强效不能同时应用）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 97 - 法术极效专长描述</li>
+      <li><strong>玩家手册 (PHB)</strong> p. 88 - Metamagic 专长规则</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+</main>
+</div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

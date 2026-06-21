@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生存 - D&D 3.5e 中文Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .skill-header {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .ability-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .dc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .dc-table th, .dc-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .dc-table th {
+            background: #27ae60;
+            color: white;
+        }
+        .dc-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .conflict-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+    <nav class="top-nav">
+        <div class="nav-brand">🐉 D&D 3.5e Wiki</div>
+        <div class="nav-links">
+            <a href="../index.html">首页</a>
+            <a href="intro.html" class="active">技能</a>
+            <a href="../spells/intro.html">法术</a>
+            <a href="../races/human.html">种族</a>
+            <a href="../classes/wizard.html">职业</a>
+            <a href="../feats/intro.html">专长</a>
+            <a href="../conflicts.html">规则冲突</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="skill-header">
+            <h1>🌲 生存 (Survival)</h1>
+            <p class="subtitle">感知技能 · 训练技能（游侠、德鲁伊、野蛮人）</p>
+            <div>
+                <span class="ability-badge">关键属性：感知 (WIS)</span>
+                <span class="ability-badge">调整值：1d20 + 调整值点数 + 感知调整值</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 技能描述</h3>
+            <p><strong>生存</strong>技能允许你在野外环境中生存、追踪痕迹、预测天气、寻找食物和水源。这是野外冒险的核心技能。</p>
+            
+            <h4>调整值计算</h4>
+            <p class="formula">生存调整值 = 生存调整值点数 + 感知调整值 + 其他调整值</p>
+            
+            <h4>检定条件</h4>
+            <ul>
+                <li><strong>动作</strong>：标准动作（Standard Action）或整轮动作（Full-Round Action）</li>
+                <li><strong>重试</strong>：可以，但某些情况下（如已失败追踪）重试可能有DC惩罚</li>
+                <li><strong>特殊</strong>：这是训练技能，游侠和德鲁伊将其作为训练技能</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 难度等级 (DC)</h2>
+            <table class="dc-table">
+                <thead>
+                    <tr>
+                        <th>生存任务</th>
+                        <th>DC</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>找到足够食物和水（平原/森林）</td>
+                        <td>DC 10</td>
+                        <td>需要基本的野外生存技巧</td>
+                    </tr>
+                    <tr>
+                        <td>找到足够食物和水（沙漠/雪山）</td>
+                        <td>DC 15</td>
+                        <td>需要较高的野外生存技巧</td>
+                    </tr>
+                    <tr>
+                        <td>预测天气（1天）</td>
+                        <td>DC 10</td>
+                        <td>需要基本的天气知识</td>
+                    </tr>
+                    <tr>
+                        <td>预测天气（1周）</td>
+                        <td>DC 15</td>
+                        <td>需要较高的天气知识</td>
+                    </tr>
+                    <tr>
+                        <td>追踪痕迹（普通地面）</td>
+                        <td>DC 10</td>
+                        <td>需要基本的追踪技巧</td>
+                    </tr>
+                    <tr>
+                        <td>追踪痕迹（困难地面，如石头）</td>
+                        <td>DC 15</td>
+                        <td>需要较高的追踪技巧</td>
+                    </tr>
+                    <tr>
+                        <td>避免迷宫/迷失方向</td>
+                        <td>DC 12</td>
+                        <td>在野外保持方向感</td>
+                    </tr>
+                    <tr>
+                        <td>建造简易庇护所</td>
+                        <td>DC 12</td>
+                        <td>需要基本的建造技巧</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📋 技能细则</h2>
+            
+            <h3>追踪痕迹</h3>
+            <p>生存技能可以用于追踪敌人或生物。这是游侠的核心能力。</p>
+            <ul>
+                <li><strong>动作</strong>：整轮动作（Full-Round Action）搜索痕迹；移动等效动作（Move-Equivalent Action）跟随痕迹</li>
+                <li><strong>DC</strong>：取决于地面类型和痕迹新旧程度</li>
+                <li><strong>速度</strong>：追踪时移动速度减半</li>
+            </ul>
+
+            <h3>寻找食物和水</h3>
+            <p>在野外环境中，你可以使用生存技能寻找食物和水源。</p>
+            <ul>
+                <li><strong>成功</strong>：找到足够食物和水，维持角色和生活</li>
+                <li><strong>失败</strong>：未能找到，可能面临饥饿/口渴</li>
+                <li><strong>时间</strong>：通常需要1d4小时</li>
+            </ul>
+
+            <h3>预测天气</h3>
+            <p>你可以预测未来1天或1周的天气。</p>
+            <ul>
+                <li><strong>DC 10</strong>：预测1天内天气（准确率60%）</li>
+                <li><strong>DC 15</strong>：预测1周内天气（准确率50%）</li>
+                <li><strong>失败</strong>：预测错误，可能遭遇暴风雨</li>
+            </ul>
+
+            <h3>特殊能力</h3>
+            <ul>
+                <li><strong>游侠（Ranger）</strong>：将生存作为训练技能，并获得<strong>追踪（Track）</strong>专长</li>
+                <li><strong>德鲁伊（Druid）</strong>：将生存作为训练技能，在自然界中获得+4调整值</li>
+                <li><strong>野蛮人（Barbarian）</strong>：将生存作为训练技能（某些部落背景）</li>
+                <li><strong>追踪（Track）专长</strong>：追踪DC-5（更容易追踪）</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <h3>💡 实战示例</h3>
+            <p><strong>场景</strong>：你是一名5级游侠（感知14，+2调整值），有8点生存调整值，并拥有<strong>追踪（Track）</strong>专长。</p>
+            <p><strong>总调整值</strong>：8（调整值点数）+ 2（感知调整值） = <strong>+10</strong></p>
+            <p><strong>任务</strong>：在一片森林中追踪一群哥布林（DC 10）。</p>
+            <p><strong>计算</strong>：DC 10 - 5（追踪专长） = <strong>DC 5</strong></p>
+            <p><strong>检定</strong>：1d20 + 10 = <strong>28 ≥ 5</strong>，成功！你发现了哥布林的痕迹，并成功追踪到他们的营地。</p>
+            <p><strong>变体</strong>：如果痕迹是3天前的（DC+5=10），追踪专长后仍只需DC 5。1d20 + 10 = 22 ≥ 5，仍然成功！你成功追踪到旧痕迹。</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 搭配专长</h2>
+            <ul>
+                <li><strong>追踪（Track）</strong>：追踪DC-5（更容易追踪）</li>
+                <li><strong>警觉（Alertness）</strong>：虽然不是直接搭配，但感知调整值有助于生存</li>
+                <li><strong>耐力（Endurance）</strong>：对抗恶劣天气/环境时获得+4调整值</li>
+            </ul>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：追踪的动作时间</h3>
+            <p><strong>冲突点</strong>：追踪是整轮动作、标准动作，还是移动等效动作？</p>
+            <p><strong>官方规则（PHB p.83 & DMG p.35）</strong>：<strong>搜索痕迹</strong>是整轮动作（Full-Round Action），<strong>跟随痕迹</strong>是移动等效动作（Move-Equivalent Action）。</p>
+            <p><strong>网络误传</strong>：部分网站声称"追踪是即时动作，可以随时进行"。这是错误的，追踪需要专注和时间。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行。搜索痕迹需要整轮动作，跟随痕迹需要移动等效动作。</p>
+            <p class="source">📚 出处：PHB p.83, DMG p.35, Complete Adventurer p.107</p>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：生存是否可以用于"室内"</h3>
+            <p><strong>冲突点</strong>：生存技能是否只能在野外使用？在室内/地下城是否有用？</p>
+            <p><strong>官方规则（PHB p.83 & DMG p.35）</strong>：生存技能主要用于<strong>野外环境</strong>。在室内/地下城中，可以使用<strong>搜索（Search）</strong>或<strong>侦察（Spot）</strong>来代替部分功能。</p>
+            <p><strong>网络误传</strong>：部分论坛声称"生存可以在任何地方使用，包括地下城"。这是不准确的，技能有明确的适用环境。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行。生存主要用于野外，地下城中使用其他技能。例外：如果地下城有"自然"部分（如洞穴、地下森林），则可以有限使用生存。</p>
+            <p class="source">📚 出处：PHB p.83, DMG p.35, Complete Adventurer p.107</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 规则出处</h3>
+            <ul>
+                <li><strong>玩家手册 (PHB)</strong>：p.83，生存技能详细描述</li>
+                <li><strong>地下城主指南 (DMG)</strong>：p.35，追踪规则</li>
+                <li><strong>Complete Adventurer</strong>：p.107-108，生存进阶规则</li>
+                <li><strong>3.5版 FAQ</strong>：v.2.0，生存相关问答</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>🐉 D&D 3.5e 中文Wiki | 基于《玩家手册》(PHB) 规则</p>
+        <p>本网站为粉丝制作，非官方作品。Dungeons & Dragons 是 Wizards of the Coast 的商标。</p>
+    </footer>
+</body>
+</html>

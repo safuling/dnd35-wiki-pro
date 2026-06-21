@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战斗规则 Combat - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .combat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-left: 4px solid var(--accent-gold);
+  }
+  .combat-card h3 { margin-top: 0; color: var(--text-heading); }
+  .combat-card h4 { color: var(--accent-gold); margin: 14px 0 8px; }
+  .combat-card h5 { color: var(--text-heading); margin: 10px 0 6px; font-size: 15px; }
+  .intro-box {
+    background: linear-gradient(135deg, #f8f0e0, #ede2cc);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .highlight-box {
+    background: #fef9e7;
+    border: 1px solid #f0d060;
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .info-box {
+    background: #e8f4fd;
+    border: 1px solid #85c1e9;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .danger-box {
+    background: #fde8e8;
+    border: 1px solid #e74c3c;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .formula-box {
+    background: #e8f4fd;
+    border: 1px solid #85c1e9;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    margin: 12px 0;
+  }
+  table.combat-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  table.combat-table th {
+    background: var(--bg-table-head);
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid var(--border-main);
+    color: var(--text-heading);
+  }
+  table.combat-table td {
+    border: 1px solid var(--border-light);
+    padding: 7px 12px;
+    text-align: center;
+  }
+  table.combat-table td.left {
+    text-align: left;
+  }
+  table.combat-table tr:nth-child(even) {
+    background: var(--bg-table-stripe);
+  }
+  table.combat-table tr:hover {
+    background: #f0e8d8;
+  }
+  table.condition-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  table.condition-table th {
+    background: #c0392b;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid var(--border-main);
+  }
+  table.condition-table td {
+    border: 1px solid var(--border-light);
+    padding: 6px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.condition-table tr:nth-child(even) {
+    background: var(--bg-table-stripe);
+  }
+  table.condition-table tr:hover {
+    background: #fde8e8;
+  }
+  .condition-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .tag-severe { background: #fadbd8; border: 1px solid #e6b0aa; color: #922b21; }
+  .tag-moderate { background: #fdebd0; border: 1px solid #f0b27a; color: #935116; }
+  .tag-minor { background: #d5f5e3; border: 1px solid #82e0aa; color: #1e8449; }
+  .tag-death { background: #2c3e50; border: 1px solid #1a252f; color: #ecf0f1; }
+  .section-anchor {
+    scroll-margin-top: 70px;
+  }
+  .toc-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 16px 24px;
+    margin: 16px 0;
+  }
+  .toc-box h3 { margin-top: 0; color: var(--text-heading); font-size: 16px; }
+  .toc-box ul { margin: 8px 0; padding-left: 20px; }
+  .toc-box li { margin: 4px 0; }
+  .toc-box a { color: var(--accent-gold); text-decoration: none; }
+  .toc-box a:hover { text-decoration: underline; }
+  .action-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .badge-standard { background: #d6eaf8; border: 1px solid #85c1e9; color: #1a5276; }
+  .badge-move { background: #d5f5e3; border: 1px solid #82e0aa; color: #1e8449; }
+  .badge-full { background: #fdebd0; border: 1px solid #f0b27a; color: #935116; }
+  .badge-free { background: #e8daef; border: 1px solid #c39bd3; color: #6c3483; }
+  .badge-swift { background: #f9e79f; border: 1px solid #f4d03f; color: #7d6608; }
+  .flow-diagram {
+    background: var(--bg-card);
+    border: 2px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 20px 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+    text-align: center;
+    color: var(--text-main);
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="rules-adventure.html">🗺️ 冒险</a>
+        <a href="rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="rules-combat.html">⚔️ 战斗详述</a>
+        <a href="rules-deities.html">🙏 神祇与阵营</a>
+        <a href="rules-companions.html">🐾 伙伴系统</a>
+        <a href="rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="equipment/magic-items.html">💎 魔法物品</a>
+        <a href="domains/intro.html">✨ 领域系统</a>
+        <a href="dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心规则</div>
+      <a href="rules.html">规则总览</a>
+      <a href="rules-adventure.html">冒险</a>
+      <a href="rules-planes.html">位面</a>
+      <a href="rules-companions.html">伙伴</a>
+      <a href="rules-combat.html" class="active">战斗</a>
+      <a href="conflicts.html">规则冲突</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>战斗规则 Combat</h1>
+
+    <div class="intro-box">
+      <p>战斗是D&D冒险的核心组成部分。D&D 3.5e采用<strong>回合制</strong>战斗系统，以6秒为一个<strong>轮（Round）</strong>。每个角色在自己的回合中可以执行特定类型的动作。本页详细涵盖战斗流程、动作类型、攻击规则、特殊攻击、状态条件以及相关特殊能力的完整规则。</p>
+      <p>核心参考：《玩家手册》第八章 "Combat"、《城主指南》相关章节。</p>
+    </div>
+
+    <div class="toc-box">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#flow">一、战斗流程</a></li>
+        <li><a href="#actions">二、战斗动作类型</a></li>
+        <li><a href="#attack-rules">三、攻击规则</a></li>
+        <li><a href="#special-attacks">四、特殊攻击</a></li>
+        <li><a href="#conditions">五、状态条件完整列表</a></li>
+        <li><a href="#special-abilities">六、特殊能力</a></li>
+        <li><a href="#dr">七、伤害减免 (DR)</a></li>
+        <li><a href="#sr">八、法术抗力 (SR)</a></li>
+        <li><a href="#immunity">九、免疫与抗性</a></li>
+      </ul>
+    </div>
+
+    <!-- ==================== 战斗流程 ==================== -->
+    <section id="flow" class="section-anchor">
+      <h2>一、战斗流程</h2>
+
+      <div class="combat-card">
+        <h4>战斗开始：确定突袭</h4>
+        <p>战斗开始时，首先判断是否存在<strong>突袭轮（Surprise Round）</strong>。</p>
+        <ul>
+          <li>如果一方注意到另一方而另一方没有注意到，则产生突袭轮。</li>
+          <li>未被突袭的角色进行正常的先攻检定。</li>
+          <li>在突袭轮中，未被突袭的角色可以执行<strong>一个标准动作或一个移动动作</strong>（不能两者都做），以及自由动作。</li>
+          <li>被突袭的角色在突袭轮中不能行动，且处于措手不及（Flat-footed）状态——失去AC上的敏捷加值。</li>
+          <li>用<strong>侦查 vs 隐匿</strong>对抗来确定是否发现对方。</li>
+        </ul>
+
+        <div class="highlight-box">
+          <strong>措手不及 (Flat-footed)：</strong>战斗开始时，所有角色都处于措手不及状态，直到他们第一次行动。措手不及的角色失去AC上的敏捷加值（如果有的话），但保留其他AC加值。
+        </div>
+      </div>
+
+      <div class="combat-card">
+        <h4>先攻检定</h4>
+        <div class="formula-box">
+          先攻检定 = 1d20 + 敏捷调整值 + 其他修正（如精通先攻专长 +4）
+        </div>
+        <ul>
+          <li>所有参与战斗的角色投掷先攻，按从高到低顺序行动。</li>
+          <li>先攻相同则按敏捷调整值从高到低排列；如果仍相同则重投。</li>
+          <li>先攻顺序在整个战斗过程中保持不变。</li>
+          <li>后到的角色按照其先攻结果插入序列。</li>
+        </ul>
+
+        <div class="info-box">
+          <strong>延迟行动：</strong>角色可以选择延迟行动（不投先攻或自愿降低先攻位序）。延迟后角色在后续轮中使用新的先攻位序。如果多个角色都延迟，按原始先攻顺序恢复。
+        </div>
+      </div>
+
+      <div class="combat-card">
+        <h4>回合结构</h4>
+        <div class="flow-diagram">
+┌─────────────────────────────────────────────────┐
+│              一个完整的轮 (Round = 6秒)            │
+├─────────────────────────────────────────────────┤
+│                                                   │
+│  角色A的回合  →  角色B的回合  →  角色C的回合  → ... │
+│                                                   │
+│  每个角色的回合可包含：                              │
+│    ┌──────────┐  ┌──────────┐  ┌──────────┐      │
+│    │ 标准动作  │ + │ 移动动作  │ + │ 自由动作  │     │
+│    └──────────┘  └──────────┘  └──────────┘      │
+│         或                                         │
+│    ┌──────────┐  ┌──────────┐                    │
+│    │ 整轮动作  │ + │ 自由动作  │                    │
+│    └──────────┘  └──────────┘                    │
+│                                                   │
+│  * 任意数量自由动作 + 最多1个即时/迅捷动作          │
+│  * 借机攻击可在他人回合触发                          │
+└─────────────────────────────────────────────────┘</div>
+        <p>每轮开始时，各种持续时间效果按顺序处理（先攻从高到低）。每轮结束时，效果持续时间减少1轮。</p>
+      </div>
+    </section>
+
+    <!-- ==================== 战斗动作类型 ==================== -->
+    <section id="actions" class="section-anchor">
+      <h2>二、战斗动作类型</h2>
+
+      <div class="combat-card">
+        <h4>标准动作 <span class="action-badge badge-standard">Standard Action</span></h4>
+        <p>标准动作是最常见的动作类型，允许角色执行一次有意义的行动。一个回合中只能执行一个标准动作（除非用整轮动作替代）。</p>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>动作</th>
+              <th>类型</th>
+              <th>借机攻击</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><strong>近战攻击</strong></td>
+              <td>标准</td>
+              <td>否</td>
+              <td class="left">使用近战武器进行一次攻击。可移动后攻击或攻击后移动。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>远程攻击</strong></td>
+              <td>标准</td>
+              <td>是</td>
+              <td class="left">使用远程武器进行一次攻击。在敌人威胁范围内射击会引发借机攻击。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>施放法术</strong></td>
+              <td>标准</td>
+              <td>是*</td>
+              <td class="left">施放施法时间为1个标准动作的法术。在威胁范围内施法引发借机攻击。施法时受到攻击需进行专注检定。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>使用类法术能力 (Sp)</strong></td>
+              <td>标准</td>
+              <td>是</td>
+              <td class="left">如同施法，可被干扰，需专注检定。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>使用超自然能力 (Su)</strong></td>
+              <td>标准</td>
+              <td>否</td>
+              <td class="left">不会被借机攻击打断，不需要专注检定。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>使用特异能力 (Ex)</strong></td>
+              <td>标准</td>
+              <td>否</td>
+              <td class="left">不会被借机攻击打断，不需要专注检定。除非另有说明。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>全防御</strong></td>
+              <td>标准</td>
+              <td>否</td>
+              <td class="left">AC获得+4闪避加值，持续1轮。不能与战斗防御配合使用。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>战斗防御</strong></td>
+              <td>标准</td>
+              <td>否</td>
+              <td class="left">攻击检定-4，AC获得+2闪避加值（有战斗专长时+3），持续1轮。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>使用物品</strong></td>
+              <td>标准</td>
+              <td>视情况</td>
+              <td class="left">激活魔法物品、使用药水/卷轴等。某些物品的使用会引发借机攻击。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>援助他人</strong></td>
+              <td>标准</td>
+              <td>否</td>
+              <td class="left">进行一次攻击检定（AC 10），成功则使盟友的攻击或防御获得+2加值。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>使用特殊能力</strong></td>
+              <td>标准</td>
+              <td>视情况</td>
+              <td class="left">如威吓检定、解除陷阱、使用技能等。具体视能力描述。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>*施法引发借机攻击：</strong>在敌人的威胁范围内施法会引发借机攻击。攻击者可以打断施法——如果施法者受到伤害，需要进行DC=10+伤害值+法术等级的专注检定，失败则法术丢失。
+        </div>
+      </div>
+
+      <div class="combat-card">
+        <h4>移动动作 <span class="action-badge badge-move">Move Action</span></h4>
+        <p>移动动作允许角色在战场移动或执行简单的物理操作。一个回合中可以执行一个移动动作（在标准动作之外）。如果只使用移动动作而不使用标准动作，可以再执行第二个移动动作。</p>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>动作</th>
+              <th>借机攻击</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><strong>移动</strong></td>
+              <td>视情况</td>
+              <td class="left">移动至多等于速度的距离。离开敌人威胁格时引发借机攻击（进入威胁格不会）。可以5尺快步替代。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>5尺快步</strong></td>
+              <td>否</td>
+              <td class="left">移动5英尺且不引发借机攻击。每轮只能执行一次，且不能在本轮中使用其他移动方式。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>拔武器</strong></td>
+              <td>否</td>
+              <td class="left">拔出一件武器。BAB+1的角色可以将其作为移动动作的一部分（与移动合并）。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>收武器</strong></td>
+              <td>是</td>
+              <td class="left">收起武器需要移动动作且引发借机攻击。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>站起</strong></td>
+              <td>是</td>
+              <td class="left">从倒地状态站起需要移动动作且引发借机攻击。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>骑乘/下马</strong></td>
+              <td>否</td>
+              <td class="left">骑上或从坐骑上下来。骑术检定DC 20可以作为自由动作完成。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>操纵物品</strong></td>
+              <td>视情况</td>
+              <td class="left">开门、拾取物品、移动重物等。某些操作会引发借机攻击。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>控制受惊坐骑</strong></td>
+              <td>否</td>
+              <td class="left">骑术检定控制受惊的坐骑。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>准备或松开盾牌</strong></td>
+              <td>是</td>
+              <td class="left">装备或卸下盾牌。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="combat-card">
+        <h4>整轮动作 <span class="action-badge badge-full">Full-Round Action</span></h4>
+        <p>整轮动作占用整个回合——角色不能进行标准动作或移动动作（但可以进行5尺快步和自由动作）。</p>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>动作</th>
+              <th>借机攻击</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><strong>全力攻击</strong></td>
+              <td>否</td>
+              <td class="left">使用全部攻击次数进行攻击。可以进行一次5尺快步。多次攻击按BAB决定（如BAB +6/+1）。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>奔跑</strong></td>
+              <td>否</td>
+              <td class="left">移动速度×4（穿重甲时×3）。奔跑时失去AC上的敏捷加值。可以持续奔跑的轮数=体质值，超过后每轮需体质检定（DC 10，每轮+1）。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>撤退</strong></td>
+              <td>否</td>
+              <td class="left">移动速度×2的距离，离开第一格不引发借机攻击。不能在看不见的情况下撤退。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>施放整轮法术</strong></td>
+              <td>是</td>
+              <td class="left">施放施法时间为1整轮的法术。法术在下一轮开始时生效。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="danger-box">
+          <strong>全力攻击详解：</strong>当BAB达到+6时获得第二次攻击（-5减值），+11时第三次攻击（-10减值），+16时第四次攻击（-15减值）。双武器战斗、加速术、 haste等可以额外增加攻击次数。
+        </div>
+      </div>
+
+      <div class="combat-card">
+        <h4>自由动作 <span class="action-badge badge-free">Free Action</span></h4>
+        <p>自由动作几乎不花时间，可以在执行其他动作的同时进行。每轮可以执行的自由动作数量由DM裁定（通常不超过几个）。</p>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>动作</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left"><strong>说话</strong></td><td class="left">说几句话或下达简短命令。可以在任何时间进行（甚至不是自己的回合）。</td></tr>
+            <tr><td class="left"><strong>停止专注</strong></td><td class="left">停止维持一个需要专注的法术。</td></tr>
+            <tr><td class="left"><strong>丢弃物品</strong></td><td class="left">将手中的物品扔到地上。</td></tr>
+            <tr><td class="left"><strong>倒地</strong></td><td class="left">趴倒在地（卧倒）。</td></tr>
+            <tr><td class="left"><strong>准备武器（BAB+1）</strong></td><td class="left">BAB至少+1的角色可以将拔武器与移动合为一个移动动作。</td></tr>
+            <tr><td class="left"><strong>使用某些专长/能力</strong></td><td class="left">某些专长或职业特性标注为自由动作使用。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="combat-card">
+        <h4>即时动作 / 迅捷动作 <span class="action-badge badge-swift">Immediate/Swift Action</span></h4>
+        <p>即时动作和迅捷动作（3.5e后期规则补充）占用极短时间但消耗更多精力。</p>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>动作</th>
+              <th>类型</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><strong>延迟</strong></td>
+              <td>即时</td>
+              <td class="left">放弃当前回合的行动，等待更好时机。延迟后先攻位序变为实际行动的时机。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>准备动作</strong></td>
+              <td>标准</td>
+              <td class="left">声明准备的动作和触发条件。当条件满足时（在下一轮之前），可以以即时动作执行准备好的动作。准备后先攻位序改变。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>借机攻击</strong></td>
+              <td>即时</td>
+              <td class="left">当敌人在威胁范围内执行引发借机攻击的动作时，可以进行一次近战攻击。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>借机攻击详解：</strong>
+          <ul>
+            <li>每个角色每轮只能进行一次借机攻击（有战斗反射专长时可以使用DEX加值次数的借机攻击）。</li>
+            <li>借机攻击中断触发动作——攻击在触发动作完成前进行。</li>
+            <li>威胁范围：角色可以用近战武器攻击到的所有格子（通常邻接格，长武器更远）。</li>
+            <li>引发借机攻击的常见行为：离开威胁格、在威胁范围内施法、在威胁范围内使用远程武器。</li>
+            <li>不会引发借机攻击的行为：5尺快步、撤退的第一格、进入威胁格。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 攻击规则 ==================== -->
+    <section id="attack-rules" class="section-anchor">
+      <h2>三、攻击规则</h2>
+
+      <div class="combat-card">
+        <h4>攻击检定</h4>
+        <div class="formula-box">
+          近战攻击检定 = 1d20 + BAB + STR调整值 + 体型调整值 + 其他修正<br>
+          远程攻击检定 = 1d20 + BAB + DEX调整值 + 体型调整值 + 射程减值 + 其他修正
+        </div>
+        <p>如果攻击检定结果 ≥ 目标的AC（护甲等级），则命中。</p>
+        <p><strong>自动命中与自动失手：</strong>自然骰20（d20实际掷出20）总是命中，自然骰1总是失手。自然20同时是<strong>重击威胁</strong>。</p>
+      </div>
+
+      <div class="combat-card">
+        <h4>护甲等级 (AC)</h4>
+        <div class="formula-box">
+          AC = 10 + 护甲加值 + 盾牌加值 + DEX调整值 + 体型调整值<br>
+           &nbsp;&nbsp;&nbsp;&nbsp;+ 天生护甲加值 + 偏斜加值 + 闪避加值 + 其他修正
+        </div>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>AC类型</th>
+              <th>英文</th>
+              <th>计算方式</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><strong>普通AC</strong></td>
+              <td>Armor Class</td>
+              <td>10 + 所有加值</td>
+              <td class="left">正常情况下的防御值。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>接触AC</strong></td>
+              <td>Touch AC</td>
+              <td>10 + DEX + 体型 + 闪避 + 偏斜</td>
+              <td class="left">不计护甲、盾牌和天生护甲。用于接触攻击和某些法术。</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>措手不及AC</strong></td>
+              <td>Flat-footed AC</td>
+              <td>10 + 护甲 + 盾牌 + 天生 + 体型 + 偏斜</td>
+              <td class="left">不计DEX加值和闪避加值。战斗开始或意外情况时。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="combat-card">
+        <h4>伤害计算</h4>
+        <div class="formula-box">
+          近战伤害 = 武器伤害骰 + STR调整值（双手武器×1.5，副手×0.5）+ 其他修正<br>
+          远程伤害 = 武器伤害骰 + 其他修正（复合弓可加STR加值）
+        </div>
+        <p>伤害最低为1（即使所有减值导致计算结果为0或负数）。</p>
+
+        <h4>伤害类型</h4>
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>类型</th>
+              <th>英文</th>
+              <th>来源</th>
+              <th>常见减免</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left"><strong>钝击</strong></td><td>Bludgeoning (B)</td><td class="left">锤、棍、拳头</td><td class="left">—</td></tr>
+            <tr><td class="left"><strong>穿刺</strong></td><td>Piercing (P)</td><td class="left">剑尖、箭矢、长矛</td><td class="left">—</td></tr>
+            <tr><td class="left"><strong>挥砍</strong></td><td>Slashing (S)</td><td class="left">剑刃、斧头</td><td class="left">—</td></tr>
+            <tr><td class="left"><strong>火焰</strong></td><td>Fire</td><td class="left">火球术、火焰武器</td><td class="left">火焰抗力</td></tr>
+            <tr><td class="left"><strong>寒冷</strong></td><td>Cold</td><td class="left">冰锥术、寒霜武器</td><td class="left">寒冷抗力</td></tr>
+            <tr><td class="left"><strong>电击</strong></td><td>Electricity</td><td class="left">闪电束、电击武器</td><td class="left">电击抗力</td></tr>
+            <tr><td class="left"><strong>强酸</strong></td><td>Acid</td><td class="left">酸液飞溅、酸雾</td><td class="left">—</td></tr>
+            <tr><td class="left"><strong>音波</strong></td><td>Sonic</td><td class="left">音爆术</td><td class="left">音波抗力</td></tr>
+            <tr><td class="left"><strong>力场</strong></td><td>Force</td><td class="left">魔法飞弹、灵甲术</td><td class="left">几乎无法减免</td></tr>
+            <tr><td class="left"><strong>负能量</strong></td><td>Negative Energy</td><td class="left">造成伤害术</td><td class="left">不死生物免疫/治疗</td></tr>
+            <tr><td class="left"><strong>正能量</strong></td><td>Positive Energy</td><td class="left">治疗创伤术</td><td class="left">不死生物受伤</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="combat-card">
+        <h4>重击 (Critical Hit)</h4>
+        <p>当攻击掷出自然20（或其他武器特定的重击威胁范围）时，需要进行<strong>重击确认检定</strong>：</p>
+        <ol>
+          <li>进行一次新的攻击检定（使用相同的所有加值），目标为敌人的AC。</li>
+          <li>如果确认检定命中，则造成重击伤害。</li>
+          <li>如果确认检定失手，则只造成普通伤害。</li>
+        </ol>
+        <p>重击时，伤害骰和所有固定加值（STR加值、武器附魔加值、专长加值等）都乘以重击倍率。额外骰（如偷袭骰、火焰附魔骰）<strong>不</strong>乘以重击倍率。</p>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>武器类型</th>
+              <th>重击威胁范围</th>
+              <th>重击倍率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left">大多数武器</td><td>20</td><td>×2</td></tr>
+            <tr><td class="left">长剑、细剑等</td><td>19-20</td><td>×2</td></tr>
+            <tr><td class="left">镰刀</td><td>20</td><td>×4</td></tr>
+            <tr><td class="left">弯刀</td><td>18-20</td><td>×2</td></tr>
+            <tr><td class="left">战斧</td><td>20</td><td>×3</td></tr>
+            <tr><td class="left">巨斧</td><td>20</td><td>×3</td></tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>精通重击专长 (Improved Critical)：</strong>将武器的重击威胁范围翻倍（如19-20变为17-20）。不能与其他扩大重击范围的效果叠加。
+        </div>
+      </div>
+
+      <div class="combat-card">
+        <h4>近战与远程攻击修正</h4>
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>情况</th>
+              <th>近战攻击修正</th>
+              <th>远程攻击修正</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left">目标处于纠缠状态</td><td>+2</td><td>+2</td></tr>
+            <tr><td class="left">目标处于倒地状态</td><td>+4</td><td>-4</td></tr>
+            <tr><td class="left">目标处于隐蔽状态</td><td>—</td><td>-2</td></tr>
+            <tr><td class="left">目标有掩护</td><td>—</td><td>视掩护等级</td></tr>
+            <tr><td class="left">攻击者处于隐形状态</td><td>+2</td><td>+2</td></tr>
+            <tr><td class="left">夹击目标</td><td>+2</td><td>不适用</td></tr>
+            <tr><td class="left">攻击者处于倒地状态</td><td>-4</td><td>— (不能远程攻击)</td></tr>
+            <tr><td class="left">攻击者处于目盲状态</td><td>-2 且失去DEX加值</td><td>-2 且失去DEX加值</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="combat-card">
+        <h4>掩护 (Cover)</h4>
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>掩护等级</th>
+              <th>AC加值</th>
+              <th>反射豁免加值</th>
+              <th>示例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left">1/4 掩护</td><td>+2</td><td>+1</td><td class="left">矮墙到腰部</td></tr>
+            <tr><td class="left">1/2 掩护</td><td>+4</td><td>+2</td><td class="left">射击孔、墙角露出半身</td></tr>
+            <tr><td class="left">3/4 掩护</td><td>+7</td><td>+3</td><td class="left">树后、箭垛后</td></tr>
+            <tr><td class="left">9/10 掩护</td><td>+10</td><td>+4（精通反射闪避）</td><td class="left">箭缝、窥视孔</td></tr>
+            <tr><td class="left">完全掩护</td><td>—</td><td>—</td><td class="left">无法被攻击</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 特殊攻击 ==================== -->
+    <section id="special-attacks" class="section-anchor">
+      <h2>四、特殊攻击</h2>
+
+      <div class="combat-card">
+        <h4>冲撞 (Bull Rush)</h4>
+        <p><span class="action-badge badge-standard">标准动作</span> 或 <span class="action-badge badge-full">整轮动作（冲锋时）</span></p>
+        <p>试图将目标推回而不对目标造成伤害。</p>
+        <ol>
+          <li><strong>步骤一：</strong>攻击者进入目标所在格（引发借机攻击，从目标以外的所有威胁者处）。</li>
+          <li><strong>步骤二：</strong>进行力量对抗检定。攻击者获得+4加值（每比中型大一级+4），防御者每有额外腿或特别稳定+4。</li>
+          <li><strong>步骤三：</strong>攻击者胜出，目标被推回5英尺。攻击者可以选择跟随移动（每超出4点再多推5英尺）。不能超过速度限制。</li>
+          <li>防御者胜出，攻击者被推回5英尺（如果攻击者无法后退则倒地）。</li>
+        </ol>
+      </div>
+
+      <div class="combat-card">
+        <h4>擒抱 (Grapple)</h4>
+        <p><span class="action-badge badge-standard">标准动作</span></p>
+        <p>试图抓住并控制目标。</p>
+
+        <div class="formula-box">
+          擒抱检定 = 1d20 + BAB + STR调整值 + 特殊体型调整值<br>
+          体型调整值：超巨型+16，巨型+12，超大型+8，大型+4，小型-4，超小型-8，微型-12，超微型-16
+        </div>
+
+        <ol>
+          <li><strong>步骤一 - 抓住：</strong>进行一次近战接触攻击。失手则擒抱尝试失败（引发借机攻击）。</li>
+          <li><strong>步骤二 - 擒抱：</strong>进行对抗擒抱检定。成功则双方进入擒抱状态。如果体型差距超过2级，大的一方自动赢得对抗。</li>
+          <li><strong>步骤三 - 维持擒抱：</strong>维持擒抱需要每轮进行一次对抗检定。在擒抱中可以进行：伤害对手、压制、移动、使用轻武器等。</li>
+          <li><strong>逃脱擒抱：</strong>进行擒抱检定对抗或脱逃术检定（对抗擒抱检定DC）。</li>
+        </ol>
+
+        <div class="info-box">
+          <strong>擒抱状态效果：</strong>擒抱中的角色失去AC上的DEX加值（对非擒抱者），不能使用需要双手的动作，不能进行借机攻击，移动速度为0。
+        </div>
+      </div>
+
+      <div class="combat-card">
+        <h4>绊摔 (Trip)</h4>
+        <p><span class="action-badge badge-standard">标准动作</span>（接触攻击）</p>
+        <ol>
+          <li>进行一次近战接触攻击（不造成伤害）。有些武器可以代替接触攻击进行绊摔且不引发借机攻击。</li>
+          <li>进行力量对抗检定（vs 力量或敏捷中较高者）。防御者用4条腿+4稳定加值。</li>
+          <li>攻击者胜出：目标倒地（Prone）。</li>
+          <li>防御者胜出：防御者可以立刻尝试反绊摔攻击者（不需要接触攻击）。</li>
+        </ol>
+        <p><strong>倒地状态效果：</strong>近战攻击-4，远程攻击被+2命中，站起需要移动动作且引发借机攻击。</p>
+      </div>
+
+      <div class="combat-card">
+        <h4>卸武 (Disarm)</h4>
+        <p><span class="action-badge badge-standard">标准动作</span></p>
+        <ol>
+          <li>进行近战接触攻击（徒手卸武会引发借机攻击，用武器卸武不会）。</li>
+          <li>进行力量对抗检定。双手持武器的防御者+4；使用轻型武器的攻击者-4。</li>
+          <li>攻击者胜出：防御者失去武器。如果攻击者徒手，则接住武器。</li>
+          <li>防御者胜出：防御者可以反卸武攻击者。</li>
+        </ol>
+      </div>
+
+      <div class="combat-card">
+        <h4>闯越 (Overrun)</h4>
+        <p><span class="action-badge badge-standard">标准动作</span>（与移动合用）</p>
+        <p>试图穿过敌人占据的格子。</p>
+        <ol>
+          <li>在移动中进入目标格子（引发借机攻击）。</li>
+          <li>目标可以选择阻挡或让开。让开则攻击者正常通过。</li>
+          <li>如果阻挡：进行力量对抗检定。攻击者胜出则可以穿过。防御者胜出则攻击者被挡回并倒地。</li>
+          <li>有"精通闯越"专长的角色不会引发借机攻击，且目标不能选择让开。</li>
+        </ol>
+      </div>
+
+      <div class="combat-card">
+        <h4>夹击 (Flanking)</h4>
+        <p>当两个友方角色从<strong>相对两侧</strong>（对角线也算）用近战武器威胁同一个敌人时，双方都获得<strong>+2夹击加值</strong>到近战攻击检定上。</p>
+        <ul>
+          <li>只有近战攻击可以获得夹击加值。</li>
+          <li>两个威胁者必须能够从对方画一条直线穿过目标中心。</li>
+          <li>偷袭能力的游荡者特别受益于夹击。</li>
+          <li>拥有"精通夹击"专长时加值提升至+4（仅限对游荡者有效）。</li>
+        </ul>
+      </div>
+
+      <div class="combat-card">
+        <h4>冲锋 (Charge)</h4>
+        <p><span class="action-badge badge-full">整轮动作</span>（特殊情况可作为标准动作）</p>
+        <p>快速冲向敌人进行一次强力攻击。</p>
+        <ul>
+          <li>移动至少10英尺（不超过速度×2），直线前进。</li>
+          <li>冲锋路径上不能有障碍物或困难地形。</li>
+          <li>冲锋后进行一次近战攻击，攻击检定<strong>+2</strong>。</li>
+          <li>冲锋后AC<strong>-2</strong>直到下一轮开始。</li>
+          <li>使用长枪从坐骑上冲锋时伤害×2。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 状态条件 ==================== -->
+    <section id="conditions" class="section-anchor">
+      <h2>五、状态条件完整列表</h2>
+
+      <div class="combat-card">
+        <p>以下是D&D 3.5e中所有主要状态条件的详细说明。多种状态可以同时影响一个角色，效果叠加（除非互相矛盾）。</p>
+
+        <table class="condition-table">
+          <thead>
+            <tr>
+              <th style="width:100px;">状态</th>
+              <th style="width:80px;">英文</th>
+              <th style="width:60px;">严重程度</th>
+              <th>效果说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>目盲</strong></td>
+              <td>Blinded</td>
+              <td><span class="condition-tag tag-moderate">中等</span></td>
+              <td>无法看见。AC失去DEX加值，攻击检定-2，搜索和基于视觉的技能检定自动失败。所有对手视为有全隐蔽（50%失手率）。移动速度减半。</td>
+            </tr>
+            <tr>
+              <td><strong>困惑</strong></td>
+              <td>Confused</td>
+              <td><span class="condition-tag tag-moderate">中等</span></td>
+              <td>每轮投d%决定行动：01-10正常行动；11-20什么都不做；21-50胡言乱语不做行动；51-70用最大速度远离施法者；71-100攻击最近的生物（包括盟友）。</td>
+            </tr>
+            <tr>
+              <td><strong>晕眩</strong></td>
+              <td>Dazed</td>
+              <td><span class="condition-tag tag-moderate">中等</span></td>
+              <td>无法行动。不能进行任何动作（标准、移动或自由动作），但正常获得AC加值。持续通常1轮。</td>
+            </tr>
+            <tr>
+              <td><strong>耳聋</strong></td>
+              <td>Deafened</td>
+              <td><span class="condition-tag tag-minor">轻微</span></td>
+              <td>无法听见。先攻检定-4，基于听觉的侦查检定自动失败，施放含语言成分的法术有20%失败率。</td>
+            </tr>
+            <tr>
+              <td><strong>死亡</strong></td>
+              <td>Dead</td>
+              <td><span class="condition-tag tag-death">死亡</span></td>
+              <td>HP降至体质值的负数，或受到即死效果。灵魂离开身体。可在10分钟内被复活术/复生术救回（施法时间1轮），更久则需要更强的魔法。</td>
+            </tr>
+            <tr>
+              <td><strong>濒死</strong></td>
+              <td>Dying</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>HP为负数（-1到-9）。失去意识，无法行动。每轮自动损失1HP，直到死亡或稳定。可以通过DC 10的医疗检定使其稳定（DC=10+负HP值）。</td>
+            </tr>
+            <tr>
+              <td><strong>魅惑</strong></td>
+              <td>Charmed</td>
+              <td><span class="condition-tag tag-moderate">中等</span></td>
+              <td>视施法者为友好盟友。可以进行意志豁免抵抗危险命令（DC=施法者魅力+等级）。施法者可以通过社交检定影响被魅惑者。被魅惑者保留自由意志，不会做出明显违背本性的行为。</td>
+            </tr>
+            <tr>
+              <td><strong>支配</strong></td>
+              <td>Dominated</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>施法者可以通过心灵链接直接控制被支配者。被支配者完全服从命令，但可以进行意志豁免抵抗明显自杀性的命令。施法者可以通过被支配者的感官观察。</td>
+            </tr>
+            <tr>
+              <td><strong>反胃</strong></td>
+              <td>Nauseated</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>胃部剧烈不适。每轮只能进行一个移动动作，不能进行标准动作、自由动作或即时动作。可以移动但不能攻击或施法。</td>
+            </tr>
+            <tr>
+              <td><strong>恶心</strong></td>
+              <td>Sickened</td>
+              <td><span class="condition-tag tag-minor">轻微</span></td>
+              <td>所有攻击检定、豁免检定、伤害检定和技能检定-2。</td>
+            </tr>
+            <tr>
+              <td><strong>纠缠</strong></td>
+              <td>Entangled</td>
+              <td><span class="condition-tag tag-moderate">中等</span></td>
+              <td>被植物、网或其他东西缠绕。移动速度减半，不能奔跑或冲锋。攻击检定-2，有效DEX-4。施法需进行专注检定（DC=15+法术等级），失败则失去法术。</td>
+            </tr>
+            <tr>
+              <td><strong>疲乏</strong></td>
+              <td>Fatigued</td>
+              <td><span class="condition-tag tag-minor">轻微</span></td>
+              <td>不能奔跑或冲锋。STR和DEX各-2。进行导致疲乏的活动后会变为力竭。8小时完全休息后恢复。</td>
+            </tr>
+            <tr>
+              <td><strong>力竭</strong></td>
+              <td>Exhausted</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>移动速度减半。STR和DEX各-6。不能奔跑或冲锋。进行导致力竭的活动不会加重。1小时完全休息后恢复为疲乏。</td>
+            </tr>
+            <tr>
+              <td><strong>恐惧</strong></td>
+              <td>Frightened</td>
+              <td><span class="condition-tag tag-moderate">中等</span></td>
+              <td>必须尽快远离恐惧源（尽可能使用最快移动方式逃跑）。如果不能逃跑则可以战斗，但攻击检定、豁免检定和技能检定-2。被逼入死角时可以攻击但仍有减值。</td>
+            </tr>
+            <tr>
+              <td><strong>惊惧</strong></td>
+              <td>Shaken</td>
+              <td><span class="condition-tag tag-minor">轻微</span></td>
+              <td>攻击检定、豁免检定、技能检定和侦查检定-2。恐惧的最轻等级。</td>
+            </tr>
+            <tr>
+              <td><strong>恐慌</strong></td>
+              <td>Panicked</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>丢弃手中物品，以最大速度随机逃跑，不能进行任何动作。如果被逼入死角则蜷缩（cower）。所有检定-2。恐惧的最严重等级。</td>
+            </tr>
+            <tr>
+              <td><strong>无助</strong></td>
+              <td>Helpless</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>完全无法自卫（如睡眠、麻痹、束缚）。DEX视为0（-5调整值）。近战攻击对无助目标+4，远程攻击无额外加值。敌人可以对其进行致命一击（coup de grace）。</td>
+            </tr>
+            <tr>
+              <td><strong>隐形</strong></td>
+              <td>Invisible</td>
+              <td><span class="condition-tag tag-minor">增益</span></td>
+              <td>视觉无法发现。攻击时获得+2加值且目标失去DEX加值。攻击后隐形消失（除非是高等隐形）。可以被侦查检定发现（DC=20+隐匿检定）。全隐蔽提供50%失手率。</td>
+            </tr>
+            <tr>
+              <td><strong>麻痹</strong></td>
+              <td>Paralyzed</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>无法移动或行动。DEX和STR视为0。 helpless。可以纯粹用精神进行动作（如某些心灵能力）。飞行中的生物坠落，游泳中的生物可能溺水。敌人可以对其进行致命一击。</td>
+            </tr>
+            <tr>
+              <td><strong>石化</strong></td>
+              <td>Petrified</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>变为石头。视为无意识物体。HP足够多（通常视为9+体质值，硬度8）。如果石化状态下破碎，恢复时需要所有碎片都在，否则永久受损。DEX和STR视为0。</td>
+            </tr>
+            <tr>
+              <td><strong>倒地</strong></td>
+              <td>Prone</td>
+              <td><span class="condition-tag tag-minor">轻微</span></td>
+              <td>倒在地上。近战攻击-4，不能进行远程攻击（十字弓除外）。近战攻击者对倒地目标+4，远程攻击者-4。站起需要移动动作且引发借机攻击。</td>
+            </tr>
+            <tr>
+              <td><strong>稳定</strong></td>
+              <td>Stable</td>
+              <td><span class="condition-tag tag-minor">轻微</span></td>
+              <td>HP为负数但不再继续失血。失去意识。每小时有10%几率自然恢复1HP并清醒。受到任何伤害则重新变为濒死。</td>
+            </tr>
+            <tr>
+              <td><strong>震慑</strong></td>
+              <td>Stunned</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>丢弃手中物品，不能进行任何动作。失去AC上的DEX加值。攻击者对震慑目标+4。持续通常1轮。</td>
+            </tr>
+            <tr>
+              <td><strong>昏迷</strong></td>
+              <td>Unconscious</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>HP在0或以下（濒死），或非致命伤害超过当前HP。完全无力，无助。可以被叫醒（受到伤害或泼水等），但通常自然恢复需要时间。</td>
+            </tr>
+            <tr>
+              <td><strong>蜷缩</strong></td>
+              <td>Cowering</td>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td>因恐惧而无法行动。不能进行任何动作，失去AC上的DEX加值。攻击者对蜷缩目标+2。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="danger-box">
+          <strong>致命一击 (Coup de Grace)：</strong>对无助目标使用近战武器进行致命一击：自动命中且为重击。目标必须通过DC=10+伤害值的强韧豁免，失败则立即死亡。进行致命一击是整轮动作且引发借机攻击。
+        </div>
+      </div>
+
+      <div class="combat-card">
+        <h4>状态条件严重程度速查</h4>
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>严重程度</th>
+              <th>包含的状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="condition-tag tag-minor">轻微</span></td>
+              <td class="left">耳聋、恶心、疲乏、惊惧、倒地、稳定</td>
+            </tr>
+            <tr>
+              <td><span class="condition-tag tag-moderate">中等</span></td>
+              <td class="left">目盲、困惑、晕眩、魅惑、纠缠、恐惧</td>
+            </tr>
+            <tr>
+              <td><span class="condition-tag tag-severe">严重</span></td>
+              <td class="left">濒死、支配、反胃、力竭、无助、麻痹、石化、恐慌、震慑、昏迷、蜷缩</td>
+            </tr>
+            <tr>
+              <td><span class="condition-tag tag-death">死亡</span></td>
+              <td class="left">死亡</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 特殊能力 ==================== -->
+    <section id="special-abilities" class="section-anchor">
+      <h2>六、特殊能力</h2>
+
+      <div class="combat-card">
+        <h4>特异能力 (Extraordinary Abilities, Ex)</h4>
+        <p>特异能力是<strong>非魔法</strong>的特殊能力，但不一定是自然或直观的。它们不会受到法术抗力影响，也不会在反魔法区域内失效。</p>
+        <ul>
+          <li>使用特异能力不会引发借机攻击（除非另有说明）。</li>
+          <li>不会被干扰或打断（除非受到攻击并需要进行专注检定）。</li>
+          <li>不受法术抗力影响。</li>
+          <li>在反魔法区域内正常运作。</li>
+          <li>不能被解除魔法。</li>
+          <li><strong>示例：</strong>野蛮人的伤害减免、龙的 frightful presence、许多怪物的特异感官（黑暗视觉、震颤感知等）。</li>
+        </ul>
+      </div>
+
+      <div class="combat-card">
+        <h4>类法术能力 (Spell-Like Abilities, Sp)</h4>
+        <p>类法术能力如同施放法术一样运作，但不是真正的法术。它们有施法者等级，可以被法术抗力影响。</p>
+        <ul>
+          <li>使用类法术能力通常需要标准动作。</li>
+          <li>使用类法术能力<strong>会引发借机攻击</strong>（除非另有说明）。</li>
+          <li>可以被干扰（施法者受到伤害时需专注检定）。</li>
+          <li>受法术抗力影响——施法者等级检定克服SR。</li>
+          <li>在反魔法区域内<strong>不运作</strong>。</li>
+          <li>可以被解除魔法。</li>
+          <li>不能用于反制法术或被法术反制。</li>
+          <li>施法者等级通常等于HD或角色等级。</li>
+          <li>豁免DC = 10 + 法术等级 + CHA调整值。</li>
+          <li><strong>示例：</strong>魔鬼的暗示术、传送术，某些种族的种族类法术能力。</li>
+        </ul>
+      </div>
+
+      <div class="combat-card">
+        <h4>超自然能力 (Supernatural Abilities, Su)</h4>
+        <p>超自然能力是<strong>魔法</strong>性的能力，但不像法术那样运作。它们是魔法的本质体现。</p>
+        <ul>
+          <li>使用超自然能力通常需要标准动作（除非另有说明）。</li>
+          <li>使用超自然能力<strong>不会引发借机攻击</strong>。</li>
+          <li>不会被干扰或打断。</li>
+          <li><strong>不受</strong>法术抗力影响。</li>
+          <li>在反魔法区域内<strong>不运作</strong>。</li>
+          <li>不能被解除魔法。</li>
+          <li>不能被反制。</li>
+          <li>施法者等级通常等于HD。</li>
+          <li>豁免DC = 10 + 1/2 HD + 相关属性调整值。</li>
+          <li><strong>示例：</strong>德鲁伊的野性变形、圣武士的圣疗、龙的喷吐武器、不死生物的驱散抗性。</li>
+        </ul>
+      </div>
+
+      <div class="combat-card">
+        <h4>三种特殊能力对比</h4>
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>特性</th>
+              <th>特异能力 (Ex)</th>
+              <th>类法术能力 (Sp)</th>
+              <th>超自然能力 (Su)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left">是否为魔法</td><td>否</td><td>是</td><td>是</td></tr>
+            <tr><td class="left">引发借机攻击</td><td>否</td><td>是</td><td>否</td></tr>
+            <tr><td class="left">受法术抗力影响</td><td>否</td><td>是</td><td>否</td></tr>
+            <tr><td class="left">反魔法区域内</td><td>正常</td><td>失效</td><td>失效</td></tr>
+            <tr><td class="left">可被解除魔法</td><td>否</td><td>是</td><td>否</td></tr>
+            <tr><td class="left">可被干扰</td><td>否</td><td>是</td><td>否</td></tr>
+            <tr><td class="left">可被反制</td><td>否</td><td>否</td><td>否</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 伤害减免 ==================== -->
+    <section id="dr" class="section-anchor">
+      <h2>七、伤害减免 (Damage Reduction, DR)</h2>
+
+      <div class="combat-card">
+        <h4>基本概念</h4>
+        <div class="formula-box">
+          DR = 减免数值 / 克服类型<br>
+          例：DR 10/魔法 表示每次受到物理伤害时减少10点，除非攻击武器是魔法武器
+        </div>
+        <p>伤害减免在每次攻击命中后应用，从该次攻击的伤害中减去指定数值。如果伤害被减至0或以下，则该次攻击不造成任何伤害（但附加效果如毒素可能仍然生效）。</p>
+        <p><strong>注意：</strong>伤害减免不应用于能量伤害（火焰、寒冷、电击等）——这些由抗力/免疫处理。DR只应用于物理伤害。</p>
+      </div>
+
+      <div class="combat-card">
+        <h4>常见伤害减免类型</h4>
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>DR类型</th>
+              <th>克服方式</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left"><strong>DR X/魔法</strong></td><td>使用+1或更强的魔法武器</td><td class="left">最常见的DR类型。大多数恶魔、魔鬼和魔法生物拥有。</td></tr>
+            <tr><td class="left"><strong>DR X/银</strong></td><td>使用银质武器</td><td class="left">狼人和其他变形者的经典弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/寒铁</strong></td><td>使用寒铁武器</td><td class="left">某些精类生物和恶魔的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/精金</strong></td><td>使用精金武器</td><td class="left">某些构装体和异界生物的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/钝击</strong></td><td>使用钝击武器</td><td class="left">骷髅、某些不死生物的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/挥砍</strong></td><td>使用挥砍武器</td><td class="left">某些植物和不死生物的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/穿刺</strong></td><td>使用穿刺武器</td><td class="left">某些动物的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/善良</strong></td><td>使用善良阵营武器</td><td class="left">某些邪恶异界生物的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/邪恶</strong></td><td>使用邪恶阵营武器</td><td class="left">某些善良异界生物的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/秩序</strong></td><td>使用守序阵营武器</td><td class="left">某些混乱异界生物的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/混乱</strong></td><td>使用混乱阵营武器</td><td class="left">某些守序异界生物的弱点。</td></tr>
+            <tr><td class="left"><strong>DR X/-</strong></td><td>无法克服</td><td class="left">野蛮人的DR属于此类。没有任何武器能克服。</td></tr>
+            <tr><td class="left"><strong>DR X/魔法和银</strong></td><td>需同时满足两个条件</td><td class="left">用"和"连接表示必须同时满足。例如魔法银质武器。</td></tr>
+            <tr><td class="left"><strong>DR X/银或寒铁</strong></td><td>满足任一条件即可</td><td class="left">用"或"连接表示满足任一即可。</td></tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>多重DR：</strong>如果一个生物有多种DR，使用当前攻击无法克服的DR中数值最高的那个。例如一个生物有DR 10/魔法和DR 5/银，使用普通银剑攻击时应用DR 5/银（因为银剑可以克服银的DR），而使用魔法剑攻击时应用DR 10/魔法（因为魔法剑可以克服魔法的DR——但注意只取最高的未被克服的）。实际上应取对攻击者最不利的DR。
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 法术抗力 ==================== -->
+    <section id="sr" class="section-anchor">
+      <h2>八、法术抗力 (Spell Resistance, SR)</h2>
+
+      <div class="combat-card">
+        <h4>基本概念</h4>
+        <div class="formula-box">
+          施法者等级检定 = 1d20 + 施法者等级<br>
+          如果检定结果 ≥ 目标的SR，法术正常生效<br>
+          如果检定结果 &lt; 目标的SR，法术对该目标无效
+        </div>
+        <p>法术抗力类似于对法术的"AC"。每当法术影响到拥有SR的生物时，施法者必须进行一次施法者等级检定来克服SR。</p>
+      </div>
+
+      <div class="combat-card">
+        <h4>法术抗力规则</h4>
+        <ul>
+          <li><strong>主动降低SR：</strong>拥有SR的生物可以自愿降低SR（标准动作），在该轮结束时恢复。</li>
+          <li><strong>仅影响法术和类法术能力：</strong>SR不影响超自然能力和特异能力。</li>
+          <li><strong>一次检定覆盖整个法术：</strong>如果一个法术同时影响多个有SR的生物，对每个生物分别进行SR检定。</li>
+          <li><strong>持续性法术：</strong>当有SR的生物进入持续性法术区域时，需要进行SR检定。</li>
+          <li><strong>法术描述标注：</strong>并非所有法术都受SR影响。法术描述中会标注"SR：是"或"SR：否"。</li>
+          <li><strong>穿透法术：</strong>"穿透法术抗力"专长可以在SR检定上获得+2加值。</li>
+        </ul>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>法术类型</th>
+              <th>是否受SR影响</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left">大多数攻击性法术（火球术、闪电束等）</td><td>是</td></tr>
+            <tr><td class="left">大多数控制法术（支配人类、魅惑怪物等）</td><td>是</td></tr>
+            <tr><td class="left">力场法术（魔法飞弹、灵甲术）</td><td>是</td></tr>
+            <tr><td class="left">不影响生物本身的法术（解除魔法、石墙术）</td><td>否</td></tr>
+            <tr><td class="left">召唤/创造法术</td><td>否（召唤物不受SR影响）</td></tr>
+            <tr><td class="left">能量耗尽法术（如某些死灵术）</td><td>通常否</td></tr>
+            <tr><td class="left">不直接作用于有SR生物的区域效果</td><td>否</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>常见SR值参考：</strong>低等级怪物SR约10-15；中等级怪物SR约15-25；高等级怪物和强大的异界生物SR可达25-35+。一般规则：SR ≈ CR + 10（粗略估计）。
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 免疫与抗性 ==================== -->
+    <section id="immunity" class="section-anchor">
+      <h2>九、免疫与抗性</h2>
+
+      <div class="combat-card">
+        <h4>能量抗性 (Energy Resistance)</h4>
+        <p>能量抗性允许生物忽略一定量的特定类型能量伤害。与伤害减免不同，抗性不区分"类型"——只要伤害属于指定能量类型就减免。</p>
+        <div class="formula-box">
+          实际伤害 = max(0, 原始伤害 - 抗性值)
+        </div>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>抗性类型</th>
+              <th>适用伤害</th>
+              <th>常见来源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left"><strong>火焰抗力</strong></td><td>火焰伤害</td><td class="left">火元素、某些龙、火焰防护法术</td></tr>
+            <tr><td class="left"><strong>寒冷抗力</strong></td><td>寒冷伤害</td><td class="left">冰元素、白龙、寒冷防护法术</td></tr>
+            <tr><td class="left"><strong>电击抗力</strong></td><td>电击伤害</td><td class="left">风元素、蓝龙、电击防护法术</td></tr>
+            <tr><td class="left"><strong>强酸抗力</strong></td><td>强酸伤害</td><td class="left">泥怪、黑龙、酸液防护法术</td></tr>
+            <tr><td class="left"><strong>音波抗力</strong></td><td>音波伤害</td><td class="left">某些异界生物、音波防护法术</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="combat-card">
+        <h4>免疫 (Immunity)</h4>
+        <p>免疫意味着生物完全不受特定类型的伤害或效果影响。免疫是绝对性的——无论伤害量多大，免疫的生物都不受影响。</p>
+
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>免疫类型</th>
+              <th>免疫效果</th>
+              <th>常见拥有者</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left"><strong>火焰免疫</strong></td><td>不受任何火焰伤害</td><td class="left">火元素、火巨灵、红龙</td></tr>
+            <tr><td class="left"><strong>寒冷免疫</strong></td><td>不受任何寒冷伤害</td><td class="left">冰元素、白龙</td></tr>
+            <tr><td class="left"><strong>电击免疫</strong></td><td>不受任何电击伤害</td><td class="left">风元素、蓝龙</td></tr>
+            <tr><td class="left"><strong>强酸免疫</strong></td><td>不受任何强酸伤害</td><td class="left">黑龙、某些泥怪</td></tr>
+            <tr><td class="left"><strong>毒素免疫</strong></td><td>不受任何毒素影响</td><td class="left">构装体、元素、不死生物、植物</td></tr>
+            <tr><td class="left"><strong>睡眠免疫</strong></td><td>不受睡眠效果影响</td><td class="left">精灵、不死生物、构装体、元素</td></tr>
+            <tr><td class="left"><strong>麻痹免疫</strong></td><td>不受麻痹效果影响</td><td class="left">不死生物、构装体</td></tr>
+            <tr><td class="left"><strong>变形免疫</strong></td><td>不会被强制变形</td><td class="left">某些高CR生物</td></tr>
+            <tr><td class="left"><strong>重击免疫</strong></td><td>不受重击额外伤害</td><td class="left">构装体、泥怪、植物、不死生物</td></tr>
+            <tr><td class="left"><strong>偷袭免疫</strong></td><td>不受偷袭额外伤害</td><td class="left">构装体、泥怪、植物、不死生物</td></tr>
+            <tr><td class="left"><strong>死亡效果免疫</strong></td><td>不受即死效果影响</td><td class="left">不死生物、构装体</td></tr>
+            <tr><td class="left"><strong>疾病免疫</strong></td><td>不受疾病影响</td><td class="left">不死生物、构装体</td></tr>
+            <tr><td class="left"><strong>心灵效果免疫</strong></td><td>不受心灵影响法术和能力影响</td><td class="left">构装体、不死生物、泥怪、植物</td></tr>
+            <tr><td class="left"><strong>震慑免疫</strong></td><td>不受震慑效果影响</td><td class="left">不死生物、构装体、泥怪、植物</td></tr>
+            <tr><td class="left"><strong>非致命伤害免疫</strong></td><td>不受非致命伤害影响</td><td class="left">构装体、不死生物</td></tr>
+            <tr><td class="left"><strong>属性伤害免疫</strong></td><td>不受属性伤害/吸取</td><td class="left">构装体、不死生物</td></tr>
+            <tr><td class="left"><strong>力竭/疲乏免疫</strong></td><td>不会力竭或疲乏</td><td class="left">不死生物、构装体</td></tr>
+            <tr><td class="left"><strong>能量吸取免疫</strong></td><td>不受负等级影响</td><td class="left">不死生物、构装体</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="combat-card">
+        <h4>按生物类型划分的常见免疫</h4>
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>生物类型</th>
+              <th>常见免疫</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><strong>构装体 (Construct)</strong></td>
+              <td class="left">心灵效果、毒素、睡眠、麻痹、震慑、疾病、死亡效果、死灵效果、非致命伤害、属性伤害/吸取、力竭/疲乏、能量吸取、重击、偷袭</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>不死生物 (Undead)</strong></td>
+              <td class="left">心灵效果、毒素、睡眠、麻痹、震慑、疾病、死亡效果、非致命伤害、属性伤害（体质）、力竭/疲乏、能量吸取、重击、偷袭。正能量伤害，负能量治疗</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>元素 (Elemental)</strong></td>
+              <td class="left">毒素、睡眠、麻痹、震慑、重击、偷袭</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>泥怪 (Ooze)</strong></td>
+              <td class="left">心灵效果、毒素、睡眠、麻痹、变形、震慑、重击、偷袭</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>植物 (Plant)</strong></td>
+              <td class="left">心灵效果、毒素、睡眠、麻痹、变形、震慑、重击、偷袭</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>抗力与免疫的区别：</strong>抗力（Resistance）是数值减免——超过抗力值的部分仍然生效。免疫（Immunity）是绝对防护——无论数值多大都完全无效。例如：火焰抗力10受到25点火焰伤害时只受15点；而火焰免疫时受到任何火焰伤害都为0。
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 伤害与死亡 ==================== -->
+    <section class="section-anchor">
+      <h2>附录：伤害、濒死与死亡</h2>
+
+      <div class="combat-card">
+        <h4>HP与伤害状态</h4>
+        <table class="combat-table">
+          <thead>
+            <tr>
+              <th>HP状态</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="left"><strong>HP > 0</strong></td><td class="left">正常行动，无惩罚。</td></tr>
+            <tr><td class="left"><strong>HP = 0</strong></td><td class="left">失去行动能力（Disabled）。每轮进行标准动作或移动动作后受1点伤害。只能进行自由动作。</td></tr>
+            <tr><td class="left"><strong>HP = -1 到 -(CON-1)</strong></td><td class="left">濒死（Dying）。失去意识，每轮损失1HP。可通过DC 10的医疗检定稳定（DC=10+负HP数）。稳定后每小时10%几率恢复1HP并清醒。</td></tr>
+            <tr><td class="left"><strong>HP = -CON 或更低</strong></td><td class="left">死亡（Dead）。灵魂离开身体。可用魔法复活。</td></tr>
+            <tr><td class="left"><strong>非致命伤害 > 当前HP</strong></td><td class="left">昏迷（Unconscious）。非致命伤害超过当前HP时角色昏迷，直至非致命伤害被治愈或当前HP增加。</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box">
+          <strong>非致命伤害：</strong>用钝器造成的非致命伤害不直接减少HP，而是单独追踪。当非致命伤害等于当前HP时角色昏迷，超过当前HP时角色失去意识。非致命伤害以每小时等于角色等级的速度自然恢复。用致命武器造成非致命伤害攻击-4，用非致命武器造成致命伤害攻击-4。
+        </div>
+      </div>
+    </section>
+
+    <div class="highlight-box">
+      <strong>参考资料：</strong>《玩家手册》(Player's Handbook) 第八章 "Combat" 全部内容；《城主指南》(Dungeon Master's Guide) 第五章 "Campaigns" 中关于战斗变体和特殊能力的补充说明；《怪物图鉴》(Monster Manual) 中各生物的特殊能力描述。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

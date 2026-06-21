@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>角色创建指南 Character Creation - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.tool-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.tool-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.tool-card p { font-size:14px; color:#666; }
+.tool-card a { color:var(--text-link,#21618c); text-decoration:none; font-weight:600; }
+.tool-card a:hover { text-decoration:underline; }
+.calc-box { background:#f0ebe0; border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.calc-box label { display:block; margin:6px 0 2px; font-weight:600; font-size:14px; }
+.calc-box input, .calc-box select { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); border-radius:4px; font-size:14px; margin-bottom:8px; }
+.calc-box button { background:var(--accent-gold,#d4a017); color:#fff; border:none; padding:8px 20px; border-radius:4px; cursor:pointer; font-weight:600; margin-top:8px; }
+.calc-box button:hover { background:#b8910f; }
+.result-box { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:10px 14px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.step-list { counter-reset: steps; list-style:none; padding:0; }
+.step-list li { counter-increment: steps; padding:10px 10px 10px 40px; position:relative; margin:6px 0; background:var(--bg-card,#faf6ee); border-radius:4px; border:1px solid var(--border-light,#e8dcc8); }
+.step-list li::before { content:counter(steps); position:absolute; left:10px; top:10px; background:var(--accent-gold,#d4a017); color:#fff; width:22px; height:22px; border-radius:50%; text-align:center; line-height:22px; font-size:12px; font-weight:700; }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.combo-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:20px 0; }
+.combo-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:14px; }
+.combo-card h4 { margin:0 0 8px 0; color:var(--accent-gold,#d4a017); }
+.combo-card p { margin:0; font-size:13px; line-height:1.5; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">DM工具箱</div>
+      <a href="intro.html">工具总览</a>
+      <a href="character-creation.html" class="active">角色创建指南</a>
+      <a href="encounter-builder.html">遭遇构建器</a>
+      <a href="treasure-generator.html">宝藏生成器</a>
+      <a href="random-tables.html">随机表格大全</a>
+      <a href="xp-tracker.html">经验值追踪器</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="../rules.html">核心规则</a>
+      <a href="../classes/intro.html">职业手册</a>
+      <a href="../monsters/intro.html">怪物图鉴</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>角色创建指南</h1>
+    <h2>Character Creation Guide</h2>
+
+    <p>创建角色是 D&D 游戏的第一步。本指南将带你完成从选择种族到确定最终属性的完整流程。</p>
+
+    <h2 class="section-title">标准创建流程</h2>
+
+    <ol class="step-list">
+      <li><strong>选择种族</strong>：从 <a href="../races/intro.html">种族列表</a> 中选择一个种族。种族决定了你的体型、速度、种族特性和属性加成。</li>
+      <li><strong>选择职业</strong>：从 <a href="../classes/intro.html">职业列表</a> 中选择一个职业。职业决定了你的 HD、BAB、豁免、技能点和职业能力。</li>
+      <li><strong>确定属性值</strong>：使用掷骰、购点或标准阵列法确定六项属性（力量、敏捷、体质、智力、感知、魅力）。</li>
+      <li><strong>选择技能</strong>：根据职业和智力调整值分配技能点数。参见 <a href="../skills/intro.html">技能列表</a>。</li>
+      <li><strong>选择专长</strong>：1级时获得1个专长（人类额外+1）。参见 <a href="../feats/intro.html">专长列表</a>。</li>
+      <li><strong>购买装备</strong>：根据起始金币购买武器、盔甲、冒险装备等。参见 <a href="../equipment/intro.html">装备列表</a>。</li>
+      <li><strong>确定细节</strong>：计算 HP、AC、攻击加值、豁免检定、先攻调整值，并编写角色背景。</li>
+    </ol>
+
+    <h2 class="section-title">属性分配方法详解</h2>
+
+    <p>D&D 3.5e 提供了多种确定属性值的方法，DM 可以根据战役风格选择：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>方法</th>
+          <th>描述</th>
+          <th>优点</th>
+          <th>缺点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>4d6 去最低</strong></td>
+          <td>掷4个六面骰，去掉最低值，加总剩余三个。重复6次分配给六项属性。</td>
+          <td>随机性强，可能产生高属性</td>
+          <td>可能产生极端不平衡</td>
+        </tr>
+        <tr>
+          <td><strong>标准阵列</strong></td>
+          <td>使用固定数组：15, 14, 13, 12, 10, 8</td>
+          <td>平衡、公平、快速</td>
+          <td>缺乏变化</td>
+        </tr>
+        <tr>
+          <td><strong>25点购点</strong></td>
+          <td>所有属性从8开始，花费25点购买属性提升（见购点表）</td>
+          <td>完全控制，适合低魔战役</td>
+          <td>属性上限较低</td>
+        </tr>
+        <tr>
+          <td><strong>28点购点</strong></td>
+          <td>所有属性从8开始，花费28点购买属性提升</td>
+          <td>平衡且灵活</td>
+          <td>仍需权衡取舍</td>
+        </tr>
+        <tr>
+          <td><strong>32点购点</strong></td>
+          <td>所有属性从8开始，花费32点购买属性提升</td>
+          <td>可以创建强力角色</td>
+          <td>可能导致角色过强</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>购点成本表</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>属性值</th>
+          <th>成本</th>
+          <th>属性值</th>
+          <th>成本</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>8</td><td>0</td><td>14</td><td>6</td></tr>
+        <tr><td>9</td><td>1</td><td>15</td><td>8</td></tr>
+        <tr><td>10</td><td>2</td><td>16</td><td>10</td></tr>
+        <tr><td>11</td><td>3</td><td>17</td><td>13</td></tr>
+        <tr><td>12</td><td>4</td><td>18</td><td>16</td></tr>
+        <tr><td>13</td><td>5</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">属性调整值表</h2>
+
+    <p>属性调整值影响几乎所有掷骰结果。以下是属性1-30的调整值：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>属性</th><th>调整值</th><th>属性</th><th>调整值</th><th>属性</th><th>调整值</th><th>属性</th><th>调整值</th><th>属性</th><th>调整值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>-5</td><td>7</td><td>-2</td><td>13</td><td>+1</td><td>19</td><td>+4</td><td>25</td><td>+7</td></tr>
+        <tr><td>2</td><td>-4</td><td>8</td><td>-1</td><td>14</td><td>+2</td><td>20</td><td>+5</td><td>26</td><td>+8</td></tr>
+        <tr><td>3</td><td>-4</td><td>9</td><td>-1</td><td>15</td><td>+2</td><td>21</td><td>+5</td><td>27</td><td>+8</td></tr>
+        <tr><td>4</td><td>-3</td><td>10</td><td>0</td><td>16</td><td>+3</td><td>22</td><td>+6</td><td>28</td><td>+9</td></tr>
+        <tr><td>5</td><td>-3</td><td>11</td><td>0</td><td>17</td><td>+3</td><td>23</td><td>+6</td><td>29</td><td>+9</td></tr>
+        <tr><td>6</td><td>-2</td><td>12</td><td>+1</td><td>18</td><td>+4</td><td>24</td><td>+7</td><td>30</td><td>+10</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">新手推荐组合</h2>
+
+    <p>如果你是新手玩家，以下是六个经典的种族+职业组合，容易上手且在游戏中表现出色：</p>
+
+    <div class="combo-grid">
+      <div class="combo-card">
+        <h4>人类战士</h4>
+        <p>高 HP、多种武器和盔甲选择、额外专长。适合喜欢近战和简单直接战斗风格的玩家。</p>
+      </div>
+      <div class="combo-card">
+        <h4>精灵法师</h4>
+        <p>高智力加成、法术多样性。适合喜欢策略和远程魔法攻击的玩家，但需要注意脆弱的 HP。</p>
+      </div>
+      <div class="combo-card">
+        <h4>矮人牧师</h4>
+        <p>高体质和感知、治疗能力、重甲熟练。适合喜欢支援队友和持久战的玩家。</p>
+      </div>
+      <div class="combo-card">
+        <h4>半身人游荡者</h4>
+        <p>高敏捷加成、偷袭伤害、丰富技能。适合喜欢潜行、侦查和精准打击的玩家。</p>
+      </div>
+      <div class="combo-card">
+        <h4>半精灵吟游诗人</h4>
+        <p>多才多艺、吟游音乐、部分法术。适合喜欢社交、辅助和灵活应变的玩家。</p>
+      </div>
+      <div class="combo-card">
+        <h4>侏儒术士</h4>
+        <p>魅力加成、自发施法、幻术专精。适合喜欢即兴发挥和创意法术使用的玩家。</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">属性掷骰计算器</h2>
+
+    <div class="calc-box">
+      <h3>4d6 去最低掷骰</h3>
+      <p>点击按钮掷6次4d6，每次去掉最低值，得到6个属性值。</p>
+      <button onclick="roll4d6()">掷骰！</button>
+      <div id="rollResults"></div>
+    </div>
+
+    <div class="calc-box">
+      <h3>购点计算器</h3>
+      <label for="pointBuy">购点总数：</label>
+      <select id="pointBuy">
+        <option value="25">25点（低魔战役）</option>
+        <option value="28" selected>28点（标准战役）</option>
+        <option value="32">32点（高魔战役）</option>
+      </select>
+      <div id="abilityInputs">
+        <label>力量: <input type="number" id="str" value="8" min="8" max="18" onchange="updatePointBuy()"></label>
+        <label>敏捷: <input type="number" id="dex" value="8" min="8" max="18" onchange="updatePointBuy()"></label>
+        <label>体质: <input type="number" id="con" value="8" min="8" max="18" onchange="updatePointBuy()"></label>
+        <label>智力: <input type="number" id="int" value="8" min="8" max="18" onchange="updatePointBuy()"></label>
+        <label>感知: <input type="number" id="wis" value="8" min="8" max="18" onchange="updatePointBuy()"></label>
+        <label>魅力: <input type="number" id="cha" value="8" min="8" max="18" onchange="updatePointBuy()"></label>
+      </div>
+      <div id="pointBuyResult" class="result-box">剩余点数: 28</div>
+    </div>
+
+    <script>
+      function roll4d6() {
+        const results = [];
+        const output = document.getElementById('rollResults');
+        let html = '<div class="result-box"><strong>掷骰结果：</strong><br>';
+        
+        for (let i = 0; i < 6; i++) {
+          const rolls = [];
+          for (let j = 0; j < 4; j++) {
+            rolls.push(Math.floor(Math.random() * 6) + 1);
+          }
+          const min = Math.min(...rolls);
+          const minIndex = rolls.indexOf(min);
+          const kept = rolls.filter((_, idx) => idx !== minIndex);
+          const total = kept.reduce((a, b) => a + b, 0);
+          results.push(total);
+          html += `第${i+1}组: [${rolls.join(', ')}] → 去掉${min} → <strong>${total}</strong><br>`;
+        }
+        
+        results.sort((a, b) => b - a);
+        html += `<br><strong>排序后：</strong> ${results.join(', ')}`;
+        html += '</div>';
+        output.innerHTML = html;
+      }
+
+      function updatePointBuy() {
+        const totalPoints = parseInt(document.getElementById('pointBuy').value);
+        const costTable = {8:0, 9:1, 10:2, 11:3, 12:4, 13:5, 14:6, 15:8, 16:10, 17:13, 18:16};
+        const abilities = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+        let spent = 0;
+        
+        abilities.forEach(abil => {
+          const val = parseInt(document.getElementById(abil).value);
+          spent += costTable[val] || 0;
+        });
+        
+        const remaining = totalPoints - spent;
+        const resultBox = document.getElementById('pointBuyResult');
+        resultBox.textContent = `已花费: ${spent}, 剩余: ${remaining}`;
+        resultBox.style.borderLeftColor = remaining >= 0 ? '#27ae60' : '#e74c3c';
+      }
+
+      document.getElementById('pointBuy').addEventListener('change', updatePointBuy);
+    </script>
+
+    <h2 class="section-title">种族属性调整表</h2>
+
+    <p>选择种族后，根据以下调整修改属性值：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>种族</th>
+          <th>力量</th>
+          <th>敏捷</th>
+          <th>体质</th>
+          <th>智力</th>
+          <th>感知</th>
+          <th>魅力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>人类</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>精灵</td><td>-2</td><td>+2</td><td>-2</td><td>+2</td><td>—</td><td>—</td></tr>
+        <tr><td>矮人</td><td>—</td><td>—</td><td>+2</td><td>—</td><td>—</td><td>-2</td></tr>
+        <tr><td>半身人</td><td>-2</td><td>+2</td><td>—</td><td>—</td><td>—</td><td>+2</td></tr>
+        <tr><td>侏儒</td><td>-2</td><td>—</td><td>+2</td><td>—</td><td>—</td><td>-2</td></tr>
+        <tr><td>半精灵</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>半兽人</td><td>+2</td><td>—</td><td>—</td><td>-2</td><td>—</td><td>-2</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">职业起始金币</h2>
+
+    <p>1级角色的起始金币由职业决定：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>职业</th>
+          <th>起始金币</th>
+          <th>平均值</th>
+          <th>职业</th>
+          <th>起始金币</th>
+          <th>平均值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>野蛮人</td><td>2d4 × 10 gp</td><td>50 gp</td><td>圣武士</td><td>6d4 × 10 gp</td><td>150 gp</td></tr>
+        <tr><td>吟游诗人</td><td>4d4 × 10 gp</td><td>100 gp</td><td>游侠</td><td>6d4 × 10 gp</td><td>150 gp</td></tr>
+        <tr><td>牧师</td><td>5d4 × 10 gp</td><td>125 gp</td><td>游荡者</td><td>5d4 × 10 gp</td><td>125 gp</td></tr>
+        <tr><td>德鲁伊</td><td>2d4 × 10 gp</td><td>50 gp</td><td>术士</td><td>3d4 × 10 gp</td><td>75 gp</td></tr>
+        <tr><td>战士</td><td>6d4 × 10 gp</td><td>150 gp</td><td>武僧</td><td>5 gp</td><td>5 gp</td></tr>
+        <tr><td>法师</td><td>3d4 × 10 gp</td><td>75 gp</td><td>—</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">HP 计算指南</h2>
+
+    <p>1级时的 HP 计算公式：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>职业</th>
+          <th>HD</th>
+          <th>1级 HP</th>
+          <th>每级 HP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>野蛮人、战士、圣武士、游侠</td><td>d10</td><td>10 + CON 调整值</td><td>d10 + CON 调整值</td></tr>
+        <tr><td>吟游诗人、牧师、德鲁伊、武僧</td><td>d8</td><td>8 + CON 调整值</td><td>d8 + CON 调整值</td></tr>
+        <tr><td>游荡者</td><td>d6</td><td>6 + CON 调整值</td><td>d6 + CON 调整值</td></tr>
+        <tr><td>法师、术士</td><td>d4</td><td>4 + CON 调整值</td><td>d4 + CON 调整值</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>注意</strong>：1级时 HD 取最大值，之后每级可以选择掷骰或取平均值（d8 平均 = 4.5，向上取整为 5）。</p>
+
+    <h2 class="section-title">角色卡最终检查清单</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>检查项</th>
+          <th>说明</th>
+          <th>是否完成</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>种族和职业</td><td>确认种族特性已应用，职业 HD 和 BAB 正确</td><td>[ ]</td></tr>
+        <tr><td>六项属性</td><td>种族加值已加入，调整值已计算</td><td>[ ]</td></tr>
+        <tr><td>HP</td><td>1级 HP = 最大 HD + CON 调整值</td><td>[ ]</td></tr>
+        <tr><td>AC</td><td>10 + 敏捷调整 + 盔甲加值 + 盾牌加值 + 其他</td><td>[ ]</td></tr>
+        <tr><td>先攻</td><td>敏捷调整值 + 其他加值</td><td>[ ]</td></tr>
+        <tr><td>速度</td><td>种族基础速度，受盔甲影响</td><td>[ ]</td></tr>
+        <tr><td>攻击加值</td><td>BAB + 力量调整(近战) 或 敏捷调整(远程) + 武器加值</td><td>[ ]</td></tr>
+        <tr><td>豁免</td><td>强韧、反射、意志，加上属性调整</td><td>[ ]</td></tr>
+        <tr><td>技能</td><td>技能点已分配，本职技能和跨职技能区分</td><td>[ ]</td></tr>
+        <tr><td>专长</td><td>1级专长已选择，人类额外专长已选择</td><td>[ ]</td></tr>
+        <tr><td>装备</td><td>武器、盔甲、冒险装备已购买</td><td>[ ]</td></tr>
+        <tr><td>法术（如有）</td><td>已知法术和法术位已确定</td><td>[ ]</td></tr>
+        <tr><td>阵营</td><td>已选择，与职业限制兼容</td><td>[ ]</td></tr>
+        <tr><td>背景故事</td><td>至少一段简要描述</td><td>[ ]</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">常见创建错误</h2>
+
+    <div class="tool-card">
+      <h3>应避免的常见错误</h3>
+      <p><strong>属性分配不当</strong>：把高属性放在不重要的属性上。例如，战士应该优先力量和体质，而不是魅力。</p>
+      <p><strong>忽视种族限制</strong>：某些职业有阵营限制（如圣武士必须守序善良）。</p>
+      <p><strong>技能点计算错误</strong>：1级时技能点 = (职业基础 + INT 调整值) × 4，之后每级 = (职业基础 + INT 调整值) × 1。</p>
+      <p><strong>忘记种族特性</strong>：精灵的武器熟练、矮人的抗毒性、半身人的幸运等经常被遗忘。</p>
+      <p><strong>装备超支</strong>：确保起始金币没有超过职业规定范围。</p>
+      <p><strong>忽视负重</strong>：购买太多装备可能导致速度降低和检定惩罚。</p>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

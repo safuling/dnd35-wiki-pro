@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>装备与物品 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .eq-category-header {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--bg-infobox);
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    margin: 24px 0 12px;
+    font-size: 18px; font-weight: 700; color: var(--text-heading);
+  }
+  table.eq-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
+  table.eq-table th { background:var(--bg-table-head); padding:8px 12px; text-align:left; }
+  table.eq-table td { border:1px solid var(--border-light); padding:7px 12px; }
+  table.eq-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .armor-tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:12px; font-weight:600; margin-right:4px; }
+  .tag-light { background:#e8f5e9; color:#2e7d32; }
+  .tag-medium { background:#fff3e0; color:#e65100; }
+  .tag-heavy { background:#fce4ec; color:#c62828; }
+  .tag-shield { background:#e3f2fd; color:#1565c0; }
+  .item-tip { background:#f0f4ff; border-left:3px solid var(--accent-blue); padding:10px 14px; margin:8px 0; font-size:13px; border-radius:0 var(--radius) var(--radius) 0; }
+  .currency-box { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:12px 0; }
+  .currency-item { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius); padding:10px; text-align:center; }
+  .currency-item .coin-name { font-weight:700; font-size:14px; }
+  .currency-item .coin-value { font-size:12px; color:var(--text-subtle); margin-top:4px; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html" class="active">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">装备类别</div>
+      <a href="#currency">货币体系</a>
+      <a href="weapons-detail.html">武器详述</a>
+      <a href="#armor">盔甲与护盾</a>
+      <a href="#gear">冒险装备</a>
+      <a href="magic-items.html">魔法物品</a>
+      <a href="magic-weapons.html">魔法武器与防具</a>
+      <a href="wondrous-items.html">奇物与消耗品</a>
+      <a href="artifacts-intelligent.html">神器与智能物品</a>
+      <a href="weapons-detail.html#special-materials">特殊材质</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="../rules.html">核心规则</a>
+      <a href="../feats/intro.html">专长</a>
+      <a href="../global-search.html">法术搜索</a>
+      <a href="../3r/equipment.html">3R扩展装备</a>
+    </div>
+  </aside>
+
+  <article class="main-content">
+    <h1>🗡️ 装备与物品</h1>
+    <p style="color:var(--text-subtle);font-size:14px;">D&D 3.5e 核心装备数据 | 来源：PHB第6-7章</p>
+
+    <!-- 货币 -->
+    <h2 id="currency">💰 货币体系</h2>
+    <p>D&D 世界使用金属货币，从低到高依次为：</p>
+    <div class="currency-box">
+      <div class="currency-item">
+        <div class="coin-name" style="color:#a0522d;">铜币</div>
+        <div class="coin-value">CP<br>Copper Piece</div>
+        <div style="font-size:12px;margin-top:6px;">10铜 = 1银</div>
+      </div>
+      <div class="currency-item">
+        <div class="coin-name" style="color:#aaa;">银币</div>
+        <div class="coin-value">SP<br>Silver Piece</div>
+        <div style="font-size:12px;margin-top:6px;">10银 = 1金</div>
+      </div>
+      <div class="currency-item">
+        <div class="coin-name" style="color:#c8960c;">金币</div>
+        <div class="coin-value">GP<br>Gold Piece</div>
+        <div style="font-size:12px;margin-top:6px;">最常用货币</div>
+      </div>
+      <div class="currency-item">
+        <div class="coin-name" style="color:#b8860b;">白金币</div>
+        <div class="coin-value">PP<br>Platinum Piece</div>
+        <div style="font-size:12px;margin-top:6px;">1白金 = 10金</div>
+      </div>
+      <div class="currency-item">
+        <div class="coin-name" style="color:#2e8b57;">电金币</div>
+        <div class="coin-value">EP<br>Electrum Piece</div>
+        <div style="font-size:12px;margin-top:6px;">1电金 = 5银（少见）</div>
+      </div>
+    </div>
+
+    <!-- 武器 -->
+    <h2 id="weapons">⚔️ 武器</h2>
+    <div class="item-tip">武器按使用方式分为：<strong>单手武器、双手武器、副手武器</strong>；按类型分为：<strong>简单武器、军用武器、异域武器</strong>。</div>
+
+    <div class="eq-category-header">🗡️ 常见单手武器</div>
+    <table class="eq-table">
+      <thead><tr><th>武器</th><th>英文</th><th>价格</th><th>伤害(S/M)</th><th>重击</th><th>射程</th><th>类型</th></tr></thead>
+      <tbody>
+        <tr><td>匕首</td><td>Dagger</td><td>2 gp</td><td>1d3/1d4</td><td>19-20/×2</td><td>10 ft.</td><td>穿刺/斩击</td></tr>
+        <tr><td>短剑</td><td>Short Sword</td><td>10 gp</td><td>1d4/1d6</td><td>19-20/×2</td><td>—</td><td>穿刺</td></tr>
+        <tr><td>长剑</td><td>Longsword</td><td>15 gp</td><td>1d6/1d8</td><td>19-20/×2</td><td>—</td><td>斩击</td></tr>
+        <tr><td>阔剑</td><td>Bastard Sword</td><td>35 gp</td><td>1d8/1d10</td><td>19-20/×2</td><td>—</td><td>斩击</td></tr>
+        <tr><td>战锤</td><td>Warhammer</td><td>12 gp</td><td>1d6/1d8</td><td>×3</td><td>—</td><td>钝击</td></tr>
+        <tr><td>手斧</td><td>Handaxe</td><td>6 gp</td><td>1d4/1d6</td><td>×3</td><td>—</td><td>斩击</td></tr>
+        <tr><td>长棍</td><td>Club</td><td>— gp</td><td>1d4/1d6</td><td>×2</td><td>10 ft.</td><td>钝击</td></tr>
+        <tr><td>流星锤</td><td>Morningstar</td><td>8 gp</td><td>1d6/1d8</td><td>×2</td><td>—</td><td>钝击/穿刺</td></tr>
+        <tr><td>长矛</td><td>Spear</td><td>2 gp</td><td>1d6/1d8</td><td>×3</td><td>20 ft.</td><td>穿刺</td></tr>
+      </tbody>
+    </table>
+
+    <div class="eq-category-header">⚔️ 常见双手武器</div>
+    <table class="eq-table">
+      <thead><tr><th>武器</th><th>英文</th><th>价格</th><th>伤害(S/M)</th><th>重击</th><th>类型</th></tr></thead>
+      <tbody>
+        <tr><td>大剑</td><td>Greatsword</td><td>50 gp</td><td>1d10/2d6</td><td>19-20/×2</td><td>斩击</td></tr>
+        <tr><td>大斧</td><td>Greataxe</td><td>20 gp</td><td>1d10/1d12</td><td>×3</td><td>斩击</td></tr>
+        <tr><td>战戟</td><td>Glaive</td><td>8 gp</td><td>1d8/1d10</td><td>×3</td><td>斩击</td></tr>
+        <tr><td>战斧矛</td><td>Halberd</td><td>10 gp</td><td>1d8/1d10</td><td>×3</td><td>穿刺/斩击</td></tr>
+        <tr><td>长枪</td><td>Lance</td><td>10 gp</td><td>1d6/1d8</td><td>×3</td><td>穿刺</td></tr>
+        <tr><td>镰刀</td><td>Scythe</td><td>18 gp</td><td>1d6/2d4</td><td>×4</td><td>穿刺/斩击</td></tr>
+        <tr><td>双节棍</td><td>Quarterstaff</td><td>— gp</td><td>1d4/1d6</td><td>×2</td><td>钝击</td></tr>
+      </tbody>
+    </table>
+
+    <div class="eq-category-header">🏹 远程武器</div>
+    <table class="eq-table">
+      <thead><tr><th>武器</th><th>英文</th><th>价格</th><th>伤害(S/M)</th><th>重击</th><th>射程</th></tr></thead>
+      <tbody>
+        <tr><td>短弓</td><td>Shortbow</td><td>30 gp</td><td>1d4/1d6</td><td>×3</td><td>60 ft.</td></tr>
+        <tr><td>长弓</td><td>Longbow</td><td>75 gp</td><td>1d6/1d8</td><td>×3</td><td>100 ft.</td></tr>
+        <tr><td>轻弩</td><td>Light Crossbow</td><td>35 gp</td><td>1d6/1d8</td><td>19-20/×2</td><td>80 ft.</td></tr>
+        <tr><td>重弩</td><td>Heavy Crossbow</td><td>50 gp</td><td>1d8/1d10</td><td>19-20/×2</td><td>120 ft.</td></tr>
+        <tr><td>投矛</td><td>Javelin</td><td>1 gp</td><td>1d4/1d6</td><td>×2</td><td>30 ft.</td></tr>
+        <tr><td>飞刀</td><td>Shuriken</td><td>1 gp（5个）</td><td>1/1d2</td><td>×2</td><td>10 ft.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 盔甲 -->
+    <h2 id="armor">🛡️ 盔甲与护盾</h2>
+    <div class="item-tip">盔甲提供 <strong>护甲加值（Armor Bonus）</strong>，护盾提供 <strong>护盾加值（Shield Bonus）</strong>，两者不叠加同类加值，但可以互相叠加。</div>
+
+    <table class="eq-table">
+      <thead><tr><th>名称</th><th>英文</th><th>类型</th><th>价格</th><th>AC加值</th><th>最大敏捷</th><th>护甲检定减值</th><th>奥术法术失败</th><th>速度(30/20)</th></tr></thead>
+      <tbody>
+        <tr><td>皮革护甲</td><td>Leather</td><td><span class="armor-tag tag-light">轻型</span></td><td>10 gp</td><td>+2</td><td>+6</td><td>0</td><td>10%</td><td>30/20</td></tr>
+        <tr><td>链甲衬衫</td><td>Chain Shirt</td><td><span class="armor-tag tag-light">轻型</span></td><td>100 gp</td><td>+4</td><td>+4</td><td>-2</td><td>20%</td><td>30/20</td></tr>
+        <tr><td>鳞甲</td><td>Scale Mail</td><td><span class="armor-tag tag-medium">中型</span></td><td>50 gp</td><td>+4</td><td>+3</td><td>-4</td><td>25%</td><td>20/15</td></tr>
+        <tr><td>链甲</td><td>Chainmail</td><td><span class="armor-tag tag-medium">中型</span></td><td>150 gp</td><td>+5</td><td>+2</td><td>-5</td><td>30%</td><td>20/15</td></tr>
+        <tr><td>胸甲</td><td>Breastplate</td><td><span class="armor-tag tag-medium">中型</span></td><td>200 gp</td><td>+5</td><td>+3</td><td>-4</td><td>25%</td><td>20/15</td></tr>
+        <tr><td>扎甲</td><td>Splint Mail</td><td><span class="armor-tag tag-heavy">重型</span></td><td>200 gp</td><td>+6</td><td>+0</td><td>-7</td><td>40%</td><td>20/15</td></tr>
+        <tr><td>板甲</td><td>Full Plate</td><td><span class="armor-tag tag-heavy">重型</span></td><td>1500 gp</td><td>+8</td><td>+1</td><td>-6</td><td>35%</td><td>20/15</td></tr>
+        <tr><td>轻型木盾</td><td>Light Wooden Shield</td><td><span class="armor-tag tag-shield">护盾</span></td><td>3 gp</td><td>+1</td><td>—</td><td>-1</td><td>5%</td><td>—</td></tr>
+        <tr><td>重型钢盾</td><td>Heavy Steel Shield</td><td><span class="armor-tag tag-shield">护盾</span></td><td>20 gp</td><td>+2</td><td>—</td><td>-2</td><td>15%</td><td>—</td></tr>
+        <tr><td>塔盾</td><td>Tower Shield</td><td><span class="armor-tag tag-shield">护盾</span></td><td>30 gp</td><td>+4</td><td>+2</td><td>-10</td><td>50%</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 冒险装备 -->
+    <h2 id="gear">🎒 冒险装备</h2>
+    <table class="eq-table">
+      <thead><tr><th>物品</th><th>英文</th><th>价格</th><th>重量</th><th>用途说明</th></tr></thead>
+      <tbody>
+        <tr><td>绳索（丝质）</td><td>Silk Rope</td><td>10 gp</td><td>5 lb.</td><td>攀爬用，DC 5</td></tr>
+        <tr><td>绳索（麻质）</td><td>Hemp Rope</td><td>1 gp</td><td>10 lb.</td><td>攀爬用，DC 0</td></tr>
+        <tr><td>火把</td><td>Torch</td><td>1 cp</td><td>1 lb.</td><td>亮光20ft，光线40ft，持续1小时</td></tr>
+        <tr><td>地精油脂</td><td>Alchemist's Fire</td><td>20 gp</td><td>1 lb.</td><td>投掷武器，1d6火焰/轮，持续燃烧</td></tr>
+        <tr><td>治疗药水</td><td>Potion of Cure Light Wounds</td><td>50 gp</td><td>—</td><td>治疗1d8+1生命值</td></tr>
+        <tr><td>解毒剂</td><td>Antitoxin</td><td>50 gp</td><td>—</td><td>强韧检定+5（1小时）</td></tr>
+        <tr><td>撬锁工具</td><td>Thieves' Tools</td><td>30 gp</td><td>1 lb.</td><td>开锁/拆解装置用</td></tr>
+        <tr><td>探险包（标准）</td><td>Backpack</td><td>2 gp</td><td>2 lb.</td><td>容量30lb</td></tr>
+        <tr><td>攀爬工具</td><td>Grappling Hook</td><td>1 gp</td><td>4 lb.</td><td>配合绳索攀爬建筑</td></tr>
+        <tr><td>圣水</td><td>Holy Water</td><td>25 gp</td><td>1 lb.</td><td>对不死生物和恶魔造成2d4伤害</td></tr>
+        <tr><td>巡逻灯（有盖）</td><td>Hooded Lantern</td><td>7 gp</td><td>2 lb.</td><td>亮光30ft，持续6小时/品脱油</td></tr>
+        <tr><td>魔法背包</td><td>Handy Haversack</td><td>2000 gp</td><td>5 lb.</td><td>可装120lb，取物标准动作变自由动作</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 魔法物品 -->
+    <h2 id="magic-items">✨ 魔法物品</h2>
+    <div class="item-tip">
+      魔法物品按类型分为：<strong>武器 / 护甲 / 魔杖 / 法杖 / 法术卷轴 / 神奇物品 / 神奇戒指</strong> 等。
+      每类物品在特定位置使用（头部、腰部、手指、颈部等），同一位置通常只能佩戴一件。
+    </div>
+    <table class="eq-table">
+      <thead><tr><th>常见物品</th><th>价格参考</th><th>效果说明</th></tr></thead>
+      <tbody>
+        <tr><td>+1 长剑</td><td>2315 gp</td><td>攻击+1，伤害+1，视为魔法武器</td></tr>
+        <tr><td>+1 链甲</td><td>1650 gp</td><td>AC额外+1（叠加）</td></tr>
+        <tr><td>飞行药水</td><td>750 gp</td><td>飞行速度60ft，持续1分钟/等级</td></tr>
+        <tr><td>隐形戒指（次级）</td><td>20000 gp</td><td>持续隐形效果（攻击后解除）</td></tr>
+        <tr><td>飞翼靴</td><td>16000 gp</td><td>飞行速度60ft（良好），5分钟/日×3</td></tr>
+        <tr><td>力量腰带（+4）</td><td>16000 gp</td><td>力量+4（增强加值）</td></tr>
+        <tr><td>先知护符（+5）</td><td>25000 gp</td><td>全豁免+5（对抗加值）</td></tr>
+        <tr><td>变形药水</td><td>750 gp</td><td>变成指定小型/中型生物，持续1小时</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 特殊材质 -->
+    <h2 id="special-materials">⚗️ 特殊材质</h2>
+    <table class="eq-table">
+      <thead><tr><th>材质</th><th>英文</th><th>特性</th><th>成本增加</th></tr></thead>
+      <tbody>
+        <tr><td>秘银</td><td>Mithral</td><td>护甲减轻1个重量等级（中型→轻型），护甲检定减值-3，奥术施法失败减10%</td><td>武器+500gp，护甲+1000gp/磅</td></tr>
+        <tr><td>精钢</td><td>Adamantine</td><td>武器：无视硬度10以下，DR/—对抗；护甲：增加DR2/—</td><td>+3000gp（武器）</td></tr>
+        <tr><td>冷铁</td><td>Cold Iron</td><td>克制恶魔和仙灵（绕过DR）</td><td>武器×2倍价格</td></tr>
+        <tr><td>银制</td><td>Alchemical Silver</td><td>克制狼人（绕过DR），但-1伤害</td><td>+20gp（轻武器）/+90gp（单手）</td></tr>
+        <tr><td>暗木</td><td>Darkwood</td><td>重量减半，木制盾不计护甲检定减值（弓/弩每磅-1重量）</td><td>+10gp/磅</td></tr>
+        <tr><td>龙骨</td><td>Dragonhide</td><td>制成护甲时奥术施法失败为0%，仍有其他属性</td><td>视龙的类型</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:32px;padding:16px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border-light);">
+      <strong>📝 更多装备信息：</strong>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li>特殊材质武器：PHB p.283-285</li>
+        <li>魔法物品详细列表：DMG第7-8章</li>
+        <li>3R扩展装备大全：<a href="../3r/equipment.html">3R扩展装备 →</a></li>
+      </ul>
+    </div>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;text-align:center;">
+      📚 数据来源：D&D 3.5e PHB第6章（装备）| DMG第7章（魔法物品）
+    </p>
+  </article>
+</div>
+
+<footer class="site-footer" style="background:var(--bg-navbar);color:#aaa;padding:16px;text-align:center;font-size:13px;">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

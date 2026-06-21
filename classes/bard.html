@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吟游诗人 (Bard) - D&amp;D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .class-table { font-size:13px; width:100%; border-collapse:collapse; margin:12px 0; }
+  .class-table th { background:var(--bg-table-head); padding:7px 10px; text-align:center; font-size:12px; }
+  .class-table td { border:1px solid var(--border-light); padding:6px 10px; text-align:center; }
+  .class-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .feature-box { background:var(--bg-card); border-left:4px solid var(--accent-gold); padding:14px 18px; margin:12px 0; border-radius:0 var(--radius) var(--radius) 0; }
+  .feature-box h4 { margin:0 0 6px; color:var(--text-heading); }
+  .tip-box { background:#e8f5e9; border-left:3px solid #27ae60; padding:10px 14px; margin:10px 0; font-size:14px; border-radius:0 var(--radius) var(--radius) 0; }
+  .warn-box { background:#fff3e0; border-left:3px solid #ff9800; padding:10px 14px; margin:10px 0; font-size:14px; border-radius:0 var(--radius) var(--radius) 0; }
+  .infobox { float:right; width:280px; background:var(--bg-infobox); border:1px solid var(--border-main); border-radius:var(--radius); padding:14px; margin:0 0 16px 20px; font-size:13px; }
+  .infobox h3 { margin:0 0 10px; text-align:center; background:var(--bg-table-head); padding:8px; margin:-14px -14px 12px; border-radius:var(--radius) var(--radius) 0 0; }
+  .infobox-row { display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid var(--border-light); }
+  .infobox-row:last-child { border-bottom:none; }
+  .ib-label { color:var(--text-subtle); }
+  .ib-value { font-weight:600; }
+  .spell-table { font-size:12px; width:100%; border-collapse:collapse; margin:10px 0; }
+  .spell-table th { background:var(--bg-table-head); padding:5px 8px; text-align:center; }
+  .spell-table td { border:1px solid var(--border-light); padding:4px 8px; text-align:center; font-size:11px; }
+  .spell-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html" class="active">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+  </aside>
+
+  <article class="main-content">
+    <div class="infobox">
+      <h3>吟游诗人 (Bard)</h3>
+      <div class="infobox-row"><span class="ib-label">生命骰</span><span class="ib-value">d6</span></div>
+      <div class="infobox-row"><span class="ib-label">基础攻击加值</span><span class="ib-value">中（等级×3/4）</span></div>
+      <div class="infobox-row"><span class="ib-label">强韧豁免</span><span class="ib-value">低</span></div>
+      <div class="infobox-row"><span class="ib-label">反射豁免</span><span class="ib-value">中</span></div>
+      <div class="infobox-row"><span class="ib-label">意志豁免</span><span class="ib-value">中</span></div>
+      <div class="infobox-row"><span class="ib-label">技能点/级</span><span class="ib-value">6 + 智力调整值</span></div>
+      <div class="infobox-row"><span class="ib-label">主要属性</span><span class="ib-value">魅力、敏捷、体质</span></div>
+      <div class="infobox-row"><span class="ib-label">阵营限制</span><span class="ib-value">非守序阵营</span></div>
+    </div>
+
+    <h1>吟游诗人 <span style="font-size:0.6em;color:var(--text-subtle);">(Bard)</span></h1>
+
+    <h2 id="overview">📖 职业概述</h2>
+    <p>吟游诗人是学者、音乐家、魔法师和冒险者于一身的多面手。他们通过魅力施展法术，用歌声和音乐激励盟友（<strong>鼓舞能力</strong>），同时也是出色的技能专家。吟游诗人是团队的"润滑剂"——没有吟游诗人，冒险队伍会运转得更困难。</p>
+    <div class="tip-box"><strong>💡 适合的玩家：</strong>适合喜欢辅助角色、技能多、法术自由但力量偏弱的玩家。吟游诗人的鼓舞歌谣对全队伤害和命中有显著加成。</div>
+
+    <h2 id="features">🌟 职业特性</h2>
+    <div class="feature-box"><h4>吟游鼓舞（Bardic Music）</h4><p>每日次数=等级。各种鼓舞效果：鼓舞勇气（+1士气加值攻击/伤害/豁免，1级）、鼓舞能力（8级）、反击歌（8级）、迷人之歌（6级）等。</p></div>
+    <div class="feature-box"><h4>吟游知识（Bardic Knowledge）</h4><p>所有知识技能均可当作本职技能使用，即使没有受训。+等级+智力调整值的随机知识检定。</p></div>
+    <div class="feature-box"><h4>自发施法</h4><p>吟游诗人通过魅力施法，可以自发准备和使用任何已知法术。</p></div>
+    <div class="feature-box"><h4>反制魔法（Countersong）</h4><p>使用"表演"技能对抗声音/语言类法术或效果。</p></div>
+
+    <h2 id="level-table">📊 等级成长表</h2>
+    <table class="class-table">
+      <thead>
+        <tr><th>等级</th><th>BAB</th><th>强韧</th><th>反射</th><th>意志</th><th>特殊能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>+0</td><td>+0</td><td>+2</td><td>+2</td><td>吟游鼓舞、吟游知识、反制魔法</td></tr>
+        <tr><td>2</td><td>+1</td><td>+0</td><td>+3</td><td>+3</td><td>灵活移动</td></tr>
+        <tr><td>3</td><td>+2</td><td>+1</td><td>+3</td><td>+3</td><td>—</td></tr>
+        <tr><td>4</td><td>+3</td><td>+1</td><td>+4</td><td>+4</td><td>—</td></tr>
+        <tr><td>5</td><td>+3</td><td>+1</td><td>+4</td><td>+4</td><td>—</td></tr>
+        <tr><td>6</td><td>+4</td><td>+2</td><td>+5</td><td>+5</td><td>迷人之歌（迷惑）</td></tr>
+        <tr><td>7</td><td>+5</td><td>+2</td><td>+5</td><td>+5</td><td>—</td></tr>
+        <tr><td>8</td><td>+6/+1</td><td>+2</td><td>+6</td><td>+6</td><td>鼓舞能力、反制歌曲</td></tr>
+        <tr><td>9</td><td>+6/+1</td><td>+3</td><td>+6</td><td>+6</td><td>—</td></tr>
+        <tr><td>10</td><td>+7/+2</td><td>+3</td><td>+7</td><td>+7</td><td>激励英雄气概</td></tr>
+        <tr><td>12</td><td>+9/+4</td><td>+4</td><td>+8</td><td>+8</td><td>激励伟大行动</td></tr>
+        <tr><td>15</td><td>+11/+6/+1</td><td>+5</td><td>+9</td><td>+9</td><td>暗示（暗示效果）</td></tr>
+        <tr><td>18</td><td>+13/+8/+3</td><td>+6</td><td>+11</td><td>+11</td><td>群体魅惑</td></tr>
+        <tr><td>20</td><td>+15/+10/+5</td><td>+6</td><td>+12</td><td>+12</td><td>传奇鼓舞</td></tr>
+      </tbody>
+    </table>
+
+    
+    <h2 id="spells">🪄 法术系统</h2>
+    <p>吟游诗人通过<strong>魅力</strong>施法，法术位如下表（额外法术位见PHB附录）：</p>
+    <table class="spell-table">
+      <thead><tr><th>等级</th><th>0环</th><th>1环</th><th>2环</th><th>3环</th><th>4环</th><th>5环</th><th>6环</th></tr></thead>
+      <tbody><tr><td>1</td><td>2</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>2</td><td>3</td><td>1</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>3</td><td>3</td><td>2</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>4</td><td>3</td><td>3</td><td>1</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>5</td><td>3</td><td>3</td><td>2</td><td>0</td><td>-</td><td>-</td><td>-</td></tr><tr><td>6</td><td>3</td><td>3</td><td>3</td><td>1</td><td>-</td><td>-</td><td>-</td></tr><tr><td>7</td><td>4</td><td>3</td><td>3</td><td>2</td><td>0</td><td>-</td><td>-</td></tr><tr><td>8</td><td>4</td><td>4</td><td>3</td><td>3</td><td>1</td><td>-</td><td>-</td></tr><tr><td>9</td><td>4</td><td>4</td><td>3</td><td>3</td><td>2</td><td>-</td><td>-</td></tr><tr><td>10</td><td>4</td><td>4</td><td>4</td><td>3</td><td>3</td><td>0</td><td>-</td></tr><tr><td>14</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>3</td><td>1</td></tr><tr><td>20</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td></tr></tbody>
+    </table>
+
+    <h2 id="build">🎯 构建建议</h2>
+    <ul style="margin:8px 0 0 20px;line-height:2.2;">
+      <li>属性优先：魅力（施法/鼓舞）→ 敏捷（AC）→ 体质（HP）→ 智力（技能）</li>
+      <li>推荐专长：法术专注（法术DC+1）、精巧法术（远程接触不引发借机攻击）</li>
+      <li>多职业：吟游诗人1-2级获取鼓舞，之后换法师或游荡者常见</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      📚 来源：PHB p.29-35 | SRD · Bard |
+      <a href="barbarian.html">← 野蛮人</a> | <a href="cleric.html">牧师 →</a>
+    </p>
+  </article>
+</div>
+
+<footer class="site-footer" style="background:var(--bg-navbar);color:#aaa;padding:16px;text-align:center;font-size:13px;">
+  <p>D&amp;D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+</body>
+</html>

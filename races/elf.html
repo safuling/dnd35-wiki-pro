@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>精灵 Elf - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html" class="active">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">种族</div>
+      <a href="intro.html">总览</a>
+      <a href="human.html">人类 Human</a>
+      <a href="elf.html" class="active">精灵 Elf</a>
+      <a href="dwarf.html">矮人 Dwarf</a>
+      <a href="halfling.html">半身人 Halfling</a>
+      <a href="gnome.html">侏儒 Gnome</a>
+      <a href="half-elf.html">半精灵 Half-elf</a>
+      <a href="half-orc.html">半兽人 Half-orc</a>
+      <a href="expanded-races.html">扩展种族</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- 信息盒子 -->
+    <div class="infobox">
+      <div class="infobox-title">🧝 精灵 Elf</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <div class="infobox-img" style="padding:20px;font-size:64px;opacity:0.3;">🧝🌲🏹</div>
+      <table class="infobox-table">
+        <tr><td>体型</td><td>中型</td></tr>
+        <tr><td>属性调整</td><td>敏捷+2，体质-2</td></tr>
+        <tr><td>速度</td><td>30英尺</td></tr>
+        <tr><td>视力</td><td>低光视觉 60英尺</td></tr>
+        <tr><td>语言</td><td>通用语、精灵语</td></tr>
+        <tr><td>偏爱职业</td><td>法师（男性）、游侠（女性）</td></tr>
+        <tr><td>挑战等级</td><td>1（1级角色）</td></tr>
+        <tr><td>来源</td><td>PHB p.14 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>精灵（Elf）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心种族</span>
+      <span class="badge badge-race">PHB p.14</span>
+      <span class="badge badge-note">长寿·优雅·魔法亲和</span>
+    </p>
+    <p>精灵是费伦大陆最<strong>优雅</strong>且<strong>长寿</strong>的种族之一。他们拥有<strong>600年</strong>的自然寿命，
+    这让他们有足够的时间精进技艺、研习魔法、或追求艺术。在D&D 3.5e中，精灵以其<strong>魔法亲和力</strong>和
+    <strong>敏锐感官</strong>著称，是优秀的法师、游侠、和吟游诗人。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#traits">种族特性</a></li>
+        <li><a href="#mechanics">机制分析</a></li>
+        <li><a href="#subraces">亚种分支</a></li>
+        <li><a href="#multiclass">多职业建议</a></li>
+        <li><a href="#roleplay">角色扮演建议</a></li>
+        <li><a href="#names">姓名习惯</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+        <li><a href="#source">数据来源</a></li>
+      </ol>
+    </div>
+
+    <h2 id="traits">📊 种族特性</h2>
+    <div class="Rule-box">
+      <h3>属性调整</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>属性</th><th>调整值</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>力量（STR）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>敏捷（DEX）</td><td><strong>+2</strong></td><td>天生敏捷</td></tr>
+          <tr><td>体质（CON）</td><td><span style="color:var(--accent-red);"><strong>-2</strong></span></td><td>体质较弱</td></tr>
+          <tr><td>智力（INT）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>感知（WIS）</td><td>±0</td><td>无调整</td></tr>
+          <tr><td>魅力（CHA）</td><td>±0</td><td>无调整</td></tr>
+        </tbody>
+      </table>
+      <p><strong>敏捷+2/体质-2</strong>是典型的"玻璃大炮"配置：高命中/高AC，但HP较少。
+      精灵法师尤其脆弱，需谨慎保护。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>独有种族特性</h3>
+      <ol>
+        <li><strong>低光视觉（Low-Light Vision）</strong>：精灵在<strong>星光、月光、灯火</strong>等昏暗光线下，
+          能看到相当于人类<strong>两倍距离</strong>的物体（PHB p.14）。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;"><strong>机制意义：</strong>在户外夜间或昏暗室内，
+          精灵无需打灯即可正常视物（但全黑仍不可见）。</p>
+        </li>
+        <li><strong>武器娴熟（Weapon Proficiency）</strong>：精灵自动获得
+          <strong>长剑（Longsword）</strong>、<strong>细剑（Rapier）</strong>、
+          <strong>短弓（Shortbow）</strong>、<strong>长弓（Longbow）</strong>的武器熟练。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;">这使精灵战士/游侠在1级就拥有优秀武器选择。</p>
+        </li>
+        <li><strong>技能娴熟（Skill Bonus）</strong>：精灵在<strong>侦察（Search）</strong>和
+          <strong>聆听（Listen）</strong>检定上获得<strong>+2种族加值</strong>。
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;">这使精灵成为优秀的侦察兵。</p>
+        </li>
+        <li><strong>法术抗力（Spell Resistance）</strong>：精灵对<strong>敌意法术</strong>拥有
+          <strong>SR 11+等级</strong>（最高SR 21）。但精灵对自己阵营的法师友军法术也会抵抗！
+          <p style="font-size:13px;color:#666;margin:8px 0 0 0;"><strong>重大缺点：</strong>精灵法师无法轻易对自己施放增益法术（如"加速术"），
+          因为法术抗力会抵抗。这是精灵的<strong>最大Mechanic惩罚</strong>。</p>
+        </li>
+        <li><strong>免疫魔法睡眠</strong>：精灵对"睡眠"系法术和效果免疫。</li>
+        <li><strong>偏爱职业</strong>：男性精灵偏爱<strong>法师</strong>，女性精灵偏爱<strong>游侠</strong>。
+          选择其他职业会触发<strong>兼职惩罚</strong>（经验值-20%）。</li>
+        <li><strong>自动获得语言</strong>：通用语、精灵语。</li>
+      </ol>
+    </div>
+
+    <h2 id="mechanics">⚙️ 机制分析</h2>
+    <div class="Rule-box">
+      <h3>精灵的优劣对比</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>优势</th><th>劣势</th><th>评价</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>敏捷+2（命中/AC/远程）</td><td>体质-2（HP-1/级）</td><td>典型玻璃大炮</td></tr>
+          <tr><td>低光视觉（夜间作战）</td><td>法术抗力（自伤）</td><td>法师的大忌</td></tr>
+          <tr><td>武器熟练（长剑/细剑/弓）</td><td>偏爱职业限制</td><td>兼职惩罚风险</td></tr>
+          <tr><td>侦察/聆听+2</td><td>——</td><td>优秀侦察兵</td></tr>
+          <tr><td>免疫睡眠</td><td>——</td><td>小优势</td></tr>
+        </tbody>
+      </table>
+      <p><strong>结论：</strong>精灵最适合<strong>敏捷型角色</strong>（游侠、漫游者、弓箭手）。
+      精灵法师虽然符合"偏爱职业"，但<strong>法术抗力是巨大负担</strong>，需谨慎考虑。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>精灵法师：法术抗力问题</h3>
+      <p>精灵的<strong>法术抗力（SR 11+等级）</strong>是最大的Mechanic争议点：</p>
+      <ul>
+        <li>✅ <strong>防御价值</strong>：对抗敌方法师时，有概率完全抵抗法术。</li>
+        <li>❌ <strong>自伤问题</strong>：精灵法师无法轻易对自己施放"加速术"、"茅察术"等增益法术，
+          因为法术抗力会抵抗<strong>任何法术</strong>（包括友军法术）。</li>
+        <li>🔧 <strong>解决方案</strong>：
+          <ol>
+            <li>让<strong>其他角色</strong>对精灵施放增益法术（法术抗力可被友军忽略，需DC 15+施法者等级的<strong>法术穿透</strong>检定）。</li>
+            <li>选择<strong>不用增益法术</strong>的战斗风格（如纯输出法师）。</li>
+            <li>接受SR限制，专注于<strong>远程打击</strong>（精灵游侠）。</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+
+    <h2 id="subraces">🌿 亚种分支</h2>
+    <p>在《被遗忘的国度》设定中，精灵分为多个亚种。核心规则（PHB）仅提及<strong>高等精灵（High Elf）</strong>和
+    <strong>木精灵（Wood Elf）</strong>，但战役设定扩展了大量亚种。</p>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>高等精灵（High Elf）</h3>
+        <p><strong>典型代表：</strong>月之精灵（Moon Elf）、日之精灵（Sun Elf）。</p>
+        <p><strong>特征：</strong>高大、优雅、精通魔法。费伦的<strong>银月城（Silverymoon）</strong>由高等精灵建立。</p>
+        <p><strong>推荐职业：</strong>法师、吟游诗人、贵族。</p>
+      </div>
+      <div class="section-card">
+        <h3>木精灵（Wood Elf）</h3>
+        <p><strong>典型代表：</strong>野精灵（Wild Elf）。</p>
+        <p><strong>特征：</strong>隐居森林、擅长追踪、厌恶文明。增益调整：敏捷+2/体质+0/智力-2。</p>
+        <p><strong>推荐职业：</strong>游侠、德鲁伊、盗贼。</p>
+      </div>
+      <div class="section-card">
+        <h3>黑暗精灵（Drow / 卓尔）</h3>
+        <p><strong>注意：</strong>黑暗精灵<strong>不是核心种族</strong>，需DM许可。</p>
+        <p><strong>特征：</strong>居住在地下（幽暗地域），崇拜蜘蛛神后罗丝。属性调整：敏捷+2/体质-2/魅力+2/力量-2。</p>
+        <p><strong>推荐职业：</strong>游荡者、法师（专攻塑能/咒法）。</p>
+      </div>
+    </div>
+
+    <h2 id="multiclass">🔄 多职业建议</h2>
+    <p>精灵的<strong>偏爱职业限制</strong>（男性法师/女性游侠）使多职业变得复杂。</p>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>精灵法师 / 战士</h3>
+        <p><strong>经典组合。</strong>法师提供火力，战士提供近战生存。</p>
+        <p style="font-size:13px;color:#666;">⚠️ 注意：女性精灵选择此组合会触发兼职惩罚。</p>
+      </div>
+      <div class="section-card">
+        <h3>精灵游侠 / 漫游者</h3>
+        <p><strong>女性精灵首选。</strong>游侠的"双专精"（近战+弓箭）配合精灵的敏捷+2，输出极高。</p>
+        <p style="font-size:13px;color:#666;">推荐：选择"弓箭专精"专长。</p>
+      </div>
+      <div class="section-card">
+        <h3>精灵法师 / 吟游诗人</h3>
+        <p><strong>魅力法师流。</strong>利用"法术触发"等进阶职业，打造法系多面手。</p>
+        <p style="font-size:13px;color:#666;">需高魅力（CHA 14+）。</p>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#c0392b;margin-top:15px;"><strong>⚠️ 兼职惩罚警告：</strong>
+    精灵的偏爱职业是<strong>性别特定</strong>的。如果男性精灵选择非法师职业，或女性精灵选择非游侠职业，
+    将触发<strong>兼职惩罚</strong>（经验值-20%）。人类或无偏爱职业限制的种族更适合多职业。</p>
+
+    <h2 id="roleplay">🎭 角色扮演建议</h2>
+    <div class="Rule-box">
+      <h3>精灵的"长寿"带来的角色深度</h3>
+      <p>精灵的<strong>600年寿命</strong>是角色扮演的宝藏。一个精灵角色可能：</p>
+      <ul>
+        <li>经历过<strong>数百年历史</strong>（如卓尔入侵、阴影Annual等）。</li>
+        <li>对人类/矮人的"短视"感到<strong>不耐烦</strong>或<strong>怜悯</strong>。</li>
+        <li>对自己的技艺追求<strong>极致完美</strong>（数百年打磨一把弓）。</li>
+        <li>对<strong>爱情</strong>持谨慎态度（害怕与人类恋人经历生离死别）。</li>
+      </ul>
+      <p><strong>常见性格原型：</strong></p>
+      <ul>
+        <li><strong>高傲学者</strong>：认为其他种族都是"幼稚的孩童"。</li>
+        <li><strong>忧伤诗人</strong>：歌唱失去的古老文明。</li>
+        <li><strong>警觉游侠</strong>：守护森林免受入侵者。</li>
+        <li><strong>冷漠法师</strong>：对短期政治不感兴趣，专注于长期研究。</li>
+      </ul>
+    </div>
+
+    <h2 id="names">📛 姓名习惯</h2>
+    <p>精灵姓名通常<strong>优雅且富有诗意</strong>。在费伦设定中：</p>
+    <table class="wiki-table">
+      <thead>
+        <tr><th>性别</th><th>示例姓名</th><th>意义/背景</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>男性</td><td>艾拉斯卓（Alustriel）、博德温（Boldor）</td><td>银月城高贵姓氏</td></tr>
+        <tr><td>女性</td><td>戴娜瑟（Dynaheir）、伊尔明斯特（Elminster，注：此为男性）</td><td>传说中的大法师</td></tr>
+        <tr><td>家族名</td><td>星歌（Star-song）、月叶（Moonleaf）</td><td>描述祖先事迹</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:#777;">注：精灵通常有名无姓，或采用"名·家族名"格式。</p>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"法术抗力"的触发时机冲突</h3>
+      <p><strong>冲突描述：</strong>精灵的"法术抗力"是否在<strong>友军法术</strong>上也生效？</p>
+      <p><strong>SRD和PHB的明确说法：</strong>"Spell resistance functions exactly like armor class ... 
+      except that ... it protects against ... hostile spells."（SRD · Races · Elf）</p>
+      <p>即：<strong>法术抗力保护精灵免受敌意法术</strong>，但<strong>友军法术也需穿透SR</strong>（除非施法者通过"法术穿透"检定）。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.15</span></p>
+      <p><strong>DM解释差异：</strong>某些DM<strong> houserule</strong>规定"友军法术自动忽略法术抗力"。
+      如果DM采用此规则，精灵法师的玩法将大幅改变。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>关于"偏爱职业"的性别限制问题</h3>
+      <p>在3.0版中，精灵的偏爱职业是<strong>性别特定</strong>的（男性法师/女性游侠）。
+      但在3.5版SRD中，此限制<strong>被移除</strong>——精灵的偏爱职业统一为<strong>法师</strong>。</p>
+      <p><span class="source-tag">来源：SRD 3.5 vs. PHB 3.0</span></p>
+      <p><strong>建议：</strong>采用3.5版规则（偏爱职业=法师），除非DM特别说明要使用3.0版设定。</p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.14-16 —— 精灵种族特性</li>
+      <li>📘 <strong>SRD 3.5</strong> · Races → Elf —— 开放式游戏规则</li>
+      <li>📗 <strong>DMG（城主手册）3.5版</strong> p.173 —— 法术抗力详解</li>
+      <li>📗 <strong>Forgotten Realms Campaign Setting</strong> —— 费伦设定中的精灵亚种</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="human.html">← 上一页：人类</a> | <a href="dwarf.html">下一页：矮人 →</a>
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 精灵种族详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

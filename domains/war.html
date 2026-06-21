@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战争领域 War - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html" class="active">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>战争 <span style="font-size:0.5em;color:#888;">War</span></h1>
+    <p><span class="domain-badge" style="background:#c0392b;">战争</span> 战争领域赋予牧师强大的战斗能力和武器精通。战怒能力在关键战斗中提供攻击和伤害加值，同时对神祇偏好武器的熟练使战争领域牧师兼具施法者与战士的双重身份，是战场上最具威胁的存在之一。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>战怒 (Battle Rage)</h4>
+      <p>每日一次，你可以在攻击检定、伤害检定和对抗恐惧的豁免检定上获得+2加值，持续轮数等于你的牧师等级。此为超自然能力。</p>
+    </div>
+    <div class="power-box">
+      <h4>武器熟练 (Weapon Proficiency)</h4>
+      <p>你自动熟练你所信奉神祇的偏好武器。如果该武器属于军用武器，你获得对应的军用武器熟练专长。此能力使牧师在战斗中能够更有效地使用武器。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=magic_weapon">魔法武器 (Magic Weapon)</a></td><td>武器获得+1增强加值</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=spiritual_weapon">灵能武器 (Spiritual Weapon)</a></td><td>创造一把魔法武器自动攻击敌人</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=magic_vestment">魔法武备 (Magic Vestment)</a></td><td>赋予盔甲或盾牌+1至+5增强加值</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=divine_power">神力术 (Divine Power)</a></td><td>攻击加值等于基础攻击加值，力量+6，每级+1临时HP</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=flame_strike">烈焰连击 (Flame Strike)</a></td><td>召唤一道神圣火柱，对区域内敌人造成每级1d6伤害</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=blade_barrier">剑刃障壁 (Blade Barrier)</a></td><td>创造旋转剑刃构成的墙壁，穿过者受到每级1d6伤害</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=power_word_blind">律令目盲 (Power Word Blind)</a></td><td>以一道律令使200HP以下的目标永久失明</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell-detail.html?id=power_word_stun">律令震慑 (Power Word Stun)</a></td><td>以一道律令震慑150HP以下的目标</td></tr>
+        <tr><td>9</td><td><a href="../spells/spell-detail.html?id=power_word_kill">律令死亡 (Power Word Kill)</a></td><td>以一道律令直接杀死100HP以下的目标</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>海若尼斯</strong><span>Heironeous · LG · 英勇/战争</span></div>
+      <div class="deity-card"><strong>赫克斯托</strong><span>Hextor · LE · 暴政/战争</span></div>
+      <div class="deity-card"><strong>坦帕斯</strong><span>Tempus · CN · 战争/战斗</span></div>
+      <div class="deity-card"><strong>红骑士</strong><span>Red Knight · LN · 战略/战斗</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>战争领域赋予对神祇偏好武器的熟练——这使得牧师能够更有效地参与近战。搭配神力术（4级领域法术），战争领域牧师可以在短时间内获得与战士相当的战斗力。律令系列法术（7-9级）则提供了直接以言语击溃敌人的恐怖能力。</p>
+
+    <p style="margin-top:30px;"><a href="../global-search.html?domain=战争">→ 查看所有「战争」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

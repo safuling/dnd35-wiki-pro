@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经典怪物 Classic Monsters - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物图鉴</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html" class="active">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+      <a href="humanoids.html">类人怪物</a>
+      <a href="undead.html">不死生物</a>
+      <a href="magical-beasts.html">魔法兽</a>
+      <a href="aberrations-fey.html">异怪与精类</a>
+      <a href="outsiders.html">异界生物</a>
+      <a href="giants-constructs.html">巨人与构装体</a>
+      <a href="plants-oozes.html">植物与泥怪</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>经典怪物 <span style="font-size:0.5em;color:#888;">Classic Monsters</span></h1>
+    <p>本页收录 D&D 3.5e 中最具代表性的经典怪物，按类别分组，包含核心数据与战术概述。数据来源于《怪物图鉴》(Monster Manual) 及后续补遗。</p>
+
+    <!-- ========== 1. 底栖魔鱼 ========== -->
+    <h2 id="aboleth">1. 底栖魔鱼 (Aboleth)</h2>
+    <p>远古水生异怪，栖息于幽暗地域的地下湖泊与深海废墟。它们在上古时代曾统治世界，如今仍潜伏于深渊之中，以灵能奴役其他生物。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>挑战等级 (CR)</td><td>7</td></tr>
+        <tr><td>体型</td><td>大型</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>生命骰 (HD)</td><td>10d8+30 (75 hp)</td></tr>
+        <tr><td>防御等级 (AC)</td><td>18 (-1体型, +1敏捷, +8天然), 接触10, 措手不及17</td></tr>
+        <tr><td>攻击</td><td>4条触手 +10 近战 (1d6+5 外加黏液)</td></tr>
+        <tr><td>特殊能力</td><td>黏液之云 (Mucous Cloud)：水中生物自动包裹黏液，失去游泳速度<br>奴役 (Enslave)：每天3次，范围30尺，类似支配人类，持续至解除<br>灵能：催眠图纹、幻墙、常驻幻影等</td></tr>
+        <tr><td>栖息地</td><td>地下水域、深海洞穴、幽暗地域</td></tr>
+        <tr><td>组织</td><td>单独、一对或群巢 (3-6)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>底栖魔鱼喜欢在水中伏击，先用灵能幻术迷惑目标，再以奴役能力控制最强的对手为自己战斗。它们很少单独出现，通常拥有被奴役的护卫队。</p>
+
+    <!-- ========== 2. 动物/凶暴动物 ========== -->
+    <h2 id="animals">2. 动物与凶暴动物 (Animals / Dire Animals)</h2>
+    <p>凶暴动物是普通动物的巨大化、凶暴化版本，体型更大，攻击性更强，是低等级冒险者常见的威胁。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th><th>CR</th><th>体型</th><th>HD</th><th>AC</th><th>攻击</th><th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>凶暴鼠 (Dire Rat)</td><td>1</td><td>小型</td><td>1d8+1 (5 hp)</td><td>15 (+1体型,+1敏捷,+3天然)</td><td>啮咬 +3 (1d6+1)</td><td>疾病：Filth Fever 强韧DC12</td>
+        </tr>
+        <tr>
+          <td>凶暴狼 (Dire Wolf)</td><td>3</td><td>大型</td><td>4d8+12 (30 hp)</td><td>14 (-1体型,+2敏捷,+3天然)</td><td>啮咬 +7 (1d8+6)</td><td>绊摔 (Trip)：啮咬命中后可自由动作绊摔，+4检定</td>
+        </tr>
+        <tr>
+          <td>凶暴猿 (Dire Ape)</td><td>6</td><td>大型</td><td>7d8+21 (52 hp)</td><td>15 (-1体型,+2敏捷,+4天然)</td><td>2爪 +11 (1d8+5), 啮咬 +6 (1d6+2)</td><td>猛扑 (Rend)：双爪命中造成2d6+7额外伤害</td>
+        </tr>
+        <tr>
+          <td>凶暴熊 (Dire Bear)</td><td>7</td><td>大型</td><td>10d8+40 (85 hp)</td><td>17 (-1体型,+1敏捷,+7天然)</td><td>2爪 +15 (1d8+7), 啮咬 +10 (2d6+3)</td><td>猛扑 (Rend)：双爪命中造成2d8+10额外伤害；精通擒抱</td>
+        </tr>
+        <tr>
+          <td>凶暴虎 (Dire Tiger)</td><td>8</td><td>大型</td><td>12d8+36 (90 hp)</td><td>17 (-1体型,+2敏捷,+6天然)</td><td>2爪 +16 (2d4+6), 啮咬 +11 (1d10+3)</td><td>猛扑：全回合攻击 (2爪+2耙+啮咬)；精通擒抱；耙击2d4+3</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>凶暴动物依赖本能作战。凶暴狼成群结队以绊摔战术围攻；凶暴熊和凶暴虎以蛮力猛扑，试图抓住落单的猎物。驯兽师可通过驯养动物检定驾驭它们作为坐骑或战兽。</p>
+
+    <!-- ========== 3. 眼魔 ========== -->
+    <h2 id="beholder">3. 眼魔 (Beholder)</h2>
+    <p>D&D 最具标志性的怪物之一。球状身体上长满触手眼柄，中央巨眼释放反魔法锥，每根眼柄末端拥有不同的致命射线。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>挑战等级 (CR)</td><td>13</td></tr>
+        <tr><td>体型</td><td>大型</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>生命骰 (HD)</td><td>14d8+56 (119 hp)</td></tr>
+        <tr><td>防御等级 (AC)</td><td>18 (-1体型, +1敏捷, +8天然), 接触10, 措手不及17</td></tr>
+        <tr><td>攻击</td><td>眼射线 +9 远程接触 (10种射线)</td></tr>
+        <tr><td>特殊攻击</td><td>
+          <strong>10只眼柄射线</strong> (每回合可使用3只, DC 20 强韧/反射/意志):<br>
+          1. 魅惑人类 (意志) / 2. 魅惑怪物 (意志) / 3. 石化术 (强韧) / 4. 解离术 (强韧)<br>
+          5. 恐惧术 (意志) / 6. 麻痹术 (强韧) / 7. 缓慢术 (意志) / 8. 造成重伤 (强韧减半)<br>
+          9. 死亡一指 (强韧) / 10. 睡眠术 (意志)
+        </td></tr>
+        <tr><td>特殊能力</td><td>
+          <strong>中央反魔法锥</strong>：150尺锥形，持续反魔法场，压制所有魔法效果（包括自己的眼射线）<br>
+          <strong>飞行</strong>：飞行速度20尺 (笨拙)
+        </td></tr>
+        <tr><td>栖息地</td><td>幽暗地域深处、废弃神殿、自筑巢穴</td></tr>
+        <tr><td>组织</td><td>单独</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>眼魔是极难对付的敌人。反魔法锥令施法者束手无策，而它可以在锥内用眼射线逐一击破。最佳策略是用多个战士从不同方向围攻——眼魔每回合只能使用3只眼柄射线，且必须选择目标方向。注意它会主动关闭反魔法锥来使用眼射线，此时正是施法的好时机。</p>
+
+    <!-- ========== 4. 恶魔 ========== -->
+    <h2 id="demons">4. 恶魔 (Demons / Tanar'ri)</h2>
+    <p>来自无底深渊 (Abyss) 的混乱邪恶外层位面生物。恶魔以数量和蛮力著称，是血战 (Blood War) 中与魔鬼永恒对抗的一方。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th><th>CR</th><th>体型</th><th>HD</th><th>AC</th><th>攻击</th><th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>怯魔 (Dretch)</td><td>2</td><td>小型</td><td>2d8+2 (11 hp)</td><td>14 (+1体型,+1敏捷,+2天然)</td><td>2爪 +4 (1d4+1), 啮咬 +2 (1d4)</td>
+          <td>恶臭 (Stench)：DC13强韧, 反胃1轮；类法术：恐惧术、臭云术</td>
+        </tr>
+        <tr>
+          <td>巴布魔 (Babau)</td><td>6</td><td>中型</td><td>7d8+21 (52 hp)</td><td>19 (+2敏捷,+3天生,+4镶嵌护甲)</td><td>巨剑 +11/+6 (1d10+4/19-20), 啮咬 +6 (1d6+1 外加酸蚀)</td>
+          <td>酸蚀血液：近战攻击者受1d6酸伤害；凝视攻击：1d6力量吸取 (强韧DC15)；类法术：黑暗术、解离术、高等传送术</td>
+        </tr>
+        <tr>
+          <td>弗洛魔 (Vrock)</td><td>9</td><td>大型</td><td>10d8+40 (85 hp)</td><td>20 (-1体型,+2敏捷,+5天生,+4天生护甲)</td><td>2爪 +13 (1d6+4), 啮咬 +8 (1d6+2), 耙击 +8 (1d4+2)</td>
+          <td>孢子之舞 (Spores)：每3轮释放，5尺半径，DC19强韧，2d6力量+敏捷伤害；尖啸 (Screech)：震慑1轮；伤害减免10/善良；法术抗力20</td>
+        </tr>
+        <tr>
+          <td>六臂蛇魔 (Marilith)</td><td>17</td><td>大型</td><td>17d8+85 (161 hp)</td><td>25 (-1体型,+1敏捷,+8天生,+7增强护甲)</td><td>6把长剑 各+22/+17/+12 (2d6+7/17-20), 尾击 +17 (2d6+3 外加擒抱)</td>
+          <td>精通双武器战斗 (全部六臂)；擒抱后碾压；召唤恶魔 (35%召唤同类型)；伤害减免15/寒铁与善良；法术抗力28；类法术：剑刃屏障、操控混乱</td>
+        </tr>
+        <tr>
+          <td>巴洛炎魔 (Balor)</td><td>20</td><td>大型</td><td>22d8+110 (209 hp)</td><td>32 (-1体型,+2敏捷,+10天生,+7增强护甲,+4天生护甲)</td><td>+1焰鞭巨剑 +27/+22/+17/+12 (3d6+10+1d6火+混沌), 焰鞭 +18 (1d4+3+1d4火+擒抱)</td>
+          <td>火焰光环 (4d6火焰伤害)；死亡时爆炸 (50d6, 100尺范围, 反射DC27减半)；召唤恶魔 (50%召唤1d6弗洛魔或1巴洛)；伤害减免20/寒铁与善良；法术抗力32；类法术：内爆术、支配怪物、高等传送术</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>恶魔的共同特征：伤害减免需寒铁与善良武器才能穿透，法术抗力较高，且具备召唤同类的能力。巴洛炎魔是终极威胁，近战极度危险——火焰光环让近身者持续受伤。六臂蛇魔的全回合攻击可在一轮内造成大量伤害。对抗恶魔优先使用寒铁+善良武器，并准备足够的治疗手段。</p>
+
+    <!-- ========== 5. 魔鬼 ========== -->
+    <h2 id="devils">5. 魔鬼 (Devils / Baatezu)</h2>
+    <p>来自九层地狱 (Nine Hells of Baator) 的守序邪恶外层位面生物。魔鬼以狡诈和契约著称，擅长诱骗凡人签署灵魂契约。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th><th>CR</th><th>体型</th><th>HD</th><th>AC</th><th>攻击</th><th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>小魔鬼 (Imp)</td><td>2</td><td>超小型</td><td>3d8+3 (16 hp)</td><td>22 (+2体型,+4敏捷,+2天生,+4闪避)</td><td>毒刺 +7 (1d4-4 外加毒素)</td><td>毒素：DC13强韧, 初始+后续各1d4智慧；变形 (野猪/巨鸦/巨蜘蛛)；隐形术(随意)；伤害减免5/善良或银；法术抗力16；类法术：暗示术、侦测善良</td>
+        </tr>
+        <tr>
+          <td>须魔 (Bearded Devil / Barbazu)</td><td>5</td><td>中型</td><td>6d8+18 (45 hp)</td><td>19 (+2敏捷,+3天生,+4镶嵌护甲)</td><td>倒钩戟 +10 (1d10+4/x3 外加倒钩), 胡须 +7 (1d4+1 流血)</td>
+          <td>胡须攻击：命中后流血，每轮1点体质伤害 (DC15强韧终止)；狂怒：每天1次，+2力量+2体质；伤害减免5/银或善良；法术抗力16；召唤魔鬼</td>
+        </tr>
+        <tr>
+          <td>链魔 (Chain Devil / Kyton)</td><td>9</td><td>中型</td><td>10d8+30 (75 hp)</td><td>22 (+3敏捷,+4天生,+5链甲)</td><td>4条链 +13 (2d4+2)</td>
+          <td>舞蹈链 (Dancing Chains)：4条链如活化武器般独立攻击；凝视恐惧：DC15意志, 战栗2d6轮；伤害减免10/银或善良；再生2；法术抗力20；召唤魔鬼</td>
+        </tr>
+        <tr>
+          <td>角魔 (Horned Devil / Cornugon)</td><td>13</td><td>大型</td><td>14d8+70 (133 hp)</td><td>29 (-1体型,+1敏捷,+6天生,+8板甲,+5天生护甲)</td><td>+2地狱战戟 +20/+15/+10 (3d8+14/x3 外加1d6火), 尾刺 +15 (2d4+2 外加1d6火)</td>
+          <td>恐惧光环：5尺范围, DC19意志, 战栗；伤害减免10/银或善良；法术抗力25；再生5 (银武器可压制)；类法术：操纵死尸、火墙术、高等幻影</td>
+        </tr>
+        <tr>
+          <td>深狱炼魔 (Pit Fiend)</td><td>20</td><td>大型</td><td>22d8+110 (209 hp)</td><td>37 (-1体型,+1敏捷,+10天生,+8板甲,+9天生护甲)</td><td>巨爪 +30/+25/+20/+15 (2d8+10), 啮咬 +25 (2d6+5), 双翼 +25 (1d8+5), 尾击 +25 (2d6+5 外加擒抱)</td>
+          <td>恐惧光环：20尺, DC26意志；疾病啮咬 (Devil Chills)；尾击擒抱可碾压；伤害减免20/银与善良；法术抗力32；再生10；类法术：火球术 (随意)、禁锢术、流星火雨 (每天1次)、召唤魔鬼 (50%召唤2角魔)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>魔鬼比恶魔更有纪律性。小魔鬼适合作为间谍和使魔；须魔成群结队以倒钩戟和流血胡须围攻；链魔的舞蹈链可同时攻击多个目标；角魔和深狱炼魔是强大的前线战士。所有魔鬼都需要银或善良武器穿透伤害减免。深狱炼魔的恐惧光环范围大且DC极高，务必准备移除恐惧。</p>
+
+    <!-- ========== 6. 恐龙 ========== -->
+    <h2 id="dinosaurs">6. 恐龙 (Dinosaurs)</h2>
+    <p>虽然D&D 3.5e将恐龙归入动物类别，但它们在许多设定中独立出现。以下是三种最具代表性的恐龙。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th><th>CR</th><th>体型</th><th>HD</th><th>AC</th><th>攻击</th><th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>迅猛龙 (Deinonychus)</td><td>2</td><td>中型</td><td>4d8+12 (30 hp)</td><td>16 (+2敏捷,+4天然)</td><td>2爪 +6 (1d8+1), 啮咬 +4 (1d6 外加流血)</td>
+          <td>耙击：2爪 +6 (各1d6)；流血：啮咬命中后每轮1d4伤害 (DC15强韧终止)；跳跃攻击：可跳起后全回合攻击</td>
+        </tr>
+        <tr>
+          <td>三角龙 (Triceratops)</td><td>7</td><td>巨型</td><td>10d8+50 (95 hp)</td><td>18 (-2体型,+0敏捷,+6天然,+4天生护甲)</td><td>顶撞 +14 (2d8+11)</td>
+          <td>猛冲 (Powerful Charge)：冲锋时顶撞伤害翻倍 (4d8+22)；威吓冲锋：可尝试战技冲撞</td>
+        </tr>
+        <tr>
+          <td>霸王龙 (Tyrannosaurus)</td><td>9</td><td>巨型</td><td>14d8+70 (133 hp)</td><td>19 (-2体型,+2敏捷,+9天然)</td><td>啮咬 +18 (3d6+13), 尾击 +13 (2d6+4)</td>
+          <td>精通擒抱：啮咬命中后可擒抱并吞噬；猛扑 (Rend)：啮咬擒抱的生物受2d6+7额外伤害</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>迅猛龙成群狩猎，以跳跃攻击和流血效果消耗敌人；三角龙以冲锋猛击见长，正面硬刚极为危险；霸王龙凭借精通擒抱和吞噬能力，能一口咬住中型目标。</p>
+
+    <!-- ========== 7. 元素生物 ========== -->
+    <h2 id="elementals">7. 元素生物 (Elementals)</h2>
+    <p>来自内层位面的纯粹元素化身。气、水、土、火四种元素各有独特战斗风格。元素生物可通过召唤怪物法术或异界盟友法术召唤。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>体型</th><th>HD</th><th>CR</th><th>AC</th><th>攻击加值</th><th>伤害</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>小型</td><td>2d8</td><td>1</td><td>14</td><td>+2</td><td>1d4</td></tr>
+        <tr><td>中型</td><td>4d8+8</td><td>3</td><td>15</td><td>+7</td><td>1d8+2</td></tr>
+        <tr><td>大型</td><td>8d8+24</td><td>5</td><td>16</td><td>+12</td><td>2d8+4</td></tr>
+        <tr><td>超大型</td><td>12d8+48</td><td>7</td><td>18</td><td>+18</td><td>2d10+7</td></tr>
+        <tr><td>巨型</td><td>16d8+80</td><td>9</td><td>20</td><td>+23</td><td>2d12+9</td></tr>
+        <tr><td>超巨型</td><td>20d8+120</td><td>11</td><td>22</td><td>+28</td><td>3d10+12</td></tr>
+      </tbody>
+    </table>
+
+    <h3>各元素特殊能力</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>元素</th><th>移动方式</th><th>特殊能力</th><th>战术特点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>气元素 (Air)</td><td>飞行100尺(完美)</td>
+          <td>旋风形态 (Whirlwind)：每10分钟持续7轮，将生物抛向空中</td>
+          <td>以飞行优势和旋风形态扰乱敌方阵型，将脆弱目标卷上天</td>
+        </tr>
+        <tr>
+          <td>水元素 (Water)</td><td>游泳90尺, 陆地20尺</td>
+          <td>漩涡形态 (Vortex)：类似旋风，在水中形成漩涡</td>
+          <td>在水中拥有巨大优势，试图将对手拖入水中溺杀</td>
+        </tr>
+        <tr>
+          <td>土元素 (Earth)</td><td>陆地20尺, 掘地20尺</td>
+          <td>土行术 (Earth Glide)：可穿过泥土/石头如鱼游水<br>大地之力：对地面上的生物+2攻击和伤害</td>
+          <td>利用土行术突袭，在地面上战斗时获得加成</td>
+        </tr>
+        <tr>
+          <td>火元素 (Fire)</td><td>陆地50尺</td>
+          <td>燃烧 (Burn)：被击中的生物着火，持续1d4轮<br>照明 (Illumination)：大型以上自动发光</td>
+          <td>高机动近战，以持续燃烧伤害消耗敌人</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>元素生物是出色的召唤选择。气元素和火元素机动性强，水元素在水中无敌，土元素适合攻城或地道战。注意：元素生物免疫毒素、睡眠、麻痹和震慑。</p>
+
+    <!-- ========== 8. 巨人 ========== -->
+    <h2 id="giants">8. 巨人 (Giants)</h2>
+    <p>巨人族是D&D中最古老的种族之一。所有巨人都属于"巨人"亚类，拥有昏暗视觉。巨人擅长投掷巨岩。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>类型</th><th>CR</th><th>体型</th><th>HD</th><th>AC</th><th>攻击</th><th>特殊能力</th><th>栖息地</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>丘陵巨人 (Hill)</td><td>4</td><td>大型</td><td>10d8+30 (75 hp)</td><td>18 (-1体型,-1敏捷,+6天生,+4皮甲)</td><td>巨棒 +12 (2d8+7)</td><td>投石：120尺, 2d6+7；擒抱+8；昏暗视觉</td><td>丘陵、山地</td>
+        </tr>
+        <tr>
+          <td>冰霜巨人 (Frost)</td><td>10</td><td>大型</td><td>14d8+56 (119 hp)</td><td>22 (-1体型,+0敏捷,+5天生,+8链甲)</td><td>巨斧 +18/+13 (3d6+8/x3)</td><td>投石：120尺, 2d8+8；寒系免疫；捕获投掷；昏暗视觉</td><td>寒冷山地、极地</td>
+        </tr>
+        <tr>
+          <td>火焰巨人 (Fire)</td><td>10</td><td>大型</td><td>15d8+75 (142 hp)</td><td>23 (-1体型,+0敏捷,+6天生,+8板甲)</td><td>巨剑 +21/+16 (3d6+11/19-20)</td><td>投石：120尺, 2d6+10+1d6火；火系免疫；昏暗视觉；可投掷燃烧弹</td><td>火山、地热区域</td>
+        </tr>
+        <tr>
+          <td>石巨人 (Stone)</td><td>11</td><td>大型</td><td>16d8+64 (136 hp)</td><td>25 (-1体型,+0敏捷,+6天生,+10板甲)</td><td>石棒 +21/+16 (2d8+9/x3)</td><td>投石：180尺, 2d6+9；精通卸武；昏暗视觉；可接住投石</td><td>山地、洞穴</td>
+        </tr>
+        <tr>
+          <td>云巨人 (Cloud)</td><td>15</td><td>超大型</td><td>20d8+100 (190 hp)</td><td>28 (-2体型,+0敏捷,+6天生,+8链甲,+6天生护甲)</td><td>巨棒 +28/+23/+18 (2d8+12)</td><td>投石：160尺, 2d12+12；昏暗视觉；类法术：操控水位、操控天气、雾墙术等</td><td>高山之巅、浮空城堡</td>
+        </tr>
+        <tr>
+          <td>风暴巨人 (Storm)</td><td>20</td><td>超大型</td><td>25d8+150 (262 hp)</td><td>32 (-2体型,+2敏捷,+8天生,+10板甲,+6天生护甲)</td><td>巨剑 +33/+28/+23/+18 (4d6+15/17-20)</td><td>投石：200尺, 2d12+15；闪电术 (每天3次, 20d6, DC23反射减半)；昏暗视觉；电/音波免疫</td><td>最高山峰、风暴之中</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>所有巨人都能从远距离投石攻击，冒险者应尽量缩短交战距离。丘陵巨人是最弱但也最常见的威胁；冰霜和火焰巨人拥有元素免疫，需避免使用对应元素攻击；风暴巨人是巨人中的王者，闪电术可造成毁灭性的范围伤害。</p>
+
+    <!-- ========== 9. 魔像 ========== -->
+    <h2 id="golems">9. 魔像 (Golems)</h2>
+    <p>由魔法驱动的人造生物，绝对服从制造者的命令。魔像免疫所有可允许法术抗力的法术（除特定克制法术外），是极难摧毁的守卫者。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th><th>CR</th><th>体型</th><th>HD</th><th>AC</th><th>攻击</th><th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>肉身魔像 (Flesh)</td><td>6</td><td>大型</td><td>9d10+20 (69 hp)</td><td>18 (-1体型,+1敏捷,+8天然)</td><td>2拳 +12 (1d8+4)</td><td>
+            <strong>狂乱 (Berserk)</strong>：每轮1%概率失控攻击最近生物<br>
+            <strong>免疫魔法</strong>：免疫所有法术抗力可生效的法术<br>
+            <strong>治愈/伤害</strong>：电伤害治愈而非伤害；火/冰减速1轮<br>
+            <strong>加速术</strong>：制造者可以命令加速1轮 (每天1次)
+          </td>
+        </tr>
+        <tr>
+          <td>粘土魔像 (Clay)</td><td>11</td><td>大型</td><td>13d10+30 (101 hp)</td><td>22 (-1体型,+1敏捷,+8天生,+4天生护甲)</td><td>拳击 +17 (2d10+7)</td><td>
+            <strong>狂乱</strong>：每轮1%概率失控<br>
+            <strong>免疫魔法</strong>：同上；瓦解术可造成1d6伤害/CL (最大10d6)<br>
+            <strong>加速术</strong>：每天3次，持续3轮<br>
+            <strong>诅咒创伤</strong>：被拳击的伤口只能被5级以上施法者施展的治疗法术恢复
+          </td>
+        </tr>
+        <tr>
+          <td>石魔像 (Stone)</td><td>16</td><td>大型</td><td>18d10+30 (129 hp)</td><td>29 (-1体型,+2敏捷,+12天生,+6天生护甲)</td><td>2拳 +22 (2d10+9)</td><td>
+            <strong>狂乱</strong>：每轮1%概率失控<br>
+            <strong>免疫魔法</strong>：同上；石化术可减速3轮<br>
+            <strong>缓慢术</strong>：每轮1次，10尺范围, DC17意志<br>
+            <strong>石肤</strong>：硬度8
+          </td>
+        </tr>
+        <tr>
+          <td>铁魔像 (Iron)</td><td>20</td><td>大型</td><td>23d10+30 (156 hp)</td><td>32 (-1体型,+2敏捷,+15天生,+6天生护甲)</td><td>2拳 +27 (2d10+10/x3)</td><td>
+            <strong>狂乱</strong>：每轮1%概率失控<br>
+            <strong>免疫魔法</strong>：同上；电伤害减速3轮，火伤害治愈<br>
+            <strong>毒素之息</strong>：每轮1次, 10尺锥形, DC19强韧, 初始1d6体质+后续3d6体质<br>
+            <strong>铁躯</strong>：硬度10
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>魔像对所有法术具有近乎完全的免疫力（除特定克制法术），必须以物理攻击摧毁。注意每种魔像都有特定的克制法术：肉身魔像怕电，粘土魔像可用瓦解术，石魔像可被石化术减速，铁魔像用电可以减速。魔像狂乱是摧毁它们的最佳时机。</p>
+
+    <!-- ========== 10. 夺心魔 ========== -->
+    <h2 id="mindflayer">10. 夺心魔 (Mind Flayer / Illithid)</h2>
+    <p>幽暗地域中最令人恐惧的智慧种族之一。夺心魔以其他类人生物的大脑为食，拥有强大的灵能和心灵能力。</p>
+    <table>
+      <thead>
+        <tr><th>属性</th><th>数值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>挑战等级 (CR)</td><td>8</td></tr>
+        <tr><td>体型</td><td>中型</td></tr>
+        <tr><td>类型</td><td>异怪 (Aberration)</td></tr>
+        <tr><td>生命骰 (HD)</td><td>8d8+32 (68 hp)</td></tr>
+        <tr><td>防御等级 (AC)</td><td>17 (+2敏捷, +5天生), 接触12, 措手不及15</td></tr>
+        <tr><td>攻击</td><td>4条触手 +7 近战接触 (1d4+1 外加擒抱)</td></tr>
+        <tr><td>特殊攻击</td><td>
+          <strong>心灵爆破 (Mind Blast)</strong>：60尺锥形, 每天3+次, DC17意志, 震慑3d4轮<br>
+          <strong>吞噬大脑 (Extract Brain)</strong>：擒抱状态下附着4条触手后，1轮内吸出并吞食大脑（即死）<br>
+          <strong>精通擒抱</strong>：触手命中后可擒抱
+        </td></tr>
+        <tr><td>灵能 (Psionics)</td><td>
+          暗示术 (Suggestion, DC14) / 侦测思维 (Detect Thoughts, DC14) / 魅惑怪物 (Charm Monster, DC15) / 任意门 (Plane Shift, 仅自身)
+        </td></tr>
+        <tr><td>栖息地</td><td>幽暗地域，地下城市</td></tr>
+        <tr><td>组织</td><td>单独、一对、小队 (3-4) 或群巢 (5-8 + 1主脑)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>夺心魔是"即死型"敌人——一旦4条触手全部附着，下一轮就会吞噬大脑。心灵爆破可在远距离震慑整个队伍，是极其危险的控制手段。对策：保持距离，准备自由行动术 (Freedom of Movement) 防擒抱，移除恐惧 (Remove Fear) 防心灵爆破。夺心魔社会以主脑 (Elder Brain) 为核心，主脑本身是一个巨大的灵能大脑。</p>
+
+    <!-- ========== 11. 不死生物 ========== -->
+    <h2 id="undead">11. 不死生物 (Undead)</h2>
+    <p>不死生物是被负能量驱动的前活物。它们免疫精神效果、毒素、睡眠、麻痹、震慑、疾病和死亡效果，且无体质属性。</p>
+
+    <h3>基础不死生物</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th><th>CR</th><th>HD</th><th>AC</th><th>攻击</th><th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>骷髅 (Skeleton)</td><td>1/2-12</td><td>视基础生物</td><td>视基础生物+天生护甲</td><td>武器或爪击</td><td>不死特性；伤害减免5/钝击；无心智；可被操纵死尸复生</td>
+        </tr>
+        <tr>
+          <td>僵尸 (Zombie)</td><td>1/2-12</td><td>视基础生物</td><td>视基础生物+天生护甲</td><td>挥击或武器</td><td>不死特性；伤害减免5/挥砍；无心智；缓慢 (每轮只有标准或移动)；健壮 (额外HD)</td>
+        </tr>
+        <tr>
+          <td>幽灵 (Ghost)</td><td>+5模板</td><td>视基础生物</td><td>视基础生物+4偏斜</td><td>虚体触碰</td><td>
+            <strong>虚体</strong>：只有+1武器或灵体可伤害<br>
+            <strong>显形/隐没</strong>：可在物质/灵界间切换<br>
+            <strong>腐化凝视</strong>：DC15强韧, 1d4魅力伤害<br>
+            <strong>恐惧之嚎</strong>：DC15意志, 恐惧效果<br>
+            <strong>附身</strong>：可附身活物 (类似魔魂壶)
+          </td>
+        </tr>
+        <tr>
+          <td>木乃伊 (Mummy)</td><td>5</td><td>8d12+8 (60 hp)</td><td>20 (+2敏捷,+5天生,+3天生护甲)</td><td>拳击 +12 (1d8+6 外加木乃伊溃烂)</td>
+          <td>
+            <strong>绝望凝视</strong>：DC16意志, 麻痹1d4轮<br>
+            <strong>木乃伊溃烂 (Mummy Rot)</strong>：超自然疾病, DC16强韧, 潜伏1分钟, 初始1d6魅力+后续1d6魅力<br>
+            <strong>不死特性</strong>；<strong>伤害减免15/魔法</strong>；<strong>火系弱点</strong>：受到火焰伤害时不减半
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>高级不死生物模板</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>模板</th><th>CR调整</th><th>基础要求</th><th>关键能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>吸血鬼 (Vampire)</strong></td><td>+2 CR</td>
+          <td>类人生物或类人怪物, 5HD以上</td>
+          <td>
+            <strong>弱点</strong>：阳光、木桩穿心、流水、圣徽<br>
+            <strong>再生</strong>：5点/轮 (不在阳光下)<br>
+            <strong>吸血</strong>：擒抱后吸取体质<br>
+            <strong>能量吸取</strong>：触碰造成2个负向等级<br>
+            <strong>支配凝视</strong>：DC10+HD/2意志<br>
+            <strong>变形</strong>：可变蝙蝠/狼/气态/ Dire Bat<br>
+            <strong>蛛行</strong>：可在墙壁天花板行走<br>
+            <strong>召唤</strong>：可召唤1d6+1狼、2d4蝙蝠或3d6鼠群<br>
+            <strong>伤害减免10/魔法和银</strong>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>巫妖 (Lich)</strong></td><td>+2 CR</td>
+          <td>类人生物, 11HD以上, 必须能施法</td>
+          <td>
+            <strong>命匣 (Phylactery)</strong>：灵魂储存处，被摧毁后1d10天重塑<br>
+            <strong>恐惧光环</strong>：5尺, DC10+HD/2+魅力调整 意志<br>
+            <strong>触碰攻击</strong>：1d8+5负能量伤害+麻痹 (DC10+HD/2意志)<br>
+            <strong>天生护甲+6</strong><br>
+            <strong>伤害减免15/钝击和魔法</strong><br>
+            <strong>不死特性</strong>；<strong>寒冷免疫</strong><br>
+            <strong>+2感知</strong>；保留生前所有施法能力
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>不死生物是D&D中最常见的敌人类型。骷髅和僵尸是低级炮灰；木乃伊的溃烂疾病极其致命（魅力伤害难以治愈）；幽灵因虚体而几乎无法被物理攻击伤害；吸血鬼和巫妖是高级威胁，需要针对性的准备。对抗不死生物的关键：驱逐术 (Disruption)、阳炎剑、圣水、以及牧师的超度不死能力。</p>
+
+    <!-- ========== 12. 虫类 ========== -->
+    <h2 id="vermin">12. 虫类 (Vermin)</h2>
+    <p>巨型虫类是无心智的掠食者，常见于幽暗地域和荒野深处。它们没有智力属性，免疫所有精神效果。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th><th>CR</th><th>体型</th><th>HD</th><th>AC</th><th>攻击</th><th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>巨型蜈蚣 (Megapede)</td><td> varies</td><td>超大型-巨型</td><td>10d8+40 至 20d8+80</td><td>16-22</td><td>啮咬+多足</td><td>毒液 (DC16强韧, 1d10体质伤害)；可掘地；无心智</td>
+        </tr>
+        <tr>
+          <td>巨型蜘蛛 (Giant Spider)</td><td> varies</td><td>中型-超大型</td><td>4d8+8 至 16d8+48</td><td>14-22</td><td>啮咬+网</td><td>毒液 (DC varies, 力量伤害)；蛛网攻击 (范围性擒抱)；蛛行术；无心智；昏暗视觉</td>
+        </tr>
+        <tr>
+          <td>巨型蝎 (Giant Scorpion)</td><td> varies</td><td>大型-超大型</td><td>6d8+24 至 16d8+64</td><td>16-24</td><td>2爪+尾刺</td><td>毒液 (DC varies, 初始+后续各体质伤害)；精通擒抱；无心智；昏暗视觉</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>战术要点：</strong>虫类无心智，因此免疫幻术、魅惑、恐惧等所有精神效果。它们通常以毒素为主要威胁——巨型蝎的毒液尤其致命。应对策略：使用中和毒素 (Neutralize Poison) 预防，近战时注意巨型蜘蛛的蛛网和巨型蝎的擒抱。由于无心智，威吓、交涉等社交手段完全无效。</p>
+
+    <!-- ========== CR总览 ========== -->
+    <h2 id="cr-summary">经典怪物挑战等级总览</h2>
+    <table>
+      <thead>
+        <tr><th>CR</th><th>代表怪物</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>凶暴鼠、小元素 (小型)、骷髅 (中/小)</td></tr>
+        <tr><td>2</td><td>怯魔、小魔鬼、迅猛龙</td></tr>
+        <tr><td>3</td><td>凶暴狼、中型元素</td></tr>
+        <tr><td>4</td><td>丘陵巨人</td></tr>
+        <tr><td>5</td><td>须魔、大型元素、木乃伊</td></tr>
+        <tr><td>6</td><td>巴布魔、凶暴猿、肉身魔像</td></tr>
+        <tr><td>7</td><td>底栖魔鱼、凶暴熊、三角龙、超大型元素、大型元素 (火)</td></tr>
+        <tr><td>8</td><td>夺心魔、凶暴虎</td></tr>
+        <tr><td>9</td><td>弗洛魔、链魔、巨型元素、霸王龙</td></tr>
+        <tr><td>10</td><td>冰霜巨人、火焰巨人</td></tr>
+        <tr><td>11</td><td>石巨人、粘土魔像、超巨型元素</td></tr>
+        <tr><td>13</td><td>眼魔、角魔</td></tr>
+        <tr><td>15</td><td>云巨人</td></tr>
+        <tr><td>16</td><td>石魔像</td></tr>
+        <tr><td>17</td><td>六臂蛇魔</td></tr>
+        <tr><td>20</td><td>巴洛炎魔、深狱炼魔、铁魔像、风暴巨人</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

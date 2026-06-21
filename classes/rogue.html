@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盗贼 Rogue - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .sneak-table { font-size: 13px; }
+  .sneak-table th { font-size: 12px; text-align: center; }
+  .sneak-table td { text-align: center; }
+  .rogue-tip {
+    background: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+  .rogue-warn {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html" class="active">盗贼 Rogue</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="infobox">
+      <div class="infobox-title">🗡️ 盗贼 Rogue</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <div class="infobox-img" style="padding:20px;font-size:64px;opacity:0.3;">🗡️🔓🎯</div>
+      <table class="infobox-table">
+        <tr><td>HD</td><td>d6</td></tr>
+        <tr><td>阵营</td><td>任意非守序</td></tr>
+        <tr><td>施法属性</td><td>无</td></tr>
+        <tr><td>擅长护甲</td><td>轻型护甲</td></tr>
+        <tr><td>擅长武器</td><td>简单武器、手弩、短剑、细剑</td></tr>
+        <tr><td>BAB</td><td>低（每级+3/4）</td></tr>
+        <tr><td>强韧</td><td>低</td></tr>
+        <tr><td>反射</td><td>高</td></tr>
+        <tr><td>意志</td><td>低</td></tr>
+        <tr><td>技能点</td><td>8 + INT调整值（最多）</td></tr>
+        <tr><td>偏爱种族</td><td>半身人、侏儒</td></tr>
+        <tr><td>来源</td><td>PHB p.50-53 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>盗贼（Rogue）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心职业</span>
+      <span class="badge badge-class">PHB p.50</span>
+      <span class="badge badge-note">最多技能点</span>
+    </p>
+    <p>盗贼是D&D 3.5e中<strong>最灵活的技能型角色</strong>。他们擅长潜行、开锁、解除陷阱、偷窃，
+    并在<strong>偷袭（Sneak Attack）</strong>中造成额外伤害。在D&D 3.5e中，盗贼被认为是
+    <strong>非战斗解决方案</strong>的专家——许多陷阱、机关、谜题只有盗贼能处理。</p>
+    <p>虽然盗贼的<strong>HP极少（d6）</strong>且<strong>BAB极低</strong>，但他们的
+    <strong>每级技能点（8 + INT调整值）</strong>是所有职业中最多的，这让他们能掌握几乎所有技能。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#role">角色定位</a></li>
+        <li><a href="#mechanics">核心机制</a></li>
+        <li><a href="#sneak-attack">偷袭详解</a></li>
+        <li><a href="#skills">技能优先级</a></li>
+        <li><a href="#class-features">职业能力详解</a></li>
+        <li><a href="#feats">推荐专长</a></li>
+        <li><a href="#multiclass">多职业建议</a></li>
+        <li><a href="#equipment">推荐装备</a></li>
+        <li><a href="#builds">常见构建</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+      </ol>
+    </div>
+
+    <h2 id="role">🎯 角色定位</h2>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>🔓 陷阱专家</h3>
+        <p>侦察陷阱、解除陷阱、开锁。适合地城探险。</p>
+      </div>
+      <div class="section-card">
+        <h3>🤫 偷袭者</h3>
+        <p>利用隐蔽和夹击造成额外伤害。适合暗杀构建。</p>
+      </div>
+      <div class="section-card">
+        <h3>🎭 社交侦察</h3>
+        <p>偷听、伪装、交涉。适合城市冒险。</p>
+      </div>
+      <div class="section-card">
+        <h3>🗺️ 侦察兵</h3>
+        <p>侦察、聆听、野外生存。适合荒野探险。</p>
+      </div>
+    </div>
+
+    <h2 id="mechanics">⚙️ 核心机制</h2>
+    <div class="Rule-box">
+      <h3>偷袭（Sneak Attack）</h3>
+      <p>盗贼的核心输出机制：</p>
+      <ul>
+        <li><strong>触发条件</strong>：目标<strong>夹击</strong>（Flanked）或<strong>失去AC敏捷加值</strong>（如被夹击、无法移动、被眩晕等）。</li>
+        <li><strong>伤害骰</strong>：每1-2级 +1d6（10级+5d6，20级+10d6）。</li>
+        <li><strong>远程限制</strong>：目标必须在<strong>30英尺内</strong>，且盗贼不能<strong>隐匿失败</strong>。</li>
+        <li><strong>特殊弹药</strong>：使用"偷袭箭矢/弩箭"可以突破30英尺限制。</li>
+      </ul>
+      <p><strong>关键战术：</strong>与队友配合进行<strong>夹击</strong>，或利用"闷棍"等方法使敌人失去DEX加值。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>技能系统（Skills）</h3>
+      <p>盗贼拥有<strong>最多的技能点</strong>：每级 <strong>8 + INT调整值</strong>。</p>
+      <p><strong>本职技能（Class Skills）</strong>：</p>
+      <ul>
+        <li><strong>战斗相关</strong>：使用魔法装置（Use Magic Device）</li>
+        <li><strong>移动相关</strong>：攀登（Climb）、跳跃（Jump）、游泳（Swim）、潜行（Hide）</li>
+        <li><strong>侦察相关</strong>：聆听（Listen）、侦察（Spot）、搜索（Search）、察觉（Sense Motive）</li>
+        <li><strong>操作相关</strong>：开锁（Open Lock）、解除陷阱（Disable Device）、脱身（Escape Artist）</li>
+        <li><strong>社交相关</strong>：唬骗（Bluff）、外交（Diplomacy）、伪装（Disguise）</li>
+        <li><strong>知识相关</strong>：知识（地下城）（Knowledge - Dungeoneering）</li>
+      </ul>
+      <p><strong>策略：</strong>优先提升<strong>使用魔法装置</strong>（可以像术士一样使用法术卷轴）和<strong>解除陷阱</strong>（地城生存必备）。</p>
+    </div>
+
+    <h2 id="sneak-attack">🗡️ 偷袭详解</h2>
+    <div class="Rule-box">
+      <h3>偷袭伤害成长表</h3>
+      <table class="wiki-table sneack-table">
+        <thead>
+          <tr><th>等级</th><th>偷袭伤害</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1级</td><td>+1d6</td><td>初始能力</td></tr>
+          <tr><td>3级</td><td>+2d6</td><td>——</td></tr>
+          <tr><td>5级</td><td>+3d6</td><td>——</td></tr>
+          <tr><td>10级</td><td>+5d6</td><td>核心输出期</td></tr>
+          <tr><td>15级</td><td>+8d6</td><td>后期输出相当可观</td></tr>
+          <tr><td>20级</td><td>+10d6</td><td>终极偷袭</td></tr>
+        </tbody>
+      </table>
+      <p><strong>注意：</strong>偷袭伤害是<strong>额外骰</strong>，不受力量调整值影响。但可以通过"劲力偷袭（Power Sneak Attack）"等专长提升。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>偷袭触发条件详解</h3>
+      <p>以下条件满足<strong>任意一条</strong>即可触发偷袭：</p>
+      <ol>
+        <li><strong>目标被夹击（Flanked）</strong>：盗贼和至少一个盟友分别位于目标对立两侧。</li>
+        <li><strong>目标失去DEX加值</strong>：
+          <ul>
+            <li>被夹击（无论是否意识）</li>
+            <li>无法移动（被纠缠、倒地、麻痹等）</li>
+            <li>正在睡眠或失去意识</li>
+          </ul>
+        </li>
+        <li><strong>目标在盗贼的<strong>闷棍（Sap）</strong>攻击中失败（House Rule，非核心）。</li>
+      </ol>
+      <p><strong>无法触发偷袭的情况：</strong></p>
+      <ul>
+        <li>目标有<strong>直觉闪避（Uncanny Dodge）</strong>能力（如游侠/武僧）。</li>
+        <li>目标是<strong>构装体（Construct）</strong>、<strong>亡灵（Undead）</strong>等无生命骰的生物（除非有特殊能力）。</li>
+        <li>盗贼在<strong>隐秘失败</strong>（Stealth check失败）后被发现。</li>
+      </ul>
+    </div>
+
+    <h2 id="skills">🎓 技能优先级</h2>
+    <div class="Rule-box">
+      <h3>必选技能（PHB推荐）</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>技能</th><th>优先级</th><th>用途</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>使用魔法装置（UMD）</td><td>⭐⭐⭐⭐⭐</td><td>使用法术卷轴/魔杖</td></tr>
+          <tr><td>解除陷阱（DD）</td><td>⭐⭐⭐⭐⭐</td><td>地城生存必备</td></tr>
+          <tr><td>开锁（OL）</td><td>⭐⭐⭐⭐</td><td>打开锁具</td></tr>
+          <tr><td>潜行（Hide）</td><td>⭐⭐⭐⭐</td><td>偷袭前置条件</td></tr>
+          <tr><td>侦察（Spot）</td><td>⭐⭐⭐⭐</td><td>发现陷阱/敌人</td></tr>
+          <tr><td>聆听（Listen）</td><td>⭐⭐⭐⭐</td><td>发现隐形/潜行敌人</td></tr>
+          <tr><td>搜索（Search）</td><td>⭐⭐⭐</td><td>寻找陷阱/秘密门</td></tr>
+          <tr><td>唬骗（Bluff）</td><td>⭐⭐⭐</td><td>社交互动</td></tr>
+          <tr><td>攀爬（Climb）</td><td>⭐⭐</td><td>地形适应</td></tr>
+        </tbody>
+      </table>
+      <p><strong>提示：</strong>盗贼的技能点极多，可以轻松将10+个技能提升至高级别。</p>
+    </div>
+
+    <h2 id="class-features">📖 职业能力详解</h2>
+    <div class="Rule-box">
+      <h3>◇ 偷袭（Sneak Attack）</h3>
+      <p>详见上方"偷袭详解"板块。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>◇ 直觉闪避（Uncanny Dodge）</h3>
+      <p>4级起，盗贼不会因被夹击或突袭而失去<strong>AC的敏捷加值</strong>。</p>
+      <p><strong>进阶能力（Imroved Uncanny Dodge）</strong>：8级起，免疫<strong>夹击（Flanking）</strong>。</p>
+      <p><strong>机制意义：</strong>使盗贼在近战中更难被偷袭（其他盗贼无法对其使用偷袭）。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>◇ 使用魔法装置（Use Magic Device）</h3>
+      <p>盗贼的<strong>专属技能</strong>，让他们可以像<strong>术士</strong>一样使用法术卷轴和魔杖。</p>
+      <ul>
+        <li><strong>使用法术卷轴</strong>：即使不是施法者，也能激活法术卷轴（需通过技能检定）。</li>
+        <li><strong>使用魔杖/法杖</strong>：即使不满足职业要求，也能使用魔杖（需通过技能检定）。</li>
+        <li><strong>使用魔法物品</strong>：即使不满足属性要求，也能使用魔法物品（需通过技能检定）。</li>
+      </ul>
+      <p><strong>构建意义：</strong>让盗贼拥有<strong>临时施法能力</strong>，弥补无法施展法术的缺陷。</p>
+    </div>
+
+    <div class="rogue-tip">
+      <h3>💡 盗贼构建建议</h3>
+      <p><strong>潜行偷袭流（特种兵）：</strong></p>
+      <ul>
+        <li>优先提升<strong>敏捷（DEX）</strong>和<strong>智力（INT）</strong>（技能点）。</li>
+        <li>专长选择<strong>武器娴熟（Weapon Finesse）</strong> → 使用敏捷进行近战攻击。</li>
+        <li>技能优先<strong>潜行、解除陷阱、使用魔法装置</strong>。</li>
+        <li>战术：先手潜行 → 偷袭 → 脱离潜行 → 重复。</li>
+      </ul>
+      <p><strong>社交侦察流（间谍）：</strong></p>
+      <ul>
+        <li>优先提升<strong>魅力（CHA）</strong>和<strong>智力（INT）</strong>。</li>
+        <li>专长选择<strong>交涉（Negotiator）</strong> → 提升社交技能。</li>
+        <li>技能优先<strong>唬骗、外交、伪装、使用魔法装置</strong>。</li>
+        <li>战术：混入敌人内部 → 偷取情报 → 必要时暗杀。</li>
+      </ul>
+    </div>
+
+    <h2 id="feats">🎓 推荐专长</h2>
+    <div class="Rule-box">
+      <h3>盗贼核心专长</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>专长</th><th>先决条件</th><th>益处</th><th>评价</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>武器娴熟（Weapon Finesse）</td><td>——</td><td>使用敏捷进行近战攻击</td><td>近战必备</td></tr>
+          <tr><td>猛力攻击（Power Attack）</td><td>力量13+</td><td>-攻击+伤害</td><td>近战输出</td></tr>
+          <tr><td>精准射击（Precise Shot）</td><td>——</td><td>远程攻击不触发借机攻击</td><td>远程必备</td></tr>
+          <tr><td>闪避（Dodge）</td><td>敏捷13+</td><td>AC+1对抗单个目标</td><td>生存向</td></tr>
+          <tr><td>灵活移动（Mobility）</td><td>闪避</td><td>引发借机攻击时不触发</td><td>战术向</td></tr>
+          <tr><td>偷袭强化（Sneak Attack Enhancement）</td><td>偷袭+5d6</td><td>偷袭伤害+1d6</td><td>输出向</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="multiclass">🔄 多职业建议</h2>
+    <p>盗贼是D&D 3.5e中<strong>最适合多职业</strong>的核心职业之一，因为技能点和偷袭机制的灵活性。</p>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>盗贼 / 战士</h3>
+        <p><strong>经典组合。</strong>战士提供高BAB和专长，盗贼提供技能和偷袭。</p>
+        <p style="font-size:13px;color:#666;">推荐：战士1/盗贼剩余 → 获得擅长所有护甲/武器。</p>
+      </div>
+      <div class="section-card">
+        <h3>盗贼 / 游侠</h3>
+        <p><strong>双专精。</strong>游侠的"双武器战斗"配合盗贼的偷袭。</p>
+        <p style="font-size:13px;color:#666;">需敏捷15+（双武器战斗先决）。</p>
+      </div>
+      <div class="section-card">
+        <h3>盗贼 / 法师（奥术诡术师进阶）</h3>
+        <p><strong>奥术诡术师（Arcane Trickster）。</strong>需要满足"能施展2环奥术"先决。</p>
+        <p style="font-size:13px;color:#666;">构建：盗贼3/法师3 → 奥术诡术师剩余。</p>
+      </div>
+      <div class="section-card">
+        <h3>盗贼 / 吟游诗人</h3>
+        <p><strong>社交间谍。</strong>吟游诗人的"鼓舞"配合盗贼的社交技能。</p>
+        <p style="font-size:13px;color:#666;">适合城市冒险。</p>
+      </div>
+    </div>
+
+    <h2 id="equipment">🎒 推荐装备</h2>
+    <div class="Rule-box">
+      <h3>潜行偷袭构建</h3>
+      <ul>
+        <li><strong>护甲</strong>：轻型护甲（秘银衫 +3 AC，无技能惩罚）</li>
+        <li><strong>武器</strong>：短剑（1d6，擅长）或细剑（1d6，擅长）</li>
+        <li><strong>远程</strong>：手弩（1d4，擅长）或短弓（1d6）</li>
+        <li><strong>魔法物品</strong>：潜行靴（+Hide）、无声手套（+Sneak Attack）、偷袭匕首（+Sneak Attack伤害）</li>
+      </ul>
+    </div>
+    <div class="Rule-box">
+      <h3>社交侦察构建</h3>
+      <ul>
+        <li><strong>护甲</strong>：无（或礼服，无AC但+社交）</li>
+        <li><strong>武器</strong>：手弩（隐蔽）或细剑（优雅）</li>
+        <li><strong>魔法物品</strong>：伪装套装（+Disguise）、交涉披风（+Diplomacy）、魅力护身符（+CHA）</li>
+      </ul>
+    </div>
+
+    <h2 id="builds">🏗️ 常见构建</h2>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>🗡️ 潜行偷袭者</h3>
+        <p><strong>属性优先级</strong>：DEX > INT > CON</p>
+        <p><strong>核心专长</strong>：武器娴熟、精准射击、闪避</p>
+        <p><strong>战术</strong>：先手潜行 → 偷袭 → 脱离。</p>
+      </div>
+      <div class="section-card">
+        <h3>🔓 陷阱专家</h3>
+        <p><strong>属性优先级</strong>：INT > DEX > CON</p>
+        <p><strong>核心专长</strong>：警觉（Alertness）、技能专精（Skill Focus）</p>
+        <p><strong>战术</strong>：侦察陷阱 → 解除陷阱 → 开锁。</p>
+      </div>
+      <div class="section-card">
+        <h3>🎭 社交间谍</h3>
+        <p><strong>属性优先级</strong>：CHA > INT > DEX</p>
+        <p><strong>核心专长</strong>：交涉（Negotiator）、魅惑（Persuasive）</p>
+        <p><strong>战术</strong>：混入 → 偷取情报 → 暗杀。</p>
+      </div>
+    </div>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"使用魔法装置"的先决条件</h3>
+      <p><strong>冲突描述：</strong>盗贼使用法术卷轴时，是否需要<strong>满足施法属性要求</strong>？</p>
+      <p><strong>SRD和PHB的明确说法：</strong>"You can use this skill to ... read a scroll ... even if you aren't a member of the class that normally uses that type of scroll."（SRD · Skills · Use Magic Device）</p>
+      <p>即：<strong>不需要</strong>满足施法属性要求，只需通过技能检定。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.84</span></p>
+      <p><strong>DM解释差异：</strong>某些DM可能house rule "需要满足属性要求"。建议提前确认。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>关于"偷袭"对"构装体"是否生效</h3>
+      <p><strong>冲突描述：</strong>构装体（Construct）是否有"生命骰"，是否能成为偷袭目标？</p>
+      <p><strong>SRD的明确说法：</strong>"The rogue ... can sneak attack ... creatures that do not have ... a fortitude save."（SRD · Classes · Rogue）</p>
+      <p>即：<strong>无强韧豁免的生物（如构装体、亡灵）无法被偷袭</strong>。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.51</span></p>
+      <p><strong>扩展说明：</strong>元素（Elemental）有强韧豁免，可以被偷袭；但构装体/亡灵不可以。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:#e67e22;background:#fef9e7;">
+      <h3>关于"偷袭伤害"的计算频率</h3>
+      <p><strong>冲突描述：</strong>盗贼的偷袭伤害是"每2级+1d6"，还是"每1级+1d6"？</p>
+      <p><strong>SRD和PHB的明确说法：</strong>"+1d6 every two rogue levels beyond 1st"（SRD · Classes · Rogue）</p>
+      <p>即：<strong>每2级+1d6</strong>（1级=1d6，3级=2d6，5级=3d6， etc.）。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.50</span></p>
+      <p><strong>常见错误：</strong>新手常误以为"每级+1d6"，导致伤害过高。请严格按SRD计算。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:#9b59b6;background:#f4ecf7;">
+      <h3>关于"察言观色"是否属于盗贼技能</h3>
+      <p><strong>冲突描述：</strong>SRD规定盗贼"本职技能"包含<a href="../skills/sense-motive.html">察言观色</a>（Sense Motive），但某些第三方资料删除了该技能。</p>
+      <p><strong>SRD的明确说法：</strong>盗贼本职技能列表包含"Sense Motive"（SRD · Classes · Rogue · Skills）。</p>
+      <p>即：<strong>察言观色是盗贼本职技能</strong>，添加时不需支付额外技能点。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.52</span></p>
+      <p><strong>建议：</strong>社交型盗贼务必投资察言观色，配合偷袭/交涉使用。</p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.50-53 —— 盗贼职业特性</li>
+      <li>📘 <strong>SRD 3.5</strong> · Classes → Rogue —— 开放式游戏规则</li>
+      <li>📗 <strong>DMG（城主手册）3.5版</strong> p.176 —— 进阶职业建议</li>
+      <li>📗 <strong>Complete Adventurer</strong> —— 盗贼变体和扩展专长</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="cleric.html">← 上一页：牧师</a> | <a href="ranger.html">下一页：游侠 →</a>
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 盗贼职业详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

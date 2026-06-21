@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魔法兽 Magical Beasts - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.cr-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:13px; font-weight:600; color:#fff; }
+.cr-low { background:#27ae60; }
+.cr-mid { background:#d4a017; }
+.cr-high { background:#c0392b; }
+.cr-boss { background:#8e44ad; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:40px; }
+.monster-entry { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:16px 0; }
+.monster-entry h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.monster-entry table { width:100%; border-collapse:collapse; margin:8px 0; }
+.monster-entry th, .monster-entry td { padding:6px 10px; border-bottom:1px solid var(--border-light,#e8dcc8); text-align:left; font-size:14px; }
+.monster-entry th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.tactic { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:8px 12px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物图鉴</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+      <a href="humanoids.html">类人怪物</a>
+      <a href="undead.html">不死生物</a>
+      <a href="magical-beasts.html" class="active">魔法兽</a>
+      <a href="aberrations-fey.html">异怪与精类</a>
+      <a href="outsiders.html">异界生物</a>
+      <a href="giants-constructs.html">巨人与构装体</a>
+      <a href="plants-oozes.html">植物与泥怪</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>魔法兽 <small>Magical Beasts</small></h1>
+
+    <p>本页收录 D&D 3.5e 中的<strong>魔法兽 (Magical Beast)</strong>，拥有超自然能力的野兽。它们通常具有暗视和低光视觉，智力高于普通动物。魔法兽是D&D中最具标志性的怪物类型之一，从经典的猫头鹰熊到令人胆寒的泰拉斯奎兽，都是冒险者在野外最可能遭遇的强大对手。</p>
+
+    <div class="toc">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#low-cr">低CR魔法兽 (CR 1-3)</a></li>
+        <li><a href="#mid-cr">中CR魔法兽 (CR 4-8)</a></li>
+        <li><a href="#high-cr">高CR魔法兽 (CR 9+)</a></li>
+        <li><a href="#aerial">飞禽与天空兽</a></li>
+        <li><a href="#cr-table">CR速查表</a></li>
+      </ul>
+    </div>
+
+    <!-- ==================== SECTION 1 ==================== -->
+    <h2 class="section-title" id="low-cr">低CR魔法兽 (CR 1-3)</h2>
+
+    <div class="monster-entry">
+      <h3>掘地虫 Ankheg <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>一种大型甲壳类地下生物，善于挖掘隧道并喷出酸液攻击猎物。常成群出没于农田地下，是低等级冒险者的常见威胁。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>3d10+12 (28 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+8)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +6 (2d6+7 加酸液伤害)</td></tr>
+        <tr><td>特殊能力</td><td>喷酸 (Spit Acid)：30尺射程，4d4酸伤害，DC 14反射减半；掘地 20尺</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>掘地虫会从地下突然冒出发动攻击，先用掘地接近目标再啮咬。对多个敌人时会喷酸覆盖区域。冒险者应注意脚下的松软土壤，准备对抗酸液的防护手段。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>蛇鸡兽 Cockatrice <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>外形类似巨型公鸡与蜥蜴的混合体，其啮咬可将活物石化。常见于荒野废墟中，是低等级队伍最恐惧的小型魔法兽之一。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>小型 (Small)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>5d10 (27 HP)</td></tr>
+        <tr><td>AC</td><td>15 (天生+4, 敏捷+1)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +6 (1d4-2 加石化)</td></tr>
+        <tr><td>特殊能力</td><td>石化凝视 (Petrification)：被啮咬的目标需通过 DC 10 强韧豁免，否则被石化</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>蛇鸡兽体型虽小但极其危险。它会飞入战场啄咬最脆弱的目标。冒险者应准备<em>石化还原术</em>，避免近战时过于靠近。远程攻击是最佳选择。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>移位兽 Displacer Beast <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>一种六足大型猫科生物，体表覆盖黑色毛皮和触手。其位移能力使其看起来与实际位置有2尺偏差，极难命中。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>6d10+6 (39 HP)</td></tr>
+        <tr><td>AC</td><td>14 (位移效果+2 偏斜加值)</td></tr>
+        <tr><td>攻击</td><td>2 触手 +9 (1d6+2)</td></tr>
+        <tr><td>特殊能力</td><td>位移 (Displacement)：外观位置偏移2尺，所有攻击有50%失手率；猛扑 (Pounce)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>位移兽利用位移效果闪避攻击，然后从意想不到的角度猛扑。对付它最好使用<em>真实视觉</em>或<em>闪光尘</em>破除位移效果。区域攻击法术不受位移影响。</div>
+    </div>
+
+    <!-- ==================== SECTION 2 ==================== -->
+    <h2 class="section-title" id="mid-cr">中CR魔法兽 (CR 4-8)</h2>
+
+    <div class="monster-entry">
+      <h3>巴西利斯克 Basilisk <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>八足蜥蜴状魔法兽，其凝视可将生物石化。栖息于沙漠和洞穴中，周围的石化雕像往往是它存在的第一个警告。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>6d10+6 (39 HP)</td></tr>
+        <tr><td>AC</td><td>16 (天生+5, 敏捷+1)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +6 (1d8+1 加毒素 DC 13)</td></tr>
+        <tr><td>特殊能力</td><td>石化凝视 (Petrifying Gaze)：30尺，DC 11 强韧豁免失败则石化；毒素 (1d6 Con/1d6 Con)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>巴西利斯克的凝视是最致命的武器。冒险者应回避直视（获得对凝视+5加值但失去DEX加值），或使用<em>镜影防护</em>。镜子可以让凝视反弹到巴西利斯克自身！</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>奇美拉 Chimera <span class="cr-badge cr-mid">CR 6</span></h3>
+      <p>三头魔法兽——山羊头、狮子头和龙头共生于一具躯体，背生双翼。龙首可喷吐火焰，是最具标志性的混合魔法兽。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">6</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>9d10+27 (76 HP)</td></tr>
+        <tr><td>AC</td><td>19 (天生+6, 敏捷+1, 体型-1, 天生+3)</td></tr>
+        <tr><td>攻击</td><td>2 啮咬 +11 (2d6+4) + 角抵 +11 (1d8+4) + 2 爪抓 +9 (1d8+4)</td></tr>
+        <tr><td>特殊能力</td><td>龙首火焰吐息：30尺锥形，3d8火焰伤害，DC 17 反射减半；飞行 50尺 (差)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>奇美拉从空中俯冲攻击，先用火焰吐息覆盖目标区域，再降下用五重攻击撕裂敌人。应优先使用远程武器和飞行盟友对抗，<em>防护能量</em>可大幅减少火焰伤害。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>狮鹫 Griffon <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>半鹰半狮的雄伟生物，是最受欢迎的空中坐骑之一。忠诚且聪慧，常被骑士团驯养为战骑。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>7d10+21 (59 HP)</td></tr>
+        <tr><td>AC</td><td>17 (天生+5, 敏捷+2)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +11 (2d6+4) + 2 爪抓 +9 (1d8+4)</td></tr>
+        <tr><td>特殊能力</td><td>猛扑 (Pounce)；耙抓 (Rake) 2爪 +9 (1d8+4)；飞行 80尺 (普通)；可作坐骑</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>狮鹫从高空俯冲猛扑猎物，用啮咬和爪抓同时攻击。作为坐骑时极为出色。冒险者若需驯服狮鹫，应从幼崽开始培养。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>多头蛇蜥 Hydra <span class="cr-badge cr-mid">CR 4-11</span></h3>
+      <p>拥有多个蛇头的巨大爬行动物，每个头都可以独立攻击。砍掉一个头会长出两个新头，除非用火烧灼伤口。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">4-11</span>（取决于头数）</td></tr>
+        <tr><td>体型</td><td>超大型 (Huge)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>5-20d10+25-100 HP（随头数变化）</td></tr>
+        <tr><td>AC</td><td>15+（随头数提升）</td></tr>
+        <tr><td>攻击</td><td>每个头一次啮咬攻击</td></tr>
+        <tr><td>特殊能力</td><td>快速治愈 (Fast Healing)；头被斩断后重新生长；火烧灼可阻止再生</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>与多头蛇蜥战斗的关键是配合——一人用近战武器斩头，另一人紧随其后用火把或火焰法术烧灼伤口。纯物理攻击只会让它越来越强！</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>蝎尾狮 Manticore <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>拥有人的面孔、狮的身体和蝎的尾巴的飞行怪物。尾巴可射出致命尖刺，是中等级冒险者在荒野中的常见威胁。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">5</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>6d10+18 (51 HP)</td></tr>
+        <tr><td>AC</td><td>17 (天生+5, 敏捷+2)</td></tr>
+        <tr><td>攻击</td><td>2 爪抓 +9 (1d8+3) + 啮咬 +9 (2d6+3)；或 6 根尾刺 (远程180尺, 1d8+4)</td></tr>
+        <tr><td>特殊能力</td><td>尾刺齐射：一次射出6根尖刺，射程180尺；飞行 50尺 (普通)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>蝎尾狮喜欢在远距离用尾刺攻击，飞行中保持距离。冒险者应寻找掩体躲避尾刺，用远程攻击或法术将其击落。尾刺每轮重新生长，持久战对冒险者不利。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>鲨蜥兽 Bulette <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>又称"陆鲨"，全身覆盖厚重甲壳的掠食者。以极快的速度在地面和地下穿行，凭借震颤感知定位猎物。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>9d10+45 (94 HP)</td></tr>
+        <tr><td>AC</td><td>22 (天生+10, 敏捷+2)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +14 (4d6+7) + 2 爪抓 +12 (2d6+5)</td></tr>
+        <tr><td>特殊能力</td><td>跳跃 (Leap)；陆地游泳 (Land Swim)；震颤感知 60尺</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>鲨蜥兽会从地下突然跃出攻击，然后迅速钻入地下。它的甲壳极厚，正面硬拼代价高昂。使用<em>浮空术</em>或飞行可避开其地下突袭，<em>沉默术</em>可阻断其震颤感知。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>冰蠕虫 Remorhaz <span class="cr-badge cr-mid">CR 7-14</span></h3>
+      <p>极地地区的巨型虫类生物，体内产生的高温可融化金属。在冰封荒原中挖掘隧道行进，是北方冒险者的噩梦。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">7-14</span>（随体型变化）</td></tr>
+        <tr><td>体型</td><td>超大型 (Huge)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>7d10+28 至 14d10+56 HP</td></tr>
+        <tr><td>AC</td><td>20-25（随体型提升）</td></tr>
+        <tr><td>攻击</td><td>啮咬 (可吞噬整个目标)</td></tr>
+        <tr><td>特殊能力</td><td>灼热之躯：接触造成火焰伤害；吞噬活物 (Swallow Whole)；震颤感知</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>冰蠕虫的灼热之躯让近战攻击者也会受伤。使用<em>防护火焰</em>后再近战，或直接使用远程攻击。寒冰法术对其有额外效果。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>斯芬克斯 Sphinx <span class="cr-badge cr-mid">CR 5-10</span></h3>
+      <p>拥有多种变体的神秘生物，以谜语和智慧著称。安得罗斯芬克斯最为强大，吉诺芬克斯是女性变体。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td>安得罗斯芬克斯 <span class="cr-high">10</span> / 吉诺芬克斯 <span class="cr-mid">8</span> / 希拉科芬克斯 <span class="cr-mid">5</span> / 克里奥芬克斯 <span class="cr-mid">5</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>随变体变化</td></tr>
+        <tr><td>AC</td><td>随变体变化</td></tr>
+        <tr><td>攻击</td><td>爪抓/啮咬（随变体）</td></tr>
+        <tr><td>特殊能力</td><td>各变体拥有不同的类法术能力和谜语挑战</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>与斯芬克斯相遇时，优先尝试回答其谜语——答对可能和平通过。安得罗斯芬克斯拥有<em>咆哮</em>能力，吉诺芬克斯擅长<em>传奇知识</em>。非必要不战斗。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>猫头鹰熊 Owlbear <span class="cr-badge cr-mid">CR 4</span></h3>
+      <p>猫头鹰和熊的恐怖混合体，以其凶猛的攻击力和标志性的" Improved Grab + Rend"连击闻名。D&D最具辨识度的怪物之一。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">4</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>5d10+25 (52 HP)</td></tr>
+        <tr><td>AC</td><td>15 (天生+5)</td></tr>
+        <tr><td>攻击</td><td>2 爪抓 +9 (1d6+5) + 喙啄 +9 (1d8+5)</td></tr>
+        <tr><td>特殊能力</td><td>精通攫取 (Improved Grab)；撕裂 (Rend) 2d6+7；嗅觉 (Scent)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>猫头鹰熊会扑向目标，用爪抓抓住后撕裂。被攫取的猎物每轮受撕裂伤害。队伍中的坦克应吸引其注意，施法者用<em>油脂术</em>或<em>蛛网术</em>限制其行动。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>克拉肯 Kraken <span class="cr-badge cr-high">CR 12</span></h3>
+      <p>深海中的巨型乌贼怪物，体型足以拖沉一艘大船。拥有多条触手和喙状嘴，是海上冒险者的终极恐惧。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-high">12</span></td></tr>
+        <tr><td>体型</td><td>巨型 (Gargantuan)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>20d10+160 (270 HP)</td></tr>
+        <tr><td>AC</td><td>26 (天生+16, 敏捷+2, 体型-2)</td></tr>
+        <tr><td>攻击</td><td>2 手臂 + 8 触手 + 喙咬</td></tr>
+        <tr><td>特殊能力</td><td>精通攫取；绞缠 (Constrict)；墨汁喷射；喷射推进 280尺</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>克拉肯会用多条触手同时抓住不同目标，然后拖入深海。在水面上战斗比在水下有利得多。<em>自由行动术</em>可防止被攫取，<em>飞行术</em>可脱离水面。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>独角兽 Unicorn <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>象征纯洁与善良的魔法马匹，额头生有一根螺旋独角。只允许纯洁的少女骑乘，是天界力量的化身。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>4d10+12 (34 HP)</td></tr>
+        <tr><td>AC</td><td>15 (天生+3, 敏捷+2)</td></tr>
+        <tr><td>攻击</td><td>独角 +6 (1d8+3)</td></tr>
+        <tr><td>特殊能力</td><td>光亮射线随意施展；<em>医疗轻伤</em> 3/日；<em>中和毒素</em> 1/日；魔法武器；冲锋 +9 (3d6+9)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>独角兽通常会避免战斗。若必须交战，注意其<em>中和毒素</em>和<em>医疗</em>能力使其非常持久。它会用冲锋发起第一击，然后利用速度保持距离。</div>
+    </div>
+
+    <!-- ==================== SECTION 3 ==================== -->
+    <h2 class="section-title" id="high-cr">高CR魔法兽 (CR 9+)</h2>
+
+    <div class="monster-entry">
+      <h3>泰拉斯奎兽 Tarrasque <span class="cr-badge cr-boss">CR 25</span></h3>
+      <p>D&D中最强大的凡间怪物，几乎不可毁灭的巨型掠食者。拥有再生、反射甲壳和恐惧光环，是整个物质位面的终极威胁。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-boss">25</span></td></tr>
+        <tr><td>体型</td><td>巨像级 (Colossal)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>48d10+300 (564 HP)</td></tr>
+        <tr><td>AC</td><td>35 (天生+20, 敏捷+5, 体型-8, 偏斜+8)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +37 + 2 爪抓 + 2 角 + 尾扫</td></tr>
+        <tr><td>特殊能力</td><td>吞噬活物；恐惧光环 DC 28；再生 40；反射甲壳（远程法术反弹）；免疫火焰/毒素/酸液</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>泰拉斯奎兽几乎不可被正面击败。唯一方法是<em>祈愿术</em>或<em>奇迹术</em>将其永久消灭。反射甲壳会反弹远程法术，近战者会被再生持续恢复血量所困扰。需要极高等级队伍配合多种传奇手段。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>紫色蠕虫 Purple Worm <span class="cr-badge cr-high">CR 12</span></h3>
+      <p>地下世界的巨型蠕虫，体型足以吞噬一头大象。尾部带有毒刺，是地下城深处最恐怖的掠食者之一。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-high">12</span></td></tr>
+        <tr><td>体型</td><td>巨型 (Gargantuan)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>20d8+200 (290 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+12, 敏捷-2, 体型-2)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +24 (4d6+12 加毒素 DC 27) + 尾刺 (2d4 加毒素)</td></tr>
+        <tr><td>特殊能力</td><td>吞噬活物 (Swallow Whole)；震颤感知 60尺；毒素 (2d4 Con/2d4 Con)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>紫色蠕虫从地下冲出吞噬目标。被吞噬者需在胃中对其造成25点伤害才能逃出。<em>自由行动术</em>可防止被吞噬，<em>飞行术</em>可避免地下突袭。它的AC低但HP极高，持久战不利。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>大鹏 Roc <span class="cr-badge cr-high">CR 9</span></h3>
+      <p>传说中的巨型鸟类，体型足以抓走一头大象。栖息于最高的山峰，偶尔会将冒险者误认为猎物。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-high">9</span></td></tr>
+        <tr><td>体型</td><td>巨型 (Gargantuan)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>18d10+108 (207 HP)</td></tr>
+        <tr><td>AC</td><td>21 (天生+8, 敏捷+3, 体型-2, 偏斜+2)</td></tr>
+        <tr><td>攻击</td><td>2 爪抓 + 啮咬</td></tr>
+        <tr><td>特殊能力</td><td>精通攫取 (Improved Grab)；飞行 80尺</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>大鹏会抓住目标飞上高空然后松手。被抓取者应尽快挣脱或在空中使用<em>羽落术</em>。<em>缩小动物</em>或<em>变形</em>可能让被抓者逃脱攫取。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>座狼 Worg <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>比普通狼更聪明、更凶猛的邪恶狼类，常与地精和兽人结盟。可作为坐骑使用，也能独立进行战术配合。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>3d10+6 (22 HP)</td></tr>
+        <tr><td>AC</td><td>14 (天生+2, 敏捷+2)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +5 (1d6+4 加绊摔)</td></tr>
+        <tr><td>特殊能力</td><td>暗视 60尺；嗅觉 (Scent)；绊摔 (Trip)；可骑乘作战</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>座狼常成群结队出现，利用绊摔让目标倒地后围攻。它们通常会与地精骑手配合发动联合攻击。优先击杀座狼可瓦解敌方骑兵优势。</div>
+    </div>
+
+    <!-- ==================== SECTION 4 ==================== -->
+    <h2 class="section-title" id="aerial">飞禽与天空兽 (Aerial Magical Beasts)</h2>
+
+    <div class="monster-entry">
+      <h3>飞马 Pegasus <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>生有洁白双翼的神骏马匹，象征自由与高贵。只有善良阵营的角色才能驯服飞马作为坐骑。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>4d10+12 (34 HP)</td></tr>
+        <tr><td>AC</td><td>14 (天生+2, 敏捷+2)</td></tr>
+        <tr><td>攻击</td><td>2 蹄击 +6 (1d6+3)</td></tr>
+        <tr><td>特殊能力</td><td>飞行 120尺 (良好)；随意<em>侦测邪恶/善良</em>；破邪攻击 (Smite Evil)；可作坐骑</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>飞马是优秀的空中坐骑，其<em>侦测邪恶</em>能力可预警敌人。破邪攻击对邪恶生物造成额外伤害。作为圣武士或善良牧师的天上坐骑最为理想。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>骏鹰 Hippogriff <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>鹰与马的混合体，比狮鹫更容易驯服。是低等级冒险者获得飞行坐骑的最经济选择。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>3d10+3 (19 HP)</td></tr>
+        <tr><td>AC</td><td>15 (天生+3, 敏捷+2)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +4 (1d6+2) + 2 爪抓 +4 (1d6+2)</td></tr>
+        <tr><td>特殊能力</td><td>飞行 100尺 (普通)；可作坐骑</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>骏鹰是出色的飞行坐骑，HP较低但机动性优秀。驯服成本低于狮鹫和飞马，适合预算有限的冒险队伍。战斗中主要作为机动手段而非主要输出。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>鸟人 Aarakocra <span class="cr-badge cr-low">CR 1/2</span></h3>
+      <p>半人半鸟的智慧种族，栖息于高山之巅。使用爪子和标枪战斗，拥有自己的部落文化和社会结构。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>魔法兽 (Magical Beast)</td></tr>
+        <tr><td>HD</td><td>1d10+1 (6 HP)</td></tr>
+        <tr><td>AC</td><td>15 (天生+2, 敏捷+3)</td></tr>
+        <tr><td>攻击</td><td>爪抓 + 标枪</td></tr>
+        <tr><td>特殊能力</td><td>飞行 90尺 (良好)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>鸟人通常以部落形式出现，会从空中投掷标枪后迅速撤离。虽然单体CR较低，但数量众多时仍构成威胁。它们极度厌恶蛇类和爬虫类生物。</div>
+    </div>
+
+    <!-- ==================== SECTION 5 ==================== -->
+    <h2 class="section-title" id="cr-table">CR速查表</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>CR</th>
+          <th>怪物名称</th>
+          <th>体型</th>
+          <th>特色能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cr-badge cr-low">1/2</span></td>
+          <td>鸟人 Aarakocra</td>
+          <td>中型</td>
+          <td>飞行 90尺，标枪攻击</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td>骏鹰 Hippogriff</td>
+          <td>大型</td>
+          <td>飞行 100尺，可作坐骑</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>座狼 Worg</td>
+          <td>中型</td>
+          <td>绊摔，骑乘作战</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>掘地虫 Ankheg</td>
+          <td>大型</td>
+          <td>喷酸，掘地 20尺</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>蛇鸡兽 Cockatrice</td>
+          <td>小型</td>
+          <td>石化啮咬，飞行</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>移位兽 Displacer Beast</td>
+          <td>大型</td>
+          <td>位移效果，猛扑</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>独角兽 Unicorn</td>
+          <td>大型</td>
+          <td>治疗，中和毒素，破邪冲锋</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>飞马 Pegasus</td>
+          <td>大型</td>
+          <td>飞行 120尺，侦测邪恶</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4</span></td>
+          <td>猫头鹰熊 Owlbear</td>
+          <td>大型</td>
+          <td>精通攫取，撕裂</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4-11</span></td>
+          <td>多头蛇蜥 Hydra</td>
+          <td>超大型</td>
+          <td>多头攻击，快速治愈</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>巴西利斯克 Basilisk</td>
+          <td>中型</td>
+          <td>石化凝视，毒素</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>狮鹫 Griffon</td>
+          <td>大型</td>
+          <td>飞行 80尺，猛扑，耙抓</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">5</span></td>
+          <td>蝎尾狮 Manticore</td>
+          <td>大型</td>
+          <td>尾刺齐射 180尺，飞行</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>奇美拉 Chimera</td>
+          <td>大型</td>
+          <td>龙首火焰吐息，飞行</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>鲨蜥兽 Bulette</td>
+          <td>大型</td>
+          <td>跳跃，陆地游泳，震颤感知</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7-14</span></td>
+          <td>冰蠕虫 Remorhaz</td>
+          <td>超大型</td>
+          <td>灼热之躯，吞噬活物</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">9</span></td>
+          <td>大鹏 Roc</td>
+          <td>巨型</td>
+          <td>飞行 80尺，精通攫取</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">10</span></td>
+          <td>安得罗斯芬克斯 Androsphinx</td>
+          <td>大型</td>
+          <td>咆哮，谜语</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">12</span></td>
+          <td>克拉肯 Kraken</td>
+          <td>巨型</td>
+          <td>多触手，墨汁，喷射推进</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">12</span></td>
+          <td>紫色蠕虫 Purple Worm</td>
+          <td>巨型</td>
+          <td>吞噬活物，毒刺</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-boss">25</span></td>
+          <td>泰拉斯奎兽 Tarrasque</td>
+          <td>巨像级</td>
+          <td>再生 40，反射甲壳，恐惧光环</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:40px; text-align:center; color:#888;">← 返回 <a href="intro.html">怪物总览</a> | 下一页：<a href="aberrations-fey.html">异怪与精类</a> →</p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物品制造专长 Item Creation Feats - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.feat-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.feat-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.feat-card h3 a { color:var(--text-heading,#4a2c0a); text-decoration:none; }
+.feat-card h3 a:hover { text-decoration:underline; }
+.feat-meta { font-size:13px; color:var(--text-subtle,#7f8c8d); margin-bottom:8px; }
+.feat-meta .badge { display:inline-block; padding:2px 8px; border-radius:3px; font-size:11px; font-weight:600; color:#fff; margin-right:4px; }
+.badge-combat { background:#c0392b; }
+.badge-general { background:#2980b9; }
+.badge-metamagic { background:#8e44ad; }
+.badge-item { background:#e67e22; }
+.badge-divine { background:#d4a017; }
+.badge-spell { background:#27ae60; }
+.prereq { font-size:13px; color:#888; margin:4px 0; }
+.benefit { font-size:14px; margin:6px 0; }
+.tactic-tip { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:6px 10px; margin:6px 0; font-size:13px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.calculator { background:var(--bg-card,#faf6ee); border:2px solid var(--accent-gold,#d4a017); border-radius:8px; padding:20px; margin:20px 0; }
+.calculator h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.calc-row { display:flex; gap:12px; margin:10px 0; align-items:center; flex-wrap:wrap; }
+.calc-row label { min-width:120px; font-size:14px; font-weight:600; }
+.calc-row select, .calc-row input { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); border-radius:4px; font-size:14px; }
+.calc-row input { width:120px; }
+.calc-btn { padding:10px 24px; background:#e67e22; color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:15px; font-weight:600; }
+.calc-btn:hover { background:#d35400; }
+.calc-result { background:#e8f4f8; border:1px solid #b8d4e8; border-radius:6px; padding:16px; margin-top:12px; display:none; }
+.calc-result h4 { margin-top:0; color:#21618c; }
+.calc-result .result-row { display:flex; gap:20px; margin:8px 0; flex-wrap:wrap; }
+.calc-result .result-item { background:#fff; padding:10px 16px; border-radius:4px; border:1px solid #d0e0f0; min-width:150px; text-align:center; }
+.calc-result .result-item .label { font-size:12px; color:#888; }
+.calc-result .result-item .value { font-size:20px; font-weight:700; color:#2c3e50; margin-top:4px; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长分类</div>
+      <a href="intro.html">总览</a>
+      <a href="feat-list.html">📋 专长详细列表</a>
+      <a href="combat.html">战斗专长</a>
+      <a href="spell-feats.html">施法专长</a>
+      <a href="general.html">通用专长</a>
+      <a href="metamagic.html">超魔专长</a>
+      <a href="item.html" class="active">物品专长</a>
+      <a href="divine.html">神术专长</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心专长</div>
+      <a href="power-attack.html">猛力攻击</a>
+      <a href="cleave.html">顺劈斩</a>
+      <a href="weapon-focus.html">武器专精</a>
+      <a href="dodge.html">闪避</a>
+      <a href="iron-will.html">钢铁意志</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>物品制造专长 <span style="font-size:0.5em;color:#888;">Item Creation Feats</span></h1>
+    <p>物品制造专长允许施法者制造各种魔法物品。制造过程需要合适的材料、工具和工作环境。制造费用通常为物品市场价格的一半，同时消耗经验值。每种物品类型都需要对应的专长，且对施法者等级有最低要求。</p>
+
+    <div class="toc">
+      <h3>本分类专长一览</h3>
+      <ul>
+        <li><a href="#brew-potion">调制药水</a></li>
+        <li><a href="#scribe-scroll">抄写卷轴</a></li>
+        <li><a href="#craft-wondrous">制造奇物</a></li>
+        <li><a href="#craft-arms-armor">制造魔法武器与防具</a></li>
+        <li><a href="#craft-wand">制造魔杖</a></li>
+        <li><a href="#craft-rod">制造权杖</a></li>
+        <li><a href="#craft-ring">制造戒指</a></li>
+        <li><a href="#craft-staff">制造法杖</a></li>
+        <li><a href="#forge-ring">锻造戒指</a></li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">专长总览表</h2>
+    <table class="quick-table">
+      <thead><tr><th>专长</th><th>最低CL</th><th>可制造物品</th><th>价格公式</th></tr></thead>
+      <tbody>
+        <tr><td>抄写卷轴 Scribe Scroll</td><td>CL 1</td><td>法术卷轴</td><td>法术等级 x CL x 25gp</td></tr>
+        <tr><td>调制药水 Brew Potion</td><td>CL 3</td><td>药水（3环以下）</td><td>法术等级 x CL x 50gp</td></tr>
+        <tr><td>制造奇物 Craft Wondrous Item</td><td>CL 3</td><td>腰带、斗篷、护目镜等</td><td>视具体物品而定</td></tr>
+        <tr><td>制造魔法武器与防具 Craft Magic Arms/Armor</td><td>CL 5</td><td>魔法武器、盾牌、盔甲</td><td>增强加值^2 x 2000gp（武器）</td></tr>
+        <tr><td>制造魔杖 Craft Wand</td><td>CL 5</td><td>法术魔杖（4环以下）</td><td>法术等级 x CL x 750gp</td></tr>
+        <tr><td>制造权杖 Craft Rod</td><td>CL 9</td><td>超魔权杖等特殊权杖</td><td>视具体权杖而定</td></tr>
+        <tr><td>制造戒指 Craft Ring</td><td>CL 12</td><td>魔法戒指</td><td>视具体戒指而定</td></tr>
+        <tr><td>制造法杖 Craft Staff</td><td>CL 12</td><td>含多种法术的法杖</td><td>视具体法杖而定</td></tr>
+        <tr><td>锻造戒指 Forge Ring</td><td>CL 12</td><td>魔法戒指（同制造戒指）</td><td>视具体戒指而定</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== FEAT CARDS ===== -->
+
+    <h2 class="section-title" id="brew-potion">调制药水 (Brew Potion)</h2>
+    <div class="feat-card">
+      <h3>调制药水 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级3级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造任何3环或以下的、目标为一个或多个生物的法术药水。药水的价格 = 法术等级 x 施法者等级 x 50gp。制造成本为价格的一半（GP和XP各一半），XP消耗 = 价格/25。制造时间为每1000gp市场价值需要一天。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>最实用的制造专长之一。治疗伤害药水、牛之力量药水等是团队的常备消耗品。可以为整个团队提供廉价的增益药水。</div>
+    </div>
+
+    <h2 class="section-title" id="scribe-scroll">抄写卷轴 (Scribe Scroll)</h2>
+    <div class="feat-card">
+      <h3>抄写卷轴 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级1级</div>
+      <div class="benefit"><strong>效果：</strong>你可以抄写任何你知道的法术到卷轴上。卷轴的价格 = 法术等级 x 施法者等级 x 25gp。制造成本为价格的一半（GP和XP各一半）。法师在1级时自动获得此专长。这是最基本的物品制造能力，允许你储备额外的法术使用次数。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>法师必备。抄录不常用的法术卷轴（如解除魔法、移除诅咒）可以让你在需要时有备无患，而不用占用日常准备的法术位。</div>
+    </div>
+
+    <h2 class="section-title" id="craft-wondrous">制造奇物 (Craft Wondrous Item)</h2>
+    <div class="feat-card">
+      <h3>制造奇物 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级3级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造各种不属于其他类别的魔法物品，如腰带、斗篷、护目镜、宝石、雕像等。这是涵盖范围最广的物品制造专长，包括数千种不同的奇物。制造成本通常为市场价格的一半，XP消耗 = 价格/25，制造时间为每1000gp价值一天。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>最通用的制造专长，涵盖范围极广。优先制造属性增强物品（如力量腰带+2、体质护身符+2），这些是性价比最高的长期投资。</div>
+    </div>
+
+    <h2 class="section-title" id="craft-arms-armor">制造魔法武器与防具 (Craft Magic Arms and Armor)</h2>
+    <div class="feat-card">
+      <h3>制造魔法武器与防具 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级5级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造魔法武器、盾牌和盔甲。这包括增强加值（+1到+5）以及各种特殊能力（如炽焰、冻寒、锐锋等）。武器增强加值的基础价格 = 加值^2 x 2000gp，防具为加值^2 x 1000gp。制造成本为基础价格的一半加上基础物品价格。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>为团队中的战士职业制造魔法装备。优先制造+1增强加值武器（2000gp），然后逐步升级。炽焰（+1等效）和锐锋（+1等效）是最受欢迎的武器附魔。</div>
+    </div>
+
+    <h2 class="section-title" id="craft-wand">制造魔杖 (Craft Wand)</h2>
+    <div class="feat-card">
+      <h3>制造魔杖 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级5级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造任何4环或以下的法术魔杖。魔杖包含50次充能，价格 = 法术等级 x 施法者等级 x 750gp。制造成本为价格的一半（GP和XP各一半）。魔杖使用法术触发(spell trigger)方式激活，即使是非施法者也可以使用。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>制造常用法术的魔杖可以大幅节省法术位。治疗轻伤魔杖（CL1，每根750gp）是团队的标配。让非施法者使用魔杖释放增益法术，可以解放施法者的法术位用于战斗。</div>
+    </div>
+
+    <h2 class="section-title" id="craft-rod">制造权杖 (Craft Rod)</h2>
+    <div class="feat-card">
+      <h3>制造权杖 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级9级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造各种魔法权杖，如超魔权杖（metamagic rod）、吸收权杖等。权杖通常包含特殊能力而非简单的法术储存。超魔权杖允许使用者每天若干次免费应用超魔效果而不消耗额外法术位，这是最具战略价值的权杖类型。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>超魔权杖（极效、增效、瞬发）是最值得优先制造的。一根瞬发权杖（每天3次）可以让法师在关键时刻每轮施放两个法术，而无需消耗+4环的额外法术位。</div>
+    </div>
+
+    <h2 class="section-title" id="craft-ring">制造戒指 (Craft Ring)</h2>
+    <div class="feat-card">
+      <h3>制造戒指 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级12级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造各种魔法戒指。戒指的制造成本通常为其市场价格的一半。你需要合适的工具和工作台，以及制造所需的材料（如贵金属和宝石）。制造需要每1000gp价值一天的时间。常见戒指包括防护戒指、反制法术戒指、三愿戒指等。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高等级制造专长。防护戒指+2（4000gp制造费）是性价比极高的防御投资。三愿戒指则提供一次性但极为强大的效果。</div>
+    </div>
+
+    <h2 class="section-title" id="craft-staff">制造法杖 (Craft Staff)</h2>
+    <div class="feat-card">
+      <h3>制造法杖 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级12级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造魔法法杖，法杖包含多种相关法术（通常3-5个）。使用法杖时，施法者可以使用自己的属性调整值和施法者等级（如果高于法杖的施法者等级），这使得法杖在高属性施法者手中效果远超魔杖。法杖通常有10次充能，每天可恢复1次。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>法杖是最强大的法术储存物品。火焰法杖、力量法杖等都是经典选择。使用自己的施法者等级意味着高等级法师可以从法杖中释放出比魔杖强得多的法术效果。</div>
+    </div>
+
+    <h2 class="section-title" id="forge-ring">锻造戒指 (Forge Ring)</h2>
+    <div class="feat-card">
+      <h3>锻造戒指 <span class="badge badge-item">物品制造</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级12级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造各种魔法戒指。此专长与"制造戒指(Craft Ring)"功能相同，在PHB中以Forge Ring的名称出现。制造规则与Craft Ring完全一致。你需要合适的工具、工作台和材料，制造成本为市场价格的一半。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>注意：此专长与Craft Ring为同一专长的不同译名，不需要重复选取。选择一种名称使用即可。</div>
+    </div>
+
+    <!-- ===== CRAFTING CALCULATOR ===== -->
+
+    <h2 class="section-title">物品制造计算器</h2>
+    <div class="calculator">
+      <h3>🔨 魔法物品制造成本计算器</h3>
+      <p style="font-size:13px;color:#888;">根据D&D 3.5e规则计算制造魔法物品所需的XP、GP和时间。</p>
+
+      <div class="calc-row">
+        <label>物品类型：</label>
+        <select id="itemType" onchange="updateCalcFields()">
+          <option value="scroll">卷轴 (Scroll)</option>
+          <option value="potion">药水 (Potion)</option>
+          <option value="wand">魔杖 (Wand)</option>
+          <option value="wondrous">奇物 (Wondrous Item)</option>
+          <option value="weapon">魔法武器 (Magic Weapon)</option>
+          <option value="armor">魔法防具 (Magic Armor)</option>
+          <option value="ring">戒指 (Ring)</option>
+          <option value="rod">权杖 (Rod)</option>
+          <option value="staff">法杖 (Staff)</option>
+        </select>
+      </div>
+
+      <div class="calc-row" id="spellLevelRow">
+        <label>法术等级：</label>
+        <select id="spellLevel">
+          <option value="0">0环（戏法）</option>
+          <option value="1" selected>1环</option>
+          <option value="2">2环</option>
+          <option value="3">3环</option>
+          <option value="4">4环</option>
+          <option value="5">5环</option>
+          <option value="6">6环</option>
+          <option value="7">7环</option>
+          <option value="8">8环</option>
+          <option value="9">9环</option>
+        </select>
+      </div>
+
+      <div class="calc-row" id="casterLevelRow">
+        <label>施法者等级：</label>
+        <input type="number" id="casterLevel" value="1" min="1" max="20">
+      </div>
+
+      <div class="calc-row" id="enhancementRow" style="display:none;">
+        <label>增强加值：</label>
+        <select id="enhancementBonus">
+          <option value="1">+1</option>
+          <option value="2">+2</option>
+          <option value="3">+3</option>
+          <option value="4">+4</option>
+          <option value="5">+5</option>
+        </select>
+      </div>
+
+      <div class="calc-row" id="marketPriceRow" style="display:none;">
+        <label>市场价格(gp)：</label>
+        <input type="number" id="marketPrice" value="10000" min="1">
+      </div>
+
+      <div class="calc-row" style="margin-top:16px;">
+        <button class="calc-btn" onclick="calculateCraft()">计算制造成本</button>
+      </div>
+
+      <div class="calc-result" id="calcResult">
+        <h4>制造结果</h4>
+        <div class="result-row">
+          <div class="result-item">
+            <div class="label">市场价格</div>
+            <div class="value" id="resultPrice">-</div>
+          </div>
+          <div class="result-item">
+            <div class="label">GP消耗</div>
+            <div class="value" id="resultGP">-</div>
+          </div>
+          <div class="result-item">
+            <div class="label">XP消耗</div>
+            <div class="value" id="resultXP">-</div>
+          </div>
+          <div class="result-item">
+            <div class="label">制造时间</div>
+            <div class="value" id="resultTime">-</div>
+          </div>
+        </div>
+        <p id="resultNote" style="font-size:12px;color:#888;margin-top:8px;"></p>
+      </div>
+    </div>
+
+    <script>
+    function updateCalcFields() {
+      var type = document.getElementById('itemType').value;
+      var spellRow = document.getElementById('spellLevelRow');
+      var casterRow = document.getElementById('casterLevelRow');
+      var enhanceRow = document.getElementById('enhancementRow');
+      var priceRow = document.getElementById('marketPriceRow');
+
+      spellRow.style.display = 'none';
+      casterRow.style.display = 'none';
+      enhanceRow.style.display = 'none';
+      priceRow.style.display = 'none';
+
+      if (type === 'scroll' || type === 'potion' || type === 'wand' || type === 'staff') {
+        spellRow.style.display = 'flex';
+        casterRow.style.display = 'flex';
+      } else if (type === 'weapon' || type === 'armor') {
+        enhanceRow.style.display = 'flex';
+      } else {
+        priceRow.style.display = 'flex';
+      }
+    }
+
+    function calculateCraft() {
+      var type = document.getElementById('itemType').value;
+      var spellLvl = parseInt(document.getElementById('spellLevel').value) || 0;
+      var casterLvl = parseInt(document.getElementById('casterLevel').value) || 1;
+      var enhance = parseInt(document.getElementById('enhancementBonus').value) || 1;
+      var marketInput = parseInt(document.getElementById('marketPrice').value) || 0;
+      var price = 0;
+      var note = '';
+
+      switch(type) {
+        case 'scroll':
+          price = Math.max(spellLvl, 0.5) * casterLvl * 25;
+          note = '卷轴价格 = max(法术等级, 0.5) x 施法者等级 x 25gp';
+          break;
+        case 'potion':
+          price = Math.max(spellLvl, 0.5) * casterLvl * 50;
+          note = '药水价格 = max(法术等级, 0.5) x 施法者等级 x 50gp（仅限3环以下）';
+          break;
+        case 'wand':
+          price = Math.max(spellLvl, 0.5) * casterLvl * 750;
+          note = '魔杖价格 = max(法术等级, 0.5) x 施法者等级 x 750gp（50次充能，仅限4环以下）';
+          break;
+        case 'staff':
+          price = marketInput > 0 ? marketInput : 50000;
+          note = '法杖价格因具体组成而异，此处使用输入的市场价格或默认50000gp';
+          break;
+        case 'weapon':
+          price = enhance * enhance * 2000;
+          note = '武器增强价格 = 加值^2 x 2000gp（不含基础武器价格）';
+          break;
+        case 'armor':
+          price = enhance * enhance * 1000;
+          note = '防具增强价格 = 加值^2 x 1000gp（不含基础防具价格）';
+          break;
+        default:
+          price = marketInput > 0 ? marketInput : 10000;
+          note = '奇物/戒指/权杖价格因具体物品而异，此处使用输入的市场价格';
+          break;
+      }
+
+      var gpCost = price / 2;
+      var xpCost = price / 25;
+      var days = Math.max(1, Math.ceil(price / 1000));
+
+      document.getElementById('resultPrice').textContent = price.toLocaleString() + ' gp';
+      document.getElementById('resultGP').textContent = gpCost.toLocaleString() + ' gp';
+      document.getElementById('resultXP').textContent = Math.floor(xpCost).toLocaleString() + ' XP';
+      document.getElementById('resultTime').textContent = days + ' 天';
+      document.getElementById('resultNote').textContent = note;
+      document.getElementById('calcResult').style.display = 'block';
+    }
+
+    // Initialize field visibility
+    updateCalcFields();
+    </script>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

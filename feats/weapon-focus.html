@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>武器专攻 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html" class="active">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 武器专攻</nav>
+<h1>武器专攻 (Weapon Focus)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">战斗专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">熟练使用所选武器，基础攻击加值 +1</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">使用所选武器攻击时，攻击掷骰获得 +1 加值</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择多次，每次选择不同武器</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>选择一种武器（包括徒手打击、天生武器和啮咬）。在使用该武器进行攻击时，你获得 +1 的攻击加值。</p>
+<p>攻击加值仅适用于攻击掷骰（决定是否命中），不适用于伤害掷骰。</p>
+
+<h2 id="prerequisite">先决条件</h2>
+<ul>
+  <li><strong>熟练使用所选武器</strong>：必须 proficient（擅长）该武器。</li>
+  <li><strong>基础攻击加值 (BAB) +1</strong>：1级战士自动满足；其他职业可能需要2-3级。</li>
+</ul>
+
+<h2 id="benefit">益处</h2>
+<ul>
+  <li>使用所选武器进行 <strong>近战攻击或远程攻击</strong> 时，攻击掷骰获得 <span class="rule-keyword">+1 加值</span>。</li>
+  <li>该加值 <strong>可与其他加值叠加</strong>（如属性调整值、力量加值、魔法武器加值等）。</li>
+  <li>适用于 <strong>所有攻击动作</strong>（标准动作攻击、攻击致死一击、全力攻击等）。</li>
+</ul>
+
+<h2 id="special">特殊说明</h2>
+<ul>
+  <li><strong>可选择多次</strong>：每次选择"武器专攻"专长，可以选择 <strong>不同的武器</strong>。</li>
+  <li><strong>双武器战斗</strong>：如果选择"主手武器专攻"和"副手武器专攻"，主手和副手攻击都获得 +1 加值。</li>
+  <li><strong>徒手打击</strong>：可以选择"徒手打击"作为武器，获得 +1 加值（对武僧特别有用）。</li>
+  <li><strong>天生武器</strong>：怪物可以选择其天生武器（如啮咬、爪抓）获得专攻加值。</li>
+</ul>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>武器专精 (Weapon Specialization)</strong>：需要先有"武器专攻"，使伤害掷骰获得 +2 加值（仅限战士）。</li>
+  <li><strong>致命一击 (Improved Critical)</strong>：与武器专攻搭配，提高重击威胁范围。</li>
+  <li><strong>猛力攻击 (Power Attack)</strong>：战士的经典组合，专攻提高命中率，补偿猛力攻击的命中惩罚。</li>
+  <li><strong>顺劈斩 (Cleave)</strong>：专攻提高命中率，帮助触发顺劈斩的额外攻击。</li>
+</ul>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">战士</strong>：1级即可选，核心专长之一。</li>
+  <li><strong class="highlight">圣武士、游侠</strong>：3级满足BAB+1，尽早选择。</li>
+  <li><strong>野蛮人、武僧</strong>：近战职业的核心专长。</li>
+  <li><strong>其他职业</strong>：如果计划近战输出，建议尽早选择。</li>
+</ul>
+
+<h2 id="faq">常见问题</h2>
+<div class="faq-item">
+  <div class="faq-q">Q: "武器专攻"加值是否适用于重击确认掷骰？</div>
+  <div class="faq-a">A: <span class="rule-official">✓ 适用</span>。重击确认掷骰是一次攻击掷骰，因此 +1 加值也适用。</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Q: 如果武器被卸掉或掉落，专攻加值是否消失？</div>
+  <div class="faq-a">A: <span class="rule-official">✓ 消失</span>。当不再使用所选武器时，专攻加值不适用。</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Q: 魔法武器是否视为"不同的武器"？</div>
+  <div class="faq-a">A: <span class="rule-official">✗ 不视为</span>。长剑 +1 和长剑 +2 都视为"长剑"，选择"长剑"专攻即可覆盖所有长剑变体。</div>
+</div>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例 1：战士的武器专攻</strong></p>
+  <p>人类战士 1级（BAB +1），选择"长剑专攻"。</p>
+  <ul>
+    <li>使用长剑攻击：攻击加值 = BAB +1 + 力量调整值 + 专攻 +1</li>
+    <li>如果力量 16（+3），则攻击加值 = +1 + 3 + 1 = <strong>+5</strong></li>
+    <li>使用其他武器（如战锤）：攻击加值 = +1 + 3 = <strong>+4</strong>（无专攻加值）</li>
+  </ul>
+</div>
+<div class="example-box">
+  <p><strong>示例 2：游侠的双武器专攻</strong></p>
+  <p>人类游侠 3级（BAB +3），选择两次"武器专攻"：</p>
+  <ul>
+    <li>第一次：长剑专攻（主手）</li>
+    <li>第二次：短剑专攻（副手）</li>
+    <li>双武器战斗时，主手和副手攻击都获得 +1 加值</li>
+  </ul>
+</div>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点 1：徒手打击是否属于"武器"？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：明确列出"徒手打击 (unarmed strike)"可作为"武器专攻"的选择。</p>
+  <p>⚠️ <strong>部分网络误解</strong>：有玩家认为徒手打击不是武器，不能选择专攻。这是 <span class="rule-error">错误</span> 的。</p>
+  <p>✅ <strong>正确规则</strong>：徒手打击可以选择专攻，武僧受益显著。</p>
+</div>
+<div class="conflict-box">
+  <p><strong>冲突点 2：自然攻击（天生武器）是否可以选择专攻？</strong></p>
+  <p>📝 <strong>规则争议</strong>：PHB 未明确说明怪物天生武器（啮咬、爪抓等）是否可以选择专攻。</p>
+  <p>✅ <strong>官方 FAQ 澄清</strong>：MM 中的怪物可以选择其天生武器获得专攻加值（如熊选择"爪抓专攻"）。</p>
+  <p>⚠️ <strong>DM 裁决</strong>：部分 DM 不允许怪物选择专攻，需提前确认。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>DMG 地下城主指南</strong> 页176：专长选择建议。</li>
+  <li>📚 <strong>怪物图鉴 (MM)</strong>：怪物专长选择示例。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>强韧 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 强韧</nav>
+<h1>强韧 (Toughness)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">通用专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">无</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">生命值 (HP) 获得额外 +3 点（每角色等级）</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择多次，每次获得额外 +3 HP/级</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你的体质强健，能承受更多伤害。</p>
+<p>你的 <strong>生命值 (HP)</strong> 每角色等级获得 <span class="rule-keyword">额外 +3 点</span>。该加值直接加入你的HP总量，从1级开始生效。</p>
+
+<h2 id="benefit">益处详解</h2>
+<ul>
+  <li><strong>HP 计算</strong>：每级HP = 生命骰 (HD) + 体质调整值 + 强韧加值 (+3)。</li>
+  <li><strong>回溯生效</strong>：如果在后期选择"强韧"，之前等级的HP也会获得加值（即总HP增加 3 × 当前等级）。</li>
+  <li><strong>可选择多次</strong>：每次选择"强韧"，获得额外 +3 HP/级。选择3次"强韧"，获得 +9 HP/级。</li>
+  <li><strong>适用所有职业</strong>：无论生命骰类型（d4/d6/d8/d10/d12），都获得固定 +3 HP/级。</li>
+</ul>
+
+<h2 id="calculation">HP 计算示例</h2>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>等级</th>
+      <th>无强韧 (法师 d4)</th>
+      <th>有强韧 (法师 d4)</th>
+      <th>有强韧 (战士 d10)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1级</td>
+      <td>4 + 体质</td>
+      <td class="highlight">4 + 体质 + 3</td>
+      <td class="highlight">10 + 体质 + 3</td>
+    </tr>
+    <tr>
+      <td>2级</td>
+      <td>+ 2 + 体质</td>
+      <td class="highlight">+ 2 + 体质 + 3</td>
+      <td class="highlight">+ 6 + 体质 + 3</td>
+    </tr>
+    <tr>
+      <td>合计 (2级)</td>
+      <td>6 + 体质×2</td>
+      <td class="highlight">12 + 体质×2</td>
+      <td class="highlight">22 + 体质×2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="value">价值评估</h2>
+<div class="tactic-box">
+  <p><strong>强韧相当于多少体质？</strong></p>
+  <ul>
+    <li>每级 +3 HP ≈ 每4级 +1 体质调整值（因为体质调整值每4级增加 +1 HP/级）。</li>
+    <li>对 <strong>低生命骰职业</strong>（法师 d4、盗贼 d6）：强韧价值较高，相当于永久 +1 体质。</li>
+    <li>对 <strong>高生命骰职业</strong>（战士 d10、野蛮人 d12）：强韧价值较低，但仍能提高生存能力。</li>
+    <li><strong>多选强韧</strong>：选择3次强韧（+9 HP/级）对低生命骰职业相当于永久 +2 体质（HP方面）。</li>
+  </ul>
+</div>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">法师、术士</strong>：d4 生命骰，HP 极低，强韧能显著提高生存能力。</li>
+  <li><strong class="highlight">盗贼、吟游诗人</strong>：d6 生命骰，中等HP，强韧有帮助。</li>
+  <li><strong>牧师、德鲁伊</strong>：d8 生命骰，强韧可提高前线生存能力。</li>
+  <li><strong>战士、野蛮人</strong>：d10/d12 生命骰，强韧价值较低，但多选仍有帮助。</li>
+</ul>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>强韧体魄 (Great Fortitude)</strong>：提高强韧豁免，搭配强韧提高整体生存。</li>
+  <li><strong>钢铁意志 (Iron Will)</strong>：提高意志豁免，搭配强韧成为"坦克"。</li>
+  <li><strong>多层强韧</strong>：选择多次"强韧"，最大化HP。</li>
+</ul>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例：法师的强韧</strong></p>
+  <p>人类法师 1级，体质 14（+2），选择"强韧"专长。</p>
+  <ul>
+    <li>1级HP = 4 (d4 固定值) + 2 (体质) + 3 (强韧) = <strong>9 HP</strong></li>
+    <li>无强韧时：4 + 2 = 6 HP</li>
+    <li><strong>强韧提高了 50% 的HP</strong></li>
+    <li>到5级时：总HP = (4+2+3) + (2+2+3)×4 = 9 + 7×4 = <strong>37 HP</strong></li>
+  </ul>
+</div>
+<div class="example-box">
+  <p><strong>示例：战士的强韧</strong></p>
+  <p>人类战士 1级，体质 16（+3），选择"强韧"专长。</p>
+  <ul>
+    <li>1级HP = 10 (d10 固定值) + 3 (体质) + 3 (强韧) = <strong>16 HP</strong></li>
+    <li>无强韧时：10 + 3 = 13 HP</li>
+    <li><strong>强韧提高了 23% 的HP</strong></li>
+    <li>虽然价值较低，但多选强韧仍能显著提高生存</li>
+  </ul>
+</div>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：强韧是否适用于"临时HP"或"伤害减免"？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：强韧只影响"生命值 (hit points)"。</p>
+  <p>✅ <strong>正确规则</strong>：</p>
+  <ul>
+    <li>强韧 <strong>不适用</strong>于临时HP（如 <em> false life</em> 法术）。</li>
+    <li>强韧 <strong>不适用</strong>于伤害减免 (DR)。</li>
+    <li>强韧 <strong>只影响</strong>角色创建和升级时的HP计算。</li>
+  </ul>
+  <p>⚠️ <strong>部分误解</strong>：有玩家认为强韧能提高所有生存能力。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页109</strong>：生命值计算详解。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

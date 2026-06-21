@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多重射击 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #8B0000, #DC143C); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #8B0000; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #8B0000; border-bottom: 2px solid #8B0000; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color: #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+
+    <div class="feat-header">
+      <h1>🏹 多重射击</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Manyshot</p>
+      <span class="feat-type">通用专长</span>
+      <span class="feat-type">【射击】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">通用专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">快速射击 (Rapid Shot)、BAB +6</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">单次攻击动作发射两支箭</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">仅限于远程弓箭武器</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 97</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">游侠、特定构建</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你能够在一次攻击动作中发射多支箭矢，对单个目标造成多次伤害。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>快速射击 (Rapid Shot)</strong></li>
+        <li><strong>基本攻击加值 (BAB) +6</strong></li>
+      </ul>
+      <p><strong>说明</strong>：多重射击是快速射击的进阶专长，需要更高的BAB。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>在单次攻击动作中，你可以<strong>发射两支箭矢</strong>而不是一支。</p>
+      <ul>
+        <li>这两支箭矢都攻击<strong>同一个目标</strong></li>
+        <li>每支箭矢独立进行攻击掷骰和伤害掷骰</li>
+        <li>你承受<strong>-4 惩罚</strong>（两支箭矢各-2，或总共-4，取决于DM解释）</li>
+      </ul>
+      <p><strong>注意</strong>：多重射击只适用于<strong>弓箭武器</strong>（短弓、长弓、复合弓）。</p>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>多重射击流程</h3>
+    <ol>
+      <li><strong>声明使用多重射击</strong>：在你的攻击动作中声明</li>
+      <li><strong>计算攻击加值</strong>：每支箭矢的攻击加值 = BAB + 敏捷调整值 + 其他 - 4（多重射击惩罚）</li>
+      <li><strong>进行攻击掷骰</strong>：为每支箭矢独立掷骰</li>
+      <li><strong>计算伤害</strong>：每支箭矢独立计算伤害</li>
+    </ol>
+
+    <h3>重要规则</h3>
+    <ul>
+      <li><strong>仅限于弓箭</strong>：多重射击只适用于弓箭武器，不适用于弩或投掷武器</li>
+      <li><strong>单次攻击动作</strong>：多重射击消耗一次攻击动作，但可以发射两支箭矢</li>
+      <li><strong>同一目标</strong>：两支箭矢必须攻击同一个目标</li>
+      <li><strong>独立判定</strong>：每支箭矢的攻击和伤害独立判定</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：6级游侠（BAB +6），敏捷 18（+4），使用长弓，已选择快速射击和多重射击。</p>
+      <p><strong>攻击</strong>：</p>
+      <ol>
+        <li><strong>第一支箭矢</strong>：BAB +6 + 敏捷调整值 +4 - 4（多重射击惩罚） = +6 攻击加值</li>
+        <li><strong>第二支箭矢</strong>：BAB +6 + 敏捷调整值 +4 - 4（多重射击惩罚） = +6 攻击加值</li>
+        <li><strong>伤害</strong>：每支箭矢 1d8 + 4（敏捷调整值） = 1d8 + 4</li>
+        <li><strong>总伤害潜力</strong>：2-20 点伤害（每支箭矢 1-12，平均 6.5 × 2 = 13）</li>
+      </ol>
+      <p><strong>分析</strong>：多重射击显著提高了对单一目标的伤害输出潜力，但惩罚较高，需要较高的BAB和敏捷来抵消。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 推荐搭配专长</h4>
+      <ul>
+        <li><strong>快速射击 (Rapid Shot)</strong> - 先决条件，单次攻击动作发射两支箭矢</li>
+        <li><strong>多重射击 (Manyshot)</strong> - 本专长，单次攻击动作发射两支箭矢</li>
+        <li><strong>近程射击 (Point Blank Shot)</strong> - 近距离射击加值</li>
+        <li><strong>移动射击 (Shot on the Run)</strong> - 移动中射击</li>
+        <li><strong>精准射击 (Precise Shot)</strong> - 射击邻近敌人的目标无惩罚</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>🏹 推荐构建</h4>
+      <p><strong>1. 多重射手 (Manyshot Archer)</strong></p>
+      <ul>
+        <li>专攻：近程射击 → 快速射击 → 多重射击 → 移动射击</li>
+        <li>特点：对单一目标造成极高伤害</li>
+        <li>推荐武器：长弓（1d8伤害）、复合长弓（1d8伤害，需要力量）</li>
+      </ul>
+      <p><strong>2. 机动射手 (Mobile Archer)</strong></p>
+      <ul>
+        <li>专攻：近程射击 → 精准射击 → 快速射击 → 多重射击 → 移动射击</li>
+        <li>特点：机动性强，适合游击战</li>
+        <li>推荐武器：短弓（1d6伤害，轻型）</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：多重射击的惩罚计算</h4>
+      <p><strong>冲突点</strong>：多重射击的 -4 惩罚是每支箭矢各-2，还是总共-4？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 97</strong>：多重射击专长描述（未明确说明惩罚分配方式）</li>
+        <li><strong>一些在线资源</strong>：认为每支箭矢各-2</li>
+      </ul>
+      <p><strong>冲突描述</strong>：多重射击的惩罚分配方式存在争议。</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>统一惩罚解释</strong>：总共-4惩罚，两支箭矢都使用这个惩罚后的攻击加值</li>
+        <li><strong>分摊惩罚解释</strong>：每支箭矢各-2惩罚，独立计算攻击加值</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>统一惩罚解释</strong>（总共-4惩罚），因为这样更简单。</p>
+    </div>
+
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：多重射击与快速射击的叠加</h4>
+      <p><strong>冲突点</strong>：多重射击和快速射击能否叠加？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 97</strong>：多重射击专长描述</li>
+        <li><strong>PHB p. 99</strong>：快速射击专长描述</li>
+      </ul>
+      <p><strong>冲突描述</strong>：多重射击和快速射击都允许在单次攻击动作中发射多支箭矢，能否叠加？</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>不叠加解释</strong>：多重射击和快速射击是互斥的，只能选择一种在回合内使用</li>
+        <li><strong>叠加解释</strong>：多重射击和快速射击可以叠加，但惩罚会累加</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>不叠加解释</strong>（多重射击和快速射击不能同时用于同一次攻击动作）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 97 - 多重射击专长描述</li>
+      <li><strong>Complete Warrior</strong> p. 106 - 多重射击的变体规则</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+</main>
+</div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

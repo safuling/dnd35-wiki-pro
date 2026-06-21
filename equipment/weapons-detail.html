@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>武器详述 Weapons - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html" class="active">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">装备</div>
+      <a href="intro.html">装备总览</a>
+      <a href="weapons-detail.html" class="active">武器详述</a>
+      <a href="magic-items.html">魔法物品</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>武器详述</h1>
+    <p>本页面详细列出D&D 3.5e中的所有标准武器，分为简易武器、军用武器和异种武器三大类，并附带特殊材料武器说明。所有价格以金币(gp)为单位。表中伤害格式为"小型/中型"，分别对应小型角色和中型角色使用该武器时的伤害骰。</p>
+
+    <div class="toc-box" style="background:#f5f0e8;border:1px solid #c9b97a;border-radius:6px;padding:16px 24px;margin:20px 0;">
+      <strong>目录</strong>
+      <ul style="margin:8px 0 0 0;padding-left:20px;columns:2;">
+        <li><a href="#simple">简易武器 (Simple Weapons)</a></li>
+        <li><a href="#martial">军用武器 (Martial Weapons)</a></li>
+        <li><a href="#exotic">异种武器 (Exotic Weapons)</a></li>
+        <li><a href="#special-material">特殊材料武器</a></li>
+      </ul>
+    </div>
+
+    <!-- ==================== 简易武器 ==================== -->
+    <h2 id="simple">简易武器 (Simple Weapons)</h2>
+    <p>简易武器是最基础的武器类型。所有职业（除个别例外）都自动擅长简易武器。这类武器适合初学者和非战斗职业使用。</p>
+
+    <h3>轻型近战简易武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>徒手打击</strong><br>(Unarmed Strike)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d2 / 1d3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">非致命伤害；引发借机攻击</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>铁手套</strong><br>(Gauntlet)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d2 / 1d3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">视为武装攻击；可附魔</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>匕首</strong><br>(Dagger)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d4 / 1d4</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺/挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可投掷；轻型武器</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>拳刃</strong><br>(Punching Dagger)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d4 / 1d4</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">高重击倍率</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>轻锤</strong><br>(Light Hammer)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d4 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">20 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可投掷</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>镰刀</strong><br>(Sickle)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">6 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可用于绊摔；德鲁伊可用</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>单手近战简易武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>木棒</strong><br>(Club)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d4 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">3 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可投掷；免费获取</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>重型硬头锤</strong><br>(Heavy Mace)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">5 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">牧师标志性武器</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>钉头锤</strong><br>(Morningstar)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">6 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击和穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">双类型伤害</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>闷棍</strong><br>(Sap)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d4 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">非致命伤害；潜行首选</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>短矛</strong><br>(Spear)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">20 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">6 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可投掷；反冲锋准备动作</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>双手简易武器与长柄武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>手斧</strong><br>(Handaxe)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">6 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">3 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">轻型近战武器</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>飞斧</strong><br>(Throwing Axe)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">4 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可投掷</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>巨木棒</strong><br>(Greatclub)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">5 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d10 / 1d10</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">双手武器</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>长枪</strong><br>(Longspear)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">5 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">9 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">长武器(触及)；反冲锋双倍伤害</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>木棍</strong><br>(Quarterstaff)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">4 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">双头武器；免费；法师/武僧可用</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>简易远程武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程增量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>标枪</strong><br>(Javelin)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">30 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">投掷武器</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>轻型十字弓</strong><br>(Light Crossbow)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">35 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">80 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">4 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">装填为移动动作</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>重型十字弓</strong><br>(Heavy Crossbow)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">50 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d10 / 1d10</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">120 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">装填为全轮动作</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>投石索</strong><br>(Sling)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d4 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">50 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">0 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">免费；力量加值适用；装填为移动动作</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- ==================== 军用武器 ==================== -->
+    <h2 id="martial">军用武器 (Martial Weapons)</h2>
+    <p>军用武器需要对应的擅长专长才能无减值使用。战士、野蛮人、圣武士和游侠自动擅长所有军用武器。牧师擅长连枷和重型连枷（以及战锤和巨锤）。</p>
+
+    <h3>单手军用近战武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>战斧</strong><br>(Battleaxe)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">6 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">--</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>轻型连枷</strong><br>(Light Flail)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">5 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可用于卸武和绊摔</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>长剑</strong><br>(Longsword)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">15 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">4 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">最经典的单手武器</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>细剑</strong><br>(Rapier)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">20 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">18-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可使用武器娴熟；高重击范围</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>弯刀</strong><br>(Scimitar)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">15 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">18-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">4 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">高重击范围(18-20)</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>短剑</strong><br>(Shortsword)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">轻型武器；双武器战斗常用副手</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>三叉矛</strong><br>(Trident)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">15 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">4 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可投掷</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>战锤</strong><br>(Warhammer)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">12 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">5 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">矮人偏爱武器</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>双手军用近战武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>重型连枷</strong><br>(Heavy Flail)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">15 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d10 / 1d10</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可用于卸武和绊摔</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>巨斧</strong><br>(Greataxe)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">20 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d12 / 1d12</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">12 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">野蛮人最爱；单次伤害极高</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>巨剑</strong><br>(Greatsword)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">50 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2d6 / 2d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">平均伤害最高的双手武器</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>巨锤</strong><br>(Great Hammer)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">20 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d12 / 1d12</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">12 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">高重击倍率；对抗骷髅有效</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>砍刀</strong><br>(Falchion)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">75 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2d4 / 2d4</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">18-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">高重击范围(18-20)；配合精通重击极佳</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>战戟</strong><br>(Halberd)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d10 / 1d10</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">12 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺/挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可用于卸武和绊摔；多功能</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>军用远程武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程增量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>短弓</strong><br>(Shortbow)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">30 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">60 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">骑射可用；敏捷加值</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>长弓</strong><br>(Longbow)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">75 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">100 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">3 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">远程射击首选；需要双手</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>复合长弓</strong><br>(Composite Longbow)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">100 gp+</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">110 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">3 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可加力量加值；力量要求不同价格不同</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>手里剑</strong><br>(Shuriken)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 / 1d2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1/2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">视为弹药；武僧可用；投掷武器</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- ==================== 异种武器 ==================== -->
+    <h2 id="exotic">异种武器 (Exotic Weapons)</h2>
+    <p>异种武器需要对应的"擅长异种武器"专长才能正常使用。这些武器通常具有独特的战斗优势，是特定种族或特殊战斗风格的标志。</p>
+
+    <h3>异种近战武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>矮人战斧</strong><br>(Dwarven Waraxe)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">30 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d10 / 1d10</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">8 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">矮人可单手使用（视为军用）；其他种族双手使用视为军用</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>兽人双斧</strong><br>(Orc Double Axe)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">60 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">15 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">双头武器；双手使用</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>双头剑</strong><br>(Two-Bladed Sword)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">100 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d6 / 1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">双头武器；双武器战斗利器</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>钩链</strong><br>(Gnome Hooked Hammer)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">20 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8/1d6 / 1d8/1d6</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x3/x4</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">6 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击/穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">双头武器；侏儒视为军用；钩端可用于绊摔</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>鞭子</strong><br>(Whip)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d2 / 1d3</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">长武器(15尺触及)；非致命伤害；不伤有甲目标；可用于卸武和绊摔</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>精灵曲剑</strong><br>(Elven Curved Blade)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">80 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d10 / 1d10</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">18-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">7 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">挥砍</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">精灵视为军用；高重击范围</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>刺链</strong><br>(Spiked Chain)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">25 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2d4 / 2d4</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">长武器(触及)；可用于卸武和绊摔；可使用武器娴熟</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>大砍刀</strong><br>(Dire Flail)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">90 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">--</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">10 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">钝击</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">双头武器；可用于卸武和绊摔</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>异种远程武器</h3>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">武器名称</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">价格</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">伤害 (S/M)</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重击</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">射程增量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">重量</th>
+          <th style="padding:8px 10px;text-align:center;border:1px solid #8b7355;">类型</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #8b7355;">特殊</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>手弩</strong><br>(Hand Crossbow)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">100 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d4 / 1d4</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">30 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">2 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">可单手装填和射击；装填为移动动作</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>连发轻型十字弓</strong><br>(Repeating Light Crossbow)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">250 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d8 / 1d8</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">80 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">6 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">弹匣容量5发；装填弹匣为全轮动作；无需逐发装填</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:8px 10px;border:1px solid #c9b97a;"><strong>连发重型十字弓</strong><br>(Repeating Heavy Crossbow)</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">400 gp</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">1d10 / 1d10</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">19-20/x2</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">120 尺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">12 磅</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;text-align:center;">穿刺</td>
+          <td style="padding:8px 10px;border:1px solid #c9b97a;">弹匣容量5发；装填弹匣为全轮动作；无需逐发装填</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- ==================== 特殊材料武器 ==================== -->
+    <h2 id="special-material">特殊材料武器</h2>
+    <p>武器可以使用特殊材料制造，以获得额外的属性或对抗特定生物的效果。特殊材料武器的价格 = 基础武器价格 + 材料附加价格。魔法武器在附魔前通常先以特殊材料制造以获得叠加效果。</p>
+
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95em;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:10px 14px;text-align:left;border:1px solid #8b7355;">材料名称</th>
+          <th style="padding:10px 14px;text-align:center;border:1px solid #8b7355;">附加价格</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid #8b7355;">效果</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid #8b7355;">适用武器</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid #8b7355;">备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 14px;border:1px solid #c9b97a;"><strong>精金</strong><br>(Adamantine)</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;text-align:center;">+3,000 gp</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">精金武器在攻击物品时忽略硬度（硬度20以下）。这使得精金武器成为破坏门、墙壁和物品的最佳选择。精金武器本身具有硬度20和比正常多50%的HP。</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">所有金属武器和弹药</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">忽略硬度20以下的物体硬度；精金武器自身更坚固</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 14px;border:1px solid #c9b97a;"><strong>秘银</strong><br>(Mithral)</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;text-align:center;">+3,000 gp</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">秘银武器的重量为正常的一半。秘银武器视为银质武器（对魔鬼和狼人有效），同时仍被视为金属武器。这使得力量较低的角色可以更轻松地使用重型武器。</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">所有金属武器和盔甲</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">重量减半；视为银质；秘银盔甲防具检定减值更低</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 14px;border:1px solid #c9b97a;"><strong>寒铁</strong><br>(Cold Iron)</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;text-align:center;">+0 gp (基础价格不变)</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">寒铁武器对恶魔(demon)和精类(fey)生物造成额外效果。许多恶魔对寒铁有弱点(vulnerability)，受到寒铁武器伤害时伤害翻倍。寒铁武器在附魔时，每个加值需要额外+2,000 gp的附魔费用。</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">所有金属武器</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">对恶魔和精类有额外效果；附魔费用更高</td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 14px;border:1px solid #c9b97a;"><strong>炼金银</strong><br>(Alchemical Silver)</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;text-align:center;">+20 gp (单手) / +90 gp (双手)</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">炼金银武器对魔鬼(devil)和狼人(werewolf)造成额外效果。许多魔鬼对银质武器有弱点。炼金银武器的伤害骰降低一级（例如d8降为d6），以换取对特定生物的克制效果。</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">所有金属武器（非金属如木棒不可）</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">对魔鬼和变形生物有效；伤害骰降低一级</td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 14px;border:1px solid #c9b97a;"><strong>暗木</strong><br>(Darkwood)</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;text-align:center;">+200 gp/磅 (原重)</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">暗木武器的重量为正常的一半。暗木是一种稀有的硬木，硬度与钢铁相当。适合制造弓、棍棒、长矛等木质武器。暗木盾牌和武器的防具检定减值更低（因重量减轻）。</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">所有木质或半木质武器（弓、棍棒、长矛柄等）</td>
+          <td style="padding:10px 14px;border:1px solid #c9b97a;">重量减半；保持木质特性；硬度等同钢铁</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div style="margin-top:24px;padding:20px;background:#f5f0e8;border:1px solid #c9b97a;border-radius:6px;">
+      <h3 style="margin-top:0;">特殊材料武器选取建议</h3>
+      <ul>
+        <li><strong>精金</strong>：冒险中遇到大量障碍物（铁门、石墙）时的首选。精金巨剑或精金巨斧可以在紧急时刻快速开辟通道。</li>
+        <li><strong>秘银</strong>：适合力量较低的角色使用重型武器。秘银武器同时也获得银质特性，一石二鸟。</li>
+        <li><strong>寒铁</strong>：如果你经常面对恶魔或精类敌人（如下层位面冒险），寒铁武器性价比极高（基础价格不变）。</li>
+        <li><strong>炼金银</strong>：面对魔鬼和狼人时的应急选择。注意伤害骰降低一级的负面影响。</li>
+        <li><strong>暗木</strong>：弓手和德鲁伊（不能使用金属武器）的最佳选择。暗木长弓重量减半，更加轻便。</li>
+        <li><strong>多种材料叠加</strong>：一把武器可以同时由多种特殊材料制成（如精金+暗木柄的武器），但每种材料的效果独立叠加，价格也累加。</li>
+      </ul>
+    </div>
+
+    <div style="margin-top:24px;padding:20px;background:#faf6ee;border:1px solid #c9b97a;border-radius:6px;">
+      <h3 style="margin-top:0;">武器使用规则提示</h3>
+      <ul>
+        <li><strong>擅长</strong>：不擅长使用的武器，攻击检定承受-4减值。</li>
+        <li><strong>体型</strong>：小型角色使用中型武器时，伤害骰降低一级（反之亦然）。</li>
+        <li><strong>双武器战斗</strong>：副手使用轻型武器时，双武器战斗的减值更小。</li>
+        <li><strong>触及武器</strong>：长武器(Reach)允许攻击10尺外的对手，但不能攻击相邻的敌人（除非另有说明）。</li>
+        <li><strong>双头武器</strong>：可以单手握住一端使用，或双手使用两端同时攻击（类似双武器战斗）。</li>
+        <li><strong>投掷武器</strong>：投掷后落在目标方格，可以回收。弹药（箭矢、弩矢）使用后通常损毁（50%几率）。</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>龙与地下城 3.5版 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* 首页特殊样式 */
+  .edition-badge {
+    display: inline-block;
+    background: var(--accent-red);
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .section-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .section-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+  .section-card h2 { margin-top:0; font-size:20px; }
+  .section-card p { font-size:14px; color:#666; }
+  .section-card .card-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--accent-gold);
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .conflict-preview {
+    background: #fdf2e9;
+    border-left: 4px solid var(--accent-gold);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .conflict-preview h3 { margin-top:0; color: var(--accent-red); }
+  .home-search {
+    max-width: 520px;
+    margin: 0 auto 32px;
+    display: flex;
+    gap: 8px;
+  }
+  .home-search input {
+    flex:1;
+    padding: 12px 18px;
+    border: 2px solid var(--border-main);
+    border-radius: var(--radius);
+    font-size: 16px;
+    outline: none;
+    background: var(--bg-card);
+  }
+  .home-search input:focus { border-color: var(--accent-gold); }
+  .home-search button {
+    padding: 12px 24px;
+    background: var(--accent-gold);
+    color: #1a1a1a;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .Rule-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 16px 0;
+  }
+  .Rule-box h3 { margin-top:0; color: var(--text-heading); }
+  .attr-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin: 16px 0;
+    text-align: center;
+  }
+  .attr-item {
+    background: var(--bg-infobox);
+    padding: 12px 8px;
+    border-radius: var(--radius);
+  }
+  .attr-item .attr-name { font-size:12px; color:#777; }
+  .attr-item .attr-abbr { font-size:18px; font-weight:700; color:var(--text-heading); }
+  .attr-item .attr-desc { font-size:11px; color:#888; margin-top:4px; }
+
+  /* 导航栏下拉菜单 */
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .nav-dropdown > .drop-trigger {
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #ddd;
+    font-size: 14px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-family: inherit;
+    transition: background 0.2s;
+  }
+  .nav-dropdown > .drop-trigger:hover {
+    background: rgba(255,255,255,0.12);
+    text-decoration: none;
+  }
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #2c2c2c;
+    min-width: 180px;
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    z-index: 1000;
+    padding: 6px 0;
+  }
+  .nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+  }
+  .nav-dropdown-content a {
+    display: block;
+    padding: 8px 16px;
+    color: #ddd;
+    font-size: 13px;
+    white-space: nowrap;
+    text-decoration: none;
+    border-radius: 0;
+  }
+  .nav-dropdown-content a:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--accent-gold);
+  }
+  .nav-dropdown-content .drop-divider {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 4px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html" class="active">首页</a>
+    <a href="rules.html">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="rules-adventure.html">🗺️ 冒险</a>
+        <a href="rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="rules-combat.html">⚔️ 战斗详述</a>
+        <a href="rules-deities.html">⛪ 神祇与阵营</a>
+        <div class="drop-divider"></div>
+        <a href="rules-companions.html">🐾 伙伴系统</a>
+        <a href="rules-variants.html">🔧 规则变体</a>
+        <a href="equipment/magic-items.html">💎 魔法物品</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心规则</div>
+      <a href="index.html" class="active">系统概述</a>
+      <a href="rules.html#basics">基础规则</a>
+      <a href="rules.html#combat">战斗规则</a>
+      <a href="rules.html#magic">魔法规则</a>
+      <a href="rules.html#skills-rules">技能规则</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">角色创建</div>
+      <a href="races/intro.html">种族 📗</a>
+      <a href="classes/intro.html">职业 📘</a>
+      <a href="feats/intro.html">专长 📕</a>
+      <a href="skills/intro.html">技能 📔</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">游戏内容</div>
+      <a href="spells/intro.html">法术列表 🔮</a>
+      <a href="equipment/intro.html">装备与物品 🗡️</a>
+      <a href="equipment/magic-items.html">💎 魔法物品</a>
+      <a href="monsters/intro.html">怪物图鉴 👹</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">扩展规则</div>
+      <a href="rules-adventure.html">🗺️ 冒险</a>
+      <a href="rules-planes.html">🌌 位面与宇宙学</a>
+      <a href="rules-combat.html">⚔️ 战斗详述</a>
+      <a href="rules-deities.html">⛪ 神祇与阵营</a>
+      <a href="rules-companions.html">🐾 伙伴系统</a>
+      <a href="rules-variants.html">🔧 规则变体</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶内容</div>
+      <a href="classes/prestige-intro.html">🏅 进阶职业</a>
+      <a href="classes/npc-classes.html">👤 NPC职业</a>
+      <a href="feats/feat-list.html">📜 专长详表</a>
+      <a href="skills/skill-synergy.html">🔗 技能共效</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">参考资料</div>
+      <a href="conflicts.html">⚠️ 规则冲突</a>
+      <a href="about.html">关于本Wiki</a>
+      <a href="spells/favorites.html">⭐ 我的收藏</a>
+      <a href="global-search.html">🔍 法术搜索</a>
+    </div>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main-content">
+
+    <!-- 英雄横幅 -->
+    <div class="hero-banner">
+      <div class="edition-badge">DUNGEONS & DRAGONS 3.5E</div>
+      <h1>龙与地下城 第三版</h1>
+      <p>最经典的角色扮演游戏规则体系 · 完整中文Wiki · 含规则冲突标注与出处</p>
+    </div>
+
+    <!-- 搜索 -->
+    <div class="home-search">
+      <input type="text" placeholder="搜索：火球术、战士、技能…" id="searchInput2" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+this.value">
+      <button onclick="location.href='global-search.html?q='+document.getElementById('searchInput2').value">🔍 搜索</button>
+    </div>
+
+    <!-- 统计 -->
+    <div class="stats-bar">
+      <div class="stat-item"><div class="stat-number">7</div><div class="stat-label">核心种族</div></div>
+      <div class="stat-item"><div class="stat-number">11</div><div class="stat-label">核心职业</div></div>
+      <div class="stat-item"><div class="stat-number" id="spellCount">544</div><div class="stat-label">法术（PHB+3R）</div></div>
+      <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">核心专长</div></div>
+      <div class="stat-item"><div class="stat-number">33</div><div class="stat-label">技能</div></div>
+    </div>
+
+    <!-- 规则冲突提醒 -->
+    <div class="conflict-preview">
+      <h3>⚠️ 本Wiki标注已知规则冲突</h3>
+      <p>D&D 3.5版规则书（PHB/DMG/MM）中存在多处矛盾描述，以及3.0→3.5升级过程中的变更未完全同步的问题。
+      本Wiki在相关条目中标注了冲突内容，并注明来源（PHB/DMG/SRD/官方勘误）。
+      <a href="conflicts.html" style="font-weight:600;">查看完整冲突对照表 →</a></p>
+    </div>
+
+    <!-- 六大属性 -->
+    <h2>📊 六大属性</h2>
+    <div class="attr-grid">
+      <div class="attr-item">
+        <div class="attr-name">力量</div>
+        <div class="attr-abbr">力量</div>
+        <div class="attr-desc">STR</div>
+      </div>
+      <div class="attr-item">
+        <div class="attr-name">敏捷</div>
+        <div class="attr-abbr">敏捷</div>
+        <div class="attr-desc">DEX</div>
+      </div>
+      <div class="attr-item">
+        <div class="attr-name">体质</div>
+        <div class="attr-abbr">体质</div>
+        <div class="attr-desc">CON</div>
+      </div>
+      <div class="attr-item">
+        <div class="attr-name">智力</div>
+        <div class="attr-abbr">智力</div>
+        <div class="attr-desc">INT</div>
+      </div>
+      <div class="attr-item">
+        <div class="attr-name">感知</div>
+        <div class="attr-abbr">感知</div>
+        <div class="attr-desc">WIS</div>
+      </div>
+      <div class="attr-item">
+        <div class="attr-name">魅力</div>
+        <div class="attr-abbr">魅力</div>
+        <div class="attr-desc">CHA</div>
+      </div>
+    </div>
+
+    <!-- 核心板块导航 -->
+    <h2>📚 核心内容板块</h2>
+    <div class="section-grid">
+
+      <div class="section-card">
+        <h2>🧝 种族</h2>
+        <p>人类、精灵、矮人、半身人、侏儒、半精灵、半兽人——七大核心种族的详细数据、种族特性、以及进阶建议。</p>
+        <a href="races/intro.html" class="card-link">进入种族手册 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>⚔️ 职业</h2>
+        <p>野蛮人、吟游诗人、牧师、德鲁伊、战士、武僧、圣武士、游侠、游荡者、术士、法师——十一个核心职业的完整资料。</p>
+        <a href="classes/intro.html" class="card-link">进入职业手册 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>🔮 法术</h2>
+        <p>从0级戏法到9级奥术——完整法术列表，含法术描述、投掷豁免、施法时间、持续时间的详细中文说明。</p>
+        <a href="spells/intro.html" class="card-link">查阅法术大全 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>🌟 专长</h2>
+        <p>战斗专长、超魔专长、制造专长、通用专长——让你的角色独一无二的特殊能力。</p>
+        <a href="feats/intro.html" class="card-link">浏览专长列表 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>🎯 技能</h2>
+        <p>三十六项技能的完整说明，含关键属性、可否使用（职业/跨职业）、特殊规则等。</p>
+        <a href="skills/intro.html" class="card-link">查看技能详解 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>👹 怪物</h2>
+        <p>怪物图鉴精选——从弱小的寇斯特到强大的古龙，含挑战等级、属性数据、特殊能力说明。新增经典怪物与龙类详述。</p>
+        <a href="monsters/intro.html" class="card-link">打开怪物图鉴 →</a>
+        <br><a href="monsters/classic-monsters.html" class="card-link" style="margin-right:8px;">经典怪物</a>
+        <a href="monsters/dragons.html" class="card-link">龙类</a>
+      </div>
+
+      <div class="section-card">
+        <h2>🏅 进阶职业</h2>
+        <p>DMG标准15个进阶职业：决斗家、刺客、博学士、大法师、奥法骑士、影舞者、矮人防御者等，含完整职业特性表。另有5个NPC职业。</p>
+        <a href="classes/prestige-intro.html" class="card-link">浏览进阶职业 →</a>
+        <br><a href="classes/npc-classes.html" class="card-link">NPC职业 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>💎 魔法物品</h2>
+        <p>DMG第7章魔法物品体系：魔法武器/防具附魔、奇物（按身体部位分类）、戒指、法杖、权杖、药水、卷轴、魔杖、智能物品与神器。</p>
+        <a href="equipment/magic-items.html" class="card-link">查阅魔法物品 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>🔱 领域系统</h2>
+        <p>22个神祇领域完整详解：气、动物、混乱、死亡、毁灭、土、邪恶、火、善良、治疗、知识、秩序、幸运、魔法、植物、防护、力量、太阳、旅行、诡术、战争、水。每个领域含神授力量、领域法术(1-9级)和相关神祇。</p>
+        <a href="domains/intro.html" class="card-link">浏览领域大全 →</a>
+      </div>
+
+    </div>
+
+    <!-- 扩展规则板块 -->
+    <h2>🗺️ 扩展规则</h2>
+    <div class="section-grid">
+
+      <div class="section-card">
+        <h2>🗺️ 冒险</h2>
+        <p>地下城探索、野外规则、城市规则、天候与环境、宝藏分配、陷阱（含范例陷阱）、组织与运动竞技。</p>
+        <a href="rules-adventure.html" class="card-link">进入冒险章节 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>🌌 位面与宇宙学</h2>
+        <p>物质位面、过渡位面（星界、幽影界）、内层位面（四大元素位面）、外层位面（七丘天堂山、九层地狱、无底深渊等）、半位面。</p>
+        <a href="rules-planes.html" class="card-link">探索位面 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>⚔️ 战斗详述</h2>
+        <p>战斗动作详解、移动规则、特殊能力（超自然/特异/类法术）、全部状态条件、奇幻战争规则、竞技比赛规则。</p>
+        <a href="rules-combat.html" class="card-link">查看战斗规则 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>⛪ 神祇与阵营</h2>
+        <p>各神祇的领域、阵营、描述——包括主要神系的完整列表，以及九大阵营的详细解读与角色扮演建议。</p>
+        <a href="rules-deities.html" class="card-link">查看神祇 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>🐾 伙伴系统</h2>
+        <p>动物伙伴、魔宠、座骑、炼狱仆役、部属、守护者魔宠、龙伙伴——各类伙伴的规则与数据。</p>
+        <a href="rules-companions.html" class="card-link">查看伙伴系统 →</a>
+      </div>
+
+      <div class="section-card">
+        <h2>🔧 规则变体</h2>
+        <p>扩展规则与变体规则选项——为DM提供可选规则来调整战役风格，含奇幻战争规则与版本更新说明。</p>
+        <a href="rules-variants.html" class="card-link">浏览规则变体 →</a>
+      </div>
+
+    </div>
+
+    <!-- D&D 3.5e 简介 -->
+    <h2>📖 关于龙与地下城 第三版</h2>
+    <div class="Rule-box">
+      <h3>什么是D&D 3.5e？</h3>
+      <p><strong>龙与地下城（Dungeons & Dragons，简称D&D）</strong>是世界上第一个商业化的桌面角色扮演游戏（TRPG），
+      由Gary Gygax和Dave Arneson于1974年创立。第三版（3rd Edition）发布于2000年，引入了<strong>d20系统</strong>——
+      所有核心判定都基于投掷一颗二十面骰（d20）加上相关加值。</p>
+      <p><strong>3.5版（v3.5）</strong>是第三版的重大修订版，发布于2003年，对大量职业、法术、专长、怪物进行了平衡性调整。
+      3.5版被广泛认为是D&D历史上最经典、最具深度的版本之一，拥有最丰富的第三方扩展内容。</p>
+    </div>
+
+    <div class="Rule-box">
+      <h3>d20系统核心机制</h3>
+      <p>在D&D 3.5e中，几乎所有动作判定都遵循以下公式：</p>
+      <pre>判定结果 = d20投掷 + 属性调整值 + 技能加值/攻击加值 + 其他加值 - 惩罚</pre>
+      <p>如果判定结果 <strong>≥ 难度等级（DC）</strong>或目标的<strong>防御等级（AC）</strong>，则动作成功。</p>
+      <h4>关键防御数值</h4>
+      <ul>
+        <li><strong>AC（防御等级 Armor Class）</strong>：击中目标所需的最低攻击检定结果</li>
+        <li><strong>Fortitude（强韧豁免）</strong>：抵抗毒素、疾病等肉体威胁</li>
+        <li><strong>Reflex（反射豁免）</strong>：躲避暴风雨、火球等范围效果</li>
+        <li><strong>Will（意志豁免）</strong>：抵抗魅惑、幻术等精神影响</li>
+      </ul>
+    </div>
+
+    <div class="Rule-box">
+      <h3>本Wiki的特色</h3>
+      <ul>
+        <li>✅ <strong>完整中文翻译</strong>：所有核心规则内容均为中文，方便国内玩家查阅</li>
+        <li>✅ <strong>规则冲突标注</strong>：明确指出PHB/DMG/SRD之间的冲突，并注明出处</li>
+        <li>✅ <strong>数据来源标注</strong>：每个数据均注明来源（PHB/DMG/MM/SRD）</li>
+        <li>✅ <strong>3.0→3.5变更说明</strong>：标注两个版本之间的差异</li>
+        <li>✅ <strong>实用DM建议</strong>：在适当位置加入给城主（DM）的备注</li>
+      </ul>
+    </div>
+
+    <!-- 版本历史 -->
+    <h2>📅 D&D 版本简史</h2>
+    <div class="wiki-table-wrap">
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>版本</th>
+            <th>年份</th>
+            <th>系统特点</th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>初版（1e）</td>
+            <td>1977-1979</td>
+            <td>AD&D规则体系建立</td>
+            <td>有大量模糊规则，需要DM仲裁</td>
+          </tr>
+          <tr>
+            <td>第二版（2e）</td>
+            <td>1989</td>
+            <td>规则整理，移除敏感内容</td>
+            <td>衍生出《被遗忘的国度》等著名设定</td>
+          </tr>
+          <tr style="background:#fff3cd !important;">
+            <td><strong>第三版（3e）</strong></td>
+            <td><strong>2000</strong></td>
+            <td><strong>引入d20系统，规则统一</strong></td>
+            <td><strong>本Wiki主要覆盖版本</strong></td>
+          </tr>
+          <tr style="background:#fff3cd !important;">
+            <td><strong>3.5版（3.5e）</strong></td>
+            <td><strong>2003</strong></td>
+            <td><strong>规则平衡性大修，内容最丰富</strong></td>
+            <td><strong>本Wiki的核心参考版本</strong></td>
+          </tr>
+          <tr>
+            <td>第四版（4e）</td>
+            <td>2008</td>
+            <td>高度机械化，类似战棋</td>
+            <td>争议较大，玩家群体分裂</td>
+          </tr>
+          <tr>
+            <td>第五版（5e）</td>
+            <td>2014</td>
+            <td>规则简化，回归叙事</td>
+            <td>目前最流行的版本</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="text-align:center;color:#999;font-size:13px;margin-top:32px;">
+      本Wiki非营利性质，所有D&D相关内容版权归 Wizards of the Coast 所有。<br>
+      本网站为粉丝制作的中文资料站，仅供学习交流使用。
+    </p>
+
+  </main>
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 非营利粉丝资料站 | 数据来源：SRD 3.5、PHB、DMG、MM</p>
+  <p style="margin-top:8px;">
+    <a href="conflicts.html">规则冲突标注</a> ·
+    <a href="rules-adventure.html">冒险</a> ·
+    <a href="rules-planes.html">位面</a> ·
+    <a href="rules-combat.html">战斗</a> ·
+    <a href="equipment/magic-items.html">魔法物品</a> ·
+    <a href="classes/prestige-intro.html">进阶职业</a> ·
+    <a href="about.html">关于本站</a>
+  </p>
+</div>
+
+<script>
+function searchWiki() {
+  const q = document.getElementById('searchInput').value.trim();
+  if (q) alert('搜索功能开发中！\n您搜索了：' + q + '\n\n目前请使用浏览器 Ctrl+F 页面内搜索。');
+}
+function searchWiki2() {
+  const q = document.getElementById('searchInput2').value.trim();
+  if (q) alert('搜索功能开发中！\n您搜索了：' + q + '\n\n目前请使用浏览器 Ctrl+F 页面内搜索。');
+}
+</script>
+</body>
+</html>

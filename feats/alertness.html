@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>警觉 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #2E8B57, #3CB371); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #2E8B57; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #2E8B57; border-bottom: 2px solid #2E8B57; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color: #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+
+    <div class="feat-header">
+      <h1>👁️ 警觉</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Alertness</p>
+      <span class="feat-type">通用专长</span>
+      <span class="feat-type">【感知】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">通用专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">无</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">侦察和聆听 +2 加值</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">只能选择一次</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 89</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">游荡者、特定构建</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你保持着高度的警觉，能够更早地发现危险和隐藏的敌人。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>无</strong></li>
+      </ul>
+      <p><strong>说明</strong>：警觉没有先决条件，是所有角色都可以选择的通用专长。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>你获得 <strong>+2 加值</strong> 于以下技能：</p>
+      <ul>
+        <li><strong>侦察 (Spot)</strong>：发现隐藏的敌人或物体</li>
+        <li><strong>聆听 (Listen)</strong>：听到隐藏的声音或敌人</li>
+      </ul>
+      <p><strong>注意</strong>：这个加值适用于所有侦察和聆听检定。</p>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>警觉的应用</h3>
+    <ul>
+      <li><strong>侦察 (Spot)</strong>：发现隐藏的敌人、陷阱、秘密门等</li>
+      <li><strong>聆听 (Listen)</strong>：听到隐藏的声音、敌人移动、法术吟唱等</li>
+      <li><strong>被动察觉</strong>：即使你没有主动搜索，也能获得加值</li>
+    </ul>
+
+    <h3>重要规则</h3>
+    <ul>
+      <li><strong>适用于所有情况</strong>：警觉的加值适用于所有侦察和聆听检定</li>
+      <li><strong>被动察觉</strong>：即使你没有主动搜索，DM 也可能让你进行侦察或聆听检定</li>
+      <li><strong>不与主动搜索叠加</strong>：如果你主动搜索（全回合动作），不能使用警觉加值（因为主动搜索已经有加值）</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：游荡者（感知 14，+2）已选择警觉专长，在黑暗的地下城中探索。</p>
+      <p><strong>侦察检定</strong>：d20 + 2（感知调整值） + 2（警觉） = d20 + 4</p>
+      <p><strong>聆听检定</strong>：d20 + 2（感知调整值） + 2（警觉） = d20 + 4</p>
+      <p><strong>分析</strong>：警觉显著提高了角色发现隐藏危险的能力，适合游荡者等需要高感知的角色。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 推荐搭配专长</h4>
+      <ul>
+        <li><strong>警觉 (Alertness)</strong> - 本专长，侦察和聆听 +2 加值</li>
+        <li><strong>追踪 (Track)</strong> - 追踪技能，跟随足迹</li>
+        <li><strong>野外生存 (Survival)</strong> - 野外生存技能</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>👁️ 推荐构建</h4>
+      <p><strong>1. 侦察游荡者 (Scout Rogue)</strong></p>
+      <ul>
+        <li>专攻：警觉 → 追踪 → 野外生存</li>
+        <li>特点：擅长发现隐藏危险和追踪敌人</li>
+        <li>推荐技能：侦察、聆听、搜索</li>
+      </ul>
+      <p><strong>2. 警戒守卫 (Vigilant Guard)</strong></p>
+      <ul>
+        <li>专攻：警觉 → 钢铁意志 → 强韧</li>
+        <li>特点：擅长警戒和防御</li>
+        <li>推荐构建：高感知</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：警觉与主动搜索</h4>
+      <p><strong>冲突点</strong>：警觉加值是否适用于主动搜索？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 89</strong>：警觉专长描述</li>
+        <li><strong>PHB p. 64</strong>：技能规则</li>
+      </ul>
+      <p><strong>冲突描述</strong>：警觉专长描述说"你在侦察和聆听检定中获得 +2 加值"，但是否适用于主动搜索存在争议。</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>不适用解释</strong>：警觉加值不适用于主动搜索（因为主动搜索已经有加值）</li>
+        <li><strong>适用解释</strong>：警觉加值适用于所有侦察和聆听检定，包括主动搜索</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>不适用解释</strong>（警觉加值不适用于主动搜索）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 89 - 警觉专长描述</li>
+      <li><strong>玩家手册 (PHB)</strong> p. 64 - 技能规则</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+</main>
+</div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

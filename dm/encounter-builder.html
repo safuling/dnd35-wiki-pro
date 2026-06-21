@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>遭遇构建器 Encounter Builder - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.tool-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.tool-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.tool-card p { font-size:14px; color:#666; }
+.tool-card a { color:var(--text-link,#21618c); text-decoration:none; font-weight:600; }
+.tool-card a:hover { text-decoration:underline; }
+.calc-box { background:#f0ebe0; border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.calc-box label { display:block; margin:6px 0 2px; font-weight:600; font-size:14px; }
+.calc-box input, .calc-box select { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); border-radius:4px; font-size:14px; margin-bottom:8px; }
+.calc-box button { background:var(--accent-gold,#d4a017); color:#fff; border:none; padding:8px 20px; border-radius:4px; cursor:pointer; font-weight:600; margin-top:8px; }
+.calc-box button:hover { background:#b8910f; }
+.result-box { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:10px 14px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.step-list { counter-reset: steps; list-style:none; padding:0; }
+.step-list li { counter-increment: steps; padding:10px 10px 10px 40px; position:relative; margin:6px 0; background:var(--bg-card,#faf6ee); border-radius:4px; border:1px solid var(--border-light,#e8dcc8); }
+.step-list li::before { content:counter(steps); position:absolute; left:10px; top:10px; background:var(--accent-gold,#d4a017); color:#fff; width:22px; height:22px; border-radius:50%; text-align:center; line-height:22px; font-size:12px; font-weight:700; }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.tips-box { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:20px; margin:20px 0; }
+.tips-box h3 { color:var(--accent-gold,#d4a017); margin-top:0; }
+.tips-box ul { margin:12px 0; padding-left:24px; }
+.tips-box li { margin:8px 0; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">DM工具箱</div>
+      <a href="intro.html">工具总览</a>
+      <a href="character-creation.html">角色创建指南</a>
+      <a href="encounter-builder.html" class="active">遭遇构建器</a>
+      <a href="treasure-generator.html">宝藏生成器</a>
+      <a href="random-tables.html">随机表格大全</a>
+      <a href="xp-tracker.html">经验值追踪器</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="../rules.html">核心规则</a>
+      <a href="../classes/intro.html">职业手册</a>
+      <a href="../monsters/intro.html">怪物图鉴</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>遭遇构建器</h1>
+    <h2>Encounter Builder</h2>
+
+    <p>遭遇构建器帮助 DM 快速计算遭遇等级（EL），确保战斗难度适合队伍等级。</p>
+
+    <h2 class="section-title">EL（遭遇等级）计算说明</h2>
+
+    <p><strong>遭遇等级（Encounter Level, EL）</strong>是衡量一场遭遇整体难度的指标。它与队伍的<strong>平均队伍等级（Average Party Level, APL）</strong>相比较来判断难度：</p>
+
+    <ul>
+      <li><strong>EL = APL</strong>：挑战性遭遇（Challenging），队伍需要消耗约 20-25% 的资源</li>
+      <li><strong>EL = APL - 4</strong>：简单遭遇（Easy），队伍轻松获胜</li>
+      <li><strong>EL = APL + 4</strong>：致命遭遇（Deadly），可能导致团灭</li>
+      <li><strong>EL = APL + 1~2</strong>：困难遭遇（Hard），需要认真应对</li>
+    </ul>
+
+    <p><strong>挑战等级（CR）</strong>与 <strong>EL</strong> 的关系：当只有一个怪物时，EL = CR。多个怪物时，EL 会提高。</p>
+
+    <h2 class="section-title">EL 计算表</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>怪物数量</th>
+          <th>怪物 CR 与 EL 的关系</th>
+          <th>示例</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1 个怪物</td><td>CR = EL</td><td>1 个 CR 5 怪物 = EL 5</td></tr>
+        <tr><td>2 个怪物</td><td>CR = EL - 2</td><td>2 个 CR 3 怪物 = EL 5</td></tr>
+        <tr><td>3 个怪物</td><td>CR = EL - 3（约）</td><td>3 个 CR 2 怪物 ≈ EL 5</td></tr>
+        <tr><td>4 个怪物</td><td>CR = EL - 4</td><td>4 个 CR 1 怪物 = EL 5</td></tr>
+        <tr><td>6 个怪物</td><td>CR = EL - 5（约）</td><td>6 个 CR 0 怪物 ≈ EL 5</td></tr>
+        <tr><td>8 个怪物</td><td>CR = EL - 6</td><td>8 个 CR -1 怪物 ≈ EL 5</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">互动计算器</h2>
+
+    <div class="calc-box">
+      <h3>遭遇难度计算器</h3>
+      
+      <label for="partySize">队伍人数：</label>
+      <input type="number" id="partySize" value="4" min="1" max="8">
+      
+      <label for="partyLevel">平均队伍等级 (APL)：</label>
+      <input type="number" id="partyLevel" value="5" min="1" max="20">
+      
+      <label for="monsterCR">怪物 CR：</label>
+      <input type="number" id="monsterCR" value="3" min="0" max="25">
+      
+      <label for="monsterCount">怪物数量：</label>
+      <input type="number" id="monsterCount" value="2" min="1" max="20">
+      
+      <button onclick="calculateEL()">计算遭遇等级</button>
+      
+      <div id="elResult"></div>
+    </div>
+
+    <h2 class="section-title">每日遭遇预算表</h2>
+
+    <p>一般来说，一个队伍每天可以应对的遭遇数量取决于遭遇的难度：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>遭遇难度</th>
+          <th>每日可应对次数</th>
+          <th>资源消耗</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>简单 (EL = APL - 4)</td><td>8-10 次</td><td>极少</td></tr>
+        <tr><td>标准 (EL = APL - 2)</td><td>5-6 次</td><td>少量</td></tr>
+        <tr><td>挑战 (EL = APL)</td><td>4 次</td><td>20-25%</td></tr>
+        <tr><td>困难 (EL = APL + 2)</td><td>2-3 次</td><td>40-50%</td></tr>
+        <tr><td>致命 (EL = APL + 4)</td><td>1 次</td><td>80-100%</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>推荐日程：</strong>一天内安排 4 场 EL = APL 的遭遇，或混合不同难度的遭遇。</p>
+
+    <h2 class="section-title">遭遇设计技巧</h2>
+
+    <div class="tips-box">
+      <h3>🎯 设计多样化遭遇</h3>
+      <ul>
+        <li><strong>混合怪物类型</strong>：不要只用一种怪物。组合近战型、远程型和施法者。</li>
+        <li><strong>利用地形</strong>：高地、掩体、陷阱、障碍物都能增加战术深度。</li>
+        <li><strong>设置目标</strong>：不只是"杀光敌人"。加入保护 NPC、夺取物品、逃离等目标。</li>
+        <li><strong>意外元素</strong>：援军、环境变化、怪物特殊能力让战斗更有戏剧性。</li>
+        <li><strong>节奏变化</strong>：简单遭遇让玩家放松，困难遭遇让他们紧张。</li>
+      </ul>
+    </div>
+
+    <div class="tips-box">
+      <h3>⚠️ 避免的陷阱</h3>
+      <ul>
+        <li><strong>过度使用致命遭遇</strong>：会导致玩家疲惫和角色频繁死亡。</li>
+        <li><strong>单一战术</strong>：每场战斗都是"站桩输出"会变得无聊。</li>
+        <li><strong>忽略环境</strong>：黑暗、狭窄空间、水下等环境应该影响战斗。</li>
+        <li><strong>怪物智商不一致</strong>：动物应该像动物一样行动， intelligente 怪物应该使用策略。</li>
+        <li><strong>忘记撤退选项</strong>：不是每场战斗都必须赢，允许玩家逃跑。</li>
+      </ul>
+    </div>
+
+    <script>
+      function calculateEL() {
+        const partySize = parseInt(document.getElementById('partySize').value);
+        const apl = parseInt(document.getElementById('partyLevel').value);
+        const cr = parseInt(document.getElementById('monsterCR').value);
+        const count = parseInt(document.getElementById('monsterCount').value);
+
+        // Calculate EL based on number of monsters
+        let el = cr;
+        if (count === 1) {
+          el = cr;
+        } else if (count === 2) {
+          el = cr + 2;
+        } else if (count === 3) {
+          el = cr + 3;
+        } else if (count === 4) {
+          el = cr + 4;
+        } else if (count === 6) {
+          el = cr + 5;
+        } else if (count === 8) {
+          el = cr + 6;
+        } else {
+          // Approximate formula
+          el = cr + Math.log2(count);
+        }
+
+        // Determine difficulty
+        let difficulty = '';
+        let color = '';
+        const diff = el - apl;
+        
+        if (diff <= -4) {
+          difficulty = '简单 (Easy)';
+          color = '#27ae60';
+        } else if (diff <= -2) {
+          difficulty = '标准 (Standard)';
+          color = '#3498db';
+        } else if (diff === 0) {
+          difficulty = '挑战 (Challenging)';
+          color = '#f39c12';
+        } else if (diff <= 2) {
+          difficulty = '困难 (Hard)';
+          color = '#e67e22';
+        } else {
+          difficulty = '致命 (Deadly)';
+          color = '#e74c3c';
+        }
+
+        const resultHTML = `
+          <div class="result-box">
+            <strong>计算结果：</strong><br>
+            遭遇等级 (EL): <strong>${el.toFixed(1)}</strong><br>
+            队伍等级 (APL): <strong>${apl}</strong><br>
+            难度评级: <strong style="color:${color}">${difficulty}</strong><br>
+            <br>
+            <strong>建议：</strong> ${getSuggestion(diff, partySize)}
+          </div>
+        `;
+        
+        document.getElementById('elResult').innerHTML = resultHTML;
+      }
+
+      function getSuggestion(diff, partySize) {
+        if (diff <= -4) {
+          return '这场战斗对队伍来说太简单了，考虑增加怪物数量或 CR。';
+        } else if (diff <= -2) {
+          return '适合作为日常遭遇，不会消耗太多资源。';
+        } else if (diff === 0) {
+          return '标准挑战，适合作为主要战斗。队伍需要认真对待。';
+        } else if (diff <= 2) {
+          return '困难战斗，建议作为高潮战斗。确保队伍状态良好。';
+        } else {
+          return '极其危险！可能导致团灭。考虑降低难度或提供逃生路线。';
+        }
+      }
+    </script>
+
+    <h2 class="section-title">地形效果</h2>
+
+    <p>地形可以显著影响战斗难度。以下是常见地形类型及其效果：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>地形类型</th>
+          <th>移动影响</th>
+          <th>战斗影响</th>
+          <th>EL 调整</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>开阔平原</td><td>无</td><td>远程优势，无掩体</td><td>+0</td></tr>
+        <tr><td>密林</td><td>半速</td><td>掩体，隐蔽，限制大型生物</td><td>+1</td></tr>
+        <tr><td>沼泽</td><td>半速</td><td>困难地形，隐蔽</td><td>+1</td></tr>
+        <tr><td>山地</td><td>3/4 速度</td><td>高地优势，掩体</td><td>+1</td></tr>
+        <tr><td>沙漠</td><td>3/4 速度</td><td>视线好，高温疲劳</td><td>+0~1</td></tr>
+        <tr><td>地下城</td><td>正常</td><td>狭窄空间，黑暗，陷阱</td><td>+1</td></tr>
+        <tr><td>水下</td><td>1/4 速度（无游泳）</td><td>近战惩罚，无火焰法术</td><td>+2</td></tr>
+        <tr><td>空中</td><td>需飞行</td><td>3D 战斗，坠落伤害</td><td>+2~3</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">遭遇原型</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>原型</th>
+          <th>描述</th>
+          <th>设计要点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>伏击</strong></td>
+          <td>怪物先手攻击，占据有利地形</td>
+          <td>给玩家惊讶轮，但 EL 应略低于标准</td>
+        </tr>
+        <tr>
+          <td><strong>Boss 战</strong></td>
+          <td>单一强力敌人，可能有少量仆从</td>
+          <td>CR = APL + 2~3，加入阶段变化</td>
+        </tr>
+        <tr>
+          <td><strong>护卫任务</strong></td>
+          <td>保护 NPC 或物品到达目的地</td>
+          <td>敌人目标是 NPC 而非队伍</td>
+        </tr>
+        <tr>
+          <td><strong>追击战</strong></td>
+          <td>追逐逃跑的敌人或被追逐</td>
+          <td>速度是关键，加入障碍物检定</td>
+        </tr>
+        <tr>
+          <td><strong>解谜战斗</strong></td>
+          <td>战斗中需要解决谜题才能获胜</td>
+          <td>谜题应该与战斗机制相关</td>
+        </tr>
+        <tr>
+          <td><strong>多波次</strong></td>
+          <td>连续多波敌人，中间短暂休息</td>
+          <td>每波 EL 较低，总计较高</td>
+        </tr>
+        <tr>
+          <td><strong>环境危害</strong></td>
+          <td>战斗同时面对环境威胁</td>
+          <td>火灾、洪水、坍塌等</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">按队伍人数调整遭遇</h2>
+
+    <p>标准队伍是 4 人。人数不同时，按以下比例调整 EL：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>队伍人数</th>
+          <th>EL 调整</th>
+          <th>建议</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1-2 人</td><td>EL - 3~4</td><td>减少怪物数量而非 CR，避免单次高伤害</td></tr>
+        <tr><td>3 人</td><td>EL - 1~2</td><td>稍微降低难度，考虑加入 NPC 队友</td></tr>
+        <tr><td>4 人</td><td>标准</td><td>使用标准 EL 计算</td></tr>
+        <tr><td>5-6 人</td><td>EL + 1~2</td><td>增加怪物数量，让每个人都有事做</td></tr>
+        <tr><td>7-8 人</td><td>EL + 2~3</td><td>大幅增加怪物数量，考虑分成两组</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">各等级推荐 EL 范围</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>队伍等级</th>
+          <th>简单 (EL-4)</th>
+          <th>标准 (EL)</th>
+          <th>挑战 (EL+1)</th>
+          <th>致命 (EL+4)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>—</td><td>1</td><td>2</td><td>5</td></tr>
+        <tr><td>2</td><td>—</td><td>2</td><td>3</td><td>6</td></tr>
+        <tr><td>3</td><td>—</td><td>3</td><td>4</td><td>7</td></tr>
+        <tr><td>4</td><td>1</td><td>4</td><td>5</td><td>8</td></tr>
+        <tr><td>5</td><td>1</td><td>5</td><td>6</td><td>9</td></tr>
+        <tr><td>6</td><td>2</td><td>6</td><td>7</td><td>10</td></tr>
+        <tr><td>7</td><td>3</td><td>7</td><td>8</td><td>11</td></tr>
+        <tr><td>8</td><td>4</td><td>8</td><td>9</td><td>12</td></tr>
+        <tr><td>9</td><td>5</td><td>9</td><td>10</td><td>13</td></tr>
+        <tr><td>10</td><td>6</td><td>10</td><td>11</td><td>14</td></tr>
+        <tr><td>12</td><td>8</td><td>12</td><td>13</td><td>16</td></tr>
+        <tr><td>14</td><td>10</td><td>14</td><td>15</td><td>18</td></tr>
+        <tr><td>16</td><td>12</td><td>16</td><td>17</td><td>20</td></tr>
+        <tr><td>18</td><td>14</td><td>18</td><td>19</td><td>22</td></tr>
+        <tr><td>20</td><td>16</td><td>20</td><td>21</td><td>24</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">遭遇节奏建议</h2>
+
+    <div class="tips-box">
+      <h3>一场典型游戏的遭遇安排</h3>
+      <p>假设一次游戏时长 4 小时，建议安排以下节奏：</p>
+      <ul>
+        <li><strong>开场</strong>（30分钟）：回顾上次剧情，引入新事件</li>
+        <li><strong>探索/角色扮演</strong>（1小时）：调查线索、与 NPC 互动、旅行</li>
+        <li><strong>遭遇 1</strong>（30分钟）：中等难度战斗，推进剧情</li>
+        <li><strong>探索/谜题</strong>（30分钟）：发现陷阱、解决谜题</li>
+        <li><strong>遭遇 2</strong>（45分钟）：高潮战斗，Boss 或重要剧情转折</li>
+        <li><strong>收尾</strong>（15分钟）：分配战利品、记录经验值、预告下次</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

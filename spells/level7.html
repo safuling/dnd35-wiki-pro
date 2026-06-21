@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第X环法术 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .tab-bar { display:flex; gap:0; margin:20px 0 16px; border-bottom:2px solid var(--border); }
+  .tab-btn { padding:10px 24px; cursor:pointer; background:none; border:none; color:var(--text-muted); font-size:1rem; font-weight:600; border-bottom:3px solid transparent; transition:.2s; }
+  .tab-btn:hover { color:var(--text); }
+  .tab-btn.active { color:var(--accent); border-bottom-color:var(--accent); }
+  .spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+  .spell-table th { background:var(--bg-card); color:var(--accent); padding:10px 12px; text-align:left; font-size:0.85rem; border-bottom:2px solid var(--border); }
+  .spell-table td { padding:9px 12px; border-bottom:1px solid var(--border); font-size:0.9rem; vertical-align:top; }
+  .spell-table tr:hover { background:var(--bg-card); cursor:pointer; }
+  .spell-table .name-en { color:var(--text-muted); font-size:0.8rem; }
+  .school-tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.78rem; border:1px solid; }
+  .level-hero { background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%); border-radius:12px; padding:28px 32px; margin:20px 0; }
+  .level-badge { display:inline-block; background:var(--accent); color:#fff; font-size:2rem; font-weight:900; width:60px; height:60px; line-height:60px; text-align:center; border-radius:12px; margin-right:16px; vertical-align:middle; }
+  .filter-row { display:flex; gap:12px; align-items:center; margin:12px 0; flex-wrap:wrap; }
+  .filter-row input { flex:1; max-width:300px; padding:8px 14px; border-radius:6px; border:1px solid var(--border); background:var(--bg-card); color:var(--text); }
+  .filter-row select { padding:8px 12px; border-radius:6px; border:1px solid var(--border); background:var(--bg-card); color:var(--text); }
+  .arcane-header { color:#e74c3c; }
+  .divine-header { color:#2ecc71; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html" class="active">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="page-wrapper">
+  <!-- 左侧导航 -->
+  <nav class="sidebar">
+    <div class="nav-header">
+      <span class="nav-logo">⚔️</span>
+      <span class="nav-title">D&D 3.5e</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 首页</a></li>
+      <li><a href="../rules.html">📜 核心规则</a></li>
+      <li><a href="intro.html" class="active">✨ 法术大全</a></li>
+      <li><a href="../classes/intro.html">⚔️ 职业</a></li>
+      <li><a href="../races/intro.html">🧝 种族</a></li>
+      <li><a href="../feats/intro.html">🏆 专长</a></li>
+      <li><a href="../skills/intro.html">📊 技能</a></li>
+      <li><a href="../equipment/intro.html">🎒 装备</a></li>
+      <li><a href="../monsters/intro.html">👹 怪物</a></li>
+      <li><a href="../conflicts.html">⚠️ 规则冲突</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a> &gt; <a href="intro.html">法术大全</a> &gt; <span id="breadcrumbLevel">第X环</span>
+    </div>
+
+    <div class="level-hero">
+      <div style="display:flex;align-items:center;">
+        <span class="level-badge" id="heroBadge">X</span>
+        <div>
+          <h1 id="heroTitle" style="margin:0 0 6px;color:#fff;">第X环法术</h1>
+          <p id="heroSub" style="color:rgba(255,255,255,0.7);margin:0;">加载中…</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 环级快速跳转 -->
+    <div style="margin:16px 0;display:flex;gap:6px;flex-wrap:wrap;" id="levelJump">
+      <!-- JS填充 -->
+    </div>
+
+    <!-- 奥术/神术 Tab -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('arcane')" id="tabArcane">⚡ 奥术</button>
+      <button class="tab-btn" onclick="switchTab('divine')" id="tabDivine">🙏 神术</button>
+    </div>
+
+    <!-- 过滤器 -->
+    <div class="filter-row">
+      <input type="text" id="filterInput" placeholder="搜索法术名称…" oninput="renderTable()">
+      <select id="schoolFilter" onchange="renderTable()">
+        <option value="">全部学派</option>
+      </select>
+      <span style="color:var(--text-muted);font-size:0.85rem;" id="countInfo"></span>
+    </div>
+
+    <!-- 法术表格 -->
+    <div id="tableContainer"></div>
+
+    <div class="footer">
+      <p>Dungeons & Dragons 3.5版 中文Wiki · 非官方粉丝制作 · 基于SRD（OGL协议）</p>
+    </div>
+  </main>
+</div>
+
+<!-- 法术详情弹窗 -->
+<div id="spellModal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<style>
+  .modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; align-items:center; }
+  .modal-overlay.active { display:flex; }
+  .modal-content { background:var(--bg-card); border-radius:12px; max-width:720px; width:92%; max-height:85vh; overflow-y:auto; padding:28px; position:relative; }
+  .modal-close { position:absolute; top:12px; right:16px; background:none; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; }
+  .modal-close:hover { color:var(--text); }
+  .spell-info-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px 20px; margin:16px 0; font-size:0.9rem; }
+  .spell-info-item { display:flex; gap:6px; }
+  .spell-info-label { color:var(--text-muted); min-width:80px; }
+  .spell-desc-box { background:var(--bg-main); border:1px solid var(--border); border-radius:8px; padding:16px; margin:16px 0; line-height:1.7; }
+  .school-badge { display:inline-block; padding:3px 12px; border-radius:12px; font-size:0.82rem; border:1px solid; margin-right:6px; }
+</style>
+
+<script src="../js/spells-data.js"></script>
+<script>
+// 从URL获取环级
+const params = new URLSearchParams(location.search);
+const LEVEL = 7;
+
+// 初始化页面
+function init(){
+  document.title = `第${LEVEL}环法术 — D&D 3.5e 中文Wiki`;
+  document.getElementById('heroBadge').textContent = LEVEL;
+  document.getElementById('heroTitle').textContent = 
+    LEVEL===0 ? '戏法与祷言（0环）' : `第${LEVEL}环法术`;
+  document.getElementById('heroSub').textContent = 
+    LEVEL===0 ? 'Cantrips & Orisons — 无限次施展的起始法术' : `Level ${LEVEL} Spells — D&D 3.5e SRD`;
+  document.getElementById('breadcrumbLevel').textContent = 
+    LEVEL===0 ? '戏法/祷言' : `第${LEVEL}环`;
+  
+  // 环级跳转按钮
+  let jumpHtml = '';
+  for(let i=0;i<=9;i++){
+    const active = i===LEVEL ? 'style="background:var(--accent);color:#fff;"' : '';
+    jumpHtml += `<a href="level.html?level=${i}" ${active} style="display:inline-block;padding:6px 12px;border-radius:6px;border:1px solid var(--border);font-size:0.85rem;text-decoration:none;color:var(--text);">${i===0?'0环':i+'环'}</a>`;
+  }
+  document.getElementById('levelJump').innerHTML = jumpHtml;
+  
+  // 学派过滤器
+  const schools = [...new Set(SPELLS.map(s=>s.school))].sort();
+  document.getElementById('schoolFilter').innerHTML = 
+    '<option value="">全部学派</option>' + 
+    schools.map(sc=>`<option value="${sc}">${sc}</option>`).join('');
+  
+  renderTable();
+}
+
+// Tab切换
+let currentTab = 'arcane';
+function switchTab(tab){
+  currentTab = tab;
+  document.getElementById('tabArcane').classList.toggle('active', tab==='arcane');
+  document.getElementById('tabDivine').classList.toggle('active', tab==='divine');
+  renderTable();
+}
+
+// 渲染表格
+function renderTable(){
+  const q = (document.getElementById('filterInput').value||'').toLowerCase();
+  const schoolFilter = document.getElementById('schoolFilter').value;
+  
+  let spells = SPELLS.filter(s => s.level === LEVEL);
+  
+  // 按奥术/神术过滤
+  if(currentTab === 'arcane'){
+    spells = spells.filter(s => s.arcane !== null);
+  } else {
+    spells = spells.filter(s => s.divine !== null);
+  }
+  
+  // 搜索过滤
+  if(q){
+    spells = spells.filter(s => 
+      s.nameZh.includes(q) || s.nameEn.toLowerCase().includes(q)
+    );
+  }
+  
+  // 学派过滤
+  if(schoolFilter){
+    spells = spells.filter(s => s.school === schoolFilter);
+  }
+  
+  document.getElementById('countInfo').textContent = `共 ${spells.length} 个法术`;
+  
+  const colorMap = {'咒法系':'#9b59b6','变化系':'#3498db','惑控系':'#e74c3c','死灵系':'#2c3e50','塑能系':'#e67e22','预言系':'#1abc9c','防护系':'#f1c40f','幻术系':'#e91e63','通用':'#95a5a6'};
+  
+  let html = `<table class="spell-table">
+    <thead><tr>
+      <th style="width:28%;">法术名称</th>
+      <th style="width:14%;">学派</th>
+      <th style="width:14%;">成分</th>
+      <th style="width:18%;">距离</th>
+      <th style="width:14%;">持续时间</th>
+      <th style="width:12%;">抗力</th>
+    </tr></thead><tbody>`;
+  
+  if(spells.length === 0){
+    html += `<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:32px;">未找到匹配的法术</td></tr>`;
+  } else {
+    spells.forEach(s => {
+      const scColor = colorMap[s.school] || '#95a5a6';
+      html += `<tr onclick="openSpell('${s.id}')">
+        <td><strong style="color:var(--accent);">${s.nameZh}</strong><br><span class="name-en">${s.nameEn}</span></td>
+        <td><span class="school-tag" style="color:${scColor};border-color:${scColor};">${s.school}</span></td>
+        <td>${s.components}</td>
+        <td>${s.range}</td>
+        <td>${s.duration}</td>
+        <td>${s.spellResist}</td>
+      </tr>`;
+    });
+  }
+  
+  html += '</tbody></table>';
+  document.getElementById('tableContainer').innerHTML = html;
+}
+
+// 弹窗
+function openSpell(id){
+  const s = SPELLS.find(x=>x.id===id);
+  if(!s) return;
+  const colorMap = {'咒法系':'#9b59b6','变化系':'#3498db','惑控系':'#e74c3c','死灵系':'#2c3e50','塑能系':'#e67e22','预言系':'#1abc9c','防护系':'#f1c40f','幻术系':'#e91e63','通用':'#95a5a6'};
+  const scColor = colorMap[s.school] || '#95a5a6';
+  
+  document.getElementById('modalBody').innerHTML = `
+    <h2 style="margin-bottom:4px;">${s.nameZh} <span style="font-weight:400;font-size:1rem;color:var(--text-muted);">${s.nameEn}</span></h2>
+    <div>
+      <span class="school-badge" style="color:${scColor};border-color:${scColor};">${s.school}</span>
+      ${s.descriptor ? `<span class="school-badge" style="color:#e67e22;border-color:#e67e22;">${s.descriptor}</span>` : ''}
+      <span style="font-size:0.85rem;color:var(--text-muted);margin-left:8px;">${LEVEL===0 ? '戏法/祷言' : LEVEL+'环法术'}</span>
+    </div>
+    <div class="spell-info-grid">
+      <div class="spell-info-item"><span class="spell-info-label">成分</span><span>${s.components}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">施法时间</span><span>${s.castingTime}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">距离</span><span>${s.range}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">目标/范围</span><span>${s.target}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">持续时间</span><span>${s.duration}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">豁免检定</span><span>${s.savingThrow}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">法术抗力</span><span>${s.spellResist}</span></div>
+    </div>
+    <div class="spell-desc-box">${formatDesc(s.desc)}</div>
+    ${s.material ? `<p style="margin:8px 0;"><strong>🧪 材料成分：</strong>${s.material}</p>` : ''}
+    ${s.focus ? `<p style="margin:8px 0;"><strong>🔮 法器：</strong>${s.focus}</p>` : ''}
+    ${s.xpCost ? `<p style="margin:8px 0;"><strong>💀 XP代价：</strong>${s.xpCost}</p>` : ''}
+    <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
+      ${s.arcane ? `<span class="source-tag tag-srd" style="background:#e74c3c22;color:#e74c3c;border-color:#e74c3c;">⚡ 奥术可用</span>` : ''}
+      ${s.divine ? `<span class="source-tag tag-srd" style="background:#2ecc7122;color:#2ecc71;border-color:#2ecc71;">🙏 神术可用</span>` : ''}
+    </div>
+    ${s.sourceNote ? `<p style="margin-top:12px;font-size:0.82rem;color:var(--text-muted);">📖 来源：${s.sourceNote}</p>` : ''}
+  `;
+  document.getElementById('spellModal').classList.add('active');
+}
+
+function closeModal(evt){
+  if(evt && evt.target !== document.getElementById('spellModal')) return;
+  document.getElementById('spellModal').classList.remove('active');
+}
+
+function formatDesc(desc){ return (desc||'').replace(/\n/g,'<br>'); }
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+init();
+</script>
+</body>
+</html>

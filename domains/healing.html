@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>治疗领域 Healing - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html" class="active">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>治疗 <span style="font-size:0.5em;color:#888;">Healing</span></h1>
+    <p><span class="domain-badge" style="background:#2ecc71;">治疗</span> 治疗领域是牧师最经典的领域选择，几乎每一位队伍中的治疗者都会选取此领域。其神授力量使所有治疗法术效果最大化，配合从1环到9环的完整治疗法术链，让治疗领域牧师成为团队不可或缺的生存保障。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>增强治疗 (Boost Healing)</h4>
+      <p>你施放的所有治疗法术均取最大治疗效果。即每颗治疗骰均取最大值而非掷骰。例如，治疗轻伤 (Cure Light Wounds) 将固定治疗 8+施法者等级 点生命值（而非1d8+等级）。此能力极大地提升了治疗的可靠性和效率。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=cure_light_wounds">治疗轻伤 (Cure Light Wounds)</a></td><td>治疗1d8+1/级（最高+5）点伤害，对亡灵造成伤害</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=cure_moderate_wounds">治疗中度伤 (Cure Moderate Wounds)</a></td><td>治疗2d8+1/级（最高+10）点伤害</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=cure_serious_wounds">治疗重伤 (Cure Serious Wounds)</a></td><td>治疗3d8+1/级（最高+15）点伤害</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=cure_critical_wounds">治疗危重伤 (Cure Critical Wounds)</a></td><td>治疗4d8+1/级（最高+20）点伤害</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=heal">医疗术 (Heal)</a></td><td>治疗10点/级（最高100），并治愈目盲、疾病、中毒等</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=regenerate">再生术 (Regenerate)</a></td><td>目标获得再生能力，可重新长出断肢</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=resurrection">复活术 (Resurrection)</a></td><td>完全复活死者，恢复全部生命值和属性</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell-detail.html?id=heal_mass">群体治疗术 (Heal, Mass)</a></td><td>治疗范围内所有盟友10点/级（最高100）伤害</td></tr>
+        <tr><td>9</td><td><a href="../spells/spell-detail.html?id=true_resurrection">真复活术 (True Resurrection)</a></td><td>即使身体不完整也可复活死者，不受死亡时间限制</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>培罗</strong><span>Pelor · NG · 太阳/治疗</span></div>
+      <div class="deity-card"><strong>伊尔玛特</strong><span>Ilmater · LG · 苦难/坚忍</span></div>
+      <div class="deity-card"><strong>米莎卡尔</strong><span>Mishakal · LG · 治疗</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>治疗领域是最经典的牧师领域选择，几乎每一位专职治疗的牧师都会选取。神授力量"增强治疗"使所有治疗法术的每颗骰子均取最大值，极大地提高了治疗的可预测性。配合治疗专攻 (Healing) 系列法术，治疗领域牧师可以在高等级时轻松维持整个队伍的生命线。注意此能力仅对治疗法术有效，不影响其他类型的咒法系法术。</p>
+
+    <p style="margin-top:30px;"><a href="../global-search.html?domain=治疗">→ 查看所有「治疗」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

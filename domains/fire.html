@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>火领域 Fire - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html" class="active">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>火 <span style="font-size:0.5em;color:#888;">Fire</span></h1>
+    <p><span class="domain-badge" style="background:#e74c3c;">火</span> 火领域赋予牧师操控烈焰的能力，使其能够驱散水系生物、叱喝火系生物，并获得一系列毁灭性的火焰法术。火是毁灭与净化的象征，信奉火之神祇的牧师往往是战场上最具破坏力的施法者之一。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>驱散水系 (Turn Water)</h4>
+      <p>你可以像善良牧师驱散亡灵一样驱散水系生物，同时可以叱喝火系生物。每日可使用次数等于3+魅力调整值。此能力属于超自然能力。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=burning_hands">燃烧之手 (Burning Hands)</a></td><td>锥形火焰，造成1d4/级的火焰伤害（最高5d4）</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=produce_flame">燃火术 (Produce Flame)</a></td><td>掌心产生火焰，可用作近战或投掷武器</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=fireball">火球术 (Fireball)</a></td><td>经典爆炸法术，每级1d6火焰伤害，20尺半径爆发</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=wall_of_fire">火焰墙 (Wall of Fire)</a></td><td>创造一面燃烧的火墙，穿过者受到伤害</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=fire_shield">火焰护盾 (Fire Shield)</a></td><td>火焰包裹身体，近战攻击者受到火焰伤害，并获得寒冷抗力</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=fire_seeds">火种术 (Fire Seeds)</a></td><td>将橡实或冬青浆果转化为爆炸性火种</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=fire_storm">烈焰风暴 (Fire Storm)</a></td><td>大面积火焰风暴，每级1d6火焰伤害</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell-detail.html?id=incendiary_cloud">焚云术 (Incendiary Cloud)</a></td><td>移动的火云，每轮造成每级1d6火焰伤害</td></tr>
+        <tr><td>9</td><td><a href="../spells/spell-detail.html?id=elemental_swarm">元素虫群 (Elemental Swarm)</a></td><td>召唤大量火元素为你作战</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>科苏斯</strong><span>Kossuth · CN · 火</span></div>
+      <div class="deity-card"><strong>弗兰达尔·钢肤</strong><span>Flandal Steelskin · NG · 火/金属工艺</span></div>
+      <div class="deity-card"><strong>阿蒙纳托</strong><span>Amaunator · LN · 太阳/秩序</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>火领域为所有带有 [火] 描述符的法术提供 +2 施法者等级加成。这意味着火领域牧师的火焰法术在穿透法术抗力、计算伤害上限以及持续时间等方面更为强大。此加成在选择领域时自动生效，无需额外操作。</p>
+
+    <p style="margin-top:30px;"><a href="../global-search.html?domain=火">→ 查看所有「火」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

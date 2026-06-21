@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暗黑卫士 Blackguard - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html" class="active">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>暗黑卫士 <span class="en-name">Blackguard</span></h1>
+    <p class="source">来源：《地下城主指南》(DMG) 第181页</p>
+
+    <div class="infobox">
+      <h3>职业信息</h3>
+      <table>
+        <tr><th>生命骰 (HD)</th><td>d10</td></tr>
+        <tr><th>阵营限制</th><td>任意邪恶</td></tr>
+        <tr><th>关键属性</th><td>力量 (STR)、魅力 (CHA)、感知 (WIS)</td></tr>
+        <tr><th>施法进阶</th><td>自有施法能力（WIS-based，暗黑卫士法术列表）</td></tr>
+        <tr><th>来源</th><td>DMG p.181</td></tr>
+      </table>
+
+      <h3>入门条件</h3>
+      <table>
+        <tr><th>阵营</th><td>任意邪恶</td></tr>
+        <tr><th>基本攻击加值 (BAB)</th><td>+6</td></tr>
+        <tr><th>技能</th><td>躲藏 (Hide) 4级、恐吓 (Intimidate) 4级</td></tr>
+        <tr><th>专长</th><td>顺劈斩 (Cleave)、猛力攻击 (Power Attack)、精通猛力攻击 (Improved Sundering)</td></tr>
+        <tr><th>特殊</th><td>必须拥有"制裁善良"(Smite Good) 能力，或与邪恶势力有过契约关系</td></tr>
+      </table>
+
+      <h3>本职技能</h3>
+      <p>专注 (Concentration)、交涉 (Diplomacy)、驯养动物 (Handle Animal)、治疗 (Heal)、躲藏 (Hide)、恐吓 (Intimidate)、知识(宗教) (Knowledge: religion)、专业 (Profession)、骑术 (Ride)、辨识法术 (Spellcraft)</p>
+      <p>技能点：2 + 智力调整值</p>
+    </div>
+
+    <h2>职业特性表</h2>
+    <table class="class-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>BAB</th>
+          <th>强韧</th>
+          <th>反射</th>
+          <th>意志</th>
+          <th>特殊能力</th>
+          <th>每日法术 (1级/2级/3级/4级)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>+1</td><td>+2</td><td>+0</td><td>+0</td>
+          <td>邪恶灵光 (Aura of Evil)、侦测善良 (Detect Good)、毒素使用 (Poison Use)</td>
+          <td>0 / - / - / -</td>
+        </tr>
+        <tr>
+          <td>2</td><td>+2</td><td>+3</td><td>+0</td><td>+0</td>
+          <td>黑暗祝福 (Dark Blessing)、制裁善良 1次/天 (Smite Good 1/day)</td>
+          <td>1 / - / - / -</td>
+        </tr>
+        <tr>
+          <td>3</td><td>+3</td><td>+3</td><td>+1</td><td>+1</td>
+          <td>命令亡灵 (Command Undead)、偷袭 +1d6 (Sneak Attack +1d6)</td>
+          <td>2 / 0 / - / -</td>
+        </tr>
+        <tr>
+          <td>4</td><td>+4</td><td>+4</td><td>+1</td><td>+1</td>
+          <td>制裁善良 2次/天</td>
+          <td>3 / 1 / - / -</td>
+        </tr>
+        <tr>
+          <td>5</td><td>+5</td><td>+4</td><td>+1</td><td>+1</td>
+          <td>骑乘堕落 (Fiendish Servant)</td>
+          <td>3 / 2 / 0 / -</td>
+        </tr>
+        <tr>
+          <td>6</td><td>+6</td><td>+5</td><td>+2</td><td>+2</td>
+          <td>偷袭 +2d6</td>
+          <td>3 / 3 / 1 / -</td>
+        </tr>
+        <tr>
+          <td>7</td><td>+7</td><td>+5</td><td>+2</td><td>+2</td>
+          <td>制裁善良 3次/天</td>
+          <td>3 / 3 / 2 / 0</td>
+        </tr>
+        <tr>
+          <td>8</td><td>+8</td><td>+6</td><td>+2</td><td>+2</td>
+          <td>—</td>
+          <td>3 / 3 / 3 / 1</td>
+        </tr>
+        <tr>
+          <td>9</td><td>+9</td><td>+6</td><td>+3</td><td>+3</td>
+          <td>偷袭 +3d6、制裁善良 4次/天</td>
+          <td>3 / 3 / 3 / 2</td>
+        </tr>
+        <tr>
+          <td>10</td><td>+10</td><td>+7</td><td>+3</td><td>+3</td>
+          <td>—</td>
+          <td>3 / 3 / 3 / 3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详述</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>暗黑卫士熟练所有简易武器和军用武器、所有类型的盔甲（轻型、中型和重型）以及盾牌（包括塔盾）。</p>
+
+    <h3>邪恶灵光 (Aura of Evil)</h3>
+    <p>暗黑卫士拥有特别强烈的邪恶灵光，其力量等于暗黑卫士等级。此灵光可以被侦测邪恶 (detect evil) 法术感知。</p>
+
+    <h3>侦测善良 (Detect Good)</h3>
+    <p>从第1级开始，暗黑卫士可以随时使用侦测善良能力，如同同名法术。使用此能力是一个标准动作。</p>
+
+    <h3>毒素使用 (Poison Use)</h3>
+    <p>从第1级开始，暗黑卫士在给武器上毒时不会意外中毒自己。不需要进行 DC 15 的反射豁免来避免中毒。</p>
+
+    <h3>制裁善良 (Smite Good)</h3>
+    <p>从第2级开始，每天一次，暗黑卫士可以在一次近战攻击中加入制裁善良效果。攻击命中加值增加等于暗黑卫士魅力调整值（如果为正），伤害增加等于暗黑卫士等级。如果目标不是善良阵营，则额外效果不生效（但攻击仍正常造成伤害）。</p>
+    <p>制裁善良的每日使用次数在第4级增至2次，第7级3次，第9级4次。</p>
+
+    <h3>黑暗祝福 (Dark Blessing)</h3>
+    <p>从第2级开始，暗黑卫士将魅力调整值（如果为正）加到所有豁免检定上。此能力类似于圣武士的神恩 (divine grace)。</p>
+
+    <h3>法术 (Spells)</h3>
+    <p>从第1级开始，暗黑卫士获得施法能力。暗黑卫士使用感知 (WIS) 来准备和施放法术。暗黑卫士的法术列表包含4个法术等级（最高4级法术）。</p>
+    <p>暗黑卫士每日法术数量如上表所示。法术的豁免 DC = 10 + 法术等级 + 感知调整值。暗黑卫士在1级获得1级法术，在3级获得2级法术，在5级获得3级法术，在7级获得4级法术。</p>
+
+    <h3>命令亡灵 (Command Undead)</h3>
+    <p>从第3级开始，暗黑卫士可以命令亡灵 (command undead)，如同同名法术。此能力每天可使用次数等于 3 + 魅力调整值。施法者等级等于暗黑卫士等级。</p>
+
+    <h3>偷袭 (Sneak Attack)</h3>
+    <p>从第3级开始，暗黑卫士获得偷袭能力。此能力与盗贼的偷袭能力相同。偷袭伤害在第3级为+1d6，第6级为+2d6，第9级为+3d6。如果暗黑卫士已经从其他职业获得了偷袭能力，则额外伤害叠加。</p>
+
+    <h3>骑乘堕落 (Fiendish Servant)</h3>
+    <p>从第5级开始，暗黑卫士可以召唤一个恶魔仆从来为其服务。此仆从可以是黑马（战争用马）或大型恶犬，具有炼狱模板 (fiendish template)。仆从获得额外HD和特殊能力，类似于圣武士的特殊坐骑，但性质更为黑暗。</p>
+    <p>仆从的基本属性如下：</p>
+    <ul>
+      <li>额外 HD：+2 HD/暗黑卫士等级（超过5级）</li>
+      <li>天生防御加值：+2（每级+1，从5级开始）</li>
+      <li>力量加值：+1（每3级+1）</li>
+      <li>智力：6（每3级+1）</li>
+      <li>法术抗力：5 + 暗黑卫士等级</li>
+      <li>共享豁免：仆从使用暗黑卫士的豁免加值（如果高于自身）</li>
+    </ul>
+
+    <h2>构建建议 (Build Tips)</h2>
+
+    <h3>推荐种族</h3>
+    <ul>
+      <li><strong>人类 (Human)：</strong>额外专长帮助满足猛力攻击系列的前置条件，额外技能点提升整体能力。</li>
+      <li><strong>半兽人 (Half-Orc)：</strong>力量加值非常适合近战型暗黑卫士，且黑暗视觉在地下城冒险中很有用。</li>
+      <li><strong>矮人 (Dwarf)：</strong>体质加值配合 d10 HD 提供极高生存能力，稳定性也很适合前线战斗。</li>
+    </ul>
+
+    <h3>推荐基础职业</h3>
+    <ul>
+      <li><strong>堕落圣武士 (Fallen Paladin)：</strong>最经典的暗黑卫士背景。圣武士堕落后成为暗黑卫士，保留了战斗技能并获得了黑暗力量。</li>
+      <li><strong>战士 (Fighter)：</strong>提供大量战斗专长和 BAB +6，轻松满足前置条件。战士6级/暗黑卫士10级的组合非常扎实。</li>
+      <li><strong>野蛮人 (Barbarian)：</strong>野蛮人的狂暴配合暗黑卫士的邪恶力量，创造出恐怖的近战战士。</li>
+    </ul>
+
+    <h3>构建思路</h3>
+    <ul>
+      <li>暗黑卫士是一个力量型邪恶战士——优先提升力量以满足战斗需求和伤害输出。</li>
+      <li>魅力对制裁善良和黑暗祝福至关重要——高魅力意味着更高的攻击加值、伤害和豁免加值。</li>
+      <li>暗黑卫士法术虽然有限，但包含一些非常实用的能力（如治疗创伤、牛之力量等）。</li>
+      <li>偷袭虽然不如盗贼的偷袭高，但在近战中仍然很有价值——配合夹击可以造成显著伤害。</li>
+    </ul>
+
+    <h2>角色扮演建议 (Role-playing Suggestions)</h2>
+    <ul>
+      <li>暗黑卫士是黑暗力量的战士化身。他们通常效忠于某个邪恶神祇、恶魔领主或邪恶组织，以暴力和恐惧传播黑暗势力。</li>
+      <li>许多暗黑卫士曾经是圣武士——他们的堕落故事往往充满悲剧和背叛。扮演时可以探索角色如何从正义走向堕落的内心历程。</li>
+      <li>暗黑卫士通常拥有强烈的个人魅力和领导力——他们可能是邪恶教团的领袖、军阀的得力助手，或是独立的黑暗冒险者。</li>
+      <li>在队伍中，暗黑卫士可以扮演强力的前排战士和支持角色。虽然阵营为邪恶，但他们可以与队伍合作——毕竟黑暗力量也需要盟友。</li>
+      <li>骑乘堕落仆从的暗黑卫士在战场上极为显眼——骑着漆黑战马、被黑暗灵光笼罩的骑士是一个极具威慑力的形象。</li>
+    </ul>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

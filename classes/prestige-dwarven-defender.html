@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>矮人防御者 Dwarven Defender - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html" class="active">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>矮人防御者 <span class="en-name">Dwarven Defender</span></h1>
+    <p class="source">来源：《地下城主指南》(DMG) 第190页</p>
+
+    <div class="infobox">
+      <h3>职业信息</h3>
+      <table>
+        <tr><th>生命骰 (HD)</th><td>d12</td></tr>
+        <tr><th>阵营限制</th><td>任意守序 (any lawful)</td></tr>
+        <tr><th>种族限制</th><td>矮人 (Dwarf)</td></tr>
+        <tr><th>关键属性</th><td>体质 (CON)、力量 (STR)</td></tr>
+        <tr><th>施法进阶</th><td>无</td></tr>
+        <tr><th>来源</th><td>DMG p.190</td></tr>
+      </table>
+
+      <h3>入门条件</h3>
+      <table>
+        <tr><th>种族</th><td>矮人 (Dwarf)</td></tr>
+        <tr><th>阵营</th><td>任意守序</td></tr>
+        <tr><th>基本攻击加值 (BAB)</th><td>+7</td></tr>
+        <tr><th>专长</th><td>闪避 (Dodge)、坚韧 (Endurance)、健壮 (Toughness)</td></tr>
+        <tr><th>种族特性</th><td>矮人稳定性 (Stability) 种族特性</td></tr>
+      </table>
+
+      <h3>本职技能</h3>
+      <p>攀爬 (Climb)、手艺 (Craft)、聆听 (Listen)、侦察 (Spot)</p>
+      <p>技能点：2 + 智力调整值</p>
+    </div>
+
+    <h2>职业特性表</h2>
+    <table class="class-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>BAB</th>
+          <th>强韧</th>
+          <th>反射</th>
+          <th>意志</th>
+          <th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>+1</td><td>+2</td><td>+0</td><td>+2</td>
+          <td>防御姿态 (Defensive Stance)、直觉闪避 (Uncanny Dodge)</td>
+        </tr>
+        <tr>
+          <td>2</td><td>+2</td><td>+3</td><td>+0</td><td>+3</td>
+          <td>伤害减免 3/- (Damage Reduction 3/-)</td>
+        </tr>
+        <tr>
+          <td>3</td><td>+3</td><td>+3</td><td>+1</td><td>+3</td>
+          <td>陷阱感知 +1 (Trap Sense +1)</td>
+        </tr>
+        <tr>
+          <td>4</td><td>+4</td><td>+4</td><td>+1</td><td>+4</td>
+          <td>伤害减免 6/-</td>
+        </tr>
+        <tr>
+          <td>5</td><td>+5</td><td>+4</td><td>+1</td><td>+4</td>
+          <td>精通直觉闪避 (Improved Uncanny Dodge)</td>
+        </tr>
+        <tr>
+          <td>6</td><td>+6</td><td>+5</td><td>+2</td><td>+5</td>
+          <td>伤害减免 9/-、陷阱感知 +2</td>
+        </tr>
+        <tr>
+          <td>7</td><td>+7</td><td>+5</td><td>+2</td><td>+5</td>
+          <td>防御翻滚 (Defensive Roll)</td>
+        </tr>
+        <tr>
+          <td>8</td><td>+8</td><td>+6</td><td>+2</td><td>+6</td>
+          <td>伤害减免 12/-</td>
+        </tr>
+        <tr>
+          <td>9</td><td>+9</td><td>+6</td><td>+3</td><td>+6</td>
+          <td>陷阱感知 +3、精通防御姿态 (Improved Defensive Stance)</td>
+        </tr>
+        <tr>
+          <td>10</td><td>+10</td><td>+7</td><td>+3</td><td>+7</td>
+          <td>伤害减免 15/-、陷阱感知 +4</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详述</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>矮人防御者不获得任何额外的武器或防具熟练。</p>
+
+    <h3>防御姿态 (Defensive Stance)</h3>
+    <p>从第1级开始，矮人防御者可以进入防御姿态。在防御姿态中，矮人防御者获得以下加值：</p>
+    <ul>
+      <li>力量 +2</li>
+      <li>体质 +2</li>
+      <li>所有豁免 +2</li>
+      <li>AC +4（闪避加值）</li>
+    </ul>
+    <p>防御姿态持续轮数等于 3 + 体质调整值（包括姿态中的体质加值带来的额外调整值）。每天可使用次数等于矮人防御者等级。</p>
+    <p>进入防御姿态是一个即时动作 (free action)。在防御姿态中，矮人防御者不能移动（但可以在原地攻击和做其他动作）。防御姿态结束后，矮人防御者在防御姿态持续轮数内失去姿态提供的加值，且处于恍惚 (dazed) 状态——无法进行移动或标准动作（但可以执行即时动作和自由动作）。</p>
+    <p>第9级时，精通防御姿态使恍惚状态被取消——防御姿态结束后不再有负面效果。</p>
+
+    <h3>直觉闪避 (Uncanny Dodge)</h3>
+    <p>从第1级开始，矮人防御者即使在措手不及时或被隐形的攻击者攻击时也不会失去AC上的敏捷加值。但如果矮人防御者陷入麻痹状态，仍然会失去敏捷加值。如果角色在成为矮人防御者之前已经从其他职业获得了直觉闪避，则在第5级直接获得精通直觉闪避。</p>
+
+    <h3>伤害减免 (Damage Reduction)</h3>
+    <p>从第2级开始，矮人防御者获得伤害减免。伤害减免可以忽略每次攻击中一定量的物理伤害。伤害减免数值如下：</p>
+    <ul>
+      <li>第2级：3/-</li>
+      <li>第4级：6/-</li>
+      <li>第6级：9/-</li>
+      <li>第8级：12/-</li>
+      <li>第10级：15/-</li>
+    </ul>
+    <p>注意 "-" 表示没有任何武器类型可以绕过此伤害减免——所有物理伤害都会被减免。</p>
+
+    <h3>陷阱感知 (Trap Sense)</h3>
+    <p>从第3级开始，矮人防御者对陷阱的反射豁免和AC获得加值。此加值在第3级为+1，第6级为+2，第9级为+3，第10级为+4。</p>
+    <p>如果矮人防御者已经从其他职业获得了陷阱感知，则加值叠加。</p>
+
+    <h3>精通直觉闪避 (Improved Uncanny Dodge)</h3>
+    <p>从第5级开始，矮人防御者不再受到偷袭的额外伤害（除非攻击者的偷袭来源等级比矮人防御者的等级高至少4级）。</p>
+    <p>如果角色已经从其他职业获得了直觉闪避，则将两个职业的等级叠加以决定获得精通直觉闪避的等级。</p>
+
+    <h3>防御翻滚 (Defensive Roll)</h3>
+    <p>从第7级开始，当一次近战攻击将矮人防御者的生命值降至0或以下时，矮人防御者可以尝试翻滚避开致命伤害。矮人防御者可以进行一次反射豁免（DC = 造成的伤害值），如果成功，则只受到一半伤害。</p>
+    <p>矮人防御者必须意识到攻击并能够做出反应才能使用此能力——如果措手不及时则无法使用（但直觉闪避可以防止措手不及的情况）。此能力每天可使用一次。</p>
+
+    <h3>精通防御姿态 (Improved Defensive Stance)</h3>
+    <p>从第9级开始，防御姿态结束后的恍惚 (dazed) 效果被消除。矮人防御者可以在防御姿态结束后立即正常行动，不再有负面效果。</p>
+
+    <h2>构建建议 (Build Tips)</h2>
+
+    <h3>推荐种族</h3>
+    <ul>
+      <li><strong>矮人 (Dwarf)：</strong>唯一的种族选择。矮人的 +2 体质、-2 魅力非常适合防御者。矮人稳定性、抗毒+2和黑暗视觉都是极有价值的种族特性。</li>
+    </ul>
+
+    <h3>推荐基础职业</h3>
+    <ul>
+      <li><strong>战士 (Fighter)：</strong>最佳选择。战士提供 BAB +7（需要7级战士）、大量战斗专长（可以满足闪避、坚韧、健壮三个前置专长）和所有武器防具熟练。战士8级/矮人防御者10级是一个经典的坦克构建。</li>
+      <li><strong>圣武士 (Paladin)：</strong>守序阵营的圣武士天然符合矮人防御者的阵营要求。圣武士的神恩、制裁邪恶和施法能力可以与矮人防御者的防御能力互补。</li>
+      <li><strong>野蛮人 (Barbarian)：</strong>虽然野蛮人通常是非守序的，但守序野蛮人是允许的。野蛮人的狂暴与矮人防御者的防御姿态可以交替使用，创造出攻守兼备的角色。</li>
+    </ul>
+
+    <h3>构建思路</h3>
+    <ul>
+      <li>矮人防御者是终极坦克——d12 HD、伤害减免、防御姿态使其几乎不可能被物理攻击击倒。</li>
+      <li>优先提升体质——体质不仅提升HP（配合 d12 HD 极其可观），还增加防御姿态的持续轮数。</li>
+      <li>伤害减免 15/- 意味着每次物理攻击都减少15点伤害——这对大量低伤害攻击特别有效。</li>
+      <li>防御姿态是矮人防御者的核心能力——合理规划每日使用次数，在最关键的战斗中使用。</li>
+      <li>穿戴重甲和大盾牌配合防御姿态的AC+4，可以达到极高的AC值。</li>
+      <li>注意矮人防御者没有施法能力——考虑兼职1级牧师或圣武士来获得基础施法支援。</li>
+      <li>技能点很少（2+INT/级），但矮人防御者通常不需要太多技能——他们的主要职责是在前线吸收伤害。</li>
+    </ul>
+
+    <h2>角色扮演建议 (Role-playing Suggestions)</h2>
+    <ul>
+      <li>矮人防御者是矮人社会中的精英守护者。他们发誓保护矮人的家园、堡垒和族人——这份誓言比钢铁还要坚固。</li>
+      <li>扮演矮人防御者时可以展现矮人特有的固执、忠诚和坚韧。他们一旦下定决心，就绝不退缩——就像他们守护的石头城墙一样不可动摇。</li>
+      <li>许多矮人防御者属于古老的矮人军事组织，接受过严格的防御战术训练。他们可能世代守护同一条地道或同一座要塞。</li>
+      <li>矮人防御者通常沉默寡言但极为可靠。在队伍中，他们可能是那个总是站在最前面、默默承受所有打击的人。他们不需要赞美或荣誉——保护同伴就是他们最大的满足。</li>
+      <li>守序阵营使矮人防御者成为纪律和秩序的化身。他们可能严格遵守军事条例，对违反纪律的行为零容忍。这种性格有时会导致与非守序队友之间的摩擦。</li>
+      <li>在战斗中，矮人防御者应该主动站在最危险的位置——堵住门口、挡住通道、吸引敌人的注意力。防御姿态使他们在一小片区域内变成不可逾越的堡垒。</li>
+    </ul>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

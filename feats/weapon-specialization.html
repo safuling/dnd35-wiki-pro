@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>武器专精 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #8B0000, #DC143C); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #8B0000; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #8B0000; border-bottom: 2px solid #8B0000; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color: #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+
+    <div class="feat-header">
+      <h1>⚔️ 武器专精</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Weapon Specialization</p>
+      <span class="feat-type">战士专有专长</span>
+      <span class="feat-type">【战斗】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">战士专有专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">专长武器专攻 (Weapon Focus)、战士等级 4+</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">伤害加值 +2</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">可多次选择，每次作用于不同武器</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 105</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">战士</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你对你所选武器的伤害输出有着非凡的掌握，能够造成更大的伤害。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>专长武器专攻 (Weapon Focus)</strong> - 必须已选择同一种武器</li>
+        <li><strong>战士等级 4+</strong></li>
+      </ul>
+      <p><strong>说明</strong>：选择一种你已获得武器专攻加值的武器。你必须以同一种武器选择武器专攻和武器专精。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>使用选定武器攻击时，<strong>伤害加值 +2</strong>。</p>
+      <p><strong>注意</strong>：这个加值可以与其他伤害加值叠加（例如力量调整值、猛力攻击等）。</p>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>伤害计算</h3>
+    <p><strong>总伤害</strong> = 武器基础伤害 + 力量调整值 + 武器专精 +2 + 其他加值</p>
+    <ul>
+      <li><strong>武器基础伤害</strong>：例如长剑 1d8、巨剑 2d6</li>
+      <li><strong>力量调整值</strong>：近战武器加完整力量调整值，远程武器不加</li>
+      <li><strong>武器专精 +2</strong>：本专长提供的伤害加值</li>
+      <li><strong>其他加值</strong>：猛力攻击、属性加值、魔法加值等</li>
+    </ul>
+
+    <h3>重要规则</h3>
+    <ul>
+      <li><strong>只适用于战士</strong>：武器专精是战士专有专长，其他职业无法选择</li>
+      <li><strong>每次选择不同武器</strong>：你可以多次选择武器专精，但每次必须选择不同的武器</li>
+      <li><strong>不与武器专攻叠加</strong>：武器专攻提供命中加值，武器专精提供伤害加值，两者互补</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：4级人类战士（BAB +4），力量 16（+3），使用长剑，已选择武器专攻（长剑）和武器专精（长剑）。</p>
+      <p><strong>攻击</strong>：</p>
+      <ol>
+        <li><strong>命中加值</strong>：BAB +4 + 力量调整值 +3 + 武器专攻 +1 = +8</li>
+        <li><strong>伤害</strong>：长剑基础伤害 1d8 + 力量调整值 +3 + 武器专精 +2 = 1d8 + 5</li>
+        <li><strong>总伤害范围</strong>：6-13 点伤害（平均 9.5）</li>
+      </ol>
+      <p><strong>分析</strong>：武器专精显著提高了伤害输出，使战士在近战中对单一目标造成稳定伤害的能力更强。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 推荐搭配专长</h4>
+      <ul>
+        <li><strong>武器专攻 (Weapon Focus)</strong> - 先决条件，提高命中</li>
+        <li><strong>武器专精 (Weapon Specialization)</strong> - 本专长，提高伤害</li>
+        <li><strong>猛力攻击 (Power Attack)</strong> - 进一步提高伤害</li>
+        <li><strong>顺劈斩 (Cleave)</strong> - 重击后触发顺劈斩</li>
+        <li><strong>致命一击 (Improved Critical)</strong> - 提高重击频率</li>
+        <li><strong>高等武器专攻 (Greater Weapon Focus)</strong> - 进一步提高命中</li>
+        <li><strong>高等武器专精 (Greater Weapon Specialization)</strong> - 进一步提高伤害</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>⚔️ 推荐构建</h4>
+      <p><strong>1. 伤害战士 (Damage Warrior)</strong></p>
+      <ul>
+        <li>专攻：武器专攻 → 武器专精 → 猛力攻击 → 顺劈斩 → 致命一击</li>
+        <li>特点：伤害输出极高，适合前排</li>
+        <li>推荐武器：巨剑（2d6伤害）、战斧（20/×3）</li>
+      </ul>
+      <p><strong>2. 精准战士 (Precision Warrior)</strong></p>
+      <ul>
+        <li>专攻：武器专攻 → 高等武器专攻 → 武器专精 → 高等武器专精 → 致命一击</li>
+        <li>特点：命中和伤害都很高，适合对抗高AC敌人</li>
+        <li>推荐武器：长剑（平衡）</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：武器专精是否适用于远程武器</h4>
+      <p><strong>冲突点</strong>：武器专精能否用于远程武器（如弓、弩）？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 105</strong>：武器专精专长描述（未明确说明是否适用于远程武器）</li>
+        <li><strong>一些在线资源</strong>：认为武器专精只适用于近战武器</li>
+      </ul>
+      <p><strong>冲突描述</strong>：武器专精是否适用于远程武器存在争议。</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>适用解释</strong>：武器专精适用于所有武器，包括远程武器</li>
+        <li><strong>不适用解释</strong>：武器专精只适用于近战武器</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>适用解释</strong>（武器专精适用于所有武器），因为 PHB 未明确限制。</p>
+    </div>
+
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突： weapon专精的伤害加值是否适用于重击</h4>
+      <p><strong>冲突点</strong>：武器专精的 +2 伤害加值是否适用于重击伤害？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 135</strong>：重击伤害计算（基础伤害 × 重击倍率）</li>
+        <li><strong>一些在线资源</strong>：认为武器专精的加值也乘以重击倍率</li>
+      </ul>
+      <p><strong>冲突描述</strong>：武器专精的 +2 伤害加值在重击时如何处理存在争议。</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>PHB解释</strong>：武器专精的 +2 是伤害加值，不乘以重击倍率（只乘以基础伤害骰）</li>
+        <li><strong>错误解释</strong>：武器专精的 +2 也乘以重击倍率</li>
+      </ol>
+      <p><strong>建议</strong>：遵循 PHB 规则（武器专精的 +2 不乘以重击倍率）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 105 - 武器专精专长描述</li>
+      <li><strong>玩家手册 (PHB)</strong> p. 135 - 伤害计算</li>
+      <li><strong>Complete Warrior</strong> p. 105 - 武器专精的变体规则</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+</main>
+</div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

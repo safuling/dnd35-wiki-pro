@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>威吓 - D&D 3.5e 中文Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .skill-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .ability-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .dc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .dc-table th, .dc-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .dc-table th {
+            background: #e74c3c;
+            color: white;
+        }
+        .dc-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .conflict-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+    <nav class="top-nav">
+        <div class="nav-brand">🐉 D&D 3.5e Wiki</div>
+        <div class="nav-links">
+            <a href="../index.html">首页</a>
+            <a href="intro.html" class="active">技能</a>
+            <a href="../spells/intro.html">法术</a>
+            <a href="../races/human.html">种族</a>
+            <a href="../classes/wizard.html">职业</a>
+            <a href="../feats/intro.html">专长</a>
+            <a href="../conflicts.html">规则冲突</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="skill-header">
+            <h1>😈 威吓 (Intimidate)</h1>
+            <p class="subtitle">魅力技能 · 跨职业技能</p>
+            <div>
+                <span class="ability-badge">关键属性：魅力 (CHA)</span>
+                <span class="ability-badge">调整值：1d20 + 调整值点数 + 魅力调整值</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 技能描述</h3>
+            <p><strong>威吓</strong>技能允许你通过威胁、恐吓或展示力量来迫使他人合作、泄露信息或陷入恐慌。</p>
+            
+            <h4>调整值计算</h4>
+            <p class="formula">威吓调整值 = 威吓调整值点数 + 魅力调整值 + 其他调整值</p>
+            
+            <h4>检定条件</h4>
+            <ul>
+                <li><strong>动作</strong>：标准动作（Standard Action）</li>
+                <li><strong>重试</strong>：可以，但失败会让目标更抗拒</li>
+                <li><strong>特殊</strong>：威吓调整值需要与目标的<strong>意志豁免</strong>对抗</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 难度等级 (DC)</h2>
+            <table class="dc-table">
+                <thead>
+                    <tr>
+                        <th>威吓目标</th>
+                        <th>DC</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>迫使平民合作</td>
+                        <td>DC 10</td>
+                        <td>普通平民容易被恐吓</td>
+                    </tr>
+                    <tr>
+                        <td>迫使守卫合作</td>
+                        <td>DC 15</td>
+                        <td>训练有素的守卫较难恐吓</td>
+                    </tr>
+                    <tr>
+                        <td>迫使军官合作</td>
+                        <td>DC 20</td>
+                        <td>意志坚定的军官很难恐吓</td>
+                    </tr>
+                    <tr>
+                        <td>迫使贵族合作</td>
+                        <td>DC 25</td>
+                        <td>高社会地位的人极难恐吓</td>
+                    </tr>
+                    <tr>
+                        <td>造成恐慌（多个敌人）</td>
+                        <td>DC = 10 + 敌人数量</td>
+                        <td>需要影响多个目标</td>
+                    </tr>
+                    <tr>
+                        <td>威吓动物</td>
+                        <td>DC 15</td>
+                        <td>动物容易被恐吓（但有限制）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📋 技能细则</h2>
+            
+            <h3>对抗意志豁免</h3>
+            <p>威吓实际上是<strong>魅力调整值对抗意志豁免</strong>。你的威吓调整值需要与目标的意志豁免DC对抗。</p>
+            <ul>
+                <li><strong>目标意志DC</strong> = 10 + 意志豁免调整值 + 其他调整值</li>
+                <li><strong>成功</strong>：目标合作或陷入恐慌</li>
+                <li><strong>失败</strong>：目标拒绝合作，可能攻击你</li>
+            </ul>
+
+            <h3>造成恐慌</h3>
+            <p>如果你在战斗中成功威吓一个敌人，他可能陷入<strong>恐慌（Panic）</strong>状态，逃跑1d4轮。</p>
+            <ul>
+                <li><strong>DC</strong>：目标意志DC + 5（造成恐慌比迫使合作更难）</li>
+                <li><strong>范围</strong>：30英尺内所有能看见你的敌人都可能被恐慌影响</li>
+            </ul>
+
+            <h3>特殊能力</h3>
+            <ul>
+                <li><strong>野蛮人（Barbarian）</strong>：在狂暴（Rage）期间，威吓调整值+2</li>
+                <li><strong>邪术师（Warlock）</strong>：某些邪术（Eldritch Blast）可以造成恐慌</li>
+                <li><strong>恐惧武器</strong>：某些武器（如"恐惧之剑"）在命中时造成恐慌</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <h3>💡 实战示例</h3>
+            <p><strong>场景</strong>：你是一名5级野蛮人（魅力10，+0调整值），有6点威吓调整值。你在狂暴中（+2调整值）。</p>
+            <p><strong>总调整值</strong>：6（调整值点数）+ 0（魅力调整值）+ 2（狂暴）= <strong>+8</strong></p>
+            <p><strong>任务</strong>：恐吓一名守卫（意志豁免+3）打开城门。</p>
+            <p><strong>计算</strong>：守卫意志DC = 10 + 3 = <strong>13</strong></p>
+            <p><strong>检定</strong>：1d20 + 8 = <strong>19 ≥ 13</strong>，成功！守卫被恐吓，打开了城门。</p>
+            <p><strong>变体</strong>：如果你想造成恐慌（DC 13+5=18），1d20 + 8 = 14 < 18，<strong>失败！</strong>守卫未被恐慌，但仍然合作（因为之前成功迫使合作）。</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 搭配专长</h2>
+            <ul>
+                <li><strong>魅力非凡（Charismatic）</strong>：魅力调整值+2（间接提升威吓）</li>
+                <li><strong>霸者（Dominator）</strong>：威吓调整值+2，且恐慌效果持续更久</li>
+                <li><strong>钢铁意志（Iron Will）</strong>：虽然不是直接搭配，但意志豁免有助于抵抗反威吓</li>
+            </ul>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：威吓是否影响动物</h3>
+            <p><strong>冲突点</strong>：威吓技能是否可以用于影响动物？</p>
+            <p><strong>官方规则（PHB p.77）</strong>：威吓<strong>可以</strong>用于影响动物，但DC增加<strong>+5</strong>。动物有简单的意志（通常意志豁免较低）。</p>
+            <p><strong>网络误传</strong>：部分网站声称"威吓对动物无效，需要使用驯养动物"。这是错误的，威吓可以影响动物，但效率低。</p>
+            <p><strong>推荐处理</strong>：按PHB执行。威吓可以影响动物（DC+5），但<strong>驯养动物（Handle Animal）</strong>是更有效的方式。</p>
+            <p class="source">📚 出处：PHB p.77, Complete Warrior p.95</p>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：威吓的动作时间</h3>
+            <p><strong>冲突点</strong>：威吓是标准动作、移动等效动作，还是即时动作？</p>
+            <p><strong>官方规则（PHB p.77）</strong>：威吓是<strong>标准动作</strong>（Standard Action）。但某些DM可能允许<strong>移动等效动作</strong>（如果威吓很简单）。</p>
+            <p><strong>网络误传</strong>：部分网站声称"威吓是移动等效动作，可以在移动中使用"。这违反了PHB的基本规则。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行，威吓是标准动作。例外：如果DM使用 house rule "快速威吓"，则可以允许移动等效动作。</p>
+            <p class="source">📚 出处：PHB p.77, 3.5版 FAQ v.2.0</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 规则出处</h3>
+            <ul>
+                <li><strong>玩家手册 (PHB)</strong>：p.77，威吓技能详细描述</li>
+                <li><strong>Complete Warrior</strong>：p.95，威吓进阶规则</li>
+                <li><strong>3.5版 FAQ</strong>：v.2.0，威吓相关问答</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>🐉 D&D 3.5e 中文Wiki | 基于《玩家手册》(PHB) 规则</p>
+        <p>本网站为粉丝制作，非官方作品。Dungeons & Dragons 是 Wizards of the Coast 的商标。</p>
+    </footer>
+</body>
+</html>

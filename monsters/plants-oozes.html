@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>植物与泥怪 Plants &amp; Oozes - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.cr-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:13px; font-weight:600; color:#fff; }
+.cr-low { background:#27ae60; }
+.cr-mid { background:#d4a017; }
+.cr-high { background:#c0392b; }
+.cr-boss { background:#8e44ad; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:40px; }
+.monster-entry { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:16px 0; }
+.monster-entry h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.monster-entry table { width:100%; border-collapse:collapse; margin:8px 0; }
+.monster-entry th, .monster-entry td { padding:6px 10px; border-bottom:1px solid var(--border-light,#e8dcc8); text-align:left; font-size:14px; }
+.monster-entry th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.tactic { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:8px 12px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.part-divider { background:var(--bg-card,#faf6ee); border:2px solid var(--accent-gold,#d4a017); border-radius:6px; padding:16px; margin:32px 0 16px 0; text-align:center; }
+.part-divider h2 { margin:0; color:var(--accent-gold,#d4a017); }
+.immunity-note { background:#fdf2e9; border:1px solid #e59866; border-radius:4px; padding:10px 14px; margin:12px 0; font-size:14px; }
+.immunity-note strong { color:#c0392b; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物图鉴</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+      <a href="humanoids.html">类人怪物</a>
+      <a href="undead.html">不死生物</a>
+      <a href="magical-beasts.html">魔法兽</a>
+      <a href="aberrations-fey.html">异怪与精类</a>
+      <a href="outsiders.html">异界生物</a>
+      <a href="giants-constructs.html">巨人与构装体</a>
+      <a href="plants-oozes.html" class="active">植物与泥怪</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>植物与泥怪 <small>Plants &amp; Oozes</small></h1>
+
+    <p>本页收录 D&D 3.5e 中的<strong>植物类怪物 (Plant)</strong> 和<strong>泥怪 (Ooze)</strong>。植物生物免疫心智影响效果、毒素、睡眠、麻痹、震慑和重击。泥怪无心智，免疫毒素、睡眠、麻痹、变形、心灵效果、重击和夹击。这两类怪物在地城探索中极为常见，往往以环境障碍的形式出现。</p>
+
+    <div class="immunity-note">
+      <strong>通用免疫特性：</strong><br>
+      <strong>植物生物：</strong>免疫所有心智影响法术/能力 (charm, compulsion, phantasm, pattern)、毒素、睡眠效果、麻痹、震慑、重击。<br>
+      <strong>泥怪：</strong>无心智 (mindless)，免疫毒素、睡眠、麻痹、变形 (polymorphing)、心灵效果、重击、夹击。大多数泥怪还免疫视觉依赖效果（盲视）。
+    </div>
+
+    <div class="toc">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#low-plants">低CR植物</a></li>
+        <li><a href="#mid-plants">中CR植物</a></li>
+        <li><a href="#high-plants">高CR植物</a></li>
+        <li><a href="#classic-oozes">经典泥怪</a></li>
+        <li><a href="#rare-oozes">稀有泥怪</a></li>
+        <li><a href="#ooze-compare">泥怪对照表</a></li>
+        <li><a href="#cr-table">CR速查表</a></li>
+      </ul>
+    </div>
+
+    <!-- ==================== PART A ==================== -->
+    <div class="part-divider">
+      <h2>Part A: 植物生物 (Plants)</h2>
+      <p>自然界中觉醒战意的植被生灵</p>
+    </div>
+
+    <!-- ==================== SECTION 1 ==================== -->
+    <h2 class="section-title" id="low-plants">低CR植物 (Low CR Plants)</h2>
+
+    <div class="monster-entry">
+      <h3>尖叫蘑菇 Shrieker <span class="cr-badge cr-low">CR 1/4</span></h3>
+      <p>一种大型真菌，无法移动但会发出刺耳的尖叫声吸引附近的生物。本身不具备攻击能力，但尖叫会引来更危险的怪物。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/4</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>1d8+1 (5 HP)</td></tr>
+        <tr><td>AC</td><td>6 (天生+1, 敏捷-5)</td></tr>
+        <tr><td>攻击</td><td>无</td></tr>
+        <tr><td>特殊能力</td><td>不可移动 (Immobile)；尖叫 (Shriek)：30尺范围内有光源或运动时触发，持续1d3轮，吸引附近生物；暗视；低光视觉</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>尖叫蘑菇本身无害，但其尖叫会引来地城中的其他怪物。应在接近前用远程攻击消灭它，或确保周围没有危险生物后再行动。<em>沉默术</em>可完全抑制其尖叫。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>紫色菌 Violet Fungus <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>紫色巨型真菌，拥有4根带毒触手。常隐藏在地下洞穴的菌丛中，与尖叫蘑菇混杂生长，利用后者的尖叫引诱猎物。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>4d8+4 (22 HP)</td></tr>
+        <tr><td>AC</td><td>15 (天生+4, 敏捷+1)</td></tr>
+        <tr><td>攻击</td><td>4 触手 +4 (1d4+1 加毒素 DC 13)</td></tr>
+        <tr><td>特殊能力</td><td>旋转 (Rotation)：可缓慢转动身体攻击不同方向；伪装 (Camouflage)：在菌丛中难以分辨</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>紫色菌常与尖叫蘑菇混在一起，利用伪装难以辨认。冒险者应先确认菌丛中有无紫色菌，再处理尖叫蘑菇。毒素伤害为体质伤害，应尽快用<em>中和毒素</em>治疗。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>刺客藤 Assassin Vine <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>伪装成普通藤蔓的掠食性植物，会用藤蔓缠绕猎物并碾碎。其伪装能力极强，在森林中几乎无法被发现。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>4d8+12 (30 HP)</td></tr>
+        <tr><td>AC</td><td>15 (天生+5)</td></tr>
+        <tr><td>攻击</td><td>重击 +7 (1d6+7 加纠缠)</td></tr>
+        <tr><td>特殊能力</td><td>绞缠 (Constrict) 1d6+7；伪装 (Hide +16)；纠缠 (Entangle)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>刺客藤在森林中几乎不可见（Hide +16），常缠绕在树木或悬崖边伏击。被纠缠和绞缠的组合非常致命。用火焰可快速清除藤蔓，<em>自由行动术</em>免疫纠缠和绞缠。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>黄霉藤蔓 Yellow Musk Creeper <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>散发恶臭花粉的掠食性藤蔓，其花粉可让受害者不由自主地走向它。还会将尸体转化为不死僵尸仆从。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>2d8+8 (17 HP)</td></tr>
+        <tr><td>AC</td><td>14 (天生+4)</td></tr>
+        <tr><td>攻击</td><td>卷须 +6 (1d6+4)</td></tr>
+        <tr><td>特殊能力</td><td>制造僵尸 (Create Zombie)：将尸体转化为僵尸；花粉喷射 (Pollen Spray)：DC 12 意志豁免失败者不由自主走向藤蔓</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>黄霉藤蔓的花粉会让队友自投罗网，需高意志豁免的角色顶前排。它会用之前杀死的冒险者制造僵尸仆从。<em>防护邪恶</em>可抵御花粉的强制移动效果。优先摧毁藤蔓本体而非僵尸。</div>
+    </div>
+
+    <!-- ==================== SECTION 2 ==================== -->
+    <h2 class="section-title" id="mid-plants">中CR植物 (Mid CR Plants)</h2>
+
+    <div class="monster-entry">
+      <h3>蹒跚灌木 Shambling Mound <span class="cr-badge cr-mid">CR 6</span></h3>
+      <p>由腐烂植物组成的大型移动灌木堆，看起来像一堆会走的垃圾。雷电不仅不会伤害它，反而会治愈它。是沼泽和密林中的经典威胁。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">6</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>8d8+24 (60 HP)</td></tr>
+        <tr><td>AC</td><td>21 (天生+8, 敏捷+1, 天生+2)</td></tr>
+        <tr><td>攻击</td><td>2 重击 +11 (2d6+5)</td></tr>
+        <tr><td>特殊能力</td><td>绞缠 (Constrict) 2d6+10；精通攫取 (Improved Grab)；雷电治愈 (Lightning heals)；弱点：火焰</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>蹒跚灌木的关键弱点是火焰——它对火焰有额外脆弱性。<strong>绝对不要</strong>使用雷电法术，雷电会治愈它而非伤害它！火焰法术如<em>火球术</em>是最佳选择。被攫取绞缠的队友需要力量检定或<em>自由行动术</em>来挣脱。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>卷须怪 Tendriculos <span class="cr-badge cr-mid">CR 6</span></h3>
+      <p>巨大的食肉植物，全身覆盖触手和藤蔓。拥有再生能力，只有火焰和酸液能阻止其恢复。会吞噬整个猎物。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">6</span></td></tr>
+        <tr><td>体型</td><td>超大型 (Huge)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>9d8+45 (85 HP)</td></tr>
+        <tr><td>AC</td><td>18 (天生+8, 敏捷-2, 体型-2, 天生+4)</td></tr>
+        <tr><td>攻击</td><td>触手 +12 (2d6+6) + 啮咬</td></tr>
+        <tr><td>特殊能力</td><td>精通攫取 (Improved Grab)；吞噬活物 (Swallow Whole)；再生 5 (火焰/酸液阻止)；麻痹 DC 20</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>卷须怪的再生5意味着每轮恢复5点HP，必须用火焰或酸液才能阻止。它会用触手攫取后吞噬，被吞者需在胃中造成25点伤害才能逃出。优先使用<em>火墙术</em>或<em>酸液箭</em>，持续物理攻击只会让它恢复。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>树人 Treant <span class="cr-badge cr-mid">CR 8</span></h3>
+      <p>古老的智慧树木，森林的守护者。平时缓慢温和，但被激怒后极其危险。可以唤醒周围的普通树木加入战斗。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">8</span></td></tr>
+        <tr><td>体型</td><td>超大型 (Huge)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>7d8+35 (66 HP)</td></tr>
+        <tr><td>AC</td><td>21 (天生+9, 敏捷-1, 体型-2, 天生+5)</td></tr>
+        <tr><td>攻击</td><td>2 重击 +13 (2d6+9)</td></tr>
+        <tr><td>特殊能力</td><td>双倍伤害对构装体；唤醒树木 (Animation)：让普通树行动；弱点：火焰；投石 180尺</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>树人通常不想战斗，优先尝试交涉。一旦开战，火焰是其最大弱点——<em>火球术</em>可造成大量伤害。树人可唤醒2棵普通树参战，需要同时应对多个巨型植物。<em>防植物结界</em>可阻止其攻击。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>菌人 Myconid <span class="cr-badge cr-low">CR 1/2-6</span></h3>
+      <p>地底世界的智慧菌类种族，以孢子进行沟通、攻击和繁殖。有不同等级和类型的孢子能力，社会结构严密。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/2 至 6</span>（随等级变化）</td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>变化</td></tr>
+        <tr><td>AC</td><td>变化</td></tr>
+        <tr><td>攻击</td><td>拳击/孢子攻击</td></tr>
+        <tr><td>特殊能力</td><td>共鸣孢子 (Rapport Spores)：心灵通讯；动画孢子 (Animation Spores)：复活尸体；毒素孢子 (Poison Spores)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>菌人通常不主动攻击，可通过共鸣孢子进行心灵交流。动画孢子可将尸体变成真菌僵尸，毒素孢子是远程攻击手段。与菌人交涉时保持尊重，它们是地下世界的中立居民。</div>
+    </div>
+
+    <!-- ==================== SECTION 3 ==================== -->
+    <h2 class="section-title" id="high-plants">高CR植物 (High CR Plants)</h2>
+
+    <div class="monster-entry">
+      <h3>远古树人 Elder Treant <span class="cr-badge cr-high">CR 12+</span></h3>
+      <p>存活了数千年甚至更久的远古树人，体型比普通树人更大，能力也更强大。通常是整片远古森林的守护者和王者。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-high">12+</span></td></tr>
+        <tr><td>体型</td><td>巨型 (Gargantuan)</td></tr>
+        <tr><td>类型</td><td>植物 (Plant)</td></tr>
+        <tr><td>HD</td><td>大量 HD（远超普通树人）</td></tr>
+        <tr><td>AC</td><td>提升（厚重树皮护甲）</td></tr>
+        <tr><td>攻击</td><td>2+ 重击（伤害大幅提升）</td></tr>
+        <tr><td>特殊能力</td><td>可唤醒更多树木；更强的投石能力；增强再生；古老智慧（高智力）</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>远古树人可以唤醒整个森林的树木参战，形成一支植物大军。它的投石距离更远、伤害更高。火焰依然是最大弱点，但需要更强的火焰法术才能造成显著伤害。尽量通过交涉避免战斗。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>其他高CR植物 Other High-CR Plants</h3>
+      <p>以下是其他高CR植物生物和植物类怪物的简要介绍：</p>
+      <table>
+        <tr><th>怪物</th><th>CR</th><th>特色</th></tr>
+        <tr><td>向日葵巨人 Giant Sunflower</td><td>变化</td><td>巨型植物，可发射灼热光线</td></tr>
+        <tr><td>光合生物 Phototropic Creatures</td><td>变化</td><td>依赖光能的特殊植物变体</td></tr>
+        <tr><td>翠精 Verdant</td><td>变化</td><td>植物型精类，与森林融为一体</td></tr>
+        <tr><td>掘根者 Uprooter</td><td>变化</td><td>可以连根拔起并移动的巨型植物</td></tr>
+      </table>
+      <div class="tactic"><strong>通用建议：</strong>高CR植物通常共享相同弱点——火焰。准备<em>火球术</em>、<em>火墙术</em>、<em>延迟爆裂火球</em>等火焰法术是应对所有植物怪物的通用策略。同时注意部分植物可能有额外抗性或再生能力。</div>
+    </div>
+
+    <!-- ==================== PART B ==================== -->
+    <div class="part-divider">
+      <h2>Part B: 泥怪 (Oozes)</h2>
+      <p>无心智的原始掠食性凝胶体</p>
+    </div>
+
+    <!-- ==================== SECTION 4 ==================== -->
+    <h2 class="section-title" id="classic-oozes">经典泥怪 (Classic Oozes)</h2>
+
+    <div class="monster-entry">
+      <h3>灰泥怪 Gray Ooze <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>灰色半透明的黏液体，擅长腐蚀金属装备。在石头地板上几乎不可见，是金属装备使用者的噩梦。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>泥怪 (Ooze)</td></tr>
+        <tr><td>HD</td><td>3d8+9 (22 HP)</td></tr>
+        <tr><td>AC</td><td>11 (天生+1)</td></tr>
+        <tr><td>攻击</td><td>重击 +4 (1d6+2 加酸液 +1d6)</td></tr>
+        <tr><td>特殊能力</td><td>腐蚀金属 (Corrode Metal)：金属护甲/武器每次命中-4；精通攫取 (Improved Grab)</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>灰泥怪会腐蚀金属装备——每次被命中，金属护甲AC-4，金属武器伤害-4。使用木棍、石制武器或魔法金属武器（有豁免加值）。远程攻击最安全。它在石质地板上几乎隐形，需仔细侦察。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>赭石果冻 Ochre Jelly <span class="cr-badge cr-mid">CR 6</span></h3>
+      <p>黄褐色大型凝胶体，被斩击或雷电劈中会分裂成两个独立个体。是地下城通道中的流动威胁。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">6</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>泥怪 (Ooze)</td></tr>
+        <tr><td>HD</td><td>9d8+36 (76 HP)</td></tr>
+        <tr><td>AC</td><td>8 (敏捷-2, 天生+10→体型修正)</td></tr>
+        <tr><td>攻击</td><td>重击 +9 (2d6+6 酸液)</td></tr>
+        <tr><td>特殊能力</td><td>绞缠 (Constrict)；分裂 (Split)：被斩击或雷电劈中时分裂为两个半HP个体；免疫寒冷/火焰</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>赭石果冻分裂规则是关键——<strong>不要</strong>使用剑类斩击武器或雷电法术，否则它会分裂成更多个体。使用钝器（锤/棍）、穿刺武器或音波/寒冷以外的能量伤害。分裂后的小果冻依然有酸液伤害。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>黑布丁 Black Pudding <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>最具攻击性的泥怪之一，黑色巨大会分裂的酸液凝胶体。可腐蚀金属和木材，是最危险的标准泥怪。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>泥怪 (Ooze)</td></tr>
+        <tr><td>HD</td><td>10d8+50 (95 HP)</td></tr>
+        <tr><td>AC</td><td>7 (敏捷-3, 天生+10)</td></tr>
+        <tr><td>攻击</td><td>重击 +11 (2d6+8 酸液)</td></tr>
+        <tr><td>特殊能力</td><td>绞缠 (Constrict)；精通攫取 (Improved Grab)；分裂 (Split)：被斩击/穿刺劈中时分裂；腐蚀金属/木材；免疫寒冷/火焰</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>黑布丁比赭石果冻更危险——它被斩击<strong>或</strong>穿刺都会分裂（比赭石果冻多了穿刺分裂）。<strong>只用钝器攻击！</strong>它还能腐蚀木材，所以木棍也不安全。最佳选择：<em>音波</em>伤害、<em>魔法飞弹</em>或远程钝器。免疫寒冷和火焰，不要浪费法术。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>胶质方块 Gelatinous Cube <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>10尺见方的完美透明凝胶体，在地城走廊中缓慢推进，吞食一切有机物。因完全透明而极难被发现。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>泥怪 (Ooze)</td></tr>
+        <tr><td>HD</td><td>4d8+32 (50 HP)</td></tr>
+        <tr><td>AC</td><td>3 (敏捷-5, 体型-2)</td></tr>
+        <tr><td>攻击</td><td>吞噬 (Engulf) DC 13</td></tr>
+        <tr><td>特殊能力</td><td>麻痹 DC 20；酸液 1d6；透明 (Transparent)：侦察 DC 26 才能发现；免疫寒冷/火焰；10尺方块</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>胶质方块完全填满10尺走廊，必须消灭或绕过。透明特性使其极难发现——向可疑区域投掷面粉或泼水可暴露其轮廓。被吞噬者在酸液中每轮受伤且可能麻痹。用电击或音波伤害效果最佳。</div>
+    </div>
+
+    <!-- ==================== SECTION 5 ==================== -->
+    <h2 class="section-title" id="rare-oozes">稀有泥怪 (Rare Oozes)</h2>
+
+    <div class="monster-entry">
+      <h3>绿粘液 Green Slime <span class="cr-badge cr-low">CR 2 (危害)</span></h3>
+      <p>墙壁和天花板上的危险植物性黏液，可吞噬金属、木材和血肉。一旦附着在皮肤上极难去除，是一种环境危害而非传统怪物。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2 (危害)</span></td></tr>
+        <tr><td>体型</td><td>超微型 (Diminutive)</td></tr>
+        <tr><td>类型</td><td>泥怪 (Ooze)</td></tr>
+        <tr><td>HD</td><td>1 HP</td></tr>
+        <tr><td>AC</td><td>—</td></tr>
+        <tr><td>攻击</td><td>吞噬金属/木材/血肉</td></tr>
+        <tr><td>特殊能力</td><td>移除 DC 16；弱点：寒冷、火焰、阳光、<em>移除疾病</em></td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>绿粘液不是传统战斗敌人，而是环境危害。它会从天花板上掉落到经过的生物身上，开始吞噬血肉和装备。移除方法：刮除（DC 16）、<em>移除疾病</em>、火焰或寒冷。阳光也可杀死它。预防：通过时用长杆探路，检查天花板。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>褐霉菌 Brown Mold <span class="cr-badge cr-low">CR 2 (危害)</span></h3>
+      <p>吸收热量的危险菌类，在30尺范围内造成寒冷伤害。火焰反而会让它急剧增长，是反直觉的环境威胁。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2 (危害)</span></td></tr>
+        <tr><td>体型</td><td>超微型 (Diminutive)</td></tr>
+        <tr><td>类型</td><td>泥怪 (Ooze)</td></tr>
+        <tr><td>HD</td><td>—</td></tr>
+        <tr><td>AC</td><td>—</td></tr>
+        <tr><td>攻击</td><td>吸收热量：30尺范围内造成 3d6 寒冷伤害</td></tr>
+        <tr><td>特殊能力</td><td>吸收热量成长；弱点：火焰</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>褐霉菌是反直觉的威胁——<strong>火焰会让它增长</strong>而非消灭它！正确做法是用火焰在远距离小心消灭（小面积火焰），<em>造冰术</em>或寒冷效果也可削弱它。不要走近30尺范围内。<em>防护寒冷</em>可减少其伤害。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>黄霉菌 Yellow Mold <span class="cr-badge cr-low">CR 1 (危害)</span></h3>
+      <p>释放有毒孢子的危险菌类，孢子同时造成体质和感知伤害。占据5尺方格，是地城中常见的隐藏危害。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1 (危害)</span></td></tr>
+        <tr><td>体型</td><td>超微型 (Diminutive)</td></tr>
+        <tr><td>类型</td><td>泥怪 (Ooze)</td></tr>
+        <tr><td>HD</td><td>—</td></tr>
+        <tr><td>AC</td><td>—</td></tr>
+        <tr><td>攻击</td><td>毒孢子 DC 15 (1d3 体质 + 1d3 感知)</td></tr>
+        <tr><td>特殊能力</td><td>填充5尺方格；弱点：阳光</td></tr>
+      </table>
+      <div class="tactic"><strong>战斗策略：</strong>黄霉菌被触碰时会释放毒孢子云，对5尺内所有生物造成毒素伤害。同时降低体质和感知非常危险——体质降至0意味着死亡。用远程方式触发它（如投掷石头），或用<em>昼明术</em>消灭。进入可疑区域时佩戴口罩。</div>
+    </div>
+
+    <!-- ==================== SECTION 6 ==================== -->
+    <h2 class="section-title" id="ooze-compare">泥怪对照表</h2>
+
+    <p>以下表格对比了所有主要泥怪的关键属性，方便DM快速查阅：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>泥怪名称</th>
+          <th>CR</th>
+          <th>体型</th>
+          <th>HP</th>
+          <th>AC</th>
+          <th>特殊能力</th>
+          <th>分裂规则</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>灰泥怪 Gray Ooze</td>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>中型</td>
+          <td>22</td>
+          <td>11</td>
+          <td>腐蚀金属</td>
+          <td>不分裂</td>
+        </tr>
+        <tr>
+          <td>胶质方块 Gelatinous Cube</td>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>大型</td>
+          <td>50</td>
+          <td>3</td>
+          <td>吞噬，麻痹，透明</td>
+          <td>不分裂</td>
+        </tr>
+        <tr>
+          <td>赭石果冻 Ochre Jelly</td>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>大型</td>
+          <td>76</td>
+          <td>8</td>
+          <td>酸液，绞缠</td>
+          <td>斩击/雷电 → 分裂</td>
+        </tr>
+        <tr>
+          <td>黑布丁 Black Pudding</td>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>大型</td>
+          <td>95</td>
+          <td>7</td>
+          <td>酸液，腐蚀金属/木</td>
+          <td>斩击/穿刺 → 分裂</td>
+        </tr>
+        <tr>
+          <td>绿粘液 Green Slime</td>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>超微型</td>
+          <td>1</td>
+          <td>—</td>
+          <td>吞噬金属/木/肉</td>
+          <td>不适用（危害）</td>
+        </tr>
+        <tr>
+          <td>褐霉菌 Brown Mold</td>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>超微型</td>
+          <td>—</td>
+          <td>—</td>
+          <td>吸热，3d6寒冷伤害</td>
+          <td>火焰 → 增长</td>
+        </tr>
+        <tr>
+          <td>黄霉菌 Yellow Mold</td>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td>超微型</td>
+          <td>—</td>
+          <td>—</td>
+          <td>毒孢子 (Con+Wis)</td>
+          <td>不适用（危害）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="immunity-note">
+      <strong>泥怪通用规则：</strong><br>
+      &bull; 所有泥怪免疫：毒素、睡眠、麻痹、变形、心灵效果、重击、夹击<br>
+      &bull; 大多数泥怪免疫：视觉依赖效果（盲视）<br>
+      &bull; 灰泥怪和胶质方块免疫：寒冷、火焰<br>
+      &bull; 赭石果冻免疫：寒冷、火焰<br>
+      &bull; 黑布丁免疫：寒冷、火焰<br>
+      &bull; <strong>分裂规则</strong>：分裂后的每个个体拥有原始HP的一半，体型缩小一级。可继续分裂直到HP不足
+    </div>
+
+    <!-- ==================== SECTION 7 ==================== -->
+    <h2 class="section-title" id="cr-table">CR速查表</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>CR</th>
+          <th>怪物名称</th>
+          <th>类型</th>
+          <th>特色能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cr-badge cr-low">1/4</span></td>
+          <td>尖叫蘑菇 Shrieker</td>
+          <td>植物</td>
+          <td>尖叫吸引生物</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td>黄霉菌 Yellow Mold</td>
+          <td>泥怪(危害)</td>
+          <td>毒孢子 (Con+Wis)</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1/2-6</span></td>
+          <td>菌人 Myconid</td>
+          <td>植物</td>
+          <td>共鸣/动画/毒素孢子</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>黄霉藤蔓 Yellow Musk Creeper</td>
+          <td>植物</td>
+          <td>花粉控制，制造僵尸</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>绿粘液 Green Slime</td>
+          <td>泥怪(危害)</td>
+          <td>吞噬金属/木/肉</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>褐霉菌 Brown Mold</td>
+          <td>泥怪(危害)</td>
+          <td>吸热，3d6寒冷</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>紫色菌 Violet Fungus</td>
+          <td>植物</td>
+          <td>4触手带毒</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>刺客藤 Assassin Vine</td>
+          <td>植物</td>
+          <td>伪装，绞缠，纠缠</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>灰泥怪 Gray Ooze</td>
+          <td>泥怪</td>
+          <td>腐蚀金属</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td>胶质方块 Gelatinous Cube</td>
+          <td>泥怪</td>
+          <td>吞噬，麻痹，透明</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>蹒跚灌木 Shambling Mound</td>
+          <td>植物</td>
+          <td>雷电治愈，火焰弱点</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>卷须怪 Tendriculos</td>
+          <td>植物</td>
+          <td>再生5，吞噬活物</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">6</span></td>
+          <td>赭石果冻 Ochre Jelly</td>
+          <td>泥怪</td>
+          <td>酸液，斩击/雷电分裂</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td>黑布丁 Black Pudding</td>
+          <td>泥怪</td>
+          <td>酸液，斩击/穿刺分裂，腐蚀</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">8</span></td>
+          <td>树人 Treant</td>
+          <td>植物</td>
+          <td>唤醒树木，投石，火焰弱点</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-high">12+</span></td>
+          <td>远古树人 Elder Treant</td>
+          <td>植物</td>
+          <td>增强版树人能力</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:40px; text-align:center; color:#888;">← 上一页：<a href="giants-constructs.html">巨人与构装体</a> | 返回 <a href="intro.html">怪物总览</a></p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

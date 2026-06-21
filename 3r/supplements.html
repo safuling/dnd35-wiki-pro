@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>专题扩展 - 3R扩展大全 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* 专题扩展页面专用样式 */
+  .topic-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .badge-psionics { background: var(--accent-purple); }
+  .badge-tob { background: #c0392b; }
+  .badge-fiend { background: #8b0000; }
+  .badge-dragon { background: var(--accent-gold); }
+  .badge-undead { background: #2c3e50; }
+  .badge-env { background: var(--accent-blue); }
+  .badge-horror { background: #6c3483; }
+  .badge-ref { background: var(--accent-green); }
+
+  .section-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 24px;
+    margin: 28px 0;
+  }
+  .section-block h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-gold);
+  }
+
+  .rule-box {
+    background: #fdf8ef;
+    border-left: 4px solid var(--accent-gold);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .rule-box h4 {
+    margin-top: 0;
+    color: var(--text-heading);
+    font-size: 15px;
+  }
+
+  .power-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .power-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px;
+    transition: transform 0.15s;
+  }
+  .power-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+  .power-card h4 { margin-top: 0; color: var(--text-heading); font-size: 14px; }
+  .power-card .power-level { font-size: 12px; color: var(--accent-purple); font-weight: 700; }
+  .power-card .power-desc { font-size: 13px; margin-top: 6px; line-height: 1.5; }
+
+  .discipline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .discipline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 16px;
+    border-top: 3px solid var(--accent-red);
+  }
+  .discipline-card h4 { margin-top: 0; color: var(--text-heading); }
+  .discipline-card .disc-en { font-size: 12px; color: #888; margin-bottom: 6px; }
+  .discipline-card .disc-desc { font-size: 13px; line-height: 1.6; }
+
+  .lord-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .lord-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 16px;
+    border-left: 4px solid #8b0000;
+  }
+  .lord-card h4 { margin-top: 0; color: #8b0000; }
+  .lord-card .lord-title { font-size: 12px; color: var(--text-subtle); font-style: italic; }
+  .lord-card .lord-desc { font-size: 13px; line-height: 1.6; margin-top: 8px; }
+
+  .dragon-age-table td, .dragon-age-table th {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .env-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .env-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+  .env-card h4 { margin-top: 0; color: var(--accent-blue); }
+  .env-card .env-desc { font-size: 13px; line-height: 1.6; }
+
+  .book-ref-table th {
+    background: var(--bg-table-head);
+    font-size: 13px;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  .book-ref-table td {
+    font-size: 13px;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .hell-layer-table td { font-size: 13px; padding: 6px 10px; }
+  .hell-layer-table th { font-size: 13px; padding: 6px 10px; background: #4a1010; color: #fff; }
+
+  .source-group-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-heading);
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 6px;
+    margin: 32px 0 16px;
+  }
+
+  .toc-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius);
+    padding: 18px 24px;
+    margin: 20px 0 30px;
+  }
+  .toc-box .toc-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-heading);
+    margin-bottom: 10px;
+  }
+  .toc-box ol { padding-left: 22px; }
+  .toc-box li { margin-bottom: 4px; font-size: 14px; }
+  .toc-box a { color: var(--text-link); }
+
+  .sub-section { margin: 20px 0; }
+  .sub-section h3 {
+    color: var(--text-heading);
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent-gold);
+  }
+
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  table.data-table th {
+    background: var(--bg-table-head);
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-heading);
+  }
+  table.data-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  table.data-table tr:nth-child(even) { background: var(--bg-table-stripe); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" class="active" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">3R 扩展大全</div>
+      <a href="index-v2.html">总览</a>
+      <a href="classes.html">扩展职业</a>
+      <a href="races.html">扩展种族</a>
+      <a href="feats.html">扩展专长</a>
+      <a href="spells.html">扩展法术</a>
+      <a href="equipment.html">扩展装备</a>
+      <a href="monsters.html">扩展怪物</a>
+      <a href="supplements.html" class="active">专题扩展</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">主站</div>
+      <a href="../index.html">首页</a>
+      <a href="../rules.html">核心规则</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>📚 专题扩展 Specialized Expansion Topics</h1>
+    <p class="toc-desc">本页面收录 D&D 3.5e 官方扩展规则书中<strong>不属于职业/种族/专长/法术/装备/怪物</strong>分类的专题系统。
+    涵盖灵能、九剑武术、魔鬼与恶魔领主、龙族生态、亡灵规则、极端环境以及恐怖与战争战役系统。
+    所有数据来源于官方 3.5e 扩展书，适用于灰鹰 (Greyhawk) 和被遗忘国度 (Forgotten Realms) 战役设定。</p>
+
+    <!-- 目录 -->
+    <div class="toc-box">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#psionics">灵能系统 Expanded Psionics Handbook</a></li>
+        <li><a href="#tob">九剑武术系统 Tome of Battle</a></li>
+        <li><a href="#fiendish">恶魔与魔鬼法典 Fiendish Codex I &amp; II</a></li>
+        <li><a href="#draconomicon">龙族之书 Draconomicon</a></li>
+        <li><a href="#libris-mortis">亡灵之书 Libris Mortis</a></li>
+        <li><a href="#environment">环境书系列 Sandstorm / Frostburn / Stormwrack</a></li>
+        <li><a href="#heroes">英雄系列 Heroes of Horror / Heroes of Battle</a></li>
+        <li><a href="#book-ref">扩展书速查表</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         一、灵能系统 Expanded Psionics Handbook
+         ============================================================ -->
+    <div class="section-block" id="psionics">
+      <h2><span class="topic-badge badge-psionics">灵能</span> 一、灵能系统 Expanded Psionics Handbook (XPH)</h2>
+      <p><strong>Expanded Psionics Handbook</strong>（简称 XPH）是 D&D 3.5e 的灵能核心规则书，提供了一套完全独立于奥术/神术的超自然力量体系——<strong>灵能 (Psionics)</strong>。
+      灵能使用者不依赖法术位或法术书，而是通过<strong>灵能点 (Power Points)</strong>来显化灵能异能 (Powers)，并可通过<strong>增幅 (Augment)</strong>机制消耗额外灵能点来增强异能效果。</p>
+
+      <div class="sub-section">
+        <h3>1.1 灵能职业概述</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>职业</th>
+              <th>英文名</th>
+              <th>HD</th>
+              <th>核心属性</th>
+              <th>特点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>灵能者</strong></td>
+              <td>Psion</td>
+              <td>d4</td>
+              <td>智力</td>
+              <td>灵能版"法师"，选择1个学派专攻，掌握最多异能</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td><strong>灵能战士</strong></td>
+              <td>Psychic Warrior</td>
+              <td>d8</td>
+              <td>感知</td>
+              <td>灵能版"战士/圣武士"，近战与灵能结合，可学灵能武器</td>
+            </tr>
+            <tr>
+              <td><strong>狂念者</strong></td>
+              <td>Wilder</td>
+              <td>d6</td>
+              <td>魅力</td>
+              <td>灵能版"术士"，通过狂野涌动 (Wild Surge) 增幅异能</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td><strong>魂刃者</strong></td>
+              <td>Soulknife</td>
+              <td>d10</td>
+              <td>感知</td>
+              <td>以心灵凝聚出念刃 (Mind Blade)，无需武器即可战斗</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-section">
+        <h3>1.2 灵能者六大学派 (Psion Disciplines)</h3>
+        <div class="discipline-grid">
+          <div class="discipline-card">
+            <h4>心灵感应学派</h4>
+            <div class="disc-en">Telepathy</div>
+            <div class="disc-desc">操控思想与感知。擅长精神控制、读取思维、精神护盾。关键异能包括心灵探针 (Mind Probe)、精神控制 (Domination)、思想护盾 (Mind Blank, Psionic)。</div>
+          </div>
+          <div class="discipline-card">
+            <h4>心灵传动学派</h4>
+            <div class="disc-en">Telekinesis (Metacreativity)</div>
+            <div class="disc-desc">以意念操纵物质。可隔空取物、飞行、创造力场效果。关键异能包括念力推移 (Telekinetic Force)、飞行术 (Fly, Psionic)、星质构装体 (Astral Construct)。</div>
+          </div>
+          <div class="discipline-card">
+            <h4>心灵预言学派</h4>
+            <div class="disc-en">Clairsentience</div>
+            <div class="disc-desc">超自然感知与预知能力。可侦察远处、预知未来、感知隐形。关键异能包括远视 (Remote Viewing)、全知术 (Omniscient Eye)、真知术 (True Seeing, Psionic)。</div>
+          </div>
+          <div class="discipline-card">
+            <h4>心灵变化学派</h4>
+            <div class="disc-en">Psychometabolism</div>
+            <div class="disc-desc">改变自身或他人的肉体形态。可变形、加速、强化肉体。关键异能包括变形术 (Metamorphosis)、加速术 (Haste, Psionic)、体型改变 (Expansion)。</div>
+          </div>
+          <div class="discipline-card">
+            <h4>心灵传送学派</h4>
+            <div class="disc-en">Psychoportation</div>
+            <div class="disc-desc">操纵空间与时间进行传送和位移。关键异能包括次元门 (Dimension Door, Psionic)、传送术 (Teleport, Psionic)、时间跳跃 (Time Hop)。</div>
+          </div>
+          <div class="discipline-card">
+            <h4>星质投射学派</h4>
+            <div class="disc-en">Metapsionics / Ecto Adept</div>
+            <div class="disc-desc">操纵灵质能量与星质形态。可创造星质护甲、投射星质武器。关键异能包括星质护甲 (Ectoplasmic Armor)、灵质爆破 (Ectoplasmic Blast)。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>1.3 灵能点系统 (Power Point System)</h3>
+        <div class="rule-box">
+          <h4>灵能点规则</h4>
+          <p><strong>灵能点上限</strong> = 职业等级 &times; (职业修正 + 关键属性调整值)。例如灵能者 (Psion) 的灵能点 = 等级 &times; (等级/2 + 智力调整值)。</p>
+          <p><strong>显能消耗</strong>：每个异能有基础消耗（通常等于异能等级），可通过<strong>增幅 (Augment)</strong>额外消耗灵能点增强效果。单次显能的灵能点消耗不能超过施法者等级。</p>
+          <p><strong>恢复方式</strong>：8小时完整休息后恢复全部灵能点。冥想 (Meditation) 技能可缩短恢复时间。</p>
+          <p><strong>显能失败</strong>：灵能者无需克服法术抗力时使用显能专注 (Manifesting) 技能检定；异能可被法术抗性 (SR) 和灵能抗性 (PR) 抵抗。</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>1.4 关键灵能异能与灵能物品</h3>
+        <div class="power-card-grid">
+          <div class="power-card">
+            <div class="power-level">1级异能</div>
+            <h4>星质弹幕 Ectoplasmic Blast</h4>
+            <div class="power-desc">发射一团星质能量，造成 1d10 伤害。增幅后伤害提升。灵能者的基础攻击手段。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">1级异能</div>
+            <h4>心灵护甲 Inertial Armor</h4>
+            <div class="power-desc">以灵能力场包裹自身，获得 +4 护甲加值 AC。增幅后可提升至 +8。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">2级异能</div>
+            <h4>精神链接 Empathic Transfer</h4>
+            <div class="power-desc">将自身伤害转移给目标，或转移治疗。增幅可造成大量精神伤害。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">2级异能</div>
+            <h4>体型改变 Expansion</h4>
+            <div class="power-desc">增大自身体型一个等级，获得力量加值和触及范围增加。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">3级异能</div>
+            <h4>星质构装体 Astral Construct</h4>
+            <div class="power-desc">召唤一个由星质构成的生物为你战斗。可自定义外观与能力选项。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">3级异能</div>
+            <h4>心灵屏障 Mind Blank, Psionic</h4>
+            <div class="power-desc">免疫所有预言系探测和精神控制效果。持续时间极长。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">4级异能</div>
+            <h4>变形术 Metamorphosis</h4>
+            <div class="power-desc">变身为另一种生物，获得其特殊能力与属性。灵能版"变形术"。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">4级异能</div>
+            <h4>心灵探针 Mind Probe</h4>
+            <div class="power-desc">深入读取目标思维，获取其记忆和秘密。目标可尝试意志豁免抵抗。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">5级异能</div>
+            <h4>灵能传送术 Teleport, Psionic</h4>
+            <div class="power-desc">瞬间传送自身及同伴至目的地。增幅后可跨位面传送。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">5级异能</div>
+            <h4>精神控制 Domination, Psionic</h4>
+            <div class="power-desc">完全控制目标生物的行动。目标获得一次意志豁免机会。增幅可延长持续时间。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">6级异能</div>
+            <h4>时间加速 Schism</h4>
+            <div class="power-desc">将意识一分为二，每轮可额外显化一个异能。极大地提升灵能输出效率。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">6级异能</div>
+            <h4>物质解构 Disintegrate, Psionic</h4>
+            <div class="power-desc">将目标分解为尘埃。造成大量伤害，目标降至 0HP 则被完全解构。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">7级异能</div>
+            <h4>次元门 Dimension Door, Psionic</h4>
+            <div class="power-desc">短距离瞬间移动，增幅后可携带多名同伴。无需视线即可传送。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">7级异能</div>
+            <h4>精神爆破 Psychic Crush</h4>
+            <div class="power-desc">以灵能压缩目标精神，造成 3d6 点属性伤害并可能震慑目标。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">8级异能</div>
+            <h4>真知术 True Seeing, Psionic</h4>
+            <div class="power-desc">看穿一切幻术、变形、隐形和以太效果。增幅后获得全方位感知。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">8级异能</div>
+            <h4>心灵震荡 Mind Thrust, Greater</h4>
+            <div class="power-desc">释放强大精神冲击波，对范围内所有生物造成大量精神伤害。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">9级异能</div>
+            <h4>天启 Apocalypse from the Sky</h4>
+            <div class="power-desc">终极灵能异能，对区域内所有敌人造成毁灭性伤害。消耗极大灵能点。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">9级异能</div>
+            <h4>心灵创造 Genesis</h4>
+            <div class="power-desc">创造一个全新的半位面 (Demiplane)，可自定义环境规则。终极创造异能。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">9级异能</div>
+            <h4>精神囚笼 Microcosm</h4>
+            <div class="power-desc">将目标意识困入一个微缩世界中，目标在现实世界中陷入永久昏迷。</div>
+          </div>
+          <div class="power-card">
+            <div class="power-level">9级异能</div>
+            <h4>现实改写 Reality Revision</h4>
+            <div class="power-desc">灵能版"许愿术"，可改写现实的某一方面。使用需极为谨慎。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>1.5 灵能专长与灵能物品</h3>
+        <div class="rule-box">
+          <h4>核心灵能专长</h4>
+          <p><strong>超灵能专长 (Metapsionic Feats)</strong>：类似超魔专长，可增幅异能效果并增加灵能点消耗。包括：</p>
+          <ul>
+            <li><strong>增幅异能 Empower Power</strong>：异能可变数值效果 &times;1.5，+2 灵能点</li>
+            <li><strong>极效异能 Maximize Power</strong>：异能可变数值取最大值，+4 灵能点</li>
+            <li><strong>扩展异能 Extend Power</strong>：持续时间翻倍，+2 灵能点</li>
+            <li><strong>广域异能 Widen Power</strong>：影响范围翻倍，+4 灵能点</li>
+            <li><strong>瞬发异能 Quicken Power</strong>：以迅捷动作显能，+6 灵能点</li>
+          </ul>
+          <p style="margin-top:10px;"><strong>灵能物品 (Psionic Items)</strong>：包括灵能武器 (Psionic Weapons)、灵能装甲 (Psionic Armor)、灵能水晶 (Power Stones，类似法术卷轴)、灵能纹身 (Psionic Tattoos) 以及意识之石 (Cognizance Crystals，储存额外灵能点)。灵能物品制造需要对应的灵能专长。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         二、九剑武术系统 Tome of Battle
+         ============================================================ -->
+    <div class="section-block" id="tob">
+      <h2><span class="topic-badge badge-tob">九剑</span> 二、九剑武术系统 Tome of Battle: The Book of Nine Swords</h2>
+      <p><strong>Tome of Battle</strong>（简称 ToB）为近战职业引入了革命性的<strong>武术系统 (Martial Maneuver System)</strong>，
+      让战士、野蛮人等近战角色获得了类似施法者的战术深度。武术家通过<strong>武术招式 (Maneuvers)</strong>在战斗中施展超凡武技，
+      这些招式分为四大类型：<strong>打击 (Strikes)</strong>、<strong>强化 (Boosts)</strong>、<strong>反击 (Counters)</strong>和<strong>架势 (Stances)</strong>。</p>
+
+      <div class="sub-section">
+        <h3>2.1 武术招式类型</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>类型</th>
+              <th>英文名</th>
+              <th>动作</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>打击</strong></td>
+              <td>Strikes</td>
+              <td>标准动作</td>
+              <td>替代普通攻击的特殊打击技。通常附带额外伤害、特殊效果或状态。每次使用后需恢复。</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td><strong>强化</strong></td>
+              <td>Boosts</td>
+              <td>迅捷动作</td>
+              <td>暂时增强自身攻击、防御或移动能力的增益效果。持续 1 轮或直到触发条件。</td>
+            </tr>
+            <tr>
+              <td><strong>反击</strong></td>
+              <td>Counters</td>
+              <td>即时动作</td>
+              <td>在敌方回合使用的反应技。可格挡攻击、反制行动或惩罚敌方失误。</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td><strong>架势</strong></td>
+              <td>Stances</td>
+              <td>迅捷动作</td>
+              <td>持续生效的战斗姿态。提供被动增益直到切换架势。不会消耗，可无限维持。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-section">
+        <h3>2.2 九大武术学派 (Nine Martial Disciplines)</h3>
+        <div class="discipline-grid">
+          <div class="discipline-card" style="border-top-color:#2980b9;">
+            <h4>白鸦学派</h4>
+            <div class="disc-en">White Raven — 领导与战术</div>
+            <div class="disc-desc">以团队领导和战术指挥为核心。招式可增益盟友、协调阵型、发动联合攻击。招牌技：<strong>白鸦战术 (White Raven Tactics)</strong>——赋予盟友额外行动。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#c0392b;">
+            <h4>铁心学派</h4>
+            <div class="disc-en">Iron Heart — 纯剑术巅峰</div>
+            <div class="disc-desc">追求剑术极致的纯粹武技学派。招式聚焦精准斩击、多段攻击和压倒性伤害。招牌技：<strong>铁心斩 (Iron Heart Surge)</strong>——摆脱一切负面状态继续战斗。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#2c3e50;">
+            <h4>暗影学派</h4>
+            <div class="disc-en">Shadow Hand — 暗影暗杀</div>
+            <div class="disc-desc">利用暗影力量进行潜行与暗杀。招式包含瞬移、隐形、致命偷袭。招牌技：<strong>暗影闪现 (Shadow Blink)</strong>——短距传送至目标背后发动致命一击。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#d35400;">
+            <h4>虎爪学派</h4>
+            <div class="disc-en">Tiger Claw — 野性战斗</div>
+            <div class="disc-desc">模仿野兽战斗方式的凶猛学派。招式强调猛扑、跳跃攻击和撕裂打击。招牌技：<strong>猛虎扑击 (Wolf Fang Strike)</strong>——在单次攻击中发动两次致命打击。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#7f8c8d;">
+            <h4>石龙学派</h4>
+            <div class="disc-en">Stone Dragon — 坚韧防御</div>
+            <div class="disc-desc">以大地之力强化防御的刚毅学派。招式提供伤害减免、地震效果和不可阻挡的力量。招牌技：<strong>山崩地裂 (Mountain Tombstone Strike)</strong>——造成大量体质伤害。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#f39c12;">
+            <h4>沙漠风学派</h4>
+            <div class="disc-en">Desert Wind — 火焰与极速</div>
+            <div class="disc-desc">融合火焰元素与极速身法的攻击性学派。招式附带火焰伤害和高速移动。招牌技：<strong>炎舞斩 (Burning Brand)</strong>——武器燃烧并对敌人造成持续火焰伤害。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#27ae60;">
+            <h4>碎骨学派</h4>
+            <div class="disc-en">Devoted Spirit — 圣武士式守护</div>
+            <div class="disc-desc">以坚定信念守护同伴的防御学派。招式提供治疗、护盾和不屈意志。招牌技：<strong>献身斩 (Castigating Strike)</strong>——打击邪恶敌人并为盟友提供增益。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#8e44ad;">
+            <h4>暮光之爪学派</h4>
+            <div class="disc-en">Setting Sun — 投掷与反制</div>
+            <div class="disc-desc">以柔克刚、借力打力的技巧型学派。招式可投掷敌人、反制攻击、利用敌方力量。招牌技：<strong>落日投 (Ballista Throw)</strong>——将敌人当作投掷武器扔出。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#1abc9c;">
+            <h4>永恒冰霜学派</h4>
+            <div class="disc-en">Frozen Frost / Sublime Way</div>
+            <div class="disc-desc">操纵冰霜之力的控制型学派。招式附带寒冷伤害和冻结效果。招牌技：<strong>永冻斩 (Frostbite Strike)</strong>——武器附霜并可能冻结目标。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>2.3 恢复方法与武术等级</h3>
+        <div class="rule-box">
+          <h4>招式恢复 (Maneuver Recovery)</h4>
+          <p><strong>标准恢复</strong>：使用全回合攻击动作或标准动作进行普通攻击后，所有已使用的招式自动恢复准备状态。</p>
+          <p><strong>特殊恢复</strong>：部分职业特性允许以迅捷动作恢复单个招式（如剑圣的 Adaptive Style 特性）。</p>
+          <p><strong>架势</strong>不需要恢复，可随时以迅捷动作切换。</p>
+        </div>
+        <div class="rule-box">
+          <h4>武术家等级 (Initiator Level)</h4>
+          <p><strong>武术家等级</strong> = 武术职业等级 + 其他近战职业等级 / 2 + 非近战职业等级 / 4。</p>
+          <p>武术家等级决定可学习的最高招式等级（类似施法者等级决定法术等级）。1级可学1级招式，每4级解锁更高一级，最高9级。</p>
+          <p>多职业角色在计算武术家等级时，所有拥有 HD 的职业均可贡献（以不同比例），这使得多职业武术家仍然能有效使用高等级招式。</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>2.4 武术专家多职业建议</h3>
+        <div class="rule-box">
+          <h4>多职业与武术系统</h4>
+          <p><strong>兼职建议</strong>：武术家职业的等级直接影响已知招式数量和最高招式等级，因此建议以武术家职业为主职业。兼职施法者（如法师/牧师）会导致武术家等级被稀释（非近战职业仅以 1/4 计算）。</p>
+          <p><strong>推荐搭配</strong>：战士 (Fighter) / 野蛮人 (Barbarian) / 游荡者 (Rogue) 兼职不会严重稀释武术家等级（1/2 计算），且可弥补武术家职业的弱点。圣武士 (Paladin) 兼职碎骨学派可获得极强的协同效果。</p>
+          <p><strong>入门时机</strong>：武术家职业可从 1 级开始，也可通过进阶职业（如 Bloodstorm Blade、Ruby Knight Vindicator、Eternal Blade）在中后期转入武术系统。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         三、恶魔与魔鬼法典 Fiendish Codex I & II
+         ============================================================ -->
+    <div class="section-block" id="fiendish">
+      <h2><span class="topic-badge badge-fiend">魔界</span> 三、恶魔与魔鬼法典 Fiendish Codex I &amp; II</h2>
+      <p><strong>Fiendish Codex I: Hordes of the Abyss</strong> 和 <strong>Fiendish Codex II: Tyrants of the Nine Hells</strong>
+      详细描述了 D&D 宇宙中最邪恶的两大势力——<strong>深渊 (The Abyss)</strong> 中的恶魔 (Demons) 和 <strong>巴托地狱 (Baator/Nine Hells)</strong> 中的魔鬼 (Devils)。</p>
+
+      <div class="sub-section">
+        <h3>3.1 巴托地狱九层 (Nine Layers of Baator)</h3>
+        <table class="data-table hell-layer-table">
+          <thead>
+            <tr>
+              <th>层级</th>
+              <th>名称</th>
+              <th>统治者</th>
+              <th>特征</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>阿维努斯</strong> (Avernus)</td>
+              <td>贝利亚尔 (Belial) / 前：扎瑞尔 (Zariel)</td>
+              <td>血红天空、火焰平原，地狱入口与战争前线</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td>2</td>
+              <td><strong>迪斯帕特</strong> (Dis)</td>
+              <td>迪斯帕特 (Dispater)</td>
+              <td>铁城迪斯 (Iron City of Dis)，阴谋与间谍中心</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>米纳埃托斯</strong> (Minauros)</td>
+              <td>玛蒙 (Mammon)</td>
+              <td>腐败沼泽与贪婪之城，财富与堕落的象征</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td>4</td>
+              <td><strong>弗莱格索斯</strong> (Phlegethos)</td>
+              <td>贝利尔 (Baalzebul)</td>
+              <td>永恒火焰之地，痛苦与酷刑的核心</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>斯泰吉亚</strong> (Stygia)</td>
+              <td>莱维斯图斯 (Levistus)</td>
+              <td>冰封之海，背叛者被冻结于冰中</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td>6</td>
+              <td><strong>马拉多米尼</strong> (Maladomini)</td>
+              <td>贝利尔 (Baalzebul) 之废墟领地</td>
+              <td>崩塌的城市废墟，象征衰败与虚荣</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><strong>马拉博尔杰</strong> (Malbolge)</td>
+              <td>格拉西雅 (Glasya)</td>
+              <td>无尽坠落的巨大岩石，罪犯的流放地</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td>8</td>
+              <td><strong>卡尼亚</strong> (Cania)</td>
+              <td>墨菲斯托菲利斯 (Mephistopheles)</td>
+              <td>极寒冰原与奥术研究之所</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><strong>涅萨斯</strong> (Nessus)</td>
+              <td><strong>阿斯莫迪尔斯 (Asmodeus)</strong></td>
+              <td>地狱最深处，阿斯莫迪尔斯的王座所在</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-section">
+        <h3>3.2 深渊层域概览 (Layers of the Abyss)</h3>
+        <p>深渊 (The Abyss) 拥有无限多的层域，每一层都由一位或多位<strong>恶魔领主 (Demon Lord)</strong> 统治。以下为最著名的深渊层域：</p>
+        <div class="rule-box">
+          <h4>著名深渊层域</h4>
+          <ul>
+            <li><strong>第1层——哀痛之门 (Pazunia/Pazrael)</strong>：深渊入口，由帕祖祖 (Pazuzu) 掌控</li>
+            <li><strong>第88层——深渊巨渊 (Gaping Maw)</strong>：德摩戈根 (Demogorgon) 的领地，双头恶魔王子</li>
+            <li><strong>第113层——萨纳托斯 (Thanatos)</strong>：奥库斯 (Orcus) 的亡灵王国</li>
+            <li><strong>第452层——碎骨深渊 (Shattered Plains)</strong>：永无止境的战场</li>
+            <li><strong>第666层——深渊之心</strong>：传说中深渊最深层</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>3.3 魔王档案 (Fiend Lord Profiles)</h3>
+        <div class="lord-grid">
+          <div class="lord-card">
+            <h4>阿斯莫迪尔斯 Asmodeus</h4>
+            <div class="lord-title">地狱之王 / Lord of the Nine Hells</div>
+            <div class="lord-desc">统治巴托地狱九层的至高魔鬼。真正的力量远超所有大魔鬼之和。传说他并非普通魔鬼出身，而是自远古时代便存在的原初存在。其目标是收集足够的灵魂以获得超越诸神的力量。</div>
+          </div>
+          <div class="lord-card">
+            <h4>德摩戈根 Demogorgon</h4>
+            <div class="lord-title">恶魔王子 / Prince of Demons</div>
+            <div class="lord-desc">拥有双头的巨型恶魔领主，是深渊中最强大的恶魔之一。两个头颅分别代表混乱与疯狂，不断争论却又协同行动。统治第88层深渊巨渊，其凝视可使凡人陷入永久疯狂。</div>
+          </div>
+          <div class="lord-card">
+            <h4>奥库斯 Orcus</h4>
+            <div class="lord-title">亡灵恶魔王子 / Demon Prince of the Undead</div>
+            <div class="lord-desc">以巨杖"奥库斯之杖 (Wand of Orcus)"闻名的恶魔领主。统治第113层萨纳托斯，其领域是不死生物的王国。任何被其权杖击杀的生物都会复活为受其控制的亡灵。</div>
+          </div>
+          <div class="lord-card">
+            <h4>格拉西雅 Glasya</h4>
+            <div class="lord-title">地狱公主 / Princess of the Hells</div>
+            <div class="lord-desc">阿斯莫迪尔斯之女，统治第七层马拉博尔杰。以诡诈和操纵著称，是所有大魔鬼中最擅长政治阴谋者。其领地专门收容犯下暴力罪行的女性灵魂。</div>
+          </div>
+          <div class="lord-card">
+            <h4>墨菲斯托菲利斯 Mephistopheles</h4>
+            <div class="lord-title">卡尼亚之主 / Lord of Cania</div>
+            <div class="lord-desc">统治第八层卡尼亚的冰冷地狱，精通奥术魔法与地狱火 (Hellfire)。其研究火焰魔法的造诣甚至超越了部分大魔鬼。常被误认为是仅次于阿斯莫迪尔斯的第二强者。</div>
+          </div>
+          <div class="lord-card">
+            <h4>尤格拉希尔 Yeenoghu</h4>
+            <div class="lord-title">食尸鬼之王 / Demon Lord of Gnolls</div>
+            <div class="lord-desc">三眼食尸鬼恶魔领主，是所有豺狼人 (Gnoll) 的守护神。以残忍和嗜血著称，使用名为"撕裂者 (The Butcher's Billhook)"的三叉鞭。其领域弥漫着永恒的猎杀。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>3.4 契约与灵魂机制 (Pact &amp; Soul Mechanics)</h3>
+        <div class="rule-box">
+          <h4>魔鬼契约规则</h4>
+          <p><strong>灵魂契约 (Soul Pact)</strong>：凡人可通过与魔鬼签订灵魂契约来换取世俗力量、财富或知识。契约以魔法约束，一旦签署即不可轻易撤销。</p>
+          <p><strong>契约等级</strong>：低级契约（财富/寿命）→ 中级契约（魔法力量/不朽肉体）→ 高级契约（类魔鬼能力/领地统治权）。代价随等级递增，最终均需以灵魂支付。</p>
+          <p><strong>灵魂货币</strong>：在地狱中，灵魂是最有价值的货币。被契约束缚的灵魂死后自动坠入巴托地狱，成为低阶魔鬼 (Lemure) 或被提炼为灵魂宝石 (Soul Gems)。</p>
+          <p><strong>解除契约</strong>：极难但非不可能——需要 <em>祈愿术 (Wish)</em>、<em>神迹术 (Miracle)</em> 或找到契约原件并将其销毁（通常存放于地狱深处的保险库中）。</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>3.5 魔界召唤规则</h3>
+        <div class="rule-box">
+          <h4>恶魔/魔鬼召唤</h4>
+          <p><strong>召唤恶魔 (Summon Demon)</strong>：可使用 <em>召唤怪物 (Summon Monster)</em> 系列法术召唤恶魔，但恶魔不受控制时会攻击召唤者。恶魔有 <strong>召唤同类 (Summon Demon)</strong> 能力，可能召唤更多恶魔失控扩散。</p>
+          <p><strong>召唤魔鬼 (Summon Devil)</strong>：魔鬼更为守序，通常遵守召唤条款。但魔鬼会在契约中设下陷阱，利用文字游戏来曲解指令。<em>次元锚 (Dimensional Anchor)</em> 可防止被召唤的魔鬼逃脱。</p>
+          <p><strong>魔法阵 (Magic Circle)</strong>：召唤高等魔界生物必须在防护系魔法阵中进行。<em>次元锁 (Dimensional Lock)</em> 可阻止魔界生物使用传送能力。召唤者必须使用真名 (True Name) 才能完全控制目标。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         四、龙族之书 Draconomicon
+         ============================================================ -->
+    <div class="section-block" id="draconomicon">
+      <h2><span class="topic-badge badge-dragon">龙族</span> 四、龙族之书 Draconomicon: The Book of Dragons</h2>
+      <p><strong>Draconomicon</strong> 是关于 D&D 中最具标志性的生物——龙 (Dragon) 的全面指南，涵盖龙的生态学、心理学、年龄阶段、变体龙种以及将龙作为玩家角色的规则。</p>
+
+      <div class="sub-section">
+        <h3>4.1 龙的生态与心理</h3>
+        <div class="rule-box">
+          <h4>龙的本质</h4>
+          <p>龙是古老而强大的魔法生物，拥有远超凡人的寿命（可达数千年）和智慧。每条龙都有强烈的<strong>领地意识</strong>和<strong>宝藏收集本能</strong>。</p>
+          <p><strong>龙的贪婪 (Dragon Greed)</strong>：龙对宝藏的渴望是本能的、不可抗拒的。龙的巢穴中堆积的财宝越多，龙的体型和力量就越强。这种贪婪不分善恶，即使金龙也无法完全抗拒。</p>
+          <p><strong>龙的骄傲 (Dragon Pride)</strong>：所有龙都拥有极端的自尊心。侮辱一条龙（尤其是质疑其力量或智慧）可能导致灾难性后果。金属龙较为宽容，而五色龙则几乎必然寻求报复。</p>
+          <p><strong>龙的领地</strong>：龙会在巢穴周围数十英里范围内建立领地。领地内的生物会感受到龙的存在（恐惧效果）。龙很少离开领地超过几天。</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>4.2 龙的年龄阶段与力量成长</h3>
+        <table class="data-table dragon-age-table">
+          <thead>
+            <tr>
+              <th>年龄阶段</th>
+              <th>年龄段</th>
+              <th>体型</th>
+              <th>HD 加值</th>
+              <th>龙息伤害骰</th>
+              <th>恐惧 DC 加值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>雏龙 (Wyrmling)</td><td>0-5 年</td><td>中型</td><td>—</td><td>2d8</td><td>—</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td>幼龙 (Very Young)</td><td>6-15 年</td><td>大型</td><td>+3</td><td>4d8</td><td>+1</td></tr>
+            <tr><td>少年 (Young)</td><td>16-25 年</td><td>大型</td><td>+3</td><td>6d8</td><td>+2</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td>青年 (Juvenile)</td><td>26-50 年</td><td>超大型</td><td>+3</td><td>8d8</td><td>+3</td></tr>
+            <tr><td>成年 (Young Adult)</td><td>51-100 年</td><td>超大型</td><td>+3</td><td>10d8</td><td>+4</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td>壮年 (Adult)</td><td>101-200 年</td><td>巨型</td><td>+3</td><td>12d8</td><td>+5</td></tr>
+            <tr><td>老年 (Mature Adult)</td><td>201-400 年</td><td>巨型</td><td>+3</td><td>14d8</td><td>+6</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td>老龄 (Old)</td><td>401-600 年</td><td>超巨型</td><td>+3</td><td>16d8</td><td>+7</td></tr>
+            <tr><td>极老 (Very Old)</td><td>601-800 年</td><td>超巨型</td><td>+3</td><td>18d8</td><td>+8</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td>古龙 (Ancient)</td><td>801-1000 年</td><td>超巨型</td><td>+3</td><td>20d8</td><td>+9</td></tr>
+            <tr><td>太古 (Wyrm)</td><td>1001-1200 年</td><td>超巨型</td><td>+3</td><td>22d8</td><td>+10</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td>上古龙 (Great Wyrm)</td><td>1200+ 年</td><td>超巨型</td><td>+3</td><td>24d8</td><td>+11</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-section">
+        <h3>4.3 龙的变体与特殊龙种</h3>
+        <div class="discipline-grid">
+          <div class="discipline-card" style="border-top-color:#2c3e50;">
+            <h4>暗影龙 Shadow Dragon</h4>
+            <div class="disc-en">Shadow Plane 原生</div>
+            <div class="disc-desc">栖息于影界的龙类，半实体化存在。可喷吐造成力量吸取的暗影吐息。天生拥有影界能力，可融入阴影中。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#e74c3c;">
+            <h4>歌龙 Song Dragon</h4>
+            <div class="disc-en">又称紫铜龙 / Copper Wyrm 变体</div>
+            <div class="disc-desc">以音乐和歌声为武器的奇异龙种。其歌声可迷魅、催眠或令敌人失聪。常见于精灵和半精灵传说中。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#9b59b6;">
+            <h4>位面龙 Planar Dragon</h4>
+            <div class="disc-en">外层位面适应种</div>
+            <div class="disc-desc">长期生活在特定外层位面的龙，进化出对应该位面特性的能力。如天堂山龙 (Mount Celestia)、混沌海龙 (Limbo)、机械境龙 (Mechanus) 等。</div>
+          </div>
+          <div class="discipline-card" style="border-top-color:#f39c12;">
+            <h4>龙巫妖 Dracolich</h4>
+            <div class="disc-en">亡灵龙</div>
+            <div class="disc-desc">自愿转化为亡灵的龙。保留全部智慧、法术能力和龙息，但免疫心灵效果、毒素和变形。需要命匣 (Phylactery) 维持存在。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>4.4 龙作为玩家角色 (Dragon PC Rules)</h3>
+        <div class="rule-box">
+          <h4>龙 PC 规则摘要</h4>
+          <p><strong>等级调整 (LA)</strong>：龙的 LA 取决于年龄阶段和龙种。雏龙的 LA 通常为 +2 至 +5，成年龙可达 +7 以上。DM 应严格限制龙 PC 的年龄阶段。</p>
+          <p><strong>有效角色等级 (ECL)</strong> = 种族 HD + LA + 职业等级。龙 PC 的种族 HD 较高（雏龙通常 7-10 HD），因此 ECL 从 10+ 开始。</p>
+          <p><strong>职业能力</strong>：龙 PC 保留所有种族能力（龙息、恐惧、天生护甲等），同时获得职业等级带来的能力。龙的天生施法能力可叠加奥术施法职业等级。</p>
+          <p><strong>推荐</strong>：龙 PC 适合高等级（15+）战役。低等级团队中出现龙 PC 会严重破坏平衡。建议使用 Savage Species 中的龙 PC 进度表。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         五、亡灵之书 Libris Mortis
+         ============================================================ -->
+    <div class="section-block" id="libris-mortis">
+      <h2><span class="topic-badge badge-undead">亡灵</span> 五、亡灵之书 Libris Mortis: The Book of Undead</h2>
+      <p><strong>Libris Mortis</strong> 是 D&D 3.5e 中关于不死生物 (Undead) 的全面指南，涵盖不死生物的创造规则、模板变体、专属专长以及正/负能量的详细机制。</p>
+
+      <div class="sub-section">
+        <h3>5.1 不死生物创造规则</h3>
+        <div class="rule-box">
+          <h4>创造不死生物</h4>
+          <p><strong>基础规则</strong>：使用 <em>操纵死尸 (Animate Dead)</em> 可创造骷髅 (Skeleton) 和僵尸 (Zombie)。<em>创造死灵 (Create Undead)</em> 可创造更强大的不死生物如食尸鬼 (Ghoul)、妖鬼 (Wight) 等。<em>高等创造死灵 (Create Greater Undead)</em> 可创造吸血鬼、巫妖等高阶亡灵。</p>
+          <p><strong>控制上限</strong>：施法者可控制的不死生物 HD 总数 = 施法者等级 &times; 4（Animate Dead）。超出上限时，最早创造的不死生物将脱离控制变为自由意志亡灵。</p>
+          <p><strong>亡灵品质</strong>：尸体状态影响创造物的品质。保存完好的尸体可创造标准不死生物，而残缺的尸体可能导致能力削弱的次品。部分高级亡灵模板需要特殊仪式或稀有材料。</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>5.2 不死生物模板变体</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>模板</th>
+              <th>英文名</th>
+              <th>来源</th>
+              <th>特殊能力</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>吸血鬼（标准）</strong></td>
+              <td>Vampire</td>
+              <td>MM / Libris Mortis</td>
+              <td>吸血、变形、支配凝视、棺木依赖</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td><strong>吸血鬼（梦魇变体）</strong></td>
+              <td>Vampire, Nightmare Variant</td>
+              <td>Libris Mortis</td>
+              <td>以梦境为媒介的吸血方式，可进入目标梦中</td>
+            </tr>
+            <tr>
+              <td><strong>吸血鬼（血裔变体）</strong></td>
+              <td>Vampire Spawn, Bloodline</td>
+              <td>Libris Mortis</td>
+              <td>弱化的吸血鬼，无法创造衍体，但更易控制</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td><strong>巫妖（标准）</strong></td>
+              <td>Lich</td>
+              <td>MM / Libris Mortis</td>
+              <td>命匣、麻痹之触、恐惧光环、法术保留</td>
+            </tr>
+            <tr>
+              <td><strong>巫妖（半神变体）</strong></td>
+              <td>Demilich</td>
+              <td>MM / Epic Level</td>
+              <td>仅存头骨，灵魂宝石陷阱，极高 CR</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td><strong>木乃伊（标准）</strong></td>
+              <td>Mummy</td>
+              <td>MM / Libris Mortis</td>
+              <td>绝望凝视、木乃伊腐烂、火焰易伤</td>
+            </tr>
+            <tr>
+              <td><strong>木乃伊（高阶变体）</strong></td>
+              <td>Greater Mummy / Salt Mummy</td>
+              <td>Libris Mortis</td>
+              <td>增强腐烂效果、沙暴能力、无火焰易伤</td>
+            </tr>
+            <tr style="background:var(--bg-table-stripe)">
+              <td><strong>骸骨骑士</strong></td>
+              <td>Bone Knight</td>
+              <td>Libris Mortis</td>
+              <td>穿戴骨质护甲的强化骷髅，保留战斗技能</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-section">
+        <h3>5.3 亡灵专长与能量机制</h3>
+        <div class="rule-box">
+          <h4>不死生物专属专长</h4>
+          <p><strong>Corpsecrafter</strong>：你创造的不死生物获得 +2 HD 和额外能力。</p>
+          <p><strong>Deadly Chill</strong>：不死生物的近战攻击附带额外 1d6 寒冷伤害。</p>
+          <p><strong>Graveborn Specialist</strong>：可选择特定类型的不死生物进行专精创造，获得品质加成。</p>
+          <p><strong>Necrotic Reserve</strong>：以负能量治愈自身或控制的不死生物。</p>
+          <p style="margin-top:12px;"><strong>正/负能量机制</strong>：正能量 (Positive Energy) 治疗活物但伤害不死生物；负能量 (Negative Energy) 伤害活物但治疗不死生物。<em>驱散 (Turn)</em> 和 <em>斥责 (Rebuke)</em> 不死生物的能力基于施法者等级与不死生物 HD 的对比。部分不死生物（如巫妖）拥有 <strong>驱散抗性 (Turn Resistance)</strong>，增加等效 HD 以抵抗驱散。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         六、环境书系列 Sandstorm / Frostburn / Stormwrack
+         ============================================================ -->
+    <div class="section-block" id="environment">
+      <h2><span class="topic-badge badge-env">环境</span> 六、环境书系列 Sandstorm / Frostburn / Stormwrack</h2>
+      <p>D&D 3.5e 的三本环境扩展书——<strong>Sandstorm</strong>（沙漠）、<strong>Frostburn</strong>（极寒）和 <strong>Stormwrack</strong>（海洋/风暴）——为极端环境冒险提供了详细规则，涵盖环境危害、生存机制、特色种族和专属装备。</p>
+
+      <div class="sub-section">
+        <h3>6.1 极端环境规则</h3>
+        <div class="env-card-grid">
+          <div class="env-card" style="border-top:3px solid #e67e22;">
+            <h4>🏜️ 沙漠环境 (Sandstorm)</h4>
+            <div class="env-desc">
+              <p><strong>高温伤害</strong>：温度超过 90°F 时需要强韧豁免以避免非致命伤害。超过 110°F 每 10 分钟需豁免一次，失败则受 1d4 非致命伤害。超过 140°F 则致命热浪，每轮需豁免。</p>
+              <p><strong>脱水</strong>：每天需要饮水加仑数 = 1 + (温度修正)。缺水导致体质伤害，严重脱水导致死亡。</p>
+              <p><strong>沙暴</strong>：降低视野至 5 尺，远程攻击 -4 惩罚，造成 1d6 非致命伤害/小时。小型以下生物可能被吹飞。</p>
+            </div>
+          </div>
+          <div class="env-card" style="border-top:3px solid #3498db;">
+            <h4>❄️ 极寒环境 (Frostburn)</h4>
+            <div class="env-desc">
+              <p><strong>寒冷伤害</strong>：温度低于 40°F 时需要强韧豁免（每小时一次）。低于 0°F 每 10 分钟一次，失败受 1d6 非致命伤害。低于 -20°F 为致命寒冷，每分钟豁免。</p>
+              <p><strong>冻伤</strong>：非致命寒冷伤害累积后转化为冻伤 (Frostbite)，造成永久体质和敏捷伤害。</p>
+              <p><strong>暴风雪</strong>：视野降至 0，移动速度减半，每小时 2d6 寒冷伤害。大雪堆积可掩埋小型生物。</p>
+            </div>
+          </div>
+          <div class="env-card" style="border-top:3px solid #1abc9c;">
+            <h4>🌊 海洋/风暴环境 (Stormwrack)</h4>
+            <div class="env-desc">
+              <p><strong>溺水</strong>：屏息时间 = 体质调整值轮数（最少 1 轮）。超时后每轮需强韧豁免，失败则开始溺水（HP 降至 0）。</p>
+              <p><strong>洋流与海浪</strong>：强洋流可推动生物移动，需游泳检定抵抗。巨浪可翻覆小型船只，造成钝器伤害。</p>
+              <p><strong>风暴</strong>：海上风暴使远程攻击不可能（-8+惩罚），船只面临倾覆风险。闪电和飓风可造成大量伤害。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>6.2 环境特色种族与职业</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>种族/职业</th>
+              <th>来源</th>
+              <th>环境</th>
+              <th>特色</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>沙漠矮人 (Desert Dwarf)</strong></td><td>Sandstorm</td><td>沙漠</td><td>耐热、减少水需求、沙地移动无惩罚</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td><strong>灰烬精灵 (Ash Elf)</strong></td><td>Sandstorm</td><td>沙漠</td><td>耐热+2、沙暴视野增加、与沙漠生物亲和</td></tr>
+            <tr><td><strong>冰原侏儒 (Tundra Gnome)</strong></td><td>Frostburn</td><td>极寒</td><td>耐寒、冰面移动无惩罚、白色伪装</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td><strong>霜巨人裔 (Frostblood Orc)</strong></td><td>Frostburn</td><td>极寒</td><td>寒冷亚种、火焰易伤、冰霜狂暴能力</td></tr>
+            <tr><td><strong>海精灵 (Sea Elf)</strong></td><td>Stormwrack</td><td>海洋</td><td>水生亚种、游泳速度、水下呼吸</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td><strong>珊瑚半身人 (Coral Halfling)</strong></td><td>Stormwrack</td><td>海洋</td><td>水生适应、珊瑚礁隐蔽、两栖</td></tr>
+            <tr><td><strong>沙丘行者 (Dune Trader)</strong></td><td>Sandstorm</td><td>沙漠</td><td>进阶职业，沙漠导航专家、商队领导者</td></tr>
+            <tr style="background:var(--bg-table-stripe)"><td><strong>冰霜守卫 (Frost Mage)</strong></td><td>Frostburn</td><td>极寒</td><td>进阶职业，寒冷法术专精、冰甲、冻结领域</td></tr>
+            <tr><td><strong>海盗船长 (Sea Captain)</strong></td><td>Stormwrack</td><td>海洋</td><td>进阶职业，船只指挥、风暴操控、海战专家</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-section">
+        <h3>6.3 环境专属魔法物品</h3>
+        <div class="rule-box">
+          <h4>特色环境装备</h4>
+          <p><strong>沙漠</strong>：<em>无尽水壶 (Decanter of Endless Water)</em>、<em>防晒斗篷 (Cloak of Arid Protection)</em>、<em>沙暴护盾 (Sandstorm Shield)</em>——可召唤沙暴壁障。</p>
+          <p><strong>极寒</strong>：<em>恒温斗篷 (Cloak of Arctic Protection)</em>、<em>冰晶护甲 (Frost Armor)</em>——寒冷伤害减免+冰冻攻击者、<em>雪行者之靴 (Boots of Snow Striding)</em>——在雪地/冰面无移动惩罚。</p>
+          <p><strong>海洋</strong>：<em>深海护符 (Amulet of the Depths)</em>——免疫水压伤害、<em>风暴瓶 (Storm Bottle)</em>——可释放一次局部风暴、<em>海行者之戒 (Ring of Water Walking)</em>——在水面行走如同陆地。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         七、英雄系列 Heroes of Horror / Heroes of Battle
+         ============================================================ -->
+    <div class="section-block" id="heroes">
+      <h2><span class="topic-badge badge-horror">英雄</span> 七、英雄系列 Heroes of Horror / Heroes of Battle</h2>
+      <p><strong>Heroes of Horror</strong> 和 <strong>Heroes of Battle</strong> 分别为恐怖主题战役和战争主题战役提供了专用规则系统。</p>
+
+      <div class="sub-section">
+        <h3>7.1 腐化机制 (Taint Mechanics)</h3>
+        <div class="rule-box">
+          <h4>Heroes of Horror — 腐化系统</h4>
+          <p><strong>腐化 (Taint)</strong>分为两种：<strong>堕落 (Corruption)</strong>影响精神和道德，<strong>畸变 (Deformity)</strong>影响肉体形态。角色在接触邪恶力量、禁忌知识或恐怖事件时可能获得腐化点数。</p>
+          <p><strong>堕落等级</strong>：轻度 (Mild, 1-3) → 中度 (Moderate, 4-6) → 重度 (Severe, 7+)。每个等级附带不同的精神副作用，如偏执、幻听、暴力倾向。</p>
+          <p><strong>畸变效果</strong>：肉体层面的变异，如额外眼睛、皮肤变色、肢体变异。畸变无法通过普通魔法消除，需要特殊仪式或 <em>神迹术 (Miracle)</em>。</p>
+          <p><strong>抵抗与净化</strong>：通过 <em>净化术 (Atonement)</em>、长期冥想或完成救赎任务可降低腐化值。完全净化需要 DM 设定的特殊条件。</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>7.2 恐怖检定与疯狂 (Horror Checks &amp; Madness)</h3>
+        <div class="rule-box">
+          <h4>恐怖检定规则</h4>
+          <p><strong>触发条件</strong>：遭遇超出角色经验的恐怖场景时（如目睹大规模死亡、面对超出认知的怪物、经历超自然恐怖事件），DM 可要求进行恐怖检定 (Horror Check)。</p>
+          <p><strong>检定方式</strong>：意志豁免 (Will Save)，DC 由恐怖程度决定（轻微 DC 10，普通 DC 15，极端 DC 20，超越性恐怖 DC 25+）。</p>
+          <p><strong>失败后果</strong>：轻度失败导致恐惧 (Shaken) 1d4 轮；中度失败导致惊惧 (Frightened) 1d6 分钟；严重失败导致恐慌 (Panicked) 或获得<strong>疯狂 (Madness)</strong>状态。</p>
+          <p><strong>疯狂类型</strong>：恐惧症 (Phobia)、偏执 (Paranoia)、分裂 (Dissociation)、歇斯底里 (Hysteria) 等。每种疯狂有独特的角色扮演效果和机械惩罚。</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>7.3 战争战役规则 (War Campaign Rules)</h3>
+        <div class="rule-box">
+          <h4>Heroes of Battle — 战争系统</h4>
+          <p><strong>战争场景</strong>：Heroes of Battle 将冒险从地下城扩展至战场。PC 不再是孤胆英雄，而是大规模军事行动中的关键角色。战争场景使用<strong>胜利点数 (Victory Points)</strong>系统衡量战局走向。</p>
+          <p><strong>军事行动</strong>：PC 被分配战略目标（如夺取要塞、暗杀敌方指挥官、保护补给线），完成任务获得胜利点数。当 VP 累积到阈值时，整场战役的天平倾斜。</p>
+          <p><strong>军衔与指挥</strong>：PC 可获得军事头衔（列兵 → 中士 → 上尉 → 少校 → 将军），每个头衔解锁不同的指挥权限和军队增益效果。高级军官可为麾下部队提供士气加值。</p>
+          <p><strong>战场魔法</strong>：大规模战场中的法术效果受到修正——AOE 法术可能影响友军，召唤物可能被敌方弓手集中射击。<em>战争号角 (Horn of Blasting)</em> 和 <em>战争旗帜 (Banner of Victory)</em> 等物品在此类战役中尤为重要。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         八、扩展书速查表
+         ============================================================ -->
+    <div class="section-block" id="book-ref">
+      <h2><span class="topic-badge badge-ref">速查</span> 八、扩展书速查表 3.5e Expansion Book Reference</h2>
+      <p>以下为 D&D 3.5e 所有主要官方扩展书的速查表，列出缩写、出版年份和主要内容方向。</p>
+
+      <table class="data-table book-ref-table">
+        <thead>
+          <tr>
+            <th>书名</th>
+            <th>缩写</th>
+            <th>年份</th>
+            <th>主要内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Player's Handbook II</strong></td><td>PHB2</td><td>2006</td><td>新增基础职业（战法师、骑士等）、团队增益、重训规则</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Dungeon Master's Guide II</strong></td><td>DMG2</td><td>2005</td><td>高级地下城设计、NPC 创建、战役管理工具</td></tr>
+          <tr><td><strong>Complete Warrior</strong></td><td>CW</td><td>2003</td><td>战士/野蛮人/圣武士扩展，进阶职业，战斗专长</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Complete Divine</strong></td><td>CD</td><td>2004</td><td>牧师/德鲁伊/圣武士扩展，新神祇，神力进阶职业</td></tr>
+          <tr><td><strong>Complete Arcane</strong></td><td>CA</td><td>2004</td><td>法师/术士/邪术师扩展，奥术进阶职业，新法术</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Complete Adventurer</strong></td><td>CAd</td><td>2005</td><td>游荡者/吟游诗人/游侠扩展，探索与冒险主题进阶</td></tr>
+          <tr><td><strong>Complete Mage</strong></td><td>CM</td><td>2006</td><td>法师专精深化、奥术契约、魔宠进阶</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Complete Scoundrel</strong></td><td>CS</td><td>2007</td><td>欺诈与诡术主题、诡计专长、运气机制</td></tr>
+          <tr><td><strong>Complete Champion</strong></td><td>CC</td><td>2007</td><td>圣武士/神职战士扩展、神圣使命、领域能力</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Expanded Psionics Handbook</strong></td><td>XPH</td><td>2004</td><td>灵能系统完整版：灵能职业、异能、灵能物品</td></tr>
+          <tr><td><strong>Tome of Battle</strong></td><td>ToB</td><td>2006</td><td>九剑武术系统、武术家职业、武术招式与架势</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Tome of Magic</strong></td><td>ToM</td><td>2006</td><td>真名言 (Truenaming)、契约魔法 (Vestigewalker)、暗影魔法</td></tr>
+          <tr><td><strong>Magic Item Compendium</strong></td><td>MIC</td><td>2007</td><td>海量魔法物品、物品套装、物品强化系统</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Spell Compendium</strong></td><td>SC</td><td>2005</td><td>所有扩展法术汇总，3.5版修订，新增法术</td></tr>
+          <tr><td><strong>Monster Manual IV</strong></td><td>MM4</td><td>2006</td><td>新怪物、怪物模板、怪物战术</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Monster Manual V</strong></td><td>MM5</td><td>2007</td><td>更多新怪物、环境适应怪物、怪物生态</td></tr>
+          <tr><td><strong>Fiendish Codex I</strong></td><td>FC1</td><td>2006</td><td>深渊与恶魔领主、恶魔召唤规则</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Fiendish Codex II</strong></td><td>FC2</td><td>2006</td><td>巴托地狱与魔鬼、契约规则、九层地狱</td></tr>
+          <tr><td><strong>Draconomicon</strong></td><td>Drac</td><td>2003</td><td>龙族全书：生态、变体龙种、龙 PC 规则</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Libris Mortis</strong></td><td>LM</td><td>2004</td><td>亡灵全书：不死生物模板、创造规则、亡灵专长</td></tr>
+          <tr><td><strong>Sandstorm</strong></td><td>Sand</td><td>2005</td><td>沙漠环境规则、高温生存、沙漠种族</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Frostburn</strong></td><td>FrB</td><td>2004</td><td>极寒环境规则、冰原生存、寒带种族</td></tr>
+          <tr><td><strong>Stormwrack</strong></td><td>SW</td><td>2005</td><td>海洋/风暴环境规则、航海冒险、水生种族</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Heroes of Horror</strong></td><td>HoH</td><td>2005</td><td>恐怖战役规则、腐化系统、疯狂机制</td></tr>
+          <tr><td><strong>Heroes of Battle</strong></td><td>HoB</td><td>2005</td><td>战争战役规则、军衔系统、战场指挥</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Races of Stone</strong></td><td>RoS</td><td>2004</td><td>矮人/侏儒/歌利亚种族扩展</td></tr>
+          <tr><td><strong>Races of the Wild</strong></td><td>RoW</td><td>2005</td><td>精灵/半身人/翼人种族扩展</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Races of Destiny</strong></td><td>RoD</td><td>2004</td><td>人类/半精灵/阿斯玛/提夫林种族扩展</td></tr>
+          <tr><td><strong>Races of Dragon</strong></td><td>RoD2</td><td>2006</td><td>龙脉种族（龙裔、半龙、龙脉术士）扩展</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Player's Handbook (Core)</strong></td><td>PHB</td><td>2003</td><td>核心规则：11基础职业、核心种族、核心专长/法术</td></tr>
+          <tr><td><strong>Dungeon Master's Guide (Core)</strong></td><td>DMG</td><td>2003</td><td>核心 DM 工具、魔法物品、进阶职业</td></tr>
+          <tr style="background:var(--bg-table-stripe)"><td><strong>Monster Manual (Core)</strong></td><td>MM</td><td>2003</td><td>核心怪物图鉴：200+ 经典怪物</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:13px;color:#999;margin-top:40px;text-align:center;">
+      数据来源：D&D 3.5e Expanded Psionics Handbook · Tome of Battle · Fiendish Codex I &amp; II · Draconomicon · Libris Mortis<br>
+      Sandstorm · Frostburn · Stormwrack · Heroes of Horror · Heroes of Battle · 所有扩展书均为 Wizards of the Coast 官方出版物
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 专题扩展 | 数据来源：Expanded Psionics · Tome of Battle · Fiendish Codex · Draconomicon · 环境书系列</p>
+</div>
+</body>
+</html>

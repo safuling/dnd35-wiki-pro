@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魔法武器与防具附魔 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .mi-intro { background:var(--bg-card); border-left:4px solid var(--accent-purple); padding:16px 20px; margin:0 0 24px; border-radius:0 var(--radius) var(--radius) 0; font-size:14px; }
+  .mi-intro strong { color:var(--accent-purple); }
+  .mi-section-header { display:flex; align-items:center; gap:10px; background:var(--bg-infobox); border-radius:var(--radius); padding:12px 18px; margin:28px 0 14px; font-size:18px; font-weight:700; color:var(--text-heading); }
+  table.mi-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
+  table.mi-table th { background:var(--bg-table-head); padding:8px 12px; text-align:left; font-weight:600; color:#4a2c0a; border-bottom:2px solid var(--border-main); }
+  table.mi-table td { border:1px solid var(--border-light); padding:7px 12px; }
+  table.mi-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  table.mi-table tr:hover { background:#e8dcc8; }
+  .mi-enchant-tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:12px; font-weight:600; margin-right:4px; }
+  .tag-plus1 { background:#e8f5e9; color:#2e7d32; }
+  .tag-plus2 { background:#fff3e0; color:#e65100; }
+  .tag-plus3 { background:#fce4ec; color:#c62828; }
+  .tag-plus4 { background:#e3f2fd; color:#1565c0; }
+  .tag-plus5 { background:#ede7f6; color:#6a1b9a; }
+  .mi-tip { background:#f0f4ff; border-left:3px solid var(--accent-blue); padding:10px 14px; margin:8px 0; font-size:13px; border-radius:0 var(--radius) var(--radius) 0; }
+  .mi-craft-box { background:var(--bg-card); border:1px solid var(--border-main); border-radius:var(--radius); padding:18px 22px; margin:16px 0; }
+  .mi-craft-box h4 { margin-top:0; color:var(--accent-gold); }
+  .mi-price-tag { color:var(--accent-gold); font-weight:700; }
+  .mi-sub-header { font-size:15px; font-weight:600; color:var(--text-heading); margin:20px 0 8px; padding-bottom:4px; border-bottom:1px dashed var(--border-light); }
+  .mi-ref-box { margin-top:32px; padding:16px; background:var(--bg-card); border-radius:var(--radius); border:1px solid var(--border-light); }
+  .mi-toc { background:var(--bg-card); border:1px solid var(--border-main); border-radius:var(--radius); padding:16px 20px; margin:20px 0; display:inline-block; min-width:280px; }
+  .mi-toc-title { font-weight:700; font-size:15px; margin-bottom:10px; color:var(--text-heading); }
+  .mi-toc ol { list-style:none; padding-left:0; }
+  .mi-toc ol li { padding:3px 0; font-size:14px; }
+  .mi-toc ol li a { color:var(--text-link); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html" class="active">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">装备</div>
+      <a href="intro.html">装备总览</a>
+      <a href="weapons.html">武器</a>
+      <a href="armor.html">防具</a>
+      <a href="goods.html">商品与服务</a>
+      <a href="magic-items.html">魔法物品</a>
+      <a href="magic-weapons.html" class="active">魔法武器与防具</a>
+      <a href="wondrous-items.html">奇物与消耗品</a>
+      <a href="artifacts-intelligent.html">神器与智能物品</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">本节内容</div>
+      <a href="#weapon-enhance">武器增强加值</a>
+      <a href="#weapon-special">武器特殊能力</a>
+      <a href="#armor-enhance">防具增强加值</a>
+      <a href="#armor-special">防具特殊能力</a>
+      <a href="#shield-special">盾牌特殊能力</a>
+      <a href="#named-weapons">特殊魔法武器</a>
+      <a href="#named-armor">特殊魔法防具</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="magic-items.html">魔法物品概览</a>
+      <a href="wondrous-items.html">奇物与消耗品</a>
+      <a href="artifacts-intelligent.html">神器与智能物品</a>
+      <a href="../feats/intro.html">制造专长</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>魔法武器与防具附魔</h1>
+    <p style="color:var(--text-subtle);font-size:14px;">D&D 3.5e 魔法武器与防具完整参考 | 来源：DMG第7章</p>
+
+    <!-- 目录 -->
+    <div class="mi-toc">
+      <div class="mi-toc-title">目录</div>
+      <ol>
+        <li>1. <a href="#weapon-enhance">武器增强加值（+1 ~ +5）</a></li>
+        <li>2. <a href="#weapon-special">武器特殊能力列表（20+种）</a></li>
+        <li>3. <a href="#armor-enhance">防具增强加值（+1 ~ +5）</a></li>
+        <li>4. <a href="#armor-special">防具特殊能力列表（15+种）</a></li>
+        <li>5. <a href="#shield-special">盾牌特殊能力</a></li>
+        <li>6. <a href="#named-weapons">特殊魔法武器（经典）</a></li>
+        <li>7. <a href="#named-armor">特殊魔法防具</a></li>
+      </ol>
+    </div>
+
+    <!-- ===== 1. 武器增强加值 ===== -->
+    <h2 id="weapon-enhance">武器增强加值（Enhancement Bonus）</h2>
+
+    <div class="mi-intro">
+      魔法武器的增强加值从<strong>+1到+5</strong>，直接加到攻击检定和伤害检定上。武器还可以附加特殊能力，
+      每个特殊能力都有等效的增强加值等级。<strong>总等效加值（增强加值+特殊能力等效加值）不可超过+10</strong>。
+      武器必须是精制品（Masterwork）才能附魔。
+    </div>
+
+    <div class="mi-tip">
+      <strong>武器价格计算公式：</strong>（总等效加值）&sup2; &times; 2,000 gp + 武器本身价格 + 精制品费用（300 gp）。
+      例如一把 +1 炽焰长剑：等效加值 = 1+1 = 2，价格 = 2&sup2; &times; 2,000 = 8,000 gp + 15 gp（长剑） + 300 gp（精制品） = <strong>8,315 gp</strong>。
+    </div>
+
+    <table class="mi-table">
+      <thead><tr><th>增强加值</th><th>等效加值</th><th>附加价格（不含武器本身）</th><th>制造要求</th></tr></thead>
+      <tbody>
+        <tr><td><span class="mi-enchant-tag tag-plus1">+1</span></td><td>+1</td><td class="mi-price-tag">2,000 gp</td><td>CL 3，锻造魔法武器与防具专长</td></tr>
+        <tr><td><span class="mi-enchant-tag tag-plus2">+2</span></td><td>+2</td><td class="mi-price-tag">8,000 gp</td><td>CL 6，锻造魔法武器与防具专长</td></tr>
+        <tr><td><span class="mi-enchant-tag tag-plus3">+3</span></td><td>+3</td><td class="mi-price-tag">18,000 gp</td><td>CL 9，锻造魔法武器与防具专长</td></tr>
+        <tr><td><span class="mi-enchant-tag tag-plus4">+4</span></td><td>+4</td><td class="mi-price-tag">32,000 gp</td><td>CL 12，锻造魔法武器与防具专长</td></tr>
+        <tr><td><span class="mi-enchant-tag tag-plus5">+5</span></td><td>+5</td><td class="mi-price-tag">50,000 gp</td><td>CL 15，锻造魔法武器与防具专长</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 2. 武器特殊能力 ===== -->
+    <h2 id="weapon-special">武器特殊能力列表</h2>
+    <p>以下列出所有标准武器附魔能力，按等效加值等级分类。每个能力都有价格等值、施法者等级（CL）、先决条件和效果描述。</p>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus1">+1等效</span> 一级武器附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>CL</th><th>先决条件</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr><td>炽焰</td><td>Flaming</td><td>CL 10</td><td><em>焰击术</em>或<em>火墙术</em></td><td>命中时额外造成1d6火焰伤害</td></tr>
+        <tr><td>霜寒</td><td>Frost</td><td>CL 10</td><td><em>寒冰锥</em>或<em>冰墙术</em></td><td>命中时额外造成1d6寒冷伤害</td></tr>
+        <tr><td>电击</td><td>Shock</td><td>CL 10</td><td><em>闪电束</em>或<em>召雷术</em></td><td>命中时额外造成1d6闪电伤害</td></tr>
+        <tr><td>锐利</td><td>Keen</td><td>CL 10</td><td><em>锐锋术</em></td><td>重击威胁范围翻倍（不与精通重击专长叠加），仅适用于穿刺和挥砍武器</td></tr>
+        <tr><td>克敌</td><td>Bane</td><td>CL 8</td><td><em>召唤怪物I</em></td><td>对指定生物类型：攻击检定+2，伤害+2d6。制造时需选择一种生物类型（如兽人、龙、不死生物等）</td></tr>
+        <tr><td>光耀</td><td>Holy</td><td>CL 7</td><td><em>圣言术</em></td><td>武器视为善良阵营，对邪恶生物额外造成2d6伤害。邪恶持有者获得一个负向等级</td></tr>
+        <tr><td>幽冥</td><td>Ghost Touch</td><td>CL 9</td><td><em>幻化灵体</em></td><td>武器可正常攻击和伤害虚体（Incorporeal）生物，虚体生物无法穿透此武器</td></tr>
+        <tr><td>回力</td><td>Returning</td><td>CL 7</td><td><em>传送术</em></td><td>投掷后在持有者下一轮行动开始时自动返回手中</td></tr>
+        <tr><td>投掷</td><td>Throwing</td><td>CL 5</td><td><em>魔法飞弹</em></td><td>使近战武器获得投掷属性，射程增量10英尺</td></tr>
+        <tr><td>秩序</td><td>Axiomatic</td><td>CL 7</td><td><em>秩序之锤</em></td><td>武器视为守序阵营，对混乱生物额外造成2d6伤害</td></tr>
+        <tr><td>混沌</td><td>Anarchic</td><td>CL 7</td><td><em>混沌之锤</em></td><td>武器视为混乱阵营，对守序生物额外造成2d6伤害</td></tr>
+        <tr><td>黑暗</td><td>Unholy</td><td>CL 7</td><td><em>亵渎术</em></td><td>武器视为邪恶阵营，对善良生物额外造成2d6伤害。善良持有者获得一个负向等级</td></tr>
+        <tr><td>仁慈</td><td>Merciful</td><td>CL 5</td><td><em>治疗轻伤</em></td><td>额外+1d6伤害，但所有伤害均变为非致命伤害。可自由开关此效果</td></tr>
+        <tr><td>寻踪</td><td>Seeking</td><td>CL 12</td><td><em>真知术</em></td><td>仅适用于远程武器。忽略掩蔽（不含全掩蔽）造成的失手率</td></tr>
+        <tr><td>灵巧</td><td>Agile (MIC)</td><td>CL 9</td><td><em>猫之优雅</em></td><td>允许使用敏捷调整值代替力量调整值进行近战伤害计算</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus2">+2等效</span> 二级武器附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>CL</th><th>先决条件</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr><td>炽焰爆</td><td>Flaming Burst</td><td>CL 12</td><td><em>焰击术</em>和<em>火球术</em></td><td>包含炽焰效果（1d6火焰），重击确认时额外+1d10火焰伤害（&times;3武器+2d10，&times;4武器+3d10）</td></tr>
+        <tr><td>寒冰爆</td><td>Icy Burst</td><td>CL 12</td><td><em>寒冰锥</em>和<em>冰风暴</em></td><td>包含霜寒效果（1d6寒冷），重击确认时额外+1d10寒冷伤害</td></tr>
+        <tr><td>电击爆</td><td>Shocking Burst</td><td>CL 12</td><td><em>闪电束</em>和<em>召雷术</em></td><td>包含电击效果（1d6闪电），重击确认时额外+1d10闪电伤害</td></tr>
+        <tr><td>追击</td><td>Speed</td><td>CL 7</td><td><em>加速术</em></td><td>使用全回合攻击时，可用该武器额外进行一次最高攻击加值的攻击。每日最多10轮（不须连续）</td></tr>
+        <tr><td>舞空</td><td>Dancing</td><td>CL 15</td><td><em>操纵死灵</em></td><td>标准动作释放武器后，武器自行攻击4轮（使用持有者的攻击加值）。释放后可进行其他行动</td></tr>
+        <tr><td>吸血</td><td>Vampiric</td><td>CL 15</td><td><em>操纵死灵</em></td><td>命中时造成1d6体质吸取，持有者获得等量临时生命值（持续1小时）。仅适用于挥砍武器</td></tr>
+        <tr><td>瓦解</td><td>Disruption</td><td>CL 14</td><td><em>驱逐术</em></td><td>命中不死生物时，目标须通过DC 14意志豁免，否则直接被摧毁。仅适用于钝击武器</td></tr>
+        <tr><td>雷鸣</td><td>Thundering</td><td>CL 8</td><td><em>音爆术</em></td><td>重击确认时额外+1d8音波伤害（&times;3为+2d8，&times;4为+3d8）</td></tr>
+        <tr><td>光能</td><td>Brilliant Energy</td><td>CL 16</td><td><em>永恒之光</em>和<em>昼明术</em></td><td>武器刃部变为纯能量，穿过非生物物质（盔甲、衣物），不影响不死和构装体。持有时散发光芒（40英尺）</td></tr>
+        <tr><td>距离</td><td>Distance</td><td>CL 6</td><td><em>远射术</em></td><td>仅适用于远程武器。射程增量翻倍</td></tr>
+        <tr><td>瓦解术</td><td>Dispelling (MIC)</td><td>CL 10</td><td><em>解除魔法</em></td><td>命中时有机会施展<em>定向解除魔法</em>效果</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus3">+3等效</span> 三级武器附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>CL</th><th>先决条件</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr><td>纯善爆</td><td>Holy Burst</td><td>CL 15</td><td><em>圣言术</em>和<em>神圣光辉</em></td><td>包含光耀效果（2d6对邪恶），重击确认时额外+2d10神圣伤害</td></tr>
+        <tr><td>光辉</td><td>Brilliant</td><td>CL 15</td><td><em>永恒之光</em></td><td>包含光耀效果，额外对不死生物造成1d6光芒伤害</td></tr>
+        <tr><td>吞噬</td><td>Devastating (MIC)</td><td>CL 15</td><td><em>毁灭术</em></td><td>重击确认时，目标须通过DC 20强韧豁免，否则直接被杀死</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus4">+4等效</span> 四级武器附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>CL</th><th>先决条件</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr><td>灵化</td><td>Brilliant Energy (高级)</td><td>CL 16</td><td><em>永恒之光</em>和<em>幻化灵体</em></td><td>部分高级附魔组合达到+4等效</td></tr>
+        <tr><td>命定</td><td>Fate (MIC)</td><td>CL 15</td><td><em>命运之轮</em></td><td>每日1次，持有者可重掷一次攻击检定</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus5">+5等效</span> 五级武器附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>CL</th><th>先决条件</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr><td>速斩</td><td>Vorpal</td><td>CL 18</td><td><em>真知术</em>和<em>杀戮术</em></td><td>自然20重击确认时，直接斩首目标（立即死亡）。对免疫重击的生物（如不死、构装体、泥怪）无效。仅适用于挥砍武器</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 3. 防具增强加值 ===== -->
+    <h2 id="armor-enhance">防具增强加值（Armor Enhancement Bonus）</h2>
+
+    <div class="mi-intro">
+      魔法防具（盔甲和盾牌）的增强加值从<strong>+1到+5</strong>，直接叠加到防具原有的AC加值上。
+      例如+1链甲的AC加值为 5（链甲基础）+ 1（增强）= 6。防具同样可以附加特殊能力。
+    </div>
+
+    <div class="mi-tip">
+      <strong>防具价格计算公式：</strong>（总等效加值）&sup2; &times; 1,000 gp + 防具本身价格 + 精制品费用（150 gp）。
+    </div>
+
+    <table class="mi-table">
+      <thead><tr><th>增强加值</th><th>附加价格（不含防具本身）</th><th>制造要求</th></tr></thead>
+      <tbody>
+        <tr><td><span class="mi-enchant-tag tag-plus1">+1</span></td><td class="mi-price-tag">1,000 gp</td><td>CL 3，锻造魔法武器与防具专长</td></tr>
+        <tr><td><span class="mi-enchant-tag tag-plus2">+2</span></td><td class="mi-price-tag">4,000 gp</td><td>CL 6，锻造魔法武器与防具专长</td></tr>
+        <tr><td><span class="mi-enchant-tag tag-plus3">+3</span></td><td class="mi-price-tag">9,000 gp</td><td>CL 9，锻造魔法武器与防具专长</td></tr>
+        <tr><td><span class="mi-enchant-tag tag-plus4">+4</span></td><td class="mi-price-tag">16,000 gp</td><td>CL 12，锻造魔法武器与防具专长</td></tr>
+        <tr><td><span class="mi-enchant-tag tag-plus5">+5</span></td><td class="mi-price-tag">25,000 gp</td><td>CL 15，锻造魔法武器与防具专长</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 4. 防具特殊能力 ===== -->
+    <h2 id="armor-special">防具特殊能力列表</h2>
+    <p>以下列出标准防具附魔能力，按等效加值等级分类。</p>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus1">+1等效</span> 一级防具附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>CL</th><th>效果描述</th><th>适用</th></tr></thead>
+      <tbody>
+        <tr><td>轻护命</td><td>Light Fortification</td><td>CL 5</td><td>25%几率将重击或偷袭转化为普通攻击</td><td>盔甲/盾牌</td></tr>
+        <tr><td>暗影</td><td>Shadow</td><td>CL 5</td><td>隐藏检定+5能力加值（在阴暗环境中+10）</td><td>盔甲</td></tr>
+        <tr><td>无声</td><td>Silent Moves</td><td>CL 5</td><td>潜行检定+5能力加值</td><td>盔甲</td></tr>
+        <tr><td>滑溜</td><td>Slick</td><td>CL 5</td><td>逃脱检定+5能力加值</td><td>盔甲</td></tr>
+        <tr><td>抗火</td><td>Fire Resistance</td><td>CL 5</td><td>火焰抗性5</td><td>盔甲/盾牌</td></tr>
+        <tr><td>抗寒</td><td>Cold Resistance</td><td>CL 5</td><td>寒冷抗性5</td><td>盔甲/盾牌</td></tr>
+        <tr><td>抗电</td><td>Electricity Resistance</td><td>CL 5</td><td>闪电抗性5</td><td>盔甲/盾牌</td></tr>
+        <tr><td>抗酸</td><td>Acid Resistance</td><td>CL 5</td><td>酸液抗性5</td><td>盔甲/盾牌</td></tr>
+        <tr><td>次级法术抵抗</td><td>Minor Spell Resistance</td><td>CL 9</td><td>法术抗力 SR 11</td><td>盔甲</td></tr>
+        <tr><td>眩光</td><td>Glamered</td><td>CL 3</td><td>命令词可改变防具外观（变为普通衣物），不影响属性</td><td>盔甲</td></tr>
+        <tr><td>野外</td><td>Wild</td><td>CL 7</td><td>穿戴者在野生形态（Wild Shape）时仍保留防具的AC加值</td><td>盔甲</td></tr>
+        <tr><td>幽冥</td><td>Ghost Touch</td><td>CL 9</td><td>防具的AC加值对虚体生物的攻击同样有效</td><td>盔甲/盾牌</td></tr>
+        <tr><td>坚毅</td><td>Hardened (MIC)</td><td>CL 5</td><td>防具硬度+5，HP+10</td><td>盔甲/盾牌</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus2">+2等效</span> 二级防具附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>CL</th><th>效果描述</th><th>适用</th></tr></thead>
+      <tbody>
+        <tr><td>中护命</td><td>Moderate Fortification</td><td>CL 10</td><td>50%几率将重击或偷袭转化为普通攻击</td><td>盔甲/盾牌</td></tr>
+        <tr><td>高等滑溜</td><td>Improved Slick</td><td>CL 10</td><td>逃脱检定+10能力加值</td><td>盔甲</td></tr>
+        <tr><td>高等暗影</td><td>Improved Shadow</td><td>CL 10</td><td>隐藏检定+10能力加值</td><td>盔甲</td></tr>
+        <tr><td>高等无声</td><td>Improved Silent Moves</td><td>CL 10</td><td>潜行检定+10能力加值</td><td>盔甲</td></tr>
+        <tr><td>抗能量</td><td>Energy Resistance</td><td>CL 10</td><td>选择一种能量类型（火/冷/电/酸/音波），抗性10</td><td>盔甲/盾牌</td></tr>
+        <tr><td>法术抵抗</td><td>Spell Resistance</td><td>CL 11</td><td>法术抗力 SR 15</td><td>盔甲</td></tr>
+        <tr><td>虚体之触</td><td>Etherealness</td><td>CL 13</td><td>命令词启动，每天3次<em>幻化灵体</em>效果（每次10分钟）</td><td>盔甲</td></tr>
+        <tr><td>盲斗</td><td>Blindsighted</td><td>CL 7</td><td>穿戴者获得盲感（Blindsense）10英尺</td><td>盔甲</td></tr>
+        <tr><td>坚韧</td><td>Toughened (MIC)</td><td>CL 10</td><td>穿戴者获得<em>坚韧</em>专长效果（+3 HP）</td><td>盔甲</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus3">+3等效</span> 三级防具附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>CL</th><th>效果描述</th><th>适用</th></tr></thead>
+      <tbody>
+        <tr><td>重护命</td><td>Heavy Fortification</td><td>CL 13</td><td>75%几率将重击或偷袭转化为普通攻击</td><td>盔甲/盾牌</td></tr>
+        <tr><td>高等抗能量</td><td>Improved Energy Resistance</td><td>CL 13</td><td>选择一种能量类型，抗性20</td><td>盔甲/盾牌</td></tr>
+        <tr><td>高等法术抵抗</td><td>Greater Spell Resistance</td><td>CL 15</td><td>法术抗力 SR 19</td><td>盔甲</td></tr>
+        <tr><td>影遁</td><td>Greater Shadow</td><td>CL 15</td><td>隐藏检定+15能力加值</td><td>盔甲</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header"><span class="mi-enchant-tag tag-plus4">+4等效</span> / <span class="mi-enchant-tag tag-plus5">+5等效</span> 高级防具附魔</div>
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>等效加值</th><th>CL</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr><td>超级抗能量</td><td>Major Energy Resistance</td><td>+4</td><td>CL 15</td><td>选择一种能量类型，抗性30</td></tr>
+        <tr><td>超级法术抵抗</td><td>Major Spell Resistance</td><td>+4</td><td>CL 17</td><td>法术抗力 SR 23</td></tr>
+        <tr><td>完全护命</td><td>Undying (MIC)</td><td>+5</td><td>CL 18</td><td>100%几率免疫重击和偷袭额外伤害</td></tr>
+        <tr><td>影遁（高等）</td><td>Shadowblight (MIC)</td><td>+4</td><td>CL 15</td><td>穿戴者可在阴影中自由隐匿，隐藏+15</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 5. 盾牌特殊能力 ===== -->
+    <h2 id="shield-special">盾牌特殊能力</h2>
+    <p>以下附魔仅适用于盾牌（不可附加在盔甲上）。盾牌同样可附加通用防具附魔。</p>
+
+    <table class="mi-table">
+      <thead><tr><th>附魔名称</th><th>英文</th><th>等效加值</th><th>CL</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr><td>活化</td><td>Animated</td><td>+2</td><td>CL 12</td><td>命令词使盾牌自行飘浮保护持有者（AC加值保留），释放双手进行其他行动。持续4轮</td></tr>
+        <tr><td>飞矢吸引</td><td>Arrow Catching</td><td>+1</td><td>CL 8</td><td>盾牌吸引附近的远程攻击射向自身。AC获得+2加值对抗远程攻击，但攻击者瞄准盾牌持有者</td></tr>
+        <tr><td>矢返</td><td>Arrow Deflection</td><td>+2</td><td>CL 11</td><td>如同"拨挡飞箭"专长效果。盾牌AC加值+2对抗远程攻击</td></tr>
+        <tr><td>猛击</td><td>Bashing</td><td>+1</td><td>CL 5</td><td>盾击视为+1近战武器（轻型盾1d8钝击、重型盾2d6钝击）</td></tr>
+        <tr><td>高等猛击</td><td>Greater Bashing</td><td>+3</td><td>CL 10</td><td>盾击视为+2近战武器（轻型盾2d6、重型盾3d6）</td></tr>
+        <tr><td>眩光（盾牌）</td><td>Blinding</td><td>+2</td><td>CL 7</td><td>每天2次，命令词使攻击盾牌者目盲1d4轮（DC 14反射豁免）</td></tr>
+        <tr><td>反射</td><td>Reflection</td><td>+2</td><td>CL 14</td><td>盾牌表面如镜，可反射以持有者为目标的法术（每天3次，如同<em>法术反转</em>）</td></tr>
+        <tr><td>飞翼</td><td>Winged</td><td>+1</td><td>CL 5</td><td>盾牌可生出翅膀，赋予持有者飞行能力（每天3次，飞行速度40英尺，持续1分钟）</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 6. 特殊魔法武器 ===== -->
+    <h2 id="named-weapons">特殊魔法武器（经典 Named Weapons）</h2>
+    <p>以下是D&D 3.5e中最经典的特殊魔法武器，具有独特的历史背景和组合能力。这些武器通常作为战役中的重要宝物出现。</p>
+
+    <table class="mi-table">
+      <thead><tr><th>武器名称</th><th>英文</th><th>等效加值</th><th>市场价格</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>圣剑</strong></td><td>Holy Avenger</td>
+          <td><span class="mi-enchant-tag tag-plus5">+5</span></td>
+          <td class="mi-price-tag">120,630 gp</td>
+          <td>+5 寒冷精铁长剑。对邪恶生物额外+2d10伤害（圣武士使用时为+5d10）。持有圣武士获得SR 5+圣武士等级。
+          圣武士可施展<em>大驱散（Greater Dispel Magic）</em>（以圣武士等级为CL）。圣武士标志性武器。</td>
+        </tr>
+        <tr>
+          <td><strong>烈焰巨剑</strong></td><td>Flame Tongue</td>
+          <td><span class="mi-enchant-tag tag-plus1">+1</span></td>
+          <td class="mi-price-tag">20,715 gp</td>
+          <td>+1 炽焰爆长剑。命令词可令剑身燃起火焰，照亮周围40英尺。对寒冷系和不死生物造成额外伤害。</td>
+        </tr>
+        <tr>
+          <td><strong>冰霜品牌</strong></td><td>Frost Brand</td>
+          <td><span class="mi-enchant-tag tag-plus3">+3</span></td>
+          <td class="mi-price-tag">54,475 gp</td>
+          <td>+3 霜寒长剑。气温低于0度时，剑身自动散发寒气。持有者获得火焰抗性5。
+          每天1次可施展<em>寒冰风暴</em>（CL 10）。</td>
+        </tr>
+        <tr>
+          <td><strong>杀龙剑</strong></td><td>Dragon Slayer</td>
+          <td><span class="mi-enchant-tag tag-plus2">+2</span></td>
+          <td class="mi-price-tag">8,315 gp</td>
+          <td>+2 克敌（龙类）长剑。对龙类攻击+2、伤害+2d6。面对龙类的恐惧光环时，持有者豁免+3。</td>
+        </tr>
+        <tr>
+          <td><strong>矮人飞锤</strong></td><td>Dwarven Thrower</td>
+          <td><span class="mi-enchant-tag tag-plus3">+3</span></td>
+          <td class="mi-price-tag">60,312 gp</td>
+          <td>+3 回力战锤。仅矮人可完全发挥其能力。投掷射程增量30英尺，命中后自动返回。
+          对巨人额外+2d8伤害。</td>
+        </tr>
+        <tr>
+          <td><strong>九命窃贼</strong></td><td>Life-Drinker</td>
+          <td><span class="mi-enchant-tag tag-plus1">+1</span></td>
+          <td class="mi-price-tag">40,320 gp</td>
+          <td>+1 巨斧。命中时持有者获得2d6临时HP（持续1小时），同时对目标造成1d6体质伤害。
+          每天限6次。</td>
+        </tr>
+        <tr>
+          <td><strong> Sylvan Scimitar</strong></td><td>Sylvan Scimitar</td>
+          <td><span class="mi-enchant-tag tag-plus3">+3</span></td>
+          <td class="mi-price-tag">35,000 gp</td>
+          <td>+3 弯刀。在户外自然环境中，持有者获得加速术效果（每天最多10轮）。</td>
+        </tr>
+        <tr>
+          <td><strong>阳炎剑</strong></td><td>Sunsword</td>
+          <td><span class="mi-enchant-tag tag-plus2">+2</span></td>
+          <td class="mi-price-tag">—</td>
+          <td>+2 光能长剑。命令词发出如阳光般的强光（半径60英尺）。对不死生物额外+2d6伤害。
+          每天1次<em>昼明术</em>。</td>
+        </tr>
+        <tr>
+          <td><strong>幸运之刃</strong></td><td>Luck Blade</td>
+          <td><span class="mi-enchant-tag tag-plus2">+2</span></td>
+          <td class="mi-price-tag">22,815 gp+（含愿望）</td>
+          <td>+2 短剑。每天1次<em>幸运术</em>（重掷一次骰子）。附带0-3次<em>祈愿术</em>（随机决定）。
+          每次祈愿使价格增加约27,950 gp。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 7. 特殊魔法防具 ===== -->
+    <h2 id="named-armor">特殊魔法防具（经典 Named Armor）</h2>
+    <p>经典特殊魔法防具通常使用特殊材料制造，并结合独特的附魔能力。</p>
+
+    <table class="mi-table">
+      <thead><tr><th>防具名称</th><th>英文</th><th>基础价格</th><th>效果描述</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>秘银甲</strong></td><td>Mithral Shirt</td>
+          <td class="mi-price-tag">1,100 gp</td>
+          <td>秘银链甲衬衫。AC+4，最大敏捷+6，护甲检定减值0，奥术施法失败10%，速度不减。
+          重量仅5磅（正常12.5磅）。视为轻型盔甲。法师和游荡者最受欢迎的中甲选择。</td>
+        </tr>
+        <tr>
+          <td><strong>精金全身甲</strong></td><td>Adamantine Full Plate</td>
+          <td class="mi-price-tag">16,500 gp</td>
+          <td>精金全身板甲。AC+8，穿戴者获得DR 3/—（减少所有物理伤害3点）。
+          硬度20，HP为正常的150%。重量45磅。最坚固的非魔法盔甲。</td>
+        </tr>
+        <tr>
+          <td><strong>恶魔铠甲</strong></td><td>Demon Armor</td>
+          <td class="mi-price-tag">52,260 gp</td>
+          <td>+4 全身板甲。外观如同恶魔面孔。穿戴者的爪抓攻击（徒手）视为+1武器。
+          可以施展<em>召唤怪物VI</em>（仅召唤恶魔，每天1次）。
+          穿戴者无法脱下此盔甲（除非<em>移除诅咒</em>）。</td>
+        </tr>
+        <tr>
+          <td><strong>精灵链甲</strong></td><td>Elven Chain</td>
+          <td class="mi-price-tag">5,150 gp</td>
+          <td>+1 秘银链甲衬衫。仅精灵工匠可制造。AC+5（4+1增强），视为轻型盔甲。
+          奥术施法失败率10%。极其轻便。</td>
+        </tr>
+        <tr>
+          <td><strong>天界甲</strong></td><td>Celestial Armor</td>
+          <td class="mi-price-tag">22,400 gp</td>
+          <td>+3 秘银链甲衬衫。外观如银白色，极其华美。AC+7（4+3增强），最大敏捷+8。
+          每天1次<em>飞行术</em>（CL 5）。穿戴者获得飞行能力。</td>
+        </tr>
+        <tr>
+          <td><strong>龙鳞甲</strong></td><td>Dragonhide Plate</td>
+          <td class="mi-price-tag">16,500 gp+</td>
+          <td>以龙皮制造的全身甲。AC+8，奥术施法失败率0%（龙鳞甲不影响施法）。
+          对应龙类的喷吐武器类型获得能量抗性10。价格取决于龙的年龄。</td>
+        </tr>
+        <tr>
+          <td><strong>活化盾牌</strong></td><td>Animated Shield</td>
+          <td class="mi-price-tag">9,170 gp</td>
+          <td>+2 活化重钢盾。命令词后盾牌自动飘浮保护持有者（AC+4，含盾牌加值），
+          持续4轮，释放双手。</td>
+        </tr>
+        <tr>
+          <td><strong>狮鹫盾</strong></td><td>Lion's Shield</td>
+          <td class="mi-price-tag">9,170 gp</td>
+          <td>+2 重钢盾，盾面为狮头造型。命令词使狮头活化进行啮咬攻击（+7，2d6伤害），
+          持续最多4轮。啮咬时盾牌AC加值仍生效。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mi-craft-box">
+      <h4>制造魔法武器与防具的规则要点</h4>
+      <table class="mi-table">
+        <thead><tr><th>项目</th><th>规则说明</th></tr></thead>
+        <tbody>
+          <tr><td>所需专长</td><td><strong>锻造魔法武器与防具（Craft Magic Arms and Armor）</strong>，最低CL 5</td></tr>
+          <tr><td>材料成本</td><td>附魔价格的一半（如+1武器附魔价2,000 gp，材料成本为1,000 gp）</td></tr>
+          <tr><td>XP消耗</td><td>附魔价格 / 25（如2,000 gp的附魔消耗80 XP）</td></tr>
+          <tr><td>制造时间</td><td>每1,000 gp附魔价格需要1天（最少1天）</td></tr>
+          <tr><td>先决条件</td><td>武器/防具必须是精制品（Masterwork），需能施放附魔要求的所有法术</td></tr>
+          <tr><td>检定</td><td>法术辨识检定（DC = 5 + 物品CL），失败浪费材料和XP</td></tr>
+          <tr><td>升级附魔</td><td>可以升级已有附魔（如+1升为+2），只需支付差价的材料、XP和时间</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 参考资料 -->
+    <div class="mi-ref-box">
+      <strong>参考资料与延伸阅读：</strong>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li>DMG 第7章：Magic Items — 武器与防具附魔完整列表</li>
+        <li>Magic Item Compendium (MIC) — 扩展附魔选项与物品套装</li>
+        <li>Arms and Armor Guide — 更多武器和防具附魔选项</li>
+        <li>更多魔法物品：<a href="magic-items.html">魔法物品概览</a></li>
+        <li>奇物与消耗品：<a href="wondrous-items.html">奇物与消耗品</a></li>
+        <li>神器与智能物品：<a href="artifacts-intelligent.html">神器与智能物品</a></li>
+      </ul>
+    </div>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;text-align:center;">
+      数据来源：D&D 3.5e DMG第7章 | Magic Item Compendium | Arms and Armor Guide
+    </p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

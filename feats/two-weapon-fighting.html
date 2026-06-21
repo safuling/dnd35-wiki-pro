@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双武器战斗 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #8B0000, #DC143C); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #8B0000; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #8B0000; border-bottom: 2px solid #8B0000; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color: #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+
+    <div class="feat-header">
+      <h1>⚔️ 双武器战斗</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Two-Weapon Fighting</p>
+      <span class="feat-type">通用专长</span>
+      <span class="feat-type">【战斗】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">通用专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">敏捷 15+</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">双持武器时惩罚减少2</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">可多次选择（双武器战斗专长树）</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 103</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">游荡者、特定构建</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你擅长同时使用两把武器进行攻击，能够更有效地发挥双武器战斗的威力。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>敏捷 (Dexterity) 15+</strong></li>
+      </ul>
+      <p><strong>说明</strong>：双武器战斗需要较高的敏捷来协调两把武器的攻击。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>当你双持武器战斗时，<strong>攻击加值惩罚减少2</strong>。</p>
+      <h3>双武器战斗惩罚表</h3>
+      <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+        <thead>
+          <tr style="background: #8B0000; color: white;">
+            <th style="padding: 8px; text-align: left;">攻击类型</th>
+            <th style="padding: 8px; text-align: center;">无专长</th>
+            <th style="padding: 8px; text-align: center;">有专长</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: #f8f9fa;">
+            <td style="padding: 6px;">主手攻击</td>
+            <td style="padding: 6px; text-align: center;">-6</td>
+            <td style="padding: 6px; text-align: center; color: #28a745; font-weight: bold;">-4</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;">副手攻击（额外攻击）</td>
+            <td style="padding: 6px; text-align: center;">-10</td>
+            <td style="padding: 6px; text-align: center; color: #28a745; font-weight: bold;">-8</td>
+          </tr>
+          <tr style="background: #f8f9fa;">
+            <td style="padding: 6px;">副手轻型武器（额外攻击）</td>
+            <td style="padding: 6px; text-align: center;">-6</td>
+            <td style="padding: 6px; text-align: center; color: #28a745; font-weight: bold;">-4</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>注意</strong>：如果副手武器是<a href="../equipment/intro.html">轻型武器</a>，惩罚再减少2（即主手-4，副手-4）。</p>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>双武器战斗流程</h3>
+    <ol>
+      <li><strong>选择双武器</strong>：主手武器 + 副手武器（副手武器必须是轻型武器以获得完整加值）</li>
+      <li><strong>计算攻击加值</strong>：主手攻击 = BAB + 力量调整值 + 其他 - 双武器惩罚；副手攻击 = BAB + 力量调整值 + 其他 - 双武器惩罚</li>
+      <li><strong>进行攻击</strong>：先攻击主手，然后攻击副手（额外攻击）</li>
+      <li><strong>计算伤害</strong>：主手武器伤害 + 力量调整值；副手武器伤害 + 力量调整值的一半（向下取整）</li>
+    </ol>
+
+    <h3>重要规则</h3>
+    <ul>
+      <li><strong>副手伤害</strong>：使用副手武器攻击时，伤害只加一半力量调整值（向下取整）</li>
+      <li><strong>轻型武器</strong>：副手使用轻型武器时，双武器惩罚减少2</li>
+      <li><strong>额外攻击</strong>：双武器战斗允许你在主手攻击后进行一次额外攻击（使用副手武器）</li>
+      <li><strong>不可移动攻击</strong>：双武器战斗攻击必须在你的回合内，且不能移动（除非有特殊能力）</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：4级游荡者（BAB +3），敏捷 16（+3），力量 12（+1），双持短剑（主手）+ 短剑（副手，轻型）。</p>
+      <p><strong>有双武器战斗专长</strong>：</p>
+      <ol>
+        <li><strong>主手攻击</strong>：BAB +3 + 敏捷调整值 +3 + 其他 -4（双武器惩罚） = +2 攻击加值</li>
+        <li><strong>副手攻击</strong>：BAB +3 + 敏捷调整值 +3 + 其他 -4（双武器惩罚，轻型武器） = +2 攻击加值</li>
+        <li><strong>伤害</strong>：主手 1d6 + 1（力量调整值的一半，向下取整）；副手 1d6 + 0（力量调整值的一半，向下取整）</li>
+      </ol>
+      <p><strong>分析</strong>：双武器战斗专长显著减少了惩罚，使游荡者能够进行两次有效的攻击。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 双武器战斗专长树</h4>
+      <ul>
+        <li><strong>双武器战斗 (Two-Weapon Fighting)</strong> - 本专长，减少惩罚</li>
+        <li><strong>改进双武器战斗 (Improved Two-Weapon Fighting)</strong> - 先决条件：双武器战斗、BAB +6；益处：副手可以进行第二次额外攻击</li>
+        <li><strong>高等双武器战斗 (Greater Two-Weapon Fighting)</strong> - 先决条件：改进双武器战斗、BAB +11；益处：副手可以进行第三次额外攻击</li>
+        <li><strong>双武器闪避 (Two-Weapon Defense)</strong> - 先决条件：双武器战斗；益处：AC +1（当双持武器时）</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>⚔️ 推荐构建</h4>
+      <p><strong>1. 双武器游荡者 (Two-Weapon Rogue)</strong></p>
+      <ul>
+        <li>专攻：双武器战斗 → 改进双武器战斗 → 高等双武器战斗</li>
+        <li>特点：每回合多次攻击，适合偷袭</li>
+        <li>推荐武器：短剑 + 短剑（轻型）</li>
+      </ul>
+      <p><strong>2. 双武器战士 (Two-Weapon Fighter)</strong></p>
+      <ul>
+        <li>专攻：双武器战斗 → 双武器闪避 → 改进双武器战斗</li>
+        <li>特点：攻守兼备，适合前排</li>
+        <li>推荐武器：长剑 + 短剑</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：双武器战斗与猛力攻击/顺劈斩的兼容</h4>
+      <p><strong>冲突点</strong>：双武器战斗能否与猛力攻击或顺劈斩同时使用？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 103</strong>：双武器战斗专长描述</li>
+        <li><strong>PHB p. 98</strong>：猛力攻击专长描述</li>
+        <li><strong>PHB p. 92</strong>：顺劈斩专长描述</li>
+      </ul>
+      <p><strong>冲突描述</strong>：双武器战斗、猛力攻击、顺劈斩都需要在攻击动作中使用，能否在同一回合内使用多个？</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>兼容解释</strong>：可以同时使用，但每个攻击独立计算（例如：双武器战斗的主手攻击可以使用猛力攻击，副手攻击不能使用）</li>
+        <li><strong>不兼容解释</strong>：双武器战斗和猛力攻击/顺劈斩是互斥的，只能选择一种在回合内使用</li>
+        <li><strong>折中解释</strong>：双武器战斗可以和猛力攻击同时使用，但不能和顺劈斩同时使用（因为顺劈斩需要击杀敌人后才能触发额外攻击）</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>兼容解释</strong>（双武器战斗的主手攻击可以使用猛力攻击）。</p>
+    </div>
+
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：副手伤害的力量调整值计算</h4>
+      <p><strong>冲突点</strong>：副手伤害是否加力量调整值的一半（向下取整）？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 135</strong>：副手伤害只加一半力量调整值（向下取整）</li>
+        <li><strong>一些在线资源</strong>：认为副手伤害应加完整力量调整值</li>
+      </ul>
+      <p><strong>冲突描述</strong>：副手伤害的力量调整值计算方式存在争议。</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>PHB解释</strong>：副手伤害只加一半力量调整值（向下取整）</li>
+        <li><strong>错误解释</strong>：副手伤害加完整力量调整值</li>
+      </ol>
+      <p><strong>建议</strong>：遵循 PHB 规则（副手伤害只加一半力量调整值）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 103 - 双武器战斗专长描述</li>
+      <li><strong>玩家手册 (PHB)</strong> p. 135 - 双武器战斗惩罚表</li>
+      <li><strong>Complete Warrior</strong> p. 104 - 双武器战斗专长树</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+</main>
+</div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

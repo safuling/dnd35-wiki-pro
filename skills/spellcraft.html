@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法术辨识 - D&D 3.5e 中文Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .skill-header {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .ability-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .dc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .dc-table th, .dc-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .dc-table th {
+            background: #2980b9;
+            color: white;
+        }
+        .dc-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .conflict-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html" class="active">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+    <nav class="top-nav">
+        <div class="nav-brand">🐉 D&D 3.5e Wiki</div>
+        <div class="nav-links">
+            <a href="../index.html">首页</a>
+            <a href="intro.html" class="active">技能</a>
+            <a href="../spells/intro.html">法术</a>
+            <a href="../races/human.html">种族</a>
+            <a href="../classes/wizard.html">职业</a>
+            <a href="../feats/intro.html">专长</a>
+            <a href="../conflicts.html">规则冲突</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="skill-header">
+            <h1>🔮 法术辨识 (Spellcraft)</h1>
+            <p class="subtitle">智力技能 · 训练技能（法师、术士、牧师、德鲁伊、游侠、圣武士）</p>
+            <div>
+                <span class="ability-badge">关键属性：智力 (INT)</span>
+                <span class="ability-badge">调整值：1d20 + 调整值点数 + 智力调整值</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 技能描述</h3>
+            <p><strong>法术辨识</strong>是D&D中最重要、最复杂的智力技能。它允许你识别法术、识别魔法物品、理解法术成分、甚至制作魔法物品。</p>
+            
+            <h4>调整值计算</h4>
+            <p class="formula">法术辨识调整值 = 调整值点数 + 智力调整值 + 其他调整值</p>
+            
+            <h4>检定条件</h4>
+            <ul>
+                <li><strong>动作</strong>：直觉动作（Reaction）识别法术；标准动作（Standard Action）识别物品</li>
+                <li><strong>重试</strong>：可以，但某些情况下（如已尝试识别）重试可能有DC惩罚</li>
+                <li><strong>特殊</strong>：这是训练技能，所有施法职业都将其作为训练技能</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 难度等级 (DC) - 识别法术</h2>
+            <table class="dc-table">
+                <thead>
+                    <tr>
+                        <th>法术环级</th>
+                        <th>识别DC</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0环（戏法）</td><td>DC 15</td><td>最容易识别</td></tr>
+                    <tr><td>1环</td><td>DC 16</td><td></td></tr>
+                    <tr><td>2环</td><td>DC 17</td><td></td></tr>
+                    <tr><td>3环</td><td>DC 18</td><td></td></tr>
+                    <tr><td>4环</td><td>DC 19</td><td></td></tr>
+                    <tr><td>5环</td><td>DC 20</td><td></td></tr>
+                    <tr><td>6环</td><td>DC 21</td><td></td></tr>
+                    <tr><td>7环</td><td>DC 22</td><td></td></tr>
+                    <tr><td>8环</td><td>DC 23</td><td></td></tr>
+                    <tr><td>9环</td><td>DC 24</td><td>最难识别</td></tr>
+                    <tr><td>复制卷轴</td><td>DC 15 + 法术环级</td><td>需要抄写卷轴</td></tr>
+                    <tr><td>制作魔法物品（准备）</td><td>DC = 物品DC</td><td>需要法术辨识调整值 ≥ DC</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📋 技能应用</h2>
+            
+            <h3>识别正在施放的法术</h3>
+            <p>当你看到别人施法时，可以做<strong>法术辨识</strong>检定来识别法术（直觉动作）。</p>
+            <ul>
+                <li><strong>DC</strong>：15 + 法术环级</li>
+                <li><strong>成功</strong>：你知道法术名称、学派、效果</li>
+                <li><strong>失败</strong>：你不知道法术信息，但知道有魔法发生</li>
+            </ul>
+
+            <h3>识别魔法物品</h3>
+            <p>你可以使用法术辨识来识别魔法物品的属性（标准动作，需要接触物品）。</p>
+            <ul>
+                <li><strong>DC</strong>：物品DC（通常15-25）</li>
+                <li><strong>成功</strong>：得知物品属性、激活方式、诅咒（如果有）</li>
+                <li><strong>失败</strong>：不知道物品信息</li>
+            </ul>
+
+            <h3>制作魔法物品</h3>
+            <p>制作魔法物品需要法术辨识调整值 ≥ 物品DC。这是制作的前提条件。</p>
+            <ul>
+                <li><strong>+1长剑</strong>：需要法术辨识调整值 ≥ 5</li>
+                <li><strong>+2长剑</strong>：需要法术辨识调整值 ≥ 10</li>
+                <li><strong>火球术魔杖</strong>：需要法术辨识调整值 ≥ 15</li>
+            </ul>
+
+            <h3>理解法术成分</h3>
+            <p>你可以识别法术的成分（言语、姿势、材料），以帮助<strong>辨识法术</strong>或<strong>反制法术</strong>。</p>
+        </div>
+
+        <div class="example-box">
+            <h3>💡 实战示例</h3>
+            <p><strong>场景</strong>：你是一名5级法师（智力18，+4调整值），有8点法术辨识调整值。</p>
+            <p><strong>总调整值</strong>：8（调整值点数）+ 4（智力调整值）= <strong>+12</strong></p>
+            <p><strong>任务</strong>：识别一个敌人施放的5环法术（"支配人类"）。</p>
+            <p><strong>计算</strong>：DC = 15 + 5 = <strong>20</strong></p>
+            <p><strong>检定</strong>：1d20 + 12 = <strong>18 < 20</strong>，<strong>失败！</strong>你未能识别这个法术。</p>
+            <p><strong>变体</strong>：如果敌人施放3环法术"火球术"，DC = 15 + 3 = 18。1d20 + 12 = <strong>22 ≥ 18</strong>，<strong>成功！</strong>你识别出火球术，可以提前躲避。</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 搭配专长</h2>
+            <ul>
+                <li><strong>法术辨识专长（Spellcraft Specialization）</strong>：法术辨识调整值+2（需选择为专精技能）</li>
+                <li><strong>魔法物品巧匠（Magical Artisan）</strong>：制作魔法物品时获得+2调整值</li>
+                <li><strong>抄写卷轴（Scribe Scroll）</strong>：制作卷轴，需要法术辨识调整值 ≥ 法术DC</li>
+                <li><strong>制作魔杖（Craft Wand）</strong>：制作魔杖，需要法术辨识调整值 ≥ 法术DC</li>
+            </ul>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：识别法术的动作类型</h3>
+            <p><strong>冲突点</strong>：识别法术是<strong>直觉动作</strong>、<strong>即时动作</strong>，还是需要<strong>标准动作</strong>？</p>
+            <p><strong>官方规则（PHB p.82 & 3.5版 FAQ）</strong>：识别法术是<strong>直觉动作</strong>（Reaction），可以在敌人施法时立即进行。但DM可以自由决定是否需要标准动作（如果识别很困难）。</p>
+            <p><strong>网络误传</strong>：部分网站声称"识别法术需要标准动作，敌人施法后下一轮才能识别"。这是错误的，会严重削弱法师的应对能力。</p>
+            <p><strong>推荐处理</strong>：严格按PHB执行，识别法术是直觉动作。但某些特殊情况（如识别非常稀有的法术、或DM设定"困难识别"）可能需要标准动作。</p>
+            <p class="source">📚 出处：PHB p.82, 3.5版 FAQ v.2.0, Complete Arcane p.138</p>
+        </div>
+
+        <div class="conflict-box">
+            <h3>⚠️ 规则冲突：法术辨识是否可以识别"隐蔽施法"</h3>
+            <p><strong>冲突点</strong>：如果施法者使用"隐蔽施法"（如沉默法术、无姿势施法等），是否还能识别？</p>
+            <p><strong>官方规则（PHB p.173 & DMG p.23）</strong>：如果法术缺少言语或姿势成分，识别DC增加<strong>+5</strong>。如果完全隐蔽（如"无声无姿"法术），识别DC增加<strong>+10</strong>，且需要<strong>法术辨识调整值 ≥ DC</strong>才能尝试识别。</p>
+            <p><strong>网络误传</strong>：部分论坛声称"隐蔽施法完全无法识别"。这是错误的——高技能仍有可能识别。</p>
+            <p><strong>推荐处理</strong>：按PHB执行。隐蔽施法增加识别DC，但不使识别不可能。例外：如果施法者使用"魔法严密"（Spell Turning）等法术，则完全无法识别。</p>
+            <p class="source">📚 出处：PHB p.173, DMG p.23, Complete Arcane p.139</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 规则出处</h3>
+            <ul>
+                <li><strong>玩家手册 (PHB)</strong>：p.82-83，法术辨识技能详细描述</li>
+                <li><strong>地下城主指南 (DMG)</strong>：p.23，识别魔法物品规则</li>
+                <li><strong>Complete Arcane</strong>：p.138-140，法术辨识进阶规则</li>
+                <li><strong>3.5版 FAQ</strong>：v.2.0，法术辨识相关问答</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>🐉 D&D 3.5e 中文Wiki | 基于《玩家手册》(PHB) 规则</p>
+        <p>本网站为粉丝制作，非官方作品。Dungeons & Dragons 是 Wizards of the Coast 的商标。</p>
+    </footer>
+</body>
+</html>

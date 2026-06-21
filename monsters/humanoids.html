@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>类人怪物 Humanoids - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.cr-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:13px; font-weight:600; color:#fff; }
+.cr-low { background:#27ae60; }
+.cr-mid { background:#d4a017; }
+.cr-high { background:#c0392b; }
+.cr-boss { background:#8e44ad; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:40px; }
+.monster-entry { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:16px 0; }
+.monster-entry h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.monster-entry table { width:100%; border-collapse:collapse; margin:8px 0; }
+.monster-entry th, .monster-entry td { padding:6px 10px; border-bottom:1px solid var(--border-light,#e8dcc8); text-align:left; font-size:14px; }
+.monster-entry th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.tactic { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:8px 12px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物图鉴</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+      <a href="humanoids.html" class="active">类人怪物</a>
+      <a href="undead.html">不死生物</a>
+      <a href="magical-beasts.html">魔法兽</a>
+      <a href="aberrations-fey.html">异怪与精类</a>
+      <a href="outsiders.html">异界生物</a>
+      <a href="giants-constructs.html">巨人与构装体</a>
+      <a href="plants-oozes.html">植物与泥怪</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>类人怪物 <small>Humanoids</small></h1>
+
+    <p>本页收录 D&D 3.5e 中的类人生物 (Humanoid) 与类人怪物 (Monstrous Humanoid)，涵盖从低级杂兵到高级首领的完整数据。类人生物是最常见的低挑战等级敌人，适合构建部落遭遇和冒险前哨战；而类人怪物则拥有超自然能力，往往担任更具威胁的角色。</p>
+
+    <div class="toc">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#goblinoids">1. 地精类 (Goblinoids)</a></li>
+        <li><a href="#orcs">2. 兽人类 (Orcs &amp; Kin)</a></li>
+        <li><a href="#reptilian">3. 爬行类人 (Reptilian Humanoids)</a></li>
+        <li><a href="#aquatic">4. 水生类人 (Aquatic Humanoids)</a></li>
+        <li><a href="#other-humanoids">5. 其他类人生物 (Other Humanoids)</a></li>
+        <li><a href="#monstrous-humanoids">6. 类人怪物 (Monstrous Humanoids)</a></li>
+        <li><a href="#cr-reference">7. CR 速查表</a></li>
+      </ul>
+    </div>
+
+    <!-- ==================== SECTION 1: 地精类 ==================== -->
+    <h2 class="section-title" id="goblinoids">1. 地精类 (Goblinoids)</h2>
+
+    <p>地精类生物是 D&amp;D 中最经典的低等级敌人群体。它们通常以部落形式聚居，依靠数量优势压倒冒险者。地精、大地精和熊地精三者之间存在明确的等级关系，经常混合出现在同一遭遇中。</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>怪物</th>
+          <th>CR</th>
+          <th>体型</th>
+          <th>HD</th>
+          <th>AC</th>
+          <th>主要攻击</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#goblin">地精 (Goblin)</a></td>
+          <td><span class="cr-badge cr-low">1/4</span></td>
+          <td>小型</td>
+          <td>1d8</td>
+          <td>15</td>
+          <td>标枪 +3 (1d6)</td>
+        </tr>
+        <tr>
+          <td><a href="#hobgoblin">大地精 (Hobgoblin)</a></td>
+          <td><span class="cr-badge cr-low">1/2</span></td>
+          <td>中型</td>
+          <td>1d8+1</td>
+          <td>15</td>
+          <td>长剑 +2 (1d8+1)</td>
+        </tr>
+        <tr>
+          <td><a href="#bugbear">熊地精 (Bugbear)</a></td>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td>中型</td>
+          <td>3d8+3</td>
+          <td>17</td>
+          <td>链枷 +5 (2d6+2)</td>
+        </tr>
+        <tr>
+          <td><a href="#gnoll">豺狼人 (Gnoll)</a></td>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td>中型</td>
+          <td>2d8+2</td>
+          <td>15</td>
+          <td>战斧 +3 (1d8+2)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Goblin -->
+    <div class="monster-entry" id="goblin">
+      <h3>地精 <small>Goblin</small> <span class="cr-badge cr-low">CR 1/4</span></h3>
+      <p>最弱小的地精类生物，胆小但狡猾。它们倾向于伏击和群攻，在数量不足时会迅速逃窜。地精常被更强大的地精类生物驱使为炮灰。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/4</span></td></tr>
+        <tr><td>体型</td><td>小型 (Small)</td></tr>
+        <tr><td>类型</td><td>类人生物 (地精亚种)</td></tr>
+        <tr><td>HD</td><td>1d8 (4 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+1 体型, +2 敏捷, +2 皮甲)</td></tr>
+        <tr><td>攻击</td><td>标枪 +3 远程 (1d6) 或 弯刀 +2 近战 (1d4)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗视觉 60尺</td></tr>
+        <tr><td>属性值</td><td>力量 11, 敏捷 15, 体质 10, 智力 10, 感知 9, 魅力 6</td></tr>
+        <tr><td>挑战</td><td>通常以 4-6 只为一组出现；擅长伏击和撤退战术</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>地精会利用体型优势躲藏，从掩体后投掷标枪。它们畏惧正面交锋，会利用骑乘座狼进行突袭后撤退。对抗地精时，控制战场和封锁退路是关键。
+      </div>
+    </div>
+
+    <!-- Hobgoblin -->
+    <div class="monster-entry" id="hobgoblin">
+      <h3>大地精 <small>Hobgoblin</small> <span class="cr-badge cr-low">CR 1/2</span></h3>
+      <p>大地精是地精类中最具军事纪律的种族。它们组织严密、装备精良，经常作为雇佣兵或军团步兵出现。与普通地精不同，大地精不会轻易溃逃。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (地精亚种)</td></tr>
+        <tr><td>HD</td><td>1d8+1 (5 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+1 敏捷, +3 镶嵌甲, +1 轻盾)</td></tr>
+        <tr><td>攻击</td><td>长剑 +2 近战 (1d8+1) 或 标枪 +2 远程 (1d8)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗视觉 60尺</td></tr>
+        <tr><td>属性值</td><td>力量 13, 敏捷 13, 体质 12, 智力 10, 感知 9, 魅力 8</td></tr>
+        <tr><td>挑战</td><td>纪律严明，会使用阵型和战术配合</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>大地精会使用盾墙阵型和交替掩护推进。它们经常以2-4人为小组协同作战，优先集火最脆弱的目标。遇到大地精时，注意它们可能设下埋伏或安排哨兵预警。
+      </div>
+    </div>
+
+    <!-- Bugbear -->
+    <div class="monster-entry" id="bugbear">
+      <h3>熊地精 <small>Bugbear</small> <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>熊地精是地精类中体型最大、力量最强的成员。它们是天生的潜行猎手——尽管体型庞大，却拥有惊人的隐匿能力。熊地精通常担任地精部落的首领或精英突击手。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (地精亚种)</td></tr>
+        <tr><td>HD</td><td>3d8+3 (16 HP)</td></tr>
+        <tr><td>AC</td><td>17 (+2 敏捷, +3 皮甲, +2 轻盾)</td></tr>
+        <tr><td>攻击</td><td>晨星锤 +5 近战 (2d6+2) 或 标枪 +4 远程 (1d8)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗视觉 60尺; +3 潜行检定; 突袭时造成额外 2d6 偷袭伤害</td></tr>
+        <tr><td>属性值</td><td>力量 15, 敏捷 14, 体质 13, 智力 8, 感知 13, 魅力 9</td></tr>
+        <tr><td>挑战</td><td>擅长伏击，常在战斗开始时造成爆发伤害</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>熊地精最令人畏惧的是其伏击能力——它们会在战斗首轮造成偷袭伤害。进入地精领地时务必保持高警觉，使用侦测类法术提前发现潜伏的熊地精。一旦伏击失败，它们会转入正面战斗但威胁大大降低。
+      </div>
+    </div>
+
+    <!-- Gnoll -->
+    <div class="monster-entry" id="gnoll">
+      <h3>豺狼人 <small>Gnoll</small> <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>豺狼人是懒惰而残忍的掠食者，外形如同直立行走的鬣狗。它们喜欢攻击比自身弱小的目标，依靠数量优势和凶残的战斗风格取胜。豺狼人常驯服鬣狗作为战斗伙伴。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (豺狼人亚种)</td></tr>
+        <tr><td>HD</td><td>2d8+2 (11 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+2 敏捷, +3 皮甲)</td></tr>
+        <tr><td>攻击</td><td>战斧 +3 近战 (1d8+2) 或 短弓 +3 远程 (1d8)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗视觉 60尺; 狂暴 (当 HP 降至一半以下时，攻击 +2 但 AC -2)</td></tr>
+        <tr><td>属性值</td><td>力量 15, 敏捷 14, 体质 13, 智力 8, 感知 11, 魅力 7</td></tr>
+        <tr><td>挑战</td><td>经常搭配 1-2 只鬣狗作战，增加战场混乱程度</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>豺狼人会在受伤后进入狂暴状态，变得更加凶猛但也更加脆弱。它们习惯围攻落单目标，所以保持队伍紧凑很重要。豺狼人酋长通常是更高 HD 的个体，可能拥有野蛮人等级。
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 2: 兽人类 ==================== -->
+    <h2 class="section-title" id="orcs">2. 兽人类 (Orcs &amp; Kin)</h2>
+
+    <p>兽人是 D&amp;D 世界中最具代表性的敌对种族之一。它们崇拜战神格乌什 (Gruumsh)，以战争和掠夺为生。兽人部落规模从数十人到数千人不等，经常与其他邪恶种族结盟或交战。</p>
+
+    <!-- Orc -->
+    <div class="monster-entry" id="orc">
+      <h3>兽人 <small>Orc</small> <span class="cr-badge cr-low">CR 1/2</span></h3>
+      <p>兽人是最典型的野蛮战士种族。它们体型壮硕、獠牙外露，信奉弱肉强食的法则。普通兽人士兵是许多低等级冒险中最常见的敌人。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (兽人亚种)</td></tr>
+        <tr><td>HD</td><td>1d8+1 (5 HP)</td></tr>
+        <tr><td>AC</td><td>13 (+2 敏捷, +1 镶嵌甲)</td></tr>
+        <tr><td>攻击</td><td>弯刀 +4 近战 (2d4+4) 或 标枪 +2 远程 (1d8)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗视觉 60尺; 凶暴 (Ferocity) — 即使 HP 降至 0 以下仍可继续战斗 1 轮</td></tr>
+        <tr><td>属性值</td><td>力量 17, 敏捷 11, 体质 12, 智力 8, 感知 7, 魅力 6</td></tr>
+        <tr><td>挑战</td><td>凶暴能力使其在濒死时仍具威胁，不要过早放松警惕</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>兽人的凶暴特性意味着它们在 HP 降至负数后仍可发动一轮反击。冒险者应该在击倒兽人后保持距离或使用远程攻击补刀。兽人擅长近战，缺乏远程火力是其弱点。
+      </div>
+    </div>
+
+    <!-- Half-Orc -->
+    <div class="monster-entry" id="half-orc">
+      <h3>半兽人 <small>Half-Orc</small> <span class="cr-badge cr-low">CR 1/2</span></h3>
+      <p>半兽人继承了兽人的蛮力和人类的适应性。它们常遭受歧视，有些融入人类社会成为冒险者，有些则回归兽人部落。作为 NPC 敌人时，半兽人通常具有职业等级。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (兽人亚种)</td></tr>
+        <tr><td>HD</td><td>1d8+1 (5 HP)</td></tr>
+        <tr><td>AC</td><td>13 (视装备而定)</td></tr>
+        <tr><td>攻击</td><td>弯刀 +3 近战 (1d8+3) 或 标枪 +1 远程 (1d8)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗视觉 60尺; 凶暴 (Ferocity)</td></tr>
+        <tr><td>属性值</td><td>力量 15, 敏捷 11, 体质 12, 智力 8, 感知 7, 魅力 6</td></tr>
+        <tr><td>挑战</td><td>通常搭配职业等级出现，实际威胁高于基础数据</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>半兽人的基础数据与普通兽人相近，但它们往往拥有 1-2 级职业等级（野蛮人或战士最常见），使其实际 CR 高于基础值。注意它们可能拥有专长或狂暴能力。
+      </div>
+    </div>
+
+    <!-- Orc War Chief -->
+    <div class="monster-entry" id="orc-war-chief">
+      <h3>兽人战争首领 <small>Orc War Chief</small> <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>兽人战争首领是部落中最强大的战士，通过力量和残忍赢得统治地位。它们装备精良、战术头脑比普通兽人更出色，能够指挥整个部落投入战争。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (兽人亚种)</td></tr>
+        <tr><td>HD</td><td>4d8+8 (26 HP)</td></tr>
+        <tr><td>AC</td><td>17 (+2 敏捷, +5 全身甲)</td></tr>
+        <tr><td>攻击</td><td>巨斧 +7 近战 (2d6+6/x3)</td></tr>
+        <tr><td>特殊能力</td><td>黑暗视觉 60尺; 凶暴; 强力冲锋; 战斗号令 (鼓舞盟友士气)</td></tr>
+        <tr><td>属性值</td><td>力量 19, 敏捷 13, 体质 15, 智力 10, 感知 9, 魅力 12</td></tr>
+        <tr><td>挑战</td><td>作为首领单位出现，周围通常有 4-8 名普通兽人护卫</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>战争首领通常装备魔法武器和护甲，并且身边有亲卫队。建议先消灭其护卫再集火首领，或使用控制法术将其与部队隔离。首领被击杀后，普通兽人士气会大幅下降。
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 3: 爬行类人 ==================== -->
+    <h2 class="section-title" id="reptilian">3. 爬行类人 (Reptilian Humanoids)</h2>
+
+    <p>爬行类人生物栖息在沼泽、丛林和地下洞穴中。它们通常具有冷血动物的特征——耐心、伏击型猎手，有些种类拥有毒素或恶臭等特殊能力。</p>
+
+    <!-- Lizardfolk -->
+    <div class="monster-entry" id="lizardfolk">
+      <h3>蜥蜴人 <small>Lizardfolk</small> <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>蜥蜴人是栖息在沼泽和湿地中的原始种族。它们思维简单直接，缺乏复杂情感，但在水域环境中是危险的猎手。蜥蜴人擅长伏击和水中战斗。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (爬行亚种)</td></tr>
+        <tr><td>HD</td><td>2d8+2 (11 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+2 敏捷, +3 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>爪抓 +3 近战 (1d4+1) x2; 啮咬 +1 近战 (1d4)</td></tr>
+        <tr><td>特殊能力</td><td>游泳速度 40尺; 屏息; 持握武器 (可额外使用制造武器)</td></tr>
+        <tr><td>属性值</td><td>力量 13, 敏捷 14, 体质 13, 智力 5, 感知 12, 魅力 6</td></tr>
+        <tr><td>挑战</td><td>水域环境中威胁大增，会从水下发动突袭</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>蜥蜴人会潜伏在水下等待猎物靠近，然后突然攻击并试图将目标拖入水中。在沼泽地带行进时，注意水面异常波动。蜥蜴人的智力极低，可以被简单的陷阱和诱饵轻易引开。
+      </div>
+    </div>
+
+    <!-- Poisonous Lizardfolk -->
+    <div class="monster-entry" id="lizardfolk-poison">
+      <h3>毒蜥蜴人 <small>Poisonous Lizardfolk</small> <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>毒蜥蜴人是蜥蜴人的变异种，体内含有致命毒素。它们会将毒素涂抹在爪子和武器上，在近战中注入猎物体内。毒素效果因个体而异。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (爬行亚种)</td></tr>
+        <tr><td>HD</td><td>2d8+2 (11 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+2 敏捷, +3 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>爪抓 +3 近战 (1d4+1 附加毒素) x2</td></tr>
+        <tr><td>特殊能力</td><td>毒素 — 初始伤害 1d6 体质，后续伤害 1d6 体质，强韧 DC 11 抵消; 游泳 40尺</td></tr>
+        <tr><td>属性值</td><td>力量 13, 敏捷 14, 体质 13, 智力 5, 感知 12, 魅力 6</td></tr>
+        <tr><td>挑战</td><td>毒素可造成体质伤害，多轮叠加后可能致命</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>毒蜥蜴人的毒素会造成体质伤害，多次命中后可能导致角色体质值大幅下降。携带抗毒剂（anti-toxin）或准备中和毒素的法术（如中和毒性）是非常必要的。优先消灭毒蜥蜴人以防持续中毒。
+      </div>
+    </div>
+
+    <!-- Troglodyte -->
+    <div class="monster-entry" id="troglodyte">
+      <h3>穴居人 <small>Troglodyte</small> <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>穴居人是生活在地下深处的原始爬行类人。它们最显著的特征是散发出的恶臭——一种让大多数生物作呕的腺体分泌物。穴居人痛恨地表生物，会攻击一切入侵者。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (爬行亚种)</td></tr>
+        <tr><td>HD</td><td>2d8+2 (11 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+1 敏捷, +4 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>爪抓 +3 近战 (1d4+1) x2; 啮咬 +1 近战 (1d4)</td></tr>
+        <tr><td>特殊能力</td><td>恶臭光环 — 30尺内所有非穴居人生物需进行强韧检定 DC 12，失败则恶心 10 轮; 黑暗视觉 90尺; 光敏感</td></tr>
+        <tr><td>属性值</td><td>力量 13, 敏捷 12, 体质 13, 智力 8, 感知 13, 魅力 12</td></tr>
+        <tr><td>挑战</td><td>恶臭光环可在战斗开始前就削弱整个队伍</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>穴居人的恶臭光环是其最大威胁——恶心状态会让攻击、检定和豁免全部 -2。进入穴居人领地前准备好延缓毒发法术（delay poison）或使用远程攻击保持距离。注意它们对强光敏感，光亮法术可以有效削弱其战斗力。
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 4: 水生类人 ==================== -->
+    <h2 class="section-title" id="aquatic">4. 水生类人 (Aquatic Humanoids)</h2>
+
+    <p>水生类人生物统治着海洋、湖泊和河流的深处。它们在自身的水域环境中极为强大，但离水后往往大幅削弱。与水生类人的遭遇通常发生在水下冒险或沿海袭击事件中。</p>
+
+    <!-- Merfolk -->
+    <div class="monster-entry" id="merfolk">
+      <h3>人鱼 <small>Merfolk</small> <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>人鱼是海洋中最优雅的类人种族，上半身为人类形态，下半身为鱼尾。它们建立了海底城邦，与陆地文明保持着微妙的和平关系。并非所有人鱼都是友好的——有些部落对地表居民怀有敌意。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (水生亚种)</td></tr>
+        <tr><td>HD</td><td>2d8 (9 HP)</td></tr>
+        <tr><td>AC</td><td>13 (+2 敏捷, +1 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>三叉戟 +2 近战 (1d8+1)</td></tr>
+        <tr><td>特殊能力</td><td>游泳速度 50尺; 水生亚种 (可在水下呼吸); 低光视觉</td></tr>
+        <tr><td>属性值</td><td>力量 13, 敏捷 15, 体质 10, 智力 10, 感知 11, 魅力 12</td></tr>
+        <tr><td>挑战</td><td>在陆地上移动速度极慢，水中战斗是其主要战场</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>人鱼在水中的机动性远超陆地冒险者。它们会使用三叉戟和渔网配合作战，试图将目标拖入深水区。如果你不得不进行水下战斗，确保有水下呼吸手段和游泳机动性。在陆地上遭遇人鱼时，它们几乎没有威胁。
+      </div>
+    </div>
+
+    <!-- Sahuagin -->
+    <div class="monster-entry" id="sahuagin">
+      <h3>鲨化鱼人 <small>Sahuagin</small> <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>鲨化鱼人是海洋中最凶残的掠食种族，崇拜鲨鱼并视其为神圣生物。它们拥有五肢攻击能力（双爪、双脚、啮咬），并在嗅到鲜血时进入疯狂状态。鲨化鱼人是沿海定居者的噩梦。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (水生亚种)</td></tr>
+        <tr><td>HD</td><td>2d8+4 (13 HP)</td></tr>
+        <tr><td>AC</td><td>16 (+2 敏捷, +4 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>爪抓 +4 近战 (1d4+2) x2, 啮咬 +2 近战 (1d4+1), 脚爪 +2 近战 (1d4+1) x2</td></tr>
+        <tr><td>特殊能力</td><td>鲜血狂怒 (Blood Frenzy) — 闻到血腥味后攻击和伤害 +2 但 AC -2; 游泳 40尺; 鲨鱼心灵感应; 光敏感</td></tr>
+        <tr><td>属性值</td><td>力量 15, 敏捷 15, 体质 14, 智力 10, 感知 13, 魅力 9</td></tr>
+        <tr><td>挑战</td><td>五肢攻击使其每轮可造成大量伤害; 鲜血狂怒增加不可预测性</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>鲨化鱼人的五肢全力攻击可在单轮造成极其可观的伤害。它们会在队友受伤流血后触发鲜血狂怒，变得更加凶猛。治疗受伤的队友可以减少血液扩散，或者使用大量火力在其触发狂怒前迅速击杀。鲨化鱼人经常带着鲨鱼宠物一起作战。
+      </div>
+    </div>
+
+    <!-- Locathah -->
+    <div class="monster-entry" id="locathah">
+      <h3>洛卡鱼人 <small>Locathah</small> <span class="cr-badge cr-low">CR 1/2</span></h3>
+      <p>洛卡鱼人是外形类似鲶鱼的智慧水生种族。它们性格谨慎、善于贸易，通常与鲨化鱼人和人鱼保持着紧张的中立关系。洛卡鱼人是出色的工匠和商人。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (水生亚种)</td></tr>
+        <tr><td>HD</td><td>2d8 (9 HP)</td></tr>
+        <tr><td>AC</td><td>13 (+2 敏捷, +1 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>轻弩 +2 远程 (1d8)</td></tr>
+        <tr><td>特殊能力</td><td>游泳速度 60尺; 水生亚种; 离水后可存活数小时</td></tr>
+        <tr><td>属性值</td><td>力量 10, 敏捷 14, 体质 10, 智力 11, 感知 13, 魅力 9</td></tr>
+        <tr><td>挑战</td><td>偏好远程战斗，不太喜欢近战; 可以作为中立 NPC 或盟友出现</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>洛卡鱼人更喜欢使用弩进行远程战斗，避免进入近战。它们通常不是敌意种族，更适合作为交易对象或信息提供者。在被迫战斗时，它们会利用出色的游泳速度进行打了就跑的战术。
+      </div>
+    </div>
+
+    <!-- Kuo-toa -->
+    <div class="monster-entry" id="kuo-toa">
+      <h3>鱼人 (库阿托) <small>Kuo-toa</small> <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>库阿托是居住在幽暗地域的水生类人种族，外形如同直立行走的鱼类。它们拥有独特的反射能力和滑腻皮肤，崇拜疯狂的海女神卜力古普 (Blibdoolpoolp)。库阿托经常与灵吸怪和卓尔精灵发生冲突。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物 (水生亚种)</td></tr>
+        <tr><td>HD</td><td>2d8 (9 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+1 敏捷, +4 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>轻盾击 +2 近战 (1d6+1) 或 渔叉 +2 远程 (1d6+1)</td></tr>
+        <tr><td>特殊能力</td><td>灵敏反射 (对所有攻击获得闪避加值); 滑腻皮肤 (难以被擒抱或束缚); 盾卫加值; 黑暗视觉 60尺; 光敏感; 两栖</td></tr>
+        <tr><td>属性值</td><td>力量 13, 敏捷 13, 体质 11, 智力 9, 感知 14, 魅力 8</td></tr>
+        <tr><td>挑战</td><td>闪避能力和滑腻皮肤使其难以被近战或擒抱制服</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>库阿托的灵敏反射和滑腻皮肤使其非常难以被擒抱、擒拿或定身。使用需要反射豁免的法术（如火球术）是克制它们的有效手段。库阿托经常组成巡逻队出没在幽暗地域的水道附近，数量优势是它们的主要战术。
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 5: 其他类人生物 ==================== -->
+    <h2 class="section-title" id="other-humanoids">5. 其他类人生物 (Other Humanoids)</h2>
+
+    <p>除了上述主要类别外，还有许多独特的类人生物分布在各种环境中。这些生物各有特色，可以为冒险增添更多变化。</p>
+
+    <!-- Kobold -->
+    <div class="monster-entry" id="kobold">
+      <h3>狗头人 <small>Kobold</small> <span class="cr-badge cr-low">CR 1/4</span></h3>
+      <p>狗头人是最弱小的类人生物之一，体型矮小、胆小怯懦。然而，它们是天生的陷阱大师和洞穴工程师，能用精巧的机关弥补自身力量的不足。狗头人崇拜龙类，经常作为龙的仆从出现。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1/4</span></td></tr>
+        <tr><td>体型</td><td>小型 (Small)</td></tr>
+        <tr><td>类型</td><td>类人生物 (爬行亚种)</td></tr>
+        <tr><td>HD</td><td>1d8 (4 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+1 体型, +2 敏捷, +2 轻盾)</td></tr>
+        <tr><td>攻击</td><td>长矛 +1 近战 (1d6-1) 或 投石索 +3 远程 (1d4)</td></tr>
+        <tr><td>特殊能力</td><td>光敏感; 陷阱亲和 (+2 搜索和解除装置检定); 黑暗视觉 60尺</td></tr>
+        <tr><td>属性值</td><td>力量 9, 敏捷 15, 体质 10, 智力 10, 感知 9, 魅力 8</td></tr>
+        <tr><td>挑战</td><td>单体威胁极低，但巢穴中布满致命陷阱</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>永远不要低估狗头人的巢穴防御。它们会在必经之路上布置各种陷阱——落石、毒针、陷坑、甚至灌油通道。进入狗头人领地时，让游荡者走在前方侦察陷阱。在开阔地带遭遇少量狗头人时，它们几乎不构成威胁。
+      </div>
+    </div>
+
+    <!-- Skulk -->
+    <div class="monster-entry" id="skulk">
+      <h3>暗行者 <small>Skulk</small> <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>暗行者是神秘而诡诈的类人生物，拥有天生的变色伪装能力。它们行踪不定、动机不明，通常作为间谍、信使或暗杀者出现。暗行者的真实意图往往难以揣测。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">1</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人生物</td></tr>
+        <tr><td>HD</td><td>2d8 (9 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+3 敏捷, +2 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>短剑 +4 近战 (1d6+1) 或 轻弩 +4 远程 (1d8)</td></tr>
+        <tr><td>特殊能力</td><td>天生伪装 — 可自由动作融入任何表面，获得 +10 躲藏加值; 黑暗视觉 60尺; 偷袭 +1d6</td></tr>
+        <tr><td>属性值</td><td>力量 12, 敏捷 17, 体质 10, 智力 11, 感知 12, 魅力 8</td></tr>
+        <tr><td>挑战</td><td>极难被发现的潜行者，可能在任何地方出现</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>暗行者的伪装能力极为出色，几乎可以在任何环境中隐形。侦测隐形或真知术是对付它们的关键。暗行者通常不会正面交战——它们更喜欢暗杀后迅速撤离。在城镇中也可能遭遇暗行者间谍，需要格外警惕。
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 6: 类人怪物 ==================== -->
+    <h2 class="section-title" id="monstrous-humanoids">6. 类人怪物 (Monstrous Humanoids)</h2>
+
+    <p>类人怪物 (Monstrous Humanoid) 是介于人类和野兽之间的强大生物。它们通常拥有超自然能力，挑战等级普遍高于普通类人生物。许多类人怪物源自神话传说，是冒险中最令人难忘的对手。</p>
+
+    <!-- Minotaur -->
+    <div class="monster-entry" id="minotaur">
+      <h3>牛头人 <small>Minotaur</small> <span class="cr-badge cr-mid">CR 4</span></h3>
+      <p>牛头人是拥有公牛头颅的巨型类人生物。它们暴力、固执且极具领地意识，经常守卫迷宫或作为强大的佣兵出现。牛头人拥有敏锐的嗅觉和致命的冲锋能力。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">4</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>类人怪物</td></tr>
+        <tr><td>HD</td><td>6d8+12 (39 HP)</td></tr>
+        <tr><td>AC</td><td>15 (-1 体型, +2 敏捷, +4 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>巨斧 +9 近战 (3d6+6/x3) 或 顶撞 +9 近战 (1d8+3)</td></tr>
+        <tr><td>特殊能力</td><td>强力冲锋 — 冲锋时顶撞攻击造成 2d6+6 伤害; 黑暗视觉 60尺; 嗅觉; 天生狡诈 (不会被迷宫术困住)</td></tr>
+        <tr><td>属性值</td><td>力量 19, 敏捷 14, 体质 15, 智力 7, 感知 10, 魅力 8</td></tr>
+        <tr><td>挑战</td><td>冲锋首回合伤害极高; 嗅觉使其几乎无法被偷袭</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>牛头人的冲锋可在首轮造成 2d6+6 的巨额伤害。利用地形阻断其冲锋路线（如在狭窄通道中战斗）可以有效削弱其威胁。牛头人智力较低，容易被幻术和计谋欺骗。嗅觉能力意味着隐形术对它无效，需要其他手段规避。
+      </div>
+    </div>
+
+    <!-- Centaur -->
+    <div class="monster-entry" id="centaur">
+      <h3>半人马 <small>Centaur</small> <span class="cr-badge cr-low">CR 3</span></h3>
+      <p>半人马是拥有马身人首的高贵种族，擅长骑战和弓箭。它们通常生活在森林和草原中，组成游牧部落。半人马既可以是强大的盟友，也可以是骄傲的对手。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">3</span></td></tr>
+        <tr><td>体型</td><td>大型 (Large)</td></tr>
+        <tr><td>类型</td><td>类人怪物</td></tr>
+        <tr><td>HD</td><td>4d8+8 (26 HP)</td></tr>
+        <tr><td>AC</td><td>14 (-1 体型, +3 敏捷, +2 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>长矛 +6 近战 (1d8+3/x3) 或 长弓 +6 远程 (1d8/x3)</td></tr>
+        <tr><td>特殊能力</td><td>移动速度 60尺; 黑暗视觉 60尺; 践踏 (可在冲锋时使用)</td></tr>
+        <tr><td>属性值</td><td>力量 15, 敏捷 16, 体质 15, 智力 8, 感知 13, 魅力 11</td></tr>
+        <tr><td>挑战</td><td>极高机动性，可在远距离射击后迅速拉开距离</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>半人马的 60 尺移动速度使其在开阔地形中几乎无法被追上。它们会使用经典的"帕提亚回射"战术——边跑边射。在密林或地下环境中，半人马的机动优势会被大幅削弱。它们可能作为中立 NPC 出现，提供坐骑服务或森林向导。
+      </div>
+    </div>
+
+    <!-- Harpy -->
+    <div class="monster-entry" id="harpy">
+      <h3>鹰身女妖 <small>Harpy</small> <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>鹰身女妖是拥有女人上半身和猛禽下半身的飞行生物。它们最令人恐惧的能力是魅惑之歌——能让听到的生物不由自主地走向它们。鹰身女妖通常成群栖息在悬崖和废墟中。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-low">2</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人怪物</td></tr>
+        <tr><td>HD</td><td>3d8+3 (16 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+2 敏捷, +3 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>爪抓 +3 近战 (1d4+1) x2; 鹰爪 +3 近战 (1d6+1)</td></tr>
+        <tr><td>特殊能力</td><td>迷魅之歌 — 300尺内所有听到歌声的生物需进行意志豁免 DC 11，失败则被魅惑走向鹰身女妖; 飞行 80尺 (普通)</td></tr>
+        <tr><td>属性值</td><td>力量 13, 敏捷 15, 体质 13, 智力 7, 感知 14, 魅力 12</td></tr>
+        <tr><td>挑战</td><td>迷魅之歌可控制整个队伍; 空中优势使其难以被近战攻击</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>鹰身女妖的迷魅之歌是遭遇中最危险的环节。使用沉默术或堵住耳朵可以避免被魅惑。被魅惑的角色会不由自主地走向鹰身女妖，可能在悬崖边缘造成坠落伤害。鹰身女妖通常会抓起被魅惑的受害者飞上高空再松手。准备好远程火力在空中击杀它们。
+      </div>
+    </div>
+
+    <!-- Medusa -->
+    <div class="monster-entry" id="medusa">
+      <h3>美杜莎 <small>Medusa</small> <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>美杜莎是被诅咒的蛇发女妖，其凝视能将活物变为石头。它们通常隐藏在偏僻的废墟或洞窟中，周围散落着被石化的冒险者雕像。美杜莎智力高超，善于利用伪装和诡计。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">7</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人怪物</td></tr>
+        <tr><td>HD</td><td>6d8+6 (33 HP)</td></tr>
+        <tr><td>AC</td><td>15 (+3 敏捷, +2 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>毒蛇发 x8 近战 (1d4+1 附加毒素) 或 长弓 +6 远程 (1d8)</td></tr>
+        <tr><td>特殊能力</td><td>石化凝视 — 30尺内直视美杜莎双眼的生物需进行强韧豁免 DC 13，失败则永久石化; 毒素 — 蛇发初始伤害 1d6 体质，后续伤害 1d6 体质; 黑暗视觉 60尺</td></tr>
+        <tr><td>属性值</td><td>力量 10, 敏捷 16, 体质 12, 智力 14, 感知 15, 魅力 15</td></tr>
+        <tr><td>挑战</td><td>石化凝视是即死效果; 蛇发毒素可造成大量体质伤害</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>石化凝视是美杜莎最致命的武器——失败即永久石化。战斗时避免直视美杜莎（使用镜面反射或闭上眼睛战斗，虽然会有命中惩罚）。石化解除（stone to flesh）法术可以拯救被石化的队友。美杜莎非常聪明，会利用伪装混入人群中发动突然袭击。
+      </div>
+    </div>
+
+    <!-- Gargoyle -->
+    <div class="monster-entry" id="gargoyle">
+      <h3>石像鬼 <small>Gargoyle</small> <span class="cr-badge cr-mid">CR 4</span></h3>
+      <p>石像鬼是邪恶的飞行石质生物，可以完美地伪装成建筑上的石雕装饰。它们以折磨和猎杀活物为乐，经常盘踞在古老的城堡、神殿和墓穴中。石像鬼不需要进食或呼吸。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>CR</td><td><span class="cr-badge cr-mid">4</span></td></tr>
+        <tr><td>体型</td><td>中型 (Medium)</td></tr>
+        <tr><td>类型</td><td>类人怪物</td></tr>
+        <tr><td>HD</td><td>4d8+4 (22 HP)</td></tr>
+        <tr><td>AC</td><td>16 (+2 敏捷, +4 天生护甲)</td></tr>
+        <tr><td>攻击</td><td>爪抓 +5 近战 (1d4+2) x2; 啮咬 +3 近战 (1d4+1); 抵撞 +3 近战 (1d4+1)</td></tr>
+        <tr><td>特殊能力</td><td>冻结 — 可完全静止不动，伪装成石雕 (侦查 DC 20 识破); 飞行 60尺 (普通); 黑暗视觉 60尺; 不需要进食/呼吸/睡眠; DR 5/魔法</td></tr>
+        <tr><td>属性值</td><td>力量 15, 敏捷 14, 体质 13, 智力 6, 感知 11, 魅力 7</td></tr>
+        <tr><td>挑战</td><td>伪装能力极强，可在冒险者毫无防备时发动突袭</td></tr>
+      </table>
+      <div class="tactic">
+        <strong>战术提示：</strong>石像鬼最令人头疼的是其伪装能力——在古老建筑中，你很难分辨哪个石雕是真的、哪个是石像鬼。进入布满雕像的区域时保持警惕。石像鬼会从空中俯冲攻击然后飞走，利用地形躲避远程攻击。DR 5/魔法意味着需要使用魔法武器才能有效造成伤害。
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 7: CR速查表 ==================== -->
+    <h2 class="section-title" id="cr-reference">7. CR 速查表</h2>
+
+    <p>以下为本页所有怪物按挑战等级排列的速查表，便于快速查找和遭遇设计。</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>CR</th>
+          <th>怪物名称</th>
+          <th>类型</th>
+          <th>HD</th>
+          <th>XP</th>
+          <th>主要特征</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cr-badge cr-low">1/4</span></td>
+          <td><a href="#goblin">地精 (Goblin)</a></td>
+          <td>类人生物</td>
+          <td>1d8</td>
+          <td>50</td>
+          <td>黑暗视觉，伏击战术</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1/4</span></td>
+          <td><a href="#kobold">狗头人 (Kobold)</a></td>
+          <td>类人生物</td>
+          <td>1d8</td>
+          <td>50</td>
+          <td>陷阱大师，光敏感</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1/2</span></td>
+          <td><a href="#hobgoblin">大地精 (Hobgoblin)</a></td>
+          <td>类人生物</td>
+          <td>1d8+1</td>
+          <td>100</td>
+          <td>军事纪律，阵型战术</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1/2</span></td>
+          <td><a href="#orc">兽人 (Orc)</a></td>
+          <td>类人生物</td>
+          <td>1d8+1</td>
+          <td>100</td>
+          <td>凶暴，黑暗视觉</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1/2</span></td>
+          <td><a href="#half-orc">半兽人 (Half-Orc)</a></td>
+          <td>类人生物</td>
+          <td>1d8+1</td>
+          <td>100</td>
+          <td>凶暴，通常有职业等级</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1/2</span></td>
+          <td><a href="#locathah">洛卡鱼人 (Locathah)</a></td>
+          <td>类人生物</td>
+          <td>2d8</td>
+          <td>100</td>
+          <td>水生，远程偏好</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td><a href="#bugbear">熊地精 (Bugbear)</a> *(注: CR 2 见下)</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td><a href="#gnoll">豺狼人 (Gnoll)</a></td>
+          <td>类人生物</td>
+          <td>2d8+2</td>
+          <td>200</td>
+          <td>狂暴，鬣狗伙伴</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td><a href="#lizardfolk">蜥蜴人 (Lizardfolk)</a></td>
+          <td>类人生物</td>
+          <td>2d8+2</td>
+          <td>200</td>
+          <td>游泳，水下伏击</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td><a href="#lizardfolk-poison">毒蜥蜴人 (Poisonous Lizardfolk)</a></td>
+          <td>类人生物</td>
+          <td>2d8+2</td>
+          <td>200</td>
+          <td>毒素 (体质伤害)</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td><a href="#troglodyte">穴居人 (Troglodyte)</a></td>
+          <td>类人生物</td>
+          <td>2d8+2</td>
+          <td>200</td>
+          <td>恶臭光环，黑暗视觉 90尺</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td><a href="#merfolk">人鱼 (Merfolk)</a></td>
+          <td>类人生物</td>
+          <td>2d8</td>
+          <td>200</td>
+          <td>水生，游泳 50尺</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td><a href="#kuo-toa">鱼人/库阿托 (Kuo-toa)</a></td>
+          <td>类人生物</td>
+          <td>2d8</td>
+          <td>200</td>
+          <td>灵敏反射，滑腻皮肤</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">1</span></td>
+          <td><a href="#skulk">暗行者 (Skulk)</a></td>
+          <td>类人生物</td>
+          <td>2d8</td>
+          <td>200</td>
+          <td>天生伪装，偷袭</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td><a href="#bugbear">熊地精 (Bugbear)</a></td>
+          <td>类人生物</td>
+          <td>3d8+3</td>
+          <td>400</td>
+          <td>潜行猎手，偷袭 2d6</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td><a href="#sahuagin">鲨化鱼人 (Sahuagin)</a></td>
+          <td>类人生物</td>
+          <td>2d8+4</td>
+          <td>400</td>
+          <td>五肢攻击，鲜血狂怒</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">2</span></td>
+          <td><a href="#harpy">鹰身女妖 (Harpy)</a></td>
+          <td>类人怪物</td>
+          <td>3d8+3</td>
+          <td>400</td>
+          <td>迷魅之歌，飞行</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td><a href="#orc-war-chief">兽人战争首领 (Orc War Chief)</a></td>
+          <td>类人生物</td>
+          <td>4d8+8</td>
+          <td>600</td>
+          <td>强力首领，战斗号令</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-low">3</span></td>
+          <td><a href="#centaur">半人马 (Centaur)</a></td>
+          <td>类人怪物</td>
+          <td>4d8+8</td>
+          <td>600</td>
+          <td>速度 60尺，骑战弓射</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4</span></td>
+          <td><a href="#minotaur">牛头人 (Minotaur)</a></td>
+          <td>类人怪物</td>
+          <td>6d8+12</td>
+          <td>800</td>
+          <td>冲锋 2d6+6，嗅觉</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">4</span></td>
+          <td><a href="#gargoyle">石像鬼 (Gargoyle)</a></td>
+          <td>类人怪物</td>
+          <td>4d8+4</td>
+          <td>800</td>
+          <td>伪装石雕，飞行，DR 5/魔法</td>
+        </tr>
+        <tr>
+          <td><span class="cr-badge cr-mid">7</span></td>
+          <td><a href="#medusa">美杜莎 (Medusa)</a></td>
+          <td>类人怪物</td>
+          <td>6d8+6</td>
+          <td>2,800</td>
+          <td>石化凝视，蛇发毒素</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

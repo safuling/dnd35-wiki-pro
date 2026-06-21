@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>游侠 - D&D 3.5e Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<main>
+<aside class="sidebar">
+  <h3>职业导航</h3>
+  <ul>
+    <li><a href="intro.html">职业总览</a></li>
+    <li><a href="fighter.html">战士</a></li>
+    <li><a href="wizard.html">法师</a></li>
+    <li><a href="cleric.html">牧师</a></li>
+    <li><a href="rogue.html">盗贼</a></li>
+    <li><a href="ranger.html" class="active">游侠</a></li>
+    <li><a href="paladin.html">圣武士</a></li>
+    <li><a href="druid.html">德鲁伊</a></li>
+    <li><a href="bard.html">吟游诗人</a></li>
+    <li><a href="monk.html">武僧</a></li>
+    <li><a href="barbarian.html">野蛮人</a></li>
+    <li><a href="sorcerer.html">术士</a></li>
+  </ul>
+</aside>
+
+<article class="main-content">
+  <div class="page-header">
+    <h1>游侠 <span class="class-en">(Ranger)</span></h1>
+    <div class="page-meta">
+      <span class="class-type">中等职业</span>
+      <span class="hit-die">生命骰：d8</span>
+    </div>
+  </div>
+
+  <div class="infobox">
+    <div class="infobox-title">游侠 (Ranger)</div>
+    <div class="infobox-content">
+      <div><span class="label">生命骰</span><span class="value">d8</span></div>
+      <div><span class="label">基础攻击加值</span><span class="value">高（+3/4级）</span></div>
+      <div><span class="label">强韧豁免</span><span class="value">高</span></div>
+      <div><span class="label">反射豁免</span><span class="value">低</span></div>
+      <div><span class="label">意志豁免</span><span class="value">低</span></div>
+      <div><span class="label">职业技能</span><span class="value">技能点数：6+智力调整值</span></div>
+      <div><span class="label">本职技能</span><span class="value">专注、知识（自然）、聆听、侦察、生存、游泳等</span></div>
+    </div>
+  </div>
+
+  <h2>职业描述</h2>
+  <p>游侠是荒野的守护者，擅长双武器战斗、弓箭射击和追踪。他们与大自然和谐共处，并能施放神术（德鲁伊法术列表）。</p>
+
+  <h2>职业特性</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>等级</th>
+        <th>基础攻击加值</th>
+        <th>强韧</th>
+        <th>反射</th>
+        <th>意志</th>
+        <th>特殊能力</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>+1</td>
+        <td>+2</td>
+        <td>+0</td>
+        <td>+0</td>
+        <td>双武器战斗、宿敌（选择一种）、1级法术</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>+2</td>
+        <td>+3</td>
+        <td>+0</td>
+        <td>+0</td>
+        <td>1级法术</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>+3</td>
+        <td>+3</td>
+        <td>+1</td>
+        <td>+1</td>
+        <td>耐力、追踪</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td>+1</td>
+        <td>+1</td>
+        <td>宿敌+2、2级法术</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>+5</td>
+        <td>+4</td>
+        <td>+1</td>
+        <td>+1</td>
+        <td>快速射击</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>核心能力</h2>
+  <h3>双武器战斗</h3>
+  <p>1级时，游侠获得<a href="../feats/two-weapon-fighting.html">双武器战斗</a>专长（即使不满足先决条件）。</p>
+
+  <h3>宿敌</h3>
+  <p>1级时，选择一种宿敌类型（如巨人、不死生物、人型怪物等）。对宿敌类型的所有生物，游侠在攻击检定和技能检定（聆听、侦察、生存）上获得+1加值。每4级，宿敌加值+1，且可选择第二种宿敌类型。</p>
+
+  <h3>法术</h3>
+  <p>游侠从4级开始能施放神术。法术来自德鲁伊法术列表，且必须是游侠能施放的法术环级。游侠法术不需要准备，能自发施放（类似术士）。</p>
+
+  <h3>追踪</h3>
+  <p>3级时，游侠获得<a href="../feats/track.html">追踪</a>专长（即使不满足先决条件）。</p>
+
+  <h2>推荐种族</h2>
+  <ul>
+    <li><strong>精灵</strong>：+2敏捷，对催眠免疫，是优秀的游侠种族。</li>
+    <li><strong>人类</strong>：额外专长，灵活搭配游侠能力。</li>
+    <li><strong>半身人</strong>：+2敏捷，体型小适合弓箭手。</li>
+  </ul>
+
+  <h2>推荐属性</h2>
+  <ol>
+    <li><strong>力量</strong>：近战游侠的核心属性。</li>
+    <li><strong>敏捷</strong>：弓箭游侠的核心属性，也影响AC。</li>
+    <li><strong>体质</strong>：提升生命值，重要。</li>
+    <li><strong>感知</strong>：影响法术豁免DC和法术位数量。</li>
+  </ol>
+
+  <h2>多职业建议</h2>
+  <ul>
+    <li><strong>战士/游侠</strong>：提升攻击加值和生命值，适合近战游侠。</li>
+    <li><strong>游侠/德鲁伊</strong>：增强法术能力和野外生存能力。</li>
+    <li><strong>游侠/盗贼</strong>：提升技能和偷袭能力。</li>
+  </ul>
+
+  <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"游侠法术来源"的扩展规则</h3>
+      <p><strong>冲突描述：</strong>游侠的法术来自德鲁伊法术列表，但Complete Divine允许选择牧师法术列表。</p>
+      <p><strong>SRD和PHB的明确说法：</strong>"Rangers cast divine spells ... The ranger spell list appears in Table 6-10: Ranger Spells."（SRD · Classes · Ranger）</p>
+      <p>即：<strong>标准规则使用德鲁伊法术列表</strong>。Complete Divine的变体需要DM允许。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.46-47</span></p>
+      <p><strong>建议：</strong>采用PHB标准规则。如果战役需要，DM可允许Complete Divine的变体。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:#e67e22;background:#fef9e7;">
+      <h3>关于"宿敌"类型的自定义问题</h3>
+      <p><strong>冲突描述：</strong>PHB规定宿敌类型需从"宿敌类型表"中选择，但某些DM允许自定义（如"邪教徒"）。</p>
+      <p><strong>PHB的明确说法：</strong>"Favored Enemy: ... Choose an enemy from Table 6-9: Favored Enemies."（PHB p.47）</p>
+      <p>即：<strong>标准规则必须从表中选</strong>。自定义宿敌需DM允许。</p>
+      <p><span class="source-tag">来源：PHB p.47</span></p>
+      <p><strong>建议：</strong>严格按照PHB的宿敌类型表选择。如果战役有特殊需求，DM可自定义。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:#9b59b6;background:#f4ecf7;">
+      <h3>关于"双武器战斗"专长的先决条件豁免</h3>
+      <p><strong>冲突描述：</strong>游侠1级自动获得双武器战斗专长，但不需要满足敏捷+1的先决条件。这是否合理？</p>
+      <p><strong>PHB的明确说法：</strong>"At 1st level, a ranger gets the <a href="../feats/two-weapon-fighting.html">Two-Weapon Fighting</a> feat ... even if he does not have the normal +1 Dexterity prerequisite."（PHB p.48）</p>
+      <p>即：<strong>游侠豁免先决条件是明确规则</strong>，不是bug。</p>
+      <p><span class="source-tag">来源：PHB p.48</span></p>
+      <p><strong>注意：</strong>游侠的双武器战斗专长<strong>不需要</strong>敏捷+1，但其他职业需要。</p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.46-49 —— 游侠职业特性</li>
+      <li>📘 <strong>SRD 3.5</strong> · Classes → Ranger —— 开放式游戏规则</li>
+      <li>📗 <strong>DMG（城主手册）3.5版</strong> p.176 —— 进阶职业建议</li>
+      <li>📗 <strong>Complete Divine</strong> p.23 —— 游侠法术变体</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="rogue.html">← 上一页：盗贼</a> | <a href="paladin.html">下一页：圣武士 →</a>
+    </p>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <p>D&D 3.5e Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

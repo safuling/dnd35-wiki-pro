@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>术士 (Sorcerer) - D&amp;D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .class-table { font-size:13px; width:100%; border-collapse:collapse; margin:12px 0; }
+  .class-table th { background:var(--bg-table-head); padding:7px 10px; text-align:center; font-size:12px; }
+  .class-table td { border:1px solid var(--border-light); padding:6px 10px; text-align:center; }
+  .class-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .feature-box { background:var(--bg-card); border-left:4px solid var(--accent-gold); padding:14px 18px; margin:12px 0; border-radius:0 var(--radius) var(--radius) 0; }
+  .feature-box h4 { margin:0 0 6px; color:var(--text-heading); }
+  .tip-box { background:#e8f5e9; border-left:3px solid #27ae60; padding:10px 14px; margin:10px 0; font-size:14px; border-radius:0 var(--radius) var(--radius) 0; }
+  .warn-box { background:#fff3e0; border-left:3px solid #ff9800; padding:10px 14px; margin:10px 0; font-size:14px; border-radius:0 var(--radius) var(--radius) 0; }
+  .infobox { float:right; width:280px; background:var(--bg-infobox); border:1px solid var(--border-main); border-radius:var(--radius); padding:14px; margin:0 0 16px 20px; font-size:13px; }
+  .infobox h3 { margin:0 0 10px; text-align:center; background:var(--bg-table-head); padding:8px; margin:-14px -14px 12px; border-radius:var(--radius) var(--radius) 0 0; }
+  .infobox-row { display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid var(--border-light); }
+  .infobox-row:last-child { border-bottom:none; }
+  .ib-label { color:var(--text-subtle); }
+  .ib-value { font-weight:600; }
+  .spell-table { font-size:12px; width:100%; border-collapse:collapse; margin:10px 0; }
+  .spell-table th { background:var(--bg-table-head); padding:5px 8px; text-align:center; }
+  .spell-table td { border:1px solid var(--border-light); padding:4px 8px; text-align:center; font-size:11px; }
+  .spell-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html" class="active">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+  </aside>
+
+  <article class="main-content">
+    <div class="infobox">
+      <h3>术士 (Sorcerer)</h3>
+      <div class="infobox-row"><span class="ib-label">生命骰</span><span class="ib-value">d4</span></div>
+      <div class="infobox-row"><span class="ib-label">基础攻击加值</span><span class="ib-value">低（等级×1/2）</span></div>
+      <div class="infobox-row"><span class="ib-label">强韧豁免</span><span class="ib-value">低</span></div>
+      <div class="infobox-row"><span class="ib-label">反射豁免</span><span class="ib-value">低</span></div>
+      <div class="infobox-row"><span class="ib-label">意志豁免</span><span class="ib-value">高</span></div>
+      <div class="infobox-row"><span class="ib-label">技能点/级</span><span class="ib-value">2 + 智力调整值</span></div>
+      <div class="infobox-row"><span class="ib-label">主要属性</span><span class="ib-value">魅力（施法）、体质</span></div>
+      <div class="infobox-row"><span class="ib-label">阵营限制</span><span class="ib-value">无阵营限制</span></div>
+    </div>
+
+    <h1>术士 <span style="font-size:0.6em;color:var(--text-subtle);">(Sorcerer)</span></h1>
+
+    <h2 id="overview">📖 职业概述</h2>
+    <p>术士是天生的魔法使用者，不需要学习就拥有法术能力。他们比法师拥有<strong>更多的法术位</strong>（每日更多次数），但法术数量固定（已知法术少于法师）。术士通过<strong>魅力</strong>施法，最高施法能力来自魅力值。</p>
+    <div class="tip-box"><strong>💡 适合的玩家：</strong>术士的优势是每日可施放更多法术（不需要准备）；劣势是已知法术有限，灵活性不如法师。适合喜欢"反复使用几个强力法术"的玩家。</div>
+
+    <h2 id="features">🌟 职业特性</h2>
+    <div class="feature-box"><h4>自发施法</h4><p>术士不需要准备法术。任何已知法术可以随时使用，直到当日法术位耗尽。</p></div>
+    <div class="feature-box"><h4>法术已知限制</h4><p>每级可学法术有限（见下表），无法像法师通过法术书学习新法术，但可以每升级替换一个已知法术。</p></div>
+    <div class="feature-box"><h4>法术位丰富</h4><p>相同等级下，术士每日可施放的法术次数比法师多2个/环。</p></div>
+    <div class="feature-box"><h4>家族魔宠（Familiar）</h4><p>如同法师，可以选择一只魔宠（猫/乌鸦/鼹鼠等）提供被动加值。</p></div>
+
+    <h2 id="level-table">📊 等级成长表</h2>
+    <table class="class-table">
+      <thead>
+        <tr><th>等级</th><th>BAB</th><th>强韧</th><th>反射</th><th>意志</th><th>特殊能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>+0</td><td>+0</td><td>+0</td><td>+2</td><td>魔宠、自发施法</td></tr>
+        <tr><td>3</td><td>+1</td><td>+1</td><td>+1</td><td>+3</td><td>—</td></tr>
+        <tr><td>5</td><td>+2</td><td>+1</td><td>+1</td><td>+4</td><td>—</td></tr>
+        <tr><td>7</td><td>+3</td><td>+2</td><td>+2</td><td>+5</td><td>—</td></tr>
+        <tr><td>10</td><td>+5</td><td>+3</td><td>+3</td><td>+7</td><td>—</td></tr>
+        <tr><td>15</td><td>+7/+2</td><td>+5</td><td>+5</td><td>+9</td><td>—</td></tr>
+        <tr><td>20</td><td>+10/+5</td><td>+6</td><td>+6</td><td>+12</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    
+    <h2 id="spells">🪄 法术系统</h2>
+    <p>术士通过<strong>魅力</strong>施法，法术位如下表（额外法术位见PHB附录）：</p>
+    <table class="spell-table">
+      <thead><tr><th>术士等级</th><th>0环</th><th>1环</th><th>2环</th><th>3环</th><th>4环</th><th>5环</th><th>6环</th><th>7环</th><th>8环</th><th>9环</th></tr></thead>
+      <tbody><tr><td>1</td><td>5</td><td>3</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>2</td><td>6</td><td>4</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>3</td><td>6</td><td>5</td><td>3</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>4</td><td>6</td><td>6</td><td>4</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>5</td><td>6</td><td>6</td><td>5</td><td>3</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>7</td><td>6</td><td>6</td><td>6</td><td>5</td><td>3</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>10</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>5</td><td>3</td><td>-</td><td>-</td><td>-</td></tr><tr><td>14</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>5</td><td>3</td><td>-</td></tr><tr><td>18</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>5</td></tr><tr><td>20</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td></tr></tbody>
+    </table>
+
+    <h2 id="build">🎯 构建建议</h2>
+    <ul style="margin:8px 0 0 20px;line-height:2.2;">
+      <li>属性优先：魅力（施法DC/法术位）→ 体质（HP/强韧）→ 敏捷（AC）</li>
+      <li>推荐专长：法术专注（DC+1）、精通法术（增加已知法术不耗位）、快速法术</li>
+      <li>法术选择建议：选择多功能法术（如法球/术士大量使用酸箭、火球、冰锥、恐惧等）</li>
+      <li>与法师相比：术士更适合反复使用同一套法术；法师更灵活准备当日最优法术组合</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      📚 来源：PHB p.51-56 | SRD · Sorcerer |
+      <a href="rogue.html">← 盗贼</a> | <a href="wizard.html">法师 →</a>
+    </p>
+  </article>
+</div>
+
+<footer class="site-footer" style="background:var(--bg-navbar);color:#aaa;padding:16px;text-align:center;font-size:13px;">
+  <p>D&amp;D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+</body>
+</html>

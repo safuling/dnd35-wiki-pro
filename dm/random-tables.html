@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>随机表格大全 Random Tables - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.tool-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.tool-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.tool-card p { font-size:14px; color:#666; }
+.tool-card a { color:var(--text-link,#21618c); text-decoration:none; font-weight:600; }
+.tool-card a:hover { text-decoration:underline; }
+.calc-box { background:#f0ebe0; border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.calc-box label { display:block; margin:6px 0 2px; font-weight:600; font-size:14px; }
+.calc-box input, .calc-box select { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); border-radius:4px; font-size:14px; margin-bottom:8px; }
+.calc-box button { background:var(--accent-gold,#d4a017); color:#fff; border:none; padding:8px 20px; border-radius:4px; cursor:pointer; font-weight:600; margin-top:8px; }
+.calc-box button:hover { background:#b8910f; }
+.result-box { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:10px 14px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.step-list { counter-reset: steps; list-style:none; padding:0; }
+.step-list li { counter-increment: steps; padding:10px 10px 10px 40px; position:relative; margin:6px 0; background:var(--bg-card,#faf6ee); border-radius:4px; border:1px solid var(--border-light,#e8dcc8); }
+.step-list li::before { content:counter(steps); position:absolute; left:10px; top:10px; background:var(--accent-gold,#d4a017); color:#fff; width:22px; height:22px; border-radius:50%; text-align:center; line-height:22px; font-size:12px; font-weight:700; }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+h3 { margin-top:24px; color:var(--text-heading,#4a2c0a); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">DM工具箱</div>
+      <a href="intro.html">工具总览</a>
+      <a href="character-creation.html">角色创建指南</a>
+      <a href="encounter-builder.html">遭遇构建器</a>
+      <a href="treasure-generator.html">宝藏生成器</a>
+      <a href="random-tables.html" class="active">随机表格大全</a>
+      <a href="xp-tracker.html">经验值追踪器</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="../rules.html">核心规则</a>
+      <a href="../classes/intro.html">职业手册</a>
+      <a href="../monsters/intro.html">怪物图鉴</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>随机表格大全</h1>
+    <h2>Random Tables Collection</h2>
+
+    <p>随机表格是 DM 即兴创作的好帮手。以下收集了常用的随机表格，涵盖天气、遭遇、地下城和 NPC。</p>
+
+    <h2 class="section-title">天气表</h2>
+
+    <p>每天投掷 d% 确定当天天气（按气候区）：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d%</th>
+          <th>温带</th>
+          <th>沙漠</th>
+          <th>寒冷</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>01-30</td><td>晴朗</td><td>酷热</td><td>晴朗（严寒）</td></tr>
+        <tr><td>31-50</td><td>多云</td><td>晴朗（炎热）</td><td>多云（寒冷）</td></tr>
+        <tr><td>51-70</td><td>阴天</td><td>多云</td><td>阴天</td></tr>
+        <tr><td>71-85</td><td>小雨</td><td>沙尘暴</td><td>小雪</td></tr>
+        <tr><td>86-95</td><td>大雨</td><td>强风</td><td>暴雪</td></tr>
+        <tr><td>96-99</td><td>雷暴</td><td>极端高温</td><td>暴风雪</td></tr>
+        <tr><td>100</td><td>龙卷风</td><td>沙暴</td><td>冰风暴</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">随机遭遇表</h2>
+
+    <h3>森林遭遇 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>遭遇</th>
+          <th>d20</th>
+          <th>遭遇</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>狼群 (1d4+1)</td><td>11</td><td>熊 (1d3)</td></tr>
+        <tr><td>2</td><td>强盗 (1d6+2)</td><td>12</td><td>树人 (1)</td></tr>
+        <tr><td>3</td><td>地精巡逻队 (2d4)</td><td>13</td><td>巨蜘蛛 (1d4)</td></tr>
+        <tr><td>4</td><td>鹿群 (1d6)</td><td>14</td><td>食人魔 (1d3)</td></tr>
+        <tr><td>5</td><td>旅行商人 (1d4+2 护卫)</td><td>15</td><td>巨魔 (1)</td></tr>
+        <tr><td>6</td><td>精灵游侠 (1d2)</td><td>16</td><td>树妖 (1d3)</td></tr>
+        <tr><td>7</td><td>豺狼人 (1d6)</td><td>17</td><td>独角兽 (1)</td></tr>
+        <tr><td>8</td><td>野猪 (1d4)</td><td>18</td><td>绿龙 (幼年)</td></tr>
+        <tr><td>9</td><td>强盗伏击点</td><td>19</td><td>德鲁伊 (1)</td></tr>
+        <tr><td>10</td><td>半身人村落</td><td>20</td><td>废弃的精灵遗迹</td></tr>
+      </tbody>
+    </table>
+
+    <h3>沙漠遭遇 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>遭遇</th>
+          <th>d20</th>
+          <th>遭遇</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>沙蝎群 (1d6)</td><td>11</td><td>木乃伊 (1d3)</td></tr>
+        <tr><td>2</td><td>游牧民族 (2d6)</td><td>12</td><td>蓝龙 (幼年)</td></tr>
+        <tr><td>3</td><td>沙暴</td><td>13</td><td>沙漠巨人 (1d2)</td></tr>
+        <tr><td>4</td><td>蛇群 (1d4)</td><td>14</td><td>石像鬼 (1d4)</td></tr>
+        <tr><td>5</td><td>商队 (1d8+4)</td><td>15</td><td>沙漠食人魔 (1d3)</td></tr>
+        <tr><td>6</td><td>狮鹫 (1d3)</td><td>16</td><td>流沙陷阱</td></tr>
+        <tr><td>7</td><td>豺狼人猎手 (1d6)</td><td>17</td><td>废弃的绿洲</td></tr>
+        <tr><td>8</td><td>巨蜥 (1d2)</td><td>18</td><td>隐藏的地下神庙入口</td></tr>
+        <tr><td>9</td><td>骷髅战士 (2d4)</td><td>19</td><td>沙漠隐士 (1)</td></tr>
+        <tr><td>10</td><td>食腐兽 (1)</td><td>20</td><td>古代遗迹</td></tr>
+      </tbody>
+    </table>
+
+    <h3>地下城遭遇 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>遭遇</th>
+          <th>d20</th>
+          <th>遭遇</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>哥布林巡逻 (1d6)</td><td>11</td><td>骷髅战士 (2d4)</td></tr>
+        <tr><td>2</td><td>陷阱（针刺）</td><td>12</td><td>食人魔 (1d2)</td></tr>
+        <tr><td>3</td><td>老鼠群 (1d8)</td><td>13</td><td>陷阱（落石）</td></tr>
+        <tr><td>4</td><td>兽人守卫 (1d4+1)</td><td>14</td><td>僵尸 (1d6)</td></tr>
+        <tr><td>5</td><td>蜘蛛网（巨蜘蛛）</td><td>15</td><td>狗头人陷阱师</td></tr>
+        <tr><td>6</td><td>密室（宝藏）</td><td>16</td><td>幽灵 (1)</td></tr>
+        <tr><td>7</td><td>霉菌怪 (1)</td><td>17</td><td>魔法陷阱（火球）</td></tr>
+        <tr><td>8</td><td>暗精灵巡逻 (1d4)</td><td>18</td><td>拟态怪 (1)</td></tr>
+        <tr><td>9</td><td>地精矿工 (2d4)</td><td>19</td><td>吸血鬼衍体 (1d3)</td></tr>
+        <tr><td>10</td><td>陷阱（毒气）</td><td>20</td><td>首领房间</td></tr>
+      </tbody>
+    </table>
+
+    <h3>城市遭遇 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>遭遇</th>
+          <th>d20</th>
+          <th>遭遇</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>城市卫兵巡逻 (1d4+2)</td><td>11</td><td>商人争吵</td></tr>
+        <tr><td>2</td><td>小偷扒手</td><td>12</td><td>街头艺人表演</td></tr>
+        <tr><td>3</td><td>乞丐求助</td><td>13</td><td>贵族马车经过</td></tr>
+        <tr><td>4</td><td>酒馆斗殴</td><td>14</td><td>宗教游行</td></tr>
+        <tr><td>5</td><td>商人叫卖</td><td>15</td><td>通缉令张贴</td></tr>
+        <tr><td>6</td><td>醉汉闹事</td><td>16</td><td>刺客袭击</td></tr>
+        <tr><td>7</td><td>神秘陌生人</td><td>17</td><td>魔法物品商人</td></tr>
+        <tr><td>8</td><td>帮派成员</td><td>18</td><td>城市节日</td></tr>
+        <tr><td>9</td><td>流浪猫狗</td><td>19</td><td>地下拍卖</td></tr>
+        <tr><td>10</td><td>火灾警报</td><td>20</td><td>冒险者公会招募</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">地下城生成表</h2>
+
+    <h3>房间类型 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>房间类型</th>
+          <th>d20</th>
+          <th>房间类型</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1-3</td><td>空房间（灰尘覆盖）</td><td>11</td><td>祭坛室</td></tr>
+        <tr><td>4-5</td><td>储藏室（杂物）</td><td>12</td><td>图书馆</td></tr>
+        <tr><td>6-7</td><td>守卫室</td><td>13</td><td>实验室</td></tr>
+        <tr><td>8</td><td>陷阱房</td><td>14</td><td>地牢</td></tr>
+        <tr><td>9</td><td>卧室</td><td>15</td><td>武器库</td></tr>
+        <tr><td>10</td><td>宴会厅</td><td>16</td><td>墓室</td></tr>
+      </tbody>
+    </table>
+    <table class="quick-table">
+      <tbody>
+        <tr><td>17</td><td>喷泉室</td><td>19</td><td>神龛</td></tr>
+        <tr><td>18</td><td>竞技场</td><td>20</td><td>首领房间</td></tr>
+      </tbody>
+    </table>
+
+    <h3>走廊特征 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>特征</th>
+          <th>d20</th>
+          <th>特征</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>蛛网密布</td><td>11</td><td>墙壁裂缝</td></tr>
+        <tr><td>2</td><td>积水湿滑</td><td>12</td><td>古代壁画</td></tr>
+        <tr><td>3</td><td>石块松动</td><td>13</td><td>奇怪气味</td></tr>
+        <tr><td>4</td><td>火把架（熄灭）</td><td>14</td><td>回声强烈</td></tr>
+        <tr><td>5</td><td>地板破损</td><td>15</td><td>温度骤变</td></tr>
+        <tr><td>6</td><td>苔藓覆盖</td><td>16</td><td>魔法符文</td></tr>
+        <tr><td>7</td><td>血迹斑斑</td><td>17</td><td>隐藏的暗门</td></tr>
+        <tr><td>8</td><td>骨头散落</td><td>18</td><td>陷阱标记</td></tr>
+        <tr><td>9</td><td>老鼠窜动</td><td>19</td><td>雕像守卫</td></tr>
+        <tr><td>10</td><td>空气浑浊</td><td>20</td><td>魔法照明</td></tr>
+      </tbody>
+    </table>
+
+    <h3>门类型 (d12)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d12</th>
+          <th>门类型</th>
+          <th>d12</th>
+          <th>门类型</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1-3</td><td>木门（普通）</td><td>7</td><td>暗门</td></tr>
+        <tr><td>4</td><td>铁门（坚固）</td><td>8</td><td>上锁的门</td></tr>
+        <tr><td>5</td><td>石门（沉重）</td><td>9</td><td>被堵住的门</td></tr>
+        <tr><td>6</td><td>魔法门</td><td>10</td><td>活板门</td></tr>
+      </tbody>
+    </table>
+    <table class="quick-table">
+      <tbody>
+        <tr><td>11</td><td>传送门</td><td>12</td><td>伪装的门（陷阱）</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">NPC 特征表</h2>
+
+    <h3>性格特征 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>特征</th>
+          <th>d20</th>
+          <th>特征</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>健谈</td><td>11</td><td>谨慎</td></tr>
+        <tr><td>2</td><td>沉默寡言</td><td>12</td><td>鲁莽</td></tr>
+        <tr><td>3</td><td>幽默</td><td>13</td><td>忠诚</td></tr>
+        <tr><td>4</td><td>严肃</td><td>14</td><td>背叛倾向</td></tr>
+        <tr><td>5</td><td>傲慢</td><td>15</td><td>贪婪</td></tr>
+        <tr><td>6</td><td>谦逊</td><td>16</td><td>慷慨</td></tr>
+        <tr><td>7</td><td>暴躁</td><td>17</td><td>迷信</td></tr>
+        <tr><td>8</td><td>温和</td><td>18</td><td>理性</td></tr>
+        <tr><td>9</td><td>好奇</td><td>19</td><td>偏执</td></tr>
+        <tr><td>10</td><td>冷漠</td><td>20</td><td>乐观</td></tr>
+      </tbody>
+    </table>
+
+    <h3>外貌特征 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>特征</th>
+          <th>d20</th>
+          <th>特征</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>高大</td><td>11</td><td>独眼</td></tr>
+        <tr><td>2</td><td>矮小</td><td>12</td><td>断指</td></tr>
+        <tr><td>3</td><td>肥胖</td><td>13</td><td>纹身</td></tr>
+        <tr><td>4</td><td>瘦弱</td><td>14</td><td>伤疤</td></tr>
+        <tr><td>5</td><td>肌肉发达</td><td>15</td><td>白发（年轻）</td></tr>
+        <tr><td>6</td><td>驼背</td><td>16</td><td>异色瞳</td></tr>
+        <tr><td>7</td><td>秃头</td><td>17</td><td>口吃</td></tr>
+        <tr><td>8</td><td>长发</td><td>18</td><td>跛脚</td></tr>
+        <tr><td>9</td><td>大胡子</td><td>19</td><td>穿着华丽</td></tr>
+        <tr><td>10</td><td>鹰钩鼻</td><td>20</td><td>穿着朴素</td></tr>
+      </tbody>
+    </table>
+
+    <h3>动机 (d20)</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d20</th>
+          <th>动机</th>
+          <th>d20</th>
+          <th>动机</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>金钱</td><td>11</td><td>复仇</td></tr>
+        <tr><td>2</td><td>权力</td><td>12</td><td>知识</td></tr>
+        <tr><td>3</td><td>爱情</td><td>13</td><td>冒险</td></tr>
+        <tr><td>4</td><td>家庭</td><td>14</td><td>名誉</td></tr>
+        <tr><td>5</td><td>信仰</td><td>15</td><td>生存</td></tr>
+        <tr><td>6</td><td>正义</td><td>16</td><td>逃避过去</td></tr>
+        <tr><td>7</td><td>荣耀</td><td>17</td><td>艺术追求</td></tr>
+        <tr><td>8</td><td>忠诚</td><td>18</td><td>保护弱者</td></tr>
+        <tr><td>9</td><td>嫉妒</td><td>19</td><td>寻找失物</td></tr>
+        <tr><td>10</td><td>野心</td><td>20</td><td>无聊</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">名称生成表</h2>
+
+    <h3>人类名字</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>男性名 (d20)</th>
+          <th>女性名 (d20)</th>
+          <th>姓氏 (d20)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1. 阿尔德里克</td><td>1. 艾琳娜</td><td>1. 铁锤</td></tr>
+        <tr><td>2. 布拉德利</td><td>2. 布里奇特</td><td>2. 石盾</td></tr>
+        <tr><td>3. 查尔斯</td><td>3. 凯瑟琳</td><td>3. 风行者</td></tr>
+        <tr><td>4. 达里安</td><td>4. 戴安娜</td><td>4. 灰袍</td></tr>
+        <tr><td>5. 埃德蒙</td><td>5. 伊丽莎白</td><td>5. 金叶</td></tr>
+        <tr><td>6. 弗雷德里克</td><td>6. 菲奥娜</td><td>6. 银箭</td></tr>
+        <tr><td>7. 加雷斯</td><td>7. 格温多琳</td><td>7. 火心</td></tr>
+        <tr><td>8. 亨利</td><td>8. 海伦娜</td><td>8. 冰霜</td></tr>
+        <tr><td>9. 伊万</td><td>9. 伊莎贝拉</td><td>9. 雷霆</td></tr>
+        <tr><td>10. 詹姆斯</td><td>10. 朱丽叶</td><td>10. 月影</td></tr>
+      </tbody>
+    </table>
+
+    <h3>精灵名字</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>男性名 (d12)</th>
+          <th>女性名 (d12)</th>
+          <th>姓氏 (d12)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1. 阿罗德</td><td>1. 雅文</td><td>1. 星辉</td></tr>
+        <tr><td>2. 贝勒加德</td><td>2. 卡拉德瑞尔</td><td>2. 月歌</td></tr>
+        <tr><td>3. 塞丹</td><td>3. 艾尔温</td><td>3. 日冕</td></tr>
+        <tr><td>4. 埃尔隆德</td><td>4. 加拉德瑞尔</td><td>4. 风语</td></tr>
+        <tr><td>5. 芬罗德</td><td>5. 伊德瑞尔</td><td>5. 叶舞</td></tr>
+        <tr><td>6. 吉尔加拉德</td><td>6. 露西安</td><td>6. 晨露</td></tr>
+      </tbody>
+    </table>
+
+    <h3>矮人名字</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>男性名 (d12)</th>
+          <th>女性名 (d12)</th>
+          <th>氏族名 (d12)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1. 巴林</td><td>1. 布琳希尔德</td><td>1. 铁拳</td></tr>
+        <tr><td>2. 杜林</td><td>2. 迪丝</td><td>2. 石锤</td></tr>
+        <tr><td>3. 金雳</td><td>3. 赫尔加</td><td>3. 铜须</td></tr>
+        <tr><td>4. 格罗因</td><td>4. 英格丽德</td><td>4. 银斧</td></tr>
+        <tr><td>5. 索林</td><td>5. 希尔达</td><td>5. 金矿</td></tr>
+        <tr><td>6. 瑟罗尔</td><td>6. 西格丽德</td><td>6. 火锻</td></tr>
+      </tbody>
+    </table>
+
+    <h3>半身人名字</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>男性名 (d12)</th>
+          <th>女性名 (d12)</th>
+          <th>姓氏 (d12)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1. 阿尔顿</td><td>1. 艾拉</td><td>1. 袋底</td></tr>
+        <tr><td>2. 比尔博</td><td>2. 贝拉</td><td>2. 绿手</td></tr>
+        <tr><td>3. 科托</td><td>3. 科拉</td><td>3. 好酒</td></tr>
+        <tr><td>4. 德罗戈</td><td>4. 黛西</td><td>4. 山丘</td></tr>
+        <tr><td>5. 弗罗多</td><td>5. 艾薇</td><td>5. 溪谷</td></tr>
+        <tr><td>6. 山姆</td><td>6. 罗丝</td><td>6. 暖炉</td></tr>
+      </tbody>
+    </table>
+
+    <h3>兽人名字</h3>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>男性名 (d12)</th>
+          <th>女性名 (d12)</th>
+          <th>氏族名 (d12)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1. 阿祖格</td><td>1. 阿扎</td><td>1. 血斧</td></tr>
+        <tr><td>2. 博尔格</td><td>2. 布伦卡</td><td>2. 碎骨</td></tr>
+        <tr><td>3. 杜尔格</td><td>3. 杜尔卡</td><td>3. 战嚎</td></tr>
+        <tr><td>4. 戈祖尔</td><td>4. 格拉</td><td>4. 铁牙</td></tr>
+        <tr><td>5. 格鲁姆</td><td>5. 古尔卡</td><td>5. 狼群</td></tr>
+        <tr><td>6. 乌格鲁克</td><td>6. 乌尔扎</td><td>6. 黑手</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>强韧体魄 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 强韧体魄</nav>
+<h1>强韧体魄 (Great Fortitude)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">通用专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">无</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">强韧豁免检定获得 +2 加值</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择一次</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你的体质强健，能抵抗毒素、疾病和即死效果。</p>
+<p>你的 <strong>强韧豁免检定 (Fortitude saving throw)</strong> 获得 <span class="rule-keyword">+2 加值</span>。该加值适用于所有需要强韧豁免的情况（如抵抗 <em>毒击</em>、<em>岩浆术</em>、<em>即死术</em> 等）。</p>
+
+<h2 id="benefit">益处详解</h2>
+<ul>
+  <li><strong>强韧豁免</strong>：用于抵抗 <strong>物理效果</strong>、<strong>毒素</strong>、<strong>疾病</strong>、<strong>即死效果</strong>、<strong>法术穿透</strong> 等。</li>
+  <li><strong>+2 加值</strong>：看似不大，但对低强韧豁免的职业（如法师、术士）至关重要。</li>
+  <li><strong>与体质调整值叠加</strong>：强韧豁免 = 基础加值 + 体质调整值 + 强韧体魄 (+2) + 其他加值。</li>
+</ul>
+
+<h2 id="class">适合职业</h2>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>职业</th>
+      <th>强韧豁免成长</th>
+      <th>强韧体魄价值</th>
+      <th>建议</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong class="highlight">法师、术士</strong></td>
+      <td>弱 (低体质)</td>
+      <td class="highlight">高</td>
+      <td><strong>强烈推荐</strong></td>
+    </tr>
+    <tr>
+      <td><strong class="highlight">盗贼、吟游诗人</strong></td>
+      <td>中</td>
+      <td>中</td>
+      <td>根据体质决定</td>
+    </tr>
+    <tr>
+      <td><strong class="highlight">战士、野蛮人</strong></td>
+      <td>强 (高体质)</td>
+      <td>低</td>
+      <td>通常不需要</td>
+    </tr>
+    <tr>
+      <td>牧师、德鲁伊</td>
+      <td>强</td>
+      <td>低</td>
+      <td>通常不需要</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>钢铁意志 (Iron Will)</strong>：提高意志豁免，搭配强韧体魄提高全面豁免。</li>
+  <li><strong>灵敏反应 (Lightning Reflexes)</strong>：提高反射豁免，成为"豁免坦克"。</li>
+  <li><strong>强韧 (Toughness)</strong>：提高HP，搭配强韧体魄提高生存能力。</li>
+</ul>
+
+<h2 id="scenario">豁免场景示例</h2>
+<div class="example-box">
+  <p><strong>场景 1：抵抗毒击</strong></p>
+  <p>人类法师 1级，体质 12（+1），选择"强韧体魄"专长。</p>
+  <ul>
+    <li>强韧豁免 = 基础 (+0) + 体质 (+1) + 强韧体魄 (+2) = <strong>+3</strong></li>
+    <li>敌人施放 <em>毒击</em>，DC = 14</li>
+    <li>需要掷出 11+ 才能成功（成功率 50%）</li>
+    <li>如果没有强韧体魄，需要掷出 13+（成功率 40%）</li>
+  </ul>
+</div>
+<div class="example-box">
+  <p><strong>场景 2：抵抗即死术</strong></p>
+  <p>人类战士 1级，体质 16（+3），未选择"强韧体魄"。</p>
+  <ul>
+    <li>强韧豁免 = 基础 (+2) + 体质 (+3) = <strong>+5</strong></li>
+    <li>敌人施放 <em>即死术</em>，DC = 16</li>
+    <li>需要掷出 11+ 才能成功（成功率 50%）</li>
+    <li>如果选择强韧体魄，需要掷出 9+（成功率 60%）</li>
+  </ul>
+</div>
+
+<h2 id="feat-comparison">豁免专长对比</h2>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>专长</th>
+      <th>豁免类型</th>
+      <th>加值</th>
+      <th>先决条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>强韧体魄</strong></td>
+      <td>强韧</td>
+      <td class="highlight">+2</td>
+      <td>无</td>
+    </tr>
+    <tr>
+      <td>钢铁意志</td>
+      <td>意志</td>
+      <td>+2</td>
+      <td>无</td>
+    </tr>
+    <tr>
+      <td>灵敏反应</td>
+      <td>反射</td>
+      <td>+2</td>
+      <td>无</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：强韧体魄是否适用于"法术抗力"？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：强韧体魄只影响"强韧豁免检定"。</p>
+  <p>✅ <strong>正确规则</strong>：</p>
+  <ul>
+    <li>强韧体魄 <strong>不适用</strong>于法术抗力 (SR)。</li>
+    <li>强韧体魄 <strong>不适用</strong>于法术穿透 (Caster Level Check)。</li>
+    <li>强韧体魄 <strong>只影响</strong>强韧豁免检定。</li>
+  </ul>
+  <p>⚠️ <strong>常见误解</strong>：有玩家认为强韧体魄能提高对法术的整体抵抗。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页136</strong>：豁免检定详解。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

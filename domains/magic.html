@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魔法领域 Magic - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html" class="active">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>魔法 <span style="font-size:0.5em;color:#888;">Magic</span></h1>
+    <p><span class="domain-badge" style="background:#9b59b6;">魔法</span> 魔法领域赋予牧师深入理解和操控奥术的能力。其最强大的特性是允许牧师直接使用奥术卷轴和魔杖——无需使用魔法装置 (Use Magic Device) 技能。这使得魔法领域牧师在魔法物品的利用上具有远超其他牧师的灵活性。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>魔法灵光 (Magic Aura)</h4>
+      <p>每日一次，你可以将侦测魔法 (Detect Magic) 作为类法术能力使用。此外你还可以像使用鉴定术 (Identify) 一样鉴定魔法物品的属性。</p>
+    </div>
+    <div class="power-box">
+      <h4>奥术亲和 (Arcane Affinity)</h4>
+      <p>你可以如同法师一般使用奥术卷轴和魔杖——无需使用魔法装置 (Use Magic Device) 检定即可激活奥术卷轴和奥术魔杖。此能力极大地扩展了魔法领域牧师可用的法术和物品范围。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=detect_magic">侦测魔法 (Detect Magic)</a></td><td>侦测30尺锥形范围内的魔法灵光及其学派和强度</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=identify">鉴定术 (Identify)</a></td><td>确定一件魔法物品的功能和激活方式</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=dispel_magic">解除魔法 (Dispel Magic)</a></td><td>解除魔法效果、压制魔法物品或反制法术</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=imbue_with_spell_ability">赋予法术能力 (Imbue with Spell Ability)</a></td><td>将你准备的领域法术暂时转移给另一个生物使用</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=spell_resistance">法术抗力 (Spell Resistance)</a></td><td>赋予目标 12+施法者等级 的法术抗力</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=antimagic_field">反魔法场 (Antimagic Field)</a></td><td>创造10尺半径的反魔法区域，所有魔法效果在此失效</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=permanency">魔法恒定术 (Permanency)</a></td><td>使特定法术变为永久效果</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>波克布</strong><span>Boccob · N · 魔法/知识</span></div>
+      <div class="deity-card"><strong>米斯特拉</strong><span>Mystra · NG · 魔法/魔网</span></div>
+      <div class="deity-card"><strong>阿祖斯</strong><span>Azuth · LN · 法术/施法者</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>魔法领域允许牧师直接使用奥术卷轴和魔杖，无需使用魔法装置 (Use Magic Device) 技能检定。这一能力的价值难以估量——它使牧师能够使用几乎所有奥术消耗品，极大地扩展了可用资源。配合领域法术链中的解除魔法、反魔法场等核心法术，魔法领域是注重魔法对抗和物品利用的牧师的绝佳选择。注意魔法恒定术在 SRD 中是法师/术士法术，仅通过此领域才对牧师开放。</p>
+
+    <p style="margin-top:30px;"><a href="../global-search.html?domain=魔法">→ 查看所有「魔法」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

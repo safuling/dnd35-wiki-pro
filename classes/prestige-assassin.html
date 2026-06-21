@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刺客 Assassin - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html" class="active">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>刺客 <span class="en-name">Assassin</span></h1>
+    <p class="source">来源：《地下城主指南》(DMG) 第180页</p>
+
+    <div class="infobox">
+      <h3>职业信息</h3>
+      <table>
+        <tr><th>生命骰 (HD)</th><td>d6</td></tr>
+        <tr><th>阵营限制</th><td>任意邪恶</td></tr>
+        <tr><th>关键属性</th><td>智力 (INT)</td></tr>
+        <tr><th>施法进阶</th><td>自有施法能力（INT-based，刺客法术列表）</td></tr>
+        <tr><th>来源</th><td>DMG p.180</td></tr>
+      </table>
+
+      <h3>入门条件</h3>
+      <table>
+        <tr><th>阵营</th><td>任意邪恶</td></tr>
+        <tr><th>技能</th><td>躲藏 (Hide) 8级、潜行 (Move Silently) 8级</td></tr>
+        <tr><th>特殊</th><td>必须曾为了某种目的而亲手杀害一个人</td></tr>
+      </table>
+
+      <h3>本职技能</h3>
+      <p>平衡 (Balance)、唬骗 (Bluff)、攀爬 (Climb)、专注 (Concentration)、外交 (Diplomacy)、解除装置 (Disable Device)、易容 (Disguise)、脱逃 (Escape Artist)、伪造文书 (Forgery)、搜集信息 (Gather Information)、躲藏 (Hide)、恐吓 (Intimidate)、跳跃 (Jump)、聆听 (Listen)、潜行 (Move Silently)、开锁 (Open Lock)、搜索 (Search)、察言观色 (Sense Motive)、手上功夫 (Sleight of Hand)、辨识法术 (Spellcraft)、侦察 (Spot)、游泳 (Swim)、翻滚 (Tumble)、绳技 (Use Rope)</p>
+      <p>技能点：4 + 智力调整值</p>
+    </div>
+
+    <h2>职业特性表</h2>
+    <table class="class-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>BAB</th>
+          <th>强韧</th>
+          <th>反射</th>
+          <th>意志</th>
+          <th>特殊能力</th>
+          <th>每日法术 (1级/2级/3级/4级)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>+0</td><td>+0</td><td>+2</td><td>+0</td>
+          <td>偷袭 +1d6 (Sneak Attack)、死亡攻击 (Death Attack)、毒药使用 (Poison Use)</td>
+          <td>0 / - / - / -</td>
+        </tr>
+        <tr>
+          <td>2</td><td>+1</td><td>+0</td><td>+3</td><td>+0</td>
+          <td>直觉闪避 (Uncanny Dodge)</td>
+          <td>1 / - / - / -</td>
+        </tr>
+        <tr>
+          <td>3</td><td>+2</td><td>+1</td><td>+3</td><td>+1</td>
+          <td>偷袭 +2d6</td>
+          <td>2 / 0 / - / -</td>
+        </tr>
+        <tr>
+          <td>4</td><td>+3</td><td>+1</td><td>+4</td><td>+1</td>
+          <td>—</td>
+          <td>3 / 1 / - / -</td>
+        </tr>
+        <tr>
+          <td>5</td><td>+3</td><td>+1</td><td>+4</td><td>+1</td>
+          <td>精通直觉闪避 (Improved Uncanny Dodge)、偷袭 +3d6</td>
+          <td>3 / 2 / 0 / -</td>
+        </tr>
+        <tr>
+          <td>6</td><td>+4</td><td>+2</td><td>+5</td><td>+2</td>
+          <td>—</td>
+          <td>3 / 3 / 1 / -</td>
+        </tr>
+        <tr>
+          <td>7</td><td>+5</td><td>+2</td><td>+5</td><td>+2</td>
+          <td>偷袭 +4d6、高等潜行 (Hide in Plain Sight)</td>
+          <td>3 / 3 / 2 / 0</td>
+        </tr>
+        <tr>
+          <td>8</td><td>+6</td><td>+2</td><td>+6</td><td>+2</td>
+          <td>精通直觉闪避 (Improved Uncanny Dodge)</td>
+          <td>3 / 3 / 3 / 1</td>
+        </tr>
+        <tr>
+          <td>9</td><td>+6</td><td>+3</td><td>+6</td><td>+3</td>
+          <td>偷袭 +5d6</td>
+          <td>3 / 3 / 3 / 2</td>
+        </tr>
+        <tr>
+          <td>10</td><td>+7</td><td>+3</td><td>+7</td><td>+3</td>
+          <td>真知术 (True Seeing)</td>
+          <td>3 / 3 / 3 / 3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详述</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>刺客熟练所有简易武器、十字弓（手弩、轻弩、重弩）、匕首（包括袖刃）、飞镖、细剑、闷棍、圆头锤、短弓和短剑。刺客不熟练任何类型的盔甲或盾牌。</p>
+    <p><em>注意：穿戴比皮甲更重的盔甲时，以下技能会受到防具检定减值：平衡、攀爬、脱逃、躲藏、跳跃、潜行、手上功夫和翻滚。另外，穿着中甲或重甲时，潜行技能会受到额外的防具检定减值。</em></p>
+
+    <h3>法术 (Spells)</h3>
+    <p>从第1级开始，刺客获得施法能力。要准备或施展刺客法术，刺客的智力值必须至少等于 10 + 法术等级。刺客的法术列表与法师或术士不同，包含专门为刺客设计的法术（共4级法术，最高4级法术）。</p>
+    <p>刺客每日法术数量如上表所示。法术的豁免 DC = 10 + 法术等级 + 智力调整值。刺客从1级开始施法，在5级时获得2级法术，在7级时获得3级法术，在9级时获得4级法术。</p>
+
+    <h3>偷袭 (Sneak Attack)</h3>
+    <p>此能力与盗贼的偷袭能力相同（见盗贼职业描述）。当目标失去敏捷加值或刺客进行夹击时，额外伤害增加。此伤害在第1级为+1d6，在第3级为+2d6，第5级为+3d6，第7级为+4d6，第9级为+5d6。如果刺客已经从其他职业获得了偷袭能力，则额外伤害叠加。</p>
+
+    <h3>死亡攻击 (Death Attack)</h3>
+    <p>如果刺客在攻击前有至少3轮时间研究目标，然后进行偷袭并成功命中，则该偷袭具有额外效果——可能导致目标瘫痪或即死（由刺客选择）。只有人形生物会受此效果影响。</p>
+    <p>对于瘫痪效果，目标必须成功进行一次强韧豁免（DC = 10 + 刺客等级 + 智力调整值），否则将被瘫痪，持续时间等于 1d6 + 刺客等级 轮。如果豁免成功，攻击仅造成正常的偷袭伤害。</p>
+    <p>对于即死效果，目标必须成功进行相同的强韧豁免，否则立即死亡。如果豁免成功，攻击仅造成正常的偷袭伤害。</p>
+    <p>此攻击在3轮研究后只能使用一次，如果刺客未能在接下来的3轮内完成攻击，则必须重新研究目标。</p>
+
+    <h3>毒药使用 (Poison Use)</h3>
+    <p>刺客经过训练，在使用毒药时不会意外中毒自己。从第1级开始，刺客在给武器上毒时不需要进行 DC 15 的反射豁免来避免中毒。</p>
+
+    <h3>直觉闪避 (Uncanny Dodge)</h3>
+    <p>从第2级开始，刺客即使在措手不及时或被隐形的攻击者攻击时也不会失去AC上的敏捷加值。但如果刺客陷入麻痹状态，仍然会失去敏捷加值。如果角色在成为刺客之前已经从其他职业获得了直觉闪避，则保留原有能力，并在第5级获得精通直觉闪避。</p>
+
+    <h3>精通直觉闪避 (Improved Uncanny Dodge)</h3>
+    <p>从第5级开始，刺客不再受到盗贼的偷袭能力额外伤害（除非攻击者的盗贼/偷袭等级比刺客的刺客等级高至少4级）。如果角色已经从其他职业获得了直觉闪避（见上文），则将两个职业的等级叠加以决定获得精通直觉闪避的等级。</p>
+    <p>第8级时，刺客进一步改善此能力。</p>
+
+    <h3>高等潜行 (Hide in Plain Sight)</h3>
+    <p>从第7级开始，即使在被观察的情况下，刺客也可以使用躲藏技能。只要刺客在距离阴影10英尺以内，他就可以利用阴影隐藏自己——即使阴影不足以提供正常隐藏。</p>
+
+    <h3>真知术 (True Seeing)</h3>
+    <p>从第10级开始，刺客可以每天使用一次真知术 (true seeing)（如同同名法术），施法者等级等于刺客等级×2。</p>
+
+    <h2>构建建议 (Build Tips)</h2>
+
+    <h3>推荐种族</h3>
+    <ul>
+      <li><strong>人类 (Human)：</strong>额外技能点帮助满足8级躲藏和潜行的要求，额外专长可以用于选择武器专精或提升偷袭。</li>
+      <li><strong>半身人 (Halfling)：</strong>体型奖励对躲藏、潜行和攻击命中都有加成，非常适合刺客型角色。</li>
+      <li><strong>半精灵 (Half-elf)：</strong>黑暗视觉和搜索能力对刺客很有帮助，且没有属性惩罚。</li>
+    </ul>
+
+    <h3>推荐基础职业</h3>
+    <ul>
+      <li><strong>盗贼 (Rogue)：</strong>最自然的搭配。盗贼已经拥有偷袭能力、大量本职技能与刺客完美衔接。盗贼8级/刺客10级的组合非常经典。</li>
+      <li><strong>游侠 (Ranger)：</strong>双武器战斗配合偷袭可以造成大量伤害，且追踪能力对刺客很有用。</li>
+      <li><strong>吟游诗人 (Bard)：</strong>吟游诗人的法术和技能可以与刺客的潜行能力互补，创造独特的间谍型角色。</li>
+    </ul>
+
+    <h3>构建思路</h3>
+    <ul>
+      <li>刺客的核心是死亡攻击 (Death Attack)——确保智力尽可能高以提高 DC。</li>
+      <li>偷袭伤害与盗贼偷袭叠加，因此尽量在盗贼中获取更多偷袭等级后再进入刺客。</li>
+      <li>刺客法术虽然等级低，但非常实用——隐形、黑暗视觉、改变外貌等能力增强了刺客的潜行和渗透能力。</li>
+      <li>高智力同时提升法术 DC、技能点和死亡攻击 DC，是刺客最重要的属性。</li>
+    </ul>
+
+    <h2>角色扮演建议 (Role-playing Suggestions)</h2>
+    <ul>
+      <li>刺客不仅仅是杀手——他们是经过严格训练的死亡执行者。大多数刺客隶属于秘密组织或刺客公会，遵守严格的行规和等级制度。</li>
+      <li>扮演刺客时可以展现冷静、计算和耐心。一个好的刺客从不仓促行动——他们会在最佳时机发动致命一击。</li>
+      <li>刺客的道德观可能因角色而异：有些人纯粹为了金钱而杀人，有些人则相信自己在执行某种更高目的的任务。</li>
+      <li>在队伍中，刺客通常扮演侦察者和渗透者的角色。他们的高技能点使他们能够胜任开锁、解除陷阱和搜集情报等任务。</li>
+      <li>邪恶阵营并不意味着刺客一定要与队伍对抗——许多刺客发现与冒险者队伍合作比独自行动更有利可图。</li>
+    </ul>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

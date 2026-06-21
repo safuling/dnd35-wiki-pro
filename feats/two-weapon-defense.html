@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双武器闪避 - D&D 3.5e 中文Wiki</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .feat-header { background: linear-gradient(135deg, #8B0000, #DC143C); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    .feat-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+    .feat-type { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin-top: 10px; }
+    .feat-infobox { float: right; width: 300px; background: #f8f9fa; border: 2px solid #8B0000; border-radius: 8px; padding: 20px; margin: 0 0 20px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feat-infobox h3 { margin-top: 0; color: #8B0000; border-bottom: 2px solid #8B0000; padding-bottom: 8px; }
+    .infobox-row { display: flex; padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .infobox-label { font-weight: bold; width: 80px; color: #495057; }
+    .infobox-value { flex: 1; }
+    .prereq-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .prereq-box h4 { margin-top: 0; color: #856404; }
+    .benefit-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .benefit-box h4 { margin-top: 0; color: #155724; }
+    .conflict-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .conflict-box h4 { margin-top: 0; color: #721c24; }
+    .example-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .example-box h4 { margin-top: 0; color: #0066cc; }
+    .build-box { background: #f0f0f0; border-left: 4px solid #666; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .build-box h4 { margin-top: 0; color: #333; }
+    .clear { clear: both; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+  <div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+
+    <div class="feat-header">
+      <h1>⚔️ 双武器闪避</h1>
+      <p style="font-size: 1.2em; margin: 10px 0;">Two-Weapon Defense</p>
+      <span class="feat-type">通用专长</span>
+      <span class="feat-type">【战斗】</span>
+    </div>
+
+    <div class="feat-infobox">
+      <h3>专长概要</h3>
+      <div class="infobox-row">
+        <span class="infobox-label">类型</span>
+        <span class="infobox-value">通用专长</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">先决条件</span>
+        <span class="infobox-value">双武器战斗 (Two-Weapon Fighting)</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">益处</span>
+        <span class="infobox-value">AC +1（当双持武器时）</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">特殊</span>
+        <span class="infobox-value">只能选择一次</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">来源</span>
+        <span class="infobox-value">PHB p. 103</span>
+      </div>
+      <div class="infobox-row">
+        <span class="infobox-label">适用</span>
+        <span class="infobox-value">游荡者、特定构建</span>
+      </div>
+    </div>
+
+    <h2>专长描述</h2>
+    <p>你擅长使用副手武器进行防御，提高你的防御能力。</p>
+
+    <div class="prereq-box">
+      <h4>📋 先决条件</h4>
+      <ul>
+        <li><strong>双武器战斗 (Two-Weapon Fighting)</strong></li>
+      </ul>
+      <p><strong>说明</strong>：双武器闪避是双武器战斗的进阶专长。</p>
+    </div>
+
+    <div class="benefit-box">
+      <h4>✅ 益处</h4>
+      <p>当你<strong>双持武器</strong>时，你的<strong>AC 获得 +1 加值</strong>。</p>
+      <ul>
+        <li><strong>条件</strong>：必须双持武器（主手 + 副手）</li>
+        <li><strong>加值</strong>：AC +1（盾牌加值类）</li>
+        <li><strong>持续时间</strong>：只要双持武器就持续</li>
+      </ul>
+    </div>
+
+    <h2>机制详解</h2>
+    <h3>双武器闪避的适用条件</h3>
+    <ul>
+      <li><strong>双持武器</strong>：主手武器 + 副手武器</li>
+      <li><strong>副手武器</strong>：副手武器可以是任何武器（不一定是轻型）</li>
+      <li><strong>AC 加值</strong>：+1 盾牌加值（可以与其他盾牌加值叠加）</li>
+    </ul>
+
+    <h3>重要规则</h3>
+    <ul>
+      <li><strong>需要双武器战斗</strong>：必须先选择双武器战斗专长</li>
+      <li><strong>AC 加值类型</strong>：盾牌加值，可以与其他盾牌加值叠加</li>
+      <li><strong>不适用徒手</strong>：必须持有副手武器才能获得加值</li>
+    </ul>
+
+    <div class="example-box">
+      <h4>📖 实战示例</h4>
+      <p><strong>场景</strong>：游荡者双持短剑（主手）+ 短剑（副手），已选择双武器闪避。</p>
+      <p><strong>AC 计算</strong>：基础 AC 10 + 敏捷调整值 +4 + 双武器闪避 +1 = AC 15</p>
+      <p><strong>分析</strong>：双武器闪避为双武器战士提供了额外的防御能力，适合需要攻守兼备的构建。</p>
+    </div>
+
+    <h2>搭配专长与构建</h2>
+    <div class="build-box">
+      <h4>🔗 双武器战斗专长树</h4>
+      <ul>
+        <li><strong>双武器战斗 (Two-Weapon Fighting)</strong> - 先决条件，减少惩罚</li>
+        <li><strong>双武器闪避 (Two-Weapon Defense)</strong> - 本专长，AC +1</li>
+        <li><strong>改进双武器战斗 (Improved Two-Weapon Fighting)</strong> - 副手第二次攻击</li>
+        <li><strong>高等双武器战斗 (Greater Two-Weapon Fighting)</strong> - 副手第三次攻击</li>
+      </ul>
+    </div>
+
+    <div class="build-box">
+      <h4>⚔️ 推荐构建</h4>
+      <p><strong>1. 防御双武器战士 (Defensive Two-Weapon Fighter)</strong></p>
+      <ul>
+        <li>专攻：双武器战斗 → 双武器闪避 → 改进双武器战斗</li>
+        <li>特点：攻守兼备，适合前排</li>
+        <li>推荐武器：长剑 + 短剑</li>
+      </ul>
+    </div>
+
+    <h2>规则冲突标注</h2>
+    <div class="conflict-box">
+      <h4>⚠️ 规则冲突：双武器闪避与盾牌的叠加</h4>
+      <p><strong>冲突点</strong>：双武器闪避的 +1 AC 能否与盾牌叠加？</p>
+      <p><strong>规则出处</strong>：</p>
+      <ul>
+        <li><strong>PHB p. 103</strong>：双武器闪避专长描述</li>
+        <li><strong>PHB p. 112</strong>：AC 计算规则</li>
+      </ul>
+      <p><strong>冲突描述</strong>：双武器闪避提供盾牌加值，但是否能与实际盾牌叠加存在争议。</p>
+      <p><strong>常见解释</strong>：</p>
+      <ol>
+        <li><strong>不叠加解释</strong>：双武器闪避与实际盾牌不叠加（都是盾牌加值）</li>
+        <li><strong>叠加解释</strong>：双武器闪避与实际盾牌叠加（不同来源）</li>
+      </ol>
+      <p><strong>建议</strong>：与 DM 确认。建议采用<strong>不叠加解释</strong>（都是盾牌加值，不叠加）。</p>
+    </div>
+
+    <h2>规则出处</h2>
+    <ul>
+      <li><strong>玩家手册 (PHB)</strong> p. 103 - 双武器闪避专长描述</li>
+      <li><strong>Complete Warrior</strong> p. 111 - 双武器闪避的变体规则</li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+</main>
+</div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>D&D 3.5e 中文Wiki - 致力于提供完整、准确的规则信息</p>
+      <p>本网站内容基于《龙与地下城》第三版修订版（D&D 3.5e）规则书</p>
+      <p>规则冲突信息收集自网络，标注出处供参考</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秩序领域 Law - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.domain-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:14px; font-weight:600; color:#fff; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.power-box { background:linear-gradient(135deg,#faf6ee,#f0ebe0); border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.power-box h4 { margin:0 0 8px 0; color:var(--accent-red,#c0392b); }
+.spell-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.spell-table th, .spell-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:14px; }
+.spell-table th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.spell-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.spell-table td:first-child { width:40px; text-align:center; font-weight:700; color:var(--accent-gold,#d4a017); }
+.deity-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin:12px 0; }
+.deity-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:10px; text-align:center; }
+.deity-card strong { display:block; color:var(--text-heading,#4a2c0a); }
+.deity-card span { font-size:12px; color:var(--text-subtle,#7f8c8d); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">领域系统</div>
+      <a href="intro.html">领域总览</a>
+      <a href="air.html">气 Air</a>
+      <a href="animal.html">动物 Animal</a>
+      <a href="chaos.html">混乱 Chaos</a>
+      <a href="death.html">死亡 Death</a>
+      <a href="destruction.html">毁灭 Destruction</a>
+      <a href="earth.html">土 Earth</a>
+      <a href="evil.html">邪恶 Evil</a>
+      <a href="fire.html">火 Fire</a>
+      <a href="good.html">善良 Good</a>
+      <a href="healing.html">治疗 Healing</a>
+      <a href="knowledge.html">知识 Knowledge</a>
+      <a href="law.html" class="active">秩序 Law</a>
+      <a href="luck.html">幸运 Luck</a>
+      <a href="magic.html">魔法 Magic</a>
+      <a href="plant.html">植物 Plant</a>
+      <a href="protection.html">防护 Protection</a>
+      <a href="strength.html">力量 Strength</a>
+      <a href="sun.html">太阳 Sun</a>
+      <a href="travel.html">旅行 Travel</a>
+      <a href="trickery.html">诡术 Trickery</a>
+      <a href="war.html">战争 War</a>
+      <a href="water.html">水 Water</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>秩序 <span style="font-size:0.5em;color:#888;">Law</span></h1>
+    <p><span class="domain-badge" style="background:#2c3e50;">秩序</span> 秩序领域代表律法、纪律与绝对的规则之力。信奉秩序领域的牧师擅长对抗混乱生物，其法术链以防护混乱、制裁混乱为核心。秩序领域与善良领域结构类似，但专注于对抗混乱阵营的敌人。</p>
+
+    <h2 class="section-title" id="power">神授力量 (Granted Power)</h2>
+    <div class="power-box">
+      <h4>秩序武器 (Lawful Weapon)</h4>
+      <p>每日一次，你可以使一件武器获得秩序阵营属性，持续1轮/牧师等级。秩序武器对混乱生物造成额外伤害，且可绕过某些仅限秩序武器才能伤害的生物的伤害减免。此效果等同于秩序武器 (Lawful Weapon) 附魔。</p>
+    </div>
+
+    <h2 class="section-title" id="spells">领域法术 (Domain Spells)</h2>
+    <p>以下法术可通过本领域自动获得。点击法术名可查看详细信息。</p>
+    <table class="spell-table">
+      <thead><tr><th>环</th><th>法术</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="../spells/spell-detail.html?id=protection_from_chaos">防护混乱 (Protection from Chaos)</a></td><td>为受术者提供+2偏斜AC和+2抗力豁免对抗混乱生物</td></tr>
+        <tr><td>2</td><td><a href="../spells/spell-detail.html?id=calm_emotions">安抚情绪 (Calm Emotions)</a></td><td>平息区域内生物的强烈情绪，阻止狂暴和恐惧效果</td></tr>
+        <tr><td>3</td><td><a href="../spells/spell-detail.html?id=magic_circle_against_chaos">反混乱法阵 (Magic Circle against Chaos)</a></td><td>创造对抗混乱生物的防护圈，提供+2偏斜加值和心灵防护</td></tr>
+        <tr><td>4</td><td><a href="../spells/spell-detail.html?id=dispel_chaos">解除混乱 (Dispel Chaos)</a></td><td>对混乱生物+5加值攻击，或驱散混乱附魔/法术</td></tr>
+        <tr><td>5</td><td><a href="../spells/spell-detail.html?id=hold_monster">定身怪物 (Hold Monster)</a></td><td>使一个人形生物瘫痪，可进行多次豁免</td></tr>
+        <tr><td>6</td><td><a href="../spells/spell-detail.html?id=dictum">神言术 (Dictum)</a></td><td>秩序之言，可杀、麻痹、震慑或减速非守序生物</td></tr>
+        <tr><td>7</td><td><a href="../spells/spell-detail.html?id=shield_of_law">守序之盾 (Shield of Law)</a></td><td>为盟友提供+4偏斜AC、豁免加值及法术抗力</td></tr>
+        <tr><td>8</td><td><a href="../spells/spell-detail.html?id=summon_monster_9">召唤怪物IX (Summon Monster IX)</a></td><td>召唤强大的守序阵营外来生物为你作战</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title" id="deities">相关神祇 (Associated Deities)</h2>
+    <div class="deity-grid">
+      <div class="deity-card"><strong>圣·库斯伯特</strong><span>St. Cuthbert · LG · 正义/热忱</span></div>
+      <div class="deity-card"><strong>海若尼斯</strong><span>Heironeous · LG · 英勇</span></div>
+      <div class="deity-card"><strong>海姆</strong><span>Helm · LN · 防护/警戒</span></div>
+    </div>
+
+    <h2 class="section-title" id="notes">规则备注</h2>
+    <p>混乱阵营角色不可选择秩序领域。若角色在游戏过程中阵营转变为混乱，将失去本领域的神授力量和领域法术，直到其通过赎罪术 (Atonement) 恢复守序阵营。秩序领域法术链与善良领域结构类似，但专注于对抗混乱生物。神言术 (Dictum) 是此领域的标志性法术，高等级时对混乱敌人具有毁灭性效果。</p>
+
+    <p style="margin-top:30px;"><a href="../global-search.html?domain=守序">→ 查看所有「秩序」领域法术</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

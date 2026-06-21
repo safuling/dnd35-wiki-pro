@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>通用专长 General Feats - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.feat-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.feat-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.feat-card h3 a { color:var(--text-heading,#4a2c0a); text-decoration:none; }
+.feat-card h3 a:hover { text-decoration:underline; }
+.feat-meta { font-size:13px; color:var(--text-subtle,#7f8c8d); margin-bottom:8px; }
+.feat-meta .badge { display:inline-block; padding:2px 8px; border-radius:3px; font-size:11px; font-weight:600; color:#fff; margin-right:4px; }
+.badge-combat { background:#c0392b; }
+.badge-general { background:#2980b9; }
+.badge-metamagic { background:#8e44ad; }
+.badge-item { background:#e67e22; }
+.badge-divine { background:#d4a017; }
+.badge-spell { background:#27ae60; }
+.prereq { font-size:13px; color:#888; margin:4px 0; }
+.benefit { font-size:14px; margin:6px 0; }
+.tactic-tip { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:6px 10px; margin:6px 0; font-size:13px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长分类</div>
+      <a href="intro.html">总览</a>
+      <a href="feat-list.html">📋 专长详细列表</a>
+      <a href="combat.html">战斗专长</a>
+      <a href="spell-feats.html">施法专长</a>
+      <a href="general.html" class="active">通用专长</a>
+      <a href="metamagic.html">超魔专长</a>
+      <a href="item.html">物品专长</a>
+      <a href="divine.html">神术专长</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心专长</div>
+      <a href="power-attack.html">猛力攻击</a>
+      <a href="cleave.html">顺劈斩</a>
+      <a href="weapon-focus.html">武器专精</a>
+      <a href="dodge.html">闪避</a>
+      <a href="iron-will.html">钢铁意志</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>通用专长 <span style="font-size:0.5em;color:#888;">General Feats</span></h1>
+    <p>通用专长没有特殊的类别限制，任何满足先决条件的角色均可选取。它们提供各种增益，涵盖技能加值、属性提升、豁免增强和特殊能力。这些专长适合所有职业，是角色构建中灵活且有价值的基础选项。</p>
+
+    <div class="toc">
+      <h3>本分类专长一览</h3>
+      <ul>
+        <li><a href="#alertness">警觉</a></li>
+        <li><a href="#athletic">灵巧</a></li>
+        <li><a href="#blind-fight">盲斗</a></li>
+        <li><a href="#combat-casting">战斗施法</a></li>
+        <li><a href="#combat-expertise">战斗专攻</a></li>
+        <li><a href="#combat-reflexes">战斗反射</a></li>
+        <li><a href="#dodge">闪避</a></li>
+        <li><a href="#endurance">坚忍</a></li>
+        <li><a href="#great-fortitude">强韧加强</a></li>
+        <li><a href="#improved-initiative">精通先攻</a></li>
+        <li><a href="#iron-will">钢铁意志</a></li>
+        <li><a href="#leadership">领导力</a></li>
+        <li><a href="#lightning-reflexes">闪电反射</a></li>
+        <li><a href="#mobility">灵活</a></li>
+        <li><a href="#negotiator">谈判者</a></li>
+        <li><a href="#nimble-fingers">灵活身手</a></li>
+        <li><a href="#persuasive">说服</a></li>
+        <li><a href="#run">飞跑</a></li>
+        <li><a href="#skill-focus">技能专攻</a></li>
+        <li><a href="#stealthy">隐秘</a></li>
+        <li><a href="#toughness">健壮</a></li>
+        <li><a href="#track">追踪</a></li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">专长总览表</h2>
+    <table class="quick-table">
+      <thead><tr><th>专长</th><th>前提</th><th>简述</th><th>详情页</th></tr></thead>
+      <tbody>
+        <tr><td>警觉 Alertness</td><td>无</td><td>侦察和聆听检定+2</td><td><a href="alertness.html">详情</a></td></tr>
+        <tr><td>灵巧 Athletic</td><td>无</td><td>攀爬和游泳检定+2</td><td>-</td></tr>
+        <tr><td>盲斗 Blind-Fight</td><td>无</td><td>隐蔽失手率减半，可定位隐形敌人</td><td>-</td></tr>
+        <tr><td>战斗施法 Combat Casting</td><td>无</td><td>防御性施法专注检定+4</td><td><a href="combat-casting.html">详情</a></td></tr>
+        <tr><td>战斗专攻 Combat Expertise</td><td>智力13</td><td>牺牲攻击换AC闪避加值</td><td><a href="combat-expertise.html">详情</a></td></tr>
+        <tr><td>战斗反射 Combat Reflexes</td><td>无</td><td>额外借机攻击次数=敏捷调整值</td><td>-</td></tr>
+        <tr><td>闪避 Dodge</td><td>敏捷13</td><td>对指定对手AC+1闪避加值</td><td><a href="dodge.html">详情</a></td></tr>
+        <tr><td>坚忍 Endurance</td><td>无</td><td>耐力相关检定+4</td><td>-</td></tr>
+        <tr><td>强韧加强 Great Fortitude</td><td>无</td><td>强韧豁免+2</td><td><a href="great-fortitude.html">详情</a></td></tr>
+        <tr><td>精通先攻 Improved Initiative</td><td>无</td><td>先攻检定+4</td><td><a href="improved-initiative.html">详情</a></td></tr>
+        <tr><td>钢铁意志 Iron Will</td><td>无</td><td>意志豁免+2</td><td><a href="iron-will.html">详情</a></td></tr>
+        <tr><td>领导力 Leadership</td><td>角色等级6</td><td>获得部属和追随者</td><td>-</td></tr>
+        <tr><td>闪电反射 Lightning Reflexes</td><td>无</td><td>反射豁免+2</td><td><a href="lightning-reflexes.html">详情</a></td></tr>
+        <tr><td>灵活 Mobility</td><td>闪避</td><td>引发借机攻击时AC+4</td><td>-</td></tr>
+        <tr><td>谈判者 Negotiator</td><td>无</td><td>察言观色和交涉检定+2</td><td>-</td></tr>
+        <tr><td>灵活身手 Nimble Fingers</td><td>无</td><td>解除装置和开锁检定+2</td><td>-</td></tr>
+        <tr><td>说服 Persuasive</td><td>无</td><td>威吓和交涉检定+2</td><td>-</td></tr>
+        <tr><td>飞跑 Run</td><td>无</td><td>奔跑速度x5，跳跃+4</td><td>-</td></tr>
+        <tr><td>技能专攻 Skill Focus</td><td>无</td><td>选定技能检定+3</td><td>-</td></tr>
+        <tr><td>隐秘 Stealthy</td><td>无</td><td>躲藏和潜行检定+2</td><td>-</td></tr>
+        <tr><td>健壮 Toughness</td><td>无</td><td>获得3点额外生命值</td><td><a href="toughness.html">详情</a></td></tr>
+        <tr><td>追踪 Track</td><td>无</td><td>使用生存技能追踪生物</td><td>-</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== FEAT CARDS ===== -->
+
+    <h2 class="section-title" id="alertness">警觉 (Alertness)</h2>
+    <div class="feat-card">
+      <h3>警觉 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>侦察和聆听检定+2。拥有魔宠的角色在5尺内自动获得此效果。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>适合斥候和需要担任哨兵角色的冒险者。详见 <a href="alertness.html">警觉详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="athletic">灵巧 (Athletic)</h2>
+    <div class="feat-card">
+      <h3>灵巧 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你在攀爬(Climb)和游泳(Swim)技能检定上获得+2加值。适合经常需要进行运动类检定的冒险者，特别是在地下城探险中需要攀爬墙壁或渡过水域的场景。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>价值相对较低，+2加值在高等级时不够显著。如果团队中没有其他角色能处理攀爬/游泳挑战，可以考虑。</div>
+    </div>
+
+    <h2 class="section-title" id="blind-fight">盲斗 (Blind-Fight)</h2>
+    <div class="feat-card">
+      <h3>盲斗 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>在对抗隐蔽(concealment)的敌人时，你的失手率减半。即使你看不见对手（例如处于黑暗中、隐形状态），也能有效地定位并攻击他们。对手对你而言，隐蔽提供的失手率从通常数值减半（50%降为25%）。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>对抗隐形敌人和黑暗环境的有效手段。近战角色在面对常见隐蔽效果时值得投资。注意不消除全隐蔽（50%失手率→25%），只减半。</div>
+    </div>
+
+    <h2 class="section-title" id="combat-casting">战斗施法 (Combat Casting)</h2>
+    <div class="feat-card">
+      <h3>战斗施法 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>防御性施法专注检定+4。施法者在近战中的保命基础。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>所有近战施法者的必备专长。详见 <a href="combat-casting.html">战斗施法详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="combat-expertise">战斗专攻 (Combat Expertise)</h2>
+    <div class="feat-card">
+      <h3>战斗专攻 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>牺牲攻击加值换取等量AC闪避加值。控制型战士的基础。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>精通绊摔等控制专长的先决条件。详见 <a href="combat-expertise.html">战斗专攻详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="combat-reflexes">战斗反射 (Combat Reflexes)</h2>
+    <div class="feat-card">
+      <h3>战斗反射 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你可以在每轮中获得额外的借机攻击次数，等于你的敏捷调整值（而非通常的每轮1次）。此外，你在措手不及(flat-footed)状态下也可以进行借机攻击。高敏捷角色的防守利器。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高敏捷近战角色的核心防守专长。配合长触及武器和精通绊摔，可以在敌人经过时进行大量借机攻击，极大提升控制能力。</div>
+    </div>
+
+    <h2 class="section-title" id="dodge">闪避 (Dodge)</h2>
+    <div class="feat-card">
+      <h3>闪避 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>对指定对手AC+1闪避加值。许多高级专长的先决条件。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>虽然+1看似不多，但作为先决条件链的一环非常重要。详见 <a href="dodge.html">闪避详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="endurance">坚忍 (Endurance)</h2>
+    <div class="feat-card">
+      <h3>坚忍 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你在以下耐力相关的检定上获得+4加值：强行军时避免非致命伤害的体质检定、屏息检定、避免饥饿和口渴造成非致命伤害的检定，以及避免极端温度造成伤害的强韧豁免。适合经常进行野外冒险的角色。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>在大多数战斗中用处不大，但在荒野冒险和生存场景中非常实用。如果你的DM经常安排极端环境冒险，这个专长价值很高。</div>
+    </div>
+
+    <h2 class="section-title" id="great-fortitude">强韧加强 (Great Fortitude)</h2>
+    <div class="feat-card">
+      <h3>强韧加强 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>所有强韧豁免+2。有效抵抗毒素、疾病和各种魔法效果。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>强韧豁免薄弱职业（如法师、游荡者）的保险选择。详见 <a href="great-fortitude.html">强韧加强详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-initiative">精通先攻 (Improved Initiative)</h2>
+    <div class="feat-card">
+      <h3>精通先攻 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>先攻检定+4。率先行动抢占战斗先机。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>几乎所有角色的优质选择。详见 <a href="improved-initiative.html">精通先攻详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="iron-will">钢铁意志 (Iron Will)</h2>
+    <div class="feat-card">
+      <h3>钢铁意志 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>所有意志豁免+2。对抗魅惑、恐惧和幻术的关键防御。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>战士、野蛮人等低意志职业的首选。详见 <a href="iron-will.html">钢铁意志详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="leadership">领导力 (Leadership)</h2>
+    <div class="feat-card">
+      <h3>领导力 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>角色等级6</div>
+      <div class="benefit"><strong>效果：</strong>你获得部属(cohort)和追随者(followers)。部属的等级比你低2级，追随者的数量和等级取决于你的领导力分数。领导力分数基于角色等级、魅力调整值和你的行为表现（如残忍行为会降低分数）。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>需DM批准方可使用，但被允许时极为强力。部属等于多了一个NPC队友，大幅提升团队战力。高魅力角色（如圣武士、吟游诗人）获益最多。</div>
+    </div>
+
+    <h2 class="section-title" id="lightning-reflexes">闪电反射 (Lightning Reflexes)</h2>
+    <div class="feat-card">
+      <h3>闪电反射 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>所有反射豁免+2。有效对抗火球术等范围攻击和陷阱。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>反射豁免薄弱职业的有效补强。详见 <a href="lightning-reflexes.html">闪电反射详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="mobility">灵活 (Mobility)</h2>
+    <div class="feat-card">
+      <h3>灵活 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>闪避</div>
+      <div class="benefit"><strong>效果：</strong>当你离开被威胁的方格中移动而引发借机攻击时，你对该次借机攻击的AC获得+4闪避加值。此加值不适用于你在当轮中已经使用闪避专长指定的对手。与闪避专长类似，失去AC敏捷加值时也会失去此加值。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>配合闪避使用，适合需要频繁在战场上移动的角色（如游荡者、双武器战士）。+4 AC对抗借机攻击可以大幅降低被惩罚的风险。</div>
+    </div>
+
+    <h2 class="section-title" id="negotiator">谈判者 (Negotiator)</h2>
+    <div class="feat-card">
+      <h3>谈判者 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你在察言观色(Sense Motive)和交涉(Diplomacy)技能检定上获得+2加值。适合擅长社交互动的角色，帮助你在谈判和察言观色中占据优势。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>适合担任团队"面子"的角色。吟游诗人、圣武士等社交职业搭配此专长可以更好地处理NPC互动场景。</div>
+    </div>
+
+    <h2 class="section-title" id="nimble-fingers">灵活身手 (Nimble Fingers)</h2>
+    <div class="feat-card">
+      <h3>灵活身手 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你在解除装置(Disable Device)和开锁(Open Lock)技能检定上获得+2加值。非常适合盗贼或任何需要处理锁具和陷阱的角色。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>游荡者处理陷阱和锁具的效率提升。如果团队中没有专门的开锁手，其他角色也可以考虑选取。</div>
+    </div>
+
+    <h2 class="section-title" id="persuasive">说服 (Persuasive)</h2>
+    <div class="feat-card">
+      <h3>说服 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你在威吓(Intimidate)和交涉(Diplomacy)技能检定上获得+2加值。适合需要在社交场景中施加压力或进行说服的角色。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>威吓流构建的基础。配合高力量和威吓技能，可以在战斗前动摇敌人士气或战后审问俘虏。</div>
+    </div>
+
+    <h2 class="section-title" id="run">飞跑 (Run)</h2>
+    <div class="feat-card">
+      <h3>飞跑 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>当你奔跑时，你的速度变为正常的5倍（而非通常的4倍）。此外，你在跳跃检定时，助跑阶段的跳跃距离获得+4加值。穿着中甲或重甲时无法使用此专长。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>轻甲角色的逃生和追击利器。30尺速度的角色奔跑时可达150尺，远超常人。在追逐场景中极为有用，但战斗中使用频率较低。</div>
+    </div>
+
+    <h2 class="section-title" id="skill-focus">技能专攻 (Skill Focus)</h2>
+    <div class="feat-card">
+      <h3>技能专攻 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>选择一个技能，你在该技能的所有检定上获得+3加值。可以多次选取此专长，每次选择不同的技能。如果多次选取同一技能，加值叠加。这使得你可以成为某一技能的专家。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>适合需要精通特定技能的角色。例如：技能专攻（专注）对施法者非常重要；技能专攻（潜行）适合斥候。+3加值在高等级时可能不够显著，早期选取效果最好。</div>
+    </div>
+
+    <h2 class="section-title" id="stealthy">隐秘 (Stealthy)</h2>
+    <div class="feat-card">
+      <h3>隐秘 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你在躲藏(Hide)和潜行(Move Silently)技能检定上获得+2加值。非常适合斥候、游荡者和其他需要保持隐蔽的角色。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>斥候型角色的基础选择。配合轻甲和阴影斗篷可以大幅提升潜行能力。但+2加值在高等级时价值有限。</div>
+    </div>
+
+    <h2 class="section-title" id="toughness">健壮 (Toughness)</h2>
+    <div class="feat-card">
+      <h3>健壮 <span class="badge badge-general">通用</span></h3>
+      <div class="benefit"><strong>简述：</strong>获得3点额外生命值。可多次选取，每次再+3HP。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>低等级时3HP可能是生死之差。详见 <a href="toughness.html">健壮详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="track">追踪 (Track)</h2>
+    <div class="feat-card">
+      <h3>追踪 <span class="badge badge-general">通用</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你可以使用生存(Survival)技能追踪生物的行踪。追踪的DC取决于地形和时间流逝。你可以通过地面上的足迹、被折断的树枝等线索追踪目标。游侠在1级时自动获得此专长作为奖励。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>野外冒险中极为重要的能力。如果团队中没有游侠，至少应有一个角色拥有追踪能力，以免在荒野中迷路或丢失目标。</div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

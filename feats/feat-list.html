@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>专长详细列表 Feats - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长</div>
+      <a href="intro.html">专长总览</a>
+      <a href="feat-list.html" class="active">专长详细列表</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>专长详细列表</h1>
+    <p>本页面列出D&D 3.5e核心规则中的主要专长，按类别分组。每个专长包含中文名（英文名）、先决条件、效果描述和类型标签。</p>
+
+    <div class="toc-box" style="background:#f5f0e8;border:1px solid #c9b97a;border-radius:6px;padding:16px 24px;margin:20px 0;">
+      <strong>目录</strong>
+      <ul style="margin:8px 0 0 0;padding-left:20px;columns:2;">
+        <li><a href="#general">一般专长 (General Feats)</a></li>
+        <li><a href="#combat">战斗专长 (Combat Feats)</a></li>
+        <li><a href="#metamagic">超魔专长 (Metamagic Feats)</a></li>
+        <li><a href="#item-creation">物品制造专长 (Item Creation Feats)</a></li>
+      </ul>
+    </div>
+
+    <!-- ==================== 一般专长 ==================== -->
+    <h2 id="general">一般专长 (General Feats)</h2>
+    <p>一般专长没有特殊的类别限制，任何满足先决条件的角色均可选取。它们提供各种增益，涵盖技能加值、属性提升和特殊能力。</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">专长名称</th>
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">先决条件</th>
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">效果</th>
+          <th style="padding:10px 12px;text-align:center;border:1px solid #8b7355;">类型</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>警觉</strong><br><em>(Alertness)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在侦察(Spot)和聆听(Listen)技能检定上获得+2加值。当你的魔宠在5尺范围内时，你自动获得该加值（即使你并未选择此专长，魔宠也会赋予你这一好处）。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>灵巧</strong><br><em>(Athletic)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在攀爬(Climb)和游泳(Swim)技能检定上获得+2加值。适合经常需要进行运动类检定的冒险者。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>盲斗</strong><br><em>(Blind-Fight)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">在对抗隐蔽(concealment)的敌人时，你的失手率(miss chance)降低。即使你看不见对手（例如处于黑暗中、隐形状态），也能有效地定位并攻击他们。对手对你而言，隐蔽提供的失手率从通常数值减半。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>战斗反射</strong><br><em>(Combat Reflexes)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以在每轮中获得额外的借机攻击次数，等于你的敏捷调整值（而非通常的每轮1次）。此外，你在措手不及(flat-footed)状态下也可以进行借机攻击。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>闪避</strong><br><em>(Dodge)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">敏捷 13</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">在你的行动轮中，你指定一个对手，对该对手的AC获得+1闪避加值。你可以在任何时候选择新的对手。此加值与其他闪避加值叠加。当你失去AC的敏捷加值时，也会失去此加值。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>坚忍</strong><br><em>(Endurance)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在以下耐力相关的检定上获得+4加值：强行军时避免非致命伤害的体质检定、屏息检定、避免饥饿和口渴造成非致命伤害的检定，以及避免极端温度造成伤害的强韧豁免。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>强韧加强</strong><br><em>(Great Fortitude)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在所有强韧豁免(Fortitude save)上获得+2加值。这是对你基础强韧豁免的直接增强，适用于抵抗毒素、疾病和各种魔法效果。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>精通先攻</strong><br><em>(Improved Initiative)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在先攻(Initiative)检定上获得+4加值。这使你更有可能在战斗中率先行动，抢占先机对于施法者和近战角色都极为重要。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>钢铁意志</strong><br><em>(Iron Will)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在所有意志豁免(Will save)上获得+2加值。有效对抗魅惑、恐惧、幻术等需要意志豁免的效果，是物理职业弥补意志弱点的常用选择。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>领导力</strong><br><em>(Leadership)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">角色等级 6</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你获得部属(cohort)和追随者(followers)。部属的等级比你低2级，追随者的数量和等级取决于你的领导力分数。领导力分数基于角色等级、魅力调整值和你的行为表现。需DM批准方可使用。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>闪电反射</strong><br><em>(Lightning Reflexes)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在所有反射豁免(Reflex save)上获得+2加值。有效对抗火球术等范围攻击、陷阱和各种需要快速闪避的效果。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>灵活</strong><br><em>(Mobility)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">闪避</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当你离开或被威胁的方格中移动而引发借机攻击时，你对该次借机攻击的AC获得+4闪避加值。此加值不适用于你在当轮中已经使用闪避专长指定的对手。与闪避专长类似，失去AC敏捷加值时也会失去此加值。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>说服</strong><br><em>(Negotiator)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在察言观色(Sense Motive)和交涉(Diplomacy)技能检定上获得+2加值。适合擅长社交互动的角色，帮助你在谈判和察言观色中占据优势。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>灵活身手</strong><br><em>(Nimble Fingers)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在解除装置(Disable Device)和开锁(Open Lock)技能检定上获得+2加值。非常适合盗贼或任何需要处理锁具和陷阱的角色。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>说服</strong><br><em>(Persuasive)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在威吓(Intimidate)和交涉(Diplomacy)技能检定上获得+2加值。适合需要在社交场景中施加压力或进行说服的角色。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>飞跑</strong><br><em>(Run)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当你奔跑时，你的速度变为正常的5倍（而非通常的4倍）。此外，你在跳跃检定时，助跑阶段的跳跃距离获得+4加值。穿着中甲或重甲时无法使用此专长。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>健壮</strong><br><em>(Toughness)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你获得3点额外生命值。这是D&D 3.5e中最简单直接的生命值提升方式。可以多次选取，每次再获得3点生命值。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>技能专攻</strong><br><em>(Skill Focus)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">选择一个技能，你在该技能的所有检定上获得+3加值。可以多次选取此专长，每次选择不同的技能。如果多次选取同一技能，加值叠加。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>隐秘</strong><br><em>(Stealthy)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在躲藏(Hide)和潜行(Move Silently)技能检定上获得+2加值。非常适合斥候、游荡者和其他需要保持隐蔽的角色。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>追踪</strong><br><em>(Track)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以使用生存(Survival)技能追踪生物的行踪。追踪的DC取决于地形和时间流逝。你可以通过地面上的足迹、被折断的树枝等线索追踪目标。游侠在1级时自动获得此专长作为奖励。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8dcc8;padding:2px 8px;border-radius:4px;font-size:0.85em;">一般</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== 战斗专长 ==================== -->
+    <h2 id="combat">战斗专长 (Combat Feats)</h2>
+    <p>战斗专长专注于增强角色的近战、远程和骑乘战斗能力。战士可以将战斗专长作为战士奖励专长选取。</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">专长名称</th>
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">先决条件</th>
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">效果</th>
+          <th style="padding:10px 12px;text-align:center;border:1px solid #8b7355;">类型</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>精通徒手打击</strong><br><em>(Improved Unarmed Strike)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你的徒手打击不会引发借机攻击，并且你可以选择造成致命或非致命伤害。没有此专长时，徒手打击造成非致命伤害且攻击武装对手时会引发借机攻击。武僧在1级时自动获得此专长。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>武器娴熟</strong><br><em>(Weapon Finesse)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">基本攻击加值 +1</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">使用轻型近战武器、细剑、鞭子或刺链时，你可以使用敏捷调整值代替力量调整值来计算近战攻击加值。若你持用盾牌，盾牌的防具检定减值会应用到此攻击加值上。可多次选取，每次适用于不同武器。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>武器专攻</strong><br><em>(Weapon Focus)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">擅长所选武器，基本攻击加值 +1</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">选择一个武器类型（如长剑、长弓），使用所选武器时，攻击检定获得+1加值。可以多次选取此专长，每次选择不同的武器。这是许多高级战斗专长的先决条件。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>高等武器专攻</strong><br><em>(Greater Weapon Focus)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">武器专攻（同武器），擅长所选武器，战士等级 8</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">使用已选取武器专攻的武器时，攻击检定额外获得+1加值。此加值与武器专攻的加值叠加，共计+2攻击加值。可多次选取，每次适用于不同的已拥有武器专攻的武器。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>武器专精</strong><br><em>(Weapon Specialization)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">武器专攻（同武器），擅长所选武器，战士等级 4</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">使用已选取武器专攻的武器时，伤害检定获得+2加值。此加值不适用于属性伤害或附加伤害。可多次选取，每次选择不同的已拥有武器专攻的武器。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>高等武器专精</strong><br><em>(Greater Weapon Specialization)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">武器专精（同武器），高等武器专攻（同武器），战士等级 12</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">使用已选取武器专精的武器时，伤害检定额外获得+2加值。此加值与武器专精的加值叠加，共计+4伤害加值。可多次选取，每次适用于不同武器。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>猛力攻击</strong><br><em>(Power Attack)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">力量 13</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">在你的行动轮中，你可以在进行近战攻击前选择从攻击检定中减去一个数值（最多等于你的基本攻击加值），并将等量数值加到伤害检定中。使用双手武器时，此伤害加值翻倍。这是近战伤害构建的核心专长。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>顺劈斩</strong><br><em>(Cleave)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">力量 13，猛力攻击</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当你在同一轮中击杀一个对手时（使其HP降至0或以下），你可以立即对相邻的另一个对手进行一次额外的近战攻击。此攻击使用与击杀攻击相同的加值。每轮最多使用一次。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>大顺劈</strong><br><em>(Great Cleave)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">力量 13，猛力攻击，顺劈斩，基本攻击加值 +4</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">此专长移除顺劈斩每轮一次的限制。每当你在同一轮中击杀一个对手时，你都可以对相邻的对手进行一次额外攻击。在面对大量弱敌时极为强大，可以像割草一样清扫战场。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>精通冲撞</strong><br><em>(Improved Bull Rush)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">力量 13，猛力攻击</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当你进行冲撞时，你不会引发防御者的借机攻击。此外，你在冲撞的力量检定上获得+4加值。如果你同时使用盾牌，盾牌加值也适用于此检定。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>旋风攻击</strong><br><em>(Whirlwind Attack)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">敏捷 13，智力 13，战斗反射，闪避，灵活，闪避战术，基本攻击加值 +4</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当你进行全力攻击时，你可以放弃正常的所有攻击次数，改为对触及范围内的每个对手进行一次近战攻击，攻击加值使用你的基本攻击加值（加上相关调整值）。这是一个全力攻击动作。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>快速射击</strong><br><em>(Rapid Shot)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">敏捷 13，近程射击</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当你使用远程武器进行全力攻击时，你可以在最高基本攻击加值之外额外进行一次射击，但所有攻击（包括额外的那次）均承受-2减值。此专长大幅提升远程角色的DPS输出。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>多重射击</strong><br><em>(Manyshot)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">敏捷 17，近程射击，快速射击，基本攻击加值 +6</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">作为标准动作，你可以使用远程武器同时射出多支箭矢攻击30尺内的一个目标。第一支箭使用正常攻击加值，之后每支箭承受累计-2减值。所有箭矢使用相同的伤害加值。精准伤害（如偷袭）只计算一次。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>精准射击</strong><br><em>(Precise Shot)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">近程射击</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你向与盟友近身交战的对手进行远程攻击时，不再承受通常的-4减值。这使得远程角色可以在混战中安全射击而不用担心误伤队友。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>远程射击</strong><br><em>(Far Shot)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">近程射击</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你使用抛射武器时，射程增量(range increment)增加1/2（即变为原来的1.5倍）。使用投掷武器时，射程增量翻倍。这大幅减少了远距离射击时的射程减值。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>双武器战斗</strong><br><em>(Two-Weapon Fighting)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">敏捷 15</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你使用双武器战斗时的攻击减值减少。主手的减值从-6降为-4，副手从-10降为-8。如果副手武器是轻型武器，主手和副手的减值再各减2（即主手-2，副手-2）。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>精通双武器战斗</strong><br><em>(Improved Two-Weapon Fighting)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">双武器战斗，敏捷 17，基本攻击加值 +6</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">除了正常的副手额外攻击之外，你的副手获得第二次额外攻击，但承受-5减值。这使得双武器战斗者能在全力攻击中获得更多次数的攻击。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>高等双武器战斗</strong><br><em>(Greater Two-Weapon Fighting)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">精通双武器战斗，双武器战斗，敏捷 19，基本攻击加值 +11</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你的副手获得第三次额外攻击，承受-10减值。配合精通双武器战斗，副手总共可以进行三次额外攻击（分别在正常减值、-5和-10的加值下）。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>骑乘战斗</strong><br><em>(Mounted Combat)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">骑术 1级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当你的坐骑被击中时，你可以进行一次骑术检定（作为即时动作，不计入行动），若检定结果高于攻击者的攻击检定，则该次攻击无效。每轮可使用一次。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>骑乘射击</strong><br><em>(Mounted Archery)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">骑术 1级，骑乘战斗</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你在骑乘时使用远程武器的减值减半。骑乘移动超过坐骑速度的一半时，射击减值从-4降为-2；坐骑奔跑时，减值从-8降为-4。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>骑乘冲锋</strong><br><em>(Ride-By Attack)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">骑术 1级，骑乘战斗</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当骑乘冲锋时，你可以在冲锋路径上的任意一点进行攻击（而非必须在最接近敌人的位置），然后继续移动到冲锋路线的终点。坐骑的总移动距离不能超过其速度的两倍。你不会引发被你攻击目标的借机攻击。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>践踏</strong><br><em>(Trample)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">骑术 1级，骑乘战斗</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当你的坐骑尝试闯越(overrun)对手时，目标不能选择闪避。如果目标被击倒，你的坐骑可以对倒地的目标进行一次蹄踏攻击。这使得骑乘闯越变得更加有效和危险。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>旋风冲锋</strong><br><em>(Spirited Charge)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">骑术 1级，骑乘战斗，骑乘冲锋，基本攻击加值 +3</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">当骑乘冲锋时，如果使用骑枪(lance)，你造成的伤害翻倍（三倍伤害而非通常的两倍）。如果使用其他武器，伤害仍为正常的两倍（即标准冲锋伤害）。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>猛烈冲锋</strong><br><em>(Charge 相关)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">视具体专长</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">冲锋(Charge)是一种特殊的全轮动作，允许你移动最多两倍速度并进行一次近战攻击。冲锋时AC承受-2减值，攻击检定获得+2加值。相关专长如凶猛冲锋(Devastating Charge)等可进一步增强冲锋效果。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#d4e8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">战斗</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== 超魔专长 ==================== -->
+    <h2 id="metamagic">超魔专长 (Metamagic Feats)</h2>
+    <p>超魔专长允许施法者以各种方式增强或修改法术。使用超魔专长会消耗更高等级的法术位。施法者可以在准备法术（法师）或选择已知法术的修改版本（术士/吟游诗人）时应用超魔效果。</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">专长名称</th>
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">先决条件</th>
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">效果</th>
+          <th style="padding:10px 12px;text-align:center;border:1px solid #8b7355;">法术位提升</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术延时</strong><br><em>(Extend Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被延时的法术持续时间翻倍。持续时间不为"立即"、"专注"或"永久"的法术才可被延时。例如，一个持续1轮/级的法术变为2轮/级。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">+1环</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术增程</strong><br><em>(Enlarge Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被增程的法术射程翻倍。射程为"近"（25尺+5尺/2级）的法术变为50尺+5尺/2级；射程为"中"（100尺+10尺/级）的法术变为200尺+10尺/2级。射程为"远"（400尺+40尺/级）的法术变为800尺+40尺/级。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">+1环</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术极效</strong><br><em>(Maximize Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被极效的法术所有可变数值效果均取其最大值。例如，一个造成1d6+1伤害的法术极效后固定造成7点伤害。掷骰取最大值而非实际掷骰。豁免检定和对手的掷骰不受影响。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">+3环</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术增效</strong><br><em>(Empower Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被增效的法术所有可变数值效果增加50%。先掷骰，然后将结果乘以1.5。例如，一个造成2d6伤害的法术增效后，掷出2d6的结果再乘以1.5。固定加值不受影响。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">+2环</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术升阶</strong><br><em>(Heighten Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被升阶的法术被视为比其正常等级更高的法术等级（最高9环）。这会影响法术的豁免DC、穿透法术抗力的检定以及其他依赖法术等级的效果。例如，将2环的敲击术升阶到4环，其DC使用4环法术的计算方式。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">可变</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术默发</strong><br><em>(Silent Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被默发的法术无需言语成分(verbal component)即可施放。这对于在被沉默(silence)区域内施法或秘密施法非常有用。吟游诗人的法术不能以这种方式修改。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">+1环</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术定发</strong><br><em>(Still Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被定发的法术无需姿势成分(somatic component)即可施放。这对于被束缚或穿着妨碍施法动作的护甲时特别有用。没有姿势成分的法术不受此专长影响。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">+1环</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术瞬发</strong><br><em>(Quicken Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被瞬发的法术以即时动作(swift action)施放，而非其正常施法时间。你可以在同一轮中施放另一个法术。施法时间超过1个全轮动作的法术不能被瞬发。这是最强大的超魔专长之一。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">+4环</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>法术强效</strong><br><em>(Widen Spell)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">无</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">被强效的法术其范围(area)的所有数值翻倍。例如，一个20尺半径的爆发变为40尺半径的爆发。一个30尺的锥形变为60尺的锥形。这不影响射程或效果目标数。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#c8d4e8;padding:2px 8px;border-radius:4px;font-size:0.85em;">+3环</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== 物品制造专长 ==================== -->
+    <h2 id="item-creation">物品制造专长 (Item Creation Feats)</h2>
+    <p>物品制造专长允许施法者制造各种魔法物品。制造过程需要合适的材料、工具和工作环境。制造费用通常为物品市场价格的一半。每种物品类型都需要对应的专长。</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <thead>
+        <tr style="background:#3b2a1a;color:#f0e6c8;">
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">专长名称</th>
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">先决条件</th>
+          <th style="padding:10px 12px;text-align:left;border:1px solid #8b7355;">效果</th>
+          <th style="padding:10px 12px;text-align:center;border:1px solid #8b7355;">类型</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>调制药水</strong><br><em>(Brew Potion)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">施法者等级 3级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以制造任何3环或以下的、目标为一个或多个生物的法术药水。药水的价格 = 法术等级 x 施法者等级 x 50gp，制造成本为价格的一半。制造需要一天时间（每1000gp价值一天）。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8c8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">制造</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>抄写卷轴</strong><br><em>(Scribe Scroll)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">施法者等级 1级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以抄写任何你知道的法术到卷轴上。卷轴的价格 = 法术等级 x 施法者等级 x 25gp，制造成本为价格的一半。法师在1级时自动获得此专长。这是最基本的物品制造能力。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8c8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">制造</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>锻造戒指</strong><br><em>(Forge Ring)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">施法者等级 12级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以制造各种魔法戒指。戒指的制造成本通常为其市场价格的一半。你需要合适的工具和工作台，以及制造所需的材料（如贵金属和宝石）。制造需要每1000gp价值一天的时间。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8c8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">制造</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>制造魔杖</strong><br><em>(Craft Wand)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">施法者等级 5级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以制造任何4环或以下的法术魔杖。魔杖包含50次充能，价格 = 法术等级 x 施法者等级 x 750gp，制造成本为价格的一半。魔杖使用法术触发(spell trigger)方式激活。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8c8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">制造</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>制造权杖</strong><br><em>(Craft Rod)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">施法者等级 9级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以制造各种魔法权杖，如 metamagic rod（超魔权杖）、吸收权杖等。权杖通常包含特殊能力而非简单的法术储存。制造成本为市场价格的一半，需要每1000gp价值一天的时间。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8c8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">制造</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>制造法杖</strong><br><em>(Craft Staff)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">施法者等级 12级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以制造魔法法杖，法杖包含多种相关法术（通常3-5个）。使用法杖时，施法者使用自己的属性调整值和施法者等级（如果高于法杖的施法者等级）。制造成本为市场价格的一半。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8c8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">制造</span></td>
+        </tr>
+        <tr style="background:#faf6ee;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>制造奇物</strong><br><em>(Craft Wondrous Item)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">施法者等级 3级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以制造各种不属于其他类别的魔法物品，如腰带、斗篷、护目镜、宝石、雕像等。这是涵盖范围最广的物品制造专长，包括数千种不同的奇物。制造成本通常为市场价格的一半。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8c8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">制造</span></td>
+        </tr>
+        <tr style="background:#f5f0e8;">
+          <td style="padding:10px 12px;border:1px solid #c9b97a;white-space:nowrap;"><strong>制造魔法武器与防具</strong><br><em>(Craft Magic Arms and Armor)</em></td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">施法者等级 5级</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;">你可以制造魔法武器、盾牌和盔甲。这包括增强加值(+1到+5)以及各种特殊能力（如炽焰、冻寒、锐锋等）。物品的增强加值等效等级决定制造难度。制造成本为基础价格的一半加上基础物品价格。</td>
+          <td style="padding:10px 12px;border:1px solid #c9b97a;text-align:center;"><span style="background:#e8c8d4;padding:2px 8px;border-radius:4px;font-size:0.85em;">制造</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:32px;padding:20px;background:#f5f0e8;border:1px solid #c9b97a;border-radius:6px;">
+      <h3 style="margin-top:0;">专长选取提示</h3>
+      <ul>
+        <li><strong>人类</strong>在1级时获得1个额外的一般专长。</li>
+        <li>所有角色在<strong>1级</strong>时获得1个专长，之后每<strong>3个角色等级</strong>（3、6、9、12、15、18级）获得1个额外专长。</li>
+        <li><strong>战士</strong>在1级和每2个战士等级（2、4、6、8...）时获得一个战士奖励专长，该专长必须从战斗专长列表中选取。</li>
+        <li><strong>法师</strong>在5、10、15、20级获得一个法师奖励专长，该专长必须从超魔专长或物品制造专长列表中选取（也可选择法术精通相关专长）。</li>
+        <li>某些专长的先决条件可以通过魔法物品或法术临时满足，但失去该来源后也将失去专长效果。</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

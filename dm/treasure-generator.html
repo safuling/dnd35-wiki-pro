@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宝藏生成器 Treasure Generator - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.tool-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.tool-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.tool-card p { font-size:14px; color:#666; }
+.tool-card a { color:var(--text-link,#21618c); text-decoration:none; font-weight:600; }
+.tool-card a:hover { text-decoration:underline; }
+.calc-box { background:#f0ebe0; border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.calc-box label { display:block; margin:6px 0 2px; font-weight:600; font-size:14px; }
+.calc-box input, .calc-box select { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); border-radius:4px; font-size:14px; margin-bottom:8px; }
+.calc-box button { background:var(--accent-gold,#d4a017); color:#fff; border:none; padding:8px 20px; border-radius:4px; cursor:pointer; font-weight:600; margin-top:8px; }
+.calc-box button:hover { background:#b8910f; }
+.result-box { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:10px 14px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.step-list { counter-reset: steps; list-style:none; padding:0; }
+.step-list li { counter-increment: steps; padding:10px 10px 10px 40px; position:relative; margin:6px 0; background:var(--bg-card,#faf6ee); border-radius:4px; border:1px solid var(--border-light,#e8dcc8); }
+.step-list li::before { content:counter(steps); position:absolute; left:10px; top:10px; background:var(--accent-gold,#d4a017); color:#fff; width:22px; height:22px; border-radius:50%; text-align:center; line-height:22px; font-size:12px; font-weight:700; }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">DM工具箱</div>
+      <a href="intro.html">工具总览</a>
+      <a href="character-creation.html">角色创建指南</a>
+      <a href="encounter-builder.html">遭遇构建器</a>
+      <a href="treasure-generator.html" class="active">宝藏生成器</a>
+      <a href="random-tables.html">随机表格大全</a>
+      <a href="xp-tracker.html">经验值追踪器</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="../rules.html">核心规则</a>
+      <a href="../classes/intro.html">职业手册</a>
+      <a href="../monsters/intro.html">怪物图鉴</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>宝藏生成器</h1>
+    <h2>Treasure Generator</h2>
+
+    <p>宝藏生成器帮助 DM 快速生成符合规则的战利品，包括金币、宝石、珠宝和魔法物品。</p>
+
+    <h2 class="section-title">宝藏分配规则</h2>
+
+    <p>根据《地下城主指南》(DMG) 表 3-5，怪物的宝藏与其挑战等级 (CR) 相关。宝藏分为三类：</p>
+
+    <ul>
+      <li><strong>硬币</strong>：铜币 (cp)、银币 (sp)、金币 (gp)、白金币 (pp)</li>
+      <li><strong>商品</strong>：宝石和珠宝</li>
+      <li><strong>物品</strong>：魔法物品（次要、中等、主要）</li>
+    </ul>
+
+    <p><strong>个人宝藏</strong>（Individual）：单个怪物携带的少量财宝<br>
+    <strong>巢穴宝藏</strong>（Lair）：怪物巢穴中储存的大量财宝</p>
+
+    <h2 class="section-title">宝藏等级表</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>CR 范围</th>
+          <th>硬币 (gp)</th>
+          <th>商品 %</th>
+          <th>物品 %</th>
+          <th>物品等级</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1-3</td><td>1d6 × 1,000</td><td>40%</td><td>30%</td><td>次要</td></tr>
+        <tr><td>4-6</td><td>1d8 × 1,000</td><td>50%</td><td>40%</td><td>次要</td></tr>
+        <tr><td>7-9</td><td>2d8 × 1,000</td><td>60%</td><td>50%</td><td>次要/中等</td></tr>
+        <tr><td>10-12</td><td>3d8 × 1,000</td><td>70%</td><td>60%</td><td>中等</td></tr>
+        <tr><td>13-15</td><td>4d8 × 1,000</td><td>80%</td><td>70%</td><td>中等</td></tr>
+        <tr><td>16-18</td><td>5d8 × 1,000</td><td>90%</td><td>80%</td><td>主要</td></tr>
+        <tr><td>19+</td><td>6d8 × 1,000</td><td>95%</td><td>90%</td><td>主要</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">互动生成器</h2>
+
+    <div class="calc-box">
+      <h3>宝藏生成器</h3>
+      
+      <label for="monsterCR">怪物 CR：</label>
+      <input type="number" id="monsterCR" value="5" min="1" max="25">
+      
+      <label for="treasureType">宝藏类型：</label>
+      <select id="treasureType">
+        <option value="individual">个人宝藏</option>
+        <option value="lair" selected>巢穴宝藏</option>
+      </select>
+      
+      <button onclick="generateTreasure()">生成宝藏</button>
+      
+      <div id="treasureResult"></div>
+    </div>
+
+    <h2 class="section-title">魔法物品概率表</h2>
+
+    <p>根据宝藏等级，魔法物品的出现概率如下：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>宝藏等级</th>
+          <th>次要物品</th>
+          <th>中等物品</th>
+          <th>主要物品</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1-3</td><td>100%</td><td>0%</td><td>0%</td></tr>
+        <tr><td>4-6</td><td>100%</td><td>0%</td><td>0%</td></tr>
+        <tr><td>7-9</td><td>75%</td><td>25%</td><td>0%</td></tr>
+        <tr><td>10-12</td><td>25%</td><td>75%</td><td>0%</td></tr>
+        <tr><td>13-15</td><td>0%</td><td>100%</td><td>0%</td></tr>
+        <tr><td>16-18</td><td>0%</td><td>50%</td><td>50%</td></tr>
+        <tr><td>19+</td><td>0%</td><td>25%</td><td>75%</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">宝石和珠宝表</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d%</th>
+          <th>宝石类型</th>
+          <th>基础价值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>01-10</td><td>普通宝石（玛瑙、石英）</td><td>10 gp</td></tr>
+        <tr><td>11-25</td><td>次级宝石（紫水晶、黄玉）</td><td>50 gp</td></tr>
+        <tr><td>26-50</td><td>中级宝石（石榴石、橄榄石）</td><td>100 gp</td></tr>
+        <tr><td>51-70</td><td>高级宝石（蓝宝石、祖母绿）</td><td>500 gp</td></tr>
+        <tr><td>71-90</td><td>珍贵宝石（红宝石、钻石）</td><td>1,000 gp</td></tr>
+        <tr><td>91-99</td><td>稀有宝石（星蓝宝石）</td><td>5,000 gp</td></tr>
+        <tr><td>100</td><td>传奇宝石（希望之钻）</td><td>10,000+ gp</td></tr>
+      </tbody>
+    </table>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>d%</th>
+          <th>珠宝类型</th>
+          <th>基础价值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>01-20</td><td>简单首饰（银戒指、铜项链）</td><td>50 gp</td></tr>
+        <tr><td>21-50</td><td>精致首饰（金耳环、宝石胸针）</td><td>250 gp</td></tr>
+        <tr><td>51-80</td><td>华丽首饰（宝石王冠、金丝披风）</td><td>1,000 gp</td></tr>
+        <tr><td>81-95</td><td>皇家珠宝（宝石权杖、镶钻王冠）</td><td>5,000 gp</td></tr>
+        <tr><td>96-100</td><td>传奇珠宝（神器级别）</td><td>10,000+ gp</td></tr>
+      </tbody>
+    </table>
+
+    <script>
+      function generateTreasure() {
+        const cr = parseInt(document.getElementById('monsterCR').value);
+        const type = document.getElementById('treasureType').value;
+
+        // Determine treasure level
+        let level = '';
+        let coinDice = '';
+        let coinMult = 1000;
+        let goodsChance = 0;
+        let itemsChance = 0;
+        let itemTier = '';
+
+        if (cr >= 1 && cr <= 3) {
+          level = '1-3';
+          coinDice = '1d6';
+          goodsChance = 0.40;
+          itemsChance = 0.30;
+          itemTier = 'minor';
+        } else if (cr >= 4 && cr <= 6) {
+          level = '4-6';
+          coinDice = '1d8';
+          goodsChance = 0.50;
+          itemsChance = 0.40;
+          itemTier = 'minor';
+        } else if (cr >= 7 && cr <= 9) {
+          level = '7-9';
+          coinDice = '2d8';
+          goodsChance = 0.60;
+          itemsChance = 0.50;
+          itemTier = Math.random() < 0.75 ? 'minor' : 'medium';
+        } else if (cr >= 10 && cr <= 12) {
+          level = '10-12';
+          coinDice = '3d8';
+          goodsChance = 0.70;
+          itemsChance = 0.60;
+          itemTier = 'medium';
+        } else if (cr >= 13 && cr <= 15) {
+          level = '13-15';
+          coinDice = '4d8';
+          goodsChance = 0.80;
+          itemsChance = 0.70;
+          itemTier = 'medium';
+        } else if (cr >= 16 && cr <= 18) {
+          level = '16-18';
+          coinDice = '5d8';
+          goodsChance = 0.90;
+          itemsChance = 0.80;
+          itemTier = Math.random() < 0.5 ? 'medium' : 'major';
+        } else {
+          level = '19+';
+          coinDice = '6d8';
+          goodsChance = 0.95;
+          itemsChance = 0.90;
+          itemTier = Math.random() < 0.25 ? 'medium' : 'major';
+        }
+
+        // Adjust for individual treasure
+        if (type === 'individual') {
+          coinMult = 100;
+          goodsChance *= 0.5;
+          itemsChance *= 0.5;
+        }
+
+        // Roll coins
+        const coinResult = rollDice(coinDice);
+        const coinGP = coinResult * coinMult;
+
+        // Roll goods
+        let goodsHTML = '';
+        if (Math.random() < goodsChance) {
+          const gemCount = Math.floor(Math.random() * 4) + 1;
+          goodsHTML = '<strong>商品：</strong><br>';
+          for (let i = 0; i < gemCount; i++) {
+            const roll = Math.floor(Math.random() * 100) + 1;
+            let gemType = '';
+            let gemValue = 0;
+            
+            if (roll <= 10) { gemType = '普通宝石'; gemValue = 10; }
+            else if (roll <= 25) { gemType = '次级宝石'; gemValue = 50; }
+            else if (roll <= 50) { gemType = '中级宝石'; gemValue = 100; }
+            else if (roll <= 70) { gemType = '高级宝石'; gemValue = 500; }
+            else if (roll <= 90) { gemType = '珍贵宝石'; gemValue = 1000; }
+            else if (roll <= 99) { gemType = '稀有宝石'; gemValue = 5000; }
+            else { gemType = '传奇宝石'; gemValue = 10000; }
+            
+            goodsHTML += `• ${gemType} (${gemValue} gp)<br>`;
+          }
+        }
+
+        // Roll magic items
+        let itemsHTML = '';
+        if (Math.random() < itemsChance) {
+          const itemCount = Math.floor(Math.random() * 3) + 1;
+          itemsHTML = '<strong>魔法物品：</strong><br>';
+          for (let i = 0; i < itemCount; i++) {
+            let itemRarity = '';
+            if (itemTier === 'minor') {
+              itemRarity = '次要魔法物品';
+            } else if (itemTier === 'medium') {
+              itemRarity = '中等魔法物品';
+            } else {
+              itemRarity = '主要魔法物品';
+            }
+            itemsHTML += `• ${itemRarity} (需查阅 DMG 表 7-1)<br>`;
+          }
+        }
+
+        const resultHTML = `
+          <div class="result-box">
+            <strong>宝藏生成结果 (CR ${cr}, ${type === 'lair' ? '巢穴' : '个人'})：</strong><br><br>
+            <strong>硬币：</strong> ${coinGP.toLocaleString()} gp (${coinDice} × ${coinMult})<br>
+            ${goodsHTML ? goodsHTML + '<br>' : '<strong>商品：</strong> 无<br><br>'}
+            ${itemsHTML ? itemsHTML : '<strong>魔法物品：</strong> 无'}
+          </div>
+        `;
+        
+        document.getElementById('treasureResult').innerHTML = resultHTML;
+      }
+
+      function rollDice(diceStr) {
+        const match = diceStr.match(/(\d+)d(\d+)/);
+        if (!match) return 0;
+        
+        const count = parseInt(match[1]);
+        const sides = parseInt(match[2]);
+        let total = 0;
+        
+        for (let i = 0; i < count; i++) {
+          total += Math.floor(Math.random() * sides) + 1;
+        }
+        
+        return total;
+      }
+    </script>
+
+    <h2 class="section-title">魔法物品类别</h2>
+
+    <p>魔法物品按稀有度分为三个等级：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>价值范围</th>
+          <th>典型物品</th>
+          <th>出现时机</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>次要</strong></td>
+          <td>500-5,000 gp</td>
+          <td>+1 武器/盔甲、防护戒指 +1、药水、卷轴</td>
+          <td>1-6 级</td>
+        </tr>
+        <tr>
+          <td><strong>中等</strong></td>
+          <td>5,000-25,000 gp</td>
+          <td>+2 武器/盔甲、属性腰带、魔杖</td>
+          <td>7-12 级</td>
+        </tr>
+        <tr>
+          <td><strong>主要</strong></td>
+          <td>25,000+ gp</td>
+          <td>+3 以上武器/盔甲、神器、智能物品</td>
+          <td>13 级以上</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">常见魔法物品速查</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>物品类型</th>
+          <th>次要示例</th>
+          <th>中等示例</th>
+          <th>主要示例</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>武器</td>
+          <td>+1 长剑 (2,315 gp)</td>
+          <td>+2 烈焰剑 (8,315 gp)</td>
+          <td>+3 神圣剑 (18,315 gp)</td>
+        </tr>
+        <tr>
+          <td>盔甲</td>
+          <td>+1 链甲 (1,275 gp)</td>
+          <td>+2 秘银链甲 (4,275 gp)</td>
+          <td>+3 抗魔全身甲 (16,600 gp)</td>
+        </tr>
+        <tr>
+          <td>戒指</td>
+          <td>防护戒指 +1 (2,000 gp)</td>
+          <td>防护戒指 +2 (8,000 gp)</td>
+          <td>三愿戒指 (97,950 gp)</td>
+        </tr>
+        <tr>
+          <td>护符</td>
+          <td>天然护甲 +1 (1,000 gp)</td>
+          <td>感知护符 +2 (4,000 gp)</td>
+          <td>全能护符 (200,000 gp)</td>
+        </tr>
+        <tr>
+          <td>腰带</td>
+          <td>—</td>
+          <td>巨力腰带 (4,000 gp)</td>
+          <td>完美体质腰带 (36,000 gp)</td>
+        </tr>
+        <tr>
+          <td>药水</td>
+          <td>治疗轻伤 (50 gp)</td>
+          <td>飞行术 (750 gp)</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>卷轴</td>
+          <td>魔法飞弹 (25 gp)</td>
+          <td>火球术 (375 gp)</td>
+          <td>祈愿术 (26,575 gp)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">宝藏分配指南</h2>
+
+    <div class="tool-card">
+      <h3>战役经济平衡</h3>
+      <p><strong>财富基准</strong>：根据 PHB 表 5-1，角色在特定等级的预期财富：</p>
+      <ul>
+        <li>1 级：起始金币</li>
+        <li>2 级：900 gp</li>
+        <li>3 级：2,700 gp</li>
+        <li>5 级：9,000 gp</li>
+        <li>10 级：49,000 gp</li>
+        <li>15 级：185,000 gp</li>
+        <li>20 级：760,000 gp</li>
+      </ul>
+      <p><strong>发放建议</strong>：每升一级，队伍应获得约等于"升级后预期财富 - 升级前预期财富"的总宝藏价值。</p>
+    </div>
+
+    <div class="tool-card">
+      <h3>避免的常见错误</h3>
+      <p><strong>过度发放魔法物品</strong>：1-6 级时，每 3-4 场遭遇发放 1 个次要魔法物品；7-12 级时，每 2-3 场遭遇发放 1 个中等魔法物品。</p>
+      <p><strong>金币过多</strong>：如果玩家总是有大量金币，他们会购买过多魔法物品，破坏游戏平衡。</p>
+      <p><strong>金币太少</strong>：如果玩家买不起基本装备，会感到沮丧。</p>
+      <p><strong>忘记消耗品</strong>：药水、卷轴、箭矢等消耗品应该占宝藏的 20-30%。</p>
+      <p><strong>宝藏不符合逻辑</strong>：动物不应该携带金币，地精不应该有 +3 武器。</p>
+    </div>
+
+    <h2 class="section-title">特殊宝藏类型</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>类型</th>
+          <th>价值</th>
+          <th>示例</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>艺术品</td><td>100-5,000 gp</td><td>油画、雕像、挂毯</td></tr>
+        <tr><td>古代文物</td><td>500-10,000 gp</td><td>失落文明的遗物</td></tr>
+        <tr><td>稀有材料</td><td>100-2,000 gp</td><td>精金矿石、秘银锭</td></tr>
+        <tr><td>书籍/卷轴</td><td>50-1,000 gp</td><td>魔法理论、历史文献</td></tr>
+        <tr><td>香料</td><td>50-500 gp</td><td>来自远方的珍贵香料</td></tr>
+        <tr><td>毛皮</td><td>100-2,000 gp</td><td>稀有动物的毛皮</td></tr>
+        <tr><td>情报</td><td>变化</td><td>地图、密信、密码</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

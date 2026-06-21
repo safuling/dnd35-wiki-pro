@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>武僧 (Monk) - D&amp;D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .class-table { font-size:13px; width:100%; border-collapse:collapse; margin:12px 0; }
+  .class-table th { background:var(--bg-table-head); padding:7px 10px; text-align:center; font-size:12px; }
+  .class-table td { border:1px solid var(--border-light); padding:6px 10px; text-align:center; }
+  .class-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .feature-box { background:var(--bg-card); border-left:4px solid var(--accent-gold); padding:14px 18px; margin:12px 0; border-radius:0 var(--radius) var(--radius) 0; }
+  .feature-box h4 { margin:0 0 6px; color:var(--text-heading); }
+  .tip-box { background:#e8f5e9; border-left:3px solid #27ae60; padding:10px 14px; margin:10px 0; font-size:14px; border-radius:0 var(--radius) var(--radius) 0; }
+  .warn-box { background:#fff3e0; border-left:3px solid #ff9800; padding:10px 14px; margin:10px 0; font-size:14px; border-radius:0 var(--radius) var(--radius) 0; }
+  .infobox { float:right; width:280px; background:var(--bg-infobox); border:1px solid var(--border-main); border-radius:var(--radius); padding:14px; margin:0 0 16px 20px; font-size:13px; }
+  .infobox h3 { margin:0 0 10px; text-align:center; background:var(--bg-table-head); padding:8px; margin:-14px -14px 12px; border-radius:var(--radius) var(--radius) 0 0; }
+  .infobox-row { display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid var(--border-light); }
+  .infobox-row:last-child { border-bottom:none; }
+  .ib-label { color:var(--text-subtle); }
+  .ib-value { font-weight:600; }
+  .spell-table { font-size:12px; width:100%; border-collapse:collapse; margin:10px 0; }
+  .spell-table th { background:var(--bg-table-head); padding:5px 8px; text-align:center; }
+  .spell-table td { border:1px solid var(--border-light); padding:4px 8px; text-align:center; font-size:11px; }
+  .spell-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html" class="active">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+  </aside>
+
+  <article class="main-content">
+    <div class="infobox">
+      <h3>武僧 (Monk)</h3>
+      <div class="infobox-row"><span class="ib-label">生命骰</span><span class="ib-value">d8</span></div>
+      <div class="infobox-row"><span class="ib-label">基础攻击加值</span><span class="ib-value">中（等级×3/4）</span></div>
+      <div class="infobox-row"><span class="ib-label">强韧豁免</span><span class="ib-value">高</span></div>
+      <div class="infobox-row"><span class="ib-label">反射豁免</span><span class="ib-value">高</span></div>
+      <div class="infobox-row"><span class="ib-label">意志豁免</span><span class="ib-value">高</span></div>
+      <div class="infobox-row"><span class="ib-label">技能点/级</span><span class="ib-value">4 + 智力调整值</span></div>
+      <div class="infobox-row"><span class="ib-label">主要属性</span><span class="ib-value">感知、力量/敏捷</span></div>
+      <div class="infobox-row"><span class="ib-label">阵营限制</span><span class="ib-value">守序阵营</span></div>
+    </div>
+
+    <h1>武僧 <span style="font-size:0.6em;color:var(--text-subtle);">(Monk)</span></h1>
+
+    <h2 id="overview">📖 职业概述</h2>
+    <p>武僧是专注于身体和精神修炼的近战专家。他们不穿护甲，但感知加值可以增加AC；拳脚随等级变强（<strong>徒手重击</strong>）；拥有<strong>多重豁免</strong>；随等级获得各种特殊能力。武僧的特色是极度多样化的特殊能力和全豁免高。</p>
+    <div class="tip-box"><strong>💡 适合的玩家：</strong>武僧是复杂但有趣的职业，属性要求高（力量/敏捷/感知/体质都重要）。但高级别全豁免使其非常强韧。</div>
+
+    <h2 id="features">🌟 职业特性</h2>
+    <div class="feature-box"><h4>徒手重击（Unarmed Strike）</h4><p>武僧拳脚被视为魔法武器，伤害随等级提升：1级1d6，2级1d6，4级1d8，6级1d8，8级1d10，10级1d10，12级2d6，16级2d8，20级2d10。</p></div>
+    <div class="feature-box"><h4>敏捷AC（Wisdom AC Bonus）</h4><p>未着护甲时，感知调整值作为AC加值（AC加值类型：感知），且无上限。</p></div>
+    <div class="feature-box"><h4>连击（Flurry of Blows）</h4><p>可以用整轮动作进行额外攻击，但所有攻击掷骰-2（高级别时惩罚消失）。</p></div>
+    <div class="feature-box"><h4>快速移动（Fast Movement）</h4><p>2级+10ft；6级+20ft；9级+30ft；12级+40ft；15级+50ft；18级+60ft</p></div>
+    <div class="feature-box"><h4>静如止水（Still Mind）</h4><p>3级：对控制法术豁免+2。</p></div>
+    <div class="feature-box"><h4>鬼手（Ki Strike）</h4><p>4级：拳脚视为魔法武器（绕过DR/魔法）；10级：混乱；16级：附魔。</p></div>
+    <div class="feature-box"><h4>慢落（Slow Fall）</h4><p>4级：离墙1英尺内可慢速落下20ft，每2级+10ft。</p></div>
+    <div class="feature-box"><h4>净化之躯（Purity of Body）</h4><p>5级：对自然疾病免疫。</p></div>
+    <div class="feature-box"><h4>整体攻击（Wholeness of Body）</h4><p>7级：每日治疗自身 等级×2 HP（标准动作）。</p></div>
+    <div class="feature-box"><h4>飞行跃步（Leap of the Clouds）</h4><p>9级：跳跃时不受跑步距离限制。</p></div>
+    <div class="feature-box"><h4>心如明镜（Diamond Body）</h4><p>11级：对所有毒素免疫。</p></div>
+    <div class="feature-box"><h4>无量大量（Abundant Step）</h4><p>12级：每日1次，如同"次元门"（传送）。</p></div>
+    <div class="feature-box"><h4>不死之躯（Diamond Soul）</h4><p>13级：法术抵抗 = 10+等级。</p></div>
+    <div class="feature-box"><h4>无懈可击（Quivering Palm）</h4><p>15级：每周1次，触摸攻击可设定延迟致死。</p></div>
+    <div class="feature-box"><h4>无上空明（Timeless Body）</h4><p>17级：不受年龄惩罚（同德鲁伊）。</p></div>
+    <div class="feature-box"><h4>舌吐莲花（Tongue of the Sun and Moon）</h4><p>17级：可与任何有语言的生物沟通。</p></div>
+    <div class="feature-box"><h4>天人合一（Perfect Self）</h4><p>20级：获得异界生物类型，DR 10/混乱，豁免视为具有所有种族。</p></div>
+
+    <h2 id="level-table">📊 等级成长表</h2>
+    <table class="class-table">
+      <thead>
+        <tr><th>等级</th><th>BAB</th><th>强韧</th><th>反射</th><th>意志</th><th>特殊能力</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>+0</td><td>+2</td><td>+2</td><td>+2</td><td>徒手重击(1d6)、连击(-2)、感知AC</td></tr>
+        <tr><td>2</td><td>+1</td><td>+3</td><td>+3</td><td>+3</td><td>战技奖励专长、逃脱能手</td></tr>
+        <tr><td>3</td><td>+2</td><td>+3</td><td>+3</td><td>+3</td><td>静如止水</td></tr>
+        <tr><td>4</td><td>+3</td><td>+4</td><td>+4</td><td>+4</td><td>鬼手（魔法）、慢落(20ft)</td></tr>
+        <tr><td>5</td><td>+3</td><td>+4</td><td>+4</td><td>+4</td><td>净化之躯</td></tr>
+        <tr><td>6</td><td>+4</td><td>+5</td><td>+5</td><td>+5</td><td>奖励专长、连击(-0)</td></tr>
+        <tr><td>7</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>整体攻击</td></tr>
+        <tr><td>8</td><td>+6/+1</td><td>+6</td><td>+6</td><td>+6</td><td>徒手重击(1d10)</td></tr>
+        <tr><td>9</td><td>+6/+1</td><td>+6</td><td>+6</td><td>+6</td><td>飞行跃步、连击(+1攻击)</td></tr>
+        <tr><td>10</td><td>+7/+2</td><td>+7</td><td>+7</td><td>+7</td><td>鬼手（混乱）</td></tr>
+        <tr><td>11</td><td>+8/+3</td><td>+7</td><td>+7</td><td>+7</td><td>心如明镜</td></tr>
+        <tr><td>12</td><td>+9/+4</td><td>+8</td><td>+8</td><td>+8</td><td>无量大量（次元门）</td></tr>
+        <tr><td>13</td><td>+9/+4</td><td>+8</td><td>+8</td><td>+8</td><td>不死之躯（SR10+级）</td></tr>
+        <tr><td>15</td><td>+11/+6/+1</td><td>+9</td><td>+9</td><td>+9</td><td>无懈可击</td></tr>
+        <tr><td>20</td><td>+15/+10/+5</td><td>+12</td><td>+12</td><td>+12</td><td>天人合一</td></tr>
+      </tbody>
+    </table>
+
+    
+
+    <h2 id="build">🎯 构建建议</h2>
+    <ul style="margin:8px 0 0 20px;line-height:2.2;">
+      <li>属性优先：力量（攻击/伤害）or 敏捷（替代力量）→ 感知（AC+意志）→ 体质</li>
+      <li>推荐专长：精进武艺（减少全力攻击惩罚）、发挥极限（力量攻势配合连击）</li>
+      <li>不适合多职业：武僧所有特性都需要纯级别累积，分班损失极大</li>
+      <li>高等级武僧：法术抵抗+全豁免高+天人合一使其对魔法非常抗性</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      📚 来源：PHB p.40-46 | SRD · Monk |
+      <a href="fighter.html">← 战士</a> | <a href="paladin.html">圣武士 →</a>
+    </p>
+  </article>
+</div>
+
+<footer class="site-footer" style="background:var(--bg-navbar);color:#aaa;padding:16px;text-align:center;font-size:13px;">
+  <p>D&amp;D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>决斗家 Duelist - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html" class="active">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>决斗家 <span class="en-name">Duelist</span></h1>
+    <p class="source">来源：《地下城主指南》(DMG) 第189页</p>
+
+    <div class="infobox">
+      <h3>职业信息</h3>
+      <table>
+        <tr><th>生命骰 (HD)</th><td>d10</td></tr>
+        <tr><th>阵营限制</th><td>任意</td></tr>
+        <tr><th>关键属性</th><td>敏捷 (DEX)、智力 (INT)</td></tr>
+        <tr><th>施法进阶</th><td>无</td></tr>
+        <tr><th>来源</th><td>DMG p.189</td></tr>
+      </table>
+
+      <h3>入门条件</h3>
+      <table>
+        <tr><th>基本攻击加值 (BAB)</th><td>+6</td></tr>
+        <tr><th>技能</th><td>表演(舞蹈) (Perform: dance) 3级、翻滚 (Tumble) 4级</td></tr>
+        <tr><th>专长</th><td>闪避 (Dodge)、灵活移动 (Mobility)、武器娴熟 (Weapon Finesse)</td></tr>
+      </table>
+
+      <h3>本职技能</h3>
+      <p>平衡 (Balance)、唬骗 (Bluff)、交涉 (Diplomacy)、脱逃术 (Escape Artist)、跳跃 (Jump)、聆听 (Listen)、表演 (Perform)、察言观色 (Sense Motive)、翻滚 (Tumble)</p>
+      <p>技能点：4 + 智力调整值</p>
+    </div>
+
+    <h2>职业特性表</h2>
+    <table class="class-table">
+      <thead>
+        <tr>
+          <th>等级</th>
+          <th>BAB</th>
+          <th>强韧</th>
+          <th>反射</th>
+          <th>意志</th>
+          <th>特殊能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>+1</td><td>+0</td><td>+2</td><td>+0</td>
+          <td>灵巧防御 (Canny Defense)、强化反应 +2 (Improved Reaction +2)</td>
+        </tr>
+        <tr>
+          <td>2</td><td>+2</td><td>+0</td><td>+3</td><td>+0</td>
+          <td>强化移动 (Enhanced Mobility)</td>
+        </tr>
+        <tr>
+          <td>3</td><td>+3</td><td>+1</td><td>+3</td><td>+1</td>
+          <td>精确打击 +1d8 (Precise Strike +1d8)</td>
+        </tr>
+        <tr>
+          <td>4</td><td>+4</td><td>+1</td><td>+4</td><td>+1</td>
+          <td>优雅打击 (Grace)</td>
+        </tr>
+        <tr>
+          <td>5</td><td>+5</td><td>+1</td><td>+4</td><td>+1</td>
+          <td>精确打击 +2d8</td>
+        </tr>
+        <tr>
+          <td>6</td><td>+6</td><td>+2</td><td>+5</td><td>+2</td>
+          <td>杂技冲锋 (Acrobatic Charge)</td>
+        </tr>
+        <tr>
+          <td>7</td><td>+7</td><td>+2</td><td>+5</td><td>+2</td>
+          <td>精通虚招 (Improved Feint)、精确打击 +3d8</td>
+        </tr>
+        <tr>
+          <td>8</td><td>+8</td><td>+2</td><td>+6</td><td>+2</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>9</td><td>+9</td><td>+3</td><td>+6</td><td>+3</td>
+          <td>精确打击 +4d8、精通卸武 (Improved Disarm)</td>
+        </tr>
+        <tr>
+          <td>10</td><td>+10</td><td>+3</td><td>+7</td><td>+3</td>
+          <td>精通格挡 (Elaborate Parry)、精确打击 +5d8</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详述</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>决斗家不获得任何额外的武器或防具熟练。</p>
+
+    <h3>灵巧防御 (Canny Defense)</h3>
+    <p>从第1级开始，当决斗家不穿盔甲或穿着轻甲，且不持盾牌时，他可以将智力调整值（如果为正）加到AC上（作为闪避加值）。此加值不能超过决斗家等级。当决斗家措手不及时或失去敏捷加值时，也会失去此加值。</p>
+    <p>决斗家可以使用一把单手近战武器，另一只手空着或持握非武器物品（如斗篷或蜡烛台）。如果决斗家双手各持一把武器，则不获得此AC加值。</p>
+
+    <h3>强化反应 (Improved Reaction)</h3>
+    <p>从第1级开始，决斗家的先攻检定获得+2加值。此加值与精通先攻 (Improved Initiative) 专长的加值叠加。第8级时，此加值提升至+4。</p>
+
+    <h3>强化移动 (Enhanced Mobility)</h3>
+    <p>从第2级开始，当决斗家离开受威胁的方格时，对引起借机攻击的攻击者获得+4 AC加值（在灵活移动专长已有的+4加值之外额外获得）。也就是说，如果决斗家拥有灵活移动专长，在离开受威胁方格时总共获得+8 AC加值来对抗借机攻击。</p>
+
+    <h3>精确打击 (Precise Strike)</h3>
+    <p>从第3级开始，决斗家在使用轻武器或细剑进行近战攻击时，可以造成额外伤害。决斗家必须在一只手中持握武器，另一只手空着或持握非武器物品。如果双手各持武器或使用双手武器，则不获得此加值。</p>
+    <p>额外伤害在第3级为+1d8，第5级为+2d8，第7级为+3d8，第9级为+4d8，第10级为+5d8。</p>
+    <p>此伤害只对不超过决斗家一个体型大小的生物有效。此伤害不能与偷袭叠加——如果一次攻击同时触发精确打击和偷袭，只取较高的一个。</p>
+
+    <h3>优雅打击 (Grace)</h3>
+    <p>从第4级开始，决斗家在使用轻武器或细剑进行近战攻击时，攻击和伤害检定获得+1加值。此加值在第8级提升至+2。</p>
+
+    <h3>杂技冲锋 (Acrobatic Charge)</h3>
+    <p>从第6级开始，决斗家可以在困难地形上进行冲锋。通常冲锋需要一条直线路径，不能穿越困难地形。但决斗家可以利用翻滚技能穿越障碍物进行冲锋——他可以进行一次 DC 20 的翻滚检定来忽略困难地形的限制。</p>
+    <p>此外，决斗家在冲锋时可以穿越占据的敌方空间——他需要进行一次翻滚检定（DC = 10 + 敌人HD）来通过敌方空间。如果检定失败，冲锋在敌方空间前停止。</p>
+
+    <h3>精通虚招 (Improved Feint)</h3>
+    <p>从第7级开始，决斗家获得精通虚招 (Improved Feint) 作为奖励专长，即使不满足前置条件。如果已经拥有此专长，则在进行虚招时获得额外+2加值。</p>
+
+    <h3>精通卸武 (Improved Disarm)</h3>
+    <p>从第9级开始，决斗家获得精通卸武 (Improved Disarm) 作为奖励专长，即使不满足前置条件。如果已经拥有此专长，则在进行卸武时获得额外+2加值。</p>
+
+    <h3>精通格挡 (Elaborate Parry)</h3>
+    <p>从第10级开始，当决斗家选择防御式战斗（标准攻击中攻击-4，AC+2）或全防御（AC+4）时，获得的AC加值翻倍。防御式战斗变为攻击-4、AC+4，全防御变为AC+8。</p>
+
+    <h2>构建建议 (Build Tips)</h2>
+
+    <h3>推荐种族</h3>
+    <ul>
+      <li><strong>人类 (Human)：</strong>额外专长可以帮助满足武器娴熟、闪避和灵活移动三个前置专长，且额外技能点提升翻滚和表演技能。</li>
+      <li><strong>精灵 (Elf)：</strong>敏捷加值非常适合决斗家的战斗风格，且精灵的细剑熟练与决斗家的武器选择完美契合。</li>
+      <li><strong>半身人 (Halfling)：</strong>小体型的AC和攻击加值配合决斗家的敏捷战斗风格，非常有效。</li>
+    </ul>
+
+    <h3>推荐基础职业</h3>
+    <ul>
+      <li><strong>战士 (Fighter)：</strong>提供 BAB +6 和大量战斗专长，可以轻松满足决斗家的前置条件。战士的战斗专长链可以与决斗家的能力完美配合。</li>
+      <li><strong>盗贼 (Rogue)：</strong>翻滚是盗贼的本职技能，且盗贼的偷袭配合决斗家的精确打击可以造成可观伤害。</li>
+      <li><strong>游侠 (Ranger)：</strong>双武器战斗风格与决斗家不同（决斗家偏向单手持武），但游侠的追踪和野外能力可以补充决斗家的不足。</li>
+    </ul>
+
+    <h3>构建思路</h3>
+    <ul>
+      <li>决斗家是敏捷型近战战士的典范——不依赖重甲和蛮力，而是用优雅的技巧击败对手。</li>
+      <li>智力对决斗家至关重要——它既提升灵巧防御的AC加值，又增加技能点。</li>
+      <li>精确打击+5d8 是非常可观的伤害——但必须单手持武才能触发。</li>
+      <li>决斗家适合1v1的战斗场景——精通虚招、精通卸武和精通格挡使他们在决斗中极为致命。</li>
+      <li>搭配魔法物品（如防护戒指、敏捷腰带）可以进一步提升决斗家的生存能力和攻击效率。</li>
+    </ul>
+
+    <h2>角色扮演建议 (Role-playing Suggestions)</h2>
+    <ul>
+      <li>决斗家是剑术艺术的极致追求者。他们通常是贵族出身或在专门的剑术学院受过训练，将剑术视为一种高雅的艺术形式而非单纯的暴力工具。</li>
+      <li>扮演决斗家时可以展现优雅、自信和强烈的荣誉感。他们可能穿着华丽的服装，用诗歌般的话语挑衅对手，并在战斗中展现出令人赞叹的优雅动作。</li>
+      <li>许多决斗家有着强烈的竞争意识——他们可能在各地参加剑术比赛，或四处寻找值得较量的对手。</li>
+      <li>决斗家的社交能力通常也很强——4 + INT 的技能点和唬骗、交涉等本职技能使他们能够在社交场合游刃有余。</li>
+      <li>在队伍中，决斗家是出色的近战战士和谈判代表。他们灵活的移动能力使他们能够快速切入战场关键位置，而精确打击可以在关键时刻造成致命伤害。</li>
+    </ul>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>施法专长 Spell Feats - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.feat-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.feat-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.feat-card h3 a { color:var(--text-heading,#4a2c0a); text-decoration:none; }
+.feat-card h3 a:hover { text-decoration:underline; }
+.feat-meta { font-size:13px; color:var(--text-subtle,#7f8c8d); margin-bottom:8px; }
+.feat-meta .badge { display:inline-block; padding:2px 8px; border-radius:3px; font-size:11px; font-weight:600; color:#fff; margin-right:4px; }
+.badge-combat { background:#c0392b; }
+.badge-general { background:#2980b9; }
+.badge-metamagic { background:#8e44ad; }
+.badge-item { background:#e67e22; }
+.badge-divine { background:#d4a017; }
+.badge-spell { background:#27ae60; }
+.prereq { font-size:13px; color:#888; margin:4px 0; }
+.benefit { font-size:14px; margin:6px 0; }
+.tactic-tip { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:6px 10px; margin:6px 0; font-size:13px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.cross-ref { background:#f0f8e8; border:1px solid #b8d4a0; border-radius:4px; padding:8px 12px; font-size:13px; margin-top:6px; }
+.cross-ref a { color:#27ae60; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长分类</div>
+      <a href="intro.html">总览</a>
+      <a href="feat-list.html">📋 专长详细列表</a>
+      <a href="combat.html">战斗专长</a>
+      <a href="spell-feats.html" class="active">施法专长</a>
+      <a href="general.html">通用专长</a>
+      <a href="metamagic.html">超魔专长</a>
+      <a href="item.html">物品专长</a>
+      <a href="divine.html">神术专长</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心专长</div>
+      <a href="power-attack.html">猛力攻击</a>
+      <a href="cleave.html">顺劈斩</a>
+      <a href="weapon-focus.html">武器专精</a>
+      <a href="dodge.html">闪避</a>
+      <a href="iron-will.html">钢铁意志</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>施法专长 <span style="font-size:0.5em;color:#888;">Spell Feats</span></h1>
+    <p>施法专长是一类增强施法能力的专长，涵盖法术专攻、法术穿透、法术材料豁免等方面。这些专长与超魔专长不同——它们不改变法术的施放方式或消耗额外法术位，而是直接增强施法者的特定能力。本页面收录所有非超魔、非物品制造类的施法相关专长。</p>
+
+    <div class="toc">
+      <h3>本分类专长一览</h3>
+      <ul>
+        <li><a href="#spell-focus">法术专攻</a></li>
+        <li><a href="#greater-spell-focus">高等法术专攻</a></li>
+        <li><a href="#spell-penetration">法术穿透</a></li>
+        <li><a href="#greater-spell-penetration">高等法术穿透</a></li>
+        <li><a href="#eschew-materials">省略材料</a></li>
+        <li><a href="#natural-spell">自然施法</a></li>
+        <li><a href="#improved-counterspell">精通反制法术</a></li>
+        <li><a href="#improved-familiar">精通魔宠</a></li>
+        <li><a href="#brew-potion">调制药水</a></li>
+        <li><a href="#scribe-scroll">抄写卷轴</a></li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">专长总览表</h2>
+    <table class="quick-table">
+      <thead><tr><th>专长</th><th>前提</th><th>简述</th><th>详情页</th></tr></thead>
+      <tbody>
+        <tr><td>法术专攻 Spell Focus</td><td>可施放所选学派法术</td><td>所选学派法术DC+1</td><td><a href="spell-focus.html">详情</a></td></tr>
+        <tr><td>高等法术专攻 Greater Spell Focus</td><td>法术专攻（同学派）</td><td>所选学派DC再+1，共计+2</td><td>-</td></tr>
+        <tr><td>法术穿透 Spell Penetration</td><td>无</td><td>克服法术抗力检定+2</td><td>-</td></tr>
+        <tr><td>高等法术穿透 Greater Spell Penetration</td><td>法术穿透</td><td>克服法术抗力再+2，共计+4</td><td>-</td></tr>
+        <tr><td>省略材料 Eschew Materials</td><td>无</td><td>忽略1gp以下的材料成分</td><td>-</td></tr>
+        <tr><td>自然施法 Natural Spell</td><td>感知13，野性变身能力</td><td>变形状态下可以施法</td><td>-</td></tr>
+        <tr><td>精通反制法术 Improved Counterspell</td><td>无</td><td>用同学派高等法术反制低等法术</td><td>-</td></tr>
+        <tr><td>精通魔宠 Improved Familiar</td><td>可召唤魔宠，奥术CL5</td><td>获得更强的魔宠选项</td><td>-</td></tr>
+        <tr><td>调制药水 Brew Potion</td><td>CL 3</td><td>制造药水（3环以下）</td><td>-</td></tr>
+        <tr><td>抄写卷轴 Scribe Scroll</td><td>CL 1</td><td>抄写法术卷轴</td><td>-</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== FEAT CARDS ===== -->
+
+    <h2 class="section-title" id="spell-focus">法术专攻 (Spell Focus)</h2>
+    <div class="feat-card">
+      <h3>法术专攻 <span class="badge badge-spell">施法</span></h3>
+      <div class="benefit"><strong>简述：</strong>选择一大学派，该学派法术的豁免DC+1。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>控制型法师的核心专长。详见 <a href="spell-focus.html">法术专攻详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="greater-spell-focus">高等法术专攻 (Greater Spell Focus)</h2>
+    <div class="feat-card">
+      <h3>高等法术专攻 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>法术专攻（同学派）</div>
+      <div class="benefit"><strong>效果：</strong>你已选取法术专攻的学派，其法术的豁免DC额外+1。此加值与法术专攻的+1叠加，共计+2。可以多次选取此专长，每次选择不同的已拥有法术专攻的学派。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>对控制型法师价值极高。附魔学派+2DC意味着敌人的意志豁免更难成功。搭配法术升阶，可以让低环控制法术在高环位中依然保持高DC。</div>
+    </div>
+
+    <h2 class="section-title" id="spell-penetration">法术穿透 (Spell Penetration)</h2>
+    <div class="feat-card">
+      <h3>法术穿透 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你在克服法术抗力(Spell Resistance)的施法者等级检定上获得+2加值。当你对具有法术抗力的生物施放法术时，需要进行1d20+施法者等级的检定，结果必须大于或等于目标的法术抗力值。此+2加值大幅提升你穿透法术抗力的成功率。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高等级冒险中许多强力怪物拥有法术抗力，此专长确保你的法术不会白白浪费。建议所有施法者在中期（10级左右）选取。</div>
+    </div>
+
+    <h2 class="section-title" id="greater-spell-penetration">高等法术穿透 (Greater Spell Penetration)</h2>
+    <div class="feat-card">
+      <h3>高等法术穿透 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>法术穿透</div>
+      <div class="benefit"><strong>效果：</strong>你在克服法术抗力的施法者等级检定上额外获得+2加值。此加值与法术穿透的+2叠加，共计+4。这使得你在面对高法术抗力的敌人时有极高的穿透成功率。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>高等级（15+）必备。许多CR15以上的怪物拥有SR 25+，+4加值可以将你的穿透成功率从约50%提升到约70%。</div>
+    </div>
+
+    <h2 class="section-title" id="eschew-materials">省略材料 (Eschew Materials)</h2>
+    <div class="feat-card">
+      <h3>省略材料 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>你可以施放任何不需要价值超过1gp材料成分的法术，而无需该材料成分。如果法术需要的材料价值超过1gp，你仍然必须提供该材料。这消除了携带琐碎材料成分的麻烦。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>极大的便利性专长。不再需要为每个法术准备琐碎的材料成分。术士（没有法术书）特别受益，因为他们不需要担心材料包被没收。在大多数战役中价值不大，但便利性极佳。</div>
+    </div>
+
+    <h2 class="section-title" id="natural-spell">自然施法 (Natural Spell)</h2>
+    <div class="feat-card">
+      <h3>自然施法 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>感知13，野性变身能力</div>
+      <div class="benefit"><strong>效果：</strong>你可以在野性变身(wild shape)状态下施放法术，即使你当前的动物形态通常无法完成言语或姿势成分。你可以通过动物的声音和动作来完成法术的言语和姿势成分。此专长不影响你使用法术所需的材料成分或法器。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>德鲁伊的必备专长。没有此专长，德鲁伊在变身状态下几乎无法施法，严重限制了变身形态的战斗价值。变身+施法的组合让德鲁伊成为最强力的全能职业之一。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-counterspell">精通反制法术 (Improved Counterspell)</h2>
+    <div class="feat-card">
+      <h3>精通反制法术 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>当你反制法术时，你可以使用同学派的任何高等级法术来反制目标法术，而非必须使用完全相同的法术。例如，你可以使用4环的困惑术来反制2环的魅惑人类（两者同属附魔学派）。这使得反制法术变得更加实用。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>在对抗敌对施法者的战斗中非常有用。准备动作反制+精通反制法术可以有效封锁敌方施法者。但反制法术需要消耗准备动作，在某些战斗中可能不如直接攻击更有效。</div>
+    </div>
+
+    <h2 class="section-title" id="improved-familiar">精通魔宠 (Improved Familiar)</h2>
+    <div class="feat-card">
+      <h3>精通魔宠 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>可召唤魔宠，奥术施法者等级5级</div>
+      <div class="benefit"><strong>效果：</strong>你可以召唤比标准魔宠列表更强大的生物作为魔宠。可用的魔宠包括：气元素（CL5）、火元素（CL5）、土元素（CL5）、水元素（CL5）、小魔鬼（CL7）、魔蝠（CL5）等。这些高级魔宠拥有更强的战斗能力和特殊技能。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>小魔鬼（Imp）是最佳选择之一，拥有隐形、变形和毒刺攻击。元素魔宠在战斗中更为坚韧。注意更换魔宠需要7天时间和仪式。</div>
+    </div>
+
+    <h2 class="section-title" id="brew-potion">调制药水 (Brew Potion)</h2>
+    <div class="feat-card">
+      <h3>调制药水 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级3级</div>
+      <div class="benefit"><strong>效果：</strong>你可以制造任何3环或以下的、目标为一个或多个生物的法术药水。药水的价格 = 法术等级 x 施法者等级 x 50gp。</div>
+      <div class="cross-ref"><strong>交叉参考：</strong>此专长同时归类于<a href="item.html">物品制造专长</a>分类。完整说明和制造计算器请参见该页面。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>为团队制造治疗伤害药水和增益药水是性价比极高的投资。</div>
+    </div>
+
+    <h2 class="section-title" id="scribe-scroll">抄写卷轴 (Scribe Scroll)</h2>
+    <div class="feat-card">
+      <h3>抄写卷轴 <span class="badge badge-spell">施法</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>施法者等级1级</div>
+      <div class="benefit"><strong>效果：</strong>你可以抄写任何你知道的法术到卷轴上。卷轴的价格 = 法术等级 x 施法者等级 x 25gp。法师在1级时自动获得此专长。</div>
+      <div class="cross-ref"><strong>交叉参考：</strong>此专长同时归类于<a href="item.html">物品制造专长</a>分类。完整说明和制造计算器请参见该页面。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>法师必备，储备不常用法术的卷轴可以在关键时刻救命。</div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

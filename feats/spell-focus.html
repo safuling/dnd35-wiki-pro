@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法术专攻 - D&D 3.5 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="container">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">专长分类</div>
+    <a href="intro.html">总览</a>
+    <a href="feat-list.html">📋 专长详细列表</a>
+    <a href="combat.html">战斗专长</a>
+    <a href="spell-feats.html">施法专长</a>
+    <a href="general.html">通用专长</a>
+    <a href="metamagic.html">超魔专长</a>
+    <a href="item.html">物品制造专长</a>
+    <a href="divine.html">神术专长</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">核心专长</div>
+    <a href="power-attack.html">猛力攻击</a>
+    <a href="cleave.html">顺劈斩</a>
+    <a href="weapon-focus.html">武器专攻</a>
+    <a href="dodge.html">闪避</a>
+    <a href="iron-will.html">钢铁意志</a>
+  </div>
+</aside>
+
+<main class="main-content">
+<nav class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">专长</a> &gt; 法术专攻</nav>
+<h1>法术专攻 (Spell Focus)</h1>
+
+<div class="infobox">
+  <div class="infobox-title">专长概要</div>
+  <div class="infobox-row"><span class="infobox-label">类型</span><span class="infobox-value">施法专长</span></div>
+  <div class="infobox-row"><span class="infobox-label">先决条件</span><span class="infobox-value">能够施放法术</span></div>
+  <div class="infobox-row"><span class="infobox-label">益处</span><span class="infobox-value">所选学派的法术的豁免DC获得 +1 加值</span></div>
+  <div class="infobox-row"><span class="infobox-label">特殊</span><span class="infobox-value">可选择多次，每次选择不同学派</span></div>
+  <div class="infobox-row"><span class="infobox-label">来源</span><span class="infobox-value">PHB 核心规则书</span></div>
+</div>
+
+<h2 id="desc">专长描述</h2>
+<p>你专精于某一学派的法术，使该学派的法术更难抵抗。</p>
+<p>选择一种法术学派（召唤、变化、魅惑、预言、塑能、幻术、死灵、防护、神术）。你所施放的该学派法术的 <strong>豁免难度等级 (DC)</strong> 获得 <span class="rule-keyword">+1 加值</span>。</p>
+
+<h2 id="schools">法术学派</h2>
+<table class="wiki-table">
+  <thead>
+    <tr>
+      <th>学派</th>
+      <th>典型法术</th>
+      <th>专长价值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>魅惑 (Enchantment)</strong></td>
+      <td>魅惑人类、暗示术、支配人类</td>
+      <td class="highlight">高（依赖豁免）</td>
+    </tr>
+    <tr>
+      <td><strong>幻术 (Illusion)</strong></td>
+      <td>隐形术、魅影杀手、阳影杀手</td>
+      <td class="highlight">高（依赖豁免）</td>
+    </tr>
+    <tr>
+      <td><strong>死灵 (Necromancy)</strong></td>
+      <td>虚弱术、恐慌术、即死术</td>
+      <td class="highlight">高（依赖豁免）</td>
+    </tr>
+    <tr>
+      <td><strong>塑能 (Evocation)</strong></td>
+      <td>魔法飞弹、火球术、闪电束</td>
+      <td>中（部分依赖豁免）</td>
+    </tr>
+    <tr>
+      <td><strong>变化 (Transmutation)</strong></td>
+      <td>变巨术、变形术、石肤术</td>
+      <td>中</td>
+    </tr>
+    <tr>
+      <td><strong>防护 (Abjuration)</strong></td>
+      <td>法师护甲、法术抗力、放逐术</td>
+      <td>低（不依赖豁免）</td>
+    </tr>
+    <tr>
+      <td><strong>预言 (Divination)</strong></td>
+      <td>真实视域、预见术、回遁术</td>
+      <td>低（不依赖豁免）</td>
+    </tr>
+    <tr>
+      <td><strong>召唤 (Conjuration)</strong></td>
+      <td>召唤怪物、治疗轻伤、言语之讯</td>
+      <td>低（部分依赖豁免）</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="benefit-detail">益处详解</h2>
+<ul>
+  <li><strong>DC 计算</strong>：法术豁免 DC = 10 + 法术等级 + 魅力/智力调整值 + 法术专攻 (+1)。</li>
+  <li><strong>只影响豁免</strong>：法术专攻只提高 DC，不提高法术穿透 (Caster Level Check) 或法术伤害。</li>
+  <li><strong>可选择多次</strong>：每次选择"法术专攻"，可以选择 <strong>不同的学派</strong>。</li>
+  <li><strong>不适用于神术</strong>：神术（牧师、德鲁伊）通常不选择学派，因此法术专攻对神术施法者价值较低。</li>
+</ul>
+
+<h2 id="value">价值评估</h2>
+<div class="tactic-box">
+  <p><strong>法术专攻 vs. 法术极效 (Empower Spell)</strong></p>
+  <ul>
+    <li><strong>法术专攻</strong>：提高 DC，使敌人更难通过豁免。<strong>适合控制法术</strong>（如魅惑、幻术）。</li>
+    <li><strong>法术极效</strong>：提高法术效果（如伤害、治疗）<strong>适合输出法术</strong>（如火球术、治疗术）。</li>
+    <li><strong>推荐</strong>：控制型法师选择法术专攻；输出型法师选择法术极效。</li>
+  </ul>
+</div>
+
+<h2 id="example">实战示例</h2>
+<div class="example-box">
+  <p><strong>示例：法术专攻（魅惑学派）</strong></p>
+  <p>人类法师 1级，智力 18（+4），选择"法术专攻（魅惑学派）"。施放 <em>魅惑人类</em> (1环)。</p>
+  <ul>
+    <li>DC = 10 + 1 (法术等级) + 4 (智力) + 1 (法术专攻) = <strong>16</strong></li>
+    <li>敌人需要掷出 16+ 才能通过意志豁免</li>
+    <li>如果没有法术专攻，DC = 15，敌人需要掷出 15+</li>
+    <li><strong>法术专攻将敌人成功率从 25% 降低到 20%</strong></li>
+  </ul>
+</div>
+<div class="example-box">
+  <p><strong>示例：法术专攻（幻术学派）</strong></p>
+  <p>人类法师 3级，智力 18（+4），选择"法术专攻（幻术学派）"。施放 <em>隐形术</em> (2环)。</p>
+  <ul>
+    <li>DC = 10 + 2 + 4 + 1 = <strong>17</strong></li>
+    <li>敌人需要掷出 17+ 才能通过意志豁免（看破隐形）</li>
+    <li>法术专攻显著提高幻术法术的实用性</li>
+  </ul>
+</div>
+
+<h2 id="class">适合职业</h2>
+<ul>
+  <li><strong class="highlight">法师 (Wizard)</strong>：可以专攻特定学派，提高控制能力。<strong>推荐</strong>。</li>
+  <li><strong class="highlight">术士 (Sorcerer)</strong>：同法师。</li>
+  <li><strong>牧师、德鲁伊</strong>：神术不选择学派，价值较低。</li>
+  <li><strong>吟游诗人</strong>：法术来自多重学派，不适合专攻。</li>
+</ul>
+
+<h2 id="combos">搭配专长</h2>
+<ul>
+  <li><strong>法术极效 (Empower Spell)</strong>：配合法术专攻，提高法术整体效果。</li>
+  <li><strong>法术强效 (Maximize Spell)</strong>：配合法术专攻，最大化法术效果。</li>
+  <li><strong>法术默发 (Silent Spell)</strong>：配合法术专攻，在沉默环境中施放控制法术。</li>
+</ul>
+
+<h2 id="conflict">规则冲突标注</h2>
+<div class="conflict-box">
+  <p><strong>冲突点：法术专攻是否适用于"法术穿透"？</strong></p>
+  <p>📝 <strong>PHB 页102</strong>：法术专攻只影响"豁免难度等级 (DC)"。</p>
+  <p>✅ <strong>正确规则</strong>：</p>
+  <ul>
+    <li>法术专攻 <strong>不适用</strong>于法术穿透 (Caster Level Check vs. SR)。</li>
+    <li>法术专攻 <strong>不适用</strong>于法术伤害。</li>
+    <li>法术专攻 <strong>只影响</strong>豁免 DC。</li>
+  </ul>
+  <p>⚠️ <strong>常见误解</strong>：有玩家认为法术专攻能提高法术整体效果。这是 <span class="rule-error">错误</span> 的。</p>
+</div>
+
+<h2 id="source">规则出处</h2>
+<ul>
+  <li>📚 <strong>PHB 玩家手册</strong> 页102：专长描述。</li>
+  <li>📚 <strong>PHB 页120</strong>：法术DC计算。</li>
+  <li>📚 <strong>DMG 页176</strong>：专长选择建议。</li>
+</ul>
+
+<p class="back-link"><a href="intro.html">← 返回专长总览</a></p>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5 中文Wiki - 非官方粉丝制作 | 数据来源：PHB/DMG/MM 核心规则书</p>
+</footer>
+</body>
+</html>

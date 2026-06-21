@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>D&D 3.5e Wiki 完成度报告</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; background: #f5f5f5; }
+    h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+    .section { background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .progress-bar { background: #ecf0f1; height: 24px; border-radius: 12px; overflow: hidden; margin: 10px 0; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #3498db, #2ecc71); text-align: center; line-height: 24px; color: white; font-weight: 600; font-size: 13px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+    .stat-card { background: #3498db; color: white; padding: 15px; border-radius: 8px; text-align: center; }
+    .stat-card h3 { margin: 0; font-size: 28px; }
+    .stat-card p { margin: 5px 0 0 0; font-size: 14px; opacity: 0.9; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0; border-bottom: 1px solid #eee; }
+    .checklist li:before { content: "✅ "; }
+    .next-steps { background: #e8f4f8; padding: 15px; border-radius: 8px; margin: 15px 0; }
+    .next-steps h3 { margin-top: 0; color: #2980b9; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html" class="active">首页</a>
+    <a href="rules.html">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="rules-adventure.html">🗺️ 冒险</a>
+        <a href="rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="rules-combat.html">⚔️ 战斗详述</a>
+        <a href="rules-deities.html">🙏 神祇与阵营</a>
+        <a href="rules-companions.html">🐾 伙伴系统</a>
+        <a href="rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="equipment/magic-items.html">💎 魔法物品</a>
+        <a href="domains/intro.html">✨ 领域系统</a>
+        <a href="dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<h1>🐉 D&D 3.5e 中文Wiki 完成度报告</h1>
+<p>生成时间：2026年6月21日（第五轮更新 — P5-P8全部完成）</p>
+
+<div class="section">
+  <h2>📊 总体完成度</h2>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 95%">95% 完成</div>
+  </div>
+  <p><strong>评价：</strong>P1-P8全部完成。核心内容全面覆盖，3R扩展大全8页上线，法术561条+领域系统22页，怪物图鉴扩展至10页200+种，DM工具6页，专长分类6页。剩余仅可选优化项。</p>
+</div>
+
+<div class="section">
+  <h2>📈 各板块完成度</h2>
+  <table style="width:100%; border-collapse: collapse;">
+    <tr style="background: #3498db; color: white;">
+      <th style="padding: 10px; text-align: left;">板块</th>
+      <th style="padding: 10px; text-align: center;">完成度</th>
+      <th style="padding: 10px; text-align: left;">状态</th>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 10px;">法术系统</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:95%;font-size:11px;line-height:18px;">95%</div></div></td>
+      <td style="padding: 10px;">✅ 561个法术，搜索/过滤/领域/对比/收藏完整</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee; background: #f9f9f9;">
+      <td style="padding: 10px;">种族系统</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:100%;font-size:11px;line-height:18px;background:#2ecc71;">100%</div></div></td>
+      <td style="padding: 10px;">✅ 7核心种族 + 12扩展种族 + 3R种族大全</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 10px;">职业系统</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:100%;font-size:11px;line-height:18px;background:#2ecc71;">100%</div></div></td>
+      <td style="padding: 10px;">✅ 12核心 + 17进阶 + NPC + 3R扩展职业</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee; background: #f9f9f9;">
+      <td style="padding: 10px;">专长系统</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:95%;font-size:11px;line-height:18px;">95%</div></div></td>
+      <td style="padding: 10px;">✅ 31核心页 + 6分类合集 + 3R 83扩展专长</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 10px;">技能系统</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:100%;font-size:11px;line-height:18px;background:#2ecc71;">100%</div></div></td>
+      <td style="padding: 10px;">✅ 34个技能 + 共效页全部完成</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee; background: #f9f9f9;">
+      <td style="padding: 10px;">装备与物品</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:85%;font-size:11px;line-height:18px;">85%</div></div></td>
+      <td style="padding: 10px;">✅ 武器详述 + 魔法物品 + 附魔 + 奇物 + 神器/智能物品</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 10px;">怪物图鉴</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:75%;font-size:11px;line-height:18px;background:#27ae60;">75%</div></div></td>
+      <td style="padding: 10px;">✅ 10页200+种（类人/不死/异界/魔法兽/异怪精类/巨人构装/植物泥怪）+ 3R 60种</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee; background: #f9f9f9;">
+      <td style="padding: 10px;">核心规则</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:95%;font-size:11px;line-height:18px;">95%</div></div></td>
+      <td style="padding: 10px;">✅ 6个规则页（战斗/冒险/伙伴/神祇/位面/变体）</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 10px;">3R扩展大全</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:100%;font-size:11px;line-height:18px;background:#2ecc71;">100%</div></div></td>
+      <td style="padding: 10px;">✅ 8个综合页（职业/种族/专长/法术/装备/怪物/专题）</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 10px;">领域系统</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:100%;font-size:11px;line-height:18px;background:#2ecc71;">100%</div></div></td>
+      <td style="padding: 10px;">✅ 总览页 + 22领域详情（神授力量/法术1-9级/神祇）</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee; background: #f9f9f9;">
+      <td style="padding: 10px;">DM工具</td>
+      <td style="padding: 10px; text-align: center;"><div class="progress-bar" style="margin:0;height:18px;"><div class="progress-fill" style="width:100%;font-size:11px;line-height:18px;background:#2ecc71;">100%</div></div></td>
+      <td style="padding: 10px;">✅ 6页（角色创建/遭遇构建/宝藏生成/随机表格/XP追踪）</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>📊 数据统计</h2>
+  <div class="stats">
+    <div class="stat-card" style="background: #9b59b6;">
+      <h3>561</h3>
+      <p>法术总数</p>
+    </div>
+    <div class="stat-card" style="background: #2ecc71;">
+      <h3>19</h3>
+      <p>种族（7核心 + 12扩展）</p>
+    </div>
+    <div class="stat-card" style="background: #3498db;">
+      <h3>30</h3>
+      <p>职业（12基础 + 17进阶 + NPC）</p>
+    </div>
+    <div class="stat-card" style="background: #e67e22;">
+      <h3>31+83</h3>
+      <p>专长页 + 3R扩展专长</p>
+    </div>
+    <div class="stat-card" style="background: #1abc9c;">
+      <h3>35</h3>
+      <p>技能页面</p>
+    </div>
+    <div class="stat-card" style="background: #34495e;">
+      <h3>185+</h3>
+      <p>HTML页面</p>
+    </div>
+    <div class="stat-card" style="background: #d4a017;">
+      <h3>8</h3>
+      <p>3R扩展大全页面</p>
+    </div>
+    <div class="stat-card" style="background: #8e44ad;">
+      <h3>23</h3>
+      <p>领域系统页面</p>
+    </div>
+    <div class="stat-card" style="background: #16a085;">
+      <h3>6</h3>
+      <p>DM工具页面</p>
+    </div>
+    <div class="stat-card" style="background: #e74c3c;">
+      <h3>6</h3>
+      <p>核心规则专题页</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>✅ 已完成的核心功能</h2>
+  <ul class="checklist">
+    <li>法术总览页：搜索、按环级浏览、按学派过滤、奥术/神术分类、领域过滤</li>
+    <li>法术数据库：561条法术（PHB完整性审计通过），搜索索引同步</li>
+    <li>动态法术详情页（SEO友好）：spell-detail.html?id=XXX</li>
+    <li>核心种族/职业/专长/技能页面全部完成（含17进阶职业 + NPC职业）</li>
+    <li>核心规则6大专题页：战斗、冒险、伙伴系统、神祇与阵营、位面宇宙、规则变体</li>
+    <li>3R扩展大全8页：职业/种族/专长(83)/法术(75+)/装备/怪物(60+)/专题/导航枢纽</li>
+    <li>装备系统：武器详述 + 魔法物品 + 附魔/奇物/神器/智能物品</li>
+    <li>怪物图鉴10页：类人/不死/异界/魔法兽/异怪精类/巨人构装/植物泥怪（200+种）</li>
+    <li>领域系统23页：总览 + 22领域详情（神授力量/领域法术1-9级/神祇）</li>
+    <li>DM工具6页：角色创建/遭遇构建/宝藏生成/随机表格/XP追踪</li>
+    <li>专长分类6页：战斗/通用/超魔/物品制造/法术/神圣（含JS计算器）</li>
+    <li>规则冲突标注系统 + 响应式设计 + 全站搜索 + 侧边栏导航</li>
+    <li>旧版3R页面归档（9个文件 → _legacy_3r/），技术债务清理</li>
+  </ul>
+</div>
+
+<div class="next-steps">
+  <h3>🎯 后续可选优化</h3>
+  <p><strong>旧专长页侧边栏统一</strong><br>
+  29个旧专长独立页的侧边栏尚未添加新的6个分类合集页链接，可选择性更新。</p>
+  <p><strong>怪物图鉴继续扩充</strong><br>
+  目前约200种核心怪物，MM有900+种。可按需继续添加更多怪物条目。</p>
+  <p><strong>图片与视觉资源</strong><br>
+  全站仍为纯文字，可酌情添加怪物插图、地图等视觉资源。</p>
+  <p><strong>导航栏布局统一</strong><br>
+  部分页面仍使用旧版导航布局，可选择性统一为新版11链接格式。</p>
+</div>
+
+<div class="section">
+  <h2>🔗 快速访问</h2>
+  <ul>
+    <li><a href="index.html">网站首页</a></li>
+    <li><a href="spells/intro.html">法术总览</a></li>
+    <li><a href="races/intro.html">种族总览</a></li>
+    <li><a href="classes/intro.html">职业总览</a></li>
+    <li><a href="feats/intro.html">专长总览</a></li>
+    <li><a href="skills/intro.html">技能总览</a></li>
+    <li><a href="equipment/intro.html">装备总览</a></li>
+    <li><a href="monsters/intro.html">怪物总览</a></li>
+    <li><a href="domains/intro.html">领域系统</a></li>
+    <li><a href="dm/intro.html">DM工具</a></li>
+    <li><a href="3r/index-v2.html">3R扩展大全</a></li>
+    <li><a href="conflicts.html">规则冲突标注</a></li>
+  </ul>
+</div>
+
+<div class="section" style="background: #ecf0f1; text-align: center;">
+  <p style="font-size: 14px; color: #7f8c8d;">本报告由 WorkBuddy AI 自动生成 | D&D 3.5e 中文Wiki 项目</p>
+</div>
+
+</body>
+</html>

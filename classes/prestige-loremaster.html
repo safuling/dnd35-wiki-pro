@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>博学士 Loremaster - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>博学士 <span style="font-size:0.6em;color:#888;">Loremaster</span></h1>
+    <p style="color:#666;font-size:0.95em;">出自《城主指南》(DMG) p.197</p>
+
+    <!-- 信息框 -->
+    <div class="infobox" style="float:right;width:320px;margin:0 0 1em 1.5em;border:1px solid #b8860b;border-radius:6px;background:#fdf6e3;">
+      <div style="background:#8b6914;color:#fff;padding:10px;text-align:center;font-size:1.2em;font-weight:bold;">博学士 Loremaster</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">生命骰</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">d4</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">等级数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">10</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">阵营限制</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">无</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能点数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">4 + 智力调整值</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">本职技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">专注、所有知识技能、法术辨识、使用魔法装置、解读文书、估价、收集信息</td></tr>
+        <tr style="background:#f5f0e0;"><td colspan="2" style="padding:8px 10px;font-weight:bold;color:#8b6914;">先决条件</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">任意2项知识技能各6级以上；任意1项知识技能10级以上</td></tr>
+        <tr><td style="padding:6px 10px;font-weight:bold;">施法能力</td><td style="padding:6px 10px;">可施展3级法术</td></tr>
+      </table>
+    </div>
+
+    <h2>职业概述</h2>
+    <p>博学士是知识海洋的征服者——他们穷尽一生追求对世界万物的理解，从古老的魔法秘辛到失落文明的遗迹，从星象运行的规律到异次元空间的奥秘。博学士不仅仅是学者，他们是将知识转化为力量的大师，能够通过深厚的学识施展出独特的能力。</p>
+    <p>博学士是施法者型角色的优秀进阶选择，尤其适合法师和吟游诗人这类依赖智力的职业。它提供了完整的施法进展和多种实用的知识类特殊能力，是"学者型"角色的终极进阶。</p>
+
+    <h2>职业技能表</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#8b6914;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">等级</th>
+          <th style="padding:8px;border:1px solid #ddd;">基本攻击加值</th>
+          <th style="padding:8px;border:1px solid #ddd;">强韧豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">反射豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">意志豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">特殊能力</th>
+          <th style="padding:8px;border:1px solid #ddd;">施法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">1级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘 (Secret)</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">2级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">3级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">4级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">5级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">6级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">7级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">8级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">9级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">10级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+7</td>
+          <td style="padding:6px;border:1px solid #ddd;">奥秘</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有施法等级</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详解</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>博学士不会获得额外的武器或防具熟练。</p>
+
+    <h3>施法 (Spellcasting)</h3>
+    <p>博学士每级都推进现有施法职业的施法等级，包括第1级。这意味着10级博学士的施法等级完全不会落后——这是博学士相对于某些其他进阶职业的重要优势。如果角色拥有多个施法职业，必须选择将博学士的施法进展加到哪一个职业上。</p>
+
+    <h3>奥秘 (Secret)</h3>
+    <p>每一级博学士都可以从以下奥秘中选择一种。某些奥秘可以被多次选择以获得更强效果或额外使用次数。</p>
+
+    <h4>即时精通 (Instant Mastery)</h4>
+    <p>博学士对任何未受训的知识技能获得4级等效等级。这使得博学士可以在几乎所有知识领域进行检定，即使从未正式学习过该技能。</p>
+
+    <h4>学识 (Lore)</h4>
+    <p>博学士获得学识能力，类似于吟游诗人的逸闻知识。进行一次学识检定（1d20 + 博学士等级 + 智力调整值），DC由DM根据知识的稀有程度决定（DC 10 = 常见知识，DC 20 = 不常见，DC 25 = 稀有，DC 30 = 极稀有）。此能力可以用来辨识怪物、了解传说、辨认物品等。</p>
+    <p>如果博学士已经拥有逸闻知识能力（如吟游诗人），则两者等级叠加。</p>
+
+    <h4>额外语言 (Bonus Language)</h4>
+    <p>博学士可以学会任何一门语言（包括秘密语言如龙语、深渊语等），无需花费技能点。此奥秘可以被多次选择，每次学习一种新语言。</p>
+
+    <h4>技能精通 (Skill Mastery)</h4>
+    <p>博学士选择两项知识技能。在即使面临压力或分心的情况下，也可以在这两项技能上进行10（取10），而不受通常限制。此奥秘可以被多次选择，每次选择另外两项知识技能。</p>
+
+    <h4>高等学识 (Greater Lore)</h4>
+    <p>博学士的学识能力获得+2加值。此外，学识能力现在可以用来辨识魔法物品的性质（如同<em>鉴定术</em>），无需实际施展该法术。</p>
+
+    <h4>真知 (True Knowledge)</h4>
+    <p>博学士每天可以使用一次<em>通晓传奇</em>（Legend Lore）效果，如同施展同名法术，但无需材料和器材成分。施法者等级等于博学士等级。</p>
+
+    <h2>角色构建建议</h2>
+
+    <h3>最佳搭配职业</h3>
+    <p><strong>法师 (Wizard)：</strong>法师是博学士的最佳搭配。两者都以智力为核心属性，法师的知识广博与博学士的学识能力完美配合。法师5/博学士10是一个拥有15级施法能力和海量知识的全能学者。</p>
+    <p><strong>吟游诗人 (Bard)：</strong>吟游诗人的逸闻知识与博学士的学识能力叠加，使其成为世界上最博学的存在。吟游诗人5/博学士10拥有极其广泛的能力范围。</p>
+    <p><strong>术士 (Sorcerer)：</strong>虽然术士的已知法术较少，但博学士的完整施法进展可以弥补这一不足。</p>
+
+    <h3>经典构建路线</h3>
+    <p><strong>法师7/博学士10/法师3</strong>：角色等级20，拥有20级法师施法能力（9级法术），加上10个奥秘选择。推荐奥秘组合：学识 + 即时精通 + 技能精通（×2）+ 高等学识 + 真知 + 额外语言（×2）+ 学识强化（再选一次学识加值）。</p>
+
+    <h3>推荐奥秘选择顺序</h3>
+    <ol>
+      <li><strong>学识 (Lore)：</strong>第1级优先选择，立即获得通用知识检定能力</li>
+      <li><strong>即时精通 (Instant Mastery)：</strong>填补所有知识技能空白</li>
+      <li><strong>技能精通 (Skill Mastery)：</strong>保证关键技能检定的可靠性</li>
+      <li><strong>高等学识 (Greater Lore)：</strong>增强学识能力并获得免费鉴定</li>
+      <li><strong>真知 (True Knowledge)：</strong>获得传奇知识查询能力</li>
+      <li><strong>额外语言：</strong>后期填充，学习稀有语言增加角色扮演深度</li>
+    </ol>
+
+    <h2>角色扮演建议</h2>
+    <p>博学士是冒险队伍中的"活百科全书"。他们可能是某个古老图书馆的资深馆员、一所魔法学院的终身教授、或是一位独自游历世界收集知识的流浪学者。无论背景如何，博学士都对知识怀有近乎宗教般的虔诚。</p>
+    <p>在社交场合，博学士可能显得有些书呆气——他们会在不恰当的时候开始长篇大论地讲解某个冷门知识，或者因为对某个话题过于兴奋而忽略了当前的危险。但他们也是任何冒险队伍中不可或缺的智囊。</p>
+    <p><strong>性格特征建议：</strong>求知若渴、记忆力惊人、喜欢引用典籍和出处、在面对未知事物时表现出学者的好奇而非恐惧、偶尔过于沉浸于知识而忽视实际问题。</p>
+
+    <div style="margin-top:2em;padding:1em;background:#f5f0e0;border-left:4px solid #8b6914;border-radius:4px;">
+      <strong>编者注：</strong>博学士是一个"稳扎稳打"的进阶职业——它没有华丽的战斗能力，但提供了完整的施法进展和极其丰富的知识类能力。在需要大量知识检定的冒险中（如探索古代遗迹、辨认怪物弱点、解读魔法铭文），博学士的价值无可替代。对于喜欢扮演学者型角色的玩家，这是最佳选择。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

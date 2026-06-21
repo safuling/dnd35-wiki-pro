@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>进阶职业 Prestige Classes - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html" class="active">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>进阶职业（Prestige Classes）</h1>
+
+    <p>进阶职业（Prestige Classes）是 D&D 3.5e 中一类特殊的高级职业，收录于《地下城主指南》（DMG）第六章。与核心职业不同，进阶职业有严格的<strong>先决条件</strong>（Prerequisites），角色必须满足特定的技能等级、专长、阵营、施法能力或种族要求后才能选取。进阶职业通常在角色达到 5~10 级左右时开放，为玩家提供更专精、更强力但也更具角色扮演深度的成长路线。每个进阶职业都有独特的职业特性，代表角色在世界中获得的特殊训练、组织身份或超自然恩赐。</p>
+
+    <p>以下是 DMG 中收录的全部 <strong>15 个核心进阶职业</strong>的总览：</p>
+
+    <h2>进阶职业对照表</h2>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>中文名</th>
+          <th>English</th>
+          <th>HD</th>
+          <th>先决条件摘要</th>
+          <th>主要特点</th>
+          <th>来源</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="prestige-archmage.html">大法师</a></td>
+          <td>Archmage</td>
+          <td>d4</td>
+          <td>能施放7环奥术；知识(奥秘)12级；法术专攻(两个学派)</td>
+          <td>奥术巅峰，高级法术能力</td>
+          <td>DMG p178</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-assassin.html">刺客</a></td>
+          <td>Assassin</td>
+          <td>d6</td>
+          <td>邪恶阵营；潜行8级；隐匿8级；曾杀害无辜</td>
+          <td>偷袭，死亡攻击，潜行大师</td>
+          <td>DMG p180</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-arcane-archer.html">魔射手</a></td>
+          <td>Arcane Archer</td>
+          <td>d8</td>
+          <td>精灵或半精灵；BAB+6；奥术施法能力；武器专攻(长弓)</td>
+          <td>魔法箭矢，远程奥术</td>
+          <td>DMG p183</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-arcane-trickster.html">诡术师</a></td>
+          <td>Arcane Trickster</td>
+          <td>d4</td>
+          <td>阵营任意非守序；偷袭+2d6；巧手7级；开锁7级；能施放3环奥术</td>
+          <td>法术+偷窃，诡术大师</td>
+          <td>DMG p184</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-blackguard.html">暗黑卫士</a></td>
+          <td>Blackguard</td>
+          <td>d10</td>
+          <td>邪恶阵营；BAB+6；威吓4级；隐匿4级；邪恶光环</td>
+          <td>反圣武士，堕落之力</td>
+          <td>DMG p185</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-dragon-disciple.html">龙脉术士</a></td>
+          <td>Dragon Disciple</td>
+          <td>d12</td>
+          <td>语言：龙语；知识(奥秘)4级；自发施法奥术能力</td>
+          <td>龙化变身，属性强化</td>
+          <td>DMG p187</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-duelist.html">决斗家</a></td>
+          <td>Duelist</td>
+          <td>d10</td>
+          <td>BAB+6；特技4级；表演(舞蹈)3级；双武器战斗或武器娴熟专长</td>
+          <td>优雅战斗，精准刺击</td>
+          <td>DMG p189</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-dwarven-defender.html">矮人防御者</a></td>
+          <td>Dwarven Defender</td>
+          <td>d12</td>
+          <td>矮人种族；守序阵营；BAB+7；坚韧4级</td>
+          <td>防御大师，石之稳固</td>
+          <td>DMG p191</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-eldritch-knight.html">奥法骑士</a></td>
+          <td>Eldritch Knight</td>
+          <td>d10</td>
+          <td>擅长所有军用武器；能施放1环奥术；BAB+3</td>
+          <td>战斗+施法融合</td>
+          <td>DMG p192</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-hierophant.html">大祭司</a></td>
+          <td>Hierophant</td>
+          <td>d8</td>
+          <td>能施放7环神术；知识(宗教)15级</td>
+          <td>神术巅峰，神圣力量</td>
+          <td>DMG p193</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-horizon-walker.html">大地旅者</a></td>
+          <td>Horizon Walker</td>
+          <td>d8</td>
+          <td>生存4级；知识(地理)4级</td>
+          <td>地形精通，位面旅行</td>
+          <td>DMG p194</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-loremaster.html">博学士</a></td>
+          <td>Loremaster</td>
+          <td>d4</td>
+          <td>知识(任意)10级；两个知识技能各6级；能施放3环法术</td>
+          <td>知识大师，博学能力</td>
+          <td>DMG p196</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-mystic-theurge.html">秘术师</a></td>
+          <td>Mystic Theurge</td>
+          <td>d4</td>
+          <td>知识(奥秘)6级；知识(宗教)6级；能施放2环奥术+2环神术</td>
+          <td>奥术+神术双修</td>
+          <td>DMG p198</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-shadowdancer.html">影舞者</a></td>
+          <td>Shadowdancer</td>
+          <td>d8</td>
+          <td>表演(舞蹈)5级；隐匿8级；特技4级；闪避专长</td>
+          <td>幽影之力，影之伙伴</td>
+          <td>DMG p199</td>
+        </tr>
+        <tr>
+          <td><a href="prestige-thaumaturgist.html">咒法召唤师</a></td>
+          <td>Thaumaturgist</td>
+          <td>d8</td>
+          <td>能施放5环神术；专注8级；知识(位面)4级；知识(宗教)4级</td>
+          <td>召唤大师，异界盟友</td>
+          <td>DMG p201</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>进阶职业详细介绍</h2>
+
+    <h3><a href="prestige-archmage.html">大法师（Archmage）</a></h3>
+    <p>大法师是奥术施法者的终极追求，代表了奥术研究的最高成就。只有最杰出的法师才能踏入这条道路，他们放弃常规的职业成长，换取更为强大的高阶法术能力（High Arcana）。大法师可以选择诸如"法术掌控"、"元素掌控"、"奥术远触"等特殊能力，将奥术推向极限。</p>
+
+    <h3><a href="prestige-assassin.html">刺客（Assassin）</a></h3>
+    <p>刺客是黑暗世界中的致命杀手，精通偷袭和暗杀之术。他们必须具有邪恶阵营，并且有过杀害无辜的经历。刺客拥有标志性的"死亡攻击"（Death Attack）能力，可以在目标毫无防备时一击致命，同时还能习得多种潜行类法术和超自然能力。</p>
+
+    <h3><a href="prestige-arcane-archer.html">魔射手（Arcane Archer）</a></h3>
+    <p>魔射手是精灵和半精灵中的精英远程战士，将奥术魔法融入箭术之中。他们的箭矢可以附带各种魔法效果，如追踪、爆裂、穿墙等。随着等级提升，魔射手的远程攻击变得愈发致命且不可阻挡。</p>
+
+    <h3><a href="prestige-arcane-trickster.html">诡术师（Arcane Trickster）</a></h3>
+    <p>诡术师将奥术施法与盗贼技能完美结合，是魔法世界中最为狡猾的冒险者。他们用戏法增强偷窃能力，用法术辅助潜入和逃脱。诡术师的标志性能力"无法无天"（Impromptu Sneak Attack）允许他们在常规偷袭条件不满足时仍可发动偷袭。</p>
+
+    <h3><a href="prestige-blackguard.html">暗黑卫士（Blackguard）</a></h3>
+    <p>暗黑卫士是圣武士的邪恶对立面，是堕落于黑暗力量的重甲战士。他们拥有邪恶光环、黑暗祝福、命令亡灵等能力，还能召唤一匹噩梦座骑。堕落圣武士（Fallen Paladin）特别适合成为暗黑卫士，可以将其圣武士等级转化为额外的暗黑卫士能力。</p>
+
+    <h3><a href="prestige-dragon-disciple.html">龙脉术士（Dragon Disciple）</a></h3>
+    <p>龙脉术士是拥有龙族血脉的术士，通过觉醒体内的龙之力量来获得超凡的身体变化和属性增长。随着等级提升，龙脉术士的力量、体质和魅力大幅增长，并获得天生护甲、黑暗视觉、翅膀甚至吐息武器。10级时可以获得半龙模板（Half-Dragon template）。</p>
+
+    <h3><a href="prestige-duelist.html">决斗家（Duelist）</a></h3>
+    <p>决斗家是优雅而致命的近战战士，以精准和技巧代替蛮力取胜。他们擅长使用轻武器进行单挑，拥有精准刺击（Precise Strike）、强化反应和闪避类能力。决斗家不穿重甲，依靠敏捷和战斗直觉在战场中穿梭。</p>
+
+    <h3><a href="prestige-dwarven-defender.html">矮人防御者（Dwarven Defender）</a></h3>
+    <p>矮人防御者是矮人种族中最坚定的守护者，以不可撼动的防御和钢铁般的意志著称。他们拥有防御姿态（Defensive Stance）、石之稳固和伤害减免等能力，在坚守阵地时几乎无法被击倒。这是唯一限定矮人种族的核心进阶职业。</p>
+
+    <h3><a href="prestige-eldritch-knight.html">奥法骑士（Eldritch Knight）</a></h3>
+    <p>奥法骑士是战士与法师的融合体，同时追求武艺和奥术的精进。他们在保持高基本攻击加值成长的同时，还能持续获得施法者等级的提升，是最经典的"战斗法师"进阶。奥法骑士在队伍中可以同时承担近战输出和辅助施法的双重角色。</p>
+
+    <h3><a href="prestige-hierophant.html">大祭司（Hierophant）</a></h3>
+    <p>大祭司是神术施法者的巅峰形态，代表了与神灵最深层次的连接。与奥术侧的大法师对应，大祭司可以将神术能力推向新的高度，获得"神圣启示"（Divine Reach）等特殊能力，将法术转化为超自然能力，并拥有更强的超度和斥退亡灵能力。</p>
+
+    <h3><a href="prestige-horizon-walker.html">大地旅者（Horizon Walker）</a></h3>
+    <p>大地旅者是遍历多元宇宙的探险者，对各种地形和位面有着深刻的理解。他们按类别逐步精通不同的地形主导权（Terrain Mastery），包括沙漠、森林、山脉、水域，直至最终可以穿越到其他位面。大地旅者在所精通的地形中拥有显著的移动和战斗优势。</p>
+
+    <h3><a href="prestige-loremaster.html">博学士（Loremaster）</a></h3>
+    <p>博学士是知识的追求者和守护者，通过广泛的学术研究获得各种实用能力。他们拥有"秘诀"（Secrets）能力，可以从多种特殊能力中选择，如真实视觉、瞬间施法、巧手等。博学士非常适合以智力见长的施法者角色，让他们在知识检定中获得巨大优势。</p>
+
+    <h3><a href="prestige-mystic-theurge.html">秘术师（Mystic Theurge）</a></h3>
+    <p>秘术师是同时修习奥术和神术的双修施法者，能够同时提升两种施法者等级。这使得秘术师拥有极为广泛的法术列表，虽然最高法术环级较低，但法术多样性无与伦比。秘术师是构建"万能施法者"角色的经典选择。</p>
+
+    <h3><a href="prestige-shadowdancer.html">影舞者（Shadowdancer）</a></h3>
+    <p>影舞者是操纵幽影之力的神秘战士，在光明与黑暗的交界处起舞。他们拥有影之幻象（Shadow Illusion）、召唤幽影伙伴（Shadow Companion）、以及最终融入幽影界（Shadow Jump）的能力。影舞者在昏暗环境中战斗力倍增，是最具风格化的近战进阶之一。</p>
+
+    <h3><a href="prestige-thaumaturgist.html">咒法召唤师（Thaumaturgist）</a></h3>
+    <p>咒法召唤师是召唤术的终极大师，专注于强化召唤类法术和与异界生物建立联系。他们可以增强被召唤生物的属性，延长召唤持续时间，并最终通过"异界之门"（Gate）与强大的异界实体签订契约。咒法召唤师让神术施法者的召唤能力达到新的高度。</p>
+
+    <hr>
+    <p><em>本页内容基于《地下城主指南》（Dungeon Master's Guide）第六章，适用于 D&D 3.5e 版本。各进阶职业的完整规则（包括等级表、职业特性详细数值等）请参阅对应进阶职业的独立页面及原始规则书。</em></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

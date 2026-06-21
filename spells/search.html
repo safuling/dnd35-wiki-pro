@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高级法术搜索 — D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .search-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius:12px; padding:28px 32px; margin:20px 0; }
+  .search-hero h2 { color:#fff; margin:0 0 20px; font-size:1.4rem; }
+  .filter-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:12px; margin:16px 0; }
+  .filter-group { background:var(--bg-card); border:1px solid var(--border); border-radius:8px; padding:14px; }
+  .filter-group label { display:block; font-size:0.82rem; color:var(--text-muted); margin-bottom:6px; font-weight:600; }
+  .filter-group select, .filter-group input {
+    width:100%; padding:8px 10px; border-radius:6px; border:1px solid var(--border);
+    background:var(--bg-main); color:var(--text); font-size:0.9rem;
+  }
+  .filter-group input[type="text"] { box-sizing:border-box; }
+  .checkbox-group { display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:4px; }
+  .checkbox-group label { font-size:0.85rem; display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .checkbox-groups { display:grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap:8px; }
+  .btn-row { display:flex; gap:10px; margin:16px 0; flex-wrap:wrap; }
+  .btn-filter { padding:10px 24px; border-radius:8px; border:none; cursor:pointer; font-size:0.95rem; font-weight:600; transition:.2s; }
+  .btn-primary { background:var(--accent); color:#fff; }
+  .btn-primary:hover { opacity:0.9; transform:translateY(-1px); }
+  .btn-secondary { background:var(--bg-card); color:var(--text); border:1px solid var(--border); }
+  .btn-secondary:hover { border-color:var(--accent); }
+  .results-info { display:flex; justify-content:space-between; align-items:center; margin:16px 0 12px; }
+  .results-count { font-size:0.95rem; color:var(--text-muted); }
+  .results-count strong { color:var(--accent); }
+  .spell-table { width:100%; border-collapse:collapse; }
+  .spell-table th { background:var(--bg-card); color:var(--accent); padding:10px 12px; text-align:left; font-size:0.85rem; border-bottom:2px solid var(--border); cursor:pointer; user-select:none; }
+  .spell-table th:hover { background:var(--accent); color:#fff; }
+  .spell-table td { padding:9px 12px; border-bottom:1px solid var(--border); font-size:0.9rem; vertical-align:top; }
+  .spell-table tr:hover { background:var(--bg-card); cursor:pointer; }
+  .school-tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.78rem; border:1px solid; }
+  .class-tags { display:flex; gap:3px; flex-wrap:wrap; }
+  .class-tag { display:inline-block; padding:1px 6px; border-radius:6px; font-size:0.72rem; background:var(--bg-main); border:1px solid var(--border); }
+  .tag-wizard { color:#9b59b6; border-color:#9b59b6; }
+  .tag-sorcerer { color:#e74c3c; border-color:#e74c3c; }
+  .tag-cleric { color:#2ecc71; border-color:#2ecc71; }
+  .tag-druid { color:#27ae60; border-color:#27ae60; }
+  .tag-bard { color:#f39c12; border-color:#f39c12; }
+  .tag-paladin { color:#c0392b; border-color:#c0392b; }
+  .tag-ranger { color:#8e44ad; border-color:#8e44ad; }
+  .pagination { display:flex; gap:6px; justify-content:center; margin:20px 0; }
+  .page-btn { padding:6px 12px; border-radius:6px; border:1px solid var(--border); background:var(--bg-card); color:var(--text); cursor:pointer; font-size:0.85rem; }
+  .page-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .page-btn:hover:not(.active) { border-color:var(--accent); }
+  .no-results { text-align:center; padding:48px; color:var(--text-muted); }
+  .no-results-icon { font-size:3rem; margin-bottom:12px; }
+  .toggle-advanced { color:var(--accent); cursor:pointer; font-size:0.9rem; user-select:none; }
+  .toggle-advanced:hover { text-decoration:underline; }
+  .advanced-filters { display:none; }
+  .advanced-filters.show { display:block; }
+  .level-checkboxes { display:flex; gap:4px; flex-wrap:wrap; }
+  .level-checkboxes label { cursor:pointer; user-select:none; }
+  .level-cb { display:none; }
+  .level-cb + span {
+    display:inline-block; padding:4px 10px; border-radius:6px; border:1px solid var(--border);
+    font-size:0.82rem; transition:.2s; cursor:pointer;
+  }
+  .level-cb:checked + span { background:var(--accent); color:#fff; border-color:var(--accent); }
+  /* 领域选择样式 */
+  .btn-domain-toggle {
+    padding:6px 14px; border-radius:6px; border:1px solid var(--accent); background:transparent;
+    color:var(--accent); cursor:pointer; font-size:0.85rem; transition:.2s;
+  }
+  .btn-domain-toggle:hover { background:var(--accent); color:#fff; }
+  .btn-domain-quick {
+    padding:4px 10px; border-radius:6px; border:1px solid var(--border); background:transparent;
+    color:var(--text-muted); cursor:pointer; font-size:0.8rem; transition:.2s;
+  }
+  .btn-domain-quick:hover { border-color:var(--accent); color:var(--accent); }
+  .domain-groups { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:12px; margin-top:8px; }
+  .domain-group-card { background:var(--bg-main); border:1px solid var(--border); border-radius:8px; padding:10px 12px; }
+  .domain-group-title { font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:8px; text-transform:uppercase; letter-spacing:.5px; }
+  .domain-items { display:flex; flex-wrap:wrap; gap:5px; }
+  .domain-label { cursor:pointer; user-select:none; }
+  .domain-cb { display:none; }
+  .domain-cb + span {
+    display:inline-block; padding:3px 9px; border-radius:12px; border:1px solid var(--border);
+    font-size:0.78rem; transition:.2s; cursor:pointer; white-space:nowrap;
+  }
+  .domain-cb:checked + span { background:var(--accent); color:#fff; border-color:var(--accent); }
+  /* 表格行收藏/对比按钮 */
+  .row-action-btns { display:flex; gap:4px; opacity:0; transition:.15s; }
+  tr:hover .row-action-btns { opacity:1; }
+  .btn-fav-row, .btn-cmp-row {
+    padding:2px 6px; border-radius:4px; border:1px solid; cursor:pointer; font-size:0.8rem;
+    background:transparent; transition:.15s;
+  }
+  .btn-fav-row { border-color:#f39c12; color:#f39c12; }
+  .btn-fav-row.active { background:#f39c12; color:#fff; }
+  .btn-cmp-row { border-color:#3498db; color:#3498db; }
+  .btn-cmp-row.active { background:#3498db; color:#fff; }
+  /* 来源标签 */
+  .source-badge { display:inline-block; padding:1px 7px; border-radius:6px; font-size:0.72rem; margin-left:4px; }
+  .source-phb { background:#1a4a2e; color:#2ecc71; border:1px solid #2ecc71; }
+  .source-3r { background:#2a1a4a; color:#9b59b6; border:1px solid #9b59b6; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html" class="active">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="page-wrapper">
+  <!-- 左侧导航 -->
+  <nav class="sidebar">
+    <div class="nav-header">
+      <span class="nav-logo">⚔️</span>
+      <span class="nav-title">D&D 3.5e</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 首页</a></li>
+      <li><a href="../rules.html">📜 核心规则</a></li>
+      <li><a href="intro.html" class="active">✨ 法术大全</a></li>
+      <li><a href="../classes/intro.html">⚔️ 职业</a></li>
+      <li><a href="../races/intro.html">🧝 种族</a></li>
+      <li><a href="../feats/intro.html">🏆 专长</a></li>
+      <li><a href="../skills/intro.html">📊 技能</a></li>
+      <li><a href="../equipment/intro.html">🎒 装备</a></li>
+      <li><a href="../monsters/intro.html">👹 怪物</a></li>
+      <li><a href="../conflicts.html">⚠️ 规则冲突</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a> &gt; <a href="intro.html">法术大全</a> &gt; <span>高级搜索</span>
+    </div>
+
+    <div class="page-header">
+      <h1>🔍 高级法术搜索</h1>
+      <p class="page-subtitle">按职业、环级、学派、成分等多维度筛选 D&D 3.5e 全部法术</p>
+    </div>
+
+    <!-- 搜索区 -->
+    <div class="search-hero">
+      <h2>🔍 搜索条件</h2>
+      
+      <!-- 关键词搜索 -->
+      <div style="margin-bottom:16px;">
+        <input type="text" id="keywordInput" placeholder="输入法术名称（中/英文）或描述关键词…" 
+               style="width:100%;padding:14px 20px;border-radius:8px;border:2px solid transparent;background:var(--bg-card);color:var(--text);font-size:1.05rem;box-sizing:border-box;"
+               onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='transparent'">
+      </div>
+
+      <!-- 基础筛选行 -->
+      <div class="filter-grid">
+        <div class="filter-group">
+          <label>📊 环级</label>
+          <div class="level-checkboxes" id="levelCheckboxes">
+            <!-- JS填充 -->
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>🎓 学派</label>
+          <select id="schoolSelect">
+            <option value="">全部学派</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>⚡ 法术类型</label>
+          <select id="typeSelect">
+            <option value="">全部类型</option>
+            <option value="arcane">⚡ 仅奥术</option>
+            <option value="divine">🙏 仅神术</option>
+            <option value="both">⚡🙏 奥术+神术</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>🧙 职业</label>
+          <select id="classSelect">
+            <option value="">全部职业</option>
+          </select>
+        </div>
+        <div class="filter-group" style="grid-column:1/-1;">
+          <label>📜 领域筛选</label>
+          <div id="domainSection">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+              <button type="button" class="btn-domain-toggle" onclick="toggleDomainPanel()">▶ 展开领域选择（22个领域）</button>
+              <button type="button" class="btn-domain-quick" onclick="selectAllDomains()">全选</button>
+              <button type="button" class="btn-domain-quick" onclick="clearAllDomains()">清空</button>
+              <span id="domainSelectedCount" style="font-size:0.82rem;color:var(--accent);">未选择</span>
+            </div>
+            <div id="domainPanel" style="display:none;">
+              <div id="domainCheckboxes"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 高级筛选（可折叠） -->
+      <div style="margin-top:12px;">
+        <span class="toggle-advanced" onclick="toggleAdvanced()">▶ 高级筛选（成分、豁免、抗力…）</span>
+      </div>
+      <div class="advanced-filters" id="advancedFilters">
+        <div class="filter-grid" style="margin-top:12px;">
+          <div class="filter-group">
+            <label>🔤 成分（可多选）</label>
+            <div class="checkbox-group" id="componentCheckboxes">
+              <label><input type="checkbox" value="V" onchange="applyFilters()"> 言语(V)</label>
+              <label><input type="checkbox" value="S" onchange="applyFilters()"> 姿势(S)</label>
+              <label><input type="checkbox" value="M" onchange="applyFilters()"> 材料(M)</label>
+              <label><input type="checkbox" value="F" onchange="applyFilters()"> 法器(F)</label>
+              <label><input type="checkbox" value="DF" onchange="applyFilters()"> 信仰之器(DF)</label>
+              <label><input type="checkbox" value="XP" onchange="applyFilters()"> XP</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label>🛡️ 豁免检定</label>
+            <select id="savingThrowSelect" onchange="applyFilters()">
+              <option value="">不限</option>
+              <option value="无">无豁免</option>
+              <option value="强韧">强韧检定</option>
+              <option value="反射">反射检定</option>
+              <option value="意志">意志检定</option>
+              <option value="特殊">特殊/见描述</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>✋ 法术抗力</label>
+            <select id="spellResistSelect" onchange="applyFilters()">
+              <option value="">不限</option>
+              <option value="是">是（可被抵抗）</option>
+              <option value="否">否（不可抵抗）</option>
+              <option value="见描述">见描述</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>⏱️ 施法时间</label>
+            <select id="castingTimeSelect" onchange="applyFilters()">
+              <option value="">不限</option>
+              <option value="标准动作">标准动作</option>
+              <option value="整轮动作">整轮动作</option>
+              <option value="迅捷动作">迅捷动作</option>
+              <option value="自由动作">自由动作</option>
+              <option value="立即">立即</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- 按钮行 -->
+      <div class="btn-row">
+        <button class="btn-filter btn-primary" onclick="applyFilters()">🔍 搜索法术</button>
+        <button class="btn-filter btn-secondary" onclick="resetFilters()">🔄 重置条件</button>
+        <button class="btn-filter btn-secondary" id="btnFav" onclick="window.location.href='favorites.html'" style="border-color:#f39c12;color:#f39c12;">⭐ 我的收藏 <span id="favCountBadge"></span></button>
+        <button class="btn-filter btn-secondary" id="btnCompare" onclick="window.location.href='compare.html'" style="border-color:#3498db;color:#3498db;">🔀 法术对比</button>
+      </div>
+    </div>
+
+    <!-- 结果统计 -->
+    <div class="results-info">
+      <div class="results-count" id="resultsCount">请输入搜索条件…</div>
+      <div style="font-size:0.85rem;color:var(--text-muted);">
+        <label style="cursor:pointer;"><input type="checkbox" id="showClassTags" onchange="renderResults()"> 显示职业标签</label>
+      </div>
+    </div>
+
+    <!-- 结果表格 -->
+    <div id="resultsContainer"></div>
+
+    <!-- 分页 -->
+    <div class="pagination" id="pagination"></div>
+
+    <div class="footer">
+      <p>Dungeons & Dragons 3.5版 中文Wiki · 非官方粉丝制作 · 基于SRD（OGL协议）</p>
+    </div>
+  </main>
+</div>
+
+<!-- 法术详情弹窗 -->
+<div id="spellModal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<style>
+  .modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; align-items:center; }
+  .modal-overlay.active { display:flex; }
+  .modal-content { background:var(--bg-card); border-radius:12px; max-width:720px; width:92%; max-height:85vh; overflow-y:auto; padding:28px; position:relative; }
+  .modal-close { position:absolute; top:12px; right:16px; background:none; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; }
+  .modal-close:hover { color:var(--text); }
+  .spell-info-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px 20px; margin:16px 0; font-size:0.9rem; }
+  .spell-info-item { display:flex; gap:6px; }
+  .spell-info-label { color:var(--text-muted); min-width:80px; }
+  .spell-desc-box { background:var(--bg-main); border:1px solid var(--border); border-radius:8px; padding:16px; margin:16px 0; line-height:1.7; }
+  .school-badge { display:inline-block; padding:3px 12px; border-radius:12px; font-size:0.82rem; border:1px solid; margin-right:6px; }
+</style>
+
+<script src="../js/spells-data.js"></script>
+<script src="../js/spells-domains.js"></script>
+<script>
+// ========== 常量 ==========
+const CLASS_NAMES_ZH = {
+  wizard:'法师', sorcerer:'术士', cleric:'牧师', druid:'德鲁伊',
+  bard:'吟游诗人', paladin:'圣武士', ranger:'巡林客'
+};
+const SCHOOL_COLORS = {'咒法系':'#9b59b6','变化系':'#3498db','惑控系':'#e74c3c','死灵系':'#2c3e50','塑能系':'#e67e22','预言系':'#1abc9c','防护系':'#f1c40f','幻术系':'#e91e63','通用':'#95a5a6'};
+
+// ========== 状态 ==========
+let filteredSpells = [];
+let currentPage = 1;
+const PAGE_SIZE = 50;
+
+// ========== 初始化 ==========
+function init(){
+  // 环级复选框
+  let levelHtml = '';
+  for(let i=0;i<=9;i++){
+    levelHtml += `<label>
+      <input type="checkbox" class="level-cb" value="${i}" onchange="applyFilters()" id="lv${i}">
+      <span>${i===0?'0(戏法)':i+'环'}</span>
+    </label>`;
+  }
+  document.getElementById('levelCheckboxes').innerHTML = levelHtml;
+
+  // 学派下拉
+  const schools = [...new Set(SPELLS.map(s=>s.school))].sort();
+  document.getElementById('schoolSelect').innerHTML = 
+    '<option value="">全部学派</option>' + 
+    schools.map(sc=>`<option value="${sc}">${sc}</option>`).join('');
+
+  // 职业下拉
+  const classes = [...new Set(SPELLS.flatMap(s=> s.classes ? Object.keys(s.classes) : []))].sort();
+  document.getElementById('classSelect').innerHTML = 
+    '<option value="">全部职业</option>' + 
+    classes.map(c=>`<option value="${c}">${CLASS_NAMES_ZH[c]||c} (${c})</option>`).join('');
+
+  // 领域复选框（按分类分组）
+  if (typeof ALL_DOMAINS !== 'undefined') {
+    const DOMAIN_GROUPS = {
+      '⚡ 元素': ['气','土','火','水'],
+      '☯ 善恶/秩序': ['混乱','邪恶','善良','秩序'],
+      '🌿 自然': ['动物','植物','太阳'],
+      '⚔️ 战斗': ['毁灭','战争','力量','防护'],
+      '✨ 魔法/知识': ['魔法','知识'],
+      '💀 生死': ['死亡','治疗'],
+      '🌀 其他': ['幸运','旅行','诡术']
+    };
+    const DOMAIN_COLORS = {'气':'#87CEEB','动物':'#8BC34A','混乱':'#9C27B0','死亡':'#424242','毁灭':'#FF5722','土':'#795548','邪恶':'#E91E63','火':'#F44336','善良':'#4CAF50','治疗':'#00BCD4','知识':'#2196F3','秩序':'#3F51B5','幸运':'#FFC107','魔法':'#9C27B0','植物':'#4CAF50','防护':'#607D8B','力量':'#D32F2F','太阳':'#FF9800','旅行':'#00BCD4','诡术':'#E91E63','战争':'#B71C1C','水':'#2196F3'};
+    // 收集所有已分组的领域
+    const groupedDomains = new Set(Object.values(DOMAIN_GROUPS).flat());
+    // 把没有分组的放入"其他"
+    ALL_DOMAINS.forEach(d => {
+      if (!groupedDomains.has(d.zh)) DOMAIN_GROUPS['🌀 其他'].push(d.zh);
+    });
+    // 按领域建立 zh->en 映射
+    const domainEnMap = {};
+    ALL_DOMAINS.forEach(d => { domainEnMap[d.zh] = d.en; });
+
+    let domainHtml = '<div class="domain-groups">';
+    Object.entries(DOMAIN_GROUPS).forEach(([groupName, domains]) => {
+      // 过滤出存在于ALL_DOMAINS中的领域
+      const validDomains = domains.filter(d => domainEnMap[d]);
+      if (!validDomains.length) return;
+      domainHtml += `<div class="domain-group-card"><div class="domain-group-title">${groupName}</div><div class="domain-items">`;
+      validDomains.forEach(dZh => {
+        const color = DOMAIN_COLORS[dZh] || '#95a5a6';
+        domainHtml += `<label class="domain-label">
+          <input type="checkbox" class="domain-cb" value="${dZh}" onchange="applyFilters();updateDomainCount();">
+          <span style="border-color:${color};color:${color};">${dZh}</span>
+        </label>`;
+      });
+      domainHtml += '</div></div>';
+    });
+    domainHtml += '</div>';
+    document.getElementById('domainCheckboxes').innerHTML = domainHtml;
+  }
+
+  // 绑定回车搜索
+  document.getElementById('keywordInput').addEventListener('keydown', e=>{
+    if(e.key==='Enter') applyFilters();
+  });
+
+  // URL参数支持
+  const params = new URLSearchParams(location.search);
+  if(params.get('q')) document.getElementById('keywordInput').value = params.get('q');
+  if(params.get('class')) document.getElementById('classSelect').value = params.get('class');
+  if(params.get('level')){
+    const lv = params.get('level').split(',');
+    lv.forEach(l => { const cb = document.getElementById('lv'+l); if(cb) cb.checked=true; });
+  }
+  if(params.get('domain')){
+    const dm = params.get('domain').split(',');
+    dm.forEach(d => { 
+      const cb = document.querySelector(`#domainCheckboxes input[value="${d}"]`);
+      if(cb) cb.checked=true;
+    });
+  }
+  if(params.get('q') || params.get('class') || params.get('level') || params.get('domain')){
+    applyFilters();
+  }
+}
+
+// ========== 筛选逻辑 ==========
+function applyFilters(){
+  const q = (document.getElementById('keywordInput').value||'').toLowerCase();
+  const selectedLevels = [...document.querySelectorAll('.level-cb:checked')].map(cb=>parseInt(cb.value));
+  const school = document.getElementById('schoolSelect').value;
+  const type = document.getElementById('typeSelect').value;
+  const selectedClass = document.getElementById('classSelect').value;
+  const savingThrow = document.getElementById('savingThrowSelect').value;
+  const spellResist = document.getElementById('spellResistSelect').value;
+  const castingTime = document.getElementById('castingTimeSelect').value;
+  
+  // 成分筛选
+  const selectedComponents = [...document.querySelectorAll('#componentCheckboxes input:checked')].map(cb=>cb.value);
+  
+  // 领域筛选
+  const selectedDomains = typeof ALL_DOMAINS !== 'undefined' ? 
+    [...document.querySelectorAll('.domain-cb:checked')].map(cb=>cb.value) : [];
+  
+  filteredSpells = SPELLS.filter(s => {
+    // 关键词
+    if(q){
+      const matchName = s.nameZh.includes(q) || s.nameEn.toLowerCase().includes(q);
+      const matchDesc = (s.desc||'').toLowerCase().includes(q);
+      if(!matchName && !matchDesc) return false;
+    }
+    // 环级
+    if(selectedLevels.length > 0 && !selectedLevels.includes(s.level)) return false;
+    // 学派
+    if(school && s.school !== school) return false;
+    // 类型
+    if(type === 'arcane' && !s.arcane) return false;
+    if(type === 'divine' && !s.divine) return false;
+    if(type === 'both' && !(s.arcane && s.divine)) return false;
+    // 职业
+    if(selectedClass){
+      if(!s.classes || s.classes[selectedClass] === undefined) return false;
+    }
+    // 领域筛选
+    if(selectedDomains.length > 0){
+      const sDomains = (typeof SPELL_DOMAINS !== 'undefined' && SPELL_DOMAINS[s.id]) ? SPELL_DOMAINS[s.id] : [];
+      if(!selectedDomains.some(d => sDomains.includes(d))) return false;
+    }
+    // 豁免检定
+    if(savingThrow){
+      if(savingThrow === '无' && s.savingThrow !== '无') return false;
+      if(savingThrow === '强韧' && !s.savingThrow.includes('强韧')) return false;
+      if(savingThrow === '反射' && !s.savingThrow.includes('反射')) return false;
+      if(savingThrow === '意志' && !s.savingThrow.includes('意志')) return false;
+      if(savingThrow === '特殊' && !s.savingThrow.includes('描述') && s.savingThrow !== '特殊') return false;
+    }
+    // 法术抗力
+    if(spellResist){
+      if(spellResist === '是' && s.spellResist !== '是') return false;
+      if(spellResist === '否' && s.spellResist !== '否') return false;
+      if(spellResist === '见描述' && !s.spellResist.includes('描述')) return false;
+    }
+    // 施法时间
+    if(castingTime && s.castingTime !== castingTime) return false;
+    // 成分
+    if(selectedComponents.length > 0){
+      const comps = s.components || '';
+      if(!selectedComponents.some(c => comps.includes(c))) return false;
+    }
+    return true;
+  });
+
+  currentPage = 1;
+  renderResults();
+  updateURL();
+}
+
+// ========== 渲染结果 ==========
+function renderResults(){
+  const container = document.getElementById('resultsContainer');
+  const countEl = document.getElementById('resultsCount');
+  const showClassTags = document.getElementById('showClassTags').checked;
+
+  countEl.innerHTML = `找到 <strong>${filteredSpells.length}</strong> 个匹配的法术`;
+
+  if(filteredSpells.length === 0){
+    container.innerHTML = `<div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>未找到匹配的法术，请尝试调整搜索条件。</p>
+    </div>`;
+    document.getElementById('pagination').innerHTML = '';
+    return;
+  }
+
+  // 分页
+  const totalPages = Math.ceil(filteredSpells.length / PAGE_SIZE);
+  const start = (currentPage-1) * PAGE_SIZE;
+  const pageSpells = filteredSpells.slice(start, start + PAGE_SIZE);
+
+  // 表格
+  let html = `<table class="spell-table">
+    <thead><tr>
+      <th onclick="sortBy('nameZh')">法术名称 ↕</th>
+      <th onclick="sortBy('level')">环级 ↕</th>
+      <th onclick="sortBy('school')">学派 ↕</th>
+      <th>成分</th>
+      <th>距离</th>
+      <th>持续时间</th>
+      ${showClassTags ? '<th>职业</th>' : ''}
+      ${typeof SPELL_DOMAINS !== 'undefined' ? '<th>领域</th>' : ''}
+      <th style="width:60px;">操作</th>
+    </tr></thead><tbody>`;
+
+  pageSpells.forEach(s => {
+    const scColor = SCHOOL_COLORS[s.school] || '#95a5a6';
+    let classTagsHtml = '';
+    if(showClassTags && s.classes){
+      classTagsHtml = '<div class="class-tags">' +
+        Object.entries(s.classes).map(([c,lv]) => 
+          `<span class="class-tag tag-${c}" title="${CLASS_NAMES_ZH[c]||c}">${CLASS_NAMES_ZH[c]||c} ${lv}</span>`
+        ).join('') + '</div>';
+    }
+    const isFav = isFavorite(s.id);
+    const isInCmp = isInCompare(s.id);
+    const sourceBadge = s.source === 'PHB' 
+      ? '<span class="source-badge source-phb">PHB</span>' 
+      : (s.source === '3R' ? '<span class="source-badge source-3r">3R</span>' : '');
+    html += `<tr>
+      <td onclick="openSpell('${s.id}')" style="cursor:pointer;">
+        <strong style="color:var(--accent);">${s.nameZh}</strong>${sourceBadge}<br>
+        <span style="font-size:0.8rem;color:var(--text-muted);">${s.nameEn}</span>
+      </td>
+      <td onclick="openSpell('${s.id}')" style="cursor:pointer;">${s.level===0?'戏法':s.level+'环'}</td>
+      <td onclick="openSpell('${s.id}')" style="cursor:pointer;"><span class="school-tag" style="color:${scColor};border-color:${scColor};">${s.school}</span></td>
+      <td onclick="openSpell('${s.id}')" style="cursor:pointer;">${s.components}</td>
+      <td onclick="openSpell('${s.id}')" style="cursor:pointer;">${s.range}</td>
+      <td onclick="openSpell('${s.id}')" style="cursor:pointer;">${s.duration}</td>
+      ${showClassTags ? `<td onclick="openSpell('${s.id}')" style="cursor:pointer;">${classTagsHtml}</td>` : ''}
+      ${typeof SPELL_DOMAINS !== 'undefined' ? `<td onclick="openSpell('${s.id}')" style="cursor:pointer;">${getDomainTags(s.id)}</td>` : ''}
+      <td><div class="row-action-btns">
+        <button class="btn-fav-row ${isFav?'active':''}" onclick="toggleFavoriteRow('${s.id}',this)" title="${isFav?'取消收藏':'收藏'}">${isFav?'★':'☆'}</button>
+        <button class="btn-cmp-row ${isInCmp?'active':''}" onclick="toggleCompareRow('${s.id}',this)" title="${isInCmp?'从对比移除':'加入对比'}">⚖</button>
+      </div></td>
+    </tr>`;
+  });
+
+  html += '</tbody></table>';
+  container.innerHTML = html;
+
+  // 分页控件
+  renderPagination(totalPages);
+}
+
+// ========== 分页 ==========
+function renderPagination(totalPages){
+  if(totalPages <= 1){ document.getElementById('pagination').innerHTML=''; return; }
+  let html = '';
+  // 上一页
+  if(currentPage > 1) html += `<button class="page-btn" onclick="goPage(${currentPage-1})">‹ 上一页</button>`;
+  // 页码
+  const range = getPageRange(currentPage, totalPages);
+  range.forEach(p => {
+    if(p === '...') html += `<span class="page-btn" style="cursor:default;">…</span>`;
+    else html += `<button class="page-btn ${p===currentPage?'active':''}" onclick="goPage(${p})">${p}</button>`;
+  });
+  // 下一页
+  if(currentPage < totalPages) html += `<button class="page-btn" onclick="goPage(${currentPage+1})">下一页 ›</button>`;
+  document.getElementById('pagination').innerHTML = html;
+}
+
+function getPageRange(current, total){
+  if(total <= 7) return Array.from({length:total},(_,i)=>i+1);
+  const pages = [];
+  if(current <= 4){ for(let i=1;i<=5;i++) pages.push(i); pages.push('...',total); }
+  else if(current >= total-3){ pages.push(1,'...'); for(let i=total-4;i<=total;i++) pages.push(i); }
+  else { pages.push(1,'...',current-1,current,current+1,'...',total); }
+  return pages;
+}
+
+function goPage(p){ currentPage=p; renderResults(); window.scrollTo({top:document.getElementById('resultsContainer').offsetTop-80,behavior:'smooth'}); }
+
+// ========== 排序 ==========
+let sortField = null;
+let sortAsc = true;
+function sortBy(field){
+  if(sortField === field) sortAsc = !sortAsc;
+  else { sortField = field; sortAsc = true; }
+  filteredSpells.sort((a,b)=>{
+    let va = a[field]||'', vb = b[field]||'';
+    if(typeof va === 'string') va = va.toLowerCase();
+    if(typeof vb === 'string') vb = vb.toLowerCase();
+    if(va < vb) return sortAsc ? -1 : 1;
+    if(va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+  currentPage = 1;
+  renderResults();
+}
+
+// ========= 辅助函数 =========
+function getDomainTags(spellId){
+  if (typeof SPELL_DOMAINS === 'undefined' || !SPELL_DOMAINS[spellId]) return '';
+  const domains = SPELL_DOMAINS[spellId];
+  const DOMAIN_COLORS = {'气':'#87CEEB','动物':'#8BC34A','混乱':'#9C27B0','死亡':'#424242','毁灭':'#FF5722','土':'#795548','邪恶':'#E91E63','火':'#F44336','善良':'#4CAF50','治疗':'#00BCD4','知识':'#2196F3','秩序':'#3F51B5','幸运':'#FFC107','魔法':'#9C27B0','植物':'#4CAF50','防护':'#607D8B','力量':'#D32F2F','太阳':'#FF9800','旅行':'#00BCD4','诡术':'#E91E63','战争':'#B71C1C','水':'#2196F3'};
+  return '<span style="display:inline-flex;gap:3px;flex-wrap:wrap;">' +
+    domains.map(d => `<span style="padding:1px 5px;border-radius:4px;font-size:0.72rem;border:1px solid ${DOMAIN_COLORS[d]||'#999'};color:${DOMAIN_COLORS[d]||'#999'};">${d}</span>`).join('') +
+    '</span>';
+}
+
+// ========= 弹窗 =========
+function openSpell(id){
+  const s = SPELLS.find(x=>x.id===id);
+  if(!s) return;
+  const scColor = SCHOOL_COLORS[s.school] || '#95a5a6';
+  const classTags = s.classes ? Object.entries(s.classes).map(([c,lv])=>`${CLASS_NAMES_ZH[c]||c}(${lv}环)`).join('、') : '无';
+  document.getElementById('modalBody').innerHTML = `
+    <h2 style="margin-bottom:4px;">${s.nameZh} <span style="font-weight:400;font-size:1rem;color:var(--text-muted);">${s.nameEn}</span></h2>
+    <div>
+      <span class="school-badge" style="color:${scColor};border-color:${scColor};">${s.school}</span>
+      ${s.descriptor ? `<span class="school-badge" style="color:#e67e22;border-color:#e67e22;">${s.descriptor}</span>` : ''}
+    </div>
+    <div class="spell-info-grid">
+      <div class="spell-info-item"><span class="spell-info-label">环级</span><span>${s.level===0?'戏法/祷言':s.level+'环'}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">学派</span><span>${s.school}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">成分</span><span>${s.components}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">施法时间</span><span>${s.castingTime}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">距离</span><span>${s.range}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">目标/范围</span><span>${s.target}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">持续时间</span><span>${s.duration}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">豁免检定</span><span>${s.savingThrow}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">法术抗力</span><span>${s.spellResist}</span></div>
+      <div class="spell-info-item"><span class="spell-info-label">可用职业</span><span>${classTags}</span></div>
+      ${typeof SPELL_DOMAINS !== 'undefined' && SPELL_DOMAINS[s.id] ? `<div class="spell-info-item"><span class="spell-info-label">领域</span><span>${getDomainTags(s.id)}</span></div>` : ''}
+    </div>
+    <div class="spell-desc-box">${formatDesc(s.desc)}</div>
+    ${s.material ? `<p style="margin:8px 0;"><strong>🧪 材料成分：</strong>${s.material}</p>` : ''}
+    ${s.focus ? `<p style="margin:8px 0;"><strong>🔮 法器：</strong>${s.focus}</p>` : ''}
+    ${s.xpCost ? `<p style="margin:8px 0;"><strong>💀 XP代价：</strong>${s.xpCost}</p>` : ''}
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      ${s.arcane ? `<span class="source-tag tag-srd" style="background:#e74c3c22;color:#e74c3c;border-color:#e74c3c;padding:3px 10px;border-radius:8px;border:1px solid;font-size:0.85rem;">⚡ 奥术</span>` : ''}
+      ${s.divine ? `<span class="source-tag tag-srd" style="background:#2ecc7122;color:#2ecc71;border-color:#2ecc71;padding:3px 10px;border-radius:8px;border:1px solid;font-size:0.85rem;">🙏 神术</span>` : ''}
+      ${s.source === 'PHB' ? '<span class="source-badge source-phb">PHB 核心</span>' : (s.source === '3R' ? '<span class="source-badge source-3r">3R 拓展</span>' : '')}
+      <button id="modalFavBtn" data-id="${s.id}" onclick="toggleModalFav('${s.id}')"
+        style="padding:4px 14px;border-radius:8px;border:1px solid #f39c12;background:${isFavorite(s.id)?'#f39c12':'transparent'};color:${isFavorite(s.id)?'#fff':'#f39c12'};cursor:pointer;font-size:0.85rem;"
+        class="${isFavorite(s.id)?'active':''}">${isFavorite(s.id)?'★ 已收藏':'☆ 收藏'}</button>
+      <button onclick="addToCompareFromModal('${s.id}')"
+        style="padding:4px 14px;border-radius:8px;border:1px solid #3498db;background:${isInCompare(s.id)?'#3498db':'transparent'};color:${isInCompare(s.id)?'#fff':'#3498db'};cursor:pointer;font-size:0.85rem;"
+        >${isInCompare(s.id)?'⚖✓ 已在对比':'⚖ 加入对比'}</button>
+    </div>
+  `;
+  document.getElementById('spellModal').classList.add('active');
+}
+function closeModal(evt){ if(evt && evt.target !== document.getElementById('spellModal')) return; document.getElementById('spellModal').classList.remove('active'); }
+function toggleModalFav(id){
+  const isNowFav = toggleFavorite(id);
+  const btn = document.getElementById('modalFavBtn');
+  if(btn){
+    btn.textContent = isNowFav ? '★ 已收藏' : '☆ 收藏';
+    btn.style.background = isNowFav ? '#f39c12' : 'transparent';
+    btn.style.color = isNowFav ? '#fff' : '#f39c12';
+  }
+}
+function addToCompareFromModal(id){
+  let list = getCompareList();
+  if(list.includes(id)){ list=list.filter(x=>x!==id); }
+  else{ if(list.length>=MAX_COMPARE){ alert(`最多同时对比 ${MAX_COMPARE} 个法术`); return; } list.push(id); }
+  saveCompareList(list);
+  updateCompareBadge();
+  // 重新打开弹窗以更新按钮状态
+  openSpell(id);
+}
+function formatDesc(desc){ return (desc||'').replace(/\n/g,'<br>'); }
+
+// ========== 其他 ==========
+function toggleAdvanced(){
+  const el = document.getElementById('advancedFilters');
+  const isShow = el.classList.toggle('show');
+  document.querySelector('.toggle-advanced').textContent = isShow ? '▼ 高级筛选（成分、豁免、抗力…）' : '▶ 高级筛选（成分、豁免、抗力…）';
+}
+
+function toggleDomainPanel(){
+  const panel = document.getElementById('domainPanel');
+  const btn = document.querySelector('.btn-domain-toggle');
+  const isOpen = panel.style.display !== 'none';
+  panel.style.display = isOpen ? 'none' : 'block';
+  const count = document.querySelectorAll('.domain-cb').length;
+  btn.textContent = isOpen ? `▶ 展开领域选择（${count}个领域）` : '▼ 收起领域选择';
+}
+
+function selectAllDomains(){
+  document.querySelectorAll('.domain-cb').forEach(cb=>{ cb.checked=true; });
+  updateDomainCount(); applyFilters();
+}
+function clearAllDomains(){
+  document.querySelectorAll('.domain-cb').forEach(cb=>{ cb.checked=false; });
+  updateDomainCount(); applyFilters();
+}
+function updateDomainCount(){
+  const selected = document.querySelectorAll('.domain-cb:checked').length;
+  const total = document.querySelectorAll('.domain-cb').length;
+  const el = document.getElementById('domainSelectedCount');
+  el.textContent = selected > 0 ? `已选 ${selected}/${total} 个领域` : '未选择';
+}
+
+// ========== 收藏功能 ==========
+function getFavorites(){ try{ return JSON.parse(localStorage.getItem('dnd35_favorites')||'[]'); }catch{ return []; } }
+function saveFavorites(favs){ localStorage.setItem('dnd35_favorites', JSON.stringify(favs)); }
+function isFavorite(id){ return getFavorites().includes(id); }
+function toggleFavorite(id){
+  let favs = getFavorites();
+  if(favs.includes(id)) favs = favs.filter(f=>f!==id);
+  else favs.push(id);
+  saveFavorites(favs);
+  updateFavBadge();
+  return favs.includes(id);
+}
+function toggleFavoriteRow(id, btn){
+  const isNowFav = toggleFavorite(id);
+  btn.textContent = isNowFav ? '★' : '☆';
+  btn.classList.toggle('active', isNowFav);
+  // 同步更新弹窗内的按钮（如果开着）
+  const modalFavBtn = document.getElementById('modalFavBtn');
+  if(modalFavBtn && modalFavBtn.dataset.id === id){
+    modalFavBtn.textContent = isNowFav ? '★ 取消收藏' : '☆ 收藏法术';
+    modalFavBtn.classList.toggle('active', isNowFav);
+  }
+}
+function updateFavBadge(){
+  const count = getFavorites().length;
+  const badge = document.getElementById('favCountBadge');
+  if(badge) badge.textContent = count > 0 ? `(${count})` : '';
+}
+
+// ========== 对比功能 ==========
+const MAX_COMPARE = 4;
+function getCompareList(){ try{ return JSON.parse(sessionStorage.getItem('dnd35_compare')||'[]'); }catch{ return []; } }
+function saveCompareList(list){ sessionStorage.setItem('dnd35_compare', JSON.stringify(list)); }
+function isInCompare(id){ return getCompareList().includes(id); }
+function toggleCompareRow(id, btn){
+  let list = getCompareList();
+  if(list.includes(id)){
+    list = list.filter(x=>x!==id);
+    btn.textContent='⚖'; btn.classList.remove('active'); btn.title='加入对比';
+  } else {
+    if(list.length >= MAX_COMPARE){ alert(`最多同时对比 ${MAX_COMPARE} 个法术`); return; }
+    list.push(id);
+    btn.textContent='⚖✓'; btn.classList.add('active'); btn.title='从对比移除';
+  }
+  saveCompareList(list);
+  updateCompareBadge();
+}
+function updateCompareBadge(){
+  const count = getCompareList().length;
+  const btn = document.getElementById('btnCompare');
+  if(btn) btn.textContent = `🔀 法术对比${count>0?' ('+count+')':''}`;
+}
+
+function resetFilters(){
+  document.getElementById('keywordInput').value = '';
+  document.querySelectorAll('.level-cb').forEach(cb=>cb.checked=false);
+  document.getElementById('schoolSelect').value = '';
+  document.getElementById('typeSelect').value = '';
+  document.getElementById('classSelect').value = '';
+  document.getElementById('savingThrowSelect').value = '';
+  document.getElementById('spellResistSelect').value = '';
+  document.getElementById('castingTimeSelect').value = '';
+  document.querySelectorAll('#componentCheckboxes input').forEach(cb=>cb.checked=false);
+  document.querySelectorAll('.domain-cb').forEach(cb=>cb.checked=false);
+  updateDomainCount();
+  filteredSpells = [];
+  currentPage = 1;
+  document.getElementById('resultsContainer').innerHTML = '';
+  document.getElementById('resultsCount').innerHTML = '请输入搜索条件…';
+  document.getElementById('pagination').innerHTML = '';
+  history.replaceState(null, '', location.pathname);
+}
+
+function updateURL(){
+  const params = new URLSearchParams();
+  const q = document.getElementById('keywordInput').value.trim();
+  if(q) params.set('q', q);
+  const lv = [...document.querySelectorAll('.level-cb:checked')].map(cb=>cb.value).join(',');
+  if(lv) params.set('level', lv);
+  const cls = document.getElementById('classSelect').value;
+  if(cls) params.set('class', cls);
+  const newURL = params.toString() ? '?'+params.toString() : '';
+  history.replaceState(null, '', location.pathname + newURL);
+}
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+init();
+updateFavBadge();
+updateCompareBadge();
+</script>
+</body>
+</html>

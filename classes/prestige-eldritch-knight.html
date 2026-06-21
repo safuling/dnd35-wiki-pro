@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奥法骑士 Eldritch Knight - 进阶职业 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html" class="active">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心职业</div>
+      <a href="intro.html">总览</a>
+      <a href="barbarian.html">野蛮人</a>
+      <a href="bard.html">吟游诗人</a>
+      <a href="cleric.html">牧师</a>
+      <a href="druid.html">德鲁伊</a>
+      <a href="fighter.html">战士</a>
+      <a href="monk.html">武僧</a>
+      <a href="paladin.html">圣武士</a>
+      <a href="ranger.html">游侠</a>
+      <a href="rogue.html">盗贼</a>
+      <a href="sorcerer.html">术士</a>
+      <a href="wizard.html">法师</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">进阶职业</div>
+      <a href="prestige-intro.html">进阶职业总览</a>
+      <a href="prestige-archmage.html">大法师</a>
+      <a href="prestige-assassin.html">刺客</a>
+      <a href="prestige-arcane-archer.html">魔射手</a>
+      <a href="prestige-arcane-trickster.html">诡术师</a>
+      <a href="prestige-blackguard.html">暗黑卫士</a>
+      <a href="prestige-dragon-disciple.html">龙脉术士</a>
+      <a href="prestige-duelist.html">决斗家</a>
+      <a href="prestige-dwarven-defender.html">矮人防御者</a>
+      <a href="prestige-eldritch-knight.html">奥法骑士</a>
+      <a href="prestige-hierophant.html">大祭司</a>
+      <a href="prestige-horizon-walker.html">大地旅者</a>
+      <a href="prestige-loremaster.html">博学士</a>
+      <a href="prestige-mystic-theurge.html">秘术师</a>
+      <a href="prestige-shadowdancer.html">影舞者</a>
+      <a href="prestige-thaumaturgist.html">咒法召唤师</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>奥法骑士 <span style="font-size:0.6em;color:#888;">Eldritch Knight</span></h1>
+    <p style="color:#666;font-size:0.95em;">出自《城主指南》(DMG) p.192</p>
+
+    <!-- 信息框 -->
+    <div class="infobox" style="float:right;width:320px;margin:0 0 1em 1.5em;border:1px solid #b8860b;border-radius:6px;background:#fdf6e3;">
+      <div style="background:#8b6914;color:#fff;padding:10px;text-align:center;font-size:1.2em;font-weight:bold;">奥法骑士 Eldritch Knight</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">生命骰</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">d10</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">等级数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">10</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">阵营限制</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">无</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">技能点数</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">2 + 智力调整值</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">本职技能</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">专注、跳跃、知识（奥术）、聆听、骑术、侦察、游泳</td></tr>
+        <tr style="background:#f5f0e0;"><td colspan="2" style="padding:8px 10px;font-weight:bold;color:#8b6914;">先决条件</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">武器熟练</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">所有军用武器</td></tr>
+        <tr><td style="padding:6px 10px;border-bottom:1px solid #ddd;font-weight:bold;">施法能力</td><td style="padding:6px 10px;border-bottom:1px solid #ddd;">可施展1级奥术</td></tr>
+        <tr><td style="padding:6px 10px;font-weight:bold;">基本攻击加值</td><td style="padding:6px 10px;">+3</td></tr>
+      </table>
+    </div>
+
+    <h2>职业概述</h2>
+    <p>奥法骑士是兼具武技与奥术的精英战士。他们在战场上既能挥舞利剑冲锋陷阵，又能释放强大的奥术魔法打击敌人。这些多才多艺的战士往往出身于骑士团或魔法学院，将剑术与法术融为一体，成为令人敬畏的战斗力量。</p>
+    <p>奥法骑士的核心优势在于其卓越的升级效率——每级都同时推进攻击加值和施法等级（第1级除外），是D&D 3.5e中最为高效的"魔武双修"进阶职业。对于希望在近战中施展法术或在施法间隙拔剑迎敌的角色而言，奥法骑士几乎是完美的选择。</p>
+
+    <h2>职业技能表</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.9em;">
+      <thead>
+        <tr style="background:#8b6914;color:#fff;">
+          <th style="padding:8px;border:1px solid #ddd;">等级</th>
+          <th style="padding:8px;border:1px solid #ddd;">基本攻击加值</th>
+          <th style="padding:8px;border:1px solid #ddd;">强韧豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">反射豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">意志豁免</th>
+          <th style="padding:8px;border:1px solid #ddd;">特殊能力</th>
+          <th style="padding:8px;border:1px solid #ddd;">施法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">1级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;">奖励专长</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">—</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">2级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+0</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">3级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">4级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">奖励专长</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">5级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+4</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">6级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">7级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+7</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+5</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">奖励专长</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">8级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+8</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+2</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+        <tr style="background:#fdf6e3;">
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">9级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+9</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+6</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">—</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+        <tr>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">10级</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+10</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+7</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+3</td>
+          <td style="padding:6px;border:1px solid #ddd;">奖励专长</td>
+          <td style="padding:6px;border:1px solid #ddd;text-align:center;">+1 现有奥术施法等级</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>职业特性详解</h2>
+
+    <h3>武器与防具熟练</h3>
+    <p>奥法骑士不会获得额外的武器或防具熟练。但由于先决条件要求掌握所有军用武器，大多数角色在进入此职业前已经具备充分的武器熟练。</p>
+
+    <h3>奖励专长 (Bonus Feat)</h3>
+    <p>在第1、4、7、10级，奥法骑士可以获得一个奖励专长。此专长必须从战士奖励专长列表中选择，且角色必须满足该专长的所有先决条件。</p>
+    <p>可用的战士奖励专长包括但不限于：</p>
+    <ul>
+      <li><strong>战斗类：</strong>猛力攻击、顺势斩、大顺势斩、旋风攻击、精通卸除武器、精通破甲、武器专攻、武器专精等</li>
+      <li><strong>防御类：</strong>闪避、灵活移动、跳跃攻击、精通反射闪避等</li>
+      <li><strong>远程类：</strong>远程射击、精准射击、快速射击、多重射击等</li>
+      <li><strong>其他：</strong>盲斗、战斗反射、精通先攻等</li>
+    </ul>
+
+    <h3>施法 (Spellcasting)</h3>
+    <p>从第2级开始，奥法骑士每升一级，其现有奥术施法职业的施法者等级和每日法术数量都会增加一级，就好像他在原有的奥术施法职业上提升了一级。这意味着：</p>
+    <ul>
+      <li>每日法术数量和可知法术数量增加</li>
+      <li>施法者等级增加（影响法术的伤害、持续时间和穿透法术抗力的能力）</li>
+      <li>可以施展更高环位的法术（如果达到相应等级）</li>
+    </ul>
+    <p><strong>第1级不获得施法进展。</strong>这是进入奥法骑士的唯一"代价"——损失1级施法进展，但换取了d10生命骰、满额攻击加值和4个奖励专长。</p>
+    <p>如果角色拥有多个奥术施法职业，则必须在获得奥法骑士施法进展时选择将其加到哪一个职业上。一旦选定，不可更改。</p>
+
+    <h2>角色构建建议</h2>
+
+    <h3>经典构建路线</h3>
+    <p><strong>法师1/战士4/奥法骑士10</strong>：这是最经典的奥法骑士路线。前5级满足所有先决条件（军用武器熟练、1级奥术、BAB +3），之后进入奥法骑士。在角色等级15时完成全部10级，最终拥有相当于14级法师的施法能力和+14的基本攻击加值（1+4+10-1=14，实际为法师0+战士4+奥法骑士10=14）。</p>
+
+    <p><strong>术士1/战士4/奥法骑士10</strong>：与法师类似，但使用术士的自发施法系统。术士更适合奥法骑士的战斗风格，因为可以重复施放关键战斗法术如<em>护盾术</em>、<em>镜像术</em>等。</p>
+
+    <p><strong>战士1/法师4/奥法骑士10</strong>：如果更看重法术进展，可以先多升法师等级。BAB在角色等级5时为+4（战士+1，法师+3），满足先决条件，之后进入奥法骑士时施法损失更小。</p>
+
+    <h3>后续发展</h3>
+    <p>完成10级奥法骑士后，可以继续提升原有施法职业等级。角色等级20时（如法师1/战士4/奥法骑士10/法师5），施法等级为19级，BAB为+17，是一个极其全面的战斗施法者。</p>
+
+    <h3>推荐专长</h3>
+    <ul>
+      <li><strong>战斗施法 (Combat Casting)：</strong>在防御性施法时获得+4加值，对于近战施法者至关重要</li>
+      <li><strong>精通先攻 (Improved Initiative)：</strong>先手优势让你可以先施放增益法术再进入近战</li>
+      <li><strong>武器专攻/专精：</strong>提升近战伤害输出</li>
+      <li><strong>猛力攻击：</strong>利用高BAB换取额外伤害</li>
+    </ul>
+
+    <h3>推荐法术</h3>
+    <ul>
+      <li><strong>护盾术 (Shield)：</strong>+4盾牌加值AC，且不影响持武器的手</li>
+      <li><strong>镜像术 (Mirror Image)：</strong>创造残像提升生存能力</li>
+      <li><strong>加速术 (Haste)：</strong>额外攻击、+1攻击和AC、额外移动</li>
+      <li><strong>石肤术 (Stoneskin)：</strong>吸收物理伤害</li>
+      <li><strong>变形术系列：</strong>变身获得近战优势</li>
+      <li><strong>电爪 (Shocking Grasp)：</strong>近战接触攻击，配合武器使用</li>
+    </ul>
+
+    <h2>角色扮演建议</h2>
+    <p>奥法骑士通常出身于将武技与魔法并重的组织——可能是某个骑士团的精英成员，也可能是魔法学院的战斗教头。他们骄傲于自己的双重传承，既鄙视纯施法者的"书呆子气"，也看不起纯战士的"有勇无谋"。</p>
+    <p>一个典型的奥法骑士可能在战场上先用火球术轰击敌军阵列，然后拔剑冲锋，在近战中施展电爪给予致命一击。他们往往是冒险队伍中的多面手，能在关键时刻填补任何角色的空缺。</p>
+    <p><strong>性格特征建议：</strong>自信而不傲慢、纪律严明、重视荣誉、对知识和武力同样尊崇。许多奥法骑士会佩戴象征双重身份的徽记——例如一把被闪电环绕的剑。</p>
+
+    <div style="margin-top:2em;padding:1em;background:#f5f0e0;border-left:4px solid #8b6914;border-radius:4px;">
+      <strong>编者注：</strong>奥法骑士是D&D 3.5e中最具效率的"魔武双修"进阶职业之一。它的设计简洁但极其有效——满额BAB进展加上近乎满额的施法进展，使得奥法骑士在战斗中几乎没有明显短板。对于想要一个"什么都能做一点"角色的玩家来说，这是最佳选择之一。
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

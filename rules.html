@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>核心规则 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .rule-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-left: 4px solid var(--accent-gold);
+  }
+  .rule-card h3 { margin-top:0; color: var(--text-heading); }
+  .rule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .rule-nav-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 18px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .rule-nav-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+  .rule-nav-card .icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+  .rule-nav-card h3 { margin: 0 0 6px; color: var(--text-heading); font-size: 16px; }
+  .rule-nav-card p { font-size: 13px; color: var(--text-subtle); margin: 0; }
+  .rule-nav-card a { text-decoration: none; color: inherit; display: block; }
+  .highlight-box {
+    background: #fef9e7;
+    border: 1px solid #f0d060;
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .ability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .ability-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 12px;
+    text-align: center;
+  }
+  .ability-item .ab-name { font-weight: 700; color: var(--accent-gold); font-size: 15px; }
+  .ability-item .ab-en { font-size: 11px; color: var(--text-subtle); }
+  .ability-item p { font-size: 13px; margin: 6px 0 0; }
+  .formula-box {
+    background: #e8f4fd;
+    border: 1px solid #85c1e9;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    margin: 12px 0;
+  }
+  table.core-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  table.core-table th { background: var(--bg-table-head); padding: 8px 12px; text-align: center; }
+  table.core-table td { border: 1px solid var(--border-light); padding: 7px 12px; text-align: center; }
+  table.core-table tr:nth-child(even) { background: var(--bg-table-stripe); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="rules-adventure.html">🗺️ 冒险</a>
+        <a href="rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="rules-combat.html">⚔️ 战斗详述</a>
+        <a href="rules-deities.html">🙏 神祇与阵营</a>
+        <a href="rules-companions.html">🐾 伙伴系统</a>
+        <a href="rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="equipment/magic-items.html">💎 魔法物品</a>
+        <a href="domains/intro.html">✨ 领域系统</a>
+        <a href="dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">规则分类</div>
+      <a href="#basics">基础概念</a>
+      <a href="#abilities">属性值</a>
+      <a href="#combat">战斗规则</a>
+      <a href="#magic">魔法规则</a>
+      <a href="#skills-rules">技能规则</a>
+      <a href="#saving-throws">豁免检定</a>
+      <a href="#conditions">状态效果</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">详细规则</div>
+      <a href="conflicts.html">⚠️ 规则冲突</a>
+      <a href="rules-combat.html">⚔️ 战斗规则</a>
+      <a href="rules-adventure.html">🗺️ 冒险</a>
+      <a href="rules-planes.html">🌌 位面</a>
+      <a href="rules-companions.html">🐾 伙伴</a>
+      <a href="rules-deities.html">⛪ 神祇与阵营</a>
+      <a href="rules-variants.html">🔧 规则变体</a>
+      <a href="skills/intro.html">技能系统</a>
+      <a href="feats/intro.html">专长系统</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">快速工具</div>
+      <a href="global-search.html">🔍 法术搜索</a>
+      <a href="spells/favorites.html">⭐ 我的收藏</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>📖 D&D 3.5e 核心规则</h1>
+    <p style="color:var(--text-subtle);font-size:14px;">基于《玩家手册（PHB）》《城主手册（DMG）》《怪物图鉴（MM）》3.5版整理</p>
+
+    <!-- 规则导航卡片 -->
+    <div class="rule-grid">
+      <div class="rule-nav-card"><a href="#basics">
+        <span class="icon">🎲</span>
+        <h3>基础概念</h3>
+        <p>骰子系统、检定、难度等级</p>
+      </a></div>
+      <div class="rule-nav-card"><a href="#abilities">
+        <span class="icon">💪</span>
+        <h3>六大属性值</h3>
+        <p>力量/敏捷/体质/智力/感知/魅力</p>
+      </a></div>
+      <div class="rule-nav-card"><a href="#combat">
+        <span class="icon">⚔️</span>
+        <h3>战斗规则</h3>
+        <p>先攻/攻击/伤害/动作类型</p>
+      </a></div>
+      <div class="rule-nav-card"><a href="#magic">
+        <span class="icon">✨</span>
+        <h3>魔法规则</h3>
+        <p>施法/法术抵抗/专注</p>
+      </a></div>
+      <div class="rule-nav-card"><a href="#saving-throws">
+        <span class="icon">🛡️</span>
+        <h3>豁免检定</h3>
+        <p>强韧/反射/意志三大豁免</p>
+      </a></div>
+      <div class="rule-nav-card"><a href="#conditions">
+        <span class="icon">💫</span>
+        <h3>状态效果</h3>
+        <p>晕眩/恐惧/石化等状态大全</p>
+      </a></div>
+    </div>
+
+    <!-- 基础概念 -->
+    <h2 id="basics">🎲 基础概念</h2>
+    <div class="rule-card">
+      <h3>骰子系统</h3>
+      <p>D&D 3.5e 使用多种多面骰：</p>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li><strong>d4</strong>：4面骰，常用于短剑伤害</li>
+        <li><strong>d6</strong>：6面骰，常用于短弓伤害、熊猫等生命骰</li>
+        <li><strong>d8</strong>：8面骰，常用于长剑伤害</li>
+        <li><strong>d10</strong>：10面骰，常用于战戟伤害</li>
+        <li><strong>d12</strong>：12面骰，野蛮人生命骰</li>
+        <li><strong>d20</strong>：20面骰，核心检定骰</li>
+        <li><strong>d100（d%）</strong>：百分骰，由两个d10组成</li>
+      </ul>
+    </div>
+
+    <div class="rule-card">
+      <h3>检定（Check）</h3>
+      <p>标准检定公式：</p>
+      <div class="formula-box">d20 + 调整值 ≥ 难度等级（DC）= 成功</div>
+      <p>常见检定类型：</p>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li><strong>技能检定</strong>：d20 + 技能等级 + 属性调整值</li>
+        <li><strong>攻击掷骰</strong>：d20 + 基础攻击加值 + 属性调整值 + 其他加值</li>
+        <li><strong>豁免检定</strong>：d20 + 豁免加值 + 属性调整值</li>
+        <li><strong>属性检定</strong>：d20 + 属性调整值</li>
+      </ul>
+    </div>
+
+    <div class="rule-card">
+      <h3>难度等级（DC）参考</h3>
+      <table class="core-table">
+        <thead><tr><th>任务难度</th><th>DC值</th><th>示例</th></tr></thead>
+        <tbody>
+          <tr><td>极易</td><td>0</td><td>走路不摔倒</td></tr>
+          <tr><td>容易</td><td>5</td><td>攀爬绳子（有绳结）</td></tr>
+          <tr><td>普通</td><td>10</td><td>攀爬石墙</td></tr>
+          <tr><td>困难</td><td>15</td><td>踢开卡住的门</td></tr>
+          <tr><td>艰难</td><td>20</td><td>游泳穿越湍流</td></tr>
+          <tr><td>极难</td><td>25</td><td>撬开牢固的锁</td></tr>
+          <tr><td>近乎不可能</td><td>30</td><td>攀爬完全光滑的表面</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <strong>⚠️ 自然1与自然20：</strong>d20检定中，自然1（未加调整值为1）在攻击掷骰中<strong>永远失误</strong>，在豁免检定中<strong>永远失败</strong>；自然20（未加调整值为20）在攻击掷骰中<strong>永远命中</strong>（且可能重击）。注意：技能检定不适用自然1/20规则。
+    </div>
+
+    <!-- 六大属性 -->
+    <h2 id="abilities">💪 六大属性值</h2>
+    <p>每个角色有六项核心属性，取值通常在 3-18 之间（标准点购法上限18）。调整值 = (属性值 - 10) ÷ 2，向下取整。</p>
+
+    <div class="ability-grid">
+      <div class="ability-item">
+        <div class="ab-name">力量</div>
+        <div class="ab-en">Strength (STR)</div>
+        <p>近战攻击/伤害加值，负重能力，力量检定（踹门/破门）</p>
+      </div>
+      <div class="ability-item">
+        <div class="ab-name">敏捷</div>
+        <div class="ab-en">Dexterity (DEX)</div>
+        <p>AC加值，远程攻击加值，反射豁免，灵巧类技能</p>
+      </div>
+      <div class="ability-item">
+        <div class="ab-name">体质</div>
+        <div class="ab-en">Constitution (CON)</div>
+        <p>每级生命值加值，强韧豁免，维持专注（被击中时）</p>
+      </div>
+      <div class="ability-item">
+        <div class="ab-name">智力</div>
+        <div class="ab-en">Intelligence (INT)</div>
+        <p>法师施法属性，每级技能点加值，知识类技能，语言数量</p>
+      </div>
+      <div class="ability-item">
+        <div class="ab-name">感知</div>
+        <div class="ab-en">Wisdom (WIS)</div>
+        <p>牧师/德鲁伊施法属性，意志豁免，感知类技能</p>
+      </div>
+      <div class="ability-item">
+        <div class="ab-name">魅力</div>
+        <div class="ab-en">Charisma (CHA)</div>
+        <p>术士/圣武士施法属性，社交类技能，驱散不死</p>
+      </div>
+    </div>
+
+    <table class="core-table" style="margin-top:8px;">
+      <thead><tr><th>属性值</th><th>调整值</th><th>属性值</th><th>调整值</th><th>属性值</th><th>调整值</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>-5</td><td>8-9</td><td>-1</td><td>18-19</td><td>+4</td></tr>
+        <tr><td>2-3</td><td>-4</td><td>10-11</td><td>+0</td><td>20-21</td><td>+5</td></tr>
+        <tr><td>4-5</td><td>-3</td><td>12-13</td><td>+1</td><td>22-23</td><td>+6</td></tr>
+        <tr><td>6-7</td><td>-2</td><td>14-15</td><td>+2</td><td>24-25</td><td>+7</td></tr>
+        <tr><td colspan="2"></td><td>16-17</td><td>+3</td><td>26-27</td><td>+8</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 战斗规则 -->
+    <h2 id="combat">⚔️ 战斗规则</h2>
+    <div class="rule-card">
+      <h3>战斗轮次</h3>
+      <p>一个战斗<strong>轮（Round）</strong>约等于6秒，每位参与者按<strong>先攻顺序（Initiative）</strong>依次行动。</p>
+      <div class="formula-box">先攻掷骰 = d20 + 敏捷调整值 + 其他加值</div>
+    </div>
+
+    <div class="rule-card">
+      <h3>动作类型</h3>
+      <p>每轮，一个角色可以执行以下动作的组合：</p>
+      <ul style="margin:10px 0 0 20px;line-height:2.2;">
+        <li><strong>标准动作（Standard Action）</strong>：攻击、使用法术等主要行动</li>
+        <li><strong>移动动作（Move Action）</strong>：移动最多速度距离，拾取物品等</li>
+        <li><strong>整轮动作（Full-Round Action）</strong>：取代标准+移动；如全力攻击</li>
+        <li><strong>自由动作（Free Action）</strong>：说话（简短）、释放武器等，次数不限</li>
+        <li><strong>即时动作（Immediate/Swift Action）</strong>：部分特殊能力</li>
+        <li><strong>5英尺步进</strong>：不引发借机攻击的小距离移动（只能用1次/轮）</li>
+      </ul>
+    </div>
+
+    <div class="rule-card">
+      <h3>近战攻击</h3>
+      <div class="formula-box">近战攻击掷骰 = d20 + 基础攻击加值（BAB）+ 力量调整值 + 武器加值</div>
+      <p>若 <strong>攻击掷骰 ≥ 目标AC</strong>，则命中。</p>
+      <p><strong>命中后伤害</strong> = 武器伤害骰 + 力量调整值（×1.5 若双手持握）+ 武器加值</p>
+      <p>AC计算公式：</p>
+      <div class="formula-box">AC = 10 + 护甲加值 + 盾牌加值 + 敏捷调整值 + 体型加值 + 其他加值</div>
+    </div>
+
+    <div class="rule-card">
+      <h3>重击（Critical Hit）</h3>
+      <p>攻击掷骰出现<strong>重击威胁范围</strong>（默认自然20）时，进行<strong>确认掷骰</strong>（再次攻击掷骰 ≥ 目标AC），确认后造成<strong>重击伤害</strong>（倍率×2或×3）。</p>
+      <div class="highlight-box">
+        <strong>常见武器重击属性：</strong>长剑 19-20/×2 | 战镰 18-20/×2 | 匕首 19-20/×2 | 战锤 20/×3 | 战戟 20/×3 | 斧矛 20/×4
+      </div>
+    </div>
+
+    <div class="rule-card">
+      <h3>借机攻击（Attack of Opportunity）</h3>
+      <p>以下情况会引发借机攻击：</p>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li>在威胁范围内进行移动</li>
+        <li>在威胁范围内施放法术（不含"快速法术"）</li>
+        <li>在威胁范围内使用远程武器</li>
+        <li>拾取地面物品</li>
+        <li>站起（从倒地状态）</li>
+      </ul>
+      <p style="margin-top:10px;">每轮默认只能进行<strong>1次借机攻击</strong>（专长"武器警觉"可提升）。</p>
+    </div>
+
+    <!-- 魔法规则 -->
+    <h2 id="magic">✨ 魔法规则</h2>
+    <div class="rule-card">
+      <h3>法术施放基础</h3>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li><strong>准备型法术</strong>（法师、牧师、德鲁伊等）：每日准备，施放后消耗</li>
+        <li><strong>自发施法</strong>（术士、吟游诗人等）：已知法术可随时施放，受每日次数限制</li>
+        <li><strong>施法属性</strong>：法师→智力，牧师/德鲁伊→感知，术士/吟游诗人→魅力</li>
+      </ul>
+    </div>
+
+    <div class="rule-card">
+      <h3>施法豁免难度（Spell DC）</h3>
+      <div class="formula-box">法术DC = 10 + 法术环级 + 施法属性调整值 + 其他加值</div>
+      <p>目标进行对应豁免检定，若结果 ≥ DC 则成功豁免（通常减半伤害或完全免疫）。</p>
+    </div>
+
+    <div class="rule-card">
+      <h3>法术成分</h3>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li><strong>言语成分 (V)</strong>：需要能够说话，沉默法术区域内无法施放</li>
+        <li><strong>姿势成分 (S)</strong>：需要手部自由，束缚时无法施放</li>
+        <li><strong>材料成分 (M)</strong>：需要消耗指定材料</li>
+        <li><strong>法器成分 (F)</strong>：需要持有特定物品（不消耗）</li>
+        <li><strong>神圣/法术专注 (DF)</strong>：牧师/德鲁伊的神圣专注</li>
+        <li><strong>额外法术位 (XP)</strong>：部分强力法术消耗施法者经验值</li>
+      </ul>
+    </div>
+
+    <div class="rule-card">
+      <h3>法术抵抗（SR）与法术免疫</h3>
+      <p>部分生物拥有<strong>法术抵抗（Spell Resistance, SR）</strong>。施法者需通过<strong>施法者等级检定</strong>才能使法术生效：</p>
+      <div class="formula-box">d20 + 施法者等级 ≥ 目标SR = 法术有效</div>
+    </div>
+
+    <!-- 豁免检定 -->
+    <h2 id="saving-throws">🛡️ 豁免检定</h2>
+    <div class="rule-card">
+      <h3>三大豁免</h3>
+      <table class="core-table">
+        <thead><tr><th>豁免类型</th><th>主要属性</th><th>对抗效果</th></tr></thead>
+        <tbody>
+          <tr><td><strong>强韧（Fortitude）</strong></td><td>体质</td><td>毒素、疾病、能量吸取、即时死亡效果</td></tr>
+          <tr><td><strong>反射（Reflex）</strong></td><td>敏捷</td><td>区域爆炸（火球等）、陷阱、毁灭射线</td></tr>
+          <tr><td><strong>意志（Will）</strong></td><td>感知</td><td>精神控制、迷惑、恐惧、幻象效果</td></tr>
+        </tbody>
+      </table>
+      <div class="formula-box">豁免掷骰 = d20 + 基础豁免加值 + 属性调整值 + 其他加值 ≥ 法术DC</div>
+    </div>
+
+    <!-- 状态效果 -->
+    <h2 id="conditions">💫 状态效果</h2>
+    <table class="core-table">
+      <thead><tr><th>状态</th><th>英文</th><th>主要效果</th></tr></thead>
+      <tbody>
+        <tr><td>晕眩</td><td>Stunned</td><td>失去行动、-2AC、失去敏捷加值</td></tr>
+        <tr><td>恐惧</td><td>Frightened</td><td>逃离并惊慌，无法施法</td></tr>
+        <tr><td>困惑</td><td>Confused</td><td>随机行动（攻击友军等）</td></tr>
+        <tr><td>魅惑</td><td>Charmed</td><td>视施法者为友好，不主动攻击</td></tr>
+        <tr><td>纠缠</td><td>Entangled</td><td>移速减半，攻击检定-2，施法专注DC+15</td></tr>
+        <tr><td>倒地</td><td>Prone</td><td>近战攻击-4，远程攻击-4，近战被攻击+4</td></tr>
+        <tr><td>失明</td><td>Blinded</td><td>50%未中机率，敌人+2攻击，失去敏捷AC加值</td></tr>
+        <tr><td>失聪</td><td>Deafened</td><td>无法施放言语成分法术，先攻-4</td></tr>
+        <tr><td>措手不及</td><td>Flat-footed</td><td>失去敏捷AC加值（战斗开始前）</td></tr>
+        <tr><td>潜伏</td><td>Flanking</td><td>被夹击时，攻击者各获+2近战攻击加值</td></tr>
+        <tr><td>石化</td><td>Petrified</td><td>变为石头，无行动，自动失败大多数检定</td></tr>
+        <tr><td>稳定</td><td>Stable</td><td>负生命值但不再失血，需帮助才能行动</td></tr>
+        <tr><td>无意识</td><td>Unconscious</td><td>无行动，视为无助状态（被自动重击确认）</td></tr>
+        <tr><td>疲劳</td><td>Fatigued</td><td>力量/敏捷-2，无法快速移动或狂暴</td></tr>
+        <tr><td>精疲力竭</td><td>Exhausted</td><td>力量/敏捷-6，移速减半</td></tr>
+        <tr><td>恶心</td><td>Sickened</td><td>所有攻击/伤害/技能检定-2</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 技能规则 -->
+    <h2 id="skills-rules">🎯 技能规则</h2>
+    <div class="rule-card">
+      <h3>技能点分配</h3>
+      <p>每升1级获得技能点数 = <strong>职业技能点 + 智力调整值</strong>（最低1点）。</p>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li><strong>本职技能</strong>：上限 = 角色等级 + 3，每点技能点提升1级</li>
+        <li><strong>跨职业技能</strong>：上限 = (角色等级 + 3) ÷ 2，每2点技能点提升1级</li>
+      </ul>
+    </div>
+    <div class="rule-card">
+      <h3>协助技能（Aid Another）</h3>
+      <p>一名角色可以帮助另一名角色进行技能检定：辅助者先进行该技能的DC10检定，成功后，被辅助者的技能检定获得<strong>+2加值</strong>。</p>
+    </div>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;text-align:center;">
+      📚 本规则内容基于 <strong>D&D 3.5e PHB（玩家手册）</strong> 整理 | 
+      <a href="conflicts.html">查看规则冲突记录 →</a>
+    </p>
+  </main>
+</div>
+
+<footer class="site-footer" style="background:var(--bg-navbar);color:#aaa;padding:16px;text-align:center;font-size:13px;">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关 | <a href="conflicts.html" style="color:var(--accent-gold);">规则冲突记录</a></p>
+</footer>
+
+</body>
+</html>

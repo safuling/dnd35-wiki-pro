@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DM工具箱 Dungeon Master Tools - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.tool-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.tool-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.tool-card p { font-size:14px; color:#666; }
+.tool-card a { color:var(--text-link,#21618c); text-decoration:none; font-weight:600; }
+.tool-card a:hover { text-decoration:underline; }
+.calc-box { background:#f0ebe0; border:1px solid var(--border-light,#e8dcc8); border-radius:8px; padding:16px; margin:12px 0; }
+.calc-box label { display:block; margin:6px 0 2px; font-weight:600; font-size:14px; }
+.calc-box input, .calc-box select { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); border-radius:4px; font-size:14px; margin-bottom:8px; }
+.calc-box button { background:var(--accent-gold,#d4a017); color:#fff; border:none; padding:8px 20px; border-radius:4px; cursor:pointer; font-weight:600; margin-top:8px; }
+.calc-box button:hover { background:#b8910f; }
+.result-box { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:10px 14px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.step-list { counter-reset: steps; list-style:none; padding:0; }
+.step-list li { counter-increment: steps; padding:10px 10px 10px 40px; position:relative; margin:6px 0; background:var(--bg-card,#faf6ee); border-radius:4px; border:1px solid var(--border-light,#e8dcc8); }
+.step-list li::before { content:counter(steps); position:absolute; left:10px; top:10px; background:var(--accent-gold,#d4a017); color:#fff; width:22px; height:22px; border-radius:50%; text-align:center; line-height:22px; font-size:12px; font-weight:700; }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.tool-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin:24px 0; }
+.tips-box { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:20px; margin:20px 0; }
+.tips-box h3 { color:var(--accent-gold,#d4a017); margin-top:0; }
+.tips-box ul { margin:12px 0; padding-left:24px; }
+.tips-box li { margin:8px 0; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">DM工具箱</div>
+      <a href="intro.html" class="active">工具总览</a>
+      <a href="character-creation.html">角色创建指南</a>
+      <a href="encounter-builder.html">遭遇构建器</a>
+      <a href="treasure-generator.html">宝藏生成器</a>
+      <a href="random-tables.html">随机表格大全</a>
+      <a href="xp-tracker.html">经验值追踪器</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="../rules.html">核心规则</a>
+      <a href="../classes/intro.html">职业手册</a>
+      <a href="../monsters/intro.html">怪物图鉴</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>DM工具箱</h1>
+    <h2>Dungeon Master Tools</h2>
+
+    <p>欢迎来到地下城主工具箱。这里提供了一系列实用工具，帮助你更轻松地主持 D&D 3.5e 游戏。无论你是新手 DM 还是经验丰富的老手，这些工具都能帮助你更快地准备冒险、管理游戏进程，以及为玩家创造更好的游戏体验。</p>
+
+    <h2 class="section-title">工具一览</h2>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3>🎭 角色创建指南</h3>
+        <p>从属性分配到装备购买的完整流程指导，帮助玩家快速创建符合规则的角色。</p>
+        <a href="character-creation.html">查看详情 →</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>⚔️ 遭遇构建器</h3>
+        <p>根据队伍等级和人数快速计算合适的遭遇CR，确保战斗既不过于简单也不至于团灭。</p>
+        <a href="encounter-builder.html">查看详情 →</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>💰 宝藏生成器</h3>
+        <p>按怪物类型随机生成战利品和宝藏，包括金币、宝石、珠宝和魔法物品。</p>
+        <a href="treasure-generator.html">查看详情 →</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>🎲 随机表格大全</h3>
+        <p>天气、遭遇、地下城房间、NPC特征等常用随机表，让你随时查阅。</p>
+        <a href="random-tables.html">查看详情 →</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>📊 经验值追踪器</h3>
+        <p>追踪队伍经验值进度和升级阈值，帮助管理角色成长节奏。</p>
+        <a href="xp-tracker.html">查看详情 →</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">DM最佳实践</h2>
+
+    <div class="tips-box">
+      <h3>📚 主持技巧与建议</h3>
+      <ul>
+        <li><strong>提前准备，灵活应变</strong>：准备好核心剧情和关键遭遇，但要根据玩家的选择灵活调整。</li>
+        <li><strong>难度平衡</strong>：一天内安排 4-5 场遭遇，EL 与队伍 APL 相当或略低，偶尔加入高难度战斗。</li>
+        <li><strong>多样化体验</strong>：混合战斗、角色扮演、探索和谜题，避免单一节奏。</li>
+        <li><strong>善用随机表格</strong>：当需要即兴创作时，随机表格是你的好朋友。</li>
+        <li><strong>记录一切</strong>：使用经验值追踪器记录每场遭遇，方便后续复盘和调整。</li>
+        <li><strong>倾听玩家</strong>：注意玩家的兴趣点，调整内容让他们感到投入和有趣。</li>
+        <li><strong>规则服务于故事</strong>：当规则与故事冲突时，优先考虑故事的流畅性。</li>
+        <li><strong>让失败也有意义</strong>：即使玩家失败，也要让故事继续前进，而不是陷入死局。</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">快速参考</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>工具</th>
+          <th>用途</th>
+          <th>使用场景</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>角色创建指南</td>
+          <td>指导角色创建流程</td>
+          <td>新玩家加入、角色死亡重做</td>
+        </tr>
+        <tr>
+          <td>遭遇构建器</td>
+          <td>计算遭遇难度</td>
+          <td>设计战斗、随机遭遇</td>
+        </tr>
+        <tr>
+          <td>宝藏生成器</td>
+          <td>生成战利品</td>
+          <td>战斗结束、搜索宝藏</td>
+        </tr>
+        <tr>
+          <td>随机表格大全</td>
+          <td>即兴创作辅助</td>
+          <td>需要临时内容时</td>
+        </tr>
+        <tr>
+          <td>经验值追踪器</td>
+          <td>管理角色成长</td>
+          <td>每次游戏结束时</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tips-box">
+      <h3>新手 DM 建议</h3>
+      <p>如果你是第一次主持游戏，建议从简单的地城探索开始，使用预先写好的冒险模块。随着经验的积累，你可以逐渐加入更多的角色扮演元素和复杂的剧情线索。记住，最重要的是让所有人都玩得开心！</p>
+    </div>
+
+    <h2 class="section-title">战役管理要点</h2>
+
+    <div class="tips-box">
+      <h3>战役规划清单</h3>
+      <ul>
+        <li><strong>确定战役风格</strong>：地城探索、政治阴谋、史诗冒险、恐怖悬疑？与玩家沟通偏好。</li>
+        <li><strong>设定世界框架</strong>：大陆地图、主要王国、重要城市和势力。不需要一开始就完美，可以逐步补充。</li>
+        <li><strong>准备主线剧情</strong>：确定大反派和最终目标，但不需要规划每个细节。留出空间让玩家影响世界。</li>
+        <li><strong>设计起始冒险</strong>：1-3级的简单冒险，让玩家熟悉规则和世界观。</li>
+        <li><strong>建立规则基调</strong>：确定使用的扩展规则、购点点数、是否允许第三方材料。</li>
+      </ul>
+    </div>
+
+    <div class="tips-box">
+      <h3>每次游戏前的准备</h3>
+      <ul>
+        <li><strong>回顾上次游戏</strong>：记住关键事件和未完成的任务线。</li>
+        <li><strong>准备 3-4 场遭遇</strong>：包括战斗、角色扮演和探索。</li>
+        <li><strong>准备 NPC 名称和动机</strong>：即使只是简单的两句话描述，也比即兴起名好。</li>
+        <li><strong>检查规则疑点</strong>：如果预期会用到特殊规则（如水下战斗、飞行），提前复习。</li>
+        <li><strong>准备随机表格</strong>：遭遇、天气、宝藏等表格随时可能需要。</li>
+        <li><strong>整理战利品</strong>：如果有宝藏需要分配，提前用宝藏生成器生成。</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">快速规则参考</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>规则</th>
+          <th>说明</th>
+          <th>参考页</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>战斗轮</td>
+          <td>每轮 6 秒，每人一个标准动作 + 一个移动动作</td>
+          <td><a href="../rules.html">核心规则</a></td>
+        </tr>
+        <tr>
+          <td>先攻</td>
+          <td>d20 + 敏捷调整值，从高到低行动</td>
+          <td><a href="../rules.html">核心规则</a></td>
+        </tr>
+        <tr>
+          <td>攻击掷骰</td>
+          <td>d20 + BAB + 属性调整值 vs AC</td>
+          <td><a href="../rules.html">核心规则</a></td>
+        </tr>
+        <tr>
+          <td>豁免检定</td>
+          <td>d20 + 豁免加值 vs DC</td>
+          <td><a href="../rules.html">核心规则</a></td>
+        </tr>
+        <tr>
+          <td>技能检定</td>
+          <td>d20 + 技能等级 + 属性调整值 vs DC</td>
+          <td><a href="../skills/intro.html">技能</a></td>
+        </tr>
+        <tr>
+          <td>法术 DC</td>
+          <td>10 + 法术等级 + 施法属性调整值</td>
+          <td><a href="../spells/intro.html">法术</a></td>
+        </tr>
+        <tr>
+          <td>暴击</td>
+          <td>自然 20 确认，重掷攻击骰确认暴击</td>
+          <td><a href="../rules.html">核心规则</a></td>
+        </tr>
+        <tr>
+          <td>休息恢复</td>
+          <td>完整休息 8 小时恢复 HP（每等级 + CON 调整值），法术位全部恢复</td>
+          <td><a href="../rules.html">核心规则</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">常见场景处理</h2>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>场景</th>
+          <th>处理方法</th>
+          <th>相关工具</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>新玩家加入</td>
+          <td>使用角色创建指南一步步引导，建议用标准阵列</td>
+          <td><a href="character-creation.html">角色创建指南</a></td>
+        </tr>
+        <tr>
+          <td>设计 Boss 战</td>
+          <td>Boss CR = APL + 2~3，加入小兵分散注意力，设计阶段变化</td>
+          <td><a href="encounter-builder.html">遭遇构建器</a></td>
+        </tr>
+        <tr>
+          <td>战斗结束发宝藏</td>
+          <td>根据怪物 CR 用宝藏生成器快速生成，注意不要过度发放魔法物品</td>
+          <td><a href="treasure-generator.html">宝藏生成器</a></td>
+        </tr>
+        <tr>
+          <td>需要即兴 NPC</td>
+          <td>使用随机表格快速生成姓名、外貌和动机</td>
+          <td><a href="random-tables.html">随机表格大全</a></td>
+        </tr>
+        <tr>
+          <td>游戏结束结算</td>
+          <td>记录经验值，提醒即将升级的玩家准备新技能和专长</td>
+          <td><a href="xp-tracker.html">经验值追踪器</a></td>
+        </tr>
+        <tr>
+          <td>玩家想做疯狂的事</td>
+          <td>设定合理 DC，描述风险，让玩家做决定。"可以，但是..."</td>
+          <td><a href="../rules.html">核心规则</a></td>
+        </tr>
+        <tr>
+          <td>队伍分裂</td>
+          <td>尽量让两组交替进行，每组 5-10 分钟切换一次</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">DM 屏幕速查卡</h2>
+
+    <p>以下是适合打印或记在 DM 屏幕上的快速参考信息：</p>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>DC 难度</th>
+          <th>DC 值</th>
+          <th>适用场景</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>非常容易</td><td>0</td><td>任何人都能做到</td></tr>
+        <tr><td>容易</td><td>5</td><td>大部分人都能做到</td></tr>
+        <tr><td>普通</td><td>10</td><td>需要经过训练</td></tr>
+        <tr><td>困难</td><td>15</td><td>需要专业水平</td></tr>
+        <tr><td>非常困难</td><td>20</td><td>需要大师水平</td></tr>
+        <tr><td>几乎不可能</td><td>25</td><td>需要传奇水平</td></tr>
+        <tr><td>传奇</td><td>30+</td><td>只有神才能做到</td></tr>
+      </tbody>
+    </table>
+
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>旅行距离</th>
+          <th>步行 (3mph)</th>
+          <th>骑马 (6mph)</th>
+          <th>快速旅行</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>本地 (5 英里)</td><td>2 小时</td><td>1 小时</td><td>30 分钟</td></tr>
+        <tr><td>附近城镇 (30 英里)</td><td>1 天</td><td>半天</td><td>4 小时</td></tr>
+        <tr><td>远方城市 (100 英里)</td><td>3-4 天</td><td>2 天</td><td>1 天</td></tr>
+        <tr><td>跨越王国 (500 英里)</td><td>2-3 周</td><td>1-2 周</td><td>5-7 天</td></tr>
+        <tr><td>大陆间 (1000+ 英里)</td><td>数月</td><td>数周</td><td>乘船/飞行</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tips-box">
+      <h3>DM 的黄金法则</h3>
+      <p><strong>规则零</strong>：DM 有权修改或忽略任何规则，以确保游戏的乐趣和流畅性。但请在游戏前告知玩家你打算使用哪些房规（House Rules），并保持一致性。</p>
+      <p><strong>第零步</strong>：在开始战役前，召开一次"第零次游戏"（Session Zero），讨论期望、禁忌话题、角色概念和规则基线。这是确保所有人都享受游戏的最重要一步。</p>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

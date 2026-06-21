@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神器、智能物品与诅咒物品 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .mi-intro { background:var(--bg-card); border-left:4px solid var(--accent-purple); padding:16px 20px; margin:0 0 24px; border-radius:0 var(--radius) var(--radius) 0; font-size:14px; }
+  .mi-intro strong { color:var(--accent-purple); }
+  table.mi-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
+  table.mi-table th { background:var(--bg-table-head); padding:8px 12px; text-align:left; font-weight:600; color:#4a2c0a; border-bottom:2px solid var(--border-main); }
+  table.mi-table td { border:1px solid var(--border-light); padding:7px 12px; }
+  table.mi-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  table.mi-table tr:hover { background:#e8dcc8; }
+  .mi-tip { background:#f0f4ff; border-left:3px solid var(--accent-blue); padding:10px 14px; margin:8px 0; font-size:13px; border-radius:0 var(--radius) var(--radius) 0; }
+  .mi-craft-box { background:var(--bg-card); border:1px solid var(--border-main); border-radius:var(--radius); padding:18px 22px; margin:16px 0; }
+  .mi-craft-box h4 { margin-top:0; color:var(--accent-gold); }
+  .mi-price-tag { color:var(--accent-gold); font-weight:700; }
+  .mi-sub-header { font-size:15px; font-weight:600; color:var(--text-heading); margin:20px 0 8px; padding-bottom:4px; border-bottom:1px dashed var(--border-light); }
+  .mi-ref-box { margin-top:32px; padding:16px; background:var(--bg-card); border-radius:var(--radius); border:1px solid var(--border-light); }
+  .mi-toc { background:var(--bg-card); border:1px solid var(--border-main); border-radius:var(--radius); padding:16px 20px; margin:20px 0; display:inline-block; min-width:280px; }
+  .mi-toc-title { font-weight:700; font-size:15px; margin-bottom:10px; color:var(--text-heading); }
+  .mi-toc ol { list-style:none; padding-left:0; }
+  .mi-toc ol li { padding:3px 0; font-size:14px; }
+  .mi-toc ol li a { color:var(--text-link); }
+  .mi-type-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:14px; margin:18px 0; }
+  .mi-type-card { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow-soft); transition:transform 0.2s, box-shadow 0.2s; cursor:default; }
+  .mi-type-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-card); }
+  .mi-type-card h3 { margin:0 0 6px; font-size:16px; color:var(--text-heading); }
+  .mi-type-card p { font-size:13px; color:#666; margin:0; line-height:1.5; }
+  .mi-type-icon { font-size:26px; margin-bottom:8px; }
+  .mi-warning { background:#fff3e0; border-left:3px solid #e65100; padding:10px 14px; margin:8px 0; font-size:13px; border-radius:0 var(--radius) var(--radius) 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html" class="active">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">装备</div>
+      <a href="intro.html">装备总览</a>
+      <a href="weapons.html">武器</a>
+      <a href="armor.html">防具</a>
+      <a href="goods.html">商品与服务</a>
+      <a href="magic-items.html">魔法物品</a>
+      <a href="magic-weapons.html">魔法武器与防具</a>
+      <a href="wondrous-items.html">奇物与消耗品</a>
+      <a href="artifacts-intelligent.html" class="active">神器与智能物品</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">本节内容</div>
+      <a href="#minor-artifacts">次级神器</a>
+      <a href="#major-artifacts">高等神器</a>
+      <a href="#intelligent-items">智能物品</a>
+      <a href="#ego-rules">Ego冲突规则</a>
+      <a href="#cursed-items">诅咒物品</a>
+      <a href="#remove-curse">移除诅咒</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="magic-items.html">魔法物品概览</a>
+      <a href="magic-weapons.html">魔法武器与防具</a>
+      <a href="wondrous-items.html">奇物与消耗品</a>
+      <a href="../monsters/intro.html">怪物</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>神器、智能物品与诅咒物品</h1>
+    <p style="color:var(--text-subtle);font-size:14px;">D&D 3.5e 神器、智能物品与诅咒物品完整参考 | 来源：DMG第7章（p.268-280）</p>
+
+    <!-- 目录 -->
+    <div class="mi-toc">
+      <div class="mi-toc-title">目录</div>
+      <ol>
+        <li>1. <a href="#minor-artifacts">次级神器（Minor Artifacts）</a></li>
+        <li>2. <a href="#major-artifacts">高等神器（Major Artifacts）</a></li>
+        <li>3. <a href="#intelligent-items">智能物品（Intelligent Items）</a></li>
+        <li>4. <a href="#ego-rules">Ego冲突规则</a></li>
+        <li>5. <a href="#cursed-items">诅咒物品（Cursed Items）</a></li>
+        <li>6. <a href="#remove-curse">移除诅咒的方法</a></li>
+      </ol>
+    </div>
+
+    <div class="mi-intro">
+      神器是D&D中最强大的物品，<strong>不可被制造</strong>，通常具有独特的历史和传说背景。
+      智能物品拥有自己的意识和属性，可能与持有者产生冲突。
+      诅咒物品具有负面效果，通常伪装成有益物品。
+      这三类物品是DM用来推动剧情和创造戏剧性冲突的重要工具。
+    </div>
+
+    <!-- ===== 1. 次级神器 ===== -->
+    <h2 id="minor-artifacts">次级神器（Minor Artifacts）</h2>
+    <p>次级神器虽然强大，但不如高等神器那样独一无二。世界上可能存在多件相同的次级神器。它们通常无法被摧毁，或只有极特殊的条件才能毁灭。</p>
+
+    <div class="mi-sub-header">经典次级神器</div>
+    <table class="mi-table">
+      <thead><tr><th>神器名称</th><th>英文</th><th>描述与能力</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>堕落之书</strong></td><td>Book of Vile Darkness</td>
+          <td>一本散发邪恶气息的黑色魔典。阅读需耗费一周时间。
+          <strong>邪恶阵营角色：</strong>阅读完毕后获得一个角色等级（经验值自动增加到下一级的最低值），魅力+1固有加值。
+          <strong>善良阵营角色：</strong>阅读受到6d6伤害，必须通过DC 15意志豁免否则阵营向邪恶偏移一级。
+          <strong>中立角色：</strong>须通过DC 15意志豁免，否则阵营变为邪恶。
+          每阅读一次后，书籍消失，1d100年后在另一个地方重新出现。</td>
+        </tr>
+        <tr>
+          <td><strong>贤者之书</strong></td><td>Book of Exalted Deeds</td>
+          <td>一本散发圣洁白光的金色圣典。阅读需耗费一周时间。
+          <strong>善良阵营角色：</strong>阅读完毕后获得一个角色等级，感知+1固有加值。
+          <strong>邪恶阵营角色：</strong>阅读受到6d6伤害，必须通过DC 15意志豁免否则阵营向善良偏移一级。
+          <strong>中立角色：</strong>须通过DC 15意志豁免，否则阵营变为善良。
+          每阅读一次后，书籍消失，1d100年后在另一个地方重新出现。</td>
+        </tr>
+        <tr>
+          <td><strong>命运甲板</strong></td><td>Deck of Many Things</td>
+          <td>一副包含78张魔法卡牌的牌组（标准版22张）。每次抽牌立即产生效果，无法撤销。经典牌面包括：
+          <strong>太阳（The Sun）：</strong>+2智力固有加值，获得一件任意奇物。
+          <strong>月亮（The Moon）：</strong>获得1-4次<em>祈愿术</em>。
+          <strong>星辰（The Star）：</strong>一项属性永久+2固有加值。
+          <strong>彗星（The Comet）：</strong>下一个击败的敌人后获得经验值翻倍。
+          <strong>虚空（The Void）：</strong>灵魂被囚禁在另一个位面，<em>祈愿术</em>也无法解救。
+          <strong>毁灭（Ruin）：</strong>所有非魔法财产和物品化为乌有。
+          <strong>小丑（The Jester）：</strong>智力+2固有加值，但失去所有经验值。</td>
+        </tr>
+        <tr>
+          <td><strong>维克那之眼</strong></td><td>Eye of Vecna</td>
+          <td>维克那（Vecna）的左眼，一颗干枯的眼球。安装需<strong>自愿挖出自己的左眼</strong>（造成2d6伤害，不可恢复）。
+          安装后获得：
+          <strong>持续效果：</strong>真知术、透视术、侦测魔法。
+          <strong>每天各1次：</strong>支配怪物、疯狂暗示、群体暗示术。
+          <strong>与维克那之手配合：</strong>额外获得预知能力、每天1次<em>时间停止</em>。
+          阵营偏移为中立邪恶。</td>
+        </tr>
+        <tr>
+          <td><strong>维克那之手</strong></td><td>Hand of Vecna</td>
+          <td>维克那的左手，一只干枯的手掌。安装需<strong>自愿砍断自己的左手</strong>（造成2d10伤害，不可恢复）。
+          安装后获得：
+          <strong>力量：</strong>力量19（如果已更高则不变）。
+          <strong>触碰效果：</strong>指冷术（每次触碰造成1d6寒冷伤害）。
+          <strong>每天各1次：</strong>暗示术、支配怪物、灵魂陷阱。
+          阵营偏移为中立邪恶。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 2. 高等神器 ===== -->
+    <h2 id="major-artifacts">高等神器（Major Artifacts）</h2>
+    <p>高等神器是<strong>独一无二</strong>的存在，整个多元宇宙中只有一件。它们通常与特定的传说和历史紧密相连，是D&D中最强大的物品。高等神器不可被任何手段摧毁（除非DM设定特殊条件）。</p>
+
+    <div class="mi-warning">
+      <strong>DM注意：</strong>高等神器不应作为普通战利品出现。它们的存在通常与整个战役的核心剧情相关，是推动故事的关键道具。
+      玩家获得高等神器后，通常会引来强大势力的争夺。
+    </div>
+
+    <div class="mi-sub-header">经典高等神器</div>
+    <table class="mi-table">
+      <thead><tr><th>神器名称</th><th>英文</th><th>描述与能力</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>卡斯之剑</strong></td><td>Sword of Kas</td>
+          <td>由吸血鬼卡斯（Kas）锻造的+6锐利速斩长剑。这把剑拥有智能（Int 17, Wis 15, Cha 22），
+          阵营为混乱邪恶，Ego值27。
+          <strong>能力：</strong>+6增强加值、锐利、速斩、吸血（每次命中造成1d4力量吸取）。
+          <strong>持续效果：</strong>飞行术、心灵感应。
+          <strong>每天各1次：</strong>召唤怪物IX（仅恶魔）、毁灭术。
+          此剑的目的是摧毁维克那（Vecna），持有者如果拒绝协助，将面临猛烈的Ego对抗。</td>
+        </tr>
+        <tr>
+          <td><strong>奥库斯权杖</strong></td><td>Wand of Orcus</td>
+          <td>恶魔领主奥库斯（Orcus）的标志性武器，一根顶端为骷髅的+5瓦解巨锤。
+          拥有智能（Int 12, Wis 18, Cha 28），阵营为混乱邪恶。
+          <strong>能力：</strong>+5增强加值、瓦解（对不死生物无效，因为持有者通常是不死生物）。
+          <strong>持续效果：</strong>真知术、通晓语言。
+          <strong>每天各3次：</strong>死亡术、Animate Dead。
+          <strong>召唤能力：</strong>每天1次召唤2d4个骷髅或僵尸。
+          只有非不死生物持有者会受到权杖的负面影响（负向等级吸取）。</td>
+        </tr>
+        <tr>
+          <td><strong>贤哲之杖</strong></td><td>Staff of the Magi</td>
+          <td>法师中最强大的法杖，等同于+5法杖。可吸收以持有者为目标的法术，
+          将法术能量储存为充能。
+          <strong>吸收能力：</strong>吸收任何以持有者为单一目标的法术（不限等级），转化为充能。
+          <strong>法术反冲（Retributive Strike）：</strong>断裂时释放所有充能，40英尺范围内每充能造成1d8伤害。
+          持有者在断裂时可传送至另一个位面（如同<em>异界传送</em>）。
+          <strong>法术：</strong>包含多种高等法术（<em>解离术、禁锢术、火墙术</em>等）。</td>
+        </tr>
+        <tr>
+          <td><strong>龙宝珠</strong></td><td>Orb of Dragonkind</td>
+          <td>一套共10颗的强大宝珠，每颗对应一种龙族（红龙、蓝龙、金龙等）。
+          <strong>能力：</strong>可控制对应种类的龙（如同<em>支配怪物</em>，DC 25意志豁免）。
+          <strong>龙威：</strong>持有者获得龙的恐惧光环（DC 20）。
+          <strong>召唤：</strong>可召唤1d3条对应类型的龙为持有者服务。
+          <strong>风险：</strong>龙类对宝珠的持有者有强烈的仇恨，可能主动攻击。</td>
+        </tr>
+        <tr>
+          <td><strong>圣剑（传说版）</strong></td><td>Holy Avenger (Artifact)</td>
+          <td>圣剑的传说版本，远比普通版本强大。仅在特定剧情中出现。
+          <strong>能力：</strong>+5长剑，对邪恶+5d10伤害，SR 5+圣武士等级，
+          <em>大驱散</em>、<em>群体治疗</em>（圣武士等级&times;3 HP），<em>神恩</em>。
+          部分传说中还有<em>神圣光辉</em>（半径20英尺，对不死造成2d8伤害）。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 3. 智能物品 ===== -->
+    <h2 id="intelligent-items">智能物品（Intelligent Items）</h2>
+
+    <div class="mi-intro">
+      智能物品具有自己的<strong>智力（Int）、感知（Wis）、魅力（Cha）</strong>属性，拥有自我意识、语言能力，甚至可能有特殊目的（Special Purpose）。
+      智能物品约占所有魔法物品的<strong>1%</strong>。大多数智能物品是武器或戒指。
+    </div>
+
+    <div class="mi-sub-header">智能物品的属性</div>
+    <table class="mi-table">
+      <thead><tr><th>属性</th><th>范围</th><th>规则说明</th></tr></thead>
+      <tbody>
+        <tr><td>智力 (Int)</td><td>1-19</td><td>决定物品可交流的语言数量（Int 1-2：无法交流；Int 7-12：心灵感应；Int 13+：可说话）以及特殊能力数量</td></tr>
+        <tr><td>感知 (Wis)</td><td>1-19</td><td>影响物品的感知能力、洞察力和判断力</td></tr>
+        <tr><td>魅力 (Cha)</td><td>1-19</td><td>影响物品的个性强度、说服力和自我值（Ego）</td></tr>
+        <tr><td>阵营</td><td>任意</td><td>物品有固定阵营，与使用者阵营冲突时可能产生Ego对抗</td></tr>
+        <tr><td>自我值 (Ego)</td><td>1-50+</td><td>等于 智力加值 + 魅力加值 + Ego加值（由物品能力决定）。用于与持有者的意志对抗</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">智能物品的能力等级表</div>
+    <table class="mi-table">
+      <thead><tr><th>Ego值</th><th>智力范围</th><th>沟通能力</th><th>特殊能力数量</th><th>感官范围</th></tr></thead>
+      <tbody>
+        <tr><td>1-6</td><td>1-6</td><td>半心灵感应（仅情绪传递）</td><td>1个初级能力</td><td>30英尺视觉/听觉</td></tr>
+        <tr><td>7-12</td><td>7-12</td><td>心灵感应</td><td>2个初级能力</td><td>60英尺视觉/听觉</td></tr>
+        <tr><td>13-18</td><td>13-18</td><td>心灵感应 + 可说1-2种语言</td><td>3个初级能力 + 1个高级能力</td><td>120英尺视觉/听觉</td></tr>
+        <tr><td>19-23</td><td>19</td><td>心灵感应 + 可说2-4种语言</td><td>3个初级能力 + 2个高级能力</td><td>120英尺 + 阅读文字</td></tr>
+        <tr><td>24-29</td><td>19</td><td>心灵感应 + 可说4种语言 + 阅读魔法</td><td>4个初级能力 + 3个高级能力</td><td>120英尺 + 阅读魔法</td></tr>
+        <tr><td>30+</td><td>19</td><td>心灵感应 + 全部语言 + 阅读魔法</td><td>4个初级能力 + 4个高级能力 + 特殊目的</td><td>120英尺 + 阅读魔法 + 真知术</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">智能物品的特殊能力</div>
+    <table class="mi-table">
+      <thead><tr><th>能力类型</th><th>能力示例</th><th>Ego加值</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="5"><strong>初级能力</strong></td><td>每天3次<em>侦测魔法</em></td><td>+1</td></tr>
+        <tr><td>每天1次<em>羽落术</em></td><td>+1</td></tr>
+        <tr><td>每天3次<em>定位物体</em></td><td>+1</td></tr>
+        <tr><td>每天1次<em>护盾术</em></td><td>+1</td></tr>
+        <tr><td>持有者获得黑暗视觉60英尺</td><td>+1</td></tr>
+        <tr><td rowspan="5"><strong>高级能力</strong></td><td>每天3次<em>火球术</em>（CL 8，3d6伤害）</td><td>+2</td></tr>
+        <tr><td>每天1次<em>传送术</em></td><td>+2</td></tr>
+        <tr><td>每天1次<em>飞行术</em>（CL 10）</td><td>+2</td></tr>
+        <tr><td>持有者获得<em>心灵屏障</em>效果</td><td>+2</td></tr>
+        <tr><td>每天1次<em>解除魔法</em></td><td>+2</td></tr>
+        <tr><td rowspan="3"><strong>特殊目的能力</strong></td><td>对特定敌人类型造成额外3d6伤害</td><td>+4</td></tr>
+        <tr><td>每天1次<em>真知术</em></td><td>+4</td></tr>
+        <tr><td>每天1次<em>支配怪物</em>（CL 15）</td><td>+4</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">智能物品的特殊目的（Special Purpose）</div>
+    <p>部分高Ego值的智能物品拥有特定目的，达成目的后获得额外力量。特殊目的由DM随机或自行决定。</p>
+    <table class="mi-table">
+      <thead><tr><th>特殊目的</th><th>达成条件</th><th>目的力量（额外能力）</th></tr></thead>
+      <tbody>
+        <tr><td>消灭特定种族/类型</td><td>消灭特定类型的生物（如兽人、恶魔）</td><td>对该类型生物额外+2d6伤害，<em>真实目光</em>持续生效</td></tr>
+        <tr><td>保卫特定阵营</td><td>保护与物品阵营相同的生物</td><td>对对立阵营生物获得+2攻击加值</td></tr>
+        <tr><td>消灭对立阵营</td><td>消灭与物品阵营相反的生物</td><td>对对立阵营生物额外+3d6伤害</td></tr>
+        <tr><td>消灭施法者</td><td>杀死敌对施法者</td><td>反魔法力场（10英尺半径，持续10分钟/天）</td></tr>
+        <tr><td>获得权力/影响力</td><td>持有者获得社会地位和权力</td><td>魅力+4增强加值，<em>群体暗示术</em>每天1次</td></tr>
+        <tr><td>寻求复仇</td><td>找到并消灭曾伤害过物品的人</td><td><em>定位生物</em>持续生效</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 4. Ego冲突规则 ===== -->
+    <h2 id="ego-rules">Ego冲突规则</h2>
+
+    <div class="mi-intro">
+      当智能物品的持有者与物品的意愿发生冲突时，物品会尝试控制持有者。这通过<strong>Ego对抗</strong>来解决。
+      智能物品的Ego值代表其意志力的强度。
+    </div>
+
+    <div class="mi-craft-box">
+      <h4>Ego对抗触发条件</h4>
+      <ul>
+        <li>持有者的阵营与物品阵营不兼容（非相邻阵营）</li>
+        <li>持有者拒绝执行物品的特殊目的</li>
+        <li>持有者连续10天不使用物品</li>
+        <li>持有者试图将物品交给他人</li>
+        <li>物品受到严重损坏（HP降至一半以下）</li>
+        <li>持有者的行为严重违背物品的意愿</li>
+      </ul>
+    </div>
+
+    <div class="mi-craft-box">
+      <h4>Ego对抗机制</h4>
+      <table class="mi-table">
+        <thead><tr><th>项目</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>物品的Ego值</td><td>智力加值 + 魅力加值 + Ego加值（由能力决定），范围1-50+</td></tr>
+          <tr><td>持有者的Ego值</td><td>智力加值 + 感知加值 + 魅力加值 + 角色等级</td></tr>
+          <tr><td>对抗方式</td><td>双方各掷1d20，加上各自的Ego值，高者获胜</td></tr>
+          <tr><td>物品获胜</td><td>物品控制持有者的行为，持续1d10小时。持有者被迫执行物品的意愿</td></tr>
+          <tr><td>持有者获胜</td><td>物品被压制，24小时内不会再次发起Ego对抗</td></tr>
+          <tr><td>Ego差值</td><td>如果一方Ego值比另一方高10+，该方自动获胜（无需掷骰）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mi-tip">
+      <strong>智能物品创造规则：</strong>制造智能物品需要额外的步骤和成本。
+      物品的智力/感知/魅力属性由制造时决定，Ego值由能力和属性自动计算。
+      智能物品的市场价格 = 基础物品价格 + 智能能力额外费用。详见DMG第7章"Intelligent Items"章节。
+    </div>
+
+    <!-- ===== 5. 诅咒物品 ===== -->
+    <h2 id="cursed-items">诅咒物品（Cursed Items）</h2>
+
+    <div class="mi-intro">
+      诅咒物品具有负面效果，通常无法通过普通方式丢弃或移除。需要<em>移除诅咒（Remove Curse）</em>或更高阶的法术才能脱下。
+      部分诅咒物品外观与正常魔法物品无异，需要特殊手段才能鉴定其诅咒属性。
+    </div>
+
+    <div class="mi-sub-header">常见诅咒类型</div>
+    <table class="mi-table">
+      <thead><tr><th>诅咒类型</th><th>效果描述</th><th>鉴定难度</th></tr></thead>
+      <tbody>
+        <tr><td>负面加值</td><td>物品提供负加值（如-2长剑），攻击和伤害受到惩罚</td><td>DC 20 法术辨识</td></tr>
+        <tr><td>强制佩戴</td><td>物品无法被脱下或丢弃，始终回到持有者身上</td><td>DC 25 法术辨识</td></tr>
+        <tr><td>属性降低</td><td>佩戴后某项属性永久降低（如敏捷-4）</td><td>DC 20 法术辨识</td></tr>
+        <tr><td>阵营改变</td><td>佩戴者阵营逐渐偏移至特定阵营</td><td>DC 30 法术辨识</td></tr>
+        <tr><td>外观欺骗</td><td>看起来像有益的魔法物品，实际提供负面效果</td><td>DC 30 法术辨识或<em>分析法术</em></td></tr>
+        <tr><td>特定弱点</td><td>佩戴者获得特定弱点（如火焰易伤、恐惧易伤）</td><td>DC 25 法术辨识</td></tr>
+        <tr><td>生命吸取</td><td>每天吸取持有者的HP或属性值</td><td>DC 30 法术辨识</td></tr>
+        <tr><td>召唤吸引</td><td>佩戴者吸引特定类型的敌对生物</td><td>DC 25 法术辨识</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mi-sub-header">经典诅咒物品</div>
+    <table class="mi-table">
+      <thead><tr><th>诅咒物品</th><th>英文</th><th>外观</th><th>诅咒效果</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>粘手盾牌</strong></td><td>Armor of Attraction</td>
+          <td>看似+1重钢盾</td>
+          <td>无法脱下。吸引所有远程攻击命中佩戴者（远程攻击者攻击+1，佩戴者AC-2对抗远程）。</td>
+        </tr>
+        <tr>
+          <td><strong>狂战斧</strong></td><td>Berserking Axe</td>
+          <td>+1巨斧</td>
+          <td>战斗中持有者必须攻击最近的生物（包括盟友），直到死亡或战斗结束。
+          可通过DC 20意志豁免抵抗，但每轮都需要重新豁免。</td>
+        </tr>
+        <tr>
+          <td><strong>舞步靴</strong></td><td>Boots of Dancing</td>
+          <td>看似飞翼靴或跳跃靴</td>
+          <td>穿戴者被迫跳舞，无法自由移动（只能以半速随机方向移动）。
+          战斗中每轮需通过DC 20意志豁免才能停止跳舞1轮。</td>
+        </tr>
+        <tr>
+          <td><strong>阵营反转头盔</strong></td><td>Helm of Opposite Alignment</td>
+          <td>看似普通头盔或有用头盔</td>
+          <td>穿戴者阵营完全反转（守序善良变为混乱邪恶，以此类推）。
+          只有<em>有限祈愿术</em>或<em>祈愿术</em>才能恢复原阵营。</td>
+        </tr>
+        <tr>
+          <td><strong>笨拙戒指</strong></td><td>Ring of Clumsiness</td>
+          <td>看似有用戒指</td>
+          <td>无法脱下。敏捷-4（最低降至1）。所有敏捷相关检定受到惩罚。</td>
+        </tr>
+        <tr>
+          <td><strong>毒斗篷</strong></td><td>Cloak of Poison</td>
+          <td>看似抗力斗篷</td>
+          <td>穿上后每轮受到1d6毒素伤害（强韧DC 15减半）。无法脱下直到<em>移除诅咒</em>。</td>
+        </tr>
+        <tr>
+          <td><strong>负加值武器</strong></td><td>—</td>
+          <td>看似+1至+5武器</td>
+          <td>攻击和伤害获得负数加值（如-2长剑：攻击-2，伤害-2）。
+          一旦拿起就无法丢弃。</td>
+        </tr>
+        <tr>
+          <td><strong>石化的卷轴</strong></td><td>Scroll of Curse</td>
+          <td>看似有用法术卷轴</td>
+          <td>阅读者受到<em>最佳诅咒</em>效果（-6所有属性，DC无法豁免）。
+          需要<em>移除诅咒</em>后再施放<em>复原术</em>才能恢复。</td>
+        </tr>
+        <tr>
+          <td><strong>吸血鬼尖牙</strong></td><td>Vampire Fangs</td>
+          <td>看似+1匕首</td>
+          <td>每次使用时吸取持有者1d4体质（而非目标）。持有者体质降至0则死亡变为吸血鬼。</td>
+        </tr>
+        <tr>
+          <td><strong>愚者之书</strong></td><td>Book of Infinite Spells (Cursed)</td>
+          <td>看似魔法之书</td>
+          <td>阅读后智力-2固有减值（无法恢复）。书页看起来正常但内容令人困惑。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ===== 6. 移除诅咒 ===== -->
+    <h2 id="remove-curse">移除诅咒的方法</h2>
+
+    <div class="mi-craft-box">
+      <h4>解除诅咒的方法（按强度递增）</h4>
+      <table class="mi-table">
+        <thead><tr><th>方法</th><th>适用情况</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><em>移除诅咒（Remove Curse）</em></td><td>大多数普通诅咒物品</td><td>3环法术，暂时解除诅咒效果，允许脱下物品。持续10分钟。
+          对抗高等诅咒可能需要多次施放。</td></tr>
+          <tr><td><em>破除结界（Break Enchantment）</em></td><td>较强的诅咒</td><td>5环法术，可永久解除中等强度的诅咒。CL检定 DC = 11 + 施咒者CL。</td></tr>
+          <tr><td><em>有限祈愿术（Limited Wish）</em></td><td>强大诅咒</td><td>7环法术，可解除大多数诅咒效果。</td></tr>
+          <tr><td><em>祈愿术（Wish）</em></td><td>极强诅咒</td><td>9环法术，可解除几乎所有诅咒。</td></tr>
+          <tr><td><em>奇迹术（Miracle）</em></td><td>神术等效</td><td>9环神术，效果等同于<em>祈愿术</em>。</td></tr>
+          <tr><td>摧毁物品</td><td>部分诅咒物品</td><td>某些诅咒物品有特定的摧毁方法（如在火山中熔化、被特定武器击碎等）。
+          摧毁后诅咒永久消失。</td></tr>
+          <tr><td>完成特定任务</td><td>剧情相关诅咒</td><td>某些诅咒与特定任务绑定（如归还物品给原主人、击败施咒者等）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mi-tip">
+      <strong>鉴定诅咒物品：</strong><em>辨识法术（Identify）</em>只能揭示物品的正面能力。要检测诅咒效果，需使用
+      <em>分析法术（Analyze Dweomer）</em>（CL 12+）或<em>法术辨识</em>检定（DC = 诅咒DC + 10）。
+      高等级的<em>辨识法术</em>（CL 15+）有50%几率揭示诅咒。
+    </div>
+
+    <div class="mi-craft-box">
+      <h4>诅咒物品的DM使用建议</h4>
+      <ul>
+        <li><strong>不要过度使用：</strong>诅咒物品应该作为特殊事件出现，而不是每次宝藏都有。过度使用会让玩家对每一件魔法物品都疑神疑鬼。</li>
+        <li><strong>提供解决方案：</strong>每个诅咒都应该有至少一种解除方法，即使是高难度的。完全没有出路的诅咒会让玩家感到沮丧。</li>
+        <li><strong>结合剧情：</strong>将诅咒物品与NPC、地点或历史事件联系起来，使之成为推动故事的元素。</li>
+        <li><strong>奖励与风险并存：</strong>最好的诅咒物品既有强大的正面能力，又有需要克服的负面影响，让玩家面临两难选择。</li>
+        <li><strong>鉴定提示：</strong>给敏锐的玩家提供暗示（如物品散发不祥气息、NPC警告等），让有准备的角色有机会检测。</li>
+      </ul>
+    </div>
+
+    <!-- 参考资料 -->
+    <div class="mi-ref-box">
+      <strong>参考资料与延伸阅读：</strong>
+      <ul style="margin:10px 0 0 20px;line-height:2;">
+        <li>DMG 第7章 p.268-280：神器、智能物品与诅咒物品</li>
+        <li>DMG 第8章：神器摧毁条件</li>
+        <li>Magic Item Compendium (MIC)：扩展智能物品选项</li>
+        <li>Book of Vile Darkness：更多邪恶诅咒物品</li>
+        <li>Book of Exalted Deeds：更多圣物</li>
+        <li>魔法物品概览：<a href="magic-items.html">魔法物品总览</a></li>
+        <li>魔法武器与防具：<a href="magic-weapons.html">魔法武器与防具附魔</a></li>
+        <li>奇物与消耗品：<a href="wondrous-items.html">奇物与消耗品</a></li>
+      </ul>
+    </div>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;text-align:center;">
+      数据来源：D&D 3.5e DMG第7章 | Book of Vile Darkness | Book of Exalted Deeds
+    </p>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&D 3.5e 中文Wiki | 本网站为爱好者创作，与威世智公司无关</p>
+</footer>
+
+</body>
+</html>

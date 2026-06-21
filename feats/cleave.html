@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>顺劈斩 Cleave - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .feat-detail {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 18px;
+    margin: 16px 0;
+  }
+  .feat-detail h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: var(--accent-blue);
+  }
+  .feat-strategy {
+    background: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+  .feat-warning {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html" class="active">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长分类</div>
+      <a href="intro.html">总览</a>
+      <a href="feat-list.html">📋 专长详细列表</a>
+      <a href="combat.html">战斗专长</a>
+      <a href="spell-feats.html">施法专长</a>
+      <a href="general.html">通用专长</a>
+      <a href="metamagic.html">超魔专长</a>
+      <a href="item.html">物品制造专长</a>
+      <a href="divine.html">神术专长</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心专长</div>
+      <a href="power-attack.html">猛力攻击</a>
+      <a href="cleave.html" class="active">顺劈斩</a>
+      <a href="weapon-focus.html">武器专精</a>
+      <a href="dodge.html">闪避</a>
+      <a href="iron-will.html">钢铁意志</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="infobox">
+      <div class="infobox-title">⚔️ 顺劈斩 Cleave</div>
+      <div class="infobox-subtitle">Dungeons & Dragons 3.5e</div>
+      <table class="infobox-table">
+        <tr><td>类型</td><td>战斗专长</td></tr>
+        <tr><td>先决条件</td><td>猛力攻击、力量 13+</td></tr>
+        <tr><td>益处</td><td>击杀后获得额外近战攻击</td></tr>
+        <tr><td>特殊</td><td>可与"精通顺劈斩"叠加</td></tr>
+        <tr><td>来源</td><td>PHB p.92 · SRD</td></tr>
+      </table>
+    </div>
+
+    <h1>顺劈斩（Cleave）</h1>
+    <p class="toc-desc">
+      <span class="badge badge-core">核心专长</span>
+      <span class="badge badge-feat">PHB p.92</span>
+      <span class="badge badge-note">AOE近战</span>
+    </p>
+    <p><strong>顺劈斩</strong>是 D&D 3.5e 中<strong>近战 AOE（范围伤害）</strong>的核心专长。
+    它允许你在<strong>击杀一个敌人后</strong>，立即对<strong>相邻敌人</strong>进行一次额外近战攻击。</p>
+    <p>在 D&D 3.5e 的 Min-Max（数值最优化）社区中，顺劈斩与<strong>猛力攻击</strong>、<strong>战斗反射</strong>组成强大的
+    <strong>近战控制链</strong>。一名正确的顺劈斩使用者可以在一轮内击杀 3-4 个小怪。</p>
+
+    <div class="toc">
+      <div class="toc-title">📋 目录</div>
+      <ol>
+        <li><a href="#mechanics">机制详解</a></li>
+        <li><a href="#calculation">触发条件</a></li>
+        <li><a href="#strategy">战术应用</a></li>
+        <li><a href="#prerequisites">先决条件</a></li>
+        <li><a href="#builds">构建建议</a></li>
+        <li><a href="#conflicts">规则冲突</a></li>
+        <li><a href="#source">数据来源</a></li>
+      </ol>
+    </div>
+
+    <h2 id="mechanics">⚙️ 机制详解</h2>
+    <div class="feat-detail">
+      <h3>基础效果</h3>
+      <p>选择顺劈斩专长后，你在每次<strong>击杀一个敌人</strong>后，可以获得一次<strong>额外近战攻击</strong>。</p>
+      <ul>
+        <li><strong>目标选择</strong>：额外攻击必须针对<strong>与上一个目标相邻</strong>的敌人。</li>
+        <li><strong>攻击顺序</strong>：必须在<strong>同一轮</strong>内使用（你的本轮行动时间）。</li>
+        <li><strong>使用次数</strong>：每轮<strong>1次</strong>（除非有"精通顺劈斩"）。</li>
+        <li><strong>攻击惩罚</strong>：继承猛力攻击的惩罚（如果使用）。</li>
+      </ul>
+      <p><strong>关键规则：</strong></p>
+      <ol>
+        <li>必须<strong>先击杀</strong>一个敌人才触发。</li>
+        <li>额外攻击的<strong>攻击加值</strong> = 你的 BAB - 所有猛力攻击惩罚。</li>
+        <li>额外攻击<strong>可以应用猛力攻击</strong>（需要重新声明惩罚）。</li>
+      </ol>
+    </div>
+
+    <div class="feat-detail">
+      <h3>与"精通顺劈斩"的交互</h3>
+      <p><strong>顺劈斩</strong>每轮只能使用 1 次。<strong>精通顺劈斩（Improved Cleave）</strong>移除这个限制。</p>
+      <ul>
+        <li><strong>顺劈斩</strong>：每轮 1 次额外攻击。</li>
+        <li><strong>精通顺劈斩</strong>：每轮 <strong>无限次</strong>额外攻击（只要你能击杀）。</li>
+      </ul>
+      <p><strong>构建意义：</strong>如果你想玩"绞肉机"构建，必须选择<strong>精通顺劈斩</strong>。</p>
+    </div>
+
+    <h2 id="calculation">📊 触发条件</h2>
+    <div class="feat-detail">
+      <h3>如何触发顺劈斩？</h3>
+      <table class="wiki-table">
+        <thead>
+          <tr><th>步骤</th><th>条件</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. 攻击敌人</td><td>近战攻击，命中</td><td>可以应用猛力攻击</td></tr>
+          <tr><td>2. 造成伤害</td><td>伤害 ≥ 敌人剩余 HP</td><td>必须击杀（HP ≤ 0）</td></tr>
+          <tr><td>3. 触发顺劈斩</td><td>敌人死亡，且相邻有敌人</td><td>DM 裁定是否"相邻"</td></tr>
+          <tr><td>4. 额外攻击</td><td>对相邻敌人进行近战攻击</td><td>必须与上一个目标相邻</td></tr>
+          <tr><td>5. 重复（如果有精通顺劈斩）</td><td>再次击杀，再次触发</td><td>需要"精通顺劈斩"专长</td></tr>
+        </tbody>
+      </table>
+      <p><strong>注意：</strong>顺劈斩<strong>不是自动触发</strong>。你必须在击杀后<strong>声明</strong>是否使用顺劈斩。</p>
+    </div>
+
+    <h2 id="strategy">🎯 战术应用</h2>
+    <div class="feat-strategy">
+      <h3>💡 何时使用顺劈斩？</h3>
+      <ul>
+        <li><strong>敌人群聚时</strong>：最佳场景。一个战士可以劈杀 3-4 个小怪。</li>
+        <li><strong>小怪 HP 较低时</strong>：确保能击杀。如果伤害不足，无法触发。</li>
+        <li><strong>你有"猛力攻击"时</strong>：伤害加值越高，越容易击杀触发。</li>
+        <li><strong>你要保护队友时</strong>：顺劈斩可以清除靠近队友的小怪。</li>
+      </ul>
+    </div>
+
+    <div class="feat-warning">
+      <h3>⚠️ 何时避免顺劈斩？</h3>
+      <ul>
+        <li><strong>敌人分散时</strong>：无法触发（没有相邻敌人）。</li>
+        <li><strong>敌人 HP 很高时</strong>：无法击杀，无法触发。</li>
+        <li><strong>你需要移动时</strong>：顺劈斩需要"额外攻击"，消耗你的本轮行动。</li>
+        <li><strong>你被夹击时</strong>：可能不想深入敌阵。</li>
+      </ul>
+    </div>
+
+    <h2 id="prerequisites">📖 先决条件</h2>
+    <div class="feat-detail">
+      <h3>必需条件</h3>
+      <ul>
+        <li><strong>猛力攻击（Power Attack）</strong>：必须先选猛力攻击。</li>
+        <li><strong>力量 13+</strong>：猛力攻击的先决条件。</li>
+      </ul>
+      <p><strong>推荐构建：</strong></p>
+      <ul>
+        <li><strong>战士/野蛮人</strong>：优先在 1 级选择（人类奖励专长）。</li>
+        <li><strong>圣武士/游侠</strong>：在 3 级或 6 级选择。</li>
+        <li><strong>武僧</strong>：通常不选择（武僧依赖徒手攻击，伤害骰固定）。</li>
+      </ul>
+    </div>
+
+    <h2 id="builds">🏗️ 构建建议</h2>
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>⚔️ 绞肉机构建</h3>
+        <p><strong>属性优先级</strong>：力量（STR） > 体质（CON） > 敏捷（DEX）</p>
+        <p><strong>专长链</strong>：猛力攻击 → 顺劈斩 → 精通顺劈斩 → 战斗反射</p>
+        <p><strong>战术</strong>：冲入敌阵 → 猛力攻击 → 击杀 → 顺劈斩 → 继续击杀。</p>
+      </div>
+      <div class="section-card">
+        <h3>🛡️ 控制型构建</h3>
+        <p><strong>属性优先级</strong>：体质（CON） > 力量（STR） > 敏捷（DEX）</p>
+        <p><strong>专长链</strong>：顺劈斩 → 战斗反射 → 钢铁意志</p>
+        <p><strong>战术</strong>：吸引火力 → 顺劈斩清理小怪 → 保护队友。</p>
+      </div>
+      <div class="section-card">
+        <h3>🏹 远程构建（不适用）</h3>
+        <p><strong>顺劈斩仅限近战</strong>。远程角色应选择"精准射击"和"快速射击"。</p>
+        <p><strong>替代方案</strong>：选择"战斗反射"获得更多借机攻击（远程也可以）。</p>
+      </div>
+    </div>
+
+    <h2 id="conflicts">⚠️ 规则冲突</h2>
+    <div class="conflict-preview">
+      <h3>关于"相邻"的定义冲突</h3>
+      <p><strong>冲突描述：</strong>顺劈斩的"相邻"是指<strong>战斗格子相邻</strong>，还是<strong>任意 5 英尺内</strong>？</p>
+      <p><strong>SRD 和 PHB 的明确说法：</strong>"The extra attack ... must be against a foe that is adjacent to the foe you just dropped." (SRD · Feats · Cleave)</p>
+      <p>即：<strong>必须战斗格子相邻</strong>（5 英尺内，且中间没有其他生物）。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.92</span></p>
+      <p><strong>DM 解释差异：</strong>某些 DM 可能 house rule "10 英尺内都可以"。建议提前确认。</p>
+    </div>
+
+    <div class="conflict-preview" style="border-left-color:var(--accent-blue);background:#eaf2f8;">
+      <h3>关于"顺劈斩"是否消耗"额外攻击"</h3>
+      <p><strong>冲突描述：</strong>顺劈斩的额外攻击是否<strong>占用额外攻击次数</strong>？</p>
+      <p><strong>SRD 的明确说法：</strong>"Cleave allows you to get ... one extra melee attack ... This is not an extra action." (SRD · Feats · Cleave)</p>
+      <p>即：<strong>不占用额外攻击次数</strong>。它是"奖励攻击"，不是"Full Attack Action"。</p>
+      <p><span class="source-tag">来源：SRD</span> <span class="source-tag">PHB p.92</span></p>
+    </div>
+
+    <h2 id="source">📚 数据来源</h2>
+    <ul>
+      <li>📘 <strong>PHB（玩家手册）3.5版</strong> p.92 —— 顺劈斩专长描述</li>
+      <li>📘 <strong>SRD 3.5</strong> · Feats → Cleave —— 开放式游戏规则</li>
+      <li>📗 <strong>DMG（城主手册）3.5版</strong> p.177 —— 专长选择建议</li>
+      <li>📗 <strong>Complete Warrior</strong> —— 顺劈斩变体和扩展</li>
+    </ul>
+
+    <hr style="margin:40px 0;border:none;border-top:1px solid var(--border-light);">
+    <p style="font-size:13px;color:#999;">
+      <strong>导航：</strong> <a href="power-attack.html">← 上一页：猛力攻击</a> | <a href="weapon-focus.html">下一页：武器专精 →</a>
+    </p>
+
+  </main>
+</div>
+
+<div class="footer">
+  <p>🐉 龙与地下城 3.5版 中文Wiki | 顺劈斩专长详细页 | 数据来源：SRD 3.5 · PHB</p>
+</div>
+</body>
+</html>

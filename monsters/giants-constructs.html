@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>巨人与构装体 Giants &amp; Constructs - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.cr-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:13px; font-weight:600; color:#fff; }
+.cr-low { background:#27ae60; }
+.cr-mid { background:#d4a017; }
+.cr-high { background:#c0392b; }
+.cr-boss { background:#8e44ad; }
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:40px; }
+.monster-entry { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:16px 0; }
+.monster-entry h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.monster-entry table { width:100%; border-collapse:collapse; margin:8px 0; }
+.monster-entry th, .monster-entry td { padding:6px 10px; border-bottom:1px solid var(--border-light,#e8dcc8); text-align:left; font-size:14px; }
+.monster-entry th { background:var(--bg-table-head,#d4b896); font-weight:600; }
+.tactic { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:8px 12px; margin:8px 0; font-size:14px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html" class="active">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">怪物图鉴</div>
+      <a href="intro.html">怪物总览</a>
+      <a href="classic-monsters.html">经典怪物</a>
+      <a href="dragons.html">龙类大全</a>
+      <a href="humanoids.html">类人怪物</a>
+      <a href="undead.html">不死生物</a>
+      <a href="magical-beasts.html">魔法兽</a>
+      <a href="aberrations-fey.html">异怪与精类</a>
+      <a href="outsiders.html">异界生物</a>
+      <a href="giants-constructs.html" class="active">巨人与构装体</a>
+      <a href="plants-oozes.html">植物与泥怪</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <h1>巨人与构装体 <span style="font-size:0.5em;color:#888;">Giants &amp; Constructs</span></h1>
+    <p>本页收录 D&D 3.5e 中的巨人 (Giant) 与构装体 (Construct) 类怪物。巨人拥有强大的力量和远程投掷能力，构装体则是被魔法赋予生命的人工造物，通常免疫多种伤害。</p>
+
+    <div class="toc">
+      <h3>目录</h3>
+      <ul>
+        <li><a href="#giants">1. 巨人族</a></li>
+        <li><a href="#giants-table">巨人速查表</a></li>
+        <li><a href="#giant-variants">2. 巨人变体</a></li>
+        <li><a href="#golems">3. 魔像</a></li>
+        <li><a href="#constructs">4. 其他构装体</a></li>
+        <li><a href="#construct-rules">构装体规则要点</a></li>
+        <li><a href="#cr-ref">5. CR 速查表</a></li>
+      </ul>
+    </div>
+
+    <!-- ========== 1. 巨人族 ========== -->
+    <h2 class="section-title" id="giants">1. 巨人族 (True Giants)</h2>
+    <p>六大真巨人按体型和力量递增排列，每种都有独特的元素亲和力与特殊能力。所有巨人均有暗视60尺和低光视觉，能投掷岩石。</p>
+
+    <table class="quick-table" id="giants-table">
+      <thead>
+        <tr><th>名称</th><th>CR</th><th>体型</th><th>HD</th><th>HP</th><th>AC</th><th>投掷</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>丘陵巨人 Hill Giant</td><td><span class="cr-badge cr-mid">8</span></td><td>大型</td><td>10d8</td><td>75</td><td>20</td><td>120尺 2d6+7</td></tr>
+        <tr><td>石巨人 Stone Giant</td><td><span class="cr-badge cr-mid">8</span></td><td>大型</td><td>14d8</td><td>105</td><td>23</td><td>180尺 2d6+7</td></tr>
+        <tr><td>霜巨人 Frost Giant</td><td><span class="cr-badge cr-high">9</span></td><td>大型</td><td>14d8</td><td>105</td><td>19</td><td>120尺 2d6+7</td></tr>
+        <tr><td>火巨人 Fire Giant</td><td><span class="cr-badge cr-high">11</span></td><td>大型</td><td>15d8</td><td>112</td><td>23</td><td>120尺 2d6+7</td></tr>
+        <tr><td>云巨人 Cloud Giant</td><td><span class="cr-badge cr-high">11</span></td><td>大型</td><td>17d8</td><td>136</td><td>21</td><td>180尺 2d6+7</td></tr>
+        <tr><td>风暴巨人 Storm Giant</td><td><span class="cr-badge cr-boss">16</span></td><td>大型</td><td>23d8</td><td>184</td><td>27</td><td>180尺 2d6+7</td></tr>
+      </tbody>
+    </table>
+
+    <div class="monster-entry">
+      <h3>丘陵巨人 <span class="cr-badge cr-mid">CR 8</span></h3>
+      <p>Hill Giant — 最原始的真巨人，智力低下，蛮力惊人。成群出没于丘陵地带，袭击路过的旅行者。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人</td></tr>
+        <tr><td>HD</td><td>10d8+30 (75 hp)</td></tr>
+        <tr><td>AC</td><td>20 (-1体型, +2敏捷, +4天然, +5护甲) 接触11, 措手不及18</td></tr>
+        <tr><td>攻击</td><td>巨棍 +16 近战 (2d8+10); 投掷岩石 +7 远程 (2d6+7, 射程120尺)</td></tr>
+        <tr><td>特殊能力</td><td>投掷岩石、抓取岩石、猛力打击</td></tr>
+        <tr><td>属性</td><td>力量25, 敏捷15, 体质17, 智力5, 感知9, 魅力6</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>丘陵巨人喜欢从高处向下投掷岩石，然后冲锋近战。它们智力极低，容易被幻术和陷阱欺骗。避免与它们正面肉搏——力量25的巨棍打击非常痛。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>石巨人 <span class="cr-badge cr-mid">CR 8</span></h3>
+      <p>Stone Giant — 居住在山地和洞穴中的巨人，擅长投掷和接取岩石，拥有精湛的石材工艺。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人</td></tr>
+        <tr><td>HD</td><td>14d8+42 (105 hp)</td></tr>
+        <tr><td>AC</td><td>23 (-1体型, +1敏捷, +7天然, +6盾牌) 接触10, 措手不及22</td></tr>
+        <tr><td>攻击</td><td>巨棍 +19 近战 (2d8+11); 投掷岩石 +7 远程 (2d6+11, 射程180尺)</td></tr>
+        <tr><td>特殊能力</td><td>投掷岩石、抓取岩石 (反射DC20可接住投射物)</td></tr>
+        <tr><td>属性</td><td>力量25, 敏捷15, 体质17, 智力10, 感知13, 魅力10</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>石巨人比其他巨人更善于防御，能接住飞来的远程投射物。它们的投掷射程更远(180尺)，建议在进入近战前先用远程法术削弱它们。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>霜巨人 <span class="cr-badge cr-high">CR 9</span></h3>
+      <p>Frost Giant — 来自极地冰原的巨人，免疫寒冷，对火焰脆弱。通常穿着链甲和毛皮护甲。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人（寒冷亚种）</td></tr>
+        <tr><td>HD</td><td>14d8+42 (105 hp)</td></tr>
+        <tr><td>AC</td><td>19 (-1体型, +4天然, +6护甲)</td></tr>
+        <tr><td>攻击</td><td>巨斧 +19 近战 (3d6+10/x3); 投掷岩石 (2d6+7, 120尺)</td></tr>
+        <tr><td>特殊能力</td><td>寒冷亚种 (免疫寒冷，火焰易伤)</td></tr>
+        <tr><td>属性</td><td>力量27, 敏捷13, 体质17, 智力10, 感知13, 魅力10</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>火焰法术对霜巨人造成双倍伤害！这是对抗它们最有效的手段。它们在寒冷环境中占据绝对优势，使用火球术或火焰之刃可以造成毁灭性伤害。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>火巨人 <span class="cr-badge cr-high">CR 11</span></h3>
+      <p>Fire Giant — 居住在火山和熔岩地带的巨人，免疫火焰，对寒冷脆弱。是六大巨人中军纪最严明的。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人（火焰亚种）</td></tr>
+        <tr><td>HD</td><td>15d8+45 (112 hp)</td></tr>
+        <tr><td>AC</td><td>23 (-1体型, +2敏捷, +8天然, +4护甲)</td></tr>
+        <tr><td>攻击</td><td>巨剑 +22 近战 (3d6+10/19-20); 投掷岩石 (2d6+7, 120尺)</td></tr>
+        <tr><td>特殊能力</td><td>火焰亚种 (免疫火焰，寒冷易伤)</td></tr>
+        <tr><td>属性</td><td>力量27, 敏捷15, 体质17, 智力10, 感知13, 魅力10</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>冰系法术对火巨人造成双倍伤害！它们的AC是巨人中最高的，近战威胁极大。巨剑的重击范围为19-20，配合力量27非常危险。优先使用寒冰锥或冰冻射线。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>云巨人 <span class="cr-badge cr-high">CR 11</span></h3>
+      <p>Cloud Giant — 居住在浮空城堡或高山之巅的巨人，拥有魔法能力和极佳的嗅觉。性格高傲，以艺术品味自矜。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人</td></tr>
+        <tr><td>HD</td><td>17d8+68 (136 hp)</td></tr>
+        <tr><td>AC</td><td>21 (-1体型, +1敏捷, +5天然, +6护甲)</td></tr>
+        <tr><td>攻击</td><td>巨剑 +25 近战 (3d6+11/19-20); 投掷岩石 +9 远程 (2d6+7, 180尺)</td></tr>
+        <tr><td>特殊能力</td><td>类法术能力：操控天气3/日、雾云术3/日、飞行术(自身)、风墙术3/日</td></tr>
+        <tr><td>属性</td><td>力量27, 敏捷13, 体质19, 智力12, 感知16, 魅力16</td></tr>
+        <tr><td>嗅觉</td><td>灵敏嗅觉（可探测隐形生物）</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>云巨人是唯一具有类法术能力的巨人——操控天气可以改变战场环境。它们的嗅觉能发现隐形敌人，所以不要依赖隐形术。它们通常有丰富的财宝和魔法物品。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>风暴巨人 <span class="cr-badge cr-boss">CR 16</span></h3>
+      <p>Storm Giant — 真巨人中最强大的存在，居住在最高山巅或深海之底。拥有闪电攻击和水下呼吸能力。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人</td></tr>
+        <tr><td>HD</td><td>23d8+92 (184 hp)</td></tr>
+        <tr><td>AC</td><td>27 (-1体型, +3敏捷, +6天然, +8护甲, +1盾牌)</td></tr>
+        <tr><td>攻击</td><td>巨剑 +31 近战 (4d6+13/19-20); 投掷岩石 +13 远程 (2d6+7, 180尺)</td></tr>
+        <tr><td>特殊能力</td><td>闪电术3/日 (15d6, DC22反射减半)、操控天气3/日、召唤闪电、水下呼吸</td></tr>
+        <tr><td>属性</td><td>力量29, 敏捷17, 体质19, 智力16, 感知18, 魅力18</td></tr>
+        <tr><td>法术抵抗</td><td>SR 27</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>风暴巨人是Boss级别的遭遇——184HP、SR27、闪电术15d6。它们通常善良守序，只有在领地被侵犯时才会战斗。对抗时需要全队配合，优先用驱散魔法降低其法术抵抗，再用高伤害法术集火。</div>
+    </div>
+
+    <!-- ========== 2. 巨人变体 ========== -->
+    <h2 class="section-title" id="giant-variants">2. 巨人变体 (Giant Variants)</h2>
+
+    <div class="monster-entry">
+      <h3>食人魔 <span class="cr-badge cr-low">CR 2</span></h3>
+      <p>Ogre — 体型介于巨人与类人生物之间的蛮族。智力极低但力量恐怖，常作为地精和兽人的雇佣打手。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人</td></tr>
+        <tr><td>HD</td><td>4d8+8 (26 hp)</td></tr>
+        <tr><td>AC</td><td>14 (-1体型, -1敏捷, +6天然)</td></tr>
+        <tr><td>攻击</td><td>巨棍 +7 近战 (2d8+7)</td></tr>
+        <tr><td>特殊能力</td><td>暗视60尺、低光视觉</td></tr>
+        <tr><td>属性</td><td>力量21, 敏捷8, 体质15, 智力6, 感知10, 魅力7</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>低等级冒险者的噩梦。2-3级的队伍遭遇食人魔需要格外小心，巨棍2d8+7一击可能直接打倒低HP角色。利用其智力低下和低AC来制定策略。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>食人魔法师 <span class="cr-badge cr-mid">CR 8</span></h3>
+      <p>Ogre Mage — 食人魔中的稀有变种，蓝皮肤，拥有强大的类法术能力和再生能力。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人</td></tr>
+        <tr><td>HD</td><td>9d8+27 (67 hp)</td></tr>
+        <tr><td>AC</td><td>17 (-1体型, +1敏捷, +5天然, +2护甲)</td></tr>
+        <tr><td>攻击</td><td>巨剑 +12 近战 (3d6+9/19-20)</td></tr>
+        <tr><td>特殊能力</td><td>再生5 (酸/火)、变身术、黑暗术、魅惑人类、睡眠术、寒冰锥1/日、隐形术、气化形态、飞行术</td></tr>
+        <tr><td>属性</td><td>力量23, 敏捷13, 体质17, 智力13, 感知14, 魅力14</td></tr>
+        <tr><td>法术抵抗</td><td>SR 19</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>食人魔法师比普通食人魔危险得多——再生5让物理攻击效率大减，必须用火焰或酸液才能阻止再生。寒冰锥和飞行术让它兼具机动性和火力。优先用持续火焰伤害压制再生。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>双头巨人 <span class="cr-badge cr-high">CR 10</span></h3>
+      <p>Ettin — 拥有两个头颅的巨人，永远保持警觉（一头睡一头醒），擅长双手各持一把巨斧战斗。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人</td></tr>
+        <tr><td>HD</td><td>10d8+50 (95 hp)</td></tr>
+        <tr><td>AC</td><td>18 (-1体型, +1敏捷, +4天然, +4护甲)</td></tr>
+        <tr><td>攻击</td><td>2把巨斧 +13/+13 近战 (2d6+6/x3 + 2d6+3/x3)</td></tr>
+        <tr><td>特殊能力</td><td>双武器精通、暗视60尺、低光视觉、灵敏嗅觉</td></tr>
+        <tr><td>属性</td><td>力量23, 敏捷12, 体质21, 智力6, 感知11, 魅力9</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>双头巨人的双武器攻击每轮造成4d6+9的恐怖伤害。它们不会被偷袭（一头始终警觉），睡眠术无效（一头醒一头睡）。集中火力快速击倒是最佳策略。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>巨魔 <span class="cr-badge cr-mid">CR 5</span></h3>
+      <p>Troll — 拥有恐怖再生能力的巨人，只有火焰和酸液才能阻止它们恢复。三肢并用攻击极为凶猛。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型巨人</td></tr>
+        <tr><td>HD</td><td>6d8+30 (57 hp)</td></tr>
+        <tr><td>AC</td><td>16 (-1体型, +2敏捷, +5天然)</td></tr>
+        <tr><td>攻击</td><td>2爪 +8 (1d6+6) + 啮咬 +8 (1d6+6)</td></tr>
+        <tr><td>特殊能力</td><td>再生5 (火焰/酸液)、撕裂 (2爪命中后额外1d6+9)、灵敏嗅觉</td></tr>
+        <tr><td>属性</td><td>力量23, 敏捷14, 体质21, 智力6, 感知9, 魅力8</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>永远记住——用火烧巨魔！再生5意味着每轮恢复5HP，不用火焰或酸液几乎无法击杀。即使被砍断四肢，断肢也能重新接合。火球术或持续燃烧的炼金火是对付它们的最佳武器。</div>
+    </div>
+
+    <!-- ========== 3. 魔像 ========== -->
+    <h2 class="section-title" id="golems">3. 魔像 (Golems)</h2>
+    <p>魔像是由强大施法者用元素之灵束缚于物质躯壳中的构装体。它们忠于制造者，执行简单的命令。每种魔像都对几乎所有魔法免疫，只有特定法术能影响它们。</p>
+
+    <div class="monster-entry">
+      <h3>血肉魔像 <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>Flesh Golem — 由尸体缝合而成的恐怖造物，类似弗兰肯斯坦的怪物。在战斗中可能陷入狂暴。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型构装体</td></tr>
+        <tr><td>HD</td><td>40 hp</td></tr>
+        <tr><td>AC</td><td>15 (-1体型, +1敏捷, +5天然)</td></tr>
+        <tr><td>攻击</td><td>2挥击 +11 (2d8+5)</td></tr>
+        <tr><td>特殊能力</td><td>狂暴 (战斗1分钟后1%概率失控)、魔法免疫 (电击减速、火焰减速、电击治疗)</td></tr>
+        <tr><td>伤害减免</td><td>DR 5/挥砍</td></tr>
+        <tr><td>属性</td><td>力量22, 敏捷13, 体质—, 智力—, 感知11, 魅力1</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>血肉魔像是最低级的魔像，但仍然很危险。用挥砍武器可绕过DR。电击法术让它减速，火焰法术也让它减速。最大的威胁是狂暴——一旦失控，它会无差别攻击最近的生物（包括其创造者）。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>粘土魔像 <span class="cr-badge cr-high">CR 11</span></h3>
+      <p>Clay Golem — 由黏土塑造的构装体，拥有加速术和诅咒伤口的能力。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型构装体</td></tr>
+        <tr><td>HD</td><td>50 hp</td></tr>
+        <tr><td>AC</td><td>16 (-1体型, +7天然)</td></tr>
+        <tr><td>攻击</td><td>挥击 +17 (2d10+7)</td></tr>
+        <tr><td>特殊能力</td><td>加速术 1/日 (持续7轮)、诅咒伤口 (被击中的伤口无法用魔法治疗，需DC14移除诅咒)、魔法免疫 (移土术减速、解离术造成伤害、地震术造成伤害)</td></tr>
+        <tr><td>伤害减免</td><td>DR 10/精金和挥砍</td></tr>
+        <tr><td>属性</td><td>力量25, 敏捷9, 体质—, 智力—, 感知11, 魅力1</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>粘土魔像最恐怖的能力是诅咒伤口——被它击中的角色无法被治疗法术恢复HP（需先施放移除诅咒）。加速术让它在战斗中极其凶猛。需要精金挥砍武器才能绕过DR。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>石魔像 <span class="cr-badge cr-high">CR 11</span></h3>
+      <p>Stone Golem — 用坚硬石材雕刻的构装体，AC极高，能释放减速术。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型构装体</td></tr>
+        <tr><td>HD</td><td>80 hp</td></tr>
+        <tr><td>AC</td><td>25 (-1体型, +1敏捷, +15天然)</td></tr>
+        <tr><td>攻击</td><td>2挥击 +20 (2d10+9)</td></tr>
+        <tr><td>特殊能力</td><td>减速术 1/日 (10尺范围, DC17, 持续7轮)、魔法免疫 (对几乎所有法术免疫)</td></tr>
+        <tr><td>伤害减免</td><td>DR 10/精金</td></tr>
+        <tr><td>属性</td><td>力量29, 敏捷13, 体质—, 智力—, 感知11, 魅力1</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>石魔像的AC25让低攻击加值的角色几乎无法命中。减速术能让整个队伍行动迟缓。只有精金武器能绕过DR，所以没有精金武器的队伍需要寻找其他方法。解离术可以对其造成伤害。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>铁魔像 <span class="cr-badge cr-high">CR 13</span></h3>
+      <p>Iron Golem — 最强力的标准魔像，全身铁制，拥有毒气喷吐和恐怖的物理防御。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型构装体</td></tr>
+        <tr><td>HD</td><td>100 hp</td></tr>
+        <tr><td>AC</td><td>30 (-1体型, +2敏捷, +19天然)</td></tr>
+        <tr><td>攻击</td><td>2巨剑 +24 (3d6+10/19-20)</td></tr>
+        <tr><td>特殊能力</td><td>喷吐武器 (1/日, 10尺范围毒气, DC19强韧, 初始1d6体质/后续1d6体质)、魔法免疫 (电击减速、火焰治疗)、火焰亚种</td></tr>
+        <tr><td>伤害减免</td><td>DR 10/精金</td></tr>
+        <tr><td>属性</td><td>力量33, 敏捷15, 体质—, 智力—, 感知11, 魅力1</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>铁魔像是最具挑战性的标准魔像——AC30、100HP、力量33。毒气喷吐的体质伤害可以致命。火焰法术反而治疗它！电击让它减速但不造成伤害。需要精金武器配合高攻击加值的战士，或用解离术等少数能穿透魔法免疫的法术。</div>
+    </div>
+
+    <!-- ========== 4. 其他构装体 ========== -->
+    <h2 class="section-title" id="constructs">4. 其他构装体 (Other Constructs)</h2>
+
+    <div class="monster-entry">
+      <h3>人造人 <span class="cr-badge cr-low">CR 1</span></h3>
+      <p>Homunculus — 微型人造生物，与制造者共享感官和生命力。常作为法师的使魔和间谍。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>超小型构装体</td></tr>
+        <tr><td>HD</td><td>2d10 (5 hp, 与制造者共享)</td></tr>
+        <tr><td>AC</td><td>17 (+2体型, +2敏捷, +3天然)</td></tr>
+        <tr><td>攻击</td><td>啮咬 +4 (1d4-1 + 毒素DC10强韧, 昏睡1分钟)</td></tr>
+        <tr><td>特殊能力</td><td>与制造者共享感官 (1500尺)、黑暗视觉、低光视觉、飞行50尺 (良好)</td></tr>
+        <tr><td>属性</td><td>力量8, 敏捷15, 体质—, 智力10, 感知12, 魅力7</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>人造人单独不构成威胁，但作为法师间谍极其难缠。它通过共享视觉传递情报，发现并摧毁人造人可以严重削弱敌人的信息收集能力。人造人死亡时制造者受到2d10伤害。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>盾卫者 <span class="cr-badge cr-mid">CR 7</span></h3>
+      <p>Shield Guardian — 专门设计用来保护主人的构装体，能吸收转移给主人的伤害，并储存一个法术。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型构装体</td></tr>
+        <tr><td>HD</td><td>65 hp</td></tr>
+        <tr><td>AC</td><td>24 (-1体型, +1敏捷, +10天然, +4盾牌)</td></tr>
+        <tr><td>攻击</td><td>2挥击 +12 (2d8+6)</td></tr>
+        <tr><td>特殊能力</td><td>护主 (主人60尺内时，攻击主人的伤害有50%转移给盾卫者)、寻主 (可在任意距离找到护符持有者)、法术储存 (可储存一个不超过4环法术)</td></tr>
+        <tr><td>伤害减免</td><td>DR 10/精金</td></tr>
+        <tr><td>属性</td><td>力量23, 敏捷13, 体质—, 智力—, 感知11, 魅力1</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>盾卫者通常伴随一名强大的施法者出现。它会吸收主人受到的伤害，所以必须优先击杀盾卫者，或者把盾卫者拉出60尺范围（使其护主失效）。摧毁护符可以让盾卫者失去寻主能力。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>动画物体 <span class="cr-badge cr-low">CR 1-3</span></h3>
+      <p>Animated Object — 被魔法赋予生命的日常物品。CR取决于体型，可以从一把椅子到一尊雕像。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>超小型至超大型构装体</td></tr>
+        <tr><td>HD</td><td>按体型：微型1d10、小型2d10、中型3d10、大型4d10、巨型6d10</td></tr>
+        <tr><td>AC</td><td>按体型和材质变化 (石像AC约20、木桌AC约13)</td></tr>
+        <tr><td>攻击</td><td>挥击、缠绕、碾压 (取决于形态)</td></tr>
+        <tr><td>特殊能力</td><td>硬度 (按材质)、践踏 (大型以上)、缠绕 (绳索/窗帘类)</td></tr>
+        <tr><td>常见形态</td><td>椅子 (CR1)、盔甲 (CR2)、雕像 (CR3)、大马车 (CR4)</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>动画物体的威胁程度差异极大。一把飞来的椅子只是骚扰，但一尊活化石像则相当危险。利用解离术可以直接摧毁它们。注意它们保持材质的硬度——金属物体对物理攻击有高硬度值。</div>
+    </div>
+
+    <div class="monster-entry">
+      <h3>寻回魔像 <span class="cr-badge cr-high">CR 9</span></h3>
+      <p>Retriever — 蜘蛛形态的构装体，被设计用于在深渊中搜索逃犯。拥有致命的射线攻击。</p>
+      <table>
+        <tr><th>属性</th><th>数值</th></tr>
+        <tr><td>体型/类型</td><td>大型构装体</td></tr>
+        <tr><td>HD</td><td>76 hp</td></tr>
+        <tr><td>AC</td><td>23 (-1体型, +4敏捷, +10天然)</td></tr>
+        <tr><td>攻击</td><td>4爪 +12 (2d6+4); 2眼射线 (每射线14d6, DC20反射减半)</td></tr>
+        <tr><td>特殊能力</td><td>眼射线 (火焰/寒冷/电击/力场, 每射线每3轮一次)、寻物 (可精确定位指定目标的位置)、位面行走</td></tr>
+        <tr><td>属性</td><td>力量19, 敏捷19, 体质—, 智力3, 感知14, 魅力10</td></tr>
+      </table>
+      <div class="tactic"><strong>战术要点：</strong>寻回魔像的眼射线每3轮一次，每发14d6伤害极其恐怖。它有4只爪子和2条射线可以同时攻击。一旦被它锁定为目标就无处可逃——它的寻物能力可以跨位面追踪。优先用眼罩或反魔法场使其射线失效。</div>
+    </div>
+
+    <!-- ========== 构装体规则要点 ========== -->
+    <h2 class="section-title" id="construct-rules">构装体规则要点</h2>
+    <table class="quick-table">
+      <thead><tr><th>特性</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>构装体特性</td><td>免疫心智影响法术、毒素、睡眠、麻痹、震慑、疾病、即死效果、死灵效果</td></tr>
+        <tr><td>无法自愈</td><td>除非有再生或快速愈合，否则构装体不会自行恢复HP (修复术可修复)</td></tr>
+        <tr><td>无体质值</td><td>构装体没有体质属性，用HD计算HP</td></tr>
+        <tr><td>无心智</td><td>通常无智力，完全服从制造者的命令</td></tr>
+        <tr><td>暗视</td><td>所有构装体拥有暗视60尺</td></tr>
+        <tr><td>不可被复活</td><td>构装体被摧毁后无法被复活法术恢复 (除非用完全复生术)</td></tr>
+        <tr><td>重击无效</td><td>免疫重击和其他需要活体生理的效果</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:20px;">魔像魔法免疫速查表</h3>
+    <table class="quick-table">
+      <thead><tr><th>魔像</th><th>免疫规则</th><th>例外法术</th></tr></thead>
+      <tbody>
+        <tr><td>血肉魔像</td><td>免疫所有魔法</td><td>电击→减速50% 1d4轮；火焰→减速50% 1d4轮；电击每d6→治疗1HP</td></tr>
+        <tr><td>粘土魔像</td><td>免疫所有魔法</td><td>移土术→减速；解离术→1d12伤害；地震术→2d6伤害并1轮减速</td></tr>
+        <tr><td>石魔像</td><td>免疫所有魔法</td><td>化石为肉→1轮减速；解离术→1d12伤害；化石为泥→减速1轮</td></tr>
+        <tr><td>铁魔像</td><td>免疫所有魔法</td><td>电击→减速3轮；火焰每d6→治疗1HP（火焰治疗它！）</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ========== 5. CR速查表 ========== -->
+    <h2 class="section-title" id="cr-ref">5. CR 速查表</h2>
+    <table class="quick-table">
+      <thead>
+        <tr><th>CR</th><th>名称</th><th>类型</th><th>HP</th><th>AC</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="cr-badge cr-low">1</span></td><td>人造人 (Homunculus)</td><td>构装体</td><td>5</td><td>17</td></tr>
+        <tr><td><span class="cr-badge cr-low">1-3</span></td><td>动画物体 (Animated Object)</td><td>构装体</td><td>变化</td><td>变化</td></tr>
+        <tr><td><span class="cr-badge cr-low">2</span></td><td>食人魔 (Ogre)</td><td>巨人</td><td>26</td><td>14</td></tr>
+        <tr><td><span class="cr-badge cr-mid">5</span></td><td>巨魔 (Troll)</td><td>巨人</td><td>57</td><td>16</td></tr>
+        <tr><td><span class="cr-badge cr-mid">7</span></td><td>血肉魔像 (Flesh Golem)</td><td>构装体</td><td>40</td><td>15</td></tr>
+        <tr><td><span class="cr-badge cr-mid">7</span></td><td>盾卫者 (Shield Guardian)</td><td>构装体</td><td>65</td><td>24</td></tr>
+        <tr><td><span class="cr-badge cr-mid">8</span></td><td>丘陵巨人 (Hill Giant)</td><td>巨人</td><td>75</td><td>20</td></tr>
+        <tr><td><span class="cr-badge cr-mid">8</span></td><td>石巨人 (Stone Giant)</td><td>巨人</td><td>105</td><td>23</td></tr>
+        <tr><td><span class="cr-badge cr-mid">8</span></td><td>食人魔法师 (Ogre Mage)</td><td>巨人</td><td>67</td><td>17</td></tr>
+        <tr><td><span class="cr-badge cr-high">9</span></td><td>霜巨人 (Frost Giant)</td><td>巨人</td><td>105</td><td>19</td></tr>
+        <tr><td><span class="cr-badge cr-high">9</span></td><td>寻回魔像 (Retriever)</td><td>构装体</td><td>76</td><td>23</td></tr>
+        <tr><td><span class="cr-badge cr-high">10</span></td><td>双头巨人 (Ettin)</td><td>巨人</td><td>95</td><td>18</td></tr>
+        <tr><td><span class="cr-badge cr-high">11</span></td><td>火巨人 (Fire Giant)</td><td>巨人</td><td>112</td><td>23</td></tr>
+        <tr><td><span class="cr-badge cr-high">11</span></td><td>粘土魔像 (Clay Golem)</td><td>构装体</td><td>50</td><td>16</td></tr>
+        <tr><td><span class="cr-badge cr-high">11</span></td><td>石魔像 (Stone Golem)</td><td>构装体</td><td>80</td><td>25</td></tr>
+        <tr><td><span class="cr-badge cr-high">11</span></td><td>云巨人 (Cloud Giant)</td><td>巨人</td><td>136</td><td>21</td></tr>
+        <tr><td><span class="cr-badge cr-high">13</span></td><td>铁魔像 (Iron Golem)</td><td>构装体</td><td>100</td><td>30</td></tr>
+        <tr><td><span class="cr-badge cr-boss">16</span></td><td>风暴巨人 (Storm Giant)</td><td>巨人</td><td>184</td><td>27</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>

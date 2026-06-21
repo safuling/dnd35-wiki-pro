@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>超魔专长 Metamagic Feats - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.section-title { border-left:4px solid var(--accent-gold,#d4a017); padding-left:12px; margin-top:32px; }
+.feat-card { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:12px 0; }
+.feat-card h3 { margin-top:0; color:var(--text-heading,#4a2c0a); }
+.feat-card h3 a { color:var(--text-heading,#4a2c0a); text-decoration:none; }
+.feat-card h3 a:hover { text-decoration:underline; }
+.feat-meta { font-size:13px; color:var(--text-subtle,#7f8c8d); margin-bottom:8px; }
+.feat-meta .badge { display:inline-block; padding:2px 8px; border-radius:3px; font-size:11px; font-weight:600; color:#fff; margin-right:4px; }
+.badge-combat { background:#c0392b; }
+.badge-general { background:#2980b9; }
+.badge-metamagic { background:#8e44ad; }
+.badge-item { background:#e67e22; }
+.badge-divine { background:#d4a017; }
+.badge-spell { background:#27ae60; }
+.prereq { font-size:13px; color:#888; margin:4px 0; }
+.benefit { font-size:14px; margin:6px 0; }
+.tactic-tip { background:#e8f4f8; border-left:3px solid var(--accent-blue,#2980b9); padding:6px 10px; margin:6px 0; font-size:13px; border-radius:0 4px 4px 0; }
+.quick-table { width:100%; border-collapse:collapse; margin:12px 0; }
+.quick-table th, .quick-table td { padding:6px 10px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; }
+.quick-table th { background:var(--bg-table-head,#d4b896); }
+.quick-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.toc { background:var(--bg-card,#faf6ee); border:1px solid var(--border-light,#e8dcc8); border-radius:6px; padding:16px; margin:20px 0; }
+.toc h3 { margin-top:0; }
+.toc ul { list-style:none; padding:0; margin:0; columns:2; }
+.toc li { padding:3px 0; }
+.toc a { text-decoration:none; color:var(--text-link,#21618c); }
+.toc a:hover { text-decoration:underline; }
+.compare-table { width:100%; border-collapse:collapse; margin:16px 0; }
+.compare-table th, .compare-table td { padding:8px 12px; border:1px solid var(--border-light,#e8dcc8); font-size:13px; text-align:left; }
+.compare-table th { background:#6c3483; color:#fff; }
+.compare-table tr:nth-child(even) { background:var(--bg-table-stripe,#f7f3ea); }
+.compare-table .level-adj { font-weight:700; color:#8e44ad; text-align:center; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">🐉 D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="../races/intro.html">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+    <a href="../monsters/intro.html">怪物</a>
+    <a href="../3r/index-v2.html" style="color:#d4a017;font-weight:600;">⚡ 3R拓展</a>
+    <a href="../conflicts.html">规则冲突</a>
+    <div class="nav-dropdown">
+      <span class="drop-trigger">更多规则 ▾</span>
+      <div class="nav-dropdown-content">
+        <a href="../rules-adventure.html">🗺️ 冒险</a>
+        <a href="../rules-planes.html">🌌 位面与宇宙学</a>
+        <a href="../rules-combat.html">⚔️ 战斗详述</a>
+        <a href="../rules-deities.html">🙏 神祇与阵营</a>
+        <a href="../rules-companions.html">🐾 伙伴系统</a>
+        <a href="../rules-variants.html">🔄 规则变体</a>
+        <div class="drop-divider"></div>
+        <a href="../equipment/magic-items.html">💎 魔法物品</a>
+        <a href="../domains/intro.html">✨ 领域系统</a>
+        <a href="../dm/intro.html">🎲 DM工具</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长分类</div>
+      <a href="intro.html">总览</a>
+      <a href="feat-list.html">📋 专长详细列表</a>
+      <a href="combat.html">战斗专长</a>
+      <a href="spell-feats.html">施法专长</a>
+      <a href="general.html">通用专长</a>
+      <a href="metamagic.html" class="active">超魔专长</a>
+      <a href="item.html">物品专长</a>
+      <a href="divine.html">神术专长</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">核心专长</div>
+      <a href="power-attack.html">猛力攻击</a>
+      <a href="cleave.html">顺劈斩</a>
+      <a href="weapon-focus.html">武器专精</a>
+      <a href="dodge.html">闪避</a>
+      <a href="iron-will.html">钢铁意志</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>超魔专长 <span style="font-size:0.5em;color:#888;">Metamagic Feats</span></h1>
+    <p>超魔专长允许施法者以各种方式增强或修改法术。使用超魔专长会消耗更高等级的法术位。法师在准备法术时应用超魔效果，术士和吟游诗人则需要花费更长的施法时间来即时应用超魔效果。超魔专长是施法者提升法术效能的核心手段。</p>
+
+    <div class="toc">
+      <h3>本分类专长一览</h3>
+      <ul>
+        <li><a href="#extend-spell">法术延时</a></li>
+        <li><a href="#enlarge-spell">法术增程</a></li>
+        <li><a href="#maximize-spell">法术极效</a></li>
+        <li><a href="#empower-spell">法术增效</a></li>
+        <li><a href="#heighten-spell">法术升阶</a></li>
+        <li><a href="#silent-spell">法术默发</a></li>
+        <li><a href="#still-spell">法术定发</a></li>
+        <li><a href="#quicken-spell">法术瞬发</a></li>
+        <li><a href="#widen-spell">法术扩效</a></li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">超魔对比表</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>专长</th><th>环位提升</th><th>效果概述</th><th>最佳使用场景</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>法术延时 Extend Spell</td><td class="level-adj">+1</td><td>持续时间翻倍</td><td>增益法术（英雄气概、虚假生命等）</td></tr>
+        <tr><td>法术增程 Enlarge Spell</td><td class="level-adj">+1</td><td>射程翻倍</td><td>狙击型施法者，远距离打击</td></tr>
+        <tr><td>法术极效 Maximize Spell</td><td class="level-adj">+3</td><td>所有骰子取最大值</td><td>高伤害法术（火球术、闪电束等）</td></tr>
+        <tr><td>法术增效 Empower Spell</td><td class="level-adj">+2</td><td>所有骰子结果+50%</td><td>多骰伤害法术，性价比优于极效</td></tr>
+        <tr><td>法术升阶 Heighten Spell</td><td class="level-adj">可变</td><td>提升法术有效等级</td><td>提升低环法术DC，穿透魔法免疫</td></tr>
+        <tr><td>法术默发 Silent Spell</td><td class="level-adj">+1</td><td>无需言语成分</td><td>沉默区域施法，秘密施法</td></tr>
+        <tr><td>法术定发 Still Spell</td><td class="level-adj">+1</td><td>无需姿势成分</td><td>被束缚时施法，穿重甲施法</td></tr>
+        <tr><td>法术瞬发 Quicken Spell</td><td class="level-adj">+4</td><td>以即时动作施放</td><td>每轮施放两个法术，战斗爆发</td></tr>
+        <tr><td>法术扩效 Widen Spell</td><td class="level-adj">+3</td><td>法术范围翻倍</td><td>大范围控制法术（火球术等）</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">专长总览表</h2>
+    <table class="quick-table">
+      <thead><tr><th>专长</th><th>前提</th><th>简述</th><th>详情页</th></tr></thead>
+      <tbody>
+        <tr><td>法术延时 Extend Spell</td><td>无</td><td>持续时间翻倍，+1环</td><td>-</td></tr>
+        <tr><td>法术增程 Enlarge Spell</td><td>无</td><td>射程翻倍，+1环</td><td>-</td></tr>
+        <tr><td>法术极效 Maximize Spell</td><td>无</td><td>骰子取最大值，+3环</td><td><a href="maximize-spell.html">详情</a></td></tr>
+        <tr><td>法术增效 Empower Spell</td><td>无</td><td>骰子结果+50%，+2环</td><td><a href="empower-spell.html">详情</a></td></tr>
+        <tr><td>法术升阶 Heighten Spell</td><td>无</td><td>提升有效法术等级，+可变</td><td>-</td></tr>
+        <tr><td>法术默发 Silent Spell</td><td>无</td><td>无需言语成分，+1环</td><td>-</td></tr>
+        <tr><td>法术定发 Still Spell</td><td>无</td><td>无需姿势成分，+1环</td><td>-</td></tr>
+        <tr><td>法术瞬发 Quicken Spell</td><td>无</td><td>即时动作施放，+4环</td><td><a href="quicken-spell.html">详情</a></td></tr>
+        <tr><td>法术扩效 Widen Spell</td><td>无</td><td>范围翻倍，+3环</td><td>-</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ===== FEAT CARDS ===== -->
+
+    <h2 class="section-title" id="extend-spell">法术延时 (Extend Spell)</h2>
+    <div class="feat-card">
+      <h3>法术延时 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>被延时的法术持续时间翻倍。持续时间不为"立即"、"专注"或"永久"的法术才可被延时。例如，一个持续1轮/级的法术变为2轮/级，持续10分钟/级的法术变为20分钟/级。法术位提升+1环。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>对增益类法术价值极高。将虚假生命（1小时/级）变为2小时/级，或英雄气概（1轮/级）变为2轮/级，让增益法术覆盖更多战斗。+1环的代价非常划算。</div>
+    </div>
+
+    <h2 class="section-title" id="enlarge-spell">法术增程 (Enlarge Spell)</h2>
+    <div class="feat-card">
+      <h3>法术增程 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>被增程的法术射程翻倍。射程为"近"（25尺+5尺/2级）的法术变为50尺+5尺/2级；射程为"中"（100尺+10尺/级）的法术变为200尺+10尺/2级。射程为"远"（400尺+40尺/级）的法术变为800尺+40尺/级。法术位提升+1环。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>适合远程狙击型施法者。将火球术的射程从远（400尺+40尺/级）增加到超远距离，让你在安全距离外打击敌人。+1环的代价合理。</div>
+    </div>
+
+    <h2 class="section-title" id="maximize-spell">法术极效 (Maximize Spell)</h2>
+    <div class="feat-card">
+      <h3>法术极效 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="benefit"><strong>简述：</strong>所有可变数值取最大值，+3环。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>适合确定性的最大伤害输出。详见 <a href="maximize-spell.html">法术极效详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="empower-spell">法术增效 (Empower Spell)</h2>
+    <div class="feat-card">
+      <h3>法术增效 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="benefit"><strong>简述：</strong>所有可变数值增加50%，+2环。性价比优于极效。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>多骰法术的性价比之选。详见 <a href="empower-spell.html">法术增效详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="heighten-spell">法术升阶 (Heighten Spell)</h2>
+    <div class="feat-card">
+      <h3>法术升阶 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>被升阶的法术被视为比其正常等级更高的法术等级（最高9环）。这会影响法术的豁免DC、穿透法术抗力的检定以及其他依赖法术等级的效果。例如，将2环的敲击术升阶到4环，其DC使用4环法术的计算方式（10+4+属性调整值），并且需要高等级的法术位来准备。法术位提升等于升阶的差值。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>核心用途是提升低环法术的DC和穿透法术抗力。将低环控制法术（如命令术）升阶到高环位可以显著提升DC。对抗法术抗力怪物时，升阶后的法术在SR检定中使用更高的施法者等级加值。</div>
+    </div>
+
+    <h2 class="section-title" id="silent-spell">法术默发 (Silent Spell)</h2>
+    <div class="feat-card">
+      <h3>法术默发 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>被默发的法术无需言语成分(verbal component)即可施放。这使得你可以在被沉默(silence)区域内施法或秘密施法。吟游诗人的法术不能以这种方式修改。法术位提升+1环。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>在被沉默结界覆盖的区域中的救命手段。也可以用于潜入任务中秘密施法。+1环的代价很低，建议高等级法师准备几份默发版本的关键法术。</div>
+    </div>
+
+    <h2 class="section-title" id="still-spell">法术定发 (Still Spell)</h2>
+    <div class="feat-card">
+      <h3>法术定发 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>被定发的法术无需姿势成分(somatic component)即可施放。这对于被束缚或穿着妨碍施法动作的护甲时特别有用。没有姿势成分的法术不受此专长影响。法术位提升+1环。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>在被擒抱、束缚或穿戴有施法失败率护甲时的紧急手段。配合默发使用可以完全不需要言语和姿势成分，在任何受限条件下都能施法。</div>
+    </div>
+
+    <h2 class="section-title" id="quicken-spell">法术瞬发 (Quicken Spell)</h2>
+    <div class="feat-card">
+      <h3>法术瞬发 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="benefit"><strong>简述：</strong>以即时动作施放法术，同轮可再施放一个法术。+4环。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>最强大的超魔专长之一。详见 <a href="quicken-spell.html">法术瞬发详情页</a>。</div>
+    </div>
+
+    <h2 class="section-title" id="widen-spell">法术扩效 (Widen Spell)</h2>
+    <div class="feat-card">
+      <h3>法术扩效 <span class="badge badge-metamagic">超魔</span></h3>
+      <div class="prereq"><strong>前提条件：</strong>无</div>
+      <div class="benefit"><strong>效果：</strong>被扩效的法术其范围(area)的所有数值翻倍。例如，一个20尺半径的爆发变为40尺半径的爆发，一个30尺的锥形变为60尺的锥形。这不影响射程或效果目标数。法术位提升+3环。</div>
+      <div class="tactic-tip"><strong>💡 战术建议：</strong>对大范围控制法术极为有效。火球术（20尺半径→40尺半径）覆盖面积变为原来的4倍。在面对密集敌群时可以确保无人幸免。+3环代价较高，建议在关键时刻使用。</div>
+    </div>
+
+    <!-- ===== METAMAGIC STRATEGY GUIDE ===== -->
+
+    <h2 class="section-title">超魔组合策略</h2>
+    <div class="feat-card">
+      <h3>超魔叠加建议</h3>
+      <div class="benefit">
+        <p><strong>增效 vs 极效：</strong>对于多骰法术（如火球术10d6），增效后平均伤害为 10×3.5×1.5=52.5，消耗7环位；极效后固定伤害为 10×6=60，消耗8环位。增效性价比更高，但极效提供确定性。</p>
+        <p><strong>瞬发+高伤害法术：</strong>瞬发火球术（7环位）+标准动作施放另一个法术，单轮输出极高。这是高等级法师的标志性战术。</p>
+        <p><strong>延时+增益法术：</strong>虚假生命、英雄气概等增益法术延时后持续时间大幅延长，+1环的投入产出比极高。</p>
+        <p><strong>升阶+控制法术：</strong>将低环控制法术（如魅惑人类）升阶到高环位，提升DC使其更难豁免。对抗高豁免的Boss时非常有效。</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>D&amp;D 3.5e 中文Wiki — 基于 d20 SRD 开源翻译项目</p>
+</footer>
+</body>
+</html>
