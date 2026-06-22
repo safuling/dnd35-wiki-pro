@@ -104,7 +104,7 @@
       </div>
       <div class="infobox-row">
         <span class="infobox-label">先决条件</span>
-        <span class="infobox-value">专长武器专攻 (Weapon Focus)、战斗技巧 (Combat Expertise)、BAB +4</span>
+        <span class="infobox-value">熟练使用所选武器、BAB +8</span>
       </div>
       <div class="infobox-row">
         <span class="infobox-label">益处</span>
@@ -130,11 +130,10 @@
     <div class="prereq-box">
       <h4>📋 先决条件</h4>
       <ul>
-        <li><strong>专长武器专攻 (Weapon Focus)</strong> - 必须已选择同一种武器</li>
-        <li><strong>战斗技巧 (Combat Expertise)</strong></li>
-        <li><strong>基本攻击加值 (BAB) +4</strong></li>
+        <li><strong>熟练使用所选武器</strong></li>
+        <li><strong>基本攻击加值 (BAB) +8</strong></li>
       </ul>
-      <p><strong>说明</strong>：选择一种你已获得武器专攻加值的武器。你必须以同一种武器选择武器专攻和致命一击。</p>
+      <p><strong>说明</strong>：选择一种你熟练的武器。该专长可多次选择，每次适用于不同武器。</p>
     </div>
 
     <div class="benefit-box">
@@ -142,10 +141,10 @@
       <p>使用选定武器攻击时，<strong>重击威胁范围翻倍</strong>。</p>
       <ul>
         <li>原本重击范围 20 → 威胁范围 19-20</li>
-        <li>原本重击范围 19-20 → 威胁范围 17-20（需要<a href="keen.html">锐锋</a>法术或<a href="keen-edge.html">锐锋</a>属性）</li>
+        <li>原本重击范围 19-20 → 威胁范围 17-20</li>
         <li>原本重击范围 18-20 → 威胁范围 15-20</li>
       </ul>
-      <p><strong>注意</strong>：重击倍率不增加，只有威胁范围翻倍。</p>
+      <p><strong>注意</strong>：重击倍率不增加；此效果不与锐锋武器、锐锋术或其他扩大重击威胁范围的效果叠加。</p>
     </div>
 
     <h2>机制详解</h2>
@@ -207,7 +206,7 @@
     <ul>
       <li><strong>重击范围已经是 18-20 的武器</strong>：获得致命一击后变为 15-20（威胁概率 30%）</li>
       <li><strong>重击范围已经是 17-20 的武器</strong>：获得致命一击后变为 13-20（威胁概率 40%）</li>
-      <li><strong>无法再翻倍</strong>：如果威胁范围已经达到 13-20，则无法再通过致命一击翻倍（但可以通过<a href="keen.html">锐锋</a>法术或<a href="keen-edge.html">锐锋</a>属性扩展到 11-20）</li>
+      <li><strong>无法再翻倍</strong>：如果威胁范围已经达到 13-20，则无法再通过致命一击翻倍（但可以通过<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>法术或<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>属性扩展到 11-20）</li>
     </ul>
 
     <div class="example-box">
@@ -265,26 +264,26 @@
       <p><strong>常见解释</strong>：</p>
       <ol>
         <li><strong>严格解释</strong>：致命一击可以翻倍，但威胁范围不能超过 11-20（DMG p. 28）</li>
-        <li><strong>宽松解释</strong>：致命一击可以翻倍到 7-20 或更低，DMG 的上限只适用于<a href="keen.html">锐锋</a>法术和<a href="keen-edge.html">锐锋</a>属性</li>
-        <li><strong>折中解释</strong>：致命一击和<a href="keen.html">锐锋</a>法术/属性可以叠加，但总威胁范围不能超过 11-20</li>
+        <li><strong>宽松解释</strong>：致命一击可以翻倍到 7-20 或更低，DMG 的上限只适用于<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>法术和<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>属性</li>
+        <li><strong>折中解释</strong>：致命一击和<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>法术/属性可以叠加，但总威胁范围不能超过 11-20</li>
       </ol>
       <p><strong>建议</strong>：与 DM 确认使用哪种解释。建议在游戏中采用<strong>严格解释</strong>（威胁范围不超过 11-20），以保持平衡。</p>
     </div>
 
     <div class="conflict-box">
       <h4>⚠️ 规则冲突：致命一击与锐锋法术/属性的叠加</h4>
-      <p><strong>冲突点</strong>：致命一击和<a href="keen.html">锐锋</a>法术/属性能否叠加？</p>
+      <p><strong>冲突点</strong>：致命一击和<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>法术/属性能否叠加？</p>
       <p><strong>规则出处</strong>：</p>
       <ul>
         <li><strong>PHB p. 95</strong>：致命一击将重击威胁范围翻倍</li>
-        <li><strong>PHB p. 246</strong>：<a href="keen.html">锐锋</a>法术将重击威胁范围翻倍</li>
+        <li><strong>PHB p. 246</strong>：<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>法术将重击威胁范围翻倍</li>
         <li><strong>DMG p. 28</strong>：重击威胁范围最小为 11-20</li>
       </ul>
-      <p><strong>冲突描述</strong>：如果武器同时有致命一击和<a href="keen.html">锐锋</a>法术/属性，威胁范围如何计算？</p>
+      <p><strong>冲突描述</strong>：如果武器同时有致命一击和<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>法术/属性，威胁范围如何计算？</p>
       <p><strong>常见解释</strong>：</p>
       <ol>
-        <li><strong>叠加解释</strong>：致命一击和<a href="keen.html">锐锋</a>可以叠加，威胁范围翻倍后再翻倍（例如 19-20 → 17-20 → 13-20）</li>
-        <li><strong>不叠加解释</strong>：致命一击和<a href="keen.html">锐锋</a>效果相同，只应用一次</li>
+        <li><strong>叠加解释</strong>：致命一击和<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>可以叠加，威胁范围翻倍后再翻倍（例如 19-20 → 17-20 → 13-20）</li>
+        <li><strong>不叠加解释</strong>：致命一击和<a href="../spells/spell-detail.html?id=keen_edge">锐锋</a>效果相同，只应用一次</li>
         <li><strong>DMG解释</strong>：叠加但不超过 11-20 上限</li>
       </ol>
       <p><strong>建议</strong>：与 DM 确认。建议采用<strong>DMG解释</strong>（叠加但不超过 11-20）。</p>

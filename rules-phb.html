@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHB 规则覆盖矩阵 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .source-note {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 16px 0 22px;
+    font-size: 14px;
+  }
+  .coverage-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 18px 0 26px;
+  }
+  .summary-tile {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px;
+  }
+  .summary-tile strong {
+    display: block;
+    color: var(--text-heading);
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  .summary-tile span {
+    color: var(--text-subtle);
+    font-size: 13px;
+  }
+  .matrix-section {
+    margin: 24px 0;
+  }
+  .matrix-section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .matrix-section h2 small {
+    color: var(--text-subtle);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+  }
+  .coverage-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    min-height: 82px;
+  }
+  .coverage-item strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-heading);
+  }
+  .coverage-item a {
+    font-weight: 600;
+  }
+  .coverage-item p {
+    margin: 4px 0 0;
+    color: var(--text-subtle);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .status {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    border: 1px solid transparent;
+  }
+  .done { background: #eafaf1; color: #1e8449; border-color: #a9dfbf; }
+  .partial { background: #fef9e7; color: #9a6a00; border-color: #f4d03f; }
+  .missing { background: #fdecea; color: #a93226; border-color: #f5b7b1; }
+  .category-list {
+    columns: 2;
+    column-gap: 28px;
+  }
+  .category-list li {
+    break-inside: avoid;
+    margin-bottom: 8px;
+  }
+  .book-list {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+  @media (max-width: 760px) {
+    .category-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="monsters/intro.html">怪物</a>
+    <a href="3r/index-v2.html" style="color:#d4a017;font-weight:600;">3R拓展</a>
+    <a href="conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">PHB 覆盖</div>
+      <a href="#summary" class="active">覆盖摘要</a>
+      <a href="#phb-nav">PHB 主导航</a>
+      <a href="#category-pages">57 个分类页</a>
+      <a href="#publication-nav">出版物导航</a>
+      <a href="#next-steps">执行顺序</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">现有规则</div>
+      <a href="rules.html">核心规则总览</a>
+      <a href="rules-combat.html">战斗详述</a>
+      <a href="rules-adventure.html">冒险</a>
+      <a href="rules-deities.html">神祇与阵营</a>
+      <a href="domains/intro.html">牧师领域</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1 id="summary">PHB 规则覆盖矩阵</h1>
+    <p>本页按灰机 DND3R「分类:玩家手册规则」实站结构整理，用来跟踪本地站点对《玩家手册 3.5》规则导航的覆盖情况。</p>
+
+    <div class="source-note">
+      <strong>参考来源：</strong>
+      <a href="https://dnd3r.huijiwiki.com/wiki/分类:玩家手册规则">灰机 DND3R：分类:玩家手册规则</a>。
+      实站结构包含书籍信息框、PHB 主导航、出版物导航、4 个子分类和 57 个分类页面。
+    </div>
+
+    <div class="coverage-summary">
+      <div class="summary-tile"><strong>13</strong><span>PHB 主类</span></div>
+      <div class="summary-tile"><strong>78</strong><span>导航子项</span></div>
+      <div class="summary-tile"><strong>57</strong><span>分类页</span></div>
+      <div class="summary-tile"><strong>4</strong><span>子分类</span></div>
+    </div>
+
+    <h2 id="phb-nav">PHB 主导航</h2>
+    <p>状态说明：已覆盖表示本地有可用独立页或稳定锚点；部分覆盖表示内容存在但需要补 PHB 入口、拆页或稳定锚点；待补表示目前没有足够的 PHB 结构内容。</p>
+
+    <section class="matrix-section">
+      <h2>简介 <small>2 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#intro">简介</a></strong><p>已补 PHB 式导言入口。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#creation">人物创造入门</a></strong><p>已补规则入口；工具版仍保留在 <a href="dm/character-creation.html">角色创建指南</a>。</p></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <h2>属性 <small>3 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#abilities">属性值</a></strong><p>已补 PHB 属性入口。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#abilities">属性</a></strong><p>已补属性总览。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#changing-abilities">改变属性值</a></strong><p>已补属性提升、临时变化、属性伤害和属性吸取。</p></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <h2>种族 <small>7 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="races/human.html">人类</a></strong><p>已有独立页。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="races/dwarf.html">矮人</a></strong><p>已有独立页。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="races/elf.html">精灵</a></strong><p>已有独立页。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="races/gnome.html">侏儒</a></strong><p>已有独立页。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="races/half-elf.html">半精灵</a></strong><p>已有独立页。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="races/half-orc.html">半兽人</a></strong><p>已有独立页。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="races/halfling.html">半身人</a></strong><p>已有独立页。</p></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <h2>职业 <small>16 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#class-levels">职业</a></strong><p>已补 PHB 元规则入口；职业卡仍在 <a href="classes/intro.html">职业总览</a>。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#class-levels">职业与等级加值</a></strong><p>BAB、豁免、技能点、生命骰等通用规则。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#level-values">等级相关数值</a></strong><p>经验、专长、属性提升、技能上限。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#class-descriptions">职业描述</a></strong><p>已补 PHB 职业描述格式说明。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/barbarian.html">野蛮人</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/bard.html">吟游诗人</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/cleric.html">牧师</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/druid.html">德鲁伊</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/fighter.html">战士</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/monk.html">武僧</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/paladin.html">圣武士</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/ranger.html">巡林客</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/rogue.html">游荡者</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/sorcerer.html">术士</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="classes/wizard.html">法师</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#experience">经验值与等级</a> / <a href="rules-character.html#multiclass">兼职人物</a></strong><p>已补升级和多职业规则入口。</p></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <h2>技能与专长 <small>8 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-skills-feats.html#skills-overview">技能</a></strong><p>已补技能概述、获得技能级数、使用技能、技能说明四个 PHB 入口。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-skills-feats.html#gaining-feats">专长</a></strong><p>已补获得专长、先决条件、专长类型、各项专长说明四个 PHB 入口。</p></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <h2>背景描述 <small>5 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#alignment">阵营</a></strong><p>已补 PHB 背景章节入口，并映射到 <a href="rules-deities.html#alignment">神祇与阵营</a>。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#religion">宗教信仰</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#vital-statistics">重要资料</a></strong><p>年龄、身高体重、惯用手等。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#appearance-personality">外貌、人格与身世</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#custom-character">自订人物</a></strong></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <h2>装备 <small>5 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-equipment-phb.html#equipping">装备</a></strong><p>已补 PHB 装备入口。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-equipment-phb.html#equipping">装备人物</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-equipment-phb.html#wealth">金钱与财富</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="equipment/weapons-detail.html">武器</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-equipment-phb.html#armor">防具</a></strong><p>已补 PHB 入口；后续可扩展独立详表。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-equipment-phb.html#goods-services">商品与服务</a></strong><p>已补服务、雇佣、坐骑、运输、住宿入口。</p></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <h2>战斗 <small>12 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html">战斗</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#battle-grid">战术地图</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#combat-sequence">战斗流程</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#combat-statistics">战斗数值</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#combat-terms">战斗基本名词</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#initiative">先攻</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#aoo">借机攻击</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#actions">战斗中的动作</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#injury-death">受伤与死亡</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#movement-position">移动、位置与距离</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#modifiers">战斗调整值</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#special-attacks">特殊攻击</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-combat-phb.html#special-initiative">特殊先攻动作</a></strong></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <h2>冒险、魔法、法术列表、附录 <small>21 项</small></h2>
+      <div class="coverage-grid">
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-adventure-phb.html">冒险</a></strong><p>已补负重、移动、探索、其他奖赏入口。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-adventure-phb.html#treasure">宝藏</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-magic-phb.html">魔法</a></strong><p>已补施法、法术说明、奥术、神术入口。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-magic-phb.html#special-abilities">特殊能力</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="spells/intro.html">法术搜索器</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="domains/intro.html">牧师领域</a></strong></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="spells/class-bard.html">职业法术列表</a></strong><p>已补吟游诗人、牧师、德鲁伊、圣武士、巡林客、术士与法师列表；<a href="spells/class-missing.html">待补条目</a>单独跟踪。</p></div>
+        <div class="coverage-item"><span class="status done">已覆盖</span><strong><a href="rules-character.html#appendix">附录</a></strong><p>已补计算通则、常用名词解释、边栏入口。</p></div>
+      </div>
+    </section>
+
+    <h2 id="category-pages">分类页本体：57 个页面</h2>
+    <p class="source-note">以下 57 项来自灰机分类页本体。状态分为“独立入口页”“独立详情页”和“综合页锚点”；当前已全部建立本地映射。只要是页面拆分或译名差异，记录在这里，不写入规则冲突页。</p>
+    <div class="coverage-summary"><div class="summary-tile"><strong>57</strong><span>灰机分类页本体</span></div><div class="summary-tile"><strong>57</strong><span>已映射本地入口</span></div><div class="summary-tile"><strong>0</strong><span>待补映射</span></div></div>
+    <section class="matrix-section"><h3>B <small>2 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>宝藏</strong><a href="rules-adventure-phb.html#treasure">rules-adventure-phb.html#treasure</a><p>映射到冒险章节的宝藏入口，并关联本地 DM 宝藏工具。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>背景描述</strong><a href="rules-character.html#background">rules-character.html#background</a><p>角色背景总入口。</p></div></div></section>
+<section class="matrix-section"><h3>C <small>1 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>常用名词解释</strong><a href="rules-character.html#glossary">rules-character.html#glossary</a><p>PHB 术语表入口。</p></div></div></section>
+<section class="matrix-section"><h3>D <small>1 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>等级相关数值</strong><a href="rules-character.html#level-values">rules-character.html#level-values</a><p>等级、经验、专长获得与技能上限。</p></div></div></section>
+<section class="matrix-section"><h3>F <small>2 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>法术说明</strong><a href="rules-magic-phb.html#spell-descriptions">rules-magic-phb.html#spell-descriptions</a><p>法术条目格式与规则字段。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>负重能力</strong><a href="rules-adventure-phb.html#carrying-capacity">rules-adventure-phb.html#carrying-capacity</a><p>负重、推拉拖与体型换算。</p></div></div></section>
+<section class="matrix-section"><h3>G <small>2 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>改变属性值</strong><a href="rules-character.html#changing-abilities">rules-character.html#changing-abilities</a><p>属性提升、伤害、吸取与增强加值。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>各项专长说明</strong><a href="rules-skills-feats.html#feat-descriptions">rules-skills-feats.html#feat-descriptions</a><p>PHB 专长说明入口，并映射 feats/feat-list.html。</p></div></div></section>
+<section class="matrix-section"><h3>H <small>2 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>获得技能级数</strong><a href="rules-skills-feats.html#skill-ranks">rules-skills-feats.html#skill-ranks</a><p>技能点、职业技能、跨职与最大级数。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>获得专长</strong><a href="rules-skills-feats.html#gaining-feats">rules-skills-feats.html#gaining-feats</a><p>等级专长与奖励专长入口。</p></div></div></section>
+<section class="matrix-section"><h3>J <small>9 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>技能</strong><a href="rules-skills-feats.html#skills-overview">rules-skills-feats.html#skills-overview</a><p>技能总览入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>技能概述</strong><a href="rules-skills-feats.html#skills-overview">rules-skills-feats.html#skills-overview</a><p>技能检定、级数与分类总览。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>技能说明</strong><a href="rules-skills-feats.html#skill-descriptions">rules-skills-feats.html#skill-descriptions</a><p>PHB 技能说明索引。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>计算通则</strong><a href="rules-character.html#calculation-rules">rules-character.html#calculation-rules</a><p>取整、倍数、加值类型与例外优先。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>简介</strong><a href="rules-character.html#intro">rules-character.html#intro</a><p>PHB 式导言入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>兼职人物</strong><a href="rules-character.html#multiclass">rules-character.html#multiclass</a><p>多职业、偏好职业与经验惩罚。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>借机攻击</strong><a href="rules-combat-phb.html#aoo">rules-combat-phb.html#aoo</a><p>借机攻击规则入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>金钱与财富</strong><a href="rules-equipment-phb.html#wealth">rules-equipment-phb.html#wealth</a><p>起始财富与货币。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>经验值与等级</strong><a href="rules-character.html#experience">rules-character.html#experience</a><p>经验与升级规则。</p></div></div></section>
+<section class="matrix-section"><h3>M <small>2 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">独立入口页</span><strong>冒险</strong><a href="rules-adventure-phb.html">rules-adventure-phb.html</a><p>PHB 冒险章节映射页。</p></div>
+<div class="coverage-item"><span class="status done">独立入口页</span><strong>魔法</strong><a href="rules-magic-phb.html">rules-magic-phb.html</a><p>PHB 魔法章节映射页。</p></div></div></section>
+<section class="matrix-section"><h3>Q <small>1 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>其他奖赏</strong><a href="rules-adventure-phb.html#other-rewards">rules-adventure-phb.html#other-rewards</a><p>经验以外奖励、声望、服务与剧情奖励。</p></div></div></section>
+<section class="matrix-section"><h3>R <small>1 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>人物创造入门</strong><a href="rules-character.html#creation">rules-character.html#creation</a><p>角色创建步骤入口。</p></div></div></section>
+<section class="matrix-section"><h3>S <small>6 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>神术</strong><a href="rules-magic-phb.html#divine">rules-magic-phb.html#divine</a><p>神术准备、领域、圣徽与神祇。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>施法</strong><a href="rules-magic-phb.html#casting">rules-magic-phb.html#casting</a><p>施法时间、成分、专注、范围与目标等规则。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>使用技能</strong><a href="rules-skills-feats.html#using-skills">rules-skills-feats.html#using-skills</a><p>技能检定、未受训、取10/20与协助。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>受伤与死亡</strong><a href="rules-combat-phb.html#injury-death">rules-combat-phb.html#injury-death</a><p>伤害、濒死、稳定与死亡。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>属性</strong><a href="rules-character.html#abilities">rules-character.html#abilities</a><p>六属性与派生数值。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>属性值</strong><a href="rules-character.html#abilities">rules-character.html#abilities</a><p>属性值、调整值与施法属性。</p></div></div></section>
+<section class="matrix-section"><h3>T <small>4 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>探索</strong><a href="rules-adventure-phb.html#exploration">rules-adventure-phb.html#exploration</a><p>探索规则入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>特殊攻击</strong><a href="rules-combat-phb.html#special-attacks">rules-combat-phb.html#special-attacks</a><p>擒抱、冲撞、卸除等特殊攻击入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>特殊能力</strong><a href="rules-magic-phb.html#special-abilities">rules-magic-phb.html#special-abilities</a><p>Ex/Sp/Su 特殊能力入口，并映射战斗页。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>特殊先攻动作</strong><a href="rules-combat-phb.html#special-initiative">rules-combat-phb.html#special-initiative</a><p>延迟、准备动作与突袭轮。</p></div></div></section>
+<section class="matrix-section"><h3>W <small>3 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>外貌、人格与身世</strong><a href="rules-character.html#appearance-personality">rules-character.html#appearance-personality</a><p>外貌、人格、动机与身世。</p></div>
+<div class="coverage-item"><span class="status done">独立入口页</span><strong>玩家手册/牧师领域</strong><a href="domains/intro.html">domains/intro.html</a><p>领域系统与领域列表。</p></div>
+<div class="coverage-item"><span class="status done">独立详情页</span><strong>武器</strong><a href="equipment/weapons-detail.html">equipment/weapons-detail.html</a><p>武器表与武器规则详情。</p></div></div></section>
+<section class="matrix-section"><h3>X <small>2 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>先攻</strong><a href="rules-combat-phb.html#initiative">rules-combat-phb.html#initiative</a><p>先攻检定与先攻顺序。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>先决条件</strong><a href="rules-skills-feats.html#feat-prerequisites">rules-skills-feats.html#feat-prerequisites</a><p>专长前提与失去前提后的处理。</p></div></div></section>
+<section class="matrix-section"><h3>Y <small>2 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">综合页锚点</span><strong>移动</strong><a href="rules-adventure-phb.html#movement">rules-adventure-phb.html#movement</a><p>冒险移动与速度入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>移动、位置与距离</strong><a href="rules-combat-phb.html#movement-position">rules-combat-phb.html#movement-position</a><p>战斗移动、距离、占位与穿越方格。</p></div></div></section>
+<section class="matrix-section"><h3>Z <small>17 项</small></h3><div class="coverage-grid"><div class="coverage-item"><span class="status done">独立入口页</span><strong>战斗</strong><a href="rules-combat-phb.html">rules-combat-phb.html</a><p>PHB 战斗章节映射页。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>战斗基本名词</strong><a href="rules-combat-phb.html#combat-terms">rules-combat-phb.html#combat-terms</a><p>轮、回合、动作、目标等术语。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>战斗数值</strong><a href="rules-combat-phb.html#combat-statistics">rules-combat-phb.html#combat-statistics</a><p>AC、HP、攻击加值、伤害、豁免、先攻。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>战斗调整值</strong><a href="rules-combat-phb.html#modifiers">rules-combat-phb.html#modifiers</a><p>掩蔽、隐蔽、夹击、高地、俯卧等调整。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>战斗中的动作</strong><a href="rules-combat-phb.html#actions">rules-combat-phb.html#actions</a><p>标准、移动、整轮、迅捷等动作入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>战术地图</strong><a href="rules-combat-phb.html#battle-grid">rules-combat-phb.html#battle-grid</a><p>格子、占位、威胁范围、掩蔽。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>阵营</strong><a href="rules-character.html#alignment">rules-character.html#alignment</a><p>角色阵营入口，并映射 rules-deities.html#alignment。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>职业</strong><a href="rules-character.html#class-levels">rules-character.html#class-levels</a><p>职业、等级和职业特性总览。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>职业描述</strong><a href="rules-character.html#class-descriptions">rules-character.html#class-descriptions</a><p>PHB 职业说明格式入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>职业与等级加值</strong><a href="rules-character.html#class-levels">rules-character.html#class-levels</a><p>BAB、豁免、技能点、生命骰与等级加值。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>重要资料</strong><a href="rules-character.html#vital-statistics">rules-character.html#vital-statistics</a><p>年龄、身高体重、性别、惯用手与外貌资料。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>专长</strong><a href="rules-skills-feats.html#gaining-feats">rules-skills-feats.html#gaining-feats</a><p>专长获得规则，并映射 feats/feat-list.html。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>专长类型</strong><a href="rules-skills-feats.html#feat-types">rules-skills-feats.html#feat-types</a><p>PHB 专长类型定义。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>装备</strong><a href="rules-equipment-phb.html#equipping">rules-equipment-phb.html#equipping</a><p>PHB 装备章节入口。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>装备人物</strong><a href="rules-equipment-phb.html#equipping">rules-equipment-phb.html#equipping</a><p>起始资金、购买与装备步骤。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>自订人物</strong><a href="rules-character.html#custom-character">rules-character.html#custom-character</a><p>自定义角色与 DM 协调说明。</p></div>
+<div class="coverage-item"><span class="status done">综合页锚点</span><strong>宗教信仰</strong><a href="rules-character.html#religion">rules-character.html#religion</a><p>角色信仰与神祇入口。</p></div></div></section>
+
+    <h2 id="publication-nav">出版物导航边界</h2>
+    <div class="book-list">
+      <p><strong>3R 核心：</strong>玩家手册、城主指南、怪物图鉴。</p>
+      <p><strong>3R 官方扩展：</strong>玩家手册II、城主指南II、位面手册、扩展灵能、完美战力、完美神力、完美奥术、完美冒险、完美灵能、完美巫师、完美恶徒、完美斗士、崇善之书、深渊堕群、九狱君王、霜燃之书、风暴之书、沙暴之书、幽域卓尔、城市风光、地城风貌、石之族裔、天命族裔、荒野族裔、龙之族裔、巨龙之书、龙之魔力、魔法卷册、战斗卷册、魂之魔法、死灵之书、异怪之书、模型手册、战争英雄、惊骇英雄、邪恶典范、上古邪物、万法大全、万物大全、万律大全、怪物图鉴III、怪物图鉴IV、怪物图鉴V、破译奥秘。</p>
+      <p>这些扩展不计入 PHB 缺口。后续应单独建立官方扩展覆盖清单。</p>
+    </div>
+
+    <h2 id="next-steps">下一步执行顺序</h2>
+    <ol>
+      <li>补 PHB 基础缺口：简介、属性、职业元规则、经验与等级、兼职人物。</li>
+      <li>补背景描述与附录：宗教信仰、重要资料、外貌人格身世、自订人物、计算通则、术语表、边栏。</li>
+      <li>给已有综合页补稳定锚点：技能、专长、装备、战斗、冒险、魔法。</li>
+      <li>继续补录 <a href="spells/class-missing.html">待补职业法术条目</a> 的本地详情页，并校正名称差异。</li>
+      <li>另建 DMG、MM 和 3R 官方扩展覆盖清单。</li>
+    </ol>
+
+    <p style="font-size:13px;color:var(--text-subtle);margin-top:30px;">本页为结构映射和任务执行入口；规则文本以 PHB/SRD 与本地已校正内容为准。子分类后续核验见 <a href="HUIJI-PHB-SUBCATEGORY-TASKS.md">PHB 子分类覆盖任务清单</a>，边栏索引见 <a href="rules-phb-sidebars.html">PHB 边栏覆盖索引</a>，核心种族顺序见 <a href="races/phb-races.html">PHB 种族导航</a>。</p>
+  </main>
+</div>
+
+<div class="footer">
+  <p>D&D 3.5e 中文Wiki | PHB 规则覆盖矩阵</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>装备人物与财富规则 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .rule-table { width:100%; border-collapse:collapse; margin:14px 0 22px; font-size:14px; }
+  .rule-table th { background:var(--bg-table-head); color:var(--text-heading); padding:8px 10px; border:1px solid var(--border-main); }
+  .rule-table td { border:1px solid var(--border-light); padding:8px 10px; vertical-align:top; }
+  .rule-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .note { background:#fef9e7; border:1px solid #f0d060; border-left:4px solid var(--accent-gold); border-radius:var(--radius); padding:12px 16px; margin:14px 0; }
+  .link-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:16px 0; }
+  .link-card { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius); padding:14px 16px; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="rules-phb.html">PHB矩阵</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="equipment/weapons-detail.html">武器</a>
+    <a href="equipment/magic-items.html">魔法物品</a>
+    <a href="classes/intro.html">职业</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">装备规则</div>
+      <a href="#equipping" class="active">装备人物</a>
+      <a href="#wealth">金钱与财富</a>
+      <a href="#weapons">武器</a>
+      <a href="#armor">防具</a>
+      <a href="#goods-services">商品与服务</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="rules-phb.html">PHB覆盖矩阵</a>
+      <a href="equipment/intro.html">装备总览</a>
+      <a href="equipment/weapons-detail.html">武器详述</a>
+      <a href="equipment/magic-items.html">魔法物品</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>装备人物与财富规则</h1>
+    <p>本页补齐 PHB 导航中的装备规则入口。具体价格表和物品细节仍以装备总览、武器详述和魔法物品页面为主。</p>
+
+    <h2 id="equipping">装备人物</h2>
+    <p>购买装备时，先确认角色职业、起始金币、武器和防具擅长、负重能力，以及战役是否使用标准购物环境。</p>
+    <ol>
+      <li>确定起始财富或职业起始套装。</li>
+      <li>购买主要武器和备用武器。</li>
+      <li>购买防具和盾牌，并确认擅长与护甲检定罚值。</li>
+      <li>购买冒险装备、工具、照明、食物、水和容器。</li>
+      <li>记录货币、总重量、负重等级和常用物品位置。</li>
+    </ol>
+
+    <div class="link-grid">
+      <div class="link-card"><strong>装备总览</strong><br><a href="equipment/intro.html">货币、武器、防具、装备</a></div>
+      <div class="link-card"><strong>武器详述</strong><br><a href="equipment/weapons-detail.html">查看武器表</a></div>
+      <div class="link-card"><strong>负重规则</strong><br><a href="rules-adventure-phb.html#carrying-capacity">查看负重能力</a></div>
+      <div class="link-card"><strong>角色创建</strong><br><a href="rules-character.html#creation">回到创建流程</a></div>
+    </div>
+
+    <h2 id="wealth">金钱与财富</h2>
+    <p>标准货币单位包括铜币、银币、金币和铂金币。多数装备价格以金币计。财富还包括可出售物品、宝石、艺术品、债务、报酬和后续战利品。</p>
+    <table class="rule-table">
+      <thead><tr><th>项目</th><th>处理方式</th></tr></thead>
+      <tbody>
+        <tr><td>起始财富</td><td>按职业起始金币或 DM 指定方式确定。</td></tr>
+        <tr><td>购物可得性</td><td>小村庄未必能买到昂贵或稀有物品；大城市选择更多。</td></tr>
+        <tr><td>出售物品</td><td>常见规则是按价格的一部分出售；具体比例由 DM 和市场决定。</td></tr>
+        <tr><td>团队财富</td><td>建议记录公共资金、未分配战利品和债务。</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="weapons">武器</h2>
+    <p>武器规则已在 <a href="equipment/weapons-detail.html">武器详述</a> 中展开。本页只作为 PHB 导航入口。</p>
+    <p>选择武器时重点检查：武器类别、擅长、伤害骰、重击范围和倍率、射程增量、重量、伤害类型、双手/单手/轻型属性和特殊规则。</p>
+
+    <h2 id="armor">防具</h2>
+    <p>防具提供护甲加值，但会带来最大敏捷加值、护甲检定罚值、奥术施法失败率、重量和移动速度影响。</p>
+    <table class="rule-table">
+      <thead><tr><th>防具属性</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>护甲加值</td><td>提高 AC，通常不适用于接触攻击。</td></tr>
+        <tr><td>最大敏捷加值</td><td>限制可计入 AC 的敏捷调整值。</td></tr>
+        <tr><td>护甲检定罚值</td><td>影响部分力量和敏捷相关技能。</td></tr>
+        <tr><td>奥术施法失败率</td><td>穿戴防具施展含姿势成分的奥术时可能失败。</td></tr>
+        <tr><td>移动速度</td><td>中型和重型防具通常降低移动速度。</td></tr>
+      </tbody>
+    </table>
+    <div class="note">本地后续可把防具从 `equipment/intro.html#armor` 拆成独立 PHB 防具详页。</div>
+
+    <h2 id="goods-services">商品与服务</h2>
+    <p>商品与服务包括冒险装备、工具、坐骑、载具、雇佣服务、住宿、食物和施法服务。它们的价值不只在价格，也在可获得性和使用场景。</p>
+    <table class="rule-table">
+      <thead><tr><th>类别</th><th>示例</th><th>规则关注点</th></tr></thead>
+      <tbody>
+        <tr><td>冒险装备</td><td>背包、绳索、火把、帐篷、口粮</td><td>重量、消耗、环境适应。</td></tr>
+        <tr><td>工具</td><td>盗贼工具、工匠工具、治疗包</td><td>是否提供技能加值或允许尝试。</td></tr>
+        <tr><td>坐骑与运输</td><td>马、马车、船只</td><td>速度、负重、饲养、地形限制。</td></tr>
+        <tr><td>服务</td><td>雇佣兵、向导、施法服务</td><td>可获得性、忠诚、风险和价格。</td></tr>
+        <tr><td>生活费用</td><td>住宿、餐饮、礼服、维护</td><td>影响社交场景和长期旅行。</td></tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+
+<div class="footer">
+  <p>D&D 3.5e 中文Wiki | 装备人物与财富规则</p>
+</div>
+</body>
+</html>

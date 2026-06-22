@@ -137,7 +137,7 @@
 
   <main class="main-content">
 
-    <h1>⚠️ 规则冲突标注</h1>
+    <h1 id="about">⚠️ 规则冲突标注</h1>
     <p class="toc-desc">
       <span class="badge badge-conflict">重要</span>
       D&D 3.5e 的规则书（PHB / DMG / MM）以及从3.0版升级过程中，存在多处
@@ -146,10 +146,10 @@
     </p>
 
     <div class="stats-note">
-      <strong>📊 统计：</strong>本页收录 <strong>18</strong> 项已知规则冲突，
+      <strong>📊 统计：</strong>本页收录 <strong>19</strong> 项已知规则冲突，
       其中 <span style="color:#c0392b;">高严重度 5 项</span> ·
       <span style="color:#e67e22;">中严重度 8 项</span> ·
-      <span style="color:#27ae60;">低严重度 5 项</span>。
+      <span style="color:#27ae60;">低严重度 6 项</span>。
       所有冲突均标注来源，建议DM在战役开始前明确采用哪种解释。
     </div>
 
@@ -175,6 +175,7 @@
         <li><a href="#c16">【中】物品法术（Item Casting）的施法失败</a></li>
         <li><a href="#c17">【高】变化术系列法术的法术位消耗</a></li>
         <li><a href="#c18">【低】扩展专长（Expanded Psionics Handbook）与主书冲突</a></li>
+        <li><a href="#c19">【低】灰机职业法术表中的 Enlarge Person, Greater 待核验</a></li>
       </ol>
     </div>
 
@@ -580,7 +581,7 @@
     <!-- ================================ -->
     <!-- 冲突11-18 简表 -->
     <!-- ================================ -->
-    <h2>📝 其余冲突简表（#11 - #18）</h2>
+    <h2>📝 其余冲突简表（#11 - #19）</h2>
     <table class="wiki-table">
       <thead>
         <tr>
@@ -588,7 +589,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr style="background:#fde8e8;">
+        <tr id="c11" style="background:#fde8e8;">
           <td>11</td>
           <td>猛力攻击（Power Attack）是否适用于远程投掷武器？</td>
           <td>🔴 高</td>
@@ -596,7 +597,7 @@
           <td>社区House Rule: 允许</td>
           <td>以PHB为准：仅近战</td>
         </tr>
-        <tr style="background:#fef5e7;">
+        <tr id="c12" style="background:#fef5e7;">
           <td>12</td>
           <td>法术定发（Quicken Spell）超魔专长与即时动作法术</td>
           <td>🟡 中</td>
@@ -604,7 +605,7 @@
           <td>SRD: 明确说明</td>
           <td>以SRD为准</td>
         </tr>
-        <tr style="background:#fde8e8;">
+        <tr id="c13" style="background:#fde8e8;">
           <td>13</td>
           <td>闪光尘与闪光法术（Blindness/Deafness）的交互</td>
           <td>🔴 高</td>
@@ -612,7 +613,7 @@
           <td>FAQ: 明确盲人自动失败近战</td>
           <td>以FAQ为准</td>
         </tr>
-        <tr style="background:#fef5e7;">
+        <tr id="c14" style="background:#fef5e7;">
           <td>14</td>
           <td>双重专长（Leadership）与超魔专长叠加</td>
           <td>🟡 中</td>
@@ -620,7 +621,7 @@
           <td>FAQ: 允许但不叠加效果</td>
           <td>以FAQ为准</td>
         </tr>
-        <tr style="background:#eafaf1;">
+        <tr id="c15" style="background:#eafaf1;">
           <td>15</td>
           <td>攀爬与游泳动作是否引发借机攻击</td>
           <td>🟢 低</td>
@@ -628,7 +629,7 @@
           <td>DMG House Rule: 可选免除</td>
           <td>以PHB为准</td>
         </tr>
-        <tr style="background:#fef5e7;">
+        <tr id="c16" style="background:#fef5e7;">
           <td>16</td>
           <td>使用魔法物品施展法术的施法失败检定</td>
           <td>🟡 中</td>
@@ -636,7 +637,7 @@
           <td>FAQ: 使用卷轴等不受穿甲影响</td>
           <td>以FAQ为准</td>
         </tr>
-        <tr style="background:#fde8e8;">
+        <tr id="c17" style="background:#fde8e8;">
           <td>17</td>
           <td>变化术系列法术是否触发"法术触发魔法物品"</td>
           <td>🔴 高</td>
@@ -644,13 +645,21 @@
           <td>扩展书: 可选）</td>
           <td>以PHB为准</td>
         </tr>
-        <tr style="background:#eafaf1;">
+        <tr id="c18" style="background:#eafaf1;">
           <td>18</td>
           <td>扩展专长书与主书专长前置冲突</td>
           <td>🟢 低</td>
           <td>主书PHB: 原始前置</td>
           <td>扩展书: 修改前置</td>
           <td>以扩展书为准（更新版）</td>
+        </tr>
+        <tr id="c19" style="background:#eafaf1;">
+          <td>19</td>
+          <td>灰机职业法术表列出 Enlarge Person, Greater（高等人类变巨术）</td>
+          <td>🟢 低</td>
+          <td>灰机 DND3R：术士/法师5级法术列表含该项</td>
+          <td>PHB/SRD 3.5：标准法术表未列 Enlarge Person, Greater；本地已有 Animal Growth，但名称与对象不同</td>
+          <td>不新增疑似不存在的详情页；保留在职业法术待补/待核验列表，待人工确认来源</td>
         </tr>
       </tbody>
     </table>

@@ -1,0 +1,922 @@
+{
+  "categoryPages": [
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%9D%E8%97%8F",
+          "text": "宝藏"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%83%8C%E6%99%AF%E6%8F%8F%E8%BF%B0",
+          "text": "背景描述"
+        }
+      ],
+      "letter": "B"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A",
+          "text": "常用名词解释"
+        }
+      ],
+      "letter": "C"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%AD%89%E7%BA%A7%E7%9B%B8%E5%85%B3%E6%95%B0%E5%80%BC",
+          "text": "等级相关数值"
+        }
+      ],
+      "letter": "D"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%B3%95%E6%9C%AF%E8%AF%B4%E6%98%8E",
+          "text": "法术说明"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%B4%9F%E9%87%8D%E8%83%BD%E5%8A%9B",
+          "text": "负重能力"
+        }
+      ],
+      "letter": "F"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%94%B9%E5%8F%98%E5%B1%9E%E6%80%A7%E5%80%BC",
+          "text": "改变属性值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%90%84%E9%A1%B9%E4%B8%93%E9%95%BF%E8%AF%B4%E6%98%8E",
+          "text": "各项专长说明"
+        }
+      ],
+      "letter": "G"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%8E%B7%E5%BE%97%E6%8A%80%E8%83%BD%E7%BA%A7%E6%95%B0",
+          "text": "获得技能级数"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%8E%B7%E5%BE%97%E4%B8%93%E9%95%BF",
+          "text": "获得专长"
+        }
+      ],
+      "letter": "H"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%8A%80%E8%83%BD",
+          "text": "技能"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%8A%80%E8%83%BD%E6%A6%82%E8%BF%B0",
+          "text": "技能概述"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%8A%80%E8%83%BD%E8%AF%B4%E6%98%8E",
+          "text": "技能说明"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%AE%A1%E7%AE%97%E9%80%9A%E5%88%99",
+          "text": "计算通则"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%AE%80%E4%BB%8B",
+          "text": "简介"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%85%BC%E8%81%8C%E4%BA%BA%E7%89%A9",
+          "text": "兼职人物"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%80%9F%E6%9C%BA%E6%94%BB%E5%87%BB",
+          "text": "借机攻击"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%87%91%E9%92%B1%E4%B8%8E%E8%B4%A2%E5%AF%8C",
+          "text": "金钱与财富"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%BB%8F%E9%AA%8C%E5%80%BC%E4%B8%8E%E7%AD%89%E7%BA%A7",
+          "text": "经验值与等级"
+        }
+      ],
+      "letter": "J"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%86%92%E9%99%A9",
+          "text": "冒险"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%AD%94%E6%B3%95",
+          "text": "魔法"
+        }
+      ],
+      "letter": "M"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%85%B6%E4%BB%96%E5%A5%96%E8%B5%8F",
+          "text": "其他奖赏"
+        }
+      ],
+      "letter": "Q"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%BA%BA%E7%89%A9%E5%88%9B%E9%80%A0%E5%85%A5%E9%97%A8",
+          "text": "人物创造入门"
+        }
+      ],
+      "letter": "R"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%A5%9E%E6%9C%AF",
+          "text": "神术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%96%BD%E6%B3%95",
+          "text": "施法"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%BD%BF%E7%94%A8%E6%8A%80%E8%83%BD",
+          "text": "使用技能"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%8F%97%E4%BC%A4%E4%B8%8E%E6%AD%BB%E4%BA%A1",
+          "text": "受伤与死亡"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B1%9E%E6%80%A7",
+          "text": "属性"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B1%9E%E6%80%A7%E5%80%BC",
+          "text": "属性值"
+        }
+      ],
+      "letter": "S"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%8E%A2%E7%B4%A2",
+          "text": "探索"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E6%94%BB%E5%87%BB",
+          "text": "特殊攻击"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E8%83%BD%E5%8A%9B",
+          "text": "特殊能力"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E5%85%88%E6%94%BB%E5%8A%A8%E4%BD%9C",
+          "text": "特殊先攻动作"
+        }
+      ],
+      "letter": "T"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%A4%96%E8%B2%8C%E3%80%81%E4%BA%BA%E6%A0%BC%E4%B8%8E%E8%BA%AB%E4%B8%96",
+          "text": "外貌、人格与身世"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E7%89%A7%E5%B8%88%E9%A2%86%E5%9F%9F",
+          "text": "玩家手册/牧师领域"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%AD%A6%E5%99%A8",
+          "text": "武器"
+        }
+      ],
+      "letter": "W"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%85%88%E6%94%BB",
+          "text": "先攻"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6",
+          "text": "先决条件"
+        }
+      ],
+      "letter": "X"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%A7%BB%E5%8A%A8",
+          "text": "移动"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%A7%BB%E5%8A%A8%E3%80%81%E4%BD%8D%E7%BD%AE%E4%B8%8E%E8%B7%9D%E7%A6%BB",
+          "text": "移动、位置与距离"
+        }
+      ],
+      "letter": "Y"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97",
+          "text": "战斗"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E5%9F%BA%E6%9C%AC%E5%90%8D%E8%AF%8D",
+          "text": "战斗基本名词"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E6%95%B0%E5%80%BC",
+          "text": "战斗数值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E8%B0%83%E6%95%B4%E5%80%BC",
+          "text": "战斗调整值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E4%B8%AD%E7%9A%84%E5%8A%A8%E4%BD%9C",
+          "text": "战斗中的动作"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%9C%AF%E5%9C%B0%E5%9B%BE",
+          "text": "战术地图"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%98%B5%E8%90%A5",
+          "text": "阵营"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%81%8C%E4%B8%9A",
+          "text": "职业"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%81%8C%E4%B8%9A%E6%8F%8F%E8%BF%B0",
+          "text": "职业描述"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%81%8C%E4%B8%9A%E4%B8%8E%E7%AD%89%E7%BA%A7%E5%8A%A0%E5%80%BC",
+          "text": "职业与等级加值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%87%8D%E8%A6%81%E8%B5%84%E6%96%99",
+          "text": "重要资料"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%93%E9%95%BF",
+          "text": "专长"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%93%E9%95%BF%E7%B1%BB%E5%9E%8B",
+          "text": "专长类型"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%A3%85%E5%A4%87",
+          "text": "装备"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%A3%85%E5%A4%87%E4%BA%BA%E7%89%A9",
+          "text": "装备人物"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%87%AA%E8%AE%A2%E4%BA%BA%E7%89%A9",
+          "text": "自订人物"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%97%E6%95%99%E4%BF%A1%E4%BB%B0",
+          "text": "宗教信仰"
+        }
+      ],
+      "letter": "Z"
+    }
+  ],
+  "crawledAt": "2026-06-22T15:26:09.710Z",
+  "phbNavigation": [
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%BA%BA%E7%89%A9%E5%88%9B%E9%80%A0%E5%85%A5%E9%97%A8",
+          "text": "人物创造入门"
+        }
+      ],
+      "section": "简介"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B1%9E%E6%80%A7%E5%80%BC",
+          "text": "属性值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B1%9E%E6%80%A7",
+          "text": "属性"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%94%B9%E5%8F%98%E5%B1%9E%E6%80%A7%E5%80%BC",
+          "text": "改变属性值"
+        }
+      ],
+      "section": "属性"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%BA%BA%E7%B1%BB",
+          "text": "人类"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%9F%AE%E4%BA%BA",
+          "text": "矮人"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%B2%BE%E7%81%B5",
+          "text": "精灵"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%BE%8F%E5%84%92",
+          "text": "侏儒"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%8D%8A%E7%B2%BE%E7%81%B5",
+          "text": "半精灵"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%8D%8A%E5%85%BD%E4%BA%BA",
+          "text": "半兽人"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%8D%8A%E8%BA%AB%E4%BA%BA",
+          "text": "半身人"
+        }
+      ],
+      "section": "种族"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%81%8C%E4%B8%9A%E4%B8%8E%E7%AD%89%E7%BA%A7%E5%8A%A0%E5%80%BC",
+          "text": "职业与等级加值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%AD%89%E7%BA%A7%E7%9B%B8%E5%85%B3%E6%95%B0%E5%80%BC",
+          "text": "等级相关数值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%81%8C%E4%B8%9A%E6%8F%8F%E8%BF%B0",
+          "text": "职业描述"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%87%8E%E8%9B%AE%E4%BA%BA",
+          "text": "野蛮人"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%90%9F%E6%B8%B8%E8%AF%97%E4%BA%BA",
+          "text": "吟游诗人"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%89%A7%E5%B8%88",
+          "text": "牧师"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%BE%B7%E9%B2%81%E4%BC%8A",
+          "text": "德鲁伊"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E5%A3%AB",
+          "text": "战士"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%AD%A6%E5%83%A7",
+          "text": "武僧"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%9C%A3%E6%AD%A6%E5%A3%AB",
+          "text": "圣武士"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B7%A1%E6%9E%97%E5%AE%A2",
+          "text": "巡林客"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%B8%B8%E8%8D%A1%E8%80%85",
+          "text": "游荡者"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%9C%AF%E5%A3%AB",
+          "text": "术士"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%B3%95%E5%B8%88",
+          "text": "法师"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%BB%8F%E9%AA%8C%E5%80%BC%E4%B8%8E%E7%AD%89%E7%BA%A7",
+          "text": "经验值与等级"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%85%BC%E8%81%8C%E4%BA%BA%E7%89%A9",
+          "text": "兼职人物"
+        }
+      ],
+      "section": "职业"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%8A%80%E8%83%BD%E6%A6%82%E8%BF%B0",
+          "text": "技能概述"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%8E%B7%E5%BE%97%E6%8A%80%E8%83%BD%E7%BA%A7%E6%95%B0",
+          "text": "获得技能级数"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%BD%BF%E7%94%A8%E6%8A%80%E8%83%BD",
+          "text": "使用技能"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%8A%80%E8%83%BD%E8%AF%B4%E6%98%8E",
+          "text": "技能说明"
+        }
+      ],
+      "section": "技能"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%8E%B7%E5%BE%97%E4%B8%93%E9%95%BF",
+          "text": "获得专长"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6",
+          "text": "先决条件"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%93%E9%95%BF%E7%B1%BB%E5%9E%8B",
+          "text": "专长类型"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%90%84%E9%A1%B9%E4%B8%93%E9%95%BF%E8%AF%B4%E6%98%8E",
+          "text": "各项专长说明"
+        }
+      ],
+      "section": "专长"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%98%B5%E8%90%A5",
+          "text": "阵营"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%97%E6%95%99%E4%BF%A1%E4%BB%B0",
+          "text": "宗教信仰"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%87%8D%E8%A6%81%E8%B5%84%E6%96%99",
+          "text": "重要资料"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%A4%96%E8%B2%8C%E3%80%81%E4%BA%BA%E6%A0%BC%E4%B8%8E%E8%BA%AB%E4%B8%96",
+          "text": "外貌、人格与身世"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%87%AA%E8%AE%A2%E4%BA%BA%E7%89%A9",
+          "text": "自订人物"
+        }
+      ],
+      "section": "背景描述"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%A3%85%E5%A4%87%E4%BA%BA%E7%89%A9",
+          "text": "装备人物"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%87%91%E9%92%B1%E4%B8%8E%E8%B4%A2%E5%AF%8C",
+          "text": "金钱与财富"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%AD%A6%E5%99%A8",
+          "text": "武器"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%98%B2%E5%85%B7",
+          "text": "防具"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%95%86%E5%93%81%E4%B8%8E%E6%9C%8D%E5%8A%A1",
+          "text": "商品与服务"
+        }
+      ],
+      "section": "装备"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%9C%AF%E5%9C%B0%E5%9B%BE",
+          "text": "战术地图"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E6%B5%81%E7%A8%8B",
+          "text": "战斗流程"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E6%95%B0%E5%80%BC",
+          "text": "战斗数值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E5%9F%BA%E6%9C%AC%E5%90%8D%E8%AF%8D",
+          "text": "战斗基本名词"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%85%88%E6%94%BB",
+          "text": "先攻"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%80%9F%E6%9C%BA%E6%94%BB%E5%87%BB",
+          "text": "借机攻击"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E4%B8%AD%E7%9A%84%E5%8A%A8%E4%BD%9C",
+          "text": "战斗中的动作"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%8F%97%E4%BC%A4%E4%B8%8E%E6%AD%BB%E4%BA%A1",
+          "text": "受伤与死亡"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%A7%BB%E5%8A%A8%E3%80%81%E4%BD%8D%E7%BD%AE%E4%B8%8E%E8%B7%9D%E7%A6%BB",
+          "text": "移动、位置与距离"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E8%B0%83%E6%95%B4%E5%80%BC",
+          "text": "战斗调整值"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E6%94%BB%E5%87%BB",
+          "text": "特殊攻击"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E5%85%88%E6%94%BB%E5%8A%A8%E4%BD%9C",
+          "text": "特殊先攻动作"
+        }
+      ],
+      "section": "战斗"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%B4%9F%E9%87%8D%E8%83%BD%E5%8A%9B",
+          "text": "负重能力"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%A7%BB%E5%8A%A8",
+          "text": "移动"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%8E%A2%E7%B4%A2",
+          "text": "探索"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%9D%E8%97%8F",
+          "text": "宝藏"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%85%B6%E4%BB%96%E5%A5%96%E8%B5%8F",
+          "text": "其他奖赏"
+        }
+      ],
+      "section": "冒险"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%96%BD%E6%B3%95",
+          "text": "施法"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%B3%95%E6%9C%AF%E8%AF%B4%E6%98%8E",
+          "text": "法术说明"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%A5%A5%E6%9C%AF",
+          "text": "奥术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%A5%9E%E6%9C%AF",
+          "text": "神术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E8%83%BD%E5%8A%9B",
+          "text": "特殊能力"
+        }
+      ],
+      "section": "魔法"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%B3%95%E6%9C%AF%E6%90%9C%E7%B4%A2%E5%99%A8",
+          "text": "法术搜索器"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E5%90%9F%E6%B8%B8%E8%AF%97%E4%BA%BA%E6%B3%95%E6%9C%AF",
+          "text": "吟游诗人法术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E7%89%A7%E5%B8%88%E6%B3%95%E6%9C%AF",
+          "text": "牧师法术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E7%89%A7%E5%B8%88%E9%A2%86%E5%9F%9F",
+          "text": "牧师领域"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E5%BE%B7%E9%B2%81%E4%BC%8A%E6%B3%95%E6%9C%AF",
+          "text": "德鲁伊法术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E5%9C%A3%E6%AD%A6%E5%A3%AB%E6%B3%95%E6%9C%AF",
+          "text": "圣武士法术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E5%B7%A1%E6%9E%97%E5%AE%A2%E6%B3%95%E6%9C%AF",
+          "text": "巡林客法术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E6%9C%AF%E5%A3%AB%E4%B8%8E%E6%B3%95%E5%B8%88%E6%B3%95%E6%9C%AF",
+          "text": "术士与法师法术"
+        }
+      ],
+      "section": "法术列表"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%AE%A1%E7%AE%97%E9%80%9A%E5%88%99",
+          "text": "计算通则"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A",
+          "text": "常用名词解释"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%88%86%E7%B1%BB:%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C%E8%BE%B9%E6%A0%8F",
+          "text": "边栏"
+        }
+      ],
+      "section": "附录"
+    }
+  ],
+  "publicationNavigation": [
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C",
+          "text": "玩家手册"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%9F%8E%E4%B8%BB%E6%8C%87%E5%8D%97",
+          "text": "城主指南"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%80%AA%E7%89%A9%E5%9B%BE%E9%89%B4",
+          "text": "怪物图鉴"
+        }
+      ],
+      "section": "3R核心"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8CII",
+          "text": "玩家手册II"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%9F%8E%E4%B8%BB%E6%8C%87%E5%8D%97II",
+          "text": "城主指南II"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%BD%8D%E9%9D%A2%E6%89%8B%E5%86%8C",
+          "text": "位面手册"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%89%A9%E5%B1%95%E7%81%B5%E8%83%BD",
+          "text": "扩展灵能"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%8C%E7%BE%8E%E6%88%98%E5%8A%9B",
+          "text": "完美战力"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%8C%E7%BE%8E%E7%A5%9E%E5%8A%9B",
+          "text": "完美神力"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%8C%E7%BE%8E%E5%A5%A5%E6%9C%AF",
+          "text": "完美奥术"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%8C%E7%BE%8E%E5%86%92%E9%99%A9",
+          "text": "完美冒险"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%8C%E7%BE%8E%E7%81%B5%E8%83%BD",
+          "text": "完美灵能"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%8C%E7%BE%8E%E5%B7%AB%E5%B8%88",
+          "text": "完美巫师"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%8C%E7%BE%8E%E6%81%B6%E5%BE%92",
+          "text": "完美恶徒"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%8C%E7%BE%8E%E6%96%97%E5%A3%AB",
+          "text": "完美斗士"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B4%87%E5%96%84%E4%B9%8B%E4%B9%A6",
+          "text": "崇善之书"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%B7%B1%E6%B8%8A%E5%A0%95%E7%BE%A4",
+          "text": "深渊堕群"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%B9%9D%E7%8B%B1%E5%90%9B%E7%8E%8B",
+          "text": "九狱君王"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%9C%9C%E7%87%83%E4%B9%8B%E4%B9%A6",
+          "text": "霜燃之书"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%A3%8E%E6%9A%B4%E4%B9%8B%E4%B9%A6",
+          "text": "风暴之书"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%B2%99%E6%9A%B4%E4%B9%8B%E4%B9%A6",
+          "text": "沙暴之书"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B9%BD%E5%9F%9F%E5%8D%93%E5%B0%94",
+          "text": "幽域卓尔"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%9F%8E%E5%B8%82%E9%A3%8E%E5%85%89",
+          "text": "城市风光"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%9C%B0%E5%9F%8E%E9%A3%8E%E8%B2%8C",
+          "text": "地城风貌"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%9F%B3%E4%B9%8B%E6%97%8F%E8%A3%94",
+          "text": "石之族裔"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%A4%A9%E5%91%BD%E6%97%8F%E8%A3%94",
+          "text": "天命族裔"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E8%8D%92%E9%87%8E%E6%97%8F%E8%A3%94",
+          "text": "荒野族裔"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%BE%99%E4%B9%8B%E6%97%8F%E8%A3%94",
+          "text": "龙之族裔"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%B7%A8%E9%BE%99%E4%B9%8B%E4%B9%A6",
+          "text": "巨龙之书"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%BE%99%E4%B9%8B%E9%AD%94%E5%8A%9B",
+          "text": "龙之魔力"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%AD%94%E6%B3%95%E5%8D%B7%E5%86%8C",
+          "text": "魔法卷册"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E5%8D%B7%E5%86%8C",
+          "text": "战斗卷册"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%AD%82%E4%B9%8B%E9%AD%94%E6%B3%95",
+          "text": "魂之魔法"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%AD%BB%E7%81%B5%E4%B9%8B%E4%B9%A6",
+          "text": "死灵之书"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%BC%82%E6%80%AA%E4%B9%8B%E4%B9%A6",
+          "text": "异怪之书"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%A8%A1%E5%9E%8B%E6%89%8B%E5%86%8C",
+          "text": "模型手册"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E4%BA%89%E8%8B%B1%E9%9B%84",
+          "text": "战争英雄"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%83%8A%E9%AA%87%E8%8B%B1%E9%9B%84",
+          "text": "惊骇英雄"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E9%82%AA%E6%81%B6%E8%8C%83%E4%BE%8B",
+          "text": "邪恶典范"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%8A%E5%8F%A4%E9%82%AA%E7%89%A9",
+          "text": "上古邪物"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%87%E6%B3%95%E5%A4%A7%E5%85%A8",
+          "text": "万法大全"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%87%E7%89%A9%E5%A4%A7%E5%85%A8",
+          "text": "万物大全"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%87%E5%BE%8B%E5%A4%A7%E5%85%A8",
+          "text": "万律大全"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%80%AA%E7%89%A9%E5%9B%BE%E9%89%B4III",
+          "text": "怪物图鉴III"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%80%AA%E7%89%A9%E5%9B%BE%E9%89%B4IV",
+          "text": "怪物图鉴IV"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E6%80%AA%E7%89%A9%E5%9B%BE%E9%89%B4V",
+          "text": "怪物图鉴V"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E7%A0%B4%E8%AF%91%E5%A5%A5%E7%A7%98",
+          "text": "破译奥秘"
+        }
+      ],
+      "section": "3R官方扩展"
+    }
+  ],
+  "sourceUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%88%86%E7%B1%BB:%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C%E8%A7%84%E5%88%99",
+  "subcategories": [
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%88%86%E7%B1%BB:%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C%E8%BE%B9%E6%A0%8F",
+          "text": "玩家手册边栏"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%88%86%E7%B1%BB:%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C%E6%8A%80%E8%83%BD",
+          "text": "玩家手册技能"
+        },
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%88%86%E7%B1%BB:%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C%E4%B8%93%E9%95%BF",
+          "text": "玩家手册专长"
+        }
+      ],
+      "letter": "W"
+    },
+    {
+      "items": [
+        {
+          "href": "https://dnd3r.huijiwiki.com/wiki/%E5%88%86%E7%B1%BB:%E4%B8%93%E9%95%BF",
+          "text": "专长"
+        }
+      ],
+      "letter": "Z"
+    }
+  ],
+  "title": "分类:玩家手册规则 - 龙与地下城三版中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司"
+}

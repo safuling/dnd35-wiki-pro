@@ -1,0 +1,188 @@
+{
+  "generatedAt": "2026-06-22T17:09:08.248Z",
+  "count": 36,
+  "covered": 36,
+  "missing": 0,
+  "items": [
+    {
+      "nameEn": "Appraise",
+      "file": "skills/appraise.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Balance",
+      "file": "skills/balance.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Bluff",
+      "file": "skills/bluff.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Climb",
+      "file": "skills/climb.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Concentration",
+      "file": "skills/concentration.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Craft",
+      "file": "skills/craft.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Decipher Script",
+      "file": "skills/decipher-script.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Diplomacy",
+      "file": "skills/diplomacy.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Disable Device",
+      "file": "skills/disable-device.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Disguise",
+      "file": "skills/disguise.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Escape Artist",
+      "file": "skills/escape-artist.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Forgery",
+      "file": "skills/forgery.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Gather Information",
+      "file": "skills/gather-information.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Handle Animal",
+      "file": "skills/handle-animal.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Heal",
+      "file": "skills/heal.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Hide",
+      "file": "skills/hide.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Intimidate",
+      "file": "skills/intimidate.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Jump",
+      "file": "skills/jump.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Knowledge",
+      "file": "skills/knowledge.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Listen",
+      "file": "skills/listen.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Move Silently",
+      "file": "skills/move-silently.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Open Lock",
+      "file": "skills/open-lock.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Perform",
+      "file": "skills/perform.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Profession",
+      "file": "skills/profession.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Ride",
+      "file": "skills/ride.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Search",
+      "file": "skills/search.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Sense Motive",
+      "file": "skills/sense-motive.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Sleight of Hand",
+      "file": "skills/sleight-of-hand.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Speak Language",
+      "file": "skills/speak-language.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Spellcraft",
+      "file": "skills/spellcraft.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Spot",
+      "file": "skills/spot.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Survival",
+      "file": "skills/survival.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Swim",
+      "file": "skills/swim.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Tumble",
+      "file": "skills/tumble.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Use Magic Device",
+      "file": "skills/use-magic-device.html",
+      "status": "covered"
+    },
+    {
+      "nameEn": "Use Rope",
+      "file": "skills/use-rope.html",
+      "status": "covered"
+    }
+  ]
+}

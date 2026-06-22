@@ -1,0 +1,1699 @@
+{
+  "generatedAt": "2026-06-22T15:50:00.790Z",
+  "byClass": {
+    "bard": {
+      "total": 163,
+      "matched": 123,
+      "unmatched": 40
+    },
+    "cleric": {
+      "total": 231,
+      "matched": 194,
+      "unmatched": 37
+    },
+    "druid": {
+      "total": 169,
+      "matched": 162,
+      "unmatched": 7
+    },
+    "paladin": {
+      "total": 45,
+      "matched": 37,
+      "unmatched": 8
+    },
+    "ranger": {
+      "total": 50,
+      "matched": 49,
+      "unmatched": 1
+    },
+    "sorcererWizard": {
+      "total": 377,
+      "matched": 292,
+      "unmatched": 85
+    }
+  },
+  "unmatched": [
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 0,
+      "nameEn": "Lullaby",
+      "nameZh": "催眠曲",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 0,
+      "nameEn": "Summon Instrument",
+      "nameZh": "召唤乐器",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 1,
+      "nameEn": "Confusion, Lesser",
+      "nameZh": "次级困惑术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 1,
+      "nameEn": "Grease",
+      "nameZh": "油腻术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 1,
+      "nameEn": "Hideous Laughter",
+      "nameZh": "狂笑术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 1,
+      "nameEn": "Magic Mouth",
+      "nameZh": "魔嘴",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 1,
+      "nameEn": "Obscure Object",
+      "nameZh": "遮蔽物品",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 1,
+      "nameEn": "Remove Fear",
+      "nameZh": "移除恐惧",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 2,
+      "nameEn": "Animal Trance",
+      "nameZh": "迷惑动物",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 2,
+      "nameEn": "Daze Monster",
+      "nameZh": "怪物晕眩术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 2,
+      "nameEn": "Enthrall",
+      "nameZh": "注目术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 2,
+      "nameEn": "Hypnotic Pattern",
+      "nameZh": "催眠图纹",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 2,
+      "nameEn": "Pyrotechnics",
+      "nameZh": "烟火术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 2,
+      "nameEn": "Sound Burst",
+      "nameZh": "音鸣爆",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Geas, Lesser",
+      "nameZh": "次级指使术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Glibness",
+      "nameZh": "花言巧语",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Good Hope",
+      "nameZh": "强大希望",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Illusory Script",
+      "nameZh": "迷幻手稿",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Major Image",
+      "nameZh": "强效幻影",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Phantom Steed",
+      "nameZh": "魅影驹",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Sculpt Sound",
+      "nameZh": "塑声术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Slow",
+      "nameZh": "缓慢术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 3,
+      "nameEn": "Tiny Hut",
+      "nameZh": "避难小屋",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 4,
+      "nameEn": "Detect Scrying",
+      "nameZh": "侦测探知",
+      "school": "预言系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 4,
+      "nameEn": "Modify Memory",
+      "nameZh": "修改记忆",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 4,
+      "nameEn": "Neutralize Poison",
+      "nameZh": "中和毒性",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 4,
+      "nameEn": "Rainbow Pattern",
+      "nameZh": "虹彩图纹",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 4,
+      "nameEn": "Secure Shelter",
+      "nameZh": "庇护所",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 4,
+      "nameEn": "Shout",
+      "nameZh": "咆哮术",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 5,
+      "nameEn": "Heroism, Greater",
+      "nameZh": "高等英雄气概",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 5,
+      "nameEn": "Mirage Arcana",
+      "nameZh": "海市蜃楼",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 5,
+      "nameEn": "Persistent Image",
+      "nameZh": "常驻幻影",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 5,
+      "nameEn": "Shadow Evocation",
+      "nameZh": "幽影塑能术",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 5,
+      "nameEn": "Song of Discord",
+      "nameZh": "挑拨曲",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 6,
+      "nameEn": "Charm Monster, Mass",
+      "nameZh": "群体魅惑怪物",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 6,
+      "nameEn": "Eagle's Splendor, Mass",
+      "nameZh": "群体鹰之威仪",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 6,
+      "nameEn": "Fox's Cunning, Mass",
+      "nameZh": "群体狐之狡黠",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 6,
+      "nameEn": "Irresistible Dance",
+      "nameZh": "迷舞",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 6,
+      "nameEn": "Shout, Greater",
+      "nameZh": "高等咆哮术",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "bard",
+      "classTitle": "吟游诗人法术",
+      "level": 6,
+      "nameEn": "Sympathetic Vibration",
+      "nameZh": "共振术",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Bless Water",
+      "nameZh": "祝福圣水",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Curse Water",
+      "nameZh": "诅咒邪水",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Deathwatch",
+      "nameZh": "观命术",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Detect Chaos",
+      "nameZh": "侦测混乱",
+      "school": "预言系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Detect Evil",
+      "nameZh": "侦测邪恶",
+      "school": "预言系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Detect Good",
+      "nameZh": "侦测善良",
+      "school": "预言系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Detect Law",
+      "nameZh": "侦测守序",
+      "school": "预言系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Doom",
+      "nameZh": "丧志术",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Entropic Shield",
+      "nameZh": "熵光护盾",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Hide from Undead",
+      "nameZh": "亡灵无视术",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Protection from Good",
+      "nameZh": "防护善良",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 1,
+      "nameEn": "Remove Fear",
+      "nameZh": "移除恐惧",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 2,
+      "nameEn": "Enthrall",
+      "nameZh": "注目术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 2,
+      "nameEn": "Restoration, Lesser",
+      "nameZh": "次级复原术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 2,
+      "nameEn": "Sound Burst",
+      "nameZh": "音鸣爆",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Bestow Curse",
+      "nameZh": "降咒",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Create Food And Water",
+      "nameZh": "造粮术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Deep Darkness",
+      "nameZh": "深幽黑暗术",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Glyph of Warding",
+      "nameZh": "守卫刻文",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Helping Hand",
+      "nameZh": "引导之手",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Inflict Serious Wounds",
+      "nameZh": "造成重伤",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Invisibility Purge",
+      "nameZh": "消除隐形",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Obscure Object",
+      "nameZh": "遮蔽物品",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 3,
+      "nameEn": "Speak with Dead",
+      "nameZh": "死者交谈",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 4,
+      "nameEn": "Magic Weapon, Greater",
+      "nameZh": "高等魔化武器",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 4,
+      "nameEn": "Neutralize Poison",
+      "nameZh": "中和毒性",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 4,
+      "nameEn": "Restoration",
+      "nameZh": "复原术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 5,
+      "nameEn": "Disrupting Weapon",
+      "nameZh": "毁灭武器",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 5,
+      "nameEn": "Plane Shift",
+      "nameZh": "异界传送",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 6,
+      "nameEn": "Eagle's Splendor, Mass",
+      "nameZh": "群体鹰之威仪",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 6,
+      "nameEn": "Glyph of Warding, Greater",
+      "nameZh": "高等守卫刻文",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 6,
+      "nameEn": "Symbol of Persuasion",
+      "nameZh": "说服徽记",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 7,
+      "nameEn": "Cure Serious Wounds, Mass",
+      "nameZh": "群体治疗重伤",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 7,
+      "nameEn": "Inflict Serious Wounds, Mass",
+      "nameZh": "群体造成重度伤",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 8,
+      "nameEn": "Spell Immunity, Greater",
+      "nameZh": "高等法术免疫",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 8,
+      "nameEn": "Symbol of Insanity",
+      "nameZh": "摄魂徽记",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "cleric",
+      "classTitle": "牧师法术",
+      "level": 9,
+      "nameEn": "Etherealness",
+      "nameZh": "同游灵界",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "druid",
+      "classTitle": "德鲁伊法术",
+      "level": 2,
+      "nameEn": "Animal Trance",
+      "nameZh": "迷惑动物",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "druid",
+      "classTitle": "德鲁伊法术",
+      "level": 2,
+      "nameEn": "Fire Trap",
+      "nameZh": "火焰陷阱",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "druid",
+      "classTitle": "德鲁伊法术",
+      "level": 2,
+      "nameEn": "Fog Cloud",
+      "nameZh": "云雾术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "druid",
+      "classTitle": "德鲁伊法术",
+      "level": 2,
+      "nameEn": "Restoration, Lesser",
+      "nameZh": "次级复原术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "druid",
+      "classTitle": "德鲁伊法术",
+      "level": 3,
+      "nameEn": "Neutralize Poison",
+      "nameZh": "中和毒性",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "druid",
+      "classTitle": "德鲁伊法术",
+      "level": 3,
+      "nameEn": "Sleet Storm",
+      "nameZh": "雪风暴",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "druid",
+      "classTitle": "德鲁伊法术",
+      "level": 8,
+      "nameEn": "Cure Serious Wounds, Mass",
+      "nameZh": "群体治疗重伤",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "paladin",
+      "classTitle": "圣武士法术",
+      "level": 1,
+      "nameEn": "Bless Water",
+      "nameZh": "祝福圣水",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "paladin",
+      "classTitle": "圣武士法术",
+      "level": 1,
+      "nameEn": "Bless Weapon",
+      "nameZh": "祝福武器",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "paladin",
+      "classTitle": "圣武士法术",
+      "level": 1,
+      "nameEn": "Restoration, Lesser",
+      "nameZh": "次级复原术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "paladin",
+      "classTitle": "圣武士法术",
+      "level": 3,
+      "nameEn": "Heal Mount",
+      "nameZh": "医疗坐骑",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "paladin",
+      "classTitle": "圣武士法术",
+      "level": 3,
+      "nameEn": "Magic Weapon, Greater",
+      "nameZh": "高等魔化武器",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "paladin",
+      "classTitle": "圣武士法术",
+      "level": 4,
+      "nameEn": "Holy Sword",
+      "nameZh": "圣剑术",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "paladin",
+      "classTitle": "圣武士法术",
+      "level": 4,
+      "nameEn": "Neutralize Poison",
+      "nameZh": "中和毒性",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "paladin",
+      "classTitle": "圣武士法术",
+      "level": 4,
+      "nameEn": "Restoration",
+      "nameZh": "复原术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "ranger",
+      "classTitle": "巡林客法术",
+      "level": 3,
+      "nameEn": "Neutralize Poison",
+      "nameZh": "中和毒性",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 1,
+      "nameEn": "Chill Touch",
+      "nameZh": "寒冷之触",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 1,
+      "nameEn": "Floating Disk",
+      "nameZh": "浮碟术",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 1,
+      "nameEn": "Grease",
+      "nameZh": "油腻术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 1,
+      "nameEn": "Protection from Good",
+      "nameZh": "防护善良",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 1,
+      "nameEn": "Reduce Person",
+      "nameZh": "人类缩小术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Command Undead",
+      "nameZh": "命令死灵",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Daze Monster",
+      "nameZh": "怪物晕眩术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Fog Cloud",
+      "nameZh": "云雾术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Hideous Laughter",
+      "nameZh": "狂笑术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Hypnotic Pattern",
+      "nameZh": "催眠图纹",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Magic Mouth",
+      "nameZh": "魔嘴",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Obscure Object",
+      "nameZh": "遮蔽物品",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Phantom Trap",
+      "nameZh": "魅影陷阱",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Pyrotechnics",
+      "nameZh": "烟火术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 2,
+      "nameEn": "Scorching Ray",
+      "nameZh": "灼热射线",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Illusory Script",
+      "nameZh": "迷幻手稿",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Magic Weapon, Greater",
+      "nameZh": "高等魔化武器",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Major Image",
+      "nameZh": "强效幻影",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Phantom Steed",
+      "nameZh": "魅影驹",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Sleet Storm",
+      "nameZh": "雪风暴",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Slow",
+      "nameZh": "缓慢术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Stinking Cloud",
+      "nameZh": "臭云术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Tiny Hut",
+      "nameZh": "避难小屋",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 3,
+      "nameEn": "Vampiric Touch",
+      "nameZh": "吸血鬼之触",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Bestow Curse",
+      "nameZh": "降咒",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Black Tentacles",
+      "nameZh": "黑触手",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Detect Scrying",
+      "nameZh": "侦测探知",
+      "school": "预言系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Enlarge Person, Mass",
+      "nameZh": "群体变巨术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Fire Trap",
+      "nameZh": "火焰陷阱",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Geas, Lesser",
+      "nameZh": "次级指使术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Globe of Invulnerability, Lesser",
+      "nameZh": "次级法术无效结界",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Illusory Wall",
+      "nameZh": "幻墙术",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Mnemonic Enhancer",
+      "nameZh": "强记术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Rainbow Pattern",
+      "nameZh": "虹彩图纹",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Reduce Person, Mass",
+      "nameZh": "群体人类缩小术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Resilient Sphere",
+      "nameZh": "弹力法球",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Secure Shelter",
+      "nameZh": "庇护所",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 4,
+      "nameEn": "Shout",
+      "nameZh": "咆哮术",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Cone of Cold",
+      "nameZh": "寒冰锥",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Enlarge Person, Greater",
+      "nameZh": "高等人类变巨术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Interposing Hand",
+      "nameZh": "护身掌",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Mage's Faithful Hound",
+      "nameZh": "法师忠犬",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Mage's Private Sanctum",
+      "nameZh": "法师密室",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Magic Jar",
+      "nameZh": "魔魂壶",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Major Creation",
+      "nameZh": "强效造物术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Mirage Arcana",
+      "nameZh": "海市蜃楼",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Passwall",
+      "nameZh": "穿墙术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Persistent Image",
+      "nameZh": "常驻幻影",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Secret Chest",
+      "nameZh": "秘藏箱",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Shadow Evocation",
+      "nameZh": "幽影塑能术",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Telepathic Bond",
+      "nameZh": "心灵连线",
+      "school": "预言系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 5,
+      "nameEn": "Waves of Fatigue",
+      "nameZh": "疲乏波",
+      "school": "死灵系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 6,
+      "nameEn": "Eagle's Splendor, Mass",
+      "nameZh": "群体鹰之威仪",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 6,
+      "nameEn": "Forceful Hand",
+      "nameZh": "飞击掌",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 6,
+      "nameEn": "Fox's Cunning, Mass",
+      "nameZh": "群体狐之狡黠",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 6,
+      "nameEn": "Heroism, Greater",
+      "nameZh": "高等英雄气概",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 6,
+      "nameEn": "Mage's Lucubration",
+      "nameZh": "法师回忆术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 6,
+      "nameEn": "Symbol of Persuasion",
+      "nameZh": "说服徽记",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 6,
+      "nameEn": "Transformation",
+      "nameZh": "转变术",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 7,
+      "nameEn": "Grasping Hand",
+      "nameZh": "擒拿掌",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 7,
+      "nameEn": "Hold Person, Mass",
+      "nameZh": "群体人类定身术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 7,
+      "nameEn": "Mage's Magnificent Mansion",
+      "nameZh": "法师豪宅",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 7,
+      "nameEn": "Mage's Sword",
+      "nameZh": "法师之剑",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 7,
+      "nameEn": "Plane Shift",
+      "nameZh": "异界传送",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 7,
+      "nameEn": "Shadow Conjuration, Greater",
+      "nameZh": "高等幽影咒法术",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 7,
+      "nameEn": "Simulacrum",
+      "nameZh": "拟象术",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 7,
+      "nameEn": "Teleport Object",
+      "nameZh": "物品传送术",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Charm Monster, Mass",
+      "nameZh": "群体魅惑怪物",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Clenched Fist",
+      "nameZh": "金刚拳",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Irresistible Dance",
+      "nameZh": "迷舞",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Planar Binding, Greater",
+      "nameZh": "高等异界誓缚",
+      "school": "咒法系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Polar Ray",
+      "nameZh": "极冰射线",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Prying Eyes, Greater",
+      "nameZh": "高等窥视魔眼",
+      "school": "预言系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Scintillating Pattern",
+      "nameZh": "闪光图纹",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Shadow Evocation, Greater",
+      "nameZh": "高等幽影塑能术",
+      "school": "幻术系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Shout, Greater",
+      "nameZh": "高等咆哮术",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Symbol of Insanity",
+      "nameZh": "摄魂徽记",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Telekinetic Sphere",
+      "nameZh": "灵动法球",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 8,
+      "nameEn": "Temporal Stasis",
+      "nameZh": "永恒静滞",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 9,
+      "nameEn": "Crushing Hand",
+      "nameZh": "粉碎掌",
+      "school": "塑能系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 9,
+      "nameEn": "Dominate Monster",
+      "nameZh": "支配怪物",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 9,
+      "nameEn": "Etherealness",
+      "nameZh": "同游灵界",
+      "school": "变化系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 9,
+      "nameEn": "Hold Monster, Mass",
+      "nameZh": "群体怪物定身术",
+      "school": "惑控系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 9,
+      "nameEn": "Mage's Disjunction",
+      "nameZh": "法师裂解术",
+      "school": "防护系",
+      "source": "玩家手册"
+    },
+    {
+      "classKey": "sorcererWizard",
+      "classTitle": "术士与法师法术",
+      "level": 9,
+      "nameEn": "Shades",
+      "nameZh": "影法术",
+      "school": "幻术系",
+      "source": "玩家手册"
+    }
+  ],
+  "matchedCount": 857,
+  "classLevelSpellCount": 475,
+  "duplicateKeys": [
+    {
+      "key": "magic circle against chaos",
+      "ids": [
+        "magic_circle_law",
+        "magic_circle_against_chaos"
+      ]
+    },
+    {
+      "key": "mass cure moderate wounds",
+      "ids": [
+        "cure_moderate_wounds_mass",
+        "mass_cure_moderate_wounds"
+      ]
+    },
+    {
+      "key": "mass heal",
+      "ids": [
+        "heal_mass",
+        "mass_heal"
+      ]
+    },
+    {
+      "key": "polymorph any object",
+      "ids": [
+        "polymorph_any_object",
+        "true_polymorph"
+      ]
+    },
+    {
+      "key": "i",
+      "ids": [
+        "beast_shape_i",
+        "summon_natures_ally_i"
+      ]
+    },
+    {
+      "key": "ii",
+      "ids": [
+        "beast_shape_ii",
+        "summon_natures_ally_ii"
+      ]
+    },
+    {
+      "key": "iii",
+      "ids": [
+        "beast_shape_iii",
+        "summon_natures_ally_iii"
+      ]
+    },
+    {
+      "key": "summon natures ally vi",
+      "ids": [
+        "summon_natures_ally_6",
+        "summon_natures_ally_vi"
+      ]
+    }
+  ]
+}

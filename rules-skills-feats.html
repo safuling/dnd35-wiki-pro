@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技能与专长规则 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .rule-table { width:100%; border-collapse:collapse; margin:14px 0 22px; font-size:14px; }
+  .rule-table th { background:var(--bg-table-head); color:var(--text-heading); padding:8px 10px; border:1px solid var(--border-main); }
+  .rule-table td { border:1px solid var(--border-light); padding:8px 10px; vertical-align:top; }
+  .rule-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .note { background:#fef9e7; border:1px solid #f0d060; border-left:4px solid var(--accent-gold); border-radius:var(--radius); padding:12px 16px; margin:14px 0; }
+  .link-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:16px 0; }
+  .link-card { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius); padding:14px 16px; }
+  .formula { font-family:var(--font-mono); background:var(--bg-code); border:1px solid var(--border-light); border-radius:var(--radius); padding:10px 12px; margin:10px 0; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="rules-phb.html">PHB矩阵</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="equipment/intro.html">装备</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">技能规则</div>
+      <a href="#skills-overview" class="active">技能概述</a>
+      <a href="#skill-ranks">获得技能级数</a>
+      <a href="#using-skills">使用技能</a>
+      <a href="#skill-descriptions">技能说明</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">专长规则</div>
+      <a href="#gaining-feats">获得专长</a>
+      <a href="#feat-prerequisites">先决条件</a>
+      <a href="#feat-types">专长类型</a>
+      <a href="#feat-descriptions">各项专长说明</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="rules-phb.html">PHB覆盖矩阵</a>
+      <a href="skills/intro.html">技能总览</a>
+      <a href="skills/skill-synergy.html">技能共效</a>
+      <a href="feats/intro.html">专长总览</a>
+      <a href="feats/feat-list.html，并新增 <a href="feats/phb-feats.html">PHB 专长覆盖索引</a>">专长详细列表</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1>技能与专长规则</h1>
+    <p>本页补齐 PHB 导航中技能与专长的规则入口。具体技能条目和具体专长条目仍以本站技能页、专长页为主。</p>
+
+    <h2 id="skills-overview">技能概述</h2>
+    <p>技能代表角色受训练的能力。多数技能检定使用 d20，加上技能级数、相关属性调整值以及其他加值后，与 DC 或对抗检定比较。</p>
+    <div class="formula">技能检定 = d20 + 技能级数 + 相关属性调整值 + 其他调整值</div>
+    <p>技能通常分为职业技能和跨职技能。职业技能购买效率更高，最高级数也更高；跨职技能用于表示角色职业外的训练。</p>
+
+    <div class="link-grid">
+      <div class="link-card"><strong>技能列表</strong><br><a href="skills/intro.html">查看全部技能</a></div>
+      <div class="link-card"><strong>技能共效</strong><br><a href="skills/skill-synergy.html">查看共效规则</a></div>
+      <div class="link-card"><strong>角色创建</strong><br><a href="rules-character.html#creation">回到人物创建流程</a></div>
+    </div>
+
+    <h2 id="skill-ranks">获得技能级数</h2>
+    <p>角色每级获得技能点。技能点数量由职业基础值和智力调整值决定，1 级通常按 4 倍计算。人类角色通常获得额外技能点。</p>
+    <table class="rule-table">
+      <thead><tr><th>项目</th><th>规则摘要</th></tr></thead>
+      <tbody>
+        <tr><td>职业技能</td><td>每投入 1 点技能点，获得 1 级技能级数。最高级数通常为人物等级 + 3。</td></tr>
+        <tr><td>跨职技能</td><td>每投入 1 点技能点，获得 1/2 级技能级数。最高级数通常为职业技能上限的一半。</td></tr>
+        <tr><td>智力变化</td><td>永久智力调整值影响之后获得的技能点；是否追溯既往由 DM 裁定。</td></tr>
+        <tr><td>护甲罚值</td><td>部分力量/敏捷技能受护甲检定罚值影响。</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="using-skills">使用技能</h2>
+    <p>使用技能时，先确认动作类型、是否可未受训使用、是否允许重试，以及失败是否有额外后果。</p>
+    <table class="rule-table">
+      <thead><tr><th>机制</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>取 10</td><td>在没有压力或直接危险时，角色可用 10 代替 d20 结果。</td></tr>
+        <tr><td>取 20</td><td>在可反复尝试且失败没有严重后果时，用 20 代替 d20，代表花费较长时间。</td></tr>
+        <tr><td>协助他人</td><td>通常进行 DC 10 检定，成功后给予主要执行者 +2 加值。</td></tr>
+        <tr><td>对抗检定</td><td>双方各自进行相关检定，结果高者胜出。</td></tr>
+        <tr><td>未受训使用</td><td>部分技能可未受训使用，只加属性调整值；部分技能必须拥有级数。</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="skill-descriptions">技能说明</h2>
+    <p>阅读技能说明时，重点查看相关属性、是否需训练、护甲罚值、动作类型、重试限制、特殊规则和共效加值。</p>
+
+    <h2 id="gaining-feats">获得专长</h2>
+    <p>角色通常在 1 级获得一个普通专长，之后每 3 个人物等级再获得一个普通专长。部分职业、种族或特殊能力会额外授予专长。</p>
+    <table class="rule-table">
+      <thead><tr><th>来源</th><th>示例</th></tr></thead>
+      <tbody>
+        <tr><td>人物等级</td><td>1 级、3 级、6 级、9 级等获得普通专长。</td></tr>
+        <tr><td>职业奖励</td><td>战士奖励专长、法师制作卷轴、游侠战斗风格等。</td></tr>
+        <tr><td>种族奖励</td><td>人类 1 级额外专长。</td></tr>
+        <tr><td>特殊来源</td><td>魔法、模板、剧情奖励或 DM 许可内容。</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="feat-prerequisites">先决条件</h2>
+    <p>选择专长前必须满足所有先决条件。先决条件可能是属性值、BAB、技能级数、施法能力、其他专长、种族或职业特性。</p>
+    <div class="note">若角色后来失去先决条件，通常不能使用该专长，直到重新满足条件。已获得专长是否保留由具体规则和 DM 裁定。</div>
+
+    <h2 id="feat-types">专长类型</h2>
+    <table class="rule-table">
+      <thead><tr><th>类型</th><th>说明</th><th>本地入口</th></tr></thead>
+      <tbody>
+        <tr><td>一般专长</td><td>多数角色都可选择的专长。</td><td><a href="feats/general.html">一般专长</a></td></tr>
+        <tr><td>战斗专长</td><td>影响攻击、防御、移动或武器使用。</td><td><a href="feats/combat.html">战斗专长</a></td></tr>
+        <tr><td>超魔专长</td><td>改变法术效果，通常提高法术位。</td><td><a href="feats/metamagic.html">超魔专长</a></td></tr>
+        <tr><td>物品制造专长</td><td>用于制造卷轴、药水、魔杖等魔法物品。</td><td><a href="feats/item.html">物品制造专长</a></td></tr>
+        <tr><td>神术专长</td><td>通常消耗驱散/斥喝不死生物次数。</td><td><a href="feats/divine.html">神术专长</a></td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="feat-descriptions">各项专长说明</h2>
+    <p>阅读专长条目时，应检查名称、类型、先决条件、效果、正常情况和特殊说明。若本地专长页与 PHB/SRD 冲突，应优先修正专长页并在必要时记录到规则冲突页。</p>
+    <p><a href="feats/feat-list.html">进入专长详细列表</a></p>
+  </main>
+</div>
+
+<div class="footer">
+  <p>D&D 3.5e 中文Wiki | 技能与专长规则</p>
+</div>
+</body>
+</html>

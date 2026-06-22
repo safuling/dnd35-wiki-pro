@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-06-22T16:40:03.971Z",
+  "count": 1,
+  "byClass": {
+    "sorcererWizard": {
+      "count": 1,
+      "items": [
+        {
+          "level": 5,
+          "nameZh": "高等人类变巨术",
+          "nameEn": "Enlarge Person, Greater",
+          "school": "变化系"
+        }
+      ]
+    }
+  }
+}

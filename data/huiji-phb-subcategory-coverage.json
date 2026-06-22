@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-06-22T17:46:27.229Z",
+  "source": "Huiji subcategory categorymembers API via in-app browser",
+  "categories": {
+    "玩家手册边栏": {
+      "count": 17,
+      "mapped": 17,
+      "pending": 0,
+      "items": [
+        {
+          "title": "奥术与防具",
+          "status": "mapped",
+          "localUrl": "rules-magic-phb.html#arcane",
+          "localType": "综合页映射",
+          "note": "奥术施法与防具影响入口。"
+        },
+        {
+          "title": "打败陷阱的其他方法",
+          "status": "mapped",
+          "localUrl": "rules-adventure.html#traps",
+          "localType": "综合页映射",
+          "note": "陷阱与处理方式入口。"
+        },
+        {
+          "title": "德鲁伊的动物伙伴",
+          "status": "mapped",
+          "localUrl": "classes/druid.html",
+          "localType": "职业页映射",
+          "note": "德鲁伊职业页覆盖动物伙伴规则。"
+        },
+        {
+          "title": "加快战斗的步调",
+          "status": "mapped",
+          "localUrl": "rules-combat-phb.html#combat-sequence",
+          "localType": "综合页映射",
+          "note": "战斗流程与提速建议入口。"
+        },
+        {
+          "title": "魔宠",
+          "status": "mapped",
+          "localUrl": "classes/wizard.html",
+          "localType": "职业页映射",
+          "note": "法师/术士相关魔宠规则入口。"
+        },
+        {
+          "title": "人物技能",
+          "status": "mapped",
+          "localUrl": "rules-skills-feats.html#skills-overview",
+          "localType": "综合页映射",
+          "note": "人物技能规则入口。"
+        },
+        {
+          "title": "圣武士坐骑",
+          "status": "mapped",
+          "localUrl": "classes/paladin.html",
+          "localType": "职业页映射",
+          "note": "圣武士职业页覆盖特殊坐骑。"
+        },
+        {
+          "title": "玩家可以做的事",
+          "status": "mapped",
+          "localUrl": "rules-character.html#intro",
+          "localType": "综合页映射",
+          "note": "玩家角色创建和行动入口。"
+        },
+        {
+          "title": "玩家知识与人物知识",
+          "status": "mapped",
+          "localUrl": "rules-skills-feats.html#using-skills",
+          "localType": "综合页映射",
+          "note": "知识技能和角色知识边界入口。"
+        },
+        {
+          "title": "为何改版？",
+          "status": "mapped",
+          "localUrl": "rules-phb.html#summary",
+          "localType": "结构说明",
+          "note": "版本结构说明入口。"
+        },
+        {
+          "title": "小体型人物",
+          "status": "mapped",
+          "localUrl": "races/halfling.html",
+          "localType": "种族页映射",
+          "note": "半身人页面覆盖小体型人物相关提示。"
+        },
+        {
+          "title": "新技能的习得途径",
+          "status": "mapped",
+          "localUrl": "rules-skills-feats.html#skill-ranks",
+          "localType": "综合页映射",
+          "note": "技能级数与习得规则入口。"
+        },
+        {
+          "title": "影响NPC的态度",
+          "status": "mapped",
+          "localUrl": "skills/diplomacy.html",
+          "localType": "技能页映射",
+          "note": "交涉技能覆盖 NPC 态度调整。"
+        },
+        {
+          "title": "召唤怪物",
+          "status": "mapped",
+          "localUrl": "spells/class-sorcerer-wizard.html",
+          "localType": "法术列表映射",
+          "note": "召唤怪物系列可由职业法术列表进入。"
+        },
+        {
+          "title": "召唤自然盟友",
+          "status": "mapped",
+          "localUrl": "spells/class-druid.html",
+          "localType": "法术列表映射",
+          "note": "召唤自然盟友系列可由德鲁伊法术列表进入。"
+        },
+        {
+          "title": "智力、感知与魅力",
+          "status": "mapped",
+          "localUrl": "rules-character.html#changing-abilities",
+          "localType": "综合页映射",
+          "note": "属性变化章节提及心智属性。"
+        },
+        {
+          "title": "重击",
+          "status": "mapped",
+          "localUrl": "rules-combat-phb.html#combat-statistics",
+          "localType": "综合页映射",
+          "note": "战斗数值与攻击规则入口。"
+        }
+      ]
+    },
+    "玩家手册技能": {
+      "count": 36,
+      "covered": 36,
+      "missing": 0,
+      "coverageFile": "data/huiji-phb-skill-coverage.json"
+    },
+    "玩家手册专长": {
+      "count": 109,
+      "detailPages": 82,
+      "listCovered": 27,
+      "missing": 0,
+      "coverageFile": "data/huiji-phb-feat-coverage.json"
+    },
+    "专长": {
+      "count": 1550,
+      "note": "总分类包含大量扩展来源，需另建来源分层覆盖，不计入 PHB 缺口"
+    }
+  }
+}

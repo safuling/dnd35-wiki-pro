@@ -202,9 +202,9 @@ function renderTable(){
   
   // 按奥术/神术过滤
   if(currentTab === 'arcane'){
-    spells = spells.filter(s => s.arcane !== null);
+    spells = spells.filter(s => s.arcane);
   } else {
-    spells = spells.filter(s => s.divine !== null);
+    spells = spells.filter(s => s.divine);
   }
   
   // 搜索过滤

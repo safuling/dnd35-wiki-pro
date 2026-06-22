@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHB 战斗规则入口 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .rule-table { width:100%; border-collapse:collapse; margin:14px 0 22px; font-size:14px; }
+  .rule-table th { background:var(--bg-table-head); color:var(--text-heading); padding:8px 10px; border:1px solid var(--border-main); }
+  .rule-table td { border:1px solid var(--border-light); padding:8px 10px; vertical-align:top; }
+  .rule-table tr:nth-child(even) { background:var(--bg-table-stripe); }
+  .note { background:#fef9e7; border:1px solid #f0d060; border-left:4px solid var(--accent-gold); border-radius:var(--radius); padding:12px 16px; margin:14px 0; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="navbar-brand">D&D 3.5e 中文Wiki</div><div class="navbar-links" id="mainNav"><a href="index.html">首页</a><a href="rules.html" class="active">核心规则</a><a href="rules-phb.html">PHB矩阵</a><a href="rules-combat.html">战斗详述</a><a href="feats/intro.html">专长</a><a href="equipment/intro.html">装备</a></div><div class="navbar-search"><input id="searchInput" placeholder="搜索所有内容..." onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)"><button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button></div><button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button></nav>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-section"><div class="sidebar-title">战斗规则</div><a href="#battle-grid" class="active">战术地图</a><a href="#combat-sequence">战斗流程</a><a href="#combat-statistics">战斗数值</a><a href="#combat-terms">战斗基本名词</a><a href="#initiative">先攻</a><a href="#aoo">借机攻击</a><a href="#actions">战斗中的动作</a><a href="#injury-death">受伤与死亡</a><a href="#movement-position">移动、位置与距离</a><a href="#modifiers">战斗调整值</a><a href="#special-attacks">特殊攻击</a><a href="#special-initiative">特殊先攻动作</a></div>
+  <div class="sidebar-section"><div class="sidebar-title">相关页面</div><a href="rules-combat.html">战斗详述</a><a href="rules-phb.html">PHB覆盖矩阵</a></div>
+</aside>
+<main class="main-content">
+<h1>PHB 战斗规则入口</h1>
+<p>本页按 PHB 导航拆分战斗规则入口；详细状态、DR/SR 和特殊能力见 <a href="rules-combat.html">战斗详述</a>。</p>
+<h2 id="battle-grid">战术地图</h2>
+<p>战术地图通常用 5 尺方格表示空间。生物占据的格数由体型决定；武器、体型和天然触及范围决定威胁范围。</p>
+<table class="rule-table"><thead><tr><th>概念</th><th>说明</th></tr></thead><tbody><tr><td>占位</td><td>角色实际占据的方格。中型和小型通常占 1 格。</td></tr><tr><td>触及</td><td>角色能进行近战攻击的距离。长武器和大型体型可能扩大触及。</td></tr><tr><td>掩蔽</td><td>障碍物阻挡攻击线，通常提高 AC 或反射豁免。</td></tr><tr><td>隐蔽</td><td>视线被雾、黑暗、烟尘等干扰，可能造成失手机率。</td></tr></tbody></table>
+<h2 id="combat-sequence">战斗流程</h2>
+<p>战斗流程已在 <a href="rules-combat.html#flow">战斗详述：战斗流程</a> 展开。常见顺序是：确定突袭，掷先攻，按先攻顺序行动，轮到每个角色执行动作。</p>
+<h2 id="combat-statistics">战斗数值</h2>
+<table class="rule-table"><thead><tr><th>数值</th><th>用途</th></tr></thead><tbody><tr><td>AC</td><td>被攻击时的防御目标值。</td></tr><tr><td>BAB</td><td>基本攻击加值，来自职业等级。</td></tr><tr><td>攻击加值</td><td>BAB + 属性调整值 + 体型/专长/魔法等修正。</td></tr><tr><td>伤害</td><td>武器骰或效果骰 + 属性/专长/魔法等修正。</td></tr><tr><td>HP</td><td>生命值，归零以下会进入失能、濒死或死亡流程。</td></tr></tbody></table>
+<h2 id="combat-terms">战斗基本名词</h2>
+<p>轮表示整场战斗中每个参与者都有机会行动的一段时间；回合表示某个角色的行动时机；威胁表示可进行近战攻击的区域；目标是效果指定的对象。</p>
+<h2 id="initiative">先攻</h2>
+<p>先攻通常为 d20 + 敏捷调整值 + 其他修正。结果高者先行动。延迟和准备动作会改变实际行动时机。</p>
+<h2 id="aoo">借机攻击</h2>
+<p>借机攻击详见 <a href="rules-combat.html#aoo">战斗详述：借机攻击</a>。常见触发包括离开威胁格、威胁范围内施法、威胁范围内使用远程武器。</p>
+<h2 id="actions">战斗中的动作</h2>
+<p>动作详见 <a href="rules-combat.html#actions">战斗详述：动作类型</a>。常见动作包括标准动作、移动动作、整轮动作、自由动作、迅捷/即时动作。</p>
+<h2 id="injury-death">受伤与死亡</h2>
+<p>角色受到伤害时扣除 HP。HP 降至 0 通常只能进行受限动作；低于 0 进入濒死并可能持续失血；达到死亡阈值则死亡。具体阈值按战役采用的 3.5e 规则处理。</p>
+<h2 id="movement-position">移动、位置与距离</h2>
+<p>移动受速度、地形、负重、防具和动作类型影响。困难地形通常增加移动成本；离开敌人威胁格可能引发借机攻击。</p>
+<h2 id="modifiers">战斗调整值</h2>
+<p>战斗调整值来自掩蔽、隐蔽、夹击、高地、俯卧、体型、冲锋、防御式战斗、魔法和状态。记录调整值时应标明来源和类型。</p>
+<h2 id="special-attacks">特殊攻击</h2>
+<p>特殊攻击详见 <a href="rules-combat.html#special-attacks">战斗详述：特殊攻击</a>，包括冲撞、擒抱、绊摔、卸武、闯越、夹击、冲锋等。</p>
+<h2 id="special-initiative">特殊先攻动作</h2>
+<p>特殊先攻动作主要包括延迟和准备。延迟会改变行动位置；准备动作指定触发条件，并在条件发生时提前行动。</p>
+<div class="note">本页用于补齐 PHB 导航入口；更详细表格后续可继续并入 `rules-combat.html`。</div>
+</main></div><div class="footer"><p>D&D 3.5e 中文Wiki | PHB 战斗规则入口</p></div></body></html>

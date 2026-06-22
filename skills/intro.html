@@ -195,7 +195,9 @@
 
     <script>
         const skills = [
+            { name: "平衡", nameEn: "Balance", ability: "敏捷", usable: "否", desc: "在狭窄或不稳表面移动" },
             { name: "攀爬", nameEn: "Climb", ability: "力量", usable: "否", desc: "在表面攀爬" },
+            { name: "专注", nameEn: "Concentration", ability: "体质", usable: "否", desc: "受干扰时维持施法" },
             { name: "跳跃", nameEn: "Jump", ability: "力量", usable: "否", desc: "跳跃更远/更高" },
             { name: "游泳", nameEn: "Swim", ability: "力量", usable: "否", desc: "在水中移动" },
             { name: "隐匿", nameEn: "Hide", ability: "敏捷", usable: "否", desc: "不被发现" },
@@ -203,6 +205,7 @@
             { name: "脱逃", nameEn: "Escape Artist", ability: "敏捷", usable: "否", desc: "脱离束缚/绳索" },
             { name: "体操", nameEn: "Tumble", ability: "敏捷", usable: "否", desc: "翻滚/穿越威胁区域" },
             { name: "幻术辨识", nameEn: "Spellcraft", ability: "智力", usable: "否", desc: "识别法术/法术效果" },
+            { name: "知识", nameEn: "Knowledge", ability: "智力", usable: "是", desc: "各类受训知识领域" },
             { name: "知识（奥术）", nameEn: "Knowledge (Arcana)", ability: "智力", usable: "否", desc: "奥术/魔法知识" },
             { name: "知识（地下城）", nameEn: "Knowledge (Dungeoneering)", ability: "智力", usable: "否", desc: "地下城/洞穴知识" },
             { name: "知识（地理）", nameEn: "Knowledge (Geography)", ability: "智力", usable: "否", desc: "地理/地形知识" },
@@ -230,6 +233,7 @@
             { name: "禁用装置", nameEn: "Disable Device", ability: "智力", usable: "是", desc: "拆除陷阱/装置" },
             { name: "伪造", nameEn: "Forgery", ability: "智力", usable: "否", desc: "伪造文件/签名" },
             { name: "行医", nameEn: "Heal", ability: "感知", usable: "否", desc: "治疗伤者/疾病" },
+            { name: "语言", nameEn: "Speak Language", ability: "智力", usable: "是", desc: "学习新语言" },
             { name: "读手语", nameEn: "Read Lips", ability: "智力", usable: "否", desc: "解读唇语" }
         ];
 
@@ -266,7 +270,9 @@
 
         function getSkillPage(skillName) {
             const pageMap = {
+                '平衡': 'balance.html',
                 '攀爬': 'climb.html',
+                '专注': 'concentration.html',
                 '跳跃': 'jump.html',
                 '游泳': 'swim.html',
                 '隐匿': 'hide.html',
@@ -274,6 +280,7 @@
                 '脱逃': 'escape-artist.html',
                 '体操': 'tumble.html',
                 '幻术辨识': 'spellcraft.html',
+                '知识': 'knowledge.html',
                 '知识（奥术）': 'knowledge-arcana.html',
                 '搜索': 'search.html',
                 '侦查': 'spot.html',
@@ -284,9 +291,27 @@
                 '威吓': 'intimidate.html',
                 '表演': 'perform.html',
                 '骑术': 'ride.html',
-                '使用魔法装置': 'use-magic-device.html'
+                '使用魔法装置': 'use-magic-device.html',
+                '语言': 'speak-language.html',
+                '知识（地下城）': 'knowledge.html',
+                '知识（地理）': 'knowledge.html',
+                '知识（历史）': 'knowledge.html',
+                '知识（地方）': 'knowledge.html',
+                '知识（自然）': 'knowledge.html',
+                '知识（贵族）': 'knowledge.html',
+                '知识（宗教）': 'knowledge.html',
+                '知识（位面）': 'knowledge.html',
+                '驯养动物': 'handle-animal.html',
+                '炼金术': 'craft.html',
+                '估价': 'appraise.html',
+                '专业': 'profession.html',
+                '手艺': 'craft.html',
+                '禁用装置': 'disable-device.html',
+                '伪造': 'forgery.html',
+                '行医': 'heal.html',
+                '读手语': 'decipher-script.html'
             };
-            return pageMap[skillName] ? `skills/${pageMap[skillName]}` : '#';
+            return pageMap[skillName] || '#';
         }
 
         function filterSkills() {

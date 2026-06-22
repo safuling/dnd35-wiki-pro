@@ -128,7 +128,8 @@ a:hover { color: var(--text-link-hover); text-decoration: underline; }
 }
 
 /* --- 布局 --- */
-.layout {
+.layout,
+.container {
   display: flex;
   min-height: calc(100vh - 52px);
 }
@@ -520,7 +521,7 @@ pre code { background: none; padding: 0; color: var(--text-main); }
 }
 
 @media (max-width: 900px) {
-  .layout { flex-direction: column; }
+  .layout, .container { flex-direction: column; }
   .sidebar { width: 100%; min-width: auto; position: static; height: auto; max-height: 280px; overflow-y: auto; }
   .main-content { padding: 20px 16px; }
   .infobox { float: none; width: 100%; margin: 0 0 20px 0; }
@@ -592,7 +593,7 @@ pre code { background: none; padding: 0; color: var(--text-main); }
 @media print {
   .navbar, .sidebar, footer { display: none !important; }
   .main-content { padding: 0; box-shadow: none; }
-  .layout { display: block; }
+  .layout, .container { display: block; }
   a[href]:after { content: " (" attr(href) ")"; font-size: 11px; color: #666; }
   h1, h2, h3 { page-break-after: avoid; }
   table { page-break-inside: avoid; }

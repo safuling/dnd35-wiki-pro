@@ -17,6 +17,7 @@ const SPELL_DOMAINS = {
   "air_walk": ["气"],
   "control_winds": ["气"],
   "chain_lightning": ["气"],
+  "control_weather": ["气"],
   "whirlwind": ["气"],
   "elemental_swarm": ["气", "土", "火"],
 
@@ -29,7 +30,7 @@ const SPELL_DOMAINS = {
   "antilife_shell": ["动物"],
   "creeping_doom": ["动物"],
   "animal_shapes": ["动物"],
-  "summon_natures_ally_9": ["动物"],
+  "shapechange": ["动物"],
 
   // ===== 混乱领域 (Chaos) =====
   "protection_from_law": ["混乱"],

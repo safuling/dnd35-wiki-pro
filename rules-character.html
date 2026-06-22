@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人物创建与等级规则 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 18px 0;
+  }
+  .quick-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .quick-card strong {
+    display: block;
+    color: var(--text-heading);
+    margin-bottom: 4px;
+  }
+  .rule-note {
+    background: #fef9e7;
+    border: 1px solid #f0d060;
+    border-left: 4px solid var(--accent-gold);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    margin: 14px 0;
+  }
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 22px;
+    font-size: 14px;
+  }
+  .rule-table th {
+    background: var(--bg-table-head);
+    color: var(--text-heading);
+    padding: 8px 10px;
+    border: 1px solid var(--border-main);
+  }
+  .rule-table td {
+    border: 1px solid var(--border-light);
+    padding: 8px 10px;
+    vertical-align: top;
+  }
+  .rule-table tr:nth-child(even) { background: var(--bg-table-stripe); }
+  .formula {
+    font-family: var(--font-mono);
+    background: var(--bg-code);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    margin: 10px 0;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="index.html">首页</a>
+    <a href="rules.html" class="active">核心规则</a>
+    <a href="rules-phb.html">PHB矩阵</a>
+    <a href="spells/intro.html">法术</a>
+    <a href="classes/intro.html">职业</a>
+    <a href="races/intro.html">种族</a>
+    <a href="feats/intro.html">专长</a>
+    <a href="skills/intro.html">技能</a>
+    <a href="equipment/intro.html">装备</a>
+    <a href="conflicts.html">规则冲突</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">人物创建</div>
+      <a href="#intro" class="active">简介</a>
+      <a href="#creation">人物创造入门</a>
+      <a href="#abilities">属性</a>
+      <a href="#changing-abilities">改变属性值</a>
+      <a href="#class-levels">职业与等级</a>
+      <a href="#experience">经验与升级</a>
+      <a href="#multiclass">兼职人物</a>
+      <a href="#background">背景描述</a>
+      <a href="#appendix">附录通则</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="rules-phb.html">PHB覆盖矩阵</a>
+      <a href="rules.html">核心规则</a>
+      <a href="classes/intro.html">职业总览</a>
+      <a href="races/intro.html">种族总览</a>
+      <a href="races/phb-races.html">PHB种族导航</a>
+      <a href="skills/intro.html">技能总览</a>
+      <a href="feats/intro.html">专长总览</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h1 id="intro">人物创建与等级规则</h1>
+    <p>本页补齐 PHB 导航中的基础人物规则入口：人物创造、属性、职业等级、经验、兼职、背景资料和附录通则。它不是角色生成器，而是面向玩家和 DM 的规则索引。</p>
+
+    <div class="rule-note">
+      <strong>来源边界：</strong>本页按 PHB/SRD 规则结构原创整理，避免复制第三方中文译文。若具体数值与职业页面冲突，以对应职业页、SRD 或 PHB 原书为准。
+    </div>
+
+    <h2 id="creation">人物创造入门</h2>
+    <p>创建人物时，先和 DM 确认战役允许的书籍、属性生成方法、起始等级、起始财富和可选规则。标准流程可以按以下顺序执行。</p>
+    <ol>
+      <li>生成或购买六项属性值。</li>
+      <li>选择种族，并应用种族属性调整和种族特性；PHB 七个核心种族见 <a href="races/phb-races.html">PHB 种族导航</a>。</li>
+      <li>选择职业，记录生命骰、BAB、豁免、技能点和职业特性。</li>
+      <li>分配技能级数，并检查职业技能与跨职技能上限。</li>
+      <li>选择专长，确认所有先决条件已经满足。</li>
+      <li>购买装备，记录负重、武器、防具和常用工具。</li>
+      <li>填写背景资料、阵营、信仰、外貌和人物动机。</li>
+    </ol>
+
+    <div class="quick-grid">
+      <div class="quick-card"><strong>种族</strong><a href="races/intro.html">查看核心种族</a></div>
+      <div class="quick-card"><strong>职业</strong><a href="classes/intro.html">查看核心职业</a></div>
+      <div class="quick-card"><strong>技能</strong><a href="skills/intro.html">查看技能列表</a></div>
+      <div class="quick-card"><strong>专长</strong><a href="feats/intro.html">查看专长系统</a></div>
+      <div class="quick-card"><strong>装备</strong><a href="equipment/intro.html">查看装备总览</a></div>
+      <div class="quick-card"><strong>工具</strong><a href="dm/character-creation.html">使用角色创建指南</a></div>
+    </div>
+
+    <h2 id="abilities">属性值与属性</h2>
+    <p>人物有六项属性：力量、敏捷、体质、智力、感知、魅力。属性本身通常用于描述潜力，实际检定大多使用属性调整值。</p>
+    <div class="formula">属性调整值 = floor((属性值 - 10) / 2)</div>
+
+    <table class="rule-table">
+      <thead><tr><th>属性</th><th>常见用途</th></tr></thead>
+      <tbody>
+        <tr><td>力量 STR</td><td>近战攻击与伤害、攀爬、跳跃、游泳、负重。</td></tr>
+        <tr><td>敏捷 DEX</td><td>远程攻击、AC、反射豁免、先攻、隐匿和灵巧动作。</td></tr>
+        <tr><td>体质 CON</td><td>生命值、强韧豁免、耐力和专注相关场景。</td></tr>
+        <tr><td>智力 INT</td><td>技能点、知识技能、语言、法师施法。</td></tr>
+        <tr><td>感知 WIS</td><td>意志豁免、察觉类技能、牧师/德鲁伊/巡林客/圣武士施法。</td></tr>
+        <tr><td>魅力 CHA</td><td>社交技能、驱散/斥喝不死生物、术士和吟游诗人施法。</td></tr>
+      </tbody>
+    </table>
+
+    <p>常见生成方式包括掷骰、标准数组和购点。本站 DM 工具页提供了掷骰和购点辅助，但最终采用哪种方式由 DM 决定。</p>
+
+    <h2 id="changing-abilities">改变属性值</h2>
+    <p>属性值可能因升级、魔法、毒素、疾病、怪物能力或装备而改变。处理时先判断变化类型，再决定是否影响派生数值。</p>
+    <table class="rule-table">
+      <thead><tr><th>类型</th><th>说明</th><th>处理建议</th></tr></thead>
+      <tbody>
+        <tr><td>永久提升</td><td>通常来自等级提升、愿望类效果或特殊奖励。</td><td>重新计算所有相关调整值和派生数值。</td></tr>
+        <tr><td>增强加值</td><td>常见于法术和魔法物品。</td><td>同名加值通常不叠加，取最高。</td></tr>
+        <tr><td>临时加值或减值</td><td>持续时间结束后恢复。</td><td>持续期间即时影响攻击、豁免、技能、法术 DC 等。</td></tr>
+        <tr><td>属性伤害</td><td>降低属性值，可自然或魔法恢复。</td><td>按当前属性值重算调整值。</td></tr>
+        <tr><td>属性吸取</td><td>更严重，通常需要特定魔法恢复。</td><td>记录来源和恢复条件。</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="class-levels">职业与等级加值</h2>
+    <p>职业等级决定人物在某个职业中的成长。人物总等级等于所有职业等级之和；职业等级用于判定该职业特性，人物等级用于判定总体成长。</p>
+    <table class="rule-table">
+      <thead><tr><th>项目</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td>生命骰 HD</td><td>决定每级生命值的骰型，并影响部分效果。</td></tr>
+        <tr><td>基本攻击加值 BAB</td><td>决定攻击加值和多次攻击门槛。</td></tr>
+        <tr><td>强韧/反射/意志</td><td>三类豁免随职业以好或差进度成长。</td></tr>
+        <tr><td>技能点</td><td>每级获得，受职业基础值和智力调整值影响。</td></tr>
+        <tr><td>职业特性</td><td>在对应职业等级获得的能力，如偷袭、狂暴、施法、专长等。</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="level-values">等级相关数值</h3>
+    <p>人物等级还影响通用成长。常见项目包括：经验值门槛、每 3 级获得普通专长、每 4 级提升 1 点属性值，以及技能级数上限。</p>
+    <div class="rule-note">职业技能最高级数通常为人物等级 + 3；跨职技能最高级数通常为该值的一半。</div>
+
+    <h3 id="class-descriptions">职业描述</h3>
+    <p>阅读职业页时，优先检查：阵营限制、生命骰、职业技能、技能点、武器和防具擅长、BAB/豁免表、职业特性、施法表和起始金币。</p>
+
+    <h2 id="experience">经验值与等级</h2>
+    <p>经验值用于衡量人物成长。DM 通常按遭遇、任务、剧情目标和角色扮演表现发放经验。达到新等级门槛后，人物升级并获得对应职业等级的收益。</p>
+    <ol>
+      <li>选择要提升的职业。</li>
+      <li>掷或取该职业生命骰，加入体质调整值。</li>
+      <li>更新 BAB、豁免和职业特性。</li>
+      <li>获得技能点并分配技能级数。</li>
+      <li>若人物等级满足条件，获得普通专长或属性提升。</li>
+      <li>更新法术、装备、负重和派生数据。</li>
+    </ol>
+
+    <h2 id="multiclass">兼职人物</h2>
+    <p>兼职人物拥有多个职业等级。计算人物等级时将所有职业相加；计算职业特性时只看对应职业等级。兼职时最容易出错的是 BAB/豁免累加、技能职业归属和偏好职业经验惩罚。</p>
+    <table class="rule-table">
+      <thead><tr><th>检查项</th><th>规则要点</th></tr></thead>
+      <tbody>
+        <tr><td>BAB 与豁免</td><td>分别累加每个职业等级带来的数值。</td></tr>
+        <tr><td>技能</td><td>某技能只要是任一职业的职业技能，最高级数按职业技能上限处理；购买成本按升级时所选职业判断。</td></tr>
+        <tr><td>偏好职业</td><td>核心种族有偏好职业，用于忽略一项职业等级差距。</td></tr>
+        <tr><td>经验惩罚</td><td>若非偏好职业之间等级差过大，可能受到经验惩罚；许多战役会取消此规则，需先问 DM。</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="background">背景描述</h2>
+    <p>背景资料不只是叙事装饰，也会帮助 DM 判断阵营、信仰、社会关系、初始装备和剧情钩子。</p>
+
+    <h3 id="alignment">阵营</h3>
+    <p>阵营可映射到 <a href="rules-deities.html#alignment">神祇与阵营</a> 页面。创建人物时，确认职业是否有阵营限制，例如圣武士和武僧。</p>
+
+    <h3 id="religion">宗教信仰</h3>
+    <p>角色可以信奉具体神祇、自然力量、哲学理念或完全不信神。牧师、圣武士和部分领域选择通常需要更明确的信仰来源。</p>
+
+    <h3 id="vital-statistics">重要资料</h3>
+    <p>建议记录年龄、身高、体重、性别、惯用手、肤色、发色、眼睛、语言和社会身份。这些资料通常不改变数值，但会影响叙事判断。</p>
+
+    <h3 id="appearance-personality">外貌、人格与身世</h3>
+    <p>外貌描述帮助桌面沟通；人格和身世帮助解释人物动机。至少给角色写出一个目标、一个顾虑、一个关系和一个会主动冒险的理由。</p>
+
+    <h3 id="custom-character">自订人物</h3>
+    <p>自订人物时，先明确是否改变规则数值。如果只是背景重塑，通常只需 DM 认可；如果涉及种族、职业、专长、法术或装备规则，需要写明替换了哪些标准规则。</p>
+
+    <h2 id="appendix">附录通则</h2>
+    <h3 id="calculation-rules">计算通则</h3>
+    <ul>
+      <li>除非规则另有说明，小数通常向下取整。</li>
+      <li>同名加值通常不叠加，不同类型加值通常可以叠加。</li>
+      <li>倍数叠加通常按“增加的倍数相加”处理，而不是连续相乘。</li>
+      <li>具体规则优先于一般规则；后出现的特例优先于通用说明。</li>
+    </ul>
+
+    <h3 id="glossary">常用名词解释</h3>
+    <table class="rule-table">
+      <thead><tr><th>术语</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>检定</td><td>通常为 d20 + 调整值，对抗 DC 或另一个检定结果。</td></tr>
+        <tr><td>DC</td><td>难度等级，达到或超过即成功。</td></tr>
+        <tr><td>BAB</td><td>基本攻击加值，由职业等级提供。</td></tr>
+        <tr><td>AC</td><td>护甲等级，攻击检定需要达到或超过它。</td></tr>
+        <tr><td>豁免</td><td>抵抗危险效果的检定，分强韧、反射、意志。</td></tr>
+        <tr><td>CL</td><td>施法者等级，影响法术效果、持续时间和穿透 SR。</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="sidebars">边栏</h3>
+    <p>PHB 边栏通常用于解释例外、示例或设计意图。本站后续会建立“玩家手册边栏”索引；现阶段不把边栏内容和规则正文混合。</p>
+  </main>
+</div>
+
+<div class="footer">
+  <p>D&D 3.5e 中文Wiki | 人物创建与等级规则</p>
+</div>
+</body>
+</html>

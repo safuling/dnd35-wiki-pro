@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHB 种族导航 - D&D 3.5e 中文Wiki</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .race-order {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 18px 0 26px;
+  }
+  .race-link-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .race-link-card strong {
+    display: block;
+    color: var(--text-heading);
+    margin-bottom: 4px;
+  }
+  .race-link-card span {
+    color: var(--text-subtle);
+    font-size: 13px;
+  }
+  .mapping-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 24px;
+  }
+  .mapping-table th,
+  .mapping-table td {
+    border: 1px solid var(--border-light);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .mapping-table th {
+    background: var(--bg-table-head);
+    color: var(--text-heading);
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">D&D 3.5e 中文Wiki</div>
+  <div class="navbar-links" id="mainNav">
+    <a href="../index.html">首页</a>
+    <a href="../rules.html">核心规则</a>
+    <a href="../rules-phb.html">PHB矩阵</a>
+    <a href="../spells/intro.html">法术</a>
+    <a href="../classes/intro.html">职业</a>
+    <a href="intro.html" class="active">种族</a>
+    <a href="../feats/intro.html">专长</a>
+    <a href="../skills/intro.html">技能</a>
+    <a href="../equipment/intro.html">装备</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="搜索所有内容..." id="searchInput" onkeydown="if(event.key==='Enter')location.href='../global-search.html?q='+encodeURIComponent(this.value)">
+    <button onclick="location.href='../global-search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">搜索</button>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('mobile-open')" aria-label="菜单">☰</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">PHB 种族</div>
+      <a href="phb-races.html" class="active">PHB 顺序导航</a>
+      <a href="human.html">人类 Human</a>
+      <a href="dwarf.html">矮人 Dwarf</a>
+      <a href="elf.html">精灵 Elf</a>
+      <a href="gnome.html">侏儒 Gnome</a>
+      <a href="half-elf.html">半精灵 Half-Elf</a>
+      <a href="half-orc.html">半兽人 Half-Orc</a>
+      <a href="halfling.html">半身人 Halfling</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">相关页面</div>
+      <a href="intro.html">种族总览</a>
+      <a href="../rules-character.html#creation">人物创造入门</a>
+      <a href="../rules-phb.html#phb-nav">PHB 主导航</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="intro.html">种族</a> &gt; <span>PHB 种族导航</span></div>
+    <h1>PHB 种族导航</h1>
+    <p>本页按灰机 DND3R 与 PHB 主导航的顺序列出七个核心种族，用作结构映射入口。规则详情仍以各独立种族页为准。</p>
+
+    <div class="race-order">
+      <div class="race-link-card"><strong><a href="human.html">人类</a></strong><span>Human</span></div>
+      <div class="race-link-card"><strong><a href="dwarf.html">矮人</a></strong><span>Dwarf</span></div>
+      <div class="race-link-card"><strong><a href="elf.html">精灵</a></strong><span>Elf</span></div>
+      <div class="race-link-card"><strong><a href="gnome.html">侏儒</a></strong><span>Gnome</span></div>
+      <div class="race-link-card"><strong><a href="half-elf.html">半精灵</a></strong><span>Half-Elf</span></div>
+      <div class="race-link-card"><strong><a href="half-orc.html">半兽人</a></strong><span>Half-Orc</span></div>
+      <div class="race-link-card"><strong><a href="halfling.html">半身人</a></strong><span>Halfling</span></div>
+    </div>
+
+    <h2>映射说明</h2>
+    <table class="mapping-table">
+      <thead><tr><th>PHB 顺序</th><th>本地页面</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>人类</td><td><a href="human.html">races/human.html</a></td><td>已覆盖</td></tr>
+        <tr><td>矮人</td><td><a href="dwarf.html">races/dwarf.html</a></td><td>已覆盖</td></tr>
+        <tr><td>精灵</td><td><a href="elf.html">races/elf.html</a></td><td>已覆盖</td></tr>
+        <tr><td>侏儒</td><td><a href="gnome.html">races/gnome.html</a></td><td>已覆盖</td></tr>
+        <tr><td>半精灵</td><td><a href="half-elf.html">races/half-elf.html</a></td><td>已覆盖</td></tr>
+        <tr><td>半兽人</td><td><a href="half-orc.html">races/half-orc.html</a></td><td>已覆盖</td></tr>
+        <tr><td>半身人</td><td><a href="halfling.html">races/halfling.html</a></td><td>已覆盖</td></tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+
+<div class="footer">
+  <p>D&D 3.5e 中文Wiki | PHB 种族导航</p>
+</div>
+</body>
+</html>

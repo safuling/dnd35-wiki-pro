@@ -163,6 +163,7 @@
   <div class="navbar-links" id="mainNav">
     <a href="index.html" class="active">首页</a>
     <a href="rules.html">核心规则</a>
+    <a href="rules-phb.html">PHB矩阵</a>
     <a href="spells/intro.html">法术</a>
     <a href="classes/intro.html">职业</a>
     <a href="races/intro.html">种族</a>
@@ -199,6 +200,10 @@
     <div class="sidebar-section">
       <div class="sidebar-title">核心规则</div>
       <a href="index.html" class="active">系统概述</a>
+      <a href="rules-phb.html">PHB覆盖矩阵</a>
+      <a href="rules-character.html">人物创建与等级</a>
+      <a href="rules-skills-feats.html">技能与专长规则</a>
+      <a href="rules-equipment-phb.html">装备人物与财富</a>
       <a href="rules.html#basics">基础规则</a>
       <a href="rules.html#combat">战斗规则</a>
       <a href="rules.html#magic">魔法规则</a>
@@ -255,8 +260,8 @@
 
     <!-- 搜索 -->
     <div class="home-search">
-      <input type="text" placeholder="搜索：火球术、战士、技能…" id="searchInput2" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+this.value">
-      <button onclick="location.href='global-search.html?q='+document.getElementById('searchInput2').value">🔍 搜索</button>
+      <input type="text" placeholder="搜索：火球术、战士、技能…" id="searchInput2" onkeydown="if(event.key==='Enter')location.href='global-search.html?q='+encodeURIComponent(this.value)">
+      <button onclick="location.href='global-search.html?q='+encodeURIComponent(document.getElementById('searchInput2').value)">🔍 搜索</button>
     </div>
 
     <!-- 统计 -->

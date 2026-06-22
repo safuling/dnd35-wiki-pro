@@ -1,0 +1,745 @@
+{
+  "generatedAt": "2026-06-22T17:36:14.178Z",
+  "source": "Huiji 玩家手册专长 categorymembers + local feats/feat-list.html",
+  "count": 109,
+  "detailPages": 82,
+  "listCovered": 27,
+  "missing": 0,
+  "items": [
+    {
+      "nameZh": "拨挡飞箭",
+      "status": "detail-page",
+      "localUrl": "feats/deflect-arrows.html",
+      "note": "已补独立详情页",
+      "nameEn": "Deflect Arrows"
+    },
+    {
+      "nameZh": "抄录卷轴",
+      "status": "detail-page",
+      "localUrl": "feats/scribe-scroll.html",
+      "note": "已补独立详情页",
+      "nameEn": "Scribe Scroll"
+    },
+    {
+      "nameZh": "调查员",
+      "status": "detail-page",
+      "localUrl": "feats/investigator.html",
+      "note": "已补独立详情页",
+      "nameEn": "Investigator"
+    },
+    {
+      "nameZh": "动物亲和",
+      "status": "detail-page",
+      "localUrl": "feats/animal-affinity.html",
+      "note": "已补独立详情页",
+      "nameEn": "Animal Affinity"
+    },
+    {
+      "nameZh": "锻造戒指",
+      "nameEn": "Forge Ring",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "多重射击",
+      "status": "detail-page",
+      "localUrl": "feats/manyshot.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "额外驱散",
+      "status": "detail-page",
+      "localUrl": "feats/extra-turning.html",
+      "note": "已补独立详情页",
+      "nameEn": "Extra Turning"
+    },
+    {
+      "nameZh": "法术穿透",
+      "status": "detail-page",
+      "localUrl": "feats/spell-penetration.html",
+      "note": "已补独立详情页",
+      "nameEn": "Spell Penetration"
+    },
+    {
+      "nameZh": "法术定发",
+      "nameEn": "Still Spell",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "法术极效",
+      "status": "detail-page",
+      "localUrl": "feats/maximize-spell.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "法术扩展",
+      "status": "detail-page",
+      "localUrl": "feats/widen-spell.html",
+      "note": "已补独立详情页",
+      "nameEn": "Widen Spell"
+    },
+    {
+      "nameZh": "法术默发",
+      "nameEn": "Silent Spell",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "法术强效",
+      "status": "detail-page",
+      "localUrl": "feats/empower-spell.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "法术升阶",
+      "nameEn": "Heighten Spell",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "法术熟稔",
+      "status": "detail-page",
+      "localUrl": "feats/spell-mastery.html",
+      "note": "已补独立详情页",
+      "nameEn": "Spell Mastery"
+    },
+    {
+      "nameZh": "法术瞬发",
+      "status": "detail-page",
+      "localUrl": "feats/quicken-spell.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "法术延时",
+      "nameEn": "Extend Spell",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "法术增远",
+      "status": "detail-page",
+      "localUrl": "feats/enlarge-spell.html",
+      "note": "已补独立详情页",
+      "nameEn": "Enlarge Spell"
+    },
+    {
+      "nameZh": "法术专攻",
+      "status": "detail-page",
+      "localUrl": "feats/spell-focus.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "飞跑",
+      "nameEn": "Run",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "奋力冲刺",
+      "status": "detail-page",
+      "localUrl": "feats/spirited-charge.html",
+      "note": "已补独立详情页",
+      "nameEn": "Spirited Charge"
+    },
+    {
+      "nameZh": "钢铁意志",
+      "status": "detail-page",
+      "localUrl": "feats/iron-will.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "高等法术穿透",
+      "status": "detail-page",
+      "localUrl": "feats/greater-spell-penetration.html",
+      "note": "已补独立详情页",
+      "nameEn": "Greater Spell Penetration"
+    },
+    {
+      "nameZh": "高等法术专攻",
+      "status": "detail-page",
+      "localUrl": "feats/greater-spell-focus.html",
+      "note": "已补独立详情页",
+      "nameEn": "Greater Spell Focus"
+    },
+    {
+      "nameZh": "高等精准射击",
+      "status": "detail-page",
+      "localUrl": "feats/improved-precise-shot.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Precise Shot"
+    },
+    {
+      "nameZh": "高等双武器攻击",
+      "status": "detail-page",
+      "localUrl": "feats/greater-two-weapon-fighting.html",
+      "note": "已补独立详情页",
+      "nameEn": "Greater Two-Weapon Fighting"
+    },
+    {
+      "nameZh": "高等武器专攻",
+      "nameEn": "Greater Weapon Focus",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "高等武器专精",
+      "nameEn": "Greater Weapon Specialization",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "技能专攻",
+      "nameEn": "Skill Focus",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "即时备战",
+      "status": "detail-page",
+      "localUrl": "feats/quick-draw.html",
+      "note": "已补独立详情页",
+      "nameEn": "Quick Draw"
+    },
+    {
+      "nameZh": "坚忍",
+      "nameEn": "Endurance",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "践踏",
+      "nameEn": "Trample",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "健壮",
+      "status": "detail-page",
+      "localUrl": "feats/toughness.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "近程射击",
+      "status": "detail-page",
+      "localUrl": "feats/point-blank-shot.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "竞技",
+      "status": "detail-page",
+      "localUrl": "feats/athletic.html",
+      "note": "已补独立详情页",
+      "nameEn": "Athletic"
+    },
+    {
+      "nameZh": "警觉",
+      "status": "detail-page",
+      "localUrl": "feats/alertness.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "精通冲撞",
+      "nameEn": "Improved Bull Rush",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "精通闯越",
+      "status": "detail-page",
+      "localUrl": "feats/improved-overrun.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Overrun"
+    },
+    {
+      "nameZh": "精通盾击",
+      "status": "detail-page",
+      "localUrl": "feats/improved-shield-bash.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Shield Bash"
+    },
+    {
+      "nameZh": "精通反制法术",
+      "status": "detail-page",
+      "localUrl": "feats/improved-counterspell.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Counterspell"
+    },
+    {
+      "nameZh": "精通击破武器",
+      "status": "detail-page",
+      "localUrl": "feats/improved-sunder.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Sunder"
+    },
+    {
+      "nameZh": "精通擒抱",
+      "status": "detail-page",
+      "localUrl": "feats/improved-grapple.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "精通驱散",
+      "status": "detail-page",
+      "localUrl": "feats/improved-turning.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Turning"
+    },
+    {
+      "nameZh": "精通摔绊",
+      "status": "detail-page",
+      "localUrl": "feats/improved-trip.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Trip"
+    },
+    {
+      "nameZh": "精通双武器攻击",
+      "status": "detail-page",
+      "localUrl": "feats/improved-two-weapon-fighting.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Two-Weapon Fighting"
+    },
+    {
+      "nameZh": "精通徒手击打",
+      "status": "detail-page",
+      "localUrl": "feats/improved-unarmed-strike.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Unarmed Strike"
+    },
+    {
+      "nameZh": "精通先攻",
+      "status": "detail-page",
+      "localUrl": "feats/improved-initiative.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "精通卸除武器",
+      "status": "detail-page",
+      "localUrl": "feats/improved-disarm.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "精通虚招",
+      "status": "detail-page",
+      "localUrl": "feats/improved-feint.html",
+      "note": "已补独立详情页",
+      "nameEn": "Improved Feint"
+    },
+    {
+      "nameZh": "精通重击",
+      "status": "detail-page",
+      "localUrl": "feats/improved-critical.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "精准射击",
+      "status": "detail-page",
+      "localUrl": "feats/precise-shot.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "快速骑乘攻击",
+      "status": "detail-page",
+      "localUrl": "feats/ride-by-attack.html",
+      "note": "已补独立详情页",
+      "nameEn": "Ride-By Attack"
+    },
+    {
+      "nameZh": "快速射击",
+      "status": "detail-page",
+      "localUrl": "feats/rapid-shot.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "快速装填",
+      "status": "detail-page",
+      "localUrl": "feats/rapid-reload.html",
+      "note": "已补独立详情页",
+      "nameEn": "Rapid Reload"
+    },
+    {
+      "nameZh": "领导力",
+      "nameEn": "Leadership",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "灵活",
+      "nameEn": "Mobility",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "灵活移动",
+      "status": "detail-page",
+      "localUrl": "feats/mobility.html",
+      "note": "已补独立详情页",
+      "nameEn": "Mobility"
+    },
+    {
+      "nameZh": "灵巧手指",
+      "status": "detail-page",
+      "localUrl": "feats/nimble-fingers.html",
+      "note": "已补独立详情页",
+      "nameEn": "Nimble Fingers"
+    },
+    {
+      "nameZh": "盲斗",
+      "nameEn": "Blind-Fight",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "猛力攻击",
+      "status": "detail-page",
+      "localUrl": "feats/power-attack.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "魔法天赋",
+      "status": "detail-page",
+      "localUrl": "feats/magical-aptitude.html",
+      "note": "已补独立详情页",
+      "nameEn": "Magical Aptitude"
+    },
+    {
+      "nameZh": "骑乘射击",
+      "nameEn": "Mounted Archery",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "骑乘战斗",
+      "nameEn": "Mounted Combat",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "欺诈",
+      "status": "detail-page",
+      "localUrl": "feats/deceitful.html",
+      "note": "已补独立详情页",
+      "nameEn": "Deceitful"
+    },
+    {
+      "nameZh": "强力顺势斩",
+      "status": "detail-page",
+      "localUrl": "feats/great-cleave.html",
+      "note": "已补独立详情页",
+      "nameEn": "Great Cleave"
+    },
+    {
+      "nameZh": "强韧加强",
+      "status": "detail-page",
+      "localUrl": "feats/great-fortitude.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "强效召唤",
+      "status": "detail-page",
+      "localUrl": "feats/augment-summoning.html",
+      "note": "已补独立详情页",
+      "nameEn": "Augment Summoning"
+    },
+    {
+      "nameZh": "巧手",
+      "status": "detail-page",
+      "localUrl": "feats/deft-hands.html",
+      "note": "已补独立详情页",
+      "nameEn": "Deft Hands"
+    },
+    {
+      "nameZh": "闪避",
+      "status": "detail-page",
+      "localUrl": "feats/dodge.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "擅长盾牌",
+      "status": "detail-page",
+      "localUrl": "feats/shield-proficiency.html",
+      "note": "已补独立详情页",
+      "nameEn": "Shield Proficiency"
+    },
+    {
+      "nameZh": "擅长简易武器",
+      "status": "detail-page",
+      "localUrl": "feats/simple-weapon-proficiency.html",
+      "note": "已补独立详情页",
+      "nameEn": "Simple Weapon Proficiency"
+    },
+    {
+      "nameZh": "擅长军用武器",
+      "status": "detail-page",
+      "localUrl": "feats/martial-weapon-proficiency.html",
+      "note": "已补独立详情页",
+      "nameEn": "Martial Weapon Proficiency"
+    },
+    {
+      "nameZh": "擅长盔甲（轻型）",
+      "status": "detail-page",
+      "localUrl": "feats/armor-proficiency-light.html",
+      "note": "已补独立详情页",
+      "nameEn": "Armor Proficiency (Light)"
+    },
+    {
+      "nameZh": "擅长盔甲（中型）",
+      "status": "detail-page",
+      "localUrl": "feats/armor-proficiency-medium.html",
+      "note": "已补独立详情页",
+      "nameEn": "Armor Proficiency (Medium)"
+    },
+    {
+      "nameZh": "擅长盔甲（重型）",
+      "status": "detail-page",
+      "localUrl": "feats/armor-proficiency-heavy.html",
+      "note": "已补独立详情页",
+      "nameEn": "Armor Proficiency (Heavy)"
+    },
+    {
+      "nameZh": "擅长塔盾",
+      "status": "detail-page",
+      "localUrl": "feats/tower-shield-proficiency.html",
+      "note": "已补独立详情页",
+      "nameEn": "Tower Shield Proficiency"
+    },
+    {
+      "nameZh": "擅长异种武器",
+      "status": "detail-page",
+      "localUrl": "feats/exotic-weapon-proficiency.html",
+      "note": "已补独立详情页",
+      "nameEn": "Exotic Weapon Proficiency"
+    },
+    {
+      "nameZh": "闪电反射",
+      "status": "detail-page",
+      "localUrl": "feats/lightning-reflexes.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "施法免材",
+      "status": "detail-page",
+      "localUrl": "feats/eschew-materials.html",
+      "note": "已补独立详情页",
+      "nameEn": "Eschew Materials"
+    },
+    {
+      "nameZh": "双武器防御",
+      "status": "detail-page",
+      "localUrl": "feats/two-weapon-defense.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "双武器攻击",
+      "status": "detail-page",
+      "localUrl": "feats/two-weapon-fighting.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "顺势斩",
+      "status": "detail-page",
+      "localUrl": "feats/cleave.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "说服者",
+      "status": "detail-page",
+      "localUrl": "feats/persuasive.html",
+      "note": "已补独立详情页",
+      "nameEn": "Persuasive"
+    },
+    {
+      "nameZh": "谈判专家",
+      "status": "detail-page",
+      "localUrl": "feats/negotiator.html",
+      "note": "已补独立详情页",
+      "nameEn": "Negotiator"
+    },
+    {
+      "nameZh": "跳跃攻击",
+      "status": "detail-page",
+      "localUrl": "feats/spring-attack.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "调制药水",
+      "nameEn": "Brew Potion",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "顽强",
+      "status": "detail-page",
+      "localUrl": "feats/diehard.html",
+      "note": "已补独立详情页",
+      "nameEn": "Diehard"
+    },
+    {
+      "nameZh": "武器娴熟",
+      "nameEn": "Weapon Finesse",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "武器专攻",
+      "status": "detail-page",
+      "localUrl": "feats/weapon-focus.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "武器专精",
+      "status": "detail-page",
+      "localUrl": "feats/weapon-specialization.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "细致",
+      "status": "detail-page",
+      "localUrl": "feats/diligent.html",
+      "note": "已补独立详情页",
+      "nameEn": "Diligent"
+    },
+    {
+      "nameZh": "旋风攻击",
+      "status": "detail-page",
+      "localUrl": "feats/whirlwind-attack.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "移动射击",
+      "status": "detail-page",
+      "localUrl": "feats/shot-on-the-run.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "隐秘",
+      "nameEn": "Stealthy",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "寓守于攻",
+      "status": "detail-page",
+      "localUrl": "feats/combat-expertise.html",
+      "note": "本地已有独立详情页，此次按 Huiji 译名补正映射",
+      "nameEn": "Combat Expertise"
+    },
+    {
+      "nameZh": "远程射击",
+      "nameEn": "Far Shot",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "杂耍",
+      "status": "detail-page",
+      "localUrl": "feats/acrobatic.html",
+      "note": "已补独立详情页",
+      "nameEn": "Acrobatic"
+    },
+    {
+      "nameZh": "战斗反射",
+      "nameEn": "Combat Reflexes",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "战斗施法",
+      "status": "detail-page",
+      "localUrl": "feats/combat-casting.html",
+      "note": "已有独立详情页"
+    },
+    {
+      "nameZh": "震慑拳",
+      "status": "detail-page",
+      "localUrl": "feats/stunning-fist.html",
+      "note": "已补独立详情页",
+      "nameEn": "Stunning Fist"
+    },
+    {
+      "nameZh": "制造法杖",
+      "nameEn": "Craft Staff",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "制造魔法武器及防具",
+      "status": "detail-page",
+      "localUrl": "feats/craft-magic-arms-and-armor.html",
+      "note": "已补独立详情页",
+      "nameEn": "Craft Magic Arms and Armor"
+    },
+    {
+      "nameZh": "制造魔杖",
+      "nameEn": "Craft Wand",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "制造奇物",
+      "nameEn": "Craft Wondrous Item",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "制造权杖",
+      "nameEn": "Craft Rod",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "抓取飞箭",
+      "status": "detail-page",
+      "localUrl": "feats/snatch-arrows.html",
+      "note": "已补独立详情页",
+      "nameEn": "Snatch Arrows"
+    },
+    {
+      "nameZh": "追踪",
+      "nameEn": "Track",
+      "status": "list-covered",
+      "localUrl": "feats/feat-list.html",
+      "note": "已在综合专长列表覆盖"
+    },
+    {
+      "nameZh": "自救",
+      "status": "detail-page",
+      "localUrl": "feats/self-sufficient.html",
+      "note": "已补独立详情页",
+      "nameEn": "Self-Sufficient"
+    },
+    {
+      "nameZh": "自然施法",
+      "status": "detail-page",
+      "localUrl": "feats/natural-spell.html",
+      "note": "已补独立详情页",
+      "nameEn": "Natural Spell"
+    }
+  ]
+}

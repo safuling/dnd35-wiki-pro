@@ -87,22 +87,22 @@ if (spell) {
   let levelDisplay = '';
   if (spell.arcane) {
     const classes = Object.entries(spell.arcane)
-      .filter(([k, v]) => v > 0)
+      .filter(([k, v]) => v >= 0)
       .map(([k, v]) => `${k} ${v}环`);
     levelDisplay += classes.join('、');
   }
   if (spell.divine) {
     if (levelDisplay) levelDisplay += ' / ';
     const classes = Object.entries(spell.divine)
-      .filter(([k, v]) => v > 0)
+      .filter(([k, v]) => v >= 0)
       .map(([k, v]) => `${k} ${v}环`);
     levelDisplay += classes.join('、');
   }
   
   // 构建法术类型
   let spellType = [];
-  if (spell.arcane && Object.values(spell.arcane).some(v => v > 0)) spellType.push('奥术');
-  if (spell.divine && Object.values(spell.divine).some(v => v > 0)) spellType.push('神术');
+  if (spell.arcane && Object.values(spell.arcane).some(v => v >= 0)) spellType.push('奥术');
+  if (spell.divine && Object.values(spell.divine).some(v => v >= 0)) spellType.push('神术');
   
   // 渲染法术详情
   detailContainer.innerHTML = `

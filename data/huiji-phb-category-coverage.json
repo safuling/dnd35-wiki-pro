@@ -1,0 +1,521 @@
+{
+  "generatedAt": "2026-06-22T17:03:02.870Z",
+  "count": 57,
+  "covered": 57,
+  "missing": 0,
+  "items": [
+    {
+      "letter": "B",
+      "text": "宝藏",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%9D%E8%97%8F",
+      "status": "covered",
+      "localUrl": "rules-adventure-phb.html#treasure",
+      "localType": "综合页锚点",
+      "note": "映射到冒险章节的宝藏入口，并关联本地 DM 宝藏工具。"
+    },
+    {
+      "letter": "B",
+      "text": "背景描述",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%83%8C%E6%99%AF%E6%8F%8F%E8%BF%B0",
+      "status": "covered",
+      "localUrl": "rules-character.html#background",
+      "localType": "综合页锚点",
+      "note": "角色背景总入口。"
+    },
+    {
+      "letter": "C",
+      "text": "常用名词解释",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A",
+      "status": "covered",
+      "localUrl": "rules-character.html#glossary",
+      "localType": "综合页锚点",
+      "note": "PHB 术语表入口。"
+    },
+    {
+      "letter": "D",
+      "text": "等级相关数值",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%AD%89%E7%BA%A7%E7%9B%B8%E5%85%B3%E6%95%B0%E5%80%BC",
+      "status": "covered",
+      "localUrl": "rules-character.html#level-values",
+      "localType": "综合页锚点",
+      "note": "等级、经验、专长获得与技能上限。"
+    },
+    {
+      "letter": "F",
+      "text": "法术说明",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%B3%95%E6%9C%AF%E8%AF%B4%E6%98%8E",
+      "status": "covered",
+      "localUrl": "rules-magic-phb.html#spell-descriptions",
+      "localType": "综合页锚点",
+      "note": "法术条目格式与规则字段。"
+    },
+    {
+      "letter": "F",
+      "text": "负重能力",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%B4%9F%E9%87%8D%E8%83%BD%E5%8A%9B",
+      "status": "covered",
+      "localUrl": "rules-adventure-phb.html#carrying-capacity",
+      "localType": "综合页锚点",
+      "note": "负重、推拉拖与体型换算。"
+    },
+    {
+      "letter": "G",
+      "text": "改变属性值",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%94%B9%E5%8F%98%E5%B1%9E%E6%80%A7%E5%80%BC",
+      "status": "covered",
+      "localUrl": "rules-character.html#changing-abilities",
+      "localType": "综合页锚点",
+      "note": "属性提升、伤害、吸取与增强加值。"
+    },
+    {
+      "letter": "G",
+      "text": "各项专长说明",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%90%84%E9%A1%B9%E4%B8%93%E9%95%BF%E8%AF%B4%E6%98%8E",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#feat-descriptions",
+      "localType": "综合页锚点",
+      "note": "PHB 专长说明入口，并映射 feats/feat-list.html。"
+    },
+    {
+      "letter": "H",
+      "text": "获得技能级数",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%8E%B7%E5%BE%97%E6%8A%80%E8%83%BD%E7%BA%A7%E6%95%B0",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#skill-ranks",
+      "localType": "综合页锚点",
+      "note": "技能点、职业技能、跨职与最大级数。"
+    },
+    {
+      "letter": "H",
+      "text": "获得专长",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%8E%B7%E5%BE%97%E4%B8%93%E9%95%BF",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#gaining-feats",
+      "localType": "综合页锚点",
+      "note": "等级专长与奖励专长入口。"
+    },
+    {
+      "letter": "J",
+      "text": "技能",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%8A%80%E8%83%BD",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#skills-overview",
+      "localType": "综合页锚点",
+      "note": "技能总览入口。"
+    },
+    {
+      "letter": "J",
+      "text": "技能概述",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%8A%80%E8%83%BD%E6%A6%82%E8%BF%B0",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#skills-overview",
+      "localType": "综合页锚点",
+      "note": "技能检定、级数与分类总览。"
+    },
+    {
+      "letter": "J",
+      "text": "技能说明",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%8A%80%E8%83%BD%E8%AF%B4%E6%98%8E",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#skill-descriptions",
+      "localType": "综合页锚点",
+      "note": "PHB 技能说明索引。"
+    },
+    {
+      "letter": "J",
+      "text": "计算通则",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%AE%A1%E7%AE%97%E9%80%9A%E5%88%99",
+      "status": "covered",
+      "localUrl": "rules-character.html#calculation-rules",
+      "localType": "综合页锚点",
+      "note": "取整、倍数、加值类型与例外优先。"
+    },
+    {
+      "letter": "J",
+      "text": "简介",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%AE%80%E4%BB%8B",
+      "status": "covered",
+      "localUrl": "rules-character.html#intro",
+      "localType": "综合页锚点",
+      "note": "PHB 式导言入口。"
+    },
+    {
+      "letter": "J",
+      "text": "兼职人物",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%85%BC%E8%81%8C%E4%BA%BA%E7%89%A9",
+      "status": "covered",
+      "localUrl": "rules-character.html#multiclass",
+      "localType": "综合页锚点",
+      "note": "多职业、偏好职业与经验惩罚。"
+    },
+    {
+      "letter": "J",
+      "text": "借机攻击",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%80%9F%E6%9C%BA%E6%94%BB%E5%87%BB",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#aoo",
+      "localType": "综合页锚点",
+      "note": "借机攻击规则入口。"
+    },
+    {
+      "letter": "J",
+      "text": "金钱与财富",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E9%87%91%E9%92%B1%E4%B8%8E%E8%B4%A2%E5%AF%8C",
+      "status": "covered",
+      "localUrl": "rules-equipment-phb.html#wealth",
+      "localType": "综合页锚点",
+      "note": "起始财富与货币。"
+    },
+    {
+      "letter": "J",
+      "text": "经验值与等级",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%BB%8F%E9%AA%8C%E5%80%BC%E4%B8%8E%E7%AD%89%E7%BA%A7",
+      "status": "covered",
+      "localUrl": "rules-character.html#experience",
+      "localType": "综合页锚点",
+      "note": "经验与升级规则。"
+    },
+    {
+      "letter": "M",
+      "text": "冒险",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%86%92%E9%99%A9",
+      "status": "covered",
+      "localUrl": "rules-adventure-phb.html",
+      "localType": "独立入口页",
+      "note": "PHB 冒险章节映射页。"
+    },
+    {
+      "letter": "M",
+      "text": "魔法",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E9%AD%94%E6%B3%95",
+      "status": "covered",
+      "localUrl": "rules-magic-phb.html",
+      "localType": "独立入口页",
+      "note": "PHB 魔法章节映射页。"
+    },
+    {
+      "letter": "Q",
+      "text": "其他奖赏",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%85%B6%E4%BB%96%E5%A5%96%E8%B5%8F",
+      "status": "covered",
+      "localUrl": "rules-adventure-phb.html#other-rewards",
+      "localType": "综合页锚点",
+      "note": "经验以外奖励、声望、服务与剧情奖励。"
+    },
+    {
+      "letter": "R",
+      "text": "人物创造入门",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E4%BA%BA%E7%89%A9%E5%88%9B%E9%80%A0%E5%85%A5%E9%97%A8",
+      "status": "covered",
+      "localUrl": "rules-character.html#creation",
+      "localType": "综合页锚点",
+      "note": "角色创建步骤入口。"
+    },
+    {
+      "letter": "S",
+      "text": "神术",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%A5%9E%E6%9C%AF",
+      "status": "covered",
+      "localUrl": "rules-magic-phb.html#divine",
+      "localType": "综合页锚点",
+      "note": "神术准备、领域、圣徽与神祇。"
+    },
+    {
+      "letter": "S",
+      "text": "施法",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%96%BD%E6%B3%95",
+      "status": "covered",
+      "localUrl": "rules-magic-phb.html#casting",
+      "localType": "综合页锚点",
+      "note": "施法时间、成分、专注、范围与目标等规则。"
+    },
+    {
+      "letter": "S",
+      "text": "使用技能",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E4%BD%BF%E7%94%A8%E6%8A%80%E8%83%BD",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#using-skills",
+      "localType": "综合页锚点",
+      "note": "技能检定、未受训、取10/20与协助。"
+    },
+    {
+      "letter": "S",
+      "text": "受伤与死亡",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%8F%97%E4%BC%A4%E4%B8%8E%E6%AD%BB%E4%BA%A1",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#injury-death",
+      "localType": "综合页锚点",
+      "note": "伤害、濒死、稳定与死亡。"
+    },
+    {
+      "letter": "S",
+      "text": "属性",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%B1%9E%E6%80%A7",
+      "status": "covered",
+      "localUrl": "rules-character.html#abilities",
+      "localType": "综合页锚点",
+      "note": "六属性与派生数值。"
+    },
+    {
+      "letter": "S",
+      "text": "属性值",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%B1%9E%E6%80%A7%E5%80%BC",
+      "status": "covered",
+      "localUrl": "rules-character.html#abilities",
+      "localType": "综合页锚点",
+      "note": "属性值、调整值与施法属性。"
+    },
+    {
+      "letter": "T",
+      "text": "探索",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%8E%A2%E7%B4%A2",
+      "status": "covered",
+      "localUrl": "rules-adventure-phb.html#exploration",
+      "localType": "综合页锚点",
+      "note": "探索规则入口。"
+    },
+    {
+      "letter": "T",
+      "text": "特殊攻击",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E6%94%BB%E5%87%BB",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#special-attacks",
+      "localType": "综合页锚点",
+      "note": "擒抱、冲撞、卸除等特殊攻击入口。"
+    },
+    {
+      "letter": "T",
+      "text": "特殊能力",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E8%83%BD%E5%8A%9B",
+      "status": "covered",
+      "localUrl": "rules-magic-phb.html#special-abilities",
+      "localType": "综合页锚点",
+      "note": "Ex/Sp/Su 特殊能力入口，并映射战斗页。"
+    },
+    {
+      "letter": "T",
+      "text": "特殊先攻动作",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%89%B9%E6%AE%8A%E5%85%88%E6%94%BB%E5%8A%A8%E4%BD%9C",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#special-initiative",
+      "localType": "综合页锚点",
+      "note": "延迟、准备动作与突袭轮。"
+    },
+    {
+      "letter": "W",
+      "text": "外貌、人格与身世",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%A4%96%E8%B2%8C%E3%80%81%E4%BA%BA%E6%A0%BC%E4%B8%8E%E8%BA%AB%E4%B8%96",
+      "status": "covered",
+      "localUrl": "rules-character.html#appearance-personality",
+      "localType": "综合页锚点",
+      "note": "外貌、人格、动机与身世。"
+    },
+    {
+      "letter": "W",
+      "text": "玩家手册/牧师领域",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%8E%A9%E5%AE%B6%E6%89%8B%E5%86%8C/%E7%89%A7%E5%B8%88%E9%A2%86%E5%9F%9F",
+      "status": "covered",
+      "localUrl": "domains/intro.html",
+      "localType": "独立入口页",
+      "note": "领域系统与领域列表。"
+    },
+    {
+      "letter": "W",
+      "text": "武器",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%AD%A6%E5%99%A8",
+      "status": "covered",
+      "localUrl": "equipment/weapons-detail.html",
+      "localType": "独立详情页",
+      "note": "武器表与武器规则详情。"
+    },
+    {
+      "letter": "X",
+      "text": "先攻",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%85%88%E6%94%BB",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#initiative",
+      "localType": "综合页锚点",
+      "note": "先攻检定与先攻顺序。"
+    },
+    {
+      "letter": "X",
+      "text": "先决条件",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#feat-prerequisites",
+      "localType": "综合页锚点",
+      "note": "专长前提与失去前提后的处理。"
+    },
+    {
+      "letter": "Y",
+      "text": "移动",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%A7%BB%E5%8A%A8",
+      "status": "covered",
+      "localUrl": "rules-adventure-phb.html#movement",
+      "localType": "综合页锚点",
+      "note": "冒险移动与速度入口。"
+    },
+    {
+      "letter": "Y",
+      "text": "移动、位置与距离",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E7%A7%BB%E5%8A%A8%E3%80%81%E4%BD%8D%E7%BD%AE%E4%B8%8E%E8%B7%9D%E7%A6%BB",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#movement-position",
+      "localType": "综合页锚点",
+      "note": "战斗移动、距离、占位与穿越方格。"
+    },
+    {
+      "letter": "Z",
+      "text": "战斗",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html",
+      "localType": "独立入口页",
+      "note": "PHB 战斗章节映射页。"
+    },
+    {
+      "letter": "Z",
+      "text": "战斗基本名词",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E5%9F%BA%E6%9C%AC%E5%90%8D%E8%AF%8D",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#combat-terms",
+      "localType": "综合页锚点",
+      "note": "轮、回合、动作、目标等术语。"
+    },
+    {
+      "letter": "Z",
+      "text": "战斗数值",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E6%95%B0%E5%80%BC",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#combat-statistics",
+      "localType": "综合页锚点",
+      "note": "AC、HP、攻击加值、伤害、豁免、先攻。"
+    },
+    {
+      "letter": "Z",
+      "text": "战斗调整值",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E8%B0%83%E6%95%B4%E5%80%BC",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#modifiers",
+      "localType": "综合页锚点",
+      "note": "掩蔽、隐蔽、夹击、高地、俯卧等调整。"
+    },
+    {
+      "letter": "Z",
+      "text": "战斗中的动作",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%96%97%E4%B8%AD%E7%9A%84%E5%8A%A8%E4%BD%9C",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#actions",
+      "localType": "综合页锚点",
+      "note": "标准、移动、整轮、迅捷等动作入口。"
+    },
+    {
+      "letter": "Z",
+      "text": "战术地图",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E6%88%98%E6%9C%AF%E5%9C%B0%E5%9B%BE",
+      "status": "covered",
+      "localUrl": "rules-combat-phb.html#battle-grid",
+      "localType": "综合页锚点",
+      "note": "格子、占位、威胁范围、掩蔽。"
+    },
+    {
+      "letter": "Z",
+      "text": "阵营",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E9%98%B5%E8%90%A5",
+      "status": "covered",
+      "localUrl": "rules-character.html#alignment",
+      "localType": "综合页锚点",
+      "note": "角色阵营入口，并映射 rules-deities.html#alignment。"
+    },
+    {
+      "letter": "Z",
+      "text": "职业",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%81%8C%E4%B8%9A",
+      "status": "covered",
+      "localUrl": "rules-character.html#class-levels",
+      "localType": "综合页锚点",
+      "note": "职业、等级和职业特性总览。"
+    },
+    {
+      "letter": "Z",
+      "text": "职业描述",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%81%8C%E4%B8%9A%E6%8F%8F%E8%BF%B0",
+      "status": "covered",
+      "localUrl": "rules-character.html#class-descriptions",
+      "localType": "综合页锚点",
+      "note": "PHB 职业说明格式入口。"
+    },
+    {
+      "letter": "Z",
+      "text": "职业与等级加值",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%81%8C%E4%B8%9A%E4%B8%8E%E7%AD%89%E7%BA%A7%E5%8A%A0%E5%80%BC",
+      "status": "covered",
+      "localUrl": "rules-character.html#class-levels",
+      "localType": "综合页锚点",
+      "note": "BAB、豁免、技能点、生命骰与等级加值。"
+    },
+    {
+      "letter": "Z",
+      "text": "重要资料",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E9%87%8D%E8%A6%81%E8%B5%84%E6%96%99",
+      "status": "covered",
+      "localUrl": "rules-character.html#vital-statistics",
+      "localType": "综合页锚点",
+      "note": "年龄、身高体重、性别、惯用手与外貌资料。"
+    },
+    {
+      "letter": "Z",
+      "text": "专长",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%93%E9%95%BF",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#gaining-feats",
+      "localType": "综合页锚点",
+      "note": "专长获得规则，并映射 feats/feat-list.html。"
+    },
+    {
+      "letter": "Z",
+      "text": "专长类型",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E4%B8%93%E9%95%BF%E7%B1%BB%E5%9E%8B",
+      "status": "covered",
+      "localUrl": "rules-skills-feats.html#feat-types",
+      "localType": "综合页锚点",
+      "note": "PHB 专长类型定义。"
+    },
+    {
+      "letter": "Z",
+      "text": "装备",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%A3%85%E5%A4%87",
+      "status": "covered",
+      "localUrl": "rules-equipment-phb.html#equipping",
+      "localType": "综合页锚点",
+      "note": "PHB 装备章节入口。"
+    },
+    {
+      "letter": "Z",
+      "text": "装备人物",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%A3%85%E5%A4%87%E4%BA%BA%E7%89%A9",
+      "status": "covered",
+      "localUrl": "rules-equipment-phb.html#equipping",
+      "localType": "综合页锚点",
+      "note": "起始资金、购买与装备步骤。"
+    },
+    {
+      "letter": "Z",
+      "text": "自订人物",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E8%87%AA%E8%AE%A2%E4%BA%BA%E7%89%A9",
+      "status": "covered",
+      "localUrl": "rules-character.html#custom-character",
+      "localType": "综合页锚点",
+      "note": "自定义角色与 DM 协调说明。"
+    },
+    {
+      "letter": "Z",
+      "text": "宗教信仰",
+      "huijiUrl": "https://dnd3r.huijiwiki.com/wiki/%E5%AE%97%E6%95%99%E4%BF%A1%E4%BB%B0",
+      "status": "covered",
+      "localUrl": "rules-character.html#religion",
+      "localType": "综合页锚点",
+      "note": "角色信仰与神祇入口。"
+    }
+  ]
+}
