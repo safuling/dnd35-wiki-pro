@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T17:52:51.569Z",
+  "generatedAt": "2026-06-22T18:20:28.588Z",
   "source": "Huiji 玩家手册专长 categorymembers + local feats/feat-list.html",
   "count": 109,
   "detailPages": 109,
@@ -45,7 +45,8 @@
       "nameZh": "多重射击",
       "status": "detail-page",
       "localUrl": "feats/manyshot.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Manyshot"
     },
     {
       "nameZh": "额外驱散",
@@ -72,7 +73,8 @@
       "nameZh": "法术极效",
       "status": "detail-page",
       "localUrl": "feats/maximize-spell.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Maximize Spell"
     },
     {
       "nameZh": "法术扩展",
@@ -92,7 +94,8 @@
       "nameZh": "法术强效",
       "status": "detail-page",
       "localUrl": "feats/empower-spell.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Empower Spell"
     },
     {
       "nameZh": "法术升阶",
@@ -112,7 +115,8 @@
       "nameZh": "法术瞬发",
       "status": "detail-page",
       "localUrl": "feats/quicken-spell.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Quicken Spell"
     },
     {
       "nameZh": "法术延时",
@@ -132,7 +136,8 @@
       "nameZh": "法术专攻",
       "status": "detail-page",
       "localUrl": "feats/spell-focus.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Spell Focus"
     },
     {
       "nameZh": "飞跑",
@@ -152,7 +157,8 @@
       "nameZh": "钢铁意志",
       "status": "detail-page",
       "localUrl": "feats/iron-will.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Iron Will"
     },
     {
       "nameZh": "高等法术穿透",
@@ -228,13 +234,15 @@
       "nameZh": "健壮",
       "status": "detail-page",
       "localUrl": "feats/toughness.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Toughness"
     },
     {
       "nameZh": "近程射击",
       "status": "detail-page",
       "localUrl": "feats/point-blank-shot.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Point Blank Shot"
     },
     {
       "nameZh": "竞技",
@@ -247,7 +255,8 @@
       "nameZh": "警觉",
       "status": "detail-page",
       "localUrl": "feats/alertness.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Alertness"
     },
     {
       "nameZh": "精通冲撞",
@@ -288,7 +297,8 @@
       "nameZh": "精通擒抱",
       "status": "detail-page",
       "localUrl": "feats/improved-grapple.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Improved Grapple"
     },
     {
       "nameZh": "精通驱散",
@@ -322,13 +332,15 @@
       "nameZh": "精通先攻",
       "status": "detail-page",
       "localUrl": "feats/improved-initiative.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Improved Initiative"
     },
     {
       "nameZh": "精通卸除武器",
       "status": "detail-page",
       "localUrl": "feats/improved-disarm.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Improved Disarm"
     },
     {
       "nameZh": "精通虚招",
@@ -341,13 +353,15 @@
       "nameZh": "精通重击",
       "status": "detail-page",
       "localUrl": "feats/improved-critical.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Improved Critical"
     },
     {
       "nameZh": "精准射击",
       "status": "detail-page",
       "localUrl": "feats/precise-shot.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Precise Shot"
     },
     {
       "nameZh": "快速骑乘攻击",
@@ -360,7 +374,8 @@
       "nameZh": "快速射击",
       "status": "detail-page",
       "localUrl": "feats/rapid-shot.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Rapid Shot"
     },
     {
       "nameZh": "快速装填",
@@ -408,7 +423,8 @@
       "nameZh": "猛力攻击",
       "status": "detail-page",
       "localUrl": "feats/power-attack.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Power Attack"
     },
     {
       "nameZh": "魔法天赋",
@@ -449,7 +465,8 @@
       "nameZh": "强韧加强",
       "status": "detail-page",
       "localUrl": "feats/great-fortitude.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Great Fortitude"
     },
     {
       "nameZh": "强效召唤",
@@ -469,7 +486,8 @@
       "nameZh": "闪避",
       "status": "detail-page",
       "localUrl": "feats/dodge.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Dodge"
     },
     {
       "nameZh": "擅长盾牌",
@@ -531,7 +549,8 @@
       "nameZh": "闪电反射",
       "status": "detail-page",
       "localUrl": "feats/lightning-reflexes.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Lightning Reflexes"
     },
     {
       "nameZh": "施法免材",
@@ -544,19 +563,22 @@
       "nameZh": "双武器防御",
       "status": "detail-page",
       "localUrl": "feats/two-weapon-defense.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Two-Weapon Defense"
     },
     {
       "nameZh": "双武器攻击",
       "status": "detail-page",
       "localUrl": "feats/two-weapon-fighting.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Two-Weapon Fighting"
     },
     {
       "nameZh": "顺势斩",
       "status": "detail-page",
       "localUrl": "feats/cleave.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Cleave"
     },
     {
       "nameZh": "说服者",
@@ -576,7 +598,8 @@
       "nameZh": "跳跃攻击",
       "status": "detail-page",
       "localUrl": "feats/spring-attack.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Spring Attack"
     },
     {
       "nameZh": "调制药水",
@@ -603,13 +626,15 @@
       "nameZh": "武器专攻",
       "status": "detail-page",
       "localUrl": "feats/weapon-focus.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Weapon Focus"
     },
     {
       "nameZh": "武器专精",
       "status": "detail-page",
       "localUrl": "feats/weapon-specialization.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Weapon Specialization"
     },
     {
       "nameZh": "细致",
@@ -622,13 +647,15 @@
       "nameZh": "旋风攻击",
       "status": "detail-page",
       "localUrl": "feats/whirlwind-attack.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Whirlwind Attack"
     },
     {
       "nameZh": "移动射击",
       "status": "detail-page",
       "localUrl": "feats/shot-on-the-run.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Shot on the Run"
     },
     {
       "nameZh": "隐秘",
@@ -641,7 +668,7 @@
       "nameZh": "寓守于攻",
       "status": "detail-page",
       "localUrl": "feats/combat-expertise.html",
-      "note": "本地已有独立详情页，此次按 Huiji 译名补正映射",
+      "note": "本地已有独立详情页，此次按 Huiji 译名补正映射；已补统一 PHB 专长摘要模板",
       "nameEn": "Combat Expertise"
     },
     {
@@ -669,7 +696,8 @@
       "nameZh": "战斗施法",
       "status": "detail-page",
       "localUrl": "feats/combat-casting.html",
-      "note": "已有独立详情页"
+      "note": "已有独立详情页；已补统一 PHB 专长摘要模板",
+      "nameEn": "Combat Casting"
     },
     {
       "nameZh": "震慑拳",
