@@ -1,0 +1,1107 @@
+{
+  "generatedAt": "2026-06-22T17:55:35.717Z",
+  "scope": "PHB feat independent-page structural and terminology-pass checklist",
+  "count": 109,
+  "pageExists": 109,
+  "withEffect": 80,
+  "withPrerequisite": 109,
+  "withPhbSource": 80,
+  "replacementCharFiles": 0,
+  "notes": [
+    "109 个 PHB 专长均已有独立详情入口。",
+    "灵活 / Mobility 与 灵活移动 / Mobility 共用 feats/mobility.html，覆盖矩阵按别名映射处理。",
+    "本轮完成结构校对与关键术语一致性检查；后续若逐书精校，应基于 PHB/SRD 原文逐项复核。"
+  ],
+  "items": [
+    {
+      "nameZh": "拨挡飞箭",
+      "nameEn": "Deflect Arrows",
+      "localUrl": "feats/deflect-arrows.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "抄录卷轴",
+      "nameEn": "Scribe Scroll",
+      "localUrl": "feats/scribe-scroll.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "调查员",
+      "nameEn": "Investigator",
+      "localUrl": "feats/investigator.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "动物亲和",
+      "nameEn": "Animal Affinity",
+      "localUrl": "feats/animal-affinity.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "锻造戒指",
+      "nameEn": "Forge Ring",
+      "localUrl": "feats/forge-ring.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "多重射击",
+      "nameEn": "",
+      "localUrl": "feats/manyshot.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "额外驱散",
+      "nameEn": "Extra Turning",
+      "localUrl": "feats/extra-turning.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术穿透",
+      "nameEn": "Spell Penetration",
+      "localUrl": "feats/spell-penetration.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术定发",
+      "nameEn": "Still Spell",
+      "localUrl": "feats/still-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术极效",
+      "nameEn": "",
+      "localUrl": "feats/maximize-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术扩展",
+      "nameEn": "Widen Spell",
+      "localUrl": "feats/widen-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术默发",
+      "nameEn": "Silent Spell",
+      "localUrl": "feats/silent-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术强效",
+      "nameEn": "",
+      "localUrl": "feats/empower-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术升阶",
+      "nameEn": "Heighten Spell",
+      "localUrl": "feats/heighten-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术熟稔",
+      "nameEn": "Spell Mastery",
+      "localUrl": "feats/spell-mastery.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术瞬发",
+      "nameEn": "",
+      "localUrl": "feats/quicken-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术延时",
+      "nameEn": "Extend Spell",
+      "localUrl": "feats/extend-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术增远",
+      "nameEn": "Enlarge Spell",
+      "localUrl": "feats/enlarge-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "法术专攻",
+      "nameEn": "",
+      "localUrl": "feats/spell-focus.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "飞跑",
+      "nameEn": "Run",
+      "localUrl": "feats/run.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "奋力冲刺",
+      "nameEn": "Spirited Charge",
+      "localUrl": "feats/spirited-charge.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "钢铁意志",
+      "nameEn": "",
+      "localUrl": "feats/iron-will.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "高等法术穿透",
+      "nameEn": "Greater Spell Penetration",
+      "localUrl": "feats/greater-spell-penetration.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "高等法术专攻",
+      "nameEn": "Greater Spell Focus",
+      "localUrl": "feats/greater-spell-focus.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "高等精准射击",
+      "nameEn": "Improved Precise Shot",
+      "localUrl": "feats/improved-precise-shot.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "高等双武器攻击",
+      "nameEn": "Greater Two-Weapon Fighting",
+      "localUrl": "feats/greater-two-weapon-fighting.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "高等武器专攻",
+      "nameEn": "Greater Weapon Focus",
+      "localUrl": "feats/greater-weapon-focus.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "高等武器专精",
+      "nameEn": "Greater Weapon Specialization",
+      "localUrl": "feats/greater-weapon-specialization.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "技能专攻",
+      "nameEn": "Skill Focus",
+      "localUrl": "feats/skill-focus.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "即时备战",
+      "nameEn": "Quick Draw",
+      "localUrl": "feats/quick-draw.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "坚忍",
+      "nameEn": "Endurance",
+      "localUrl": "feats/endurance.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "践踏",
+      "nameEn": "Trample",
+      "localUrl": "feats/trample.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "健壮",
+      "nameEn": "",
+      "localUrl": "feats/toughness.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "近程射击",
+      "nameEn": "",
+      "localUrl": "feats/point-blank-shot.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "竞技",
+      "nameEn": "Athletic",
+      "localUrl": "feats/athletic.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "警觉",
+      "nameEn": "",
+      "localUrl": "feats/alertness.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通冲撞",
+      "nameEn": "Improved Bull Rush",
+      "localUrl": "feats/improved-bull-rush.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通闯越",
+      "nameEn": "Improved Overrun",
+      "localUrl": "feats/improved-overrun.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通盾击",
+      "nameEn": "Improved Shield Bash",
+      "localUrl": "feats/improved-shield-bash.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通反制法术",
+      "nameEn": "Improved Counterspell",
+      "localUrl": "feats/improved-counterspell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通击破武器",
+      "nameEn": "Improved Sunder",
+      "localUrl": "feats/improved-sunder.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通擒抱",
+      "nameEn": "",
+      "localUrl": "feats/improved-grapple.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通驱散",
+      "nameEn": "Improved Turning",
+      "localUrl": "feats/improved-turning.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通摔绊",
+      "nameEn": "Improved Trip",
+      "localUrl": "feats/improved-trip.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通双武器攻击",
+      "nameEn": "Improved Two-Weapon Fighting",
+      "localUrl": "feats/improved-two-weapon-fighting.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通徒手击打",
+      "nameEn": "Improved Unarmed Strike",
+      "localUrl": "feats/improved-unarmed-strike.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通先攻",
+      "nameEn": "",
+      "localUrl": "feats/improved-initiative.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通卸除武器",
+      "nameEn": "",
+      "localUrl": "feats/improved-disarm.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通虚招",
+      "nameEn": "Improved Feint",
+      "localUrl": "feats/improved-feint.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精通重击",
+      "nameEn": "",
+      "localUrl": "feats/improved-critical.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "精准射击",
+      "nameEn": "",
+      "localUrl": "feats/precise-shot.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "快速骑乘攻击",
+      "nameEn": "Ride-By Attack",
+      "localUrl": "feats/ride-by-attack.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "快速射击",
+      "nameEn": "",
+      "localUrl": "feats/rapid-shot.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "快速装填",
+      "nameEn": "Rapid Reload",
+      "localUrl": "feats/rapid-reload.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "领导力",
+      "nameEn": "Leadership",
+      "localUrl": "feats/leadership.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "灵活",
+      "nameEn": "Mobility",
+      "localUrl": "feats/mobility.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "灵活移动",
+      "nameEn": "Mobility",
+      "localUrl": "feats/mobility.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "灵巧手指",
+      "nameEn": "Nimble Fingers",
+      "localUrl": "feats/nimble-fingers.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "盲斗",
+      "nameEn": "Blind-Fight",
+      "localUrl": "feats/blind-fight.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "猛力攻击",
+      "nameEn": "",
+      "localUrl": "feats/power-attack.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "魔法天赋",
+      "nameEn": "Magical Aptitude",
+      "localUrl": "feats/magical-aptitude.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "骑乘射击",
+      "nameEn": "Mounted Archery",
+      "localUrl": "feats/mounted-archery.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "骑乘战斗",
+      "nameEn": "Mounted Combat",
+      "localUrl": "feats/mounted-combat.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "欺诈",
+      "nameEn": "Deceitful",
+      "localUrl": "feats/deceitful.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "强力顺势斩",
+      "nameEn": "Great Cleave",
+      "localUrl": "feats/great-cleave.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "强韧加强",
+      "nameEn": "",
+      "localUrl": "feats/great-fortitude.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "强效召唤",
+      "nameEn": "Augment Summoning",
+      "localUrl": "feats/augment-summoning.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "巧手",
+      "nameEn": "Deft Hands",
+      "localUrl": "feats/deft-hands.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "闪避",
+      "nameEn": "",
+      "localUrl": "feats/dodge.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "擅长盾牌",
+      "nameEn": "Shield Proficiency",
+      "localUrl": "feats/shield-proficiency.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "擅长简易武器",
+      "nameEn": "Simple Weapon Proficiency",
+      "localUrl": "feats/simple-weapon-proficiency.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "擅长军用武器",
+      "nameEn": "Martial Weapon Proficiency",
+      "localUrl": "feats/martial-weapon-proficiency.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "擅长盔甲（轻型）",
+      "nameEn": "Armor Proficiency (Light)",
+      "localUrl": "feats/armor-proficiency-light.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "擅长盔甲（中型）",
+      "nameEn": "Armor Proficiency (Medium)",
+      "localUrl": "feats/armor-proficiency-medium.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "擅长盔甲（重型）",
+      "nameEn": "Armor Proficiency (Heavy)",
+      "localUrl": "feats/armor-proficiency-heavy.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "擅长塔盾",
+      "nameEn": "Tower Shield Proficiency",
+      "localUrl": "feats/tower-shield-proficiency.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "擅长异种武器",
+      "nameEn": "Exotic Weapon Proficiency",
+      "localUrl": "feats/exotic-weapon-proficiency.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "闪电反射",
+      "nameEn": "",
+      "localUrl": "feats/lightning-reflexes.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "施法免材",
+      "nameEn": "Eschew Materials",
+      "localUrl": "feats/eschew-materials.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "双武器防御",
+      "nameEn": "",
+      "localUrl": "feats/two-weapon-defense.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "双武器攻击",
+      "nameEn": "",
+      "localUrl": "feats/two-weapon-fighting.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "顺势斩",
+      "nameEn": "",
+      "localUrl": "feats/cleave.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "说服者",
+      "nameEn": "Persuasive",
+      "localUrl": "feats/persuasive.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "谈判专家",
+      "nameEn": "Negotiator",
+      "localUrl": "feats/negotiator.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "跳跃攻击",
+      "nameEn": "",
+      "localUrl": "feats/spring-attack.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "调制药水",
+      "nameEn": "Brew Potion",
+      "localUrl": "feats/brew-potion.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "顽强",
+      "nameEn": "Diehard",
+      "localUrl": "feats/diehard.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "武器娴熟",
+      "nameEn": "Weapon Finesse",
+      "localUrl": "feats/weapon-finesse.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "武器专攻",
+      "nameEn": "",
+      "localUrl": "feats/weapon-focus.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "武器专精",
+      "nameEn": "",
+      "localUrl": "feats/weapon-specialization.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "细致",
+      "nameEn": "Diligent",
+      "localUrl": "feats/diligent.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "旋风攻击",
+      "nameEn": "",
+      "localUrl": "feats/whirlwind-attack.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "移动射击",
+      "nameEn": "",
+      "localUrl": "feats/shot-on-the-run.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "隐秘",
+      "nameEn": "Stealthy",
+      "localUrl": "feats/stealthy.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "寓守于攻",
+      "nameEn": "Combat Expertise",
+      "localUrl": "feats/combat-expertise.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "远程射击",
+      "nameEn": "Far Shot",
+      "localUrl": "feats/far-shot.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "杂耍",
+      "nameEn": "Acrobatic",
+      "localUrl": "feats/acrobatic.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "战斗反射",
+      "nameEn": "Combat Reflexes",
+      "localUrl": "feats/combat-reflexes.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "战斗施法",
+      "nameEn": "",
+      "localUrl": "feats/combat-casting.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": false,
+      "hasPhbSource": false,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "震慑拳",
+      "nameEn": "Stunning Fist",
+      "localUrl": "feats/stunning-fist.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "制造法杖",
+      "nameEn": "Craft Staff",
+      "localUrl": "feats/craft-staff.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "制造魔法武器及防具",
+      "nameEn": "Craft Magic Arms and Armor",
+      "localUrl": "feats/craft-magic-arms-and-armor.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "制造魔杖",
+      "nameEn": "Craft Wand",
+      "localUrl": "feats/craft-wand.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "制造奇物",
+      "nameEn": "Craft Wondrous Item",
+      "localUrl": "feats/craft-wondrous-item.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "制造权杖",
+      "nameEn": "Craft Rod",
+      "localUrl": "feats/craft-rod.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "抓取飞箭",
+      "nameEn": "Snatch Arrows",
+      "localUrl": "feats/snatch-arrows.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "追踪",
+      "nameEn": "Track",
+      "localUrl": "feats/track.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "自救",
+      "nameEn": "Self-Sufficient",
+      "localUrl": "feats/self-sufficient.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    },
+    {
+      "nameZh": "自然施法",
+      "nameEn": "Natural Spell",
+      "localUrl": "feats/natural-spell.html",
+      "pageExists": true,
+      "hasPrerequisite": true,
+      "hasEffect": true,
+      "hasPhbSource": true,
+      "hasReplacementChar": false
+    }
+  ]
+}

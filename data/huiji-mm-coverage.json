@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-06-22T18:03:10.433Z",
+  "source": "Huiji 分类:怪物图鉴 categorymembers via in-app browser API",
+  "count": 1,
+  "note": "灰机该分类当前只返回主页面，未暴露类似 PHB 的规则/怪物子分类成员。",
+  "items": [
+    {
+      "pageid": 781,
+      "ns": 0,
+      "title": "怪物图鉴",
+      "localCandidates": []
+    }
+  ]
+}

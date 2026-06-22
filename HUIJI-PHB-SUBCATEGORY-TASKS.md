@@ -25,18 +25,23 @@
 - [x] 已抓取并核验 109 个 PHB 专长。
 - [x] 已生成并更新 `data/huiji-phb-feat-coverage.json`。
 - [x] 已新增 `feats/phb-feats.html` 覆盖索引。
-- [x] 已补 53 个新独立详情页。
+- [x] 已补 79 个独立详情页；其中 53 个来自缺页批次，26 个来自综合页拆分。
 - [x] 已将“寓守于攻 / Combat Expertise”映射到已有 `feats/combat-expertise.html`，未重复建页。
-- [x] 当前状态：82 个独立详情页、27 个综合页覆盖、0 个缺项。
-- [ ] 后续增强：把 27 个综合页覆盖条目拆成独立详情页，并做人工术语校对。
+- [x] 已将“灵活 / Mobility”作为“灵活移动 / Mobility”的别名映射到 `feats/mobility.html`，未重复建页。
+- [x] 当前状态：109 个独立详情页、0 个综合页覆盖、0 个缺项。
+- [x] 已生成 `data/phb-feat-page-audit.json` 做结构校对。
 
 ## 专长总分类
 
-- [x] 已确认灰机「专长」总分类规模约 1550 条，不能直接视为 PHB 缺口。
-- [x] 已先完成 PHB 范围覆盖，避免扩展内容污染 PHB 判断。
-- [ ] 生成全站范围 `data/huiji-feat-coverage.json`。
-- [ ] 对总分类条目做来源分层：PHB、核心 3R、扩展书、未确认。
-- [ ] 扩展书专长后续进入单独扩展覆盖清单，不并入 PHB 完成率。
+- [x] 已确认灰机「专长」总分类规模 1550 条，不能直接视为 PHB 缺口。
+- [x] 已通过浏览器 API 读取 1550 个页面分类字段。
+- [x] 已生成 `data/huiji-feat-page-categories.json`。
+- [x] 已生成全站范围 `data/huiji-feat-coverage.json`。
+- [x] 已标记 PHB：109 条。
+- [x] 已标记核心 3R 非 PHB：14 条。
+- [x] 已标记核心 3R/扩展书重叠：1 条。
+- [x] 已标记 3R 官方扩展：1426 条。
+- [x] 未确认来源：0 条。
 
 ## 执行顺序
 
@@ -44,5 +49,5 @@
 2. [x] 生成 `data/huiji-phb-subcategory-coverage.json`。
 3. [x] 补 PHB 技能缺项。
 4. [x] 补 PHB 专长缺项。
-5. [ ] 拆分 PHB 综合页专长。
-6. [ ] 做灰机「专长」总分类来源分层。
+5. [x] 拆分 PHB 综合页专长。
+6. [x] 做灰机「专长」总分类来源分层。

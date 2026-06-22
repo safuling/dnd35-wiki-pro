@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T17:46:27.229Z",
+  "generatedAt": "2026-06-22T17:55:35.656Z",
   "source": "Huiji subcategory categorymembers API via in-app browser",
   "categories": {
     "玩家手册边栏": {
@@ -136,8 +136,8 @@
     },
     "玩家手册专长": {
       "count": 109,
-      "detailPages": 82,
-      "listCovered": 27,
+      "detailPages": 109,
+      "listCovered": 0,
       "missing": 0,
       "coverageFile": "data/huiji-phb-feat-coverage.json"
     },

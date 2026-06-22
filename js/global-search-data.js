@@ -7103,120 +7103,120 @@ const GLOBAL_SEARCH_DATA = {
       "nameZh": "拨挡飞箭",
       "nameEn": "Deflect Arrows",
       "type": "feat",
-      "prerequisite": "敏捷13， 精通徒手击打 。",
-      "benefit": "你可以在空出一只手时，每轮一次挡开原本会命中的远程武器攻击。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/deflect-arrows.html"
     },
     {
       "nameZh": "抄录卷轴",
       "nameEn": "Scribe Scroll",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "你可以把自己已知的法术制作成卷轴。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/scribe-scroll.html"
     },
     {
       "nameZh": "调查员",
       "nameEn": "Investigator",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "搜集信息与搜索检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/investigator.html"
     },
     {
       "nameZh": "动物亲和",
       "nameEn": "Animal Affinity",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "驯养动物与骑术检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/animal-affinity.html"
     },
     {
       "nameZh": "锻造戒指",
       "nameEn": "Forge Ring",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "施法者等级 12 级",
+      "benefit": "你可以制造满足前提的魔法戒指。",
+      "url": "feats/forge-ring.html"
     },
     {
       "nameZh": "多重射击",
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/manyshot.html"
     },
     {
       "nameZh": "额外驱散",
       "nameEn": "Extra Turning",
       "type": "feat",
-      "prerequisite": "驱散或斥喝生物的能力。",
-      "benefit": "每天驱散或斥喝生物的次数增加 4 次；若你有多种驱散或斥喝能力，每种能力都增加 4 次。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/extra-turning.html"
     },
     {
       "nameZh": "法术穿透",
       "nameEn": "Spell Penetration",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "你的施法者等级检定在克服法术抗力时获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/spell-penetration.html"
     },
     {
       "nameZh": "法术定发",
       "nameEn": "Still Spell",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "定发法术不需要姿势成分。",
+      "url": "feats/still-spell.html"
     },
     {
       "nameZh": "法术极效",
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/maximize-spell.html"
     },
     {
       "nameZh": "法术扩展",
       "nameEn": "Widen Spell",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "爆发、散发、直线或扩散形法术的区域尺寸加倍。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/widen-spell.html"
     },
     {
       "nameZh": "法术默发",
       "nameEn": "Silent Spell",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "默发法术不需要言语成分。",
+      "url": "feats/silent-spell.html"
     },
     {
       "nameZh": "法术强效",
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/empower-spell.html"
     },
     {
       "nameZh": "法术升阶",
       "nameEn": "Heighten Spell",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "升阶法术按你指定的更高法术环级生效。",
+      "url": "feats/heighten-spell.html"
     },
     {
       "nameZh": "法术熟稔",
       "nameEn": "Spell Mastery",
       "type": "feat",
-      "prerequisite": "法师 1 级",
-      "benefit": "每次选择本专长时，选取数量等于智力调整值的已知法术；这些法术之后可以不借助法术书准备。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/spell-mastery.html"
     },
     {
@@ -7224,23 +7224,23 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/quicken-spell.html"
     },
     {
       "nameZh": "法术延时",
       "nameEn": "Extend Spell",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "法术持续时间加倍。",
+      "url": "feats/extend-spell.html"
     },
     {
       "nameZh": "法术增远",
       "nameEn": "Enlarge Spell",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "近距、中距或远距法术的距离加倍。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/enlarge-spell.html"
     },
     {
@@ -7248,23 +7248,23 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/spell-focus.html"
     },
     {
       "nameZh": "飞跑",
       "nameEn": "Run",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "奔跑时速度倍率提高；轻装或无甲时通常可达到 5 倍速度。",
+      "url": "feats/run.html"
     },
     {
       "nameZh": "奋力冲刺",
       "nameEn": "Spirited Charge",
       "type": "feat",
-      "prerequisite": "骑术 级数1、 骑乘战斗 、 快速骑乘攻击",
-      "benefit": "骑乘冲锋时，近战武器伤害加倍；使用骑枪冲锋时伤害变为三倍。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/spirited-charge.html"
     },
     {
@@ -7272,95 +7272,95 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/iron-will.html"
     },
     {
       "nameZh": "高等法术穿透",
       "nameEn": "Greater Spell Penetration",
       "type": "feat",
-      "prerequisite": "法术穿透 。",
-      "benefit": "克服法术抗力的施法者等级检定再获得 +2 加值，并与法术穿透累加。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/greater-spell-penetration.html"
     },
     {
       "nameZh": "高等法术专攻",
       "nameEn": "Greater Spell Focus",
       "type": "feat",
-      "prerequisite": "法术专攻（所选学派）",
-      "benefit": "选择一个已具备法术专攻的学派；该学派法术的豁免 DC 再获得 +1 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/greater-spell-focus.html"
     },
     {
       "nameZh": "高等精准射击",
       "nameEn": "Improved Precise Shot",
       "type": "feat",
-      "prerequisite": "敏捷19、 近程射击 、 精准射击 、基本攻击加值+11。",
-      "benefit": "远程攻击忽略非全掩蔽带来的 AC 加值，并忽略非全隐蔽带来的失手率。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-precise-shot.html"
     },
     {
       "nameZh": "高等双武器攻击",
       "nameEn": "Greater Two-Weapon Fighting",
       "type": "feat",
-      "prerequisite": "敏捷19、 精通双武器攻击 、 双武器攻击 、基本攻击加值+11。",
-      "benefit": "使用双武器战斗时，副手武器获得第三次额外攻击，减值为 -10。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/greater-two-weapon-fighting.html"
     },
     {
       "nameZh": "高等武器专攻",
       "nameEn": "Greater Weapon Focus",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "擅长所选武器、武器专攻（同一武器）、战士等级 8",
+      "benefit": "使用所选武器时攻击检定再获得 +1 加值。",
+      "url": "feats/greater-weapon-focus.html"
     },
     {
       "nameZh": "高等武器专精",
       "nameEn": "Greater Weapon Specialization",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "擅长所选武器、武器专攻、武器专精（同一武器）、高等武器专攻（同一武器）、战士等级 12",
+      "benefit": "使用所选武器造成伤害时再获得 +2 加值。",
+      "url": "feats/greater-weapon-specialization.html"
     },
     {
       "nameZh": "技能专攻",
       "nameEn": "Skill Focus",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "选择一项技能；该技能检定获得 +3 加值。",
+      "url": "feats/skill-focus.html"
     },
     {
       "nameZh": "即时备战",
       "nameEn": "Quick Draw",
       "type": "feat",
-      "prerequisite": "基本攻击加值+1。",
-      "benefit": "拔取武器改为自由动作；拔取隐藏武器为移动动作。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/quick-draw.html"
     },
     {
       "nameZh": "坚忍",
       "nameEn": "Endurance",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "多种体力耐受相关检定或豁免获得 +4 加值。",
+      "url": "feats/endurance.html"
     },
     {
       "nameZh": "践踏",
       "nameEn": "Trample",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "骑术 1 级、骑乘战斗",
+      "benefit": "骑乘闯越时，目标不能选择避开。",
+      "url": "feats/trample.html"
     },
     {
       "nameZh": "健壮",
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/toughness.html"
     },
     {
@@ -7368,15 +7368,15 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/point-blank-shot.html"
     },
     {
       "nameZh": "竞技",
       "nameEn": "Athletic",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "攀爬与游泳检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/athletic.html"
     },
     {
@@ -7384,47 +7384,47 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/alertness.html"
     },
     {
       "nameZh": "精通冲撞",
       "nameEn": "Improved Bull Rush",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "力量 13、猛力攻击",
+      "benefit": "冲撞不会引发借机攻击。",
+      "url": "feats/improved-bull-rush.html"
     },
     {
       "nameZh": "精通闯越",
       "nameEn": "Improved Overrun",
       "type": "feat",
-      "prerequisite": "力量13， 猛力攻击 。",
-      "benefit": "闯越不会引发借机攻击；目标不能选择避开你。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-overrun.html"
     },
     {
       "nameZh": "精通盾击",
       "nameEn": "Improved Shield Bash",
       "type": "feat",
-      "prerequisite": "擅长盾牌",
-      "benefit": "使用盾牌砸击时，仍保留该盾牌给予 AC 的盾牌加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-shield-bash.html"
     },
     {
       "nameZh": "精通反制法术",
       "nameEn": "Improved Counterspell",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "反制法术时，可以使用同学派且环级高于目标法术的法术进行反制。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-counterspell.html"
     },
     {
       "nameZh": "精通击破武器",
       "nameEn": "Improved Sunder",
       "type": "feat",
-      "prerequisite": "力量13、 猛力攻击 。",
-      "benefit": "攻击对手持有或携带的物体时不引发借机攻击。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-sunder.html"
     },
     {
@@ -7432,39 +7432,39 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-grapple.html"
     },
     {
       "nameZh": "精通驱散",
       "nameEn": "Improved Turning",
       "type": "feat",
-      "prerequisite": "驱散或斥喝生物的能力",
-      "benefit": "进行驱散或斥喝时，赋予该能力的职业等级视为提高 1 级。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-turning.html"
     },
     {
       "nameZh": "精通摔绊",
       "nameEn": "Improved Trip",
       "type": "feat",
-      "prerequisite": "智力13、 寓守于攻 。",
-      "benefit": "徒手摔绊不会引发借机攻击，并在摔绊的力量检定上获得 +4 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-trip.html"
     },
     {
       "nameZh": "精通双武器攻击",
       "nameEn": "Improved Two-Weapon Fighting",
       "type": "feat",
-      "prerequisite": "敏捷17， 双武器攻击 ，基本命中加值+6。",
-      "benefit": "使用双武器战斗时，副手武器获得第二次额外攻击，减值为 -5。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-two-weapon-fighting.html"
     },
     {
       "nameZh": "精通徒手击打",
       "nameEn": "Improved Unarmed Strike",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "徒手攻击时视为持有武器，不会因徒手攻击持武器对手而引发借机攻击。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-unarmed-strike.html"
     },
     {
@@ -7472,7 +7472,7 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-initiative.html"
     },
     {
@@ -7480,15 +7480,15 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-disarm.html"
     },
     {
       "nameZh": "精通虚招",
       "nameEn": "Improved Feint",
       "type": "feat",
-      "prerequisite": "智力13， 寓守于攻 。",
-      "benefit": "战斗中使用虚招改为移动动作。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-feint.html"
     },
     {
@@ -7496,7 +7496,7 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/improved-critical.html"
     },
     {
@@ -7504,15 +7504,15 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/precise-shot.html"
     },
     {
       "nameZh": "快速骑乘攻击",
       "nameEn": "Ride-By Attack",
       "type": "feat",
-      "prerequisite": "骑术 级数1、 骑乘战斗 。",
-      "benefit": "骑乘冲锋时，可以在攻击后继续沿冲锋直线移动，总移动距离不超过坐骑速度的两倍。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/ride-by-attack.html"
     },
     {
@@ -7520,103 +7520,103 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/rapid-shot.html"
     },
     {
       "nameZh": "快速装填",
       "nameEn": "Rapid Reload",
       "type": "feat",
-      "prerequisite": "擅长武器（已选择的弩类型）。",
-      "benefit": "选择一种弩；装填该弩所需动作减少。手弩和轻弩为自由动作，重弩为移动动作。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/rapid-reload.html"
     },
     {
       "nameZh": "领导力",
       "nameEn": "Leadership",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "角色等级 6",
+      "benefit": "你可以吸引一名部属和若干追随者。",
+      "url": "feats/leadership.html"
     },
     {
       "nameZh": "灵活",
       "nameEn": "Mobility",
-      "type": "feat_index",
+      "type": "feat",
       "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "benefit": "PHB 专长独立详情页",
+      "url": "feats/mobility.html"
     },
     {
       "nameZh": "灵活移动",
       "nameEn": "Mobility",
       "type": "feat",
-      "prerequisite": "敏捷13、 闪避 。",
-      "benefit": "因离开或穿越敌人威胁区域而引发借机攻击时，你对这些攻击获得 +4 闪避 AC。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/mobility.html"
     },
     {
       "nameZh": "灵巧手指",
       "nameEn": "Nimble Fingers",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "解除装置与开锁检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/nimble-fingers.html"
     },
     {
       "nameZh": "盲斗",
       "nameEn": "Blind-Fight",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "因隐蔽导致近战攻击失手时，可以重掷一次失手机率。",
+      "url": "feats/blind-fight.html"
     },
     {
       "nameZh": "猛力攻击",
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/power-attack.html"
     },
     {
       "nameZh": "魔法天赋",
       "nameEn": "Magical Aptitude",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "法术辨识与使用魔法装置检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/magical-aptitude.html"
     },
     {
       "nameZh": "骑乘射击",
       "nameEn": "Mounted Archery",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "骑术 1 级、骑乘战斗",
+      "benefit": "骑乘远程攻击的减值降低。",
+      "url": "feats/mounted-archery.html"
     },
     {
       "nameZh": "骑乘战斗",
       "nameEn": "Mounted Combat",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "骑术 1 级",
+      "benefit": "每轮一次，当坐骑被近战命中时，你可以用骑术检定尝试抵消该次命中。",
+      "url": "feats/mounted-combat.html"
     },
     {
       "nameZh": "欺诈",
       "nameEn": "Deceitful",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "易容与伪造文书检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/deceitful.html"
     },
     {
       "nameZh": "强力顺势斩",
       "nameEn": "Great Cleave",
       "type": "feat",
-      "prerequisite": "力量13、 顺势斩 、 猛力攻击 、基本攻击加值+4。",
-      "benefit": "如同顺势斩，但每轮可触发的额外攻击次数没有上限。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/great-cleave.html"
     },
     {
@@ -7624,23 +7624,23 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/great-fortitude.html"
     },
     {
       "nameZh": "强效召唤",
       "nameEn": "Augment Summoning",
       "type": "feat",
-      "prerequisite": "法术专攻 （咒法系）。",
-      "benefit": "你以召唤法术召来的每个生物，在法术持续期间力量和体质获得 +4 增强加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/augment-summoning.html"
     },
     {
       "nameZh": "巧手",
       "nameEn": "Deft Hands",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "手上功夫与绳技检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/deft-hands.html"
     },
     {
@@ -7648,71 +7648,71 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/dodge.html"
     },
     {
       "nameZh": "擅长盾牌",
       "nameEn": "Shield Proficiency",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "使用盾牌时按正常规则承受盾牌的防具检定减值，不因不擅长而把减值套用到攻击检定等项目。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/shield-proficiency.html"
     },
     {
       "nameZh": "擅长简易武器",
       "nameEn": "Simple Weapon Proficiency",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "使用简易武器攻击时不承受不擅长武器的攻击减值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/simple-weapon-proficiency.html"
     },
     {
       "nameZh": "擅长军用武器",
       "nameEn": "Martial Weapon Proficiency",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "选择一种军用武器；使用该武器攻击时不承受不擅长武器的攻击减值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/martial-weapon-proficiency.html"
     },
     {
       "nameZh": "擅长盔甲（轻型）",
       "nameEn": "Armor Proficiency (Light)",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "穿着轻型盔甲时，防具检定减值只应用于相关的力量、敏捷或移动技能检定。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/armor-proficiency-light.html"
     },
     {
       "nameZh": "擅长盔甲（中型）",
       "nameEn": "Armor Proficiency (Medium)",
       "type": "feat",
-      "prerequisite": "擅长盔甲（轻型）",
-      "benefit": "穿着中型盔甲时，按擅长盔甲的正常规则处理防具检定减值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/armor-proficiency-medium.html"
     },
     {
       "nameZh": "擅长盔甲（重型）",
       "nameEn": "Armor Proficiency (Heavy)",
       "type": "feat",
-      "prerequisite": "擅长盔甲（轻型）、擅长盔甲（中型）",
-      "benefit": "穿着重型盔甲时，按擅长盔甲的正常规则处理防具检定减值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/armor-proficiency-heavy.html"
     },
     {
       "nameZh": "擅长塔盾",
       "nameEn": "Tower Shield Proficiency",
       "type": "feat",
-      "prerequisite": "擅长盾牌 。",
-      "benefit": "你可以正常使用塔盾，并只承受塔盾本身的标准减值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/tower-shield-proficiency.html"
     },
     {
       "nameZh": "擅长异种武器",
       "nameEn": "Exotic Weapon Proficiency",
       "type": "feat",
-      "prerequisite": "基本攻击加值+1（对于重剑或矮人重斧则还需力量13）。",
-      "benefit": "选择一种异种武器；使用该武器攻击时不承受不擅长武器的攻击减值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/exotic-weapon-proficiency.html"
     },
     {
@@ -7720,15 +7720,15 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/lightning-reflexes.html"
     },
     {
       "nameZh": "施法免材",
       "nameEn": "Eschew Materials",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "施展法术时，可忽略价值 1 gp 或更低的材料成分。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/eschew-materials.html"
     },
     {
@@ -7736,7 +7736,7 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/two-weapon-defense.html"
     },
     {
@@ -7744,7 +7744,7 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/two-weapon-fighting.html"
     },
     {
@@ -7752,23 +7752,23 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/cleave.html"
     },
     {
       "nameZh": "说服者",
       "nameEn": "Persuasive",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "唬骗与威吓检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/persuasive.html"
     },
     {
       "nameZh": "谈判专家",
       "nameEn": "Negotiator",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "交涉与察言观色检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/negotiator.html"
     },
     {
@@ -7776,39 +7776,39 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/spring-attack.html"
     },
     {
       "nameZh": "调制药水",
       "nameEn": "Brew Potion",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "施法者等级 3 级",
+      "benefit": "你可以制造 3 环或更低、目标为一个或多个生物的法术药水。",
+      "url": "feats/brew-potion.html"
     },
     {
       "nameZh": "顽强",
       "nameEn": "Diehard",
       "type": "feat",
-      "prerequisite": "坚忍 。",
-      "benefit": "生命值处于 -1 到 -9 时自动稳定。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/diehard.html"
     },
     {
       "nameZh": "武器娴熟",
       "nameEn": "Weapon Finesse",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "基本攻击加值 +1",
+      "benefit": "使用轻型武器、细剑、鞭或刺链等适用武器时，近战攻击检定可用敏捷调整值代替力量调整值。",
+      "url": "feats/weapon-finesse.html"
     },
     {
       "nameZh": "武器专攻",
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/weapon-focus.html"
     },
     {
@@ -7816,15 +7816,15 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/weapon-specialization.html"
     },
     {
       "nameZh": "细致",
       "nameEn": "Diligent",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "估价与文件解读检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/diligent.html"
     },
     {
@@ -7832,7 +7832,7 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/whirlwind-attack.html"
     },
     {
@@ -7840,135 +7840,135 @@ const GLOBAL_SEARCH_DATA = {
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/shot-on-the-run.html"
     },
     {
       "nameZh": "隐秘",
       "nameEn": "Stealthy",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "躲藏与潜行检定获得 +2 加值。",
+      "url": "feats/stealthy.html"
     },
     {
       "nameZh": "寓守于攻",
       "nameEn": "Combat Expertise",
       "type": "feat",
-      "prerequisite": "智力13。",
-      "benefit": "近战攻击或整轮攻击时，可以把最多 5 点攻击减值转换为等量闪避 AC 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/combat-expertise.html"
     },
     {
       "nameZh": "远程射击",
       "nameEn": "Far Shot",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "近程射击",
+      "benefit": "投射武器的射程增量变为 1.5 倍。",
+      "url": "feats/far-shot.html"
     },
     {
       "nameZh": "杂耍",
       "nameEn": "Acrobatic",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "跳跃与翻滚检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/acrobatic.html"
     },
     {
       "nameZh": "战斗反射",
       "nameEn": "Combat Reflexes",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "每轮可进行的借机攻击次数增加，额外次数等于你的敏捷调整值。",
+      "url": "feats/combat-reflexes.html"
     },
     {
       "nameZh": "战斗施法",
       "nameEn": "",
       "type": "feat",
       "prerequisite": "",
-      "benefit": "已有独立详情页",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/combat-casting.html"
     },
     {
       "nameZh": "震慑拳",
       "nameEn": "Stunning Fist",
       "type": "feat",
-      "prerequisite": "敏捷13、感知13、 精通徒手击打 、基本攻击加值+8。",
-      "benefit": "进行徒手攻击前声明使用；命中后除普通伤害外，目标还需通过强韧豁免，否则震慑 1 轮。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/stunning-fist.html"
     },
     {
       "nameZh": "制造法杖",
       "nameEn": "Craft Staff",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "施法者等级 12 级",
+      "benefit": "你可以制造满足前提的魔法法杖。",
+      "url": "feats/craft-staff.html"
     },
     {
       "nameZh": "制造魔法武器及防具",
       "nameEn": "Craft Magic Arms and Armor",
       "type": "feat",
-      "prerequisite": "施法者等级达5级。",
-      "benefit": "你可以制造满足前提的魔法武器、盔甲或盾牌。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/craft-magic-arms-and-armor.html"
     },
     {
       "nameZh": "制造魔杖",
       "nameEn": "Craft Wand",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "施法者等级 5 级",
+      "benefit": "你可以制造 4 环或更低法术的魔杖。",
+      "url": "feats/craft-wand.html"
     },
     {
       "nameZh": "制造奇物",
       "nameEn": "Craft Wondrous Item",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "施法者等级 3 级",
+      "benefit": "你可以制造满足前提的奇物类魔法物品。",
+      "url": "feats/craft-wondrous-item.html"
     },
     {
       "nameZh": "制造权杖",
       "nameEn": "Craft Rod",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "施法者等级 9 级",
+      "benefit": "你可以制造满足前提的魔法权杖。",
+      "url": "feats/craft-rod.html"
     },
     {
       "nameZh": "抓取飞箭",
       "nameEn": "Snatch Arrows",
       "type": "feat",
-      "prerequisite": "敏捷15， 拨挡飞箭 ，精通徒手攻击。",
-      "benefit": "使用拨挡飞箭时，可以改为抓住该远程武器。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/snatch-arrows.html"
     },
     {
       "nameZh": "追踪",
       "nameEn": "Track",
-      "type": "feat_index",
-      "prerequisite": "",
-      "benefit": "已在综合专长列表覆盖",
-      "url": "feats/feat-list.html"
+      "type": "feat",
+      "prerequisite": "无",
+      "benefit": "你可以使用生存技能追踪生物留下的踪迹。",
+      "url": "feats/track.html"
     },
     {
       "nameZh": "自救",
       "nameEn": "Self-Sufficient",
       "type": "feat",
-      "prerequisite": "无",
-      "benefit": "医疗与生存检定获得 +2 加值。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/self-sufficient.html"
     },
     {
       "nameZh": "自然施法",
       "nameEn": "Natural Spell",
       "type": "feat",
-      "prerequisite": "感知13，野性变身能力（wild shape）",
-      "benefit": "处于野性变身形态时，仍可施展带言语、姿势、材料或法器成分的法术。",
+      "prerequisite": "",
+      "benefit": "PHB 专长独立详情页",
       "url": "feats/natural-spell.html"
     },
     {
